@@ -1,0 +1,122 @@
+
+// category area start
+
+.title-area-center-style,
+.title-area-left-style{
+    text-align: center;
+    .pre-title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 22px;
+        span{
+            color: var(--rt-primary);
+            font-weight: 500;
+        }
+    }
+}
+.title-area-left-style{
+    text-align: left;
+    .pre-title{
+        justify-content: flex-start;
+    }
+}
+
+.category-area-style-one{
+    background-image: url(../images/bg/bg-1.jpg);
+}
+
+
+.category-style-one{
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid  #DDD8F9;
+    display: block;
+    padding: 32px;
+    text-align: center;
+    transition: .3s;
+    .title{ 
+        color: #221859;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        margin-top: 18px;
+        margin-bottom: 0px;
+    }
+    span{
+        color: #221859;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+    }
+    &:hover{
+        border: 1px solid var(--Primary-1, #553CDF);
+    }
+}
+
+.mySwiper-category-1{
+    position: relative;
+    padding-bottom: 70px;
+    .swiper-pagination{
+        max-width: max-content;
+        margin: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        .swiper-pagination-bullet{
+            background: var(--rt-primary);
+            width: 8px;
+            height: 8px;
+        }
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+        &::after{
+            background-image: none;
+            display: none;
+        }
+    }
+    .swiper-button-next{
+        right: 43%;
+        bottom: 0;
+        top: auto;
+    }
+    .swiper-button-prev{
+        left: 43%;
+        bottom: 0;
+        top: auto;
+        right: auto;
+    }
+}
+
+
+
+.single-category-2{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-radius: 6px;
+    border: 1px solid  #DDD8F9;
+    background: #FBFAFF;
+    padding: 23px 30px;
+    transition: .3s;
+    .information{
+        .title{
+            margin-bottom: 0;
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    &:hover{
+        border: 1px solid  #553CDF;
+    }
+}
+
+.bg-category-3{
+    background: #F6F6F6;
+}
