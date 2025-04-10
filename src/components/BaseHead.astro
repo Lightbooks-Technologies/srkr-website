@@ -1,0 +1,38 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import { SITE_TITLE } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unipix</title>
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.svg">
+<!-- animate css -->
+<link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+<!-- fontawesome 6.4.2 -->
+<link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+<!-- bootstrap min css -->
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<!-- swiper Css 10.2.0 -->
+<link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+<!-- Bootstrap 5.0.2 -->
+<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+<!-- metismenu scss -->
+<link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+<!-- nice select js -->
+<link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+<link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+<!-- custom style css -->
+<link rel="stylesheet" href="assets/css/style.css">
