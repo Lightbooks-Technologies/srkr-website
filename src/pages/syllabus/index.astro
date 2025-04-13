@@ -1,0 +1,572 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '~/components/SrkrHeader.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    
+    <!-- header area end -->
+     
+    <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">program single</li>
+                        </ul>
+                        <h2 class="section-title">B.A. in African Studies</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+
+    <!-- program content -->
+    <div class="rts-program mt--30">
+        <div class="container">
+            
+            <div class="rts-program-description">
+                <div class="row sticky-coloum-wrap">
+                    <div class="col-lg-12">
+                        <div class="program-description-area" id="curriculum">
+                            <div class="program-credit-area">
+                                <div class="program-accordion">
+                                    <div class="accordion" id="rts-accordion">
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                R24 Syllabus & Model Papers
+                                            </button>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body-content">
+                                                    <table class="table">
+                                                        <thead class="table-theme">
+                                                            <tr>
+                                                                <th style="min-width: 80%;">Degree</th>
+                                                                <th>Syllabus</th>
+                                                                <th>Model Paper</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>BBA</td>
+                                                                <td><a href="#">I Year Syllabus</a></td>
+                                                                <td><a href="#">I Year Model Papers</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                R23 Syllabus & Model Papers
+                                            </button>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body-content">
+                                                    <table class="table">
+                                                        <thead class="table-theme">
+                                                            <tr>
+                                                                <th>Department</th>
+                                                                <th>Degree</th>
+                                                                <th style="min-width: 30%;">Syllabus</th>
+                                                                <th style="min-width: 30%;">Model Paper</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>AIDS</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23 I_Year_ AIDS_ Syllabus_ FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23 II_Year_ AIDS_ Syllabus_ FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_ Year_ AIDS_ MQP _FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_ Year_ AIDS_ MQP _FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AIML</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I _Year_ AIML _Syllabus _FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II _Year_ AIML _Syllabus _FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_ Year_ AIML_ MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_ Year_ AIML_ MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CSIT</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I _Year_ CSIT_ Syllabus_ FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II _Year_ CSIT_ Syllabus_ FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_CSIT_ MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_CSIT_ MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CIVIL</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23 I Year CIVIL Syllabus FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23 II Year CIVIL Syllabus FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I Year CIVIL MQP FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II Year CIVIL MQP FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CSBS</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I Year_CSBS_Syllabus _FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II Year_CSBS_Syllabus _FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I Year_CSBS_MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II Year_CSBS_MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CSD</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I _Year_CSD _Syllabus_FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II _Year_CSD _Syllabus_FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I _Year_CSD_ MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II _Year_CSD_ MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CSE</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_Year_ CSE _Syllabus_FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_Year_ CSE _Syllabus_FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_Year_ CSE _MQP _FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_Year_ CSE _MQP _FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CIC</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_ CIC _Syllabus _FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_ CIC _Syllabus _FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_Year_ CIC _MQP _FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_Year_ CIC _MQP _FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ECE</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_ ECE_ Syllabus_FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_ ECE_ Syllabus_FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I_Year_ ECE_ MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II_Year_ ECE_ MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EEE</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I Year_ EEE _Syllabus _FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II Year_ EEE _Syllabus _FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _I Year_ EEE _MQP _FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech _R23 _II Year_ EEE _MQP _FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IT</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_IT_Syllabus_FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_IT_Syllabus_FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_IT_MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_IT_MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                        
+                                                            <!-- MECH -->
+                                                            <tr>
+                                                                <td>MECH</td>
+                                                                <td>B.Tech</td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_MECH_Syllabus_FINAL.pdf" target="_NEW">I Year Syllabus</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_MECH_Syllabus_FINAL.pdf" target="_NEW">II Year Syllabus</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_I_Year_MECH_MQP_FINAL.pdf" target="_NEW">I Year Model Papers</a><br>
+                                                                    <a href="files/SYLLABUS/R23/B.Tech_R23_II_Year_MECH_MQP_FINAL.pdf" target="_NEW">II Year Model Papers</a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="accordion-item">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                B.Tech R20 Syllabus & Model Papers
+                                            </button>
+                                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body-content">
+                                                    <table class="table">
+                                                        <thead class="table-theme">
+                                                            <tr>
+
+                                                                <th>Dept</th>
+
+                                                                <th>Degree</th>
+
+                                                                <th>Syllabus</th>
+
+                                                                <th>Model Papers</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Introduction to Africana Studies or GSS 2201 - Africana Studies</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>The Contemporary African Diaspora</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>African-Americans: A Seminar</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table class="table">
+                                                        <thead class="table-theme">
+                                                            <tr>
+                                                                <th style="min-width: 80%;">Summer Semester 2 (Summer Session IV)</th>
+                                                                <th>Credits</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Introduction to Africana Studies or GSS 2201 - Africana Studies</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>The Contemporary African Diaspora</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>African-Americans: A Seminar</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table class="table">
+                                                        <thead class="table-theme">
+                                                            <tr>
+                                                                <th style="min-width: 80%;">Spring Semester 1</th>
+                                                                <th>Credits</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Introduction to Africana Studies or GSS 2201 - Africana Studies</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>The Contemporary African Diaspora</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>African-Americans: A Seminar</td>
+                                                                <td>3 Credits</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- program content end -->
+
+<!-- footer -->
+<footer class="footer v__1">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <div class="footer__widget--logo">
+                        <a href="/"><img src="assets/images/logo/logo__white.svg" alt="SRKR Logo"></a>
+                    </div>
+                    <p class="footer__widget--description">
+                        SRKR Engineering College, Bhimavaram – empowering rural talent with global exposure since 1980. Accredited, industry-aligned, and future-focused.
+                    </p>
+                    <div class="footer__widget--social">
+                        <ul class="social">
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Quick Links</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="admission.html">Admissions</a></li>
+                            <li><a href="academic.html">Academics</a></li>
+                            <li><a href="campus-life.html">Campus Life</a></li>
+                            <li><a href="event.html">Events</a></li>
+                            <li><a href="reasearch.html">Research</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Resources</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="faculty.html">Faculty</a></li>
+                            <li><a href="tution-fee.html">Tuition & Fees</a></li>
+                            <li><a href="scholarship.html">Scholarships</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Apply Now</h6>
+                    <div class="footer__widget--button">
+                        <a href="admission.html" class="cta__button active">Start Your Application</a>
+                        <a href="scholarship.html" class="cta__button">Explore Scholarships</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+    <!-- footer copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright__wrapper">
+                        <p>Copyright &copy; 2024 All Rights Reserved by <a href="https://srkrec.edu.in" target="_blank">SRKR Engineering College</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer copyright end -->
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+
+</html>

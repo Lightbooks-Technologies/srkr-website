@@ -1,0 +1,495 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '~/components/SrkrHeader.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    
+    <!-- header area end -->
+     <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Awards</li>
+                        </ul>
+                        <h2 class="section-title">Awards & Honours</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+
+    <!-- Scholarship content -->
+    <div class="rts-scholarship pt--30">
+        <div class="container">
+            <div class="rts-scholarship-description">
+                <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+                    <div class="col-lg-12 col-md-11">
+                        <div class="program-description-area">
+                            
+                            <div class="program-about">
+                                <h4 class="title">Awards & Honours</h4>
+                                <p>Our institution is consistently recognized for excellence in various fields, from innovative student projects to distinguished faculty achievements. The awards, accolades, and recognition reflect our unwavering commitment to academic brilliance, leadership, and holistic development. Explore our journey of accomplishments that highlight our dedication to shaping a better future.
+                                </p>
+                            </div>
+                            
+                            <div class="rts-brand v_1 pb--30">
+                                <div class="container">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col-lg-12 col-md-11">
+                                            <div class="rts-brand-slider swiper swiper-data" data-swiper='{
+                                            "slidesPerView":6,
+                                            "loop": true,
+                                            "autoplay":{
+                                                "delay":"3000"
+                                            },
+                                            "breakpoints":{
+                                                "320":{
+                                                    "slidesPerView": 3,
+                                                    "centeredSlides": true
+                                                },
+                                                "575":{
+                                                    "slidesPerView": 4,
+                                                    "centeredSlides": true
+                                                },
+                                                "768":{
+                                                    "slidesPerView": 5,
+                                                    "centeredSlides": true
+                                                },
+                                                "991":{
+                                                    "slidesPerView": 6,
+                                                    "centeredSlides": true
+                                                },
+                                                "1201":{
+                                                    "slidesPerView": 6
+                                                }
+                                            }
+                                    }'>
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/01.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/02.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/03.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/04.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/05.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="single-brand-logo">
+                                                            <a href="#">
+                                                                <img src="assets/images/brand/06.svg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- faq -->
+                            <div class="program-credit-area faq mt--50">
+                                <h4 class="title">Achievements & Recognitions</h4>
+                                <div class="program-accordion">
+                                    <div class="accordion" id="rts-accordion">
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAwards" aria-expanded="true" aria-controls="collapseAwards">
+                                                Institutional Awards/Ranking
+                                            </button>
+                                            <div id="collapseAwards" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <p>Cisco NetAcad Excellence Award, Jan 2025, at Cisco Bengaluru Campus, during the Cisco NetAcad India Conference.</p>
+                                                    <p>Best Performing Institute Award from Cisco, at the 2024 Cisco NetAcad India Conference held at Cisco Campus, Bengaluru, Feb 2024.</p>
+                                                    <p>JNTUK Appreciation Award for Best Performing Institute on the occasion of JNTUK Formation Day, August 2024.</p>
+                                                    <p>Top Institute for Campus Life and Ranked in Diamond Band in MHW (Mental Health and Well-Being) Ranking 2024 by World Institutional Ranking, Sept 2024.</p>
+                                                    <p>31st Rank in all India Level and 9th in South India in Top 100 Engineering Colleges in India-2024 by Silicon India Education Magazine.</p>
+                                                    <p>Recognized as The Most Excellent Engineering Institutes in India, 2024 by the Knowledge Review Magazine.</p>
+                                                    <p>Recognized as Top 10 Educational Colleges to Follow by the Inner Review Magazine, 2024.</p>
+                                                    <p>Recognized as an NPTEL Local Chapter Star and A rating for Jan-April 2024.</p>
+                                                    <p>Ecosystem Enablers-Institution (Category-performer) at Startup Jathara-2024 by AIC-Sri Krishnadevaraya University Anantapur, March 2024.</p>
+                                                    <p>AAA+ Rating by Careers360 Top Engineering Colleges in India Ranking 2023 and 2024.</p>
+                                                    <p>Best Participating Institute award for outstanding efforts in UBA program by Regional Coordinate Institute, Andhra University, Oct 2023.</p>
+                                                    <p>In NIRF India Rankings 2023, positioned in the band of 151-300 in the Innovation Category, June 2023.</p>
+                                                    <p>3rd position in Top Private Engineering Institutes Ranking-AP by Times Engineering.</p>
+                                                    <p>Ranked in Silver Band across India in MHW (Mental Health and Well-Being) Ranking 2023 by World Institutional Ranking, Sept 2023.</p>
+                                                    <p>Certificate of Appreciation for securing NAAC A+ Grade by APSCHE and JNTUK, 2023.</p>
+                                                    <p>Received Certificate of Appreciation for conferment of NAAC A+ Grade on the occasion of XV Formation Day of JNTUK, August 2023.</p>
+                                                    <p>A rating based on performance in NPTEL Online Certification Courses for Jan-April 2023.</p>
+                                                    <p>Recognized as 10 Best Colleges to Work for-2023 by Silicon India Magazine.</p>
+                                                    <p>All India 28th in Dataquest Top Private T-Schools Ranking 2023 and 33rd based on Employability Index, 2023.</p>
+                                                    <p>Best Startup Ecosystem Enabler Award under Institutions Category at 4th Annual Startup Jathara-2023 by AIC-Sri Krishnadevaraya University Anantapur, Jan 2023.</p>
+                                                    <p>Special Appreciation Award from Smt P. Prasanthi, IAS, Collector & District Magistrate, West Godavari, A.P., Jan 2023.</p>
+                                                    <p>In National Institutional Ranking Framework (NIRF), stood in Rank band of 251-300 in NIRF-2022, NIRF-2021, NIRF-2020.</p>
+                                                    <p>All India 33rd Rank in AICTE-EduSkills Virtual Internship Annual Ranking 2022.</p>
+                                                    <p>Winner in AICTE FIT INDIA Challenge Category-II (Two students got the awards) and Category-III (Institutional Award), June 2022.</p>
+                                                    <p>Excellence in Holistic Education for Next Generation Award from the Times Business Awards, Andhra Pradesh, 2022.</p>
+                                                    <p>In Atal Ranking of Institutions on Innovation Achievements (ARIIA), stood in BAND-PERFORMER in ARIIA-2021 and BAND-A (between 6th to 25th) in ARIIA-2020.</p>
+                                                    <p>Best Engineering College Award from Times Business Awards 2021.</p>
+                                                    <p>Perennial Award of 1.75 Lakhs under Unnat Bharat Abhiyan (UBA) of MHRD, Govt. of India, 2021.</p>
+                                                    <p>Best Engineering College Award from Times Business Awards-2021.</p>
+                                                    <p>2nd in Top 10 Private Engineering Institutes Ranking-2020 Andhra Pradesh by Times Engineering.</p>
+                                                    <p>38th Rank in Top T-Schools (Private)-2020 ranking from DataQuest.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAchievements" aria-expanded="true" aria-controls="collapseAchievements">
+                                                Management/Staff Achievements
+                                            </button>
+                                            <div id="collapseAchievements" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <p>Sri S.R.K. Nishant Varma, Secretary cum Correspondent received Young Visionary Leadership in Engineering Education of the year 2024 by TIMES Business Awards, A.P., Sept. 2024.</p>
+                                                    <p>Sri S.R.K. Nishant Varma, Secretary cum Correspondent received Young Eduprenuer Award of the year 2023 by TIMES Business Awards, A.P., 2023.</p>
+                                                    <p>Sri Sagi Prasad Raju, the President, SRKR Engineering College, received Lifetime Achievement Award from Bharat Education Excellence Awards, 2021-22.</p>
+                                                    <p>Sri S.R.K. NishantVarma, the then CEO, SRKREC, received the Best CEO Award from Nature Science Foundation, 2021-22.</p>
+                                                    <p>Dr. M. Jagapathi Raju, Director received Life Time Achievement Award by Artificial Intelligence Medical and Engineering Researchers Society at CMR Technical Campus, Hyderabad, March 2024.</p>
+                                                    <p>Mr. Nandyala Siva Kishan, Asst. Professor of Civil Engineering received Best Startup Ecosystem Enabler Award under Individual Category at SKU, Anantapur, March 2024.</p>
+                                                    <p>Three faculty members Dr. T.V. Hyma Lakshmi, Associate Professor of ECE; Mr. K. Pavan Kumar, Asst. Professor of EEE and Mr. M. Suneel, Asst. Professor of Civil Engineering got NPTEL Discipline Star for Jan-April 2024.</p>
+                                                    <p>Mr. Nandyala Siva Kishan got NPTEL Domain Scholar, NPTEL Believer and NPTEL Motivated Learner for Jan-April 2024.</p>
+                                                    <p>Dr. T. Rambabu, Associate Professor received Best Coordinator Award for outstanding efforts in Unnat Bharat Abhiyan program by Regional Coordinate Institute, Andhra University, Oct. 2023.</p>
+                                                    <p>Dr. N.G.K. Murthy, Professor & Head, Technology Centre received Best Startup Ecosystem Enabler Award under Individual Category at 4th Annual Startup Jathara-2023 by AIC, Sri Krishnadevaraya University Anantapur, Jan 2023.</p>
+                                                    <p>Dr. N.G.K. Murthy received Certificate of Appreciation for his Instrumental Role as SPOC for the SWAYAM NPTEL Local Chapter for Jan-April 2023.</p>
+                                                    <p>Mr. B. Bhagya Prasad, Asst. Professor of ECE got the award of NPTEL Discipline Star for Jan-Apr 2023.</p>
+                                                    <p>Mr. T. Vamsi Naga Raju, Asst. Professor of Civil Engineering, received Young Researcher Award-2022 from University Institute of Technology (UIT), Himachal Pradesh University, Shimla, 2022.</p>
+                                                    <p>Dr. K.R. Satyanarayana, Dean (T&P) received TPO Innovation Leader of the Year 2022 from Maharashtra TPO Association.</p>
+                                                    <p>Dr. M. JagapathiRaju received the Best College Principal Award from Nature Science Foundation, 2021-22.</p>
+                                                    <p>Dr. K.R. Satyanarayana received Niyukti Acharya Award from Bharat Education Excellence Awards, 2021-22.</p>
+                                                    <p>Mr. T. Vamsi Naga Raju received the Best Paper Presentation Award at an International Conference, China, July 2022.</p>
+                                                    <p>Dr. K. Brahma Raju got elected as a National Council Member of the Institution of Engineers (India), Nov. 2021.</p>
+                                                    <p>Prof. DVR Mohan received ATAL Best Project Award for the project 3-Dimensional Laser Engraved Design at AICTE IDEA Lab workshop, Sept. 2021.</p>
+                                                    <p>Dr. N. Udaya Kumar received SWAYAM-NPTEL Domain Scholar Certificate in Communication and Signal Processing, July-Dec 2021.</p>
+                                                    <p>Mr. K. Pavan Kumar received the Certificate of Appreciation for being recognized as NPTEL Discipline Star Award, July-Dec 2021.</p>
+                                                    <p>Mr. P. Raju received the International Engineering Educator degree from IGIP Austria, Jan 2021.</p>
+                                                    <p>Dr. M. Jagapathi Raju was nominated as a Member of APEAMCET Admission Committee-2020.</p>
+                                                    <p>Dr. N. Udaya Kumar recognized as Discipline Star by NPTEL for the certification courses of same discipline, 2020.</p>
+                                                    <p>Mr. T. Vamsi Naga Raju received the Young Geotechnical Engineer Award-2020.</p>
+                                                    <p>Mr. P. Jagadeesh received the Adarsh Vidya Saraswathi Rashtriya Puraskar from Global Management Council, Ahmedabad, Dec. 2020.</p>
+                                                    <p>Mr. M. Suneel received the Best Paper Award at the International Conference on Sustainable Systems and Structures, MVGR College, Vizianagaram, Nov. 2019.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStudentAchievements" aria-expanded="true" aria-controls="collapseStudentAchievements">
+                                                Student Achievements
+                                            </button>
+                                            <div id="collapseStudentAchievements" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <p>The team Markenyandeya won Best Design Award with cash prize of Rs. 15000/- at AITAMs Go-Karting Championship, Aditya Institute of Technology & Management, Tekkali, Srikakulam, Feb 2024.</p>
+                                                    <p>Won First position with 10000 cash prize in International Project Expo Conducted by IEEE and Sasi Institute of Technology and Engineering, Tadepalligudem, Feb 2024.</p>
+                                                    <p>Two Ideas got selected for a financial grant of Rs. 20.15 Lakh under MSME Idea Hackathon 3.0 (Women) Scheme.</p>
+                                                    <p>SRKR Team received 3rd Prize at Yukti Innovation Challenge-2023 under SCRO Region by Ministry of Education’s Innovation Cell (MIC), KL University, Vijayawada, Jan 2024.</p>
+                                                    <p>Ms. Amudalapalli Jaya Sri of 4th Year CSE won First Place in Mastor Orator Championship, International Toastmasters in ISB Hyderabad, October 2023.</p>
+                                                    <p>Mr. KNS Pandu Ranga Rao of ECE received four Awards for Best Actor for Hero & Heroine, Best Cinematography, Best Crime Thriller Story Award for the Short Film Mahasu at National Level Short-Film Competitions, 2023.</p>
+                                                    <p>Mechanical students won the Runner-Up position at Formula Off Road Mini Baja India (FOMBI-23) organized at Bhopal, August 2023.</p>
+                                                    <p>Ms. N. Joshita of ECE won Runner-up position and a cash award of Rs. 30,000/- at National Level Engineering Equity Hackathon organized by Virtusa, April 2023.</p>
+                                                    <p>A team of CSG students Ch. Ravi Kumar, Ch. Anusha and P. Chaitanya Sryjana won at Start-Up Expo conducted by NIT-AP, February 2023.</p>
+                                                    <p>A team of ECE & EEE students won at Start-Up Expo conducted by NIT-AP, February 2023.</p>
+                                                    <p>At IBM Hack Challenge-2022, students won Jury Award and SRKR received the Top Contributing Institution Award.</p>
+                                                    <p>SRKR Team won in Smart India Hackathon (SIH)-2022 Grand Finale and received a cash award of Rs. 1 Lakh held at D.Y. Patil College of Engineering, Pune, 25-26 August 2022.</p>
+                                                    <p>SRKR Team secured Award of Appreciation in Smart India Hackathon (SIH)-2022 Grand Finale, held at Manipal University, Jaipur, 25-26 August 2022.</p>
+                                                    <p>Ms. P. Lakshmi Pranathi of CSE received financial grant of Rs. 15.0 lakhs for her idea of Innovation Smart Vision under MSME Innovation Scheme, July 2022.</p>
+                                                    <p>Mr. Bhamaidipati V N S S S R Maheedhar of ECE received financial grant of Rs. 8.0 lakhs for his idea of Innovation Drones In Disaster Management under MSME Innovation Scheme, July 2022.</p>
+                                                    <p>Mr. Vendra Sri Venkata Veeranna Neelesh of Mechanical Engineering received financial grant of Rs. 3.50 lakhs for his idea of Innovation Underwater Drone for Welding under MSME Innovation Scheme, July 2022.</p>
+                                                    <p>Mr. Geddam Kumar Babu & Mr. Panthagani Norise Swamy Kiran of Mechanical Engineering students are National Winners in the Category-II of AICTE FIT INDIA CHALLENGE-2021, June 2022.</p>
+                                                    <p>Four students S Vinaya Kumar, Y Sai Teja Sri, K Harsha, and Md Sabiha have been selected as University Innovation Fellows (UIF) and attended Stanford University Silicon Valley Meet Up held at Silicon Valley USA, March 2022.</p>
+                                                    <p>Mechanical Engineering Students won 3rd place at State Level Student Innovation Competition held at Adhikavi Nannaya University for the innovation Automated Hydraulic Wheel Chair, March 2022.</p>
+                                                    <p>SRKR Team Shramiks secured First Place at AICTE Chhatra Viswakarma Awards 2020.</p>
+                                                    <p>In AICTE Smart India Hackathon 2020, SRKR team got selected for first prize in Ministry of Textiles Problem statement and won one lakh rupees prize money.</p>
+                                                    <p>TEAM TESLA represented SRKR Engineering College at India's biggest Motor-sport event SAE INDIA e-BAJA 2020 and won 1st prize in the category of TECHNOLOGY INNOVATION.</p>
+                                                    <p>The Mechanical Engineering Project Jatayu guided by Dr. K. Sita Rama Raju received one lakh cash prize in Future Plus Competition conducted by Byrraju Foundation (State Level), Sept 2020.</p>
+                                                    <p>Achieved 3 awards: Droncharya Award for Best Faculty, 1st in CAE Endurance and Special Award for only Lady Driver in the Entire Event in the event Rally Car Design Challenge (RCDC) organized in Bikaner, Rajasthan, October 2019.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- program content end -->
+
+    <!-- footer -->
+   <footer class="footer v__1">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <div class="footer__widget--logo">
+                        <a href="/"><img src="assets/images/logo/logo__white.svg" alt="SRKR Logo"></a>
+                    </div>
+                    <p class="footer__widget--description">
+                        SRKR Engineering College, Bhimavaram – empowering rural talent with global exposure since 1980. Accredited, industry-aligned, and future-focused.
+                    </p>
+                    <div class="footer__widget--social">
+                        <ul class="social">
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Quick Links</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="procedure">Admissions</a></li>
+                            <li><a href="calender">Academics</a></li>
+                            <li><a href="college-profile">Campus Life</a></li>
+                            <li><a href="placements">Placements</a></li>
+                            <li><a href="research-advisory">Research</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Resources</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="messages">Faculty</a></li>
+                            <li><a href="fee">Tuition & Fees</a></li>
+                            <li><a href="rank">Scholarships</a></li>
+                            <li><a href="prominent-alumni">Alumni</a></li>
+                            <li><a href="procedure">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Apply Now</h6>
+                    <div class="footer__widget--button">
+                        <a href="admission.html" class="cta__button active">Start Your Application</a>
+                        <a href="scholarship.html" class="cta__button">Explore Scholarships</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- footer end -->
+
+    <!-- footer copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright__wrapper">
+                        <p>Copyright &copy; 2024 All Rights Reserved by <a href="https://srkrec.edu.in" target="_blank">SRKR Engineering College</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer copyright end -->
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '~/components/SrkrHeader.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    
+    <!-- header area end -->
+     <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcrumb-height-full breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Faculty</li>
+                        </ul>
+                        <h2 class="section-title">Message</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+
+    <!-- content -->
+    <div class="rts-faculty-details rts-section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="rts-section mb--60">
+                    <h3 class="rts-section-title">President's Message</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-8">
+                    <div class="faculty-image text-center">
+                        <img class="img-fluid mw-100 " src="assets/images/faculty/02.jpg" alt="faculty image">
+                        <div class="h5 mb-2 mt-5">S. Prasad Raju</div>
+                        <span>President</span>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+                        <p class="h6 mb-4">A Vision Rooted in Purpose</p>
+                        <p class="mb-5">SRKR Engineering College was founded by Sri Sagi Rama Krishnam Raju with the mission to empower society through holistic, multidisciplinary education. Guided by his vision, we continue to blend Humanities and STEM to create meaningful learning experiences.</p>
+                
+                        <p class="h6 mb-4">Progressing with Purpose</p>
+                        <p class="mb-5">From strong academic linkages to forward-thinking initiatives, SRKREC has emerged as a premier institution in India. We continually evolve to meet global challenges through innovation, excellence, and a dedicated academic ecosystem.</p>
+                
+                        <p class="h6 mb-4">Empowering Future Leaders</p>
+                        <p>Our students are nurtured to be responsible global citizens. With a focus on values, creativity, and character, SRKREC remains committed to shaping future-ready individuals who lead with integrity and purpose. 
+                        We take pride in fostering not only intellect but also empathy. Together, we build a future shaped by vision, courage, and care.</p>
+                    </div>
+                </div>
+                <div class="border-top my-60"></div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="faculty-image text-center">
+                        <img class="img-fluid mw-100 " src="assets/images/faculty/02.jpg" alt="faculty image">
+                        <div class="h5 mb-2 mt-5">Dr. M.Jagapathi Raju</div>
+                        <span>Director</span>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+                        <p class="h6 mb-4">A Launchpad for Lifelong Success</p>
+                        <p class="mb-5">SRKR Engineering College has been shaping bright futures for over four decades. Located in the culturally rich Godavari region, it offers 12 B.Tech. programs, strong placement records, and startup support to help students turn ambition into achievement.</p>
+                
+                        <p class="h6 mb-4">Driving Innovation with Purpose</p>
+                        <p class="mb-5">With 18 Centres of Excellence and global research ties, SRKR fosters innovation across STEM and humanities. Cutting-edge labs, EU-India projects, and a skilled faculty ensure students are equipped for real-world impact and lifelong learning.</p>
+                
+                        <p class="h6 mb-4">Nurturing Well-Rounded Individuals</p>
+                        <p>Beyond academics, SRKR encourages personal growth with top-tier sports, wellness, and activity spaces. A 24/7 learning culture helps students discover their strengths, cultivate discipline, and grow into capable, ethical professionals. 
+                        Here, your ambitions are matched with opportunity. The SRKR experience is one of transformation, inclusion, and limitless potential.</p>
+                    </div>
+                </div>
+                
+                <div class="border-top my-60"></div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="faculty-image text-center">
+                        <img class="img-fluid mw-100 " src="assets/images/faculty/02.jpg" alt="faculty image">
+                        <div class="h5 mb-2 mt-5">Prof. K V Murali Krishnam Raju</div>
+                        <span>Principal</span>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+                        <p class="h6 mb-4">A Warm Welcome to SRKR Engineering College
+                        </p>
+                        <p class="mb-5">It is with great pride and excitement that I welcome all to S R K R Engineering College. Our institution is known for academic strength, professional integrity, and a student-centric ethos that inspires success both in and out of the classroom.</p>
+    
+                        <p class="h6 mb-4">Honoring a Legacy, Inspiring the Future
+                        </p>
+                        <p class="mb-5">Founded in 1980, SRKREC has been a cornerstone of technical education in Andhra Pradesh. With committed faculty, a legacy of excellence, and an eye toward the future, we offer an environment where talent thrives and innovation blossoms.</p>
+    
+                        <p class="h6 mb-4">Empowering Through Diversity and Opportunity
+                        </p>
+                        <p>We believe in learning that empowers. By embracing diversity, promoting active participation, and supporting individual growth, we prepare our students not just for jobs, but for meaningful careers that make a difference in the world.</p>
+                    </div>
+                </div>
+                <div class="border-top my-60"></div>
+            </div>
+        </div>
+    </div>
+    
+
+
+   <!-- footer -->
+   <footer class="footer v__1">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <div class="footer__widget--logo">
+                        <a href="/"><img src="assets/images/logo/logo__white.svg" alt="SRKR Logo"></a>
+                    </div>
+                    <p class="footer__widget--description">
+                        SRKR Engineering College, Bhimavaram – empowering rural talent with global exposure since 1980. Accredited, industry-aligned, and future-focused.
+                    </p>
+                    <div class="footer__widget--social">
+                        <ul class="social">
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li class="social__link"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Quick Links</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="admission.html">Admissions</a></li>
+                            <li><a href="academic.html">Academics</a></li>
+                            <li><a href="campus-life.html">Campus Life</a></li>
+                            <li><a href="event.html">Events</a></li>
+                            <li><a href="reasearch.html">Research</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Resources</h6>
+                    <div class="footer__widget--menu">
+                        <ul>
+                            <li><a href="faculty.html">Faculty</a></li>
+                            <li><a href="tution-fee.html">Tuition & Fees</a></li>
+                            <li><a href="scholarship.html">Scholarships</a></li>
+                            <li><a href="alumni.html">Alumni</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6 class="footer__widget--title">Apply Now</h6>
+                    <div class="footer__widget--button">
+                        <a href="admission.html" class="cta__button active">Start Your Application</a>
+                        <a href="scholarship.html" class="cta__button">Explore Scholarships</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+    <!-- footer copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright__wrapper">
+                        <p>Copyright &copy; 2024 All Rights Reserved by <a href="https://srkrec.edu.in" target="_blank">SRKR Engineering College</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer copyright end -->
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+</html>
