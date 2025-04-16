@@ -6,6 +6,7 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import SrkrHeader from '~/components/SrkrHeader.astro';
+import SrkrFooter from '~/components/SrkrFooter.astro';
 ---
 
 <!doctype html>
@@ -176,81 +177,8 @@ import SrkrHeader from '~/components/SrkrHeader.astro';
     </div>
     
 <!-- footer -->
-<footer class="footer v__1">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="footer__widget">
-                    <div class="footer__widget--logo">
-                        <a href="/"><img src="assets/images/logo/logo__white.svg" alt="SRKR Logo"></a>
-                    </div>
-                    <p class="footer__widget--description">
-                        SRKR Engineering College, Bhimavaram – empowering rural talent with global exposure since 1980. Accredited, industry-aligned, and future-focused.
-                    </p>
-                    <div class="footer__widget--social">
-                        <ul class="social">
-                            <li class="social__link"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li class="social__link"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li class="social__link"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li class="social__link"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__widget">
-                    <h6 class="footer__widget--title">Quick Links</h6>
-                    <div class="footer__widget--menu">
-                        <ul>
-                            <li><a href="admission.html">Admissions</a></li>
-                            <li><a href="academic.html">Academics</a></li>
-                            <li><a href="campus-life.html">Campus Life</a></li>
-                            <li><a href="event.html">Events</a></li>
-                            <li><a href="reasearch.html">Research</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="footer__widget">
-                    <h6 class="footer__widget--title">Resources</h6>
-                    <div class="footer__widget--menu">
-                        <ul>
-                            <li><a href="faculty.html">Faculty</a></li>
-                            <li><a href="tution-fee.html">Tuition & Fees</a></li>
-                            <li><a href="scholarship.html">Scholarships</a></li>
-                            <li><a href="alumni.html">Alumni</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__widget">
-                    <h6 class="footer__widget--title">Apply Now</h6>
-                    <div class="footer__widget--button">
-                        <a href="admission.html" class="cta__button active">Start Your Application</a>
-                        <a href="scholarship.html" class="cta__button">Explore Scholarships</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- footer end -->
+<SrkrFooter/>
 
-    <!-- footer copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="copyright__wrapper">
-                        <p>Copyright &copy; 2024 All Rights Reserved by <a href="https://srkrec.edu.in" target="_blank">SRKR Engineering College</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- footer copyright end -->
 
     <!-- offcanvase menu -->
