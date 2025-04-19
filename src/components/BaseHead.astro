@@ -12,7 +12,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/assets/images/logo/logo__two.svg' } = Astro.props;
+const { title, description, image = 'html/assets/images/og-image.png' } = Astro.props;
 ---
 
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@ const { title, description, image = '/assets/images/logo/logo__two.svg' } = Astr
 <meta property="og:url" content="https://www.facebook.com/SRKRECOFFICIAL">
 <meta property="og:title" content="SRKR Engineering College | Premier Institute for Engineering and Innovation">
 <meta property="og:description" content="Explore SRKR's engineering programs, world-class infrastructure, and career-oriented learning environment. Join the leaders of tomorrow.">
-<meta property="og:image" content="/assets/images/og-image.png">
+<meta property="og:image" content={new URL(image, Astro.site)}>
 <meta property="og:site_name" content="SRKR Engineering College">
 <meta property="og:locale" content="en_IN">
 
