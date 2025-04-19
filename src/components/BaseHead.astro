@@ -17,8 +17,73 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SRKR</title>
+<title>SRKR Engineering College | Excellence in Engineering Education</title>
+<meta name="description" content="SRKR Engineering College is a premier institute offering top-notch engineering education, research opportunities, and vibrant campus life. Empower your future with us.">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://srkr-website.vercel.app/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://srkr-website.vercel.app/">
+<meta property="og:title" content="SRKR Engineering College | Premier Institute for Engineering and Innovation">
+<meta property="og:description" content="Explore SRKR's engineering programs, world-class infrastructure, and career-oriented learning environment. Join the leaders of tomorrow.">
+<meta property="og:image" content="https://www.srkrec.edu.in/assets/images/og-image.jpg">
+<meta property="og:site_name" content="SRKR Engineering College">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://srkr-website.vercel.app/">
+<meta name="twitter:title" content="SRKR Engineering College | Empowering Future Engineers">
+<meta name="twitter:description" content="SRKR Engineering College nurtures talent with cutting-edge facilities, experienced faculty, and a strong placement record. Start your journey with us.">
+<meta name="twitter:image" content={new URL(image, Astro.site)}>
+
+<!-- Additional SEO Tags -->
+<meta name="keywords" content="SRKR, engineering college, B.Tech, M.Tech, Andhra Pradesh, best engineering college, NAAC A++, admissions, placements">
+<meta name="author" content="SRKR Engineering College">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.svg">
+
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "SRKR Engineering College",
+  "alternateName": "SRKR",
+  "url": "https://srkr-website.vercel.app/",
+  "logo": "https://www.srkrec.edu.in/assets/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/srkr.engg.college",
+    "https://twitter.com/SRKR_College",
+    "https://www.instagram.com/srkrec/",
+    "https://www.linkedin.com/school/srkrec"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Chinna-Amiram, Bhimavaram",
+    "addressLocality": "Bhimavaram",
+    "addressRegion": "Andhra Pradesh",
+    "postalCode": "534204",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-8816-223332",
+  "email": "info@srkrec.edu.in"
+}
+</script>
+
 <!-- animate css -->
 <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
 <!-- fontawesome 6.4.2 -->
