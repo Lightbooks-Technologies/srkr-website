@@ -50,29 +50,24 @@ import SrkrFooter from '~/components/SrkrFooter.astro';
             <!-- academic top -->
             <div class="search-filter mb--40">
                 <div class="row g-5">
-                    <div class="col-lg-7 col-md-6">
-                        <div class="category-search">
-                            <h6>Areas of Study:</h6>
-                            <form action="#" class="cat-search-form">
-                                <input type="text" placeholder="What interests you?" name="s" id="cat">
-                                <button type="submit" class="cat-search"><i class="fa-light fa-magnifying-glass"></i></button>
-                            </form>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-5 col-md-6">
                         <div class="category-filter">
                             <h6>Program Type:</h6>
-                            <select name="cat-search" id="cat-filter">
-                                <option value="*">Undergraduate Programs</option>
-                                <option value="*">Post Graduate Programmes</option>
-                                <option value="*">PhD Programmes</option>
-                            </select>
+                            <select onchange="location.href = this.value" name="cat-search" id="cat-filter">
+                                <option value="#all">All Programs</option>
+                                <option value="#undergraduate">Undergraduate Programs</option>
+                                <option value="#postgraduate">Post Graduate Programmes</option>
+                                <option value="#phd">PhD Programmes</option>
+                              </select>                              
                         </div>
                     </div>
                 </div>
             </div>
             <div class="all-program-category">
-                <div class="row g-5">
+                    <div id="undergraduate">
+                <div class="row g-5 mb--50" >
+
                     <!-- single item -->
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="single-cat-item">
@@ -295,7 +290,11 @@ import SrkrFooter from '~/components/SrkrFooter.astro';
                             </div>
                         </div>
                     </div>
-                    <!-- single item -->
+                </div>
+                <div id="postgraduate">
+                <div class="row g-5">
+
+                    <!-- Graduate single item -->
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="single-cat-item">
                             <div class="cat-thumb">
@@ -397,7 +396,13 @@ import SrkrFooter from '~/components/SrkrFooter.astro';
                             </div>
                         </div>
                     </div>
-                    <!-- single item -->
+                </div>
+
+                </div>
+                <div id="phd" class="mt--50 mb--50">
+                <div class="row g-5">
+
+                    <!--PhD single item -->
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="single-cat-item">
                             <div class="cat-thumb">
@@ -585,8 +590,6 @@ import SrkrFooter from '~/components/SrkrFooter.astro';
                         </div>
                     </div>
                 </div>
-                <div class="rts-load-more-btn ">
-                    <a href="#" class="rts-theme-btn primary lh-100">Load More</a>
                 </div>
             </div>
         </div>
