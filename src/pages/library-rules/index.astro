@@ -1,0 +1,320 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+     
+
+    <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Rules</li>
+                        </ul>
+                        <h2 class="section-title">Library Rules</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+
+    <!-- Scholarship content -->
+    <div class="rts-scholarship pt--20">
+        <div class="container">
+            <div class="rts-scholarship-description">
+                <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+                    <div class="col-lg-10 col-md-11">
+                        <div class="program-description-area">
+                            <!-- scholarship requirement -->
+                            <!-- si = scholarship-information -->
+                            <div class="si">
+                                <h4 class="title">Book Lending Facility
+                                </h4>
+                                <p>
+                                    The details of borrower categories and their entitlements.
+                                </p>
+                                <div class="si__list">
+                                    <ul class="list-unstyled">
+                                        <li class="si__list--single">
+                                            Faculty Members can borrow 12 books for a period of one semester.
+                                        </li>
+                                        <li class="si__list--single">
+                                            Non-Teaching Staff can borrow 5 books for one semester.
+                                        </li>
+                                        <li class="si__list--single">
+                                            Research Scholars can borrow 8 books for 90 days.
+                                        </li>
+                                        <li class="si__list--single">
+                                            PG Students can borrow 5 books for 15 days.
+                                        </li>
+                                        <li class="si__list--single">
+                                            UG Students can borrow 5 books for 15 days.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- faq -->
+                            <div class="program-credit-area faq mt--50">
+                                <div class="program-accordion">
+                                    <div class="accordion" id="rts-accordion">
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                General Rules
+                                            </button>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li><p>Faculty Members, Non-Teaching staff and Student members of SRKR are allowed to use the Central Library. Members should always carry their ID cards while using the Central Library.</p></li>
+                                                    
+                                                        <li><p>Readers should observe strict silence inside the Central Library.</p></li>
+                                                    
+                                                        <li><p>Mobile phones are to be switched off or to be kept on silent mode in the Central Library reading halls; their use in Central Library is strictly prohibited. Online Chatting is not allowed.</p></li>
+                                                    
+                                                        <li><p>Members are responsible for books issued against their membership. If the issued document is found mutilated or seriously damaged on return, the users will be held responsible for the damage and will have to replace the same or pay triple times the present cost of the mutilated book.</p></li>
+                                                    
+                                                        <li><p>Readers are not allowed to bring their personal books or any printed material inside the Central Library.</p></li>
+                                                    
+                                                        <li><p>Personal belongings like bags, umbrellas, etc. are to be kept at the Property Counter. Readers are advised not to leave their precious and valuable items like money, passport, credit card etc. at the Property Counter.</p></li>
+                                                    
+                                                        <li><p>Readers should not carry books from one floor to another and should leave the books on the reading table after use. Users should not rest or keep their feet on tables, chairs, shelves, etc.</p></li>
+                                                    
+                                                        <li><p>Readers should not write in, mark, scratches, and disfigure damage books or furniture of the Central Library.</p></li>
+                                                    
+                                                        <li><p>Chairs and tables and other Central Library equipment, fittings and furniture should not be marked, defaced, or disarranged.</p></li>
+                                                    
+                                                        <li><p>Users are not allowed to bring personal belongings like bags, briefcases, handbags, umbrellas, aprons, personal books, or other receptacles inside the Central Library. They are to be kept at the Property Counter only.</p></li>
+                                                    
+                                                        <li><p>Users are not allowed to carry eatables and drinks inside the Central Library.</p></li>
+                                                    
+                                                        <li><p>Readers are not to share their net access ID and Password with other students.</p></li>
+                                                    
+                                                        <li><p>Changing the settings and display of the computers kept in the Central Library are not allowed.</p></li>
+                                                    
+                                                        <li><p>Playing games on computers is strictly prohibited in the entire Central Library premises.</p></li>
+                                                    
+                                                        <li><p>Students should take care of their Pen drives, Cell Phones, and Wallets etc.</p></li>
+                                                    
+                                                        <li><p>Browsing other than academic materials is strictly prohibited. Strict disciplinary action will be taken against the defaulters.</p></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Circulation Rules
+                                            </button>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li><p>Borrowers must satisfy themselves with the physical condition of the book before borrowing.</p></li>
+                                                    
+                                                        <li><p>Books are normally issued for a month except reference books which are issued to faculty for overnight only.</p></li>
+                                                    
+                                                        <li><p>Those textbooks which have single copies shall not be issued.</p></li>
+                                                    
+                                                        <li><p>Students can reserve the books at the circulation counter in case these are already issued.</p></li>
+                                                    
+                                                        <li><p>Reference books, theses, project reports and periodicals/bound journals are not issued at all.</p></li>
+                                                    
+                                                        <li><p>Project Reports/Theses are to be consulted within the Central Library premises only.</p></li>
+                                                    
+                                                        <li><p>Dissertations/Theses cannot be photocopied.</p></li>
+                                                    
+                                                        <li><p>Central Library can recall any issued book even before the due date.</p></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- program content end -->
+<!-- footer -->
+<SrkrFooter/>
+
+    <!-- footer copyright end -->
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+
+</html>
