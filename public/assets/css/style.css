@@ -15651,6 +15651,10 @@ xclip
   transition: var(--transition);
   width: 100%;
 }
+.rts__research--single--thumb img {
+  width: 410px;
+  height: 340px;
+}
 .rts__research--single--meta--title {
   font-size: 26px;
   font-family: var(--font-secondary);
@@ -15755,6 +15759,10 @@ xclip
   transition: var(--transition);
   width: 100%;
   object-fit: cover;
+}
+.rts__single--event--thumb img {
+  width: 410px;
+  height: 300px;
 }
 .rts__single--event--meta--dl {
   display: flex;
@@ -15925,7 +15933,8 @@ xclip
 
 .about__image img {
   border-radius: 10px;
-  min-height: 350px;
+  height: 500px;
+  width: 1290px;
   object-fit: cover;
 }
 
@@ -15935,7 +15944,10 @@ xclip
   color: var(--rt-heading);
   text-align: center;
 }
-
+.alumni__banner__image img{
+  width: 1290px;
+  height: 1000px;
+}
 .left__side .rts__section--wrapper.v__7 {
   margin-bottom: 0;
 }
@@ -17300,6 +17312,10 @@ xclip
   margin-top: -65px;
   margin-left: -40px;
 }
+.banner__wrapper--left img{
+  width: 367px;
+  height: 460px;
+}
 @media screen and (max-width: 992px) {
   .banner__wrapper--left {
     margin-top: 0;
@@ -17312,6 +17328,10 @@ xclip
   display: inline-block;
   top: -130px;
   right: 110px;
+}
+.banner__wrapper--right img{
+  width: 229px;
+  height: 288px;
 }
 @media screen and (max-width: 992px) {
   .banner__wrapper--right {
@@ -18338,6 +18358,11 @@ xclip
   position: relative;
   text-align: right;
 }
+.rts-mission .rts-timeline-section .rts-timeline-content .left-side .single-timeline-item img{
+  width: 520px;
+  height: 322px;
+  object-fit: cover;
+}
 @media screen and (max-width: 576px) {
   .rts-mission .rts-timeline-section .rts-timeline-content .left-side .single-timeline-item {
     text-align: center;
@@ -18418,6 +18443,11 @@ xclip
 .rts-mission .rts-timeline-section .rts-timeline-content .right-side .single-timeline-item {
   position: relative;
   text-align: left;
+}
+.rts-mission .rts-timeline-section .rts-timeline-content .right-side .single-timeline-item img{
+  width: 520px;
+  height: 322px;
+  object-fit: cover;
 }
 @media screen and (max-width: 576px) {
   .rts-mission .rts-timeline-section .rts-timeline-content .right-side .single-timeline-item {
@@ -18500,6 +18530,10 @@ xclip
 .about__images--wrapper--left {
   width: 100%;
 }
+.about__images--wrapper--left img{
+  width: 520px;
+  height: 547px;
+}
 @media screen and (max-width: 992px) {
   .about__images--wrapper--left img {
     width: 100%;
@@ -18525,6 +18559,10 @@ xclip
   border-left: 20px solid var(--rt-white);
   border-top: 20px solid var(--rt-white);
   right: 45px;
+}
+.about__images--wrapper--right img{
+  width: 271px;
+  height: 342px;
 }
 @media screen and (max-width: 1200px) {
   .about__images--wrapper--right {
@@ -19521,7 +19559,9 @@ xclip
   margin-bottom: 100px;
 }
 .rts-multi-row-section .rts-multi-row-image img {
-  width: 100%;
+  width: 1290px;
+  height: 600px;
+  object-fit: fill;
 }
 .rts-multi-row-section .rts-multi-row-content {
   padding-left: 45px;
@@ -19760,6 +19800,10 @@ xclip
   position: relative;
   margin-top: 50px;
 }
+.campus-life__content .campus-video img{
+  width: 1290px;
+  height: 700px;
+}
 .campus-life__content .campus-video span {
   display: none;
 }
@@ -19847,6 +19891,11 @@ xclip
 .single-item__content .single-item__image img {
   transform: scale(1);
   transition: var(--transition);
+}
+.single-item__content .single-item__image img {
+  width: 410px;
+  height: 305px;
+  object-fit: fill;
 }
 .single-item__content .single-item__image:hover img {
   transform: scale(1.1);
@@ -20931,6 +20980,11 @@ xclip
 .all-program-category .single-cat-item .cat-thumb {
   position: relative;
   overflow: hidden;
+}
+.all-program-category .single-cat-item .cat-thumb img{
+  width: 300px;
+  height: 260px;
+  object-fit: cover;
 }
 .all-program-category .single-cat-item .cat-thumb img {
   transform: scale(1);
@@ -22495,6 +22549,11 @@ xclip
 .rts-testimonial.v_2 .rts-testimonial-box .testimonial-item-image > img {
   min-width: 460px;
   height: 560px;
+}
+.rts-testimonial.v_2 .rts-testimonial-box .testimonial-item-image img {
+  width: 460px;
+  height: 460px;
+  object-fit: fill;
 }
 @media screen and (max-width: 1200px) {
   .rts-testimonial.v_2 .rts-testimonial-box .testimonial-item-image > img {
