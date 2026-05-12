@@ -1,0 +1,48 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+const pageTitle = "Institute Development Plan";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
+              </ul>
+              <h2 class="section-title">{pageTitle}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt--60 pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>{pageTitle}</h3>
+            <p>Content coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
