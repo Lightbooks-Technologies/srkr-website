@@ -1,0 +1,134 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
+
+const labs = [
+  { name: 'Structural Analysis Lab',                      img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop' },
+  { name: 'Concrete & Highway Materials Lab',              img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop' },
+  { name: 'Geotechnical Engineering Lab',                  img: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop' },
+  { name: 'Environmental Engineering Lab',                 img: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop' },
+  { name: 'Fluid Mechanics & Hydraulics Machinery Lab',    img: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&h=600&fit=crop' },
+  { name: 'Transportation Engineering Lab',                img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop' },
+  { name: 'CAD Lab (STAAD.Pro, REVIT, AutoCAD)',           img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop' },
+  { name: 'Surveying Lab',                                 img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop' },
+  { name: 'Engineering Geology Lab',                       img: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=600&fit=crop' },
+  { name: 'Mechanics of Solids Lab',                       img: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=600&fit=crop' },
+  { name: 'Construction Technology Lab',                   img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop' },
+  { name: 'Water Treatment & Water Quality Lab',           img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop' },
+];
+---
+
+<style>
+  .single-cat-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cat-thumb {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .cat-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .cat-meta {
+    padding: 1.5rem 1rem;
+  }
+
+  .cat-title a {
+    font-size: 1.5rem;;
+  }
+  
+  .cat-link {
+    display: none;
+  }
+
+  .cat-title {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Facilities | Civil Engineering | SRKR" description="Laboratories and research facilities of the Civil Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/civil/">Civil Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Facilities</li>
+              </ul>
+              <h2 class="section-title">Facilities</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <CivilDeptNav current="Facilities" />
+        <div class="row">
+          <div class="col-12">
+
+            <div class="program-about">
+              <h4 class="title">Our Laboratories</h4>
+              <p>The department is equipped with twelve well-maintained laboratories featuring the latest instruments and software to support B.Tech and M.Tech courses. These facilities also provide consultancy services to industries and government agencies. A dedicated CAD lab with STAAD.Pro, REVIT, and AutoCAD supports software-based design and analysis training.</p>
+            </div>
+
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Laboratory Infrastructure</h3>
+            </div>
+
+            <div class="row g-5">
+              {labs.map(lab => (
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img src={lab.img} alt={lab.name} />
+                      <a href="#" class="cat-link-btn">Laboratory</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="#">{lab.name}</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

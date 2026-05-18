@@ -4,12 +4,13 @@ import FooterScripts from '../../../components/FooterScripts.astro';
 import SrkrHeader from '../../../components/SrkrHeader.astro';
 import SrkrFooter from '../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../components/OffCanvas.astro';
+import CivilDeptNav from '../../../components/CivilDeptNav.astro';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Department of Civil Engineering | SRKR Engineering College" description="Department of Civil Engineering at SRKR Engineering College, Bhimavaram - established 1980." />
+    <BaseHead title="Department of Civil Engineering | SRKR Engineering College" description="Department of Civil Engineering at SRKR Engineering College, Bhimavaram — established 1980, NBA accredited." />
   </head>
   <body>
     <SrkrHeader />
@@ -32,327 +33,241 @@ import OffCanvas from '../../../components/OffCanvas.astro';
       </div>
     </section>
 
-    <!-- DEPT NAV TABS -->
-    <section class="pt--40 pb--10 bg--white">
+    <!-- STATS (full width, outside sidebar layout) -->
+    <div class="rts-funfact rts-section-padding">
       <div class="container">
-        <ul class="nav nav-tabs dept-tabs" id="civilTabs" role="tablist">
-          <li class="nav-item"><a class="nav-link active" href="#home" data-bs-toggle="tab">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#academics" data-bs-toggle="tab">Academic Programs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faculty" data-bs-toggle="tab">Faculty</a></li>
-          <li class="nav-item"><a class="nav-link" href="#committees" data-bs-toggle="tab">Committees</a></li>
-          <li class="nav-item"><a class="nav-link" href="#facilities" data-bs-toggle="tab">Facilities</a></li>
-          <li class="nav-item"><a class="nav-link" href="#research" data-bs-toggle="tab">Research & Consultancy</a></li>
-          <li class="nav-item"><a class="nav-link" href="#placements" data-bs-toggle="tab">Placements</a></li>
-          <li class="nav-item"><a class="nav-link" href="#newsletter" data-bs-toggle="tab">Newsletter</a></li>
-        </ul>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">29</h2>
+                <p>Faculty Members</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4x</h2>
+                <p>NBA Accredited</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">80%+</h2>
+                <p>Consultancy Share</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">6</h2>
+                <p>Centres of Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="pt--40 pb--60">
+    <!-- CONTENT -->
+    <div class="rts-faculty-details rts-section-padding">
       <div class="container">
-        <div class="tab-content" id="civilTabsContent">
+        <CivilDeptNav current="Home" />
 
-          <!-- HOME TAB -->
-          <div class="tab-pane fade show active" id="home" role="tabpanel">
-            <div class="row mb--40">
-              <div class="col-12">
-                <div class="p-4 rounded" style="background:#1a3c6b;color:#fff;">
-                  <h4 style="color:#f5c518;">Vision</h4>
-                  <p class="mb-0">To Lead Academics and Research in Civil Engineering Globally.</p>
+        <!-- Message from HoD -->
+        <div class="row mt--60">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              <img class="img-fluid mw-100" src="/assets/images/faculty/hod-civil.jpg" alt="Dr. P. Poluraju">
+              <div class="h5 mb-2 mt-5">Dr. P. Poluraju</div>
+              <span>Professor & Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to Civil Engineering</p>
+              <p class="mb-5">The Department of Civil Engineering at SRKR Engineering College stands as a beacon of excellence in engineering education and research since 1980. Our commitment to producing skilled professionals who can address contemporary infrastructure challenges remains unwavering.</p>
+              
+              <p class="h6 mb-4">Building Tomorrow's Infrastructure Leaders</p>
+              <p class="mb-5">We take pride in our NBA-accredited program that combines rigorous academics with hands-on learning through our state-of-the-art laboratories and research centres. Our faculty members bring decades of experience from both academia and industry, ensuring students receive education that's both theoretically sound and practically relevant.</p>
+              
+              <p class="h6 mb-4">Research That Makes a Difference</p>
+              <p>Our six Centres of Excellence focus on critical areas including sustainable construction, water quality management, and advanced structural systems. Through consultancy projects worth crores, we contribute directly to regional infrastructure development while providing students invaluable real-world exposure.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision with Image -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11">
+              <div class="faculty-content-text me-5">
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled">
+                  <li class="mb-3"><i class="fa-regular fa-circle-check text-primary me-2"></i> To provide high quality education and make the students ethical, world-class professionals.</li>
+                  <li class="mb-3"><i class="fa-regular fa-circle-check text-primary me-2"></i> To improve the skills of both staff and students through research projects and consultancy.</li>
+                  <li class="mb-3"><i class="fa-regular fa-circle-check text-primary me-2"></i> To inculcate a sense of societal responsibility and evoke commitment to serve communities better.</li>
+                </ul>
+                
+                <h4 class="font-32 mb-4 mt-5">Vision</h4>
+                <p><strong>To Lead Academics and Research in Civil Engineering Globally.</strong></p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                <img class="mw-100" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop" alt="Infrastructure" style="border-radius: 10px;">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialization Areas -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item">
+              <div class="cat-thumb">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop" alt="Structural Engineering">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/civil/research-consultancy/">Structural Engineering</a>
                 </div>
-                <div class="p-4 rounded mt-3" style="background:#f8f9fa;border-left:4px solid #1a3c6b;">
-                  <h4 style="color:#1a3c6b;">Mission</h4>
-                  <ul class="mb-0">
-                    <li>To provide high quality education and make the students as ethical, world class professionals.</li>
-                    <li>To improve the skills of both staff and students with opportunities to innovate and explore knowledge through research projects and consultancy.</li>
-                    <li>To inculcate the feeling of present needs in students and evoke in them a responsibility to serve the society better.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-8">
-                <h3>About the Department</h3>
-                <p>The Department of Civil Engineering at SRKR Engineering College was established in 1980 and has grown into one of the leading centres for civil engineering education and applied research in Andhra Pradesh, especially in the coastal region. The department offers both B.Tech. in Civil Engineering and M.Tech. in Structural Engineering programs. Its undergraduate program has been accredited four times by the National Board of Accreditation for the periods 2002–2007, 2007–2012, 2020–2023, and 2023–2026, reflecting its sustained commitment to quality technical education. The department has consistently produced graduates with strong technical expertise, communication abilities, and professional values.</p>
-                <p>The department adopts innovative teaching practices to enhance student learning. These include classroom teaching, seminars, presentations, video lectures, MOOC platforms, honours/minor programs, experiential learning, and online sessions by internal and external experts. Students are trained in modern industry-relevant software such as STAAD.Pro/REVIT and other structural design tools through specialized workshops. Full-semester internships at reputed organizations across India further help students gain practical exposure and strengthen employability.</p>
-                <p>The department is also a major contributor to consultancy services in Structural, Geotechnical, Transportation, and Environmental Engineering, generating over 80% of the institution's consultancy revenue. It actively promotes research through six Centres of Excellence focused on water quality, advanced materials, and environmental sustainability. Recognized as a research centre by Andhra University and Jawaharlal Nehru Technological University Kakinada, the department continues to nurture innovation, publications, and socially responsible future engineers.</p>
-              </div>
-              <div class="col-lg-4">
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color:#1a3c6b;">Quick Facts</h5>
-                    <ul class="list-unstyled">
-                      <li><strong>Established:</strong> 1980</li>
-                      <li><strong>Programs:</strong> B.Tech (Civil), M.Tech (Structural Engg.)</li>
-                      <li><strong>NBA Accreditations:</strong> 4 times</li>
-                      <li><strong>Research Centres:</strong> 6 Centres of Excellence</li>
-                      <li><strong>Consultancy Share:</strong> &gt;80% of institute revenue</li>
-                      <li><strong>Recognized by:</strong> Andhra University &amp; JNTUK</li>
-                    </ul>
-                  </div>
+                <div class="cat-link">
+                  <a href="/departments/civil/research-consultancy/">Learn More <i class="fa-light fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- ACADEMICS TAB -->
-          <div class="tab-pane fade" id="academics" role="tabpanel">
-            <h3>Academic Programs</h3>
-
-            <!-- B.Tech -->
-            <div class="card mb-4 shadow-sm">
-              <div class="card-header" style="background:#1a3c6b;color:#fff;">
-                <h5 class="mb-0">B.Tech – Civil Engineering</h5>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item">
+              <div class="cat-thumb">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="Geotechnical Engineering">
               </div>
-              <div class="card-body">
-                <h6>Program Educational Objectives (PEOs)</h6>
-                <ol>
-                  <li>Graduate will succeed in diversified fields of industry/higher studies by acquiring technical knowledge and contribute to the sustainable development of infrastructure.</li>
-                  <li>Graduate will exhibit professionalism and ethics and show ability to accept modern trends by engaging in lifelong learning.</li>
-                  <li>Graduate will apply innovative ideas and succeed as a researcher/entrepreneur to serve societal needs.</li>
-                </ol>
-
-                <h6 class="mt-4">Program Outcomes (POs)</h6>
-                <ol>
-                  <li><strong>Engineering Knowledge:</strong> The student is capable of applying the principles of basic sciences and mathematics in learning the Civil Engineering subjects. Graduates will be proficient in the core principles of Civil Engineering as they pertain to Environmental, Geo-Technical, Structural, Transportation, and Water Resources Engineering.</li>
-                  <li><strong>Problem Analysis:</strong> The Graduates will possess critical thinking skills, problem solving abilities and familiarity with the computational procedures essential to the field.</li>
-                  <li><strong>Design &amp; Development of Solutions:</strong> The student is able to plan, analyze, design and look after the construction of various types of Civil Engineering structures with appropriate consideration for public health and safety, cultural, societal and environmental considerations.</li>
-                  <li><strong>Conduct Investigations of Complex Problems:</strong> The student will use research-based methods to design, conduct experiments, to analyze and interpret experimental data.</li>
-                  <li><strong>Modern Tool Usage:</strong> The student will get hands on training in the various modern Civil Engineering software and modern equipment.</li>
-                  <li><strong>The Engineer and Society:</strong> The students will apply reasoning and appropriate knowledge to assess societal, health, safety, legal and cultural issues.</li>
-                  <li><strong>Environment and Sustainability:</strong> Students will be able to plan various projects keeping in view of their environmental effects on other related fields.</li>
-                  <li><strong>Ethics:</strong> The student will apply ethical principles and commitment to professional responsibilities.</li>
-                  <li><strong>Individual and Team Work:</strong> The graduate is capable of working productively as an individual, as a member or a leader in diverse teams.</li>
-                  <li><strong>Communication:</strong> The student will possess mastery in good communication skills, expressing ideas, writing technical reports and effective managerial skills.</li>
-                  <li><strong>Project Management and Finance:</strong> The graduates will acquire knowledge of critical issues for professional practices such as procurement of works, interaction with contractors, and financial and managerial capabilities.</li>
-                  <li><strong>Life-Long Learning:</strong> The student will have an awareness of contemporary issues and will contribute to the wellbeing of the community with life-long learning in the broadest context of ever-growing technology.</li>
-                </ol>
-
-                <h6 class="mt-4">Program Specific Outcomes (PSOs)</h6>
-                <ol>
-                  <li>Develop critical aptitude skills and become professional to address any problem of the society.</li>
-                  <li>Acquire practical knowledge by field visits and function effectively with the training of software by means of curriculum.</li>
-                  <li>Effectively communicate with the stakeholders and execute engineering projects with high proficiency.</li>
-                </ol>
-              </div>
-            </div>
-
-            <!-- M.Tech -->
-            <div class="card mb-4 shadow-sm">
-              <div class="card-header" style="background:#1a3c6b;color:#fff;">
-                <h5 class="mb-0">M.Tech – Structural Engineering</h5>
-              </div>
-              <div class="card-body">
-                <h6>Program Educational Objectives (PEOs)</h6>
-                <ol>
-                  <li>To provide students with strong foundations in basic principles and advanced concepts of Structural Engineering, enabling them to formulate, analyse, and solve societal problems related to sustainable development.</li>
-                  <li>To expose students to the latest innovations, technologies, and emerging trends, thereby fostering research orientation in Structural Engineering and multidisciplinary domains.</li>
-                  <li>To develop competent Structural Engineers who can apply core curricular knowledge for professional leadership, effective teamwork, lifelong learning, and successful career growth.</li>
-                </ol>
-
-                <h6 class="mt-4">Program Outcomes (POs)</h6>
-                <ol>
-                  <li>An ability to independently carry out research/investigation and development work to solve practical problems.</li>
-                  <li>An ability to write and present a substantial technical report/document.</li>
-                  <li>Students should be able to demonstrate a degree of mastery over the area as per the specialization of the program, at a level higher than the requirements in the appropriate bachelor program.</li>
-                  <li>To motivate the graduate students to address the societal needs by interdisciplinary approach through advanced courses.</li>
-                  <li>To enrich the graduate students to get hands on training on latest equipment/software to be industry ready/pursue advanced research.</li>
-                  <li>To inculcate ethical practices and to establish understanding of professionalism, safety, sustainability, their duties, and contribution to the society.</li>
-                </ol>
-
-                <h6 class="mt-4">Program Specific Outcomes (PSOs)</h6>
-                <ol>
-                  <li>To expose graduate students to advanced courses in analysis and design of RC, PSC, and steel structures as per the latest design codes, with emphasis on sustainable practices and current national and international developments in Structural Engineering.</li>
-                  <li>To motivate graduate students to address societal and sustainability challenges through an interdisciplinary approach using advanced courses such as Finite Element Analysis, Plates &amp; Shell Structures, Structural Dynamics, Soil Dynamics, and allied subjects.</li>
-                  <li>To equip graduate students with hands-on training in the latest equipment and software tools, enabling them to become industry-ready professionals and pursue advanced research for sustainable infrastructure development.</li>
-                </ol>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/civil/research-consultancy/">Geotechnical Engineering</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/civil/research-consultancy/">Learn More <i class="fa-light fa-arrow-right"></i></a>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- FACULTY TAB -->
-          <div class="tab-pane fade" id="faculty" role="tabpanel">
-            <h3>Faculty</h3>
-            <p class="text-muted">Faculty profiles are linked to the IRINS portal. Photos are managed separately by CITI.</p>
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                <thead style="background:#1a3c6b;color:#fff;">
-                  <tr>
-                    <th>#</th>
-                    <th>Faculty Name</th>
-                    <th>Designation</th>
-                    <th>Profile</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Dr. T Vamsi Nagaraju</td>
-                    <td>Associate Professor and Dean R&amp;D</td>
-                    <td><a href="https://srkrec.irins.org/profile/178533" target="_blank">View Profile</a></td>
-                  </tr>
-                  <!-- Additional faculty rows to be added -->
-                </tbody>
-              </table>
-            </div>
-            <p class="text-muted mt-2"><em>Complete faculty list will be updated shortly.</em></p>
-          </div>
-
-          <!-- COMMITTEES TAB -->
-          <div class="tab-pane fade" id="committees" role="tabpanel">
-            <h3>Committees</h3>
-
-            <!-- DAC -->
-            <h5 class="mt-4" style="color:#1a3c6b;">Department Advisory Committee (DAC)</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead style="background:#1a3c6b;color:#fff;">
-                  <tr><th>S.No.</th><th>Name</th><th>Designation</th><th>Position</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>Dr. G Sri Bala</td><td>Assistant Professor and Head</td><td>Chairman</td></tr>
-                  <tr><td>2</td><td>Dr. ACSV Prasad</td><td>Professor</td><td>Coordinator</td></tr>
-                  <tr><td>3</td><td>Dr. T Vamsi Nagaraju</td><td>Dean, R&amp;D</td><td>Member</td></tr>
-                  <tr><td>4</td><td>Dr. A Subhramanyam Raju</td><td>Professor</td><td>Member</td></tr>
-                  <tr><td>5</td><td>Dr. SKVST Lavakumar</td><td>Associate Professor</td><td>Member</td></tr>
-                  <tr><td>6</td><td>Dr. P V Rambabu</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>7</td><td>Dr. G Sasikala</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>8</td><td>Dr. E Ramanjaneya Raju</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>9</td><td>Dr. M Venkata Rao</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>10</td><td>Dr. S Srikanth Reddy</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>11</td><td>Mr. M S K Chaitanya</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>12</td><td>Mr. N Siva Kishan</td><td>Assistant Professor</td><td>Member</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- BoS -->
-            <h5 class="mt-4" style="color:#1a3c6b;">Board of Studies (BoS)</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead style="background:#1a3c6b;color:#fff;">
-                  <tr><th>S.No.</th><th>Name</th><th>Designation</th><th>Position</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>Dr. G Sri Bala</td><td>Assistant Professor and Head</td><td>Chairman</td></tr>
-                  <tr><td>2</td><td>Dr. P. Subba Rao (JNTUK Nominee)</td><td>Professor, Dept. of Civil Engineering, JNTUK</td><td>Member</td></tr>
-                  <tr><td>3</td><td>Dr. J.S. Kalyana Rama (Expert from Other University)</td><td>Associate Professor, Mahindra University</td><td>Member</td></tr>
-                  <tr><td>4</td><td>Dr. G Bharat (Expert from Research Organization)</td><td>Principal Scientist, CSIR-CRRI</td><td>Member</td></tr>
-                  <tr><td>5</td><td>Sri P. Sri Pavan Krupa Kumar (Expert from Industry)</td><td>CEO, PossiBuild Building Technologies, Hyderabad</td><td>Member</td></tr>
-                  <tr><td>6</td><td>Dr. A. Uma Maheswar Arepalli</td><td>Assistant Professor, SRM-AP, Guntur</td><td>Member</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- PAQIC -->
-            <h5 class="mt-4" style="color:#1a3c6b;">Program Assessment and Quality Improvement Committee (PAQIC)</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead style="background:#1a3c6b;color:#fff;">
-                  <tr><th>S.No.</th><th>Name</th><th>Designation</th><th>Position</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>Dr. G Sri Bala</td><td>Assistant Professor and Head</td><td>Chairman</td></tr>
-                  <tr><td>2</td><td>Dr. ACSV Prasad</td><td>Professor</td><td>Coordinator</td></tr>
-                  <tr><td>3</td><td>Dr. T Vamsi Nagaraju</td><td>Dean, R&amp;D</td><td>Member</td></tr>
-                  <tr><td>4</td><td>Dr. SKVST Lavakumar</td><td>Associate Professor</td><td>Member</td></tr>
-                  <tr><td>5</td><td>Dr. E Ramanjaneya Raju</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>6</td><td>Dr. M Venkata Rao</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>7</td><td>Dr. S Srikanth Reddy</td><td>Assistant Professor</td><td>Member</td></tr>
-                  <tr><td>8</td><td>Mr. M S K Chaitanya</td><td>Assistant Professor</td><td>Member</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- FACILITIES TAB -->
-          <div class="tab-pane fade" id="facilities" role="tabpanel">
-            <h3>Facilities</h3>
-            <p>The Civil Engineering Department at SRKR Engineering College is equipped with eleven well-maintained laboratories featuring the latest machines, instruments, and software to support both B.Tech and M.Tech courses in Civil Engineering. These facilities also provide consultancy services to various industries and government agencies. Students are provided extensive training to use these resources effectively, ensuring they gain hands-on experience with cutting-edge technology.</p>
-            <p>The department also houses a digital learning center equipped with i3/i5 computers, connected over a campus-wide LAN with high-speed internet access.</p>
-
-            <h5 class="mt-4" style="color:#1a3c6b;">Laboratories</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead style="background:#1a3c6b;color:#fff;">
-                  <tr><th>S.No.</th><th>Name of the Laboratory</th><th>Major Equipment</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>Structural Engineering Lab</td><td>—</td></tr>
-                  <tr><td>2</td><td>Strength of Materials Lab</td><td>—</td></tr>
-                  <tr><td>3</td><td>Geotechnical Engineering Lab</td><td>—</td></tr>
-                  <tr><td>4</td><td>Transportation Engineering Lab</td><td>—</td></tr>
-                  <tr><td>5</td><td>Environmental Engineering Lab</td><td>—</td></tr>
-                  <tr><td>6</td><td>Water and Environment Technology Lab</td><td>—</td></tr>
-                  <tr><td>7</td><td>Survey Lab</td><td>—</td></tr>
-                  <tr><td>8</td><td>Fluid Mechanics and Hydraulic Machinery Lab</td><td>—</td></tr>
-                  <tr><td>9</td><td>Digital Learning Center</td><td>i3/i5 Computers, LAN, High-speed Internet</td></tr>
-                  <tr><td>10</td><td>Geospatial Information Lab</td><td>—</td></tr>
-                  <tr><td>11</td><td>Engineering Geology Lab</td><td>—</td></tr>
-                  <tr><td>12</td><td>Smart Infrastructure Lab</td><td>—</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h5 class="mt-4" style="color:#1a3c6b;">Research Facilities</h5>
-            <p>Universal Testing Machine 1000 kN Capacity; LCR Meter; Atomic Absorption Spectroscopy; HPLC with Vacuum Pump + Sonicator; High Performance Liquid Chromatography (HPLC) System with PDA Detector and Accessories; Gas Chromatography; UV-VIS Spectrophotometer Double Beam; Rotary Evaporator; BOD Incubator; COD Digester; Double Distillation Unit; Millipore Apparatus.</p>
-          </div>
-
-          <!-- RESEARCH & CONSULTANCY TAB -->
-          <div class="tab-pane fade" id="research" role="tabpanel">
-            <h3>Research &amp; Consultancy</h3>
-
-            <h5 class="mt-4" style="color:#1a3c6b;">Department Achievements</h5>
-            <ul>
-              <li>The Civil Engineering program has been accredited four times by NBA.</li>
-              <li>The Department has a leading Centre of Excellence in Sustainability.</li>
-              <li>The department has handled more than ₹3.95 Crore worth of research projects, sponsored by DST, DBT, and other funding agencies.</li>
-              <li>The Department offers consultancy services to both government and private sectors.</li>
-            </ul>
-
-            <h5 class="mt-4" style="color:#1a3c6b;">Faculty Achievements</h5>
-            <ul>
-              <li>Prof. Park Raju has secured multiple DST/DBT funded projects worth over ₹2 crores.</li>
-              <li>Dr. M. Jagapathi Raju is a Chief Mentor for AICTE IDEA Lab (₹112.81 Lakhs grant) of SRKR Engineering College.</li>
-              <li>Dr. B. R. Phanikumar — H-index of 30 and over 3700 Google Scholar Research Citations.</li>
-              <li>Dr. M. Jagapathi Raju received the Best Teacher Award in 2019.</li>
-              <li>Dr. T. Vamsi Nagaraju — Springer Best Paper Award, IACESD-2023; Young Researcher Award 2022 (STEM Research Society); Best Oral Presentation, ACEER 2022; IGS–YGE Best Paper Biennial Award 2020.</li>
-              <li>Mr. M. Suneel — Best Paper Award, International Conference on Sustainable Systems and Structures, MVGR College of Engineering, 2019.</li>
-            </ul>
-
-            <h5 class="mt-4" style="color:#1a3c6b;">Student Achievements</h5>
-            <ul>
-              <li>Students V. Thirdesh, K. Bhargavi, K. Syam Kiran, K. Chandrika, and Mentor P. Raju secured National Level First Prize worth ₹51,000 for Chattra Vishwakarma Award 2020 for their innovative idea "SHRAMIKS" at AICTE Headquarters, New Delhi.</li>
-              <li>Students N. Satya Sundari, M. Sarvani, T. Syam Sumanth Reddy, and Mentor T. Vamsi Nagaraju secured State Level First Prize worth ₹75,000 for "VR-Geo Tiles and Blocks" at Invest India, Startup India Andhra Yathra, GITAM University, 2018.</li>
-              <li>G. Satyanarayana (2010–14) and M. Sai Krishna (2010–14) received the Prathiba Award for Academic Excellence by the Government of Andhra Pradesh.</li>
-              <li>Kavali Pratyusha (2008–12) received the University Gold Medal for Academic Excellence with a CGPA of 9.33.</li>
-              <li>19 out of 25 declared First Ranks in Andhra University since 1984.</li>
-            </ul>
-          </div>
-
-          <!-- PLACEMENTS TAB -->
-          <div class="tab-pane fade" id="placements" role="tabpanel">
-            <h3>Placements</h3>
-            <p>Placement details for the Department of Civil Engineering will be updated shortly.</p>
-          </div>
-
-          <!-- NEWSLETTER TAB -->
-          <div class="tab-pane fade" id="newsletter" role="tabpanel">
-            <h3>Newsletter</h3>
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5>Civil Engineering Newsletter — Volume 5, Issue 1 (Jan–June 2025)</h5>
-                <p>The departmental newsletter highlighting achievements, research, and activities of the Civil Engineering department for the period January–June 2025.</p>
-                <a href="/assets/documents/civil-newsletter-v5-iss1.pdf" class="rts-theme-btn" target="_blank">Download Newsletter (PDF)</a>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item">
+              <div class="cat-thumb">
+                <img src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=800&h=600&fit=crop" alt="Transportation Engineering">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/civil/research-consultancy/">Transportation Engineering</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/civil/research-consultancy/">Learn More <i class="fa-light fa-arrow-right"></i></a>
+                </div>
               </div>
             </div>
-            <p class="text-muted mt-3"><em>Older issues will be available shortly.</em></p>
           </div>
 
-        </div><!-- end tab-content -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item">
+              <div class="cat-thumb">
+                <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=800&h=600&fit=crop" alt="Environmental Engineering">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/civil/research-consultancy/">Environmental Engineering</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/civil/research-consultancy/">Learn More <i class="fa-light fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academic Programs</h3>
+          </div>
+          
+          <div class="col-lg-6 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/academic-programs/">
+                    <span>B.Tech. in Civil Engineering</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/academic-programs/">
+                    <span>NBA Accredited Program</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/academic-programs/">
+                    <span>120 Seats per Year</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/academic-programs/">
+                    <span>Industry-Aligned Curriculum</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Postgraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/academic-programs/">
+                    <span>M.Tech. Structural Engineering</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/research-consultancy/">
+                    <span>Ph.D. Programs (AU & JNTUK)</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/research-consultancy/">
+                    <span>18 Seats M.Tech</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/civil/research-consultancy/">
+                    <span>Active Research Centre</span>
+                    <i class="fa-light fa-arrow-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

@@ -1,0 +1,286 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Civil Engineering | SRKR" description="B.Tech and M.Tech academic programs offered by the Department of Civil Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/civil/">Civil Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <CivilDeptNav current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Civil Engineering offers two JNTUK-affiliated programs: a four-year B.Tech in Civil Engineering and a two-year M.Tech in Structural Engineering. Both programs are designed to produce industry-ready professionals with a strong foundation in engineering principles, research aptitude, and ethical practice.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="B.Tech Civil Engineering" style="height: 100%; object-fit: cover;">
+                    <a href="#btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#btech">B.Tech Civil Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop" alt="M.Tech Structural Engineering" style="height: 100%; object-fit: cover;">
+                    <a href="#mtech" class="cat-link-btn">Postgraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#mtech">M.Tech Structural Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#mtech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Civil Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="btech-peo" class="accordion-collapse collapse show" data-bs-parent="#btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives (PEOs) define the career and professional accomplishments that our B.Tech Civil Engineering program is designed to help graduates achieve within a few years after graduation. These objectives guide our curriculum development and ensure alignment with industry needs and societal expectations.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Graduates will have sound knowledge of science, mathematics and fundamentals of civil engineering to solve real-world problems.</li>
+                              <li class="si__list--single">Graduates will be able to design efficient engineering systems with due consideration for environmental impact and sustainable development.</li>
+                              <li class="si__list--single">Graduates will advance their knowledge through life-long learning, ethical practice and leadership.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="btech-po" class="accordion-collapse collapse" data-bs-parent="#btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills, and attributes that students will acquire by the time of graduation. These outcomes are aligned with national accreditation standards and ensure our graduates are well-prepared for professional practice in civil engineering.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply principles of basic sciences and mathematics to Civil Engineering sub-fields including Structural, Geotechnical, Transportation, Environmental, and Water Resources Engineering.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Possess critical thinking skills, problem-solving abilities, and familiarity with computational procedures essential to the field.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Plan, analyse, design, and supervise construction of Civil Engineering structures with consideration for public health, safety, and environmental factors.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based methods to design and conduct experiments, and analyse and interpret data.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Gain hands-on training in modern Civil Engineering software and equipment.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply reasoning to assess societal, health, safety, legal, and cultural issues.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Plan projects with awareness of environmental effects across related disciplines.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and commit to professional responsibilities.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Work productively as an individual, member, or leader in diverse teams.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Possess mastery in communication skills, technical report writing, and managerial effectiveness.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Acquire knowledge of procurement, contractor interaction, and financial and managerial capabilities.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Contribute to community well-being through continuous learning in an evolving technological landscape.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="btech-pso" class="accordion-collapse collapse" data-bs-parent="#btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes (PSOs) are specialized competencies that distinguish our Civil Engineering program. These outcomes focus on the unique technical and professional capabilities that graduates will develop through our curriculum and laboratory experiences.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Apply fundamental civil engineering knowledge to analyse, design and implement engineering structures and infrastructure.</li>
+                              <li class="si__list--single">Use computational tools and domain expertise to deliver practical solutions in Structural, Geotechnical, Transportation and Environmental Engineering.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: M.Tech -->
+            <div id="mtech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">M.Tech — Structural Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="mtech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mtech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="mtech-peo" class="accordion-collapse collapse show" data-bs-parent="#mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The M.Tech Structural Engineering program is designed to develop advanced expertise in structural analysis, design, and research. Our Program Educational Objectives prepare graduates for leadership roles in industry, research organizations, and academia, with a strong emphasis on innovation and sustainable development.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Provide strong foundations in basic principles and advanced concepts of Structural Engineering to formulate, analyse, and solve societal problems related to sustainable development.</li>
+                              <li class="si__list--single">Expose students to the latest innovations and emerging trends, fostering research orientation in Structural Engineering and multidisciplinary domains.</li>
+                              <li class="si__list--single">Develop competent Structural Engineers for professional leadership, effective teamwork, lifelong learning, and career growth.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mtech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="mtech-po" class="accordion-collapse collapse" data-bs-parent="#mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Our M.Tech program outcomes ensure that graduates possess advanced analytical and research capabilities in Structural Engineering. These outcomes reflect both AICTE guidelines and industry expectations for postgraduate engineers, emphasizing independent research, technical writing, and specialized domain mastery.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Independently carry out research, investigation, and development work to solve practical problems.</li>
+                              <li class="si__list--single">Write and present a substantial technical report or document.</li>
+                              <li class="si__list--single">Demonstrate mastery over the area of specialisation at a level higher than the bachelor programme.</li>
+                              <li class="si__list--single">Address societal needs through an interdisciplinary approach using advanced courses.</li>
+                              <li class="si__list--single">Gain hands-on training on the latest equipment and software to be industry-ready or pursue advanced research.</li>
+                              <li class="si__list--single">Inculcate ethical practices and an understanding of professionalism, safety, and sustainability.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mtech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="mtech-pso" class="accordion-collapse collapse" data-bs-parent="#mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Specific Outcomes for M.Tech Structural Engineering focus on advanced competencies in structural analysis, design methodologies, and computational tools. These outcomes ensure graduates can handle complex structural engineering challenges and contribute to research and development in the field.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Advanced courses in analysis and design of RC, PSC, and steel structures as per latest design codes with emphasis on sustainable practices.</li>
+                              <li class="si__list--single">Address societal and sustainability challenges through interdisciplinary courses such as Finite Element Analysis, Plates &amp; Shell Structures, Structural Dynamics, and Soil Dynamics.</li>
+                              <li class="si__list--single">Hands-on training in the latest equipment and software to become industry-ready professionals and pursue advanced research.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+              
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">Civil Engineering Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/civil/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/civil/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities & Labs</a></li>
+                      <li><a href="/departments/civil/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research & Projects</a></li>
+                      <li><a href="/departments/civil/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/civil/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=800&fit=crop" alt="Civil Engineering Campus" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

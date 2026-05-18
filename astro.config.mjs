@@ -7,4 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://srkr-website.vercel.app/',
 	integrations: [mdx(), sitemap()],
+	devToolbar: {
+		enabled: false,
+	},
 });

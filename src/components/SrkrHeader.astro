@@ -1,6 +1,22 @@
 ---
 ---
 
+<style>
+  /* Tighter submenu padding */
+  .navigation__menu--item ul.submenu,
+  .navigation__menu--item .sub__style {
+    padding: 12px 0 !important;
+  }
+  .navigation__menu--item ul.submenu li,
+  .navigation__menu--item .sub__style li {
+    padding: 0 18px !important;
+  }
+  .navigation__menu--item ul.submenu li:not(:last-child),
+  .navigation__menu--item .sub__style li:not(:last-child) {
+    margin: 0 0 6px !important;
+  }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
   <body>
@@ -12,7 +28,7 @@
             <div class="header__wrapper">
               <div class="header__logo">
                 <a href="/" class="header__logo--link">
-                  <img src="assets/images/logo/logo__white.svg" alt="unipix" />
+                  <img src="/assets/images/logo/logo__white.svg" alt="unipix" />
                 </a>
               </div>
               <div class="header__menu">
@@ -26,7 +42,7 @@
                         <a href="javascript:void(0);" class="navigation__menu--item__link">Institute</a>
                         <ul class="submenu sub__style">
                           <li><a href="college-profile">About SRKR</a></li>
-                          <li><a href="vision">Vision & Mission</a></li>
+                          <li><a href="vision">Vision &amp; Mission</a></li>
                           <li><a href="governing">Governing Body</a></li>
                           <li><a href="leadership">Leadership Team</a></li>
                           <li><a href="org-structure">Organizational Structure</a></li>
@@ -47,9 +63,23 @@
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
-                        <a href="departments" class="navigation__menu--item__link">Departments</a>
+                        <a href="/departments" class="navigation__menu--item__link">Departments</a>
                         <ul class="submenu sub__style">
-                          <li><a href="departments#engineering">Engineering</a></li>
+                          <li class="has-child has-arrow">
+                            <a href="/departments/civil/">Civil Engineering</a>
+                            <ul class="sub__style">
+                              <li><a class="mobile-menu-link" href="/departments/civil/">Home</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/academic-programs/">Academic Programs</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/faculty/">Faculty</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/committees/">Committees</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/facilities/">Facilities</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/research-consultancy/">Research/Consultancy</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/achievements/">Achievements</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/placements/">Placements</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/newsletter/">Newsletter</a></li>
+                              <li><a class="mobile-menu-link" href="/departments/civil/brochure/">Brochure</a></li>
+                            </ul>
+                          </li>
                           <li><a href="humanities">Basic Science &amp; Humanities</a></li>
                         </ul>
                       </li>
@@ -66,9 +96,23 @@
                         <a class="navigation__menu--item__link">Academics</a>
                         <ul class="submenu sub__style">
                           <li class="has-child has-arrow">
-                            <a href="departments">Departments</a>
+                            <a href="/departments">Departments</a>
                             <ul class="sub__style">
-                              <li><a class="mobile-menu-link" href="departments#engineering">Engineering</a></li>
+                              <li class="has-child has-arrow">
+                                <a class="mobile-menu-link" href="/departments/civil/">Civil Engineering</a>
+                                <ul class="sub__style">
+                                  <li><a class="mobile-menu-link" href="/departments/civil/">Home</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/academic-programs/">Academic Programs</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/faculty/">Faculty</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/committees/">Committees</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/facilities/">Facilities</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/research-consultancy/">Research/Consultancy</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/achievements/">Achievements</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/placements/">Placements</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/newsletter/">Newsletter</a></li>
+                                  <li><a class="mobile-menu-link" href="/departments/civil/brochure/">Brochure</a></li>
+                                </ul>
+                              </li>
                               <li><a class="mobile-menu-link" href="humanities">Basic Science &amp; Humanities</a></li>
                             </ul>
                           </li>
@@ -131,9 +175,8 @@
               </div>
               <div class="header__right">
                 <div class="header__right--item">
-                  
                   <div id="menu-btn" class="menu__trigger">
-                    <img src="assets/images/icon/bar__line.svg" alt="bar" />
+                    <img src="/assets/images/icon/bar__line.svg" alt="bar" />
                   </div>
                 </div>
               </div>

@@ -1,0 +1,223 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Research & Consultancy | Civil Engineering | SRKR" description="Research areas, funded projects, publications, and consultancy services of the Civil Engineering department at SRKR." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/civil/">Civil Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Research &amp; Consultancy</li>
+              </ul>
+              <h2 class="section-title">Research &amp; Consultancy</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <CivilDeptNav current="Research/Consultancy" />
+
+        <!-- Two Column Layout -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+          
+          <!-- Left: Overview + Accordion -->
+          <div class="col-lg-8 col-md-11">
+            
+            <!-- Intro -->
+            <div class="program-about mb--40">
+              <h4 class="title">Research &amp; Consultancy Overview</h4>
+              <p>The Department of Civil Engineering is a recognised Research Centre under both Andhra University and JNTUK. With six Centres of Excellence and an active consultancy division contributing over 80% of the institution's consultancy revenue, the department bridges academic research and real-world engineering practice. Faculty have published 150+ papers in SCI/Scopus journals and secured projects totalling approximately &#x20B9;1.2 Crores from agencies like DST and VGST.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="rts-accordion">
+
+                  <!-- Research Areas -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                      Research Areas
+                    </button>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Structural Engineering</li>
+                              <li class="si__list--single">Geotechnical Engineering</li>
+                              <li class="si__list--single">Environmental Engineering</li>
+                              <li class="si__list--single">Transportation Engineering</li>
+                              <li class="si__list--single">Water Resources Engineering</li>
+                              <li class="si__list--single">Advanced Construction Materials</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Centres of Excellence -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
+                      Centres of Excellence
+                    </button>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Centre for Water Quality &amp; Environmental Studies</li>
+                              <li class="si__list--single">Centre for Structural Safety &amp; Advanced Materials</li>
+                              <li class="si__list--single">Centre for Geotechnical Innovation</li>
+                              <li class="si__list--single">Centre for Transportation Systems &amp; Smart Infrastructure</li>
+                              <li class="si__list--single">Centre for Remote Sensing &amp; GIS Applications</li>
+                              <li class="si__list--single">Centre for Sustainable Construction</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Funded Projects -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false">
+                      Funded Projects
+                    </button>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">2 DST-funded research projects in Structural and Environmental Engineering domains.</li>
+                              <li class="si__list--single">1 VGST-funded project on advanced geotechnical materials.</li>
+                              <li class="si__list--single">Total funded research of approximately &#x20B9;1.2 Crores across all active and recently completed projects.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Publications -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false">
+                      Publications
+                    </button>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">150+ research papers published in SCI/Scopus indexed journals.</li>
+                              <li class="si__list--single">50+ papers presented at national and international conferences.</li>
+                              <li class="si__list--single">5 book chapters contributed to international publications.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Consultancy -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false">
+                      Consultancy Services
+                    </button>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <h4 class="title">Domains</h4>
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Structural Engineering — testing, analysis, and design of RC and steel structures.</li>
+                              <li class="si__list--single">Geotechnical Engineering — soil investigation, foundation analysis, and ground improvement.</li>
+                              <li class="si__list--single">Transportation Engineering — road pavement design, traffic studies, and highway materials testing.</li>
+                              <li class="si__list--single">Environmental Engineering — water quality analysis, EIA, and wastewater treatment design.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">The department contributes over <strong>80%</strong> of the institution's total consultancy revenue, serving government agencies, municipalities, and private industries across Andhra Pradesh.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              
+              <!-- Quick Links -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Research Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/departments/civil/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
+                    <li><a href="/departments/civil/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Research Facilities</a></li>
+                    <li><a href="/departments/civil/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>M.Tech Programs</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Publications List</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="program-info">
+                <h5>Department Contact</h5>
+                <p>Civil Engineering Department<br>SRKR Engineering College</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:hod.civil@srkr.ac.in">hod.civil@srkr.ac.in</a>
+                  <a href="mailto:research.civil@srkr.ac.in">research.civil@srkr.ac.in</a>
+                </div>
+                <div class="contact-info mt--20 mb--20">
+                  <h5>Phone:</h5>
+                  <a href="tel:+918842226666">+91 884 222 6666</a>
+                </div>
+                <div class="social-info mt--20">
+                  <h5>Connect With Us:</h5>
+                  <div class="social-info-link">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
