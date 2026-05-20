@@ -1,0 +1,336 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+     <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Technology Centre</li>
+                        </ul>
+                        <h2 class="section-title">Technology Centre</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+    <section class="rts-program v_2 rts-section-padding">
+        <div class="container">
+            <div class="row rt-center">
+                <div class="col-sm-12">
+                    <div class="rts__section--wrapper v__5">
+                        <h2 class="rts__section--title">Technology Centre Profile</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- program content -->
+            <div class="row justify-content-center g-0">
+                <div class="col-lg-4 col-md-10">
+                    <div class="rts-program-single">
+                        <div class="rts-program-single__content">
+                            <div class="rts-program-hover">
+                                <div class="icon">
+                                    <img src="assets/images/program/icon/03.svg" alt="education">
+                                </div>
+                                <p>The Technology Centre was established in 2015 to promote technology training, innovation, and entrepreneurship through workshops and skill-building programs for all SRKR students.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-10">
+                    <div class="rts-program-single ">
+                        <div class="rts-program-single__content">
+                            <div class="rts-program-hover center-item rt-primary-bg">
+                                <ul class="list-unstyled">
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/04.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">NPTEL 5K+ Certified</a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/05.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">Minors Programs</a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/06.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">Bachelor’s & Master’s</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-10">
+                    <div class="rts-program-single">
+                        <div class="rts-program-single__content">
+                            <div class="rts-program-hover">
+                                <div class="icon">
+                                    <img src="assets/images/program/icon/01.svg" alt="education">
+                                </div>
+                                <p>It focuses on developing practical skills in the latest technologies and encourages student-driven projects across all engineering disciplines, supported by a well-equipped computer lab and expert guidance.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-10 pt--50">
+                    <div class="rts-program-single ">
+                        <div class="rts-program-single__content">
+                            <div class="rts-program-hover center-item rt-primary-bg">
+                                <ul class="list-unstyled">
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/04.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">1800+ IIT-B Spoken Tutorial Certified
+                                            </a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/05.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">60+ Workshops organized</a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/06.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">10 MOUS Collabrations</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-10 pt--50">
+                    <div class="rts-program-single ">
+                        <div class="rts-program-single__content">
+                            <div class="rts-program-hover center-item rt-primary-bg">
+                                <ul class="list-unstyled">
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/04.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">450+ Computers & 200 Internships</a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/05.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html"> 1Cr+ External Funding</a>
+                                    </li>
+                                    <li class="single-program">
+                                        <div class="icon-box">
+                                            <img src="assets/images/icon/06.svg" alt="">
+                                        </div>
+                                        <a href="program-single.html">2000+ In-House Tech Training
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Organogram -->
+    <div class="rts-campus-life">
+        <div class="container mt--10 mb--30">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="about__image">
+                        <img src="assets/images/about/about__5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- footer -->
+<SrkrFooter/>
+
+    <!-- footer copyright end -->
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+
+</html>

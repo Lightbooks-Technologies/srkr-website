@@ -1,0 +1,76 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Departments | SRKR Engineering College" description="Explore the departments at SRKR Engineering College, Bhimavaram." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Departments</li>
+              </ul>
+              <h2 class="section-title">Departments</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center mb--40">
+          <div class="col-12 text-center">
+            <h3 id="engineering">Engineering Departments</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" style="color:#1a3c6b;">Civil Engineering</h5>
+                <p class="card-text">Established 1980 · NBA Accredited · B.Tech &amp; M.Tech programs</p>
+                <a href="/departments/civil" class="rts-theme-btn">View Department</a>
+              </div>
+            </div>
+          </div>
+          <!-- Additional departments to be added -->
+        </div>
+
+        <div class="row justify-content-center mt--60 mb--40">
+          <div class="col-12 text-center">
+            <h3>Basic Science &amp; Humanities</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" style="color:#1a3c6b;">Basic Science &amp; Humanities</h5>
+                <p class="card-text">Foundation courses in Mathematics, Physics, Chemistry, English, and Humanities.</p>
+                <a href="/humanities" class="rts-theme-btn">View Department</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -1,0 +1,505 @@
+--- 
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+     
+
+    <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Supervisors</li>
+                        </ul>
+                        <h2 class="section-title">Research (Ph.D.) Supervisors</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+    <section class="rts-about-university pt--100 pb--10">
+        <div class="container">
+            <div class="row">
+                <div class="rts-section">
+                    <div class="col-lg-4 col-md-3 col-sm-12">
+                        <h3 class="rts-section-title">PhD Students Enrolled</h3>
+                    </div>
+                    <div class="col-lg-8 col-md-9 col-sm-12">
+                        <p class="rts-section-description">
+                            Ph.D's Enrolled from our Faculty: <a href="https://srkrec.edu.in/files/RND/Ph.D_enrolled.pdf">Download</a>
+                        </p>
+                        <p class="rts-section-description">
+                            PhD Students Enrolled in SRKREC During the Last Five Years: <a href="https://srkrec.edu.in/files/RND/research_guides_2022.pdf">Download</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- admission page content -->
+    <div class="rts-page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="admission-content-top">
+                        <div class="application-deadline">
+                            <h3 class="rts-section-title">JNTUK Allotment of Ph.D students for SRKR Engineering College Research Centres, 2023-2024</h3>
+                            <div class="application-deadline__content">
+                                <div class="application-deadline__content--table">
+                                    <table class="table">
+                                        <thead class="table-theme">
+                                                <tr>
+                                                    <td>S.No</td>
+                                                    <td>Department</td>
+                                                    <td>Name of the Student</td>
+                                                    <td>Roll Number</td>
+                                                    <td>Name of the Supervisor</td>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>1</td><td>Computer Science and Engineering</td><td>Balla Nandana Kumaar</td><td>23022P0578</td><td>Dr. V. Chandra Sekhar</td></tr>
+                                            <tr><td>2</td><td>Computer Science and Engineering</td><td>Vasantha Bandaru</td><td>23022P0579</td><td>Dr. K.V Krishnam Raju</td></tr>
+                                            <tr><td>3</td><td>Computer Science and Engineering</td><td>Vundrajavarapu Ajay Kumar</td><td>23022P0580</td><td>Dr. P. Ravi Kiran Varma</td></tr>
+                                            <tr><td>4</td><td>Electronics and Communication Engineering</td><td>Yalla Ramana Murty</td><td>23022P0478</td><td>Dr. T. V. Hyma Lakshmi</td></tr>
+                                            <tr><td>5</td><td>Electronics and Communication Engineering</td><td>N M Ramalingeswararao</td><td>23022P0479</td><td>Dr. G. Naga Raju</td></tr>
+                                            <tr><td>6</td><td>Electronics and Communication Engineering</td><td>Subhasri Telkar</td><td>23022P0480</td><td>Dr. K. Bala Sindhuri</td></tr>
+                                            <tr><td>7</td><td>Electrical and Electronics Engineering</td><td>V Kumar Reddy Majji</td><td>23022P0240</td><td>Dr. G. Syam Naresh</td></tr>
+                                            <tr><td>8</td><td>Electrical and Electronics Engineering</td><td>P Udaya Bhanu</td><td>23022P0241</td><td>Dr. M. Sai Veerraju</td></tr>
+                                            <tr><td>9</td><td>Information Technology</td><td>K Lakshmi Pathi Raju</td><td>23022P0593</td><td>Dr. N. Gopala Krishna Murthy</td></tr>
+                                            <tr><td>10</td><td>Information Technology</td><td>Juvvala Sailaja</td><td>23022P0594</td><td>Dr. I. Hemalatha</td></tr>
+                                            <tr><td>11</td><td>Information Technology</td><td>Preethi Bitra</td><td>23022P0595</td><td>Dr. Chandra Sekhar Vasamsetty</td></tr>
+                                            <tr><td>12</td><td>Mechanical Engineering</td><td>Haranadha Reddi Medapati</td><td>23022P0324</td><td>Dr. K. Sita Rama Raju</td></tr>
+                                            <tr><td>13</td><td>Mechanical Engineering</td><td>Rajesh Bathula</td><td>23022P0325</td><td>Dr. K. Suresh Babu</td></tr>
+                                            <tr><td>14</td><td>Mathematics</td><td>Kanumala Rajya Lakshmi</td><td>23022PMT10</td><td>Dr. M. Pushpa Latha</td></tr>
+                                            <tr><td>15</td><td>Mathematics</td><td>Shaik Rahamthulla</td><td>23022PMT11</td><td>Dr. G. N. V. Kishore</td></tr>
+                                            <tr><td>16</td><td>Mathematics</td><td>S Naresh Babu</td><td>23022PMT12</td><td>Dr. G. Vidyasagar</td></tr>
+                                            <tr><td>17</td><td>Physics</td><td>M Durga Prasad Lingam</td><td>23022PPY06</td><td>Dr. M. V. Someswara Rao</td></tr>
+                                            <tr><td>18</td><td>Physics</td><td>Ramadevi Gajula</td><td>23022PPY07</td><td>Dr. Ch. J. N. Pavan Kumar</td></tr>
+                                            <tr><td>19</td><td>Physics</td><td>Venkata Vasavi Pabolu</td><td>23022PPY08</td><td>Dr. S. Srikanth</td></tr>
+                                            <tr><td>20</td><td>Chemistry</td><td>Nagaraju Gundimeda</td><td>23022PCY03</td><td>Dr. B. S. Diwakar</td></tr>
+                                            <tr><td>21</td><td>Chemistry</td><td>V Santhoshi Pravallika</td><td>23022PCY04</td><td>Dr. Venu Reddy</td></tr>
+                                            <tr><td>22</td><td>Chemistry</td><td>Mummidi Siva Sankar</td><td>23022PCY05</td><td>Dr. P. Bhavani</td></tr>
+                                            <tr><td>23</td><td>English</td><td>Karvkola Krishna Kumar</td><td>23022PEN07</td><td>Dr. N. Satish Kumar</td></tr>
+                                            <tr><td>24</td><td>English</td><td>J Sajida Parveen</td><td>23022PEN08</td><td>Dr. Bh. N.V. Lakshmi</td></tr>
+                                            <tr><td>25</td><td>English</td><td>Namamula Murali Mohan</td><td>23022PEN09</td><td>Dr. P. Bhuvaneswari</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="application-deadline">
+                            <h3 class="rts-section-title">JNTUK Allotment of Ph.D students for SRKR Engineering College Research Centres, 2022-2023</h3>
+                            <div class="application-deadline__content">
+                                <div class="application-deadline__content--table">
+                                    <table class="table">
+                                        <thead class="table-theme">
+                                            <tr>
+                                                <tr>
+                                                    <td>S.No</td>
+                                                    <td>Department</td>
+                                                    <td>Name of the Student</td>
+                                                    <td>Roll Number</td>
+                                                    <td>Name of the Supervisor</td>
+                                                </tr>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>1</td><td>CSE/IT</td><td>Iduru Gayathri Devi</td><td>22022P0536</td><td>Dr. N.K.Kameswara Rao, SRKREC</td></tr>
+                                            <tr><td>2</td><td>CSE/IT</td><td>Adabala P V D L Kumar</td><td>22022P0550</td><td>Dr. N.Gopala Krishna Murthy, SRKREC</td></tr>
+                                            <tr><td>3</td><td>CSE/IT</td><td>Venkata Subbarao Manne</td><td>22022P0561</td><td>Dr. R.N.V.Jagan Mohan, SRKREC</td></tr>
+                                            <tr><td>4</td><td>CSE/IT</td><td>Kotla N V Ramya Devi</td><td>22022P0562</td><td>Dr. M.Suresh Babu, SRKREC</td></tr>
+                                            <tr><td>5</td><td>CSE/IT</td><td>Adina Karunasri</td><td>22022P0586</td><td>Dr. G.N.V.G.Sirisha, SRKREC</td></tr>
+                                            <tr><td>6</td><td>CSE/IT</td><td>Kondabathula Durga Charan</td><td>22022P0588</td><td>Dr. D.Ratna Giri, SRKREC</td></tr>
+                                            <tr><td>7</td><td>Mathematics</td><td>A Kiran Kumar</td><td>22022PMT03</td><td>Dr. G.N.V. Kishore, SRKREC</td></tr>
+                                            <tr><td>8</td><td>Mathematics</td><td>Balla Srinivasu</td><td>22022PMT06</td><td>Dr. R. Subba Rao, SRKREC</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="application-deadline">
+                            <h3 class="rts-section-title">JNTUK Allotment of Ph.D students for SRKR Engineering College Research Centres, 2021-2022</h3>
+                            <div class="application-deadline__content">
+                                <div class="application-deadline__content--table">
+                                    <table class="table">
+                                        <thead class="table-theme">
+                                            <tr>
+                                                <td>S.No</td>
+                                                <td>Department</td>
+                                                <td>Name of the Student</td>
+                                                <td>Roll Number</td>
+                                                <td>Name of the Supervisor</td>
+                                                <td>Name of the Co-Supervisor</td>
+                                            </tr>
+                                            
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>1</td><td>Civil Engineering</td><td>Vusilla Sai Kumar</td><td>21022P0111</td><td>Dr. A.C.S.V. Prasad, SRKREC</td><td>Dr. M. Swaroopa Rani, JNTUK</td></tr>
+<tr><td>2</td><td>Computer Science Engineering</td><td>Ramesh Alladi</td><td>21022P0511</td><td>Dr. R.N.V. Jagan Mohan, SRKREC</td><td>Dr. K. Sahadevaiah, JNTUK</td></tr>
+<tr><td>3</td><td>Computer Science Engineering</td><td>Gantla Santhoshi Kumari</td><td>21022P0563</td><td>Dr. S.Venkata Ramana, SRKREC</td><td>Dr. R. Rajeswara Rao, JNTUK</td></tr>
+<tr><td>4</td><td>Electronics and Communications Engineering</td><td>M.Vamsi Krishna Allu</td><td>21022P0435</td><td>Dr. G. Naga Raju, SRKREC</td><td>Dr. K. Padma Priya, JNTUK</td></tr>
+<tr><td>5</td><td>Electronics and Communications Engineering</td><td>Nalini Prasad Tirumani</td><td>21022P0450</td><td>Dr. S.S. Mohan Reddy, SRKREC</td><td>Dr. K. Rama Devi, JNTUK</td></tr>
+<tr><td>6</td><td>Electrical and Electronics Engineering</td><td>Pasam Sailesh Babu</td><td>21022P0210</td><td>Dr. P. Kanta Rao, SRKREC</td><td>Dr. R. Srinivasa Rao, JNTUK</td></tr>
+<tr><td>7</td><td>Electrical and Electronics Engineering</td><td>Bireddi Eswara Rao</td><td>21022P0216</td><td>Dr. G. Kusuma, SRKREC</td><td>Dr. K.Venkata Reddy, JNTUK</td></tr>
+<tr><td>8</td><td>Mechanical Engineering</td><td>Adina Srinivasa Vara Prasad</td><td>21022P0305</td><td>Dr. K.V. Murali Krishnam Raju, SRKREC</td><td>Dr. K. Krishna Bhaskar, JNTUK</td></tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="application-deadline">
+                            <h3 class="rts-section-title">JNTUK Allotment of Ph.D students for SRKR Engineering College Research Centres, 2019-2020</h3>
+                            <div class="application-deadline__content">
+                                <div class="application-deadline__content--table">
+                                    <table class="table">
+                                        <thead class="table-theme">
+                                            <tr>
+                                                <td>S.No</td>
+                                                <td>Department</td>
+                                                <td>Name of the Student</td>
+                                                <td>Roll Number</td>
+                                                <td>Name of the Supervisor</td>
+                                                <td>Name of the Co-Supervisor</td>
+                                              </tr>
+                                              
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Civil Engineering</td>
+                                                <td>Pullela Sai Sitarama Pavan kumar</td>
+                                                <td>19022P0105</td>
+                                                <td>Dr.S.K.V.S.T Lava Kumar, SRKREC</td>
+                                                <td>Dr. P. Subba Rao</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>2</td>
+                                                <td>Civil Engineering</td>
+                                                <td>Paluri Umasai Krishna</td>
+                                                <td>19022P0116</td>
+                                                <td>Dr.M.Jagapathi Raju, SRKREC</td>
+                                                <td>Dr. GVR Prasada Raju</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>3</td>
+                                                <td>Civil Engineering</td>
+                                                <td>Sasidhar Yalavarthi</td>
+                                                <td>19022P0120</td>
+                                                <td>Dr.S.K.V.S.T.Lava Kumar, SRKREC</td>
+                                                <td>Dr. G. Yesu Ratnam</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>4</td>
+                                                <td>Civil Engineering</td>
+                                                <td>Chandata. Teja Kiran</td>
+                                                <td>19022P0131</td>
+                                                <td>Dr.S.K.V.S.T.Lava Kumar, SRKREC</td>
+                                                <td>Dr. M. Swaroopa Rani</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>5</td>
+                                                <td>EEE</td>
+                                                <td>Narayana Divakar R V L</td>
+                                                <td>19022P0210</td>
+                                                <td>Dr.G.Syam Naresh, SRKREC</td>
+                                                <td>Dr.Y. Srinivasa Kishore Babu</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>6</td>
+                                                <td>EEE</td>
+                                                <td>Ramesh Ganta</td>
+                                                <td>19022P0211</td>
+                                                <td>Dr.G.Kusuma, SRKREC</td>
+                                                <td>Dr. R. Srinivasa Rao</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>7</td>
+                                                <td>EEE</td>
+                                                <td>Hussain Shaik</td>
+                                                <td>19022P0241</td>
+                                                <td>Dr.G.Kusuma, SRKREC</td>
+                                                <td>Dr. Y. Srinivasa Kishore Babu</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>8</td>
+                                                <td>EEE</td>
+                                                <td>Sheik Mahaboob Shriff</td>
+                                                <td>19022P0252</td>
+                                                <td>Dr.G.Syam Naresh, SRKREC</td>
+                                                <td>Dr. K. Srikumar</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>9</td>
+                                                <td>ECE</td>
+                                                <td>Sitaramanjaneyulu.P</td>
+                                                <td>19022P0420</td>
+                                                <td>Dr.N.Uday Kumar, SRKREC</td>
+                                                <td>Dr. N. Balaji</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>10</td>
+                                                <td>ECE</td>
+                                                <td>Shaik Bajidvali</td>
+                                                <td>19022P0458</td>
+                                                <td>Dr.N.Uday Kumar, SRKREC</td>
+                                                <td>Dr. A. M. Prasad</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>11</td>
+                                                <td>CSE</td>
+                                                <td>Nagendra Kumar Dindi</td>
+                                                <td>19022P0522</td>
+                                                <td>Dr.M.S.V.S.Bhadri Raju, SRKREC</td>
+                                                <td>Dr. O. Srinivasa Rao</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>12</td>
+                                                <td>CSE</td>
+                                                <td>Vidya Sagar Vendrapati</td>
+                                                <td>19022P0533</td>
+                                                <td>Dr.G.Mahesh, SRKREC</td>
+                                                <td>Dr. K. V. Ramana</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>13</td>
+                                                <td>CSE</td>
+                                                <td>Ramanjaneyulu Seggem</td>
+                                                <td>19022P0557</td>
+                                                <td>Dr. BHVSKR Raju, SRKREC</td>
+                                                <td>Dr. D. Rajya Lakshmi</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>14</td>
+                                                <td>CSE</td>
+                                                <td>Padala S Venkata Durga Gayatri</td>
+                                                <td>19022P0571</td>
+                                                <td>Dr. I. Hemalatha, SRKREC</td>
+                                                <td>Dr. Ch. Bindu Madhuri</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>15</td>
+                                                <td>Mathematics</td>
+                                                <td>Surapureddi Chandrika</td>
+                                                <td>19022PMT01</td>
+                                                <td>Dr.R.Subba Rao, SRKREC</td>
+                                                <td>Dr. V. Ravindrana</td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td>16</td>
+                                                <td>Mechanical Engineering</td>
+                                                <td>Lakshmi Narasimhaswamy M</td>
+                                                <td>19022P0319</td>
+                                                <td>Dr.k.Brahma Raju, SRKREC</td>
+                                                <td>Dr. K. Dilip Kumar</td>
+                                              </tr>
+                                              
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>   
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- admission page content end -->
+<!-- footer -->
+<SrkrFooter/>
+
+    <!-- footer copyright end -->
+
+
+    <!-- offcanvase menu -->
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/logo/logo__two.svg" alt="Unipix-university">
+            </div>
+            <div class="inner-content">
+                <p class="disc">
+                    Apply to SRKR – Start your journey with excellence.
+                </p>
+                <!-- offcanvase banner -->
+                <div class="offcanvase__banner mt--50">
+                    <div class="offcanvase__banner--content">
+                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">
+                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="offcanvase__info">
+                    <div class="offcanvase__info--content">
+                        <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                        <div class="offcanvase__info--content--social">
+                            <p class="title">Follow Us:</p>
+                            <div class="social__links">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Homepages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="/">Home Style One</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Home Style Three</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Home Style Four</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Home Style Five</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
+                            <li class="has-dropdown third-lvl">
+                                <a href="javascript:void(0);">Faculty</a>
+                                <ul class="submenu third-lvl base">
+                                    <li><a class="mobile-menu-link" href="faculty-sub.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-sub-details.html">Faculty Details</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
+                                    <li><a class="mobile-menu-link" href="faculty-details.html">Faculty Staff details</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="mobile-menu-link" href="research.html">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Academics</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
+                            <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
+                            <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
+                            <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
+                            <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
+                            <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
+                            <li><a class="mobile-menu-link" href="alumni.html">Alumni</a></li>
+                            <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
+                            <li><a class="mobile-menu-link" href="department-details.html">Department Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Events</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="offcanvase__info--content mt--30">
+                <a href="callto:+91 9848823332"><span><i class="fa-sharp fa-light fa-phone"></i></span>+91 9848823332</a>
+                <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>
+                <div class="offcanvase__info--content--social">
+                    <p class="title">Follow Us:</p>
+                    <div class="social__links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete ui-autocomplete-input" type="text" placeholder="Search by keyword or #" autocomplete="off">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts back to top end -->
+    <div id="anywhere-home" class="">
+    </div>
+
+
+    <!-- scripts -->
+    <FooterScripts />
+
+
+</body>
+
+</html>

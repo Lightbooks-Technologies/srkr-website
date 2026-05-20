@@ -1,0 +1,140 @@
+---
+const { current } = Astro.props;
+const navItems = [
+  { label: 'Home',                 href: '/departments/civil/' },
+  { label: 'Academic Programs',    href: '/departments/civil/academic-programs/' },
+  { label: 'Faculty',              href: '/departments/civil/faculty/' },
+  { label: 'Committees',           href: '/departments/civil/committees/' },
+  { label: 'Facilities',           href: '/departments/civil/facilities/' },
+  { label: 'Research/Consultancy', href: '/departments/civil/research-consultancy/' },
+  { label: 'Achievements',         href: '/departments/civil/achievements/' },
+  { label: 'Placements',           href: '/departments/civil/placements/' },
+  { label: 'Newsletter',           href: '/departments/civil/newsletter/' },
+  { label: 'Brochure',             href: '/departments/civil/brochure/' },
+];
+---
+
+<div class="row justify-content-md-center">
+  <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-center mb--60 border-bottom pb-5">
+    <div class="civil-topbar__left">
+      <div class="civil-dept__title-wrapper">
+        <div class="civil-dept__title mb-0">
+          <i class="fa-light fa-building-columns me-2"></i>
+          <span class="h5 mb-0">Civil Engineering</span>
+          {current && current !== 'Home' && (
+            <span class="civil-topbar__sep"> / </span>
+            <span class="civil-topbar__current">{current}</span>
+          )}
+        </div>
+      </div>
+    </div>
+    <div class="civil-topbar__right">
+      <div class="search-filter dropdown">
+        <button class="civil-topbar__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-light fa-bars"></i> Navigate
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end civil-topbar__menu">
+          {navItems.map(item => (
+            <li class="mt-0 mb-0">
+              <a
+                href={item.href}
+                class={`dropdown-item civil-topbar__item${current === item.label ? ' active' : ''}`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .civil-topbar__left {
+    flex: 1;
+  }
+  .civil-dept__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 2.25rem;
+    color: var(--rt-heading);
+  }
+  .civil-dept__title i {
+    color: var(--rt-primary);
+  }
+  .civil-topbar__sep {
+    color: var(--rt-body);
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  .civil-topbar__current {
+    color: var(--rt-body);
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .civil-topbar__right {
+    display: flex;
+    align-items: center;
+  }
+  .civil-topbar__btn {
+    background: var(--rt-primary);
+    border: 1px solid var(--rt-primary);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .civil-topbar__btn:hover,
+  .civil-topbar__btn.show {
+    background: var(--rt-primary-2);
+    border-color: var(--rt-primary-2);
+    color: #fff;
+  }
+  .civil-topbar__btn i {
+    font-size: 1.125rem;
+  }
+  .civil-topbar__menu {
+    min-width: 220px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 0.25rem 0;
+    border: 1px solid #e0e5ef;
+    margin-top: 0.5rem;
+  }
+  .civil-topbar__item {
+    padding: 0.5rem 1.25rem;
+    font-size: 1.25rem;
+    color: var(--rt-body);
+    transition: background 0.12s, color 0.12s;
+  }
+  .civil-topbar__item:hover {
+    background: #f0f4fa;
+    color: var(--rt-primary);
+  }
+  .civil-topbar__item.active {
+    background: #eef2fb;
+    color: var(--rt-primary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .civil-dept__title {
+      font-size: 1.25rem;
+    }
+    .civil-topbar__sep,
+    .civil-topbar__current {
+      font-size: 1.1rem;
+    }
+  }
+</style>

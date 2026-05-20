@@ -1,0 +1,191 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
+
+const hod = [
+  { name: 'Dr. P. Poluraju', designation: 'Professor & HoD', specialization: 'Structural Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/77012' },
+];
+
+const professors = [
+  { name: 'Dr. G.V.R. Prasada Raju',    designation: 'Professor', specialization: 'Transportation Engineering',        profile: 'https://vidwan.inflibnet.ac.in/profile/76985' },
+  { name: 'Dr. N. Ramanjaneyulu',        designation: 'Professor', specialization: 'Hydraulics & Water Resources',      profile: 'https://vidwan.inflibnet.ac.in/profile/77006' },
+  { name: 'Dr. K. Satyanarayana',        designation: 'Professor', specialization: 'Geotechnical Engineering',          profile: 'https://vidwan.inflibnet.ac.in/profile/76921' },
+  { name: 'Dr. E. Kiran Kumar',          designation: 'Professor', specialization: 'Environmental Engineering',         profile: 'https://vidwan.inflibnet.ac.in/profile/77014' },
+  { name: 'Dr. K. Srinivasa Rao',        designation: 'Professor', specialization: 'Structural Engineering',            profile: 'https://vidwan.inflibnet.ac.in/profile/76946' },
+  { name: 'Dr. P. Sridhar Babu',         designation: 'Professor', specialization: 'Structural Engineering',            profile: 'https://vidwan.inflibnet.ac.in/profile/76987' },
+  { name: 'Dr. D. Ravi Prasad',          designation: 'Professor', specialization: 'Surveying & GIS',                   profile: 'https://vidwan.inflibnet.ac.in/profile/76963' },
+  { name: 'Dr. B. Kavitha',              designation: 'Professor', specialization: 'Structural Engineering',            profile: 'https://vidwan.inflibnet.ac.in/profile/76998' },
+  { name: 'Dr. K.V.G.D. Balaji',         designation: 'Professor', specialization: 'Geotechnical Engineering',          profile: 'https://vidwan.inflibnet.ac.in/profile/77008' },
+  { name: 'Dr. K. Naga Sai Ramesh',      designation: 'Professor', specialization: 'Transportation Engineering',        profile: 'https://vidwan.inflibnet.ac.in/profile/76971' },
+];
+
+const associateProfessors = [
+  { name: 'Dr. Y. Aravind',              designation: 'Associate Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/77022' },
+  { name: 'Dr. Y. Srinivasa Rao',        designation: 'Associate Professor', specialization: 'Environmental Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/77001' },
+  { name: 'Dr. Ch. Jaya Chandra Babu',   designation: 'Associate Professor', specialization: 'Hydraulics',             profile: 'https://vidwan.inflibnet.ac.in/profile/76960' },
+  { name: 'Dr. K. Mallikarjuna Rao',     designation: 'Associate Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/77025' },
+];
+
+const assistantProfessors = [
+  { name: 'Mr. K. Satish Kumar',         designation: 'Assistant Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/76988' },
+  { name: 'Ms. T. Uma Maheshwari',       designation: 'Assistant Professor', specialization: 'Environmental Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76966' },
+  { name: 'Mr. A.V.V. Satya Srinivas',   designation: 'Assistant Professor', specialization: 'Geotechnical Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76954' },
+  { name: 'Mr. K. Ravi Kumar',           designation: 'Assistant Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/76977' },
+  { name: 'Mr. B. Srinivasa Rao',        designation: 'Assistant Professor', specialization: 'Transportation Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76993' },
+  { name: 'Ms. T. Naga Aruna',           designation: 'Assistant Professor', specialization: 'Environmental Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76942' },
+  { name: 'Mr. Y. Venkateswara Rao',     designation: 'Assistant Professor', specialization: 'Geotechnical Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76935' },
+  { name: 'Mr. M. Rajasekhar',           designation: 'Assistant Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/76969' },
+  { name: 'Mr. V. Siva Naga Raju',       designation: 'Assistant Professor', specialization: 'Hydraulics',             profile: 'https://vidwan.inflibnet.ac.in/profile/76957' },
+  { name: 'Ms. D. Satya Sree',           designation: 'Assistant Professor', specialization: 'Environmental Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76948' },
+  { name: 'Mr. V. Bhaskar Reddy',        designation: 'Assistant Professor', specialization: 'Transportation Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76980' },
+  { name: 'Ms. G. Vasantha Lakshmi',     designation: 'Assistant Professor', specialization: 'Structural Engineering',  profile: 'https://vidwan.inflibnet.ac.in/profile/76973' },
+  { name: 'Mr. P. Arun',                 designation: 'Assistant Professor', specialization: 'Geotechnical Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76939' },
+  { name: 'Mr. Y. Naga Jyothi',          designation: 'Assistant Professor', specialization: 'Environmental Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/76945' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Faculty | Civil Engineering | SRKR" description="Faculty of the Department of Civil Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/civil/">Civil Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Faculty</li>
+              </ul>
+              <h2 class="section-title">Faculty</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <CivilDeptNav current="Faculty" />
+
+        <!-- HoD -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professor &amp; Head of Department</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src={`/assets/images/faculty/${String((i % 10) + 1).padStart(2,'0')}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {professors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src={`/assets/images/faculty/${String((i % 10) + 1).padStart(2,'0')}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Associate Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Associate Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {associateProfessors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src={`/assets/images/faculty/${String((i % 10) + 1).padStart(2,'0')}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Assistant Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Assistant Professors</h3>
+        </div>
+        <div class="row g-5">
+          {assistantProfessors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src={`/assets/images/faculty/${String((i % 10) + 1).padStart(2,'0')}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
