@@ -7,7 +7,7 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
 
 const hod = [
-  { name: 'Dr. P. Poluraju', designation: 'Professor & HoD', specialization: 'Structural Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/77012', imgsrc: '550.jpg'},
+  { name: 'Dr. P. Poluraju', designation: 'Professor & HoD', specialization: 'Structural Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/77012', imgsrc: '550'},
 ];
 
 const professors = [
@@ -90,7 +90,7 @@ const assistantProfessors = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src={`/assets/images/faculty/civil/${f.imgsrc}`} alt={f.name} />
+                    <img src={`/assets/images/faculty/civil/${f.imgsrc}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
