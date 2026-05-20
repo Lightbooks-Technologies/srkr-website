@@ -24,11 +24,11 @@ const professors = [
 ];
 
 const associateProfessors = [
- { name: 'Dr.G.Sri Bala',              designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/500999' },
- { name: 'Dr. T.Vamsi Nagaraju',       designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/178533' },
- { name: 'Dr. S.K.V.S.T.Lava Kumar',    designation: 'Associate Professor', specialization: 'Transportation Engineering',profile: 'https://srkrec.irins.org/profile/180447' },
- { name: 'Dr.G.Sasikala',               designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/180574' },
- { name: 'Dr.P.V.Rambabu',              designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/579924' }
+ { name: 'Dr.G.Sri Bala',              designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/500999', imgsrc: '01.jpg' },
+ { name: 'Dr. T.Vamsi Nagaraju',       designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/178533', imgsrc: '02.jpg' },
+ { name: 'Dr. S.K.V.S.T.Lava Kumar',    designation: 'Associate Professor', specialization: 'Transportation Engineering',profile: 'https://srkrec.irins.org/profile/180447', imgsrc: '03.jpg' },
+ { name: 'Dr.G.Sasikala',               designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/180574', imgsrc: '04.jpg' },
+ { name: 'Dr.P.V.Rambabu',              designation: 'Associate Professor', specialization: 'Transportation Engineering', profile: 'https://srkrec.irins.org/profile/579924', imgsrc: '05.jpg' }
 
 ];
 
@@ -90,7 +90,7 @@ const assistantProfessors = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src={`/assets/images/faculty/civil/${String((i % 10) + 1).padStart(2,'0')}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/civil/f.imgsrc.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
