@@ -8,31 +8,42 @@ import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
 
 // DAC Committee Members
 const dacMembers = [
-  { name: 'Dr. P. Poluraju', role: 'Chairman', image: '01', link: '/departments/civil/faculty/' },
-  { name: 'Dr. G.V.R. Prasada Raju', role: 'Member', image: '02', link: '/departments/civil/faculty/' },
-  { name: 'Dr. N. Ramanjaneyulu', role: 'Member', image: '03', link: '/departments/civil/faculty/' },
-  { name: 'Industry Nominee 1', role: 'Member (TBD)', image: '04', link: null },
-  { name: 'Industry Nominee 2', role: 'Member (TBD)', image: '05', link: null },
+  { name: 'Dr. G Sri Bala', role: 'Chairman', link: 'https://srkrec.irins.org/profile/500999', image: '550' },
+  { name: 'Dr. ACSV Prasad', role: 'Coordinator', link: 'https://srkrec.irins.org/profile/320273', image: '432' },
+  { name: 'Dr. T Vamsi Nagaraju', role: 'Member', link: 'https://srkrec.irins.org/profile/178533', image: '959' },
+  { name: 'Dr. A Subhramanyam Raju', role: 'Member', link: '', image: '1349' },
+  { name: 'Dr. S K V S T Lavakumar', role: 'Member', link: 'https://srkrec.irins.org/profile/180447', image: '454' },
+  { name: 'Dr. P V Rambabu', role: 'Member', link: 'https://srkrec.irins.org/profile/579924', image: '535' },
+  { name: 'Dr. G Sasikala', role: 'Member', link: 'https://srkrec.irins.org/profile/180574', image: '515' },
+  { name: 'Dr. E Ramanjaneya Raju', role: 'Member', link: 'https://srkrec.irins.org/profile/579043', image: '939' },
+  { name: 'Dr. M Venkata Rao', role: 'Member', link: 'https://srkrec.irins.org/profile/501813', image: '695' },
+  { name: 'Dr. S Srikanth Reddy', role: 'Member', link: 'https://srkrec.irins.org/profile/504013', image: '995' },
+  { name: 'Mr. M S K Chaitanya', role: 'Member', link: 'https://srkrec.irins.org/profile/503636', image: '1165' },
+  { name: 'Mr. N Siva Kishan', role: 'Member', link: 'https://srkrec.irins.org/profile/246219', image: '1163' }
 ];
 
 // BoS Committee Members
 const bosMembers = [
-  { name: 'Dr. P. Poluraju', role: 'Chairman', image: '01', link: '/departments/civil/faculty/' },
-  { name: 'Dr. K. Satyanarayana', role: 'Member', image: '06', link: '/departments/civil/faculty/' },
-  { name: 'Dr. E. Kiran Kumar', role: 'Member', image: '07', link: '/departments/civil/faculty/' },
-  { name: 'Dr. K. Srinivasa Rao', role: 'Member', image: '08', link: '/departments/civil/faculty/' },
-  { name: 'Dr. Y. Aravind', role: 'Member', image: '09', link: '/departments/civil/faculty/' },
-  { name: 'Industry Expert 1', role: 'Member (TBD)', image: '10', link: null },
-  { name: 'Industry Expert 2', role: 'Member (TBD)', image: '01', link: null },
+  { name: 'Dr. G Sri Bala', role: 'Chairman\nAssistant Professor and Head', link: '', image: '550' },
+  { name: 'Dr. P. Subba Rao (JNTUK Nominee)', role: 'Member\nProfessor, Dept. of Civil Engineering, JNTUK', link: '', image: 'PSubbarao' },
+  { name: 'Dr. J.S. Kalyana Rama (Expert from Other University)', role: 'Member\nAssociate Professor (Mahindra University)', link: '', image: 'SriKalyanaRamaJyosyula' },
+  { name: 'Dr. G Bharat (Expert from Research Organization)', role: 'Member\nPrincipal Scientist (CSIR-CRRI)', link: '', image: 'bharath' },
+  { name: 'Sri P. Sri Pavan Krupa Kumar (Expert from Industry)', role: 'Member\nCEO, PossiBuild Building Technologies, Hyderabad.', link: '', image: null },
+  { name: 'Dr. A. Uma Maheswar Arepalli', role: 'Member\nAssistant Professor, SRM-AP, Guntur', link: '', image: 'UmaMaheshwararao' }
+  
 ];
 
 // PAQIC Committee Members
 const paqicMembers = [
-  { name: 'Dr. P. Poluraju', role: 'Coordinator', image: '01', link: '/departments/civil/faculty/' },
-  { name: 'Dr. P. Sridhar Babu', role: 'Member', image: '02', link: '/departments/civil/faculty/' },
-  { name: 'Dr. B. Kavitha', role: 'Member', image: '03', link: '/departments/civil/faculty/' },
-  { name: 'Dr. K.V.G.D. Balaji', role: 'Member', image: '04', link: '/departments/civil/faculty/' },
-  { name: 'Dr. Y. Srinivasa Rao', role: 'Member', image: '05', link: '/departments/civil/faculty/' },
+  { name: 'Dr. G Sri Bala', role: 'Chairman', link: 'https://srkrec.irins.org/profile/500999', image: '550' },
+  { name: 'Dr. ACSV Prasad', role: 'Coordinator', link: 'https://srkrec.irins.org/profile/320273', image: '432' },
+  { name: 'Dr. T Vamsi Nagaraju', role: 'Member', link: 'https://srkrec.irins.org/profile/178533', image: '959' },
+  { name: 'Dr. S K V S T Lavakumar', role: 'Member', link: 'https://srkrec.irins.org/profile/180447', image: '454' },
+  { name: 'Dr. E Ramanjaneya Raju', role: 'Member', link: 'https://srkrec.irins.org/profile/579043', image: '939' },
+  { name: 'Dr. M Venkata Rao', role: 'Member', link: 'https://srkrec.irins.org/profile/501813', image: '695' },
+  { name: 'Dr. S Srikanth Reddy', role: 'Member', link: 'https://srkrec.irins.org/profile/504013', image: '995' },
+  { name: 'Mr. M S K Chaitanya', role: 'Member', link: 'https://srkrec.irins.org/profile/503636', image: '1165' },
+
 ];
 ---
 
@@ -109,7 +120,7 @@ const paqicMembers = [
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                  <img src={`/assets/images/faculty/civil/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
@@ -144,7 +155,7 @@ const paqicMembers = [
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                  <img src={`/assets/images/faculty/civil/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
@@ -179,7 +190,7 @@ const paqicMembers = [
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                  <img src={`/assets/images/faculty/civil/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
