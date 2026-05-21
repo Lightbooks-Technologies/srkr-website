@@ -630,6 +630,20 @@ ol ul {
   }
 }
 
+.rts-section-padding-small {
+  padding: 60px 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .rts-section-padding-small {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .rts-section-padding-small {
+    padding: 60px 0;
+  }
+}
+
 .rts-section-padding {
   padding: 120px 0;
 }

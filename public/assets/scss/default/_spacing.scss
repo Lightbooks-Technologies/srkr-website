@@ -25,6 +25,17 @@
         padding: 60px 0;
     }
 }
+
+.rts-section-padding-small {
+    padding: 60px 0;
+    @media #{$md-layout} {
+        padding: 60px 0;
+    }
+    @media #{$sm-layout} {
+        padding: 60px 0;
+    }
+}
+
 .rts-section-padding {
     padding: 120px 0;
     @media #{$md-layout} {
