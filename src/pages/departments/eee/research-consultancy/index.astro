@@ -1,0 +1,227 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Research & Consultancy | Electrical & Electronics Engineering | SRKR" description="Research areas, funded projects, publications, and consultancy services of the Electrical & Electronics Engineering department at SRKR." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/eee/">Electrical &amp; Electronics Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Research &amp; Consultancy</li>
+              </ul>
+              <h2 class="section-title">Research &amp; Consultancy</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="eee" current="Research/Consultancy" />
+
+        <!-- Two Column Layout -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left: Overview + Accordion -->
+          <div class="col-lg-8 col-md-11">
+
+            <!-- Intro -->
+            <div class="program-about mb--40">
+              <h4 class="title">Research &amp; Consultancy Overview</h4>
+              <p>{/* TODO: confirm figures with department records */}The Department of Electrical &amp; Electronics Engineering pursues active research in power systems, power electronics, renewable energy integration, electric mobility, and intelligent control. Faculty publish in reputed SCI/Scopus journals, supervise Ph.D. scholars under JNTUK, and engage with industry through consultancy assignments and MoUs with utilities, manufacturers, and research organisations such as APTRANSCO, BHEL, and CPRI.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="eee-rts-accordion">
+
+                  <!-- Research Areas -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#eee-collapseOne" aria-expanded="true">
+                      Research Areas
+                    </button>
+                    <div id="eee-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#eee-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Power Systems Operation, Stability &amp; Protection</li>
+                              <li class="si__list--single">Power Electronics &amp; Electric Drives</li>
+                              <li class="si__list--single">Renewable Energy Integration &amp; Smart Grids</li>
+                              <li class="si__list--single">Electric Vehicles &amp; Energy Storage Systems</li>
+                              <li class="si__list--single">Control Systems &amp; Industrial Automation</li>
+                              <li class="si__list--single">High Voltage Engineering &amp; Insulation Diagnostics</li>
+                              <li class="si__list--single">Power Quality &amp; FACTS Devices</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Focus Groups -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-collapseTwo" aria-expanded="false">
+                      Research Focus Groups
+                    </button>
+                    <div id="eee-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#eee-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Group on Renewable Energy &amp; Distributed Generation</li>
+                              <li class="si__list--single">Group on Electric Vehicles &amp; Power Electronics</li>
+                              <li class="si__list--single">Group on Smart Grid &amp; Power Quality</li>
+                              <li class="si__list--single">Group on Advanced Control &amp; Industrial Automation</li>
+                              <li class="si__list--single">Group on High Voltage &amp; Insulation Engineering</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Funded Projects -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-collapseThree" aria-expanded="false">
+                      Funded Projects
+                    </button>
+                    <div id="eee-collapseThree" class="accordion-collapse collapse" data-bs-parent="#eee-rts-accordion">
+                      <div class="accordion-body">
+                        {/* TODO: replace with current funded project records */}
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">AICTE-funded research on grid-integrated solar PV systems with battery storage.</li>
+                              <li class="si__list--single">Industry-sponsored project on power quality monitoring for distribution feeders.</li>
+                              <li class="si__list--single">Institute-funded innovations in electric vehicle charging infrastructure and BLDC drives.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Publications -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-collapseFour" aria-expanded="false">
+                      Publications
+                    </button>
+                    <div id="eee-collapseFour" class="accordion-collapse collapse" data-bs-parent="#eee-rts-accordion">
+                      <div class="accordion-body">
+                        {/* TODO: verify publication counts with department research cell */}
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">100+ research papers published in SCI/Scopus indexed journals.</li>
+                              <li class="si__list--single">40+ papers presented at national and international conferences.</li>
+                              <li class="si__list--single">Multiple book chapters in IEEE/Springer/Elsevier publications.</li>
+                              <li class="si__list--single">Patents filed in power electronics, EV charging, and renewable integration.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Consultancy -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-collapseFive" aria-expanded="false">
+                      Consultancy Services
+                    </button>
+                    <div id="eee-collapseFive" class="accordion-collapse collapse" data-bs-parent="#eee-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <h4 class="title">Domains</h4>
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Energy audits and load flow studies for industries and institutions.</li>
+                              <li class="si__list--single">Power quality monitoring, harmonic analysis, and mitigation studies.</li>
+                              <li class="si__list--single">Solar PV system design, sizing, and grid-integration consultancy.</li>
+                              <li class="si__list--single">Electrical machine testing, condition monitoring, and protection coordination.</li>
+                              <li class="si__list--single">EV charging infrastructure planning and feasibility studies.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">The department serves industries, distribution utilities, and government agencies across Andhra Pradesh, leveraging modern simulation tools and laboratory capabilities.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <!-- Quick Links -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Research Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/departments/eee/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
+                    <li><a href="/departments/eee/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Research Facilities</a></li>
+                    <li><a href="/departments/eee/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>M.Tech Programs</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Publications List</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="program-info">
+                <h5>Department Contact</h5>
+                <p>Electrical &amp; Electronics Engineering Department<br>SRKR Engineering College</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:hod.eee@srkr.ac.in">hod.eee@srkr.ac.in</a>
+                  <a href="mailto:research.eee@srkr.ac.in">research.eee@srkr.ac.in</a>
+                </div>
+                <div class="contact-info mt--20 mb--20">
+                  <h5>Phone:</h5>
+                  <a href="tel:+918842226666">+91 884 222 6666</a>
+                </div>
+                <div class="social-info mt--20">
+                  <h5>Connect With Us:</h5>
+                  <div class="social-info-link">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

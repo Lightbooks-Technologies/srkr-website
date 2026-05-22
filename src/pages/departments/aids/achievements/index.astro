@@ -1,0 +1,290 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<style>
+  .rts-about-section {
+    height: 100%;
+  }
+
+  .rts-about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rts-about-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.25rem;
+  }
+
+  .rts-about-details .single-about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Achievements | Artificial Intelligence & Data Science | SRKR" description="Department, faculty, and student achievements of the Artificial Intelligence & Data Science department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/aids/">Artificial Intelligence &amp; Data Science</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Achievements</li>
+              </ul>
+              <h2 class="section-title">Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Achievements Section -->
+    <section class="rts-about-university py-5">
+      <div class="container">
+        <DeptNav dept="aids" current="Achievements" />
+
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-5">
+              <h3 class="rts-section-title">Department Excellence</h3>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <p class="rts-section-description">
+                Since its establishment in 2021, the Department of AI &amp; Data Science at SRKR has rapidly built a reputation as a modern, fast-growing programme. Students consistently distinguish themselves in national data competitions, hackathons, and capstone analytics projects — applying machine learning, deep learning, and big data techniques to real-world problems.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Image + Stat Cards -->
+        <div class="container">
+          <div class="row g-5 justify-content-md-center justify-content-start align-items-stretch">
+            <div class="col-lg-7 col-xl-8 col-md-11">
+              <div class="rts-about-section">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="AI & Data Science Department">
+              </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 col-md-11">
+              <div class="rts-about-details">
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">2021</h3>
+                    <img src="/assets/images/icon/11.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Department Established · B.Tech AI &amp; Data Science</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">240</h3>
+                    <img src="/assets/images/icon/12.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Annual Sanctioned Intake</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">12+</h3>
+                    <img src="/assets/images/icon/13.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Modern AI, Big Data &amp; Analytics Labs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="rts-funfact pt-5">
+          <div class="container">
+            <div class="row justify-content-center mx-0">
+              <div class="col-lg-12 px-0">
+                <div class="rts-funfact-wrapper">
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">25+</h2>
+                    <p>Capstone Analytics Projects {/* TODO: verify */}</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">15+</h2>
+                    <p>Hackathon &amp; Datathon Awards {/* TODO: verify */}</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">90%+</h2>
+                    <p>Average Pass Percentage {/* TODO: verify */}</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">10+</h2>
+                    <p>Industry Capstone Partners {/* TODO: verify */}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="rts-history rts-section-padding">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop" alt="Faculty Excellence in AI & Data Science">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Faculty Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      <li class="si__list--single">Publications in Scopus/SCI-indexed journals on ML, deep learning, and analytics {/* TODO: verify counts */}</li>
+                      <li class="si__list--single">Faculty members certified in AWS, Azure and Google Cloud data &amp; ML tracks</li>
+                      <li class="si__list--single">Authored book chapters and edited volumes on AI &amp; Data Science</li>
+                      <li class="si__list--single">FDPs delivered on Big Data, MLOps, and Generative AI</li>
+                      <li class="si__list--single">Reviewers for reputed international journals and conferences</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Achievements -->
+        <section class="rts-mission rts-section-padding pt-0">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Student Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      <li class="si__list--single">Winners and finalists at Smart India Hackathon &amp; national datathons {/* TODO: verify */}</li>
+                      <li class="si__list--single">Top performers in Kaggle competitions and Google Cloud / AWS challenges</li>
+                      <li class="si__list--single">Capstone projects deployed in collaboration with industry partners</li>
+                      <li class="si__list--single">Selections in summer internships at IITs, IIITs and leading data-driven companies</li>
+                      <li class="si__list--single">Open-source contributions in Python, scikit-learn and PyTorch ecosystems</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop" alt="Student Success in AI & Data Science">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Department Milestones Timeline -->
+        <section class="rts__section rts-section-padding pt-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                  <h2 class="rts__section--title">Department Milestones</h2>
+                  <p class="rts__section--description">A young department on a steep growth curve — expanding intake, labs, and industry partnerships year after year as Artificial Intelligence and Data Science move to the centre of the global economy.</p>
+                  <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                  <!-- 2021 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2021</a></h4>
+                        <p class="campus__life--single--description">B.Tech AI &amp; Data Science programme launched under AICTE approval.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2022 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2022</a></h4>
+                        <p class="campus__life--single--description">Big Data, ML and Deep Learning labs commissioned with GPU compute and modern data stack.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2023 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2023</a></h4>
+                        <p class="campus__life--single--description">Intake scaled up; specialization tracks in Data Engineering, Applied Analytics, Deep Learning and BI introduced.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2024 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2024</a></h4>
+                        <p class="campus__life--single--description">Industry capstone partnerships, hackathon wins and first batch placements in data &amp; AI roles.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

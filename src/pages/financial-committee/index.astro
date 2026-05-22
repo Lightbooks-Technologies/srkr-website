@@ -4,12 +4,25 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Financial Committee";
+
+const pageTitle = "Finance Committee";
+
+const members = [
+  { sno: 1, category: 'Chairperson',       name: 'Dr. K.V. Murali Krishnam Raju',  designation: 'Principal' },
+  { sno: 2, category: 'Member',            name: 'Sri S.R.K. Nishant Varma',        designation: 'Secretary cum Correspondent' },
+  { sno: 3, category: 'Member',            name: 'Sri Ch. Amarendra',               designation: 'Finance Officer' },
+  { sno: 4, category: 'Member Secretary',  name: 'Dr. Bh.V.S. Rama Krishnam Raju',  designation: 'Professor &amp; Head, Dept. of CSE' },
+];
+
+const meetingMinutes = [
+  { year: '2024-25', href: 'https://srkrec.ac.in/files/mom/fc_2024-25.pdf' },
+  { year: '2023-24', href: 'https://srkrec.ac.in/files/mom/fc_2023-24.pdf' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Finance Committee of SRKR Engineering College — composition, functions, scope and meeting minutes." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +34,7 @@ const pageTitle = "Financial Committee";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +44,156 @@ const pageTitle = "Financial Committee";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4</h2>
+                <p>Members in Finance Committee</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">2x</h2>
+                <p>Meetings per year (minimum)</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">UGC</h2>
+                <p>Constituted per UGC autonomous guidelines</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+          <div class="col-lg-8 col-md-11">
+            <div class="program-about mb--40">
+              <h4 class="title">About the Finance Committee</h4>
+              <p>The Finance Committee is constituted in line with UGC guidelines for autonomous colleges. It functions as an advisory body to the Governing Body on financial planning, fee structure, budget estimation and audit of accounts.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="fc-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fcFunctions" aria-expanded="true">Functions</button>
+                    <div id="fcFunctions" class="accordion-collapse collapse show" data-bs-parent="#fc-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Estimate the budget for grants received/receivable from UGC.</li>
+                          <li class="si__list--single">Estimate income from fees and other receipts collected for autonomy-related activities.</li>
+                          <li class="si__list--single">Audit accounts pertaining to receipts and expenditure under the autonomy scheme.</li>
+                          <li class="si__list--single">Recommend financial allocations to the Governing Body for academic and infrastructure proposals.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fcScope" aria-expanded="false">Scope &amp; Frequency</button>
+                    <div id="fcScope" class="accordion-collapse collapse" data-bs-parent="#fc-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Minimum two meetings per academic year.</li>
+                          <li class="si__list--single">Reviews annual budget and statutory audit observations.</li>
+                          <li class="si__list--single">Co-ordinates with the Finance Officer for monthly book closure and audit trails.</li>
+                          <li class="si__list--single">Approves capex proposals from departments above defined thresholds.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fcMinutes" aria-expanded="false">Meeting Minutes</button>
+                    <div id="fcMinutes" class="accordion-collapse collapse" data-bs-parent="#fc-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          {meetingMinutes.map((m) => (
+                            <li class="si__list--single"><a href={m.href} target="_blank" rel="noopener">Finance Committee Minutes {m.year} (PDF)</a></li>
+                          ))}
+                          <li class="si__list--single">{/* TODO: add older minutes when digitised */}Older years available on request from the Finance Officer.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fcAudit" aria-expanded="false">Statutory Audits &amp; Reports</button>
+                    <div id="fcAudit" class="accordion-collapse collapse" data-bs-parent="#fc-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Annual statutory audit by an empanelled Chartered Accountant.</li>
+                          <li class="si__list--single">Internal audit conducted by the Office of the Finance Officer.</li>
+                          <li class="si__list--single">Audited Income &amp; Expenditure Statements submitted to the Governing Body.</li>
+                          <li class="si__list--single">{/* TODO: link annual audit reports when published */}Annual Audit Reports — links forthcoming.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Related Bodies</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/governing"><span><i class="fa-light fa-arrow-right"></i></span>Governing Body</a></li>
+                    <li><a href="/academic-council"><span><i class="fa-light fa-arrow-right"></i></span>Academic Council</a></li>
+                    <li><a href="/central-committee"><span><i class="fa-light fa-arrow-right"></i></span>Central Committee</a></li>
+                    <li><a href="/iqac"><span><i class="fa-light fa-arrow-right"></i></span>IQAC</a></li>
+                    <li><a href="/development-plan"><span><i class="fa-light fa-arrow-right"></i></span>Institute Development Plan</a></li>
+                    <li><a href="https://srkrec.ac.in/finance_committee.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Legacy Finance Page</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="program-info">
+                <h5>Finance Office</h5>
+                <p>Mr. Ch. Amarendra<br/><small>Finance Officer</small></p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:finance@srkrec.edu.in">finance@srkrec.edu.in</a>
+                  {/* TODO: confirm Finance Office email */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Composition table -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Composition</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>S.No</td><td>Category</td><td>Name</td><td>Designation</td></tr>
+                    </thead>
+                    <tbody>
+                      {members.map((m) => (
+                        <tr><td>{m.sno}</td><td>{m.category}</td><td>{m.name}</td><td set:html={m.designation}></td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

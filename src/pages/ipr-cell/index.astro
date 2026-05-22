@@ -4,12 +4,31 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "IPR Cell";
+
+const services = [
+  { num: '01', icon: 'assets/images/icon/14.svg', img: 'assets/images/apply/01.jpg', title: 'Patent Filing', desc: 'End-to-end support &mdash; prior-art search, drafting, filing and prosecution.' },
+  { num: '02', icon: 'assets/images/icon/15.svg', img: 'assets/images/apply/02.jpg', title: 'Trademark &amp; Copyright', desc: 'Brand &amp; original-work protection for student and faculty projects.' },
+  { num: '03', icon: 'assets/images/icon/16.svg', img: 'assets/images/apply/03.jpg', title: 'Design Registration', desc: 'Industrial design registration for prototypes built at IDEA Lab and I-Hub.' }
+];
+
+const composition = [
+  { name: 'Dr. R N V Jagan Mohan', role: 'IPR Activity Coordinator' },
+  { name: 'Principal', role: 'Chairman' },
+  { name: 'Dean &mdash; Research &amp; Development', role: 'Convenor' },
+  { name: 'Coordinator &mdash; IIC', role: 'Member' },
+  { name: 'Coordinator &mdash; IDEA Lab', role: 'Member' },
+  { name: 'External Patent Attorney', role: 'External Expert' },
+  { name: 'Sr. Faculty &mdash; Engineering Sciences', role: 'Member' },
+  { name: 'Sr. Faculty &mdash; Applied Sciences', role: 'Member' }
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR IPR Cell: patent filing, trademark, copyright, design registration, IPR awareness and technology transfer support.`} />
   </head>
   <body>
     <SrkrHeader />
@@ -30,13 +49,262 @@ const pageTitle = "IPR Cell";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Intro -->
+    <div class="rts-campus-life rts-section-padding pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="campus-life">
+            <div class="campus-life__content">
+              <h1 class="rts-section-title">Protecting Ideas, Enabling Innovation.</h1>
+              <p class="description w-680">
+                The Intellectual Property Rights Cell at SRKR conducts and attends awareness programs on patents, trademarks, copyrights and other aspects of IPR, and supports faculty and students through the entire filing lifecycle &mdash; from invention disclosure to commercialization.
+              </p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat funfact bar -->
+    <div class="rts-funfact v_3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">25+</h2>
+                <p>Patents Filed</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">10+</h2>
+                <p>IPR Workshops/Year</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">5+</h2>
+                <p>Design Registrations</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">100%</h2>
+                <p>Filing Support to Inventors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services grid -->
+    <section class="rts-research-section rts-section-padding">
+      <div class="container">
+        <div class="row mb--40">
+          <div class="rts-section text-center">
+            <h3 class="rts-section-title">Services Offered</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="research__items">
+            <div class="row justify-content-sm-center justify-content-md-start g-5">
+              {services.map((s) => (
+                <div class="col-lg-4 col-md-6 col-sm-11">
+                  <div class="research-procedure">
+                    <div class="research-image"><img src={s.img} alt={s.title} /></div>
+                    <div class="rt-serial">{s.num}</div>
+                    <div class="icon"><img src={s.icon} alt="" /></div>
+                    <a href="#filing-process">{s.title}</a>
+                    <p set:html={s.desc}></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filing Process + Sidebar -->
+    <section class="rts-scholarship pt--40 pb--60" id="filing-process">
+      <div class="container">
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left -->
+          <div class="col-lg-8 col-md-11">
+
+            <div class="program-about mb--40">
+              <h4 class="title">Patent Filing &mdash; 5 Step Process</h4>
+              <p>SRKR's IPR Cell guides every inventor through a structured, standards-compliant pipeline from idea to grant.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="ipr-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#iprOne" aria-expanded="true">
+                      Step 1 &mdash; Invention Disclosure
+                    </button>
+                    <div id="iprOne" class="accordion-collapse collapse show" data-bs-parent="#ipr-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Inventor submits the Invention Disclosure Form (IDF) to the IPR Cell.</li>
+                          <li class="si__list--single">Cell verifies novelty potential and assigns a case officer.</li>
+                          <li class="si__list--single">Confidentiality agreement signed with all co-inventors.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iprTwo" aria-expanded="false">
+                      Step 2 &mdash; Prior-Art &amp; Patentability Search
+                    </button>
+                    <div id="iprTwo" class="accordion-collapse collapse" data-bs-parent="#ipr-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Search across InPASS, USPTO, EPO, WIPO PATENTSCOPE and Google Patents.</li>
+                          <li class="si__list--single">Patentability report shared with inventor within 15 working days.</li>
+                          <li class="si__list--single">Go / no-go decision taken jointly with the inventor.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iprThree" aria-expanded="false">
+                      Step 3 &mdash; Drafting &amp; Filing
+                    </button>
+                    <div id="iprThree" class="accordion-collapse collapse" data-bs-parent="#ipr-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Specification (provisional / complete) drafted with the assigned patent attorney.</li>
+                          <li class="si__list--single">Forms 1, 2, 3, 5 &amp; 9 prepared and filed online via the Indian Patent Office portal.</li>
+                          <li class="si__list--single">Acknowledgement &amp; application number shared with inventor.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iprFour" aria-expanded="false">
+                      Step 4 &mdash; Publication &amp; Examination
+                    </button>
+                    <div id="iprFour" class="accordion-collapse collapse" data-bs-parent="#ipr-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Patent application published (18 months) or early publication via Form 9.</li>
+                          <li class="si__list--single">Request for Examination filed within 48 months.</li>
+                          <li class="si__list--single">Cell coordinates First Examination Report (FER) responses with attorney.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iprFive" aria-expanded="false">
+                      Step 5 &mdash; Grant, Renewal &amp; Tech Transfer
+                    </button>
+                    <div id="iprFive" class="accordion-collapse collapse" data-bs-parent="#ipr-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">On grant, certificate handed over and inventor felicitation organised.</li>
+                          <li class="si__list--single">Annuity reminders &amp; renewal management handled by Cell.</li>
+                          <li class="si__list--single">Tech-transfer / licensing facilitated via IIC &amp; EDC industry network.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Composition cards -->
+            <div class="mt--60">
+              <h4 class="title">Cell Composition</h4>
+              <div class="application-deadline mt--20">
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>S.No</td>
+                          <td>Name</td>
+                          <td>Role</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {/* TODO: replace placeholder composition with the current IPR Cell members */}
+                        {composition.map((m, i) => (
+                          <tr>
+                            <td>{i + 1}</td>
+                            <td>{m.name}</td>
+                            <td>{m.role}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <div class="program-curriculum">
+                <h6 class="heading-title">Forms &amp; Downloads</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {/* TODO: replace with real form PDFs once uploaded */}
+                    <li><a href="/assets/documents/ipr-invention-disclosure-form.pdf"><span><i class="fa-light fa-arrow-right"></i></span>Invention Disclosure Form (PDF)</a></li>
+                    <li><a href="/assets/documents/ipr-policy.pdf"><span><i class="fa-light fa-arrow-right"></i></span>SRKR IPR Policy (PDF)</a></li>
+                    <li><a href="/assets/documents/ipr-patent-checklist.pdf"><span><i class="fa-light fa-arrow-right"></i></span>Patent Filing Checklist (PDF)</a></li>
+                    <li><a href="/assets/documents/ipr-copyright-form.pdf"><span><i class="fa-light fa-arrow-right"></i></span>Copyright Application Form (PDF)</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">External Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="https://ipindia.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>IP India (Patent Office)</a></li>
+                    <li><a href="https://ipindiaonline.gov.in/patentsearch/search/index.aspx" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>InPASS Patent Search</a></li>
+                    <li><a href="https://www.wipo.int" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>WIPO</a></li>
+                    <li><a href="https://patentscope.wipo.int" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>WIPO PATENTSCOPE</a></li>
+                    <li><a href="https://www.uspto.gov" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>USPTO</a></li>
+                    <li><a href="https://www.epo.org" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>European Patent Office</a></li>
+                    <li><a href="https://copyright.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Copyright Office India</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">Inside Research</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/research-overview/"><span><i class="fa-light fa-arrow-right"></i></span>Research Overview</a></li>
+                    <li><a href="/iic/"><span><i class="fa-light fa-arrow-right"></i></span>Innovation Council</a></li>
+                    <li><a href="/entrepreneurship-cell/"><span><i class="fa-light fa-arrow-right"></i></span>EDC</a></li>
+                    <li><a href="/research-committees/"><span><i class="fa-light fa-arrow-right"></i></span>Research Committees</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-info">
+                <h5>IPR Cell Contact</h5>
+                <p>IPR Cell, SRKR Engineering College<br>Bhimavaram, Andhra Pradesh</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:ipr@srkr.ac.in">ipr@srkr.ac.in</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

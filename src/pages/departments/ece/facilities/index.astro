@@ -1,0 +1,134 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const labs = [
+  { name: 'Electronic Devices & Circuits Lab',          img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop' },
+  { name: 'Digital Electronics Lab',                    img: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=600&fit=crop' },
+  { name: 'Analog Circuits Lab',                        img: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&h=600&fit=crop' },
+  { name: 'Microprocessors & Microcontrollers Lab',     img: 'https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&h=600&fit=crop' },
+  { name: 'Communication Lab',                          img: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&h=600&fit=crop' },
+  { name: 'VLSI Design Lab',                            img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop' },
+  { name: 'Embedded Systems Lab',                       img: 'https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=800&h=600&fit=crop' },
+  { name: 'Digital Signal Processing (DSP) Lab',        img: 'https://images.unsplash.com/photo-1551703599-6b3e8379aa8d?w=800&h=600&fit=crop' },
+  { name: 'Microwave & Antennas Lab',                   img: 'https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&h=600&fit=crop' },
+  { name: 'IoT Lab',                                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop' },
+  { name: 'MATLAB / Simulink Lab',                      img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop' },
+  { name: 'Project & Innovation Lab',                   img: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop' },
+];
+---
+
+<style>
+  .single-cat-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cat-thumb {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cat-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cat-meta {
+    padding: 1.5rem 1rem;
+  }
+
+  .cat-title a {
+    font-size: 1.5rem;;
+  }
+
+  .cat-link {
+    display: none;
+  }
+
+  .cat-title {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Facilities | Electronics & Communication Engineering | SRKR" description="Laboratories and research facilities of the Electronics & Communication Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ece/">Electronics &amp; Communication Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Facilities</li>
+              </ul>
+              <h2 class="section-title">Facilities</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="ece" current="Facilities" />
+        <div class="row">
+          <div class="col-12">
+
+            <div class="program-about">
+              <h4 class="title">Our Laboratories</h4>
+              <p>The department is equipped with twelve well-maintained laboratories featuring industry-grade instruments and the latest design software to support B.Tech and M.Tech coursework, research and consultancy. A dedicated VLSI Design Lab (operating as a Centre of Excellence), a Microwave &amp; Antennas Lab, and a modern IoT Lab give students hands-on exposure to the technologies that drive today's electronics industry.</p>
+            </div>
+
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Laboratory Infrastructure</h3>
+            </div>
+
+            <div class="row g-5">
+              {labs.map(lab => (
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img src={lab.img} alt={lab.name} />
+                      <a href="#" class="cat-link-btn">Laboratory</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="#">{lab.name}</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

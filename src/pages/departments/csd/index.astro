@@ -1,0 +1,406 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Computer Science & Design | SRKR Engineering College" description="Department of Computer Science & Design at SRKR Engineering College, Bhimavaram — established 2021, where computer science meets creativity, design, and immersive technology." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Computer Science & Design</li>
+              </ul>
+              <h2 class="section-title">Department of Computer Science & Design</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="csd" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: Replace with actual HoD photo at /assets/images/faculty/csd/PLACEHOLDER.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/csd/PLACEHOLDER.jpg" alt="Dr. M. Sumalatha">
+              <div class="h5 mb-2 mt-5">Dr. M. Sumalatha</div>
+              <span>Associate Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Computer Science &amp; Design</p>
+              <p class="mb-5">The Department of Computer Science &amp; Design (CSD) at SRKR Engineering College was established in 2021 to nurture a new generation of engineers who can blend rigorous computer science with creative design thinking. With an annual intake of 60 students, our B.Tech CSD programme prepares graduates for careers at the intersection of software, interaction, immersive media, and product innovation.</p>
+              <p class="h6 mb-4">Where Computer Science Meets Creativity</p>
+              <p class="mb-5">Aligned with NEP 2020, our project-based curriculum combines core CS foundations — programming, data structures, databases, web technologies — with design-led courses in UX/UI, game development, animation, AR/VR, computer graphics, and creative coding. Students engage with industry-standard tools (Figma, Unity, Unreal Engine, Blender, Adobe Creative Suite) and build real products, games, and interactive experiences from their first semester.</p>
+              <p class="h6 mb-4">Innovation, Startups &amp; Industry Readiness</p>
+              <p>CSD operates under the umbrella of the SRKR Technology Centre, with access to the AICTE IDEA Lab, Innovation Centre, on-campus startups, and a 400+ system computing facility. Students are mentored to launch their own ventures, intern from semester one, and graduate as designers, developers, founders, and creative technologists. I warmly invite you to explore our programme and join a community that builds the future of digital experience.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To be a leading centre for Computer Science &amp; Design education that produces creative technologists shaping the future of digital products, experiences, and immersive media.</li>
+                  <li>To foster innovation, entrepreneurship, and human-centred design thinking among engineering graduates.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To deliver a project-based curriculum that integrates computer science fundamentals with design, UX, game development, animation, and AR/VR.</li>
+                  <li class="mb-3">To cultivate creativity, critical thinking, and problem-solving through hands-on studios, internships, and industry collaboration.</li>
+                  <li class="mb-3">To empower students to build startups, ship products, and contribute meaningfully to the creative-tech ecosystem.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: Replace with departmental hero image */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1561070791-2526d30994b8?w=900&h=600&fit=crop" alt="Computer Science & Design Studio">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&h=380&fit=crop" alt="UX & Interaction Design">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csd/research-consultancy/">UX &amp; Interaction Design</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csd/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&h=380&fit=crop" alt="Game Development">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csd/research-consultancy/">Game Development</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csd/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=600&h=380&fit=crop" alt="AR/VR & Immersive Tech">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csd/research-consultancy/">AR/VR &amp; Immersive Tech</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csd/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=380&fit=crop" alt="Animation & Multimedia">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csd/research-consultancy/">Animation &amp; Multimedia</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csd/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">B.Tech Computer Science &amp; Design
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">NEP 2020 Aligned Curriculum
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">Intake — 60 Seats
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Specialization Tracks</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">UX &amp; Interaction Design
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">Game Development
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">AR/VR &amp; Immersive Tech
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/academic-programs/" class="link__list">Animation &amp; Multimedia
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Innovation</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/research-consultancy/" class="link__list">AICTE IDEA Lab Access
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/research-consultancy/" class="link__list">On-Campus Startups
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/research-consultancy/" class="link__list">SRKR Technology Centre
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csd/research-consultancy/" class="link__list">Industry-Aligned Projects
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">A young, fast-growing department at the intersection of computer science, design, and immersive technology.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/csd/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="CSD Hackathon Wins">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-trophy"></i></span>
+                      <a href="#">Recognition</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Hackathon &amp; Startup Wins</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csd/achievements/" class="post-title">
+                    CSD students winning Prajwalan Hackathon &amp; NIT-AP Startup Expo within the first batches.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csd/facilities/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="IDEA Lab & Tech Centre">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-lightbulb"></i></span>
+                      <a href="#">Facilities</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>AICTE IDEA Lab</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csd/facilities/" class="post-title">
+                    Hosted by the SRKR Technology Centre — IDEA Lab, Innovation Centre, 400+ system computing lab.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csd/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Industry Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Tech &amp; Design Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csd/placements/" class="post-title">
+                    Career pathways across software, UX, game studios, animation houses, and creative agencies.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csd/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Startups & Innovation">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-rocket"></i></span>
+                      <a href="#">Startups</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>On-Campus Ventures</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csd/research-consultancy/" class="post-title">
+                    Student-led startups such as Bhimavaram Online incubated within the SRKR ecosystem.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      /* Equal-height specialization cards */
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

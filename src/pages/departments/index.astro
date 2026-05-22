@@ -4,12 +4,13 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Departments | SRKR Engineering College" description="Explore the departments at SRKR Engineering College, Bhimavaram." />
+    <BaseHead title="Departments | SRKR Engineering College" description="Explore all the engineering and humanities departments at SRKR Engineering College, Bhimavaram." />
   </head>
   <body>
     <SrkrHeader />
@@ -35,33 +36,48 @@ import OffCanvas from '../../components/OffCanvas.astro';
         <div class="row justify-content-center mb--40">
           <div class="col-12 text-center">
             <h3 id="engineering">Engineering Departments</h3>
+            <p class="text-muted">12 academic departments offering B.Tech, M.Tech and Ph.D. programs with NBA-accredited and industry-aligned curricula.</p>
           </div>
         </div>
         <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title" style="color:#1a3c6b;">Civil Engineering</h5>
-                <p class="card-text">Established 1980 · NBA Accredited · B.Tech &amp; M.Tech programs</p>
-                <a href="/departments/civil" class="rts-theme-btn">View Department</a>
+          {departments.map((d) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm dept-card">
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class={`${d.icon} dept-card__icon me-3`}></i>
+                    <div>
+                      <h5 class="card-title mb-0" style="color:#1a3c6b;">{d.name}</h5>
+                      <span class="dept-card__code">{d.code} · Intake {d.intake}</span>
+                    </div>
+                  </div>
+                  <p class="card-text flex-grow-1">{d.tagline}</p>
+                  <a href={`/departments/${d.slug}/`} class="rts-theme-btn mt-2 align-self-start">View Department</a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- Additional departments to be added -->
+          ))}
         </div>
 
         <div class="row justify-content-center mt--60 mb--40">
           <div class="col-12 text-center">
-            <h3>Basic Science &amp; Humanities</h3>
+            <h3>Basic Sciences &amp; Humanities</h3>
+            <p class="text-muted">Foundation courses that strengthen every engineering programme.</p>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title" style="color:#1a3c6b;">Basic Science &amp; Humanities</h5>
-                <p class="card-text">Foundation courses in Mathematics, Physics, Chemistry, English, and Humanities.</p>
-                <a href="/humanities" class="rts-theme-btn">View Department</a>
+            <div class="card h-100 shadow-sm dept-card">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fa-light fa-flask-vial dept-card__icon me-3"></i>
+                  <div>
+                    <h5 class="card-title mb-0" style="color:#1a3c6b;">Basic Sciences &amp; Humanities</h5>
+                    <span class="dept-card__code">BS&amp;H</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">Mathematics, Physics, Chemistry, English &amp; Humanities — building the analytical and communication foundation for every SRKR engineer.</p>
+                <a href="/humanities" class="rts-theme-btn mt-2 align-self-start">View Department</a>
               </div>
             </div>
           </div>
@@ -72,5 +88,17 @@ import OffCanvas from '../../components/OffCanvas.astro';
     <SrkrFooter />
     <OffCanvas />
     <FooterScripts />
+
+    <style>
+      .dept-card { transition: transform .15s ease, box-shadow .15s ease; }
+      .dept-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(26,60,107,.12) !important; }
+      .dept-card__icon { font-size: 2rem; color: var(--rt-primary); }
+      .dept-card__code {
+        font-size: .85rem;
+        color: var(--rt-body);
+        text-transform: uppercase;
+        letter-spacing: .04em;
+      }
+    </style>
   </body>
 </html>

@@ -1,0 +1,404 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Electrical & Electronics Engineering | SRKR Engineering College" description="Department of Electrical & Electronics Engineering at SRKR Engineering College, Bhimavaram — established 1980, NBA accredited, offering B.Tech EEE and M.Tech Power Systems." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Electrical &amp; Electronics Engineering</li>
+              </ul>
+              <h2 class="section-title">Department of Electrical &amp; Electronics Engineering</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="eee" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: replace with real HoD photograph at /assets/images/faculty/eee/hod.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/eee/hod.jpg" alt="Dr. B. Ravi Kumar Varma">
+              <div class="h5 mb-2 mt-5">Dr. B. Ravi Kumar Varma</div>
+              <span>Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Electrical &amp; Electronics Engineering</p>
+              <p class="mb-5">Since its establishment in 1980, the Department of Electrical &amp; Electronics Engineering at SRKR Engineering College has shaped four decades of engineers who power industry, infrastructure, and innovation. Our NBA-accredited B.Tech programme and specialised M.Tech in Power Systems combine rigorous fundamentals with the modern tools of a rapidly electrifying world.</p>
+              <p class="h6 mb-4">Engineering for an Electrified Future</p>
+              <p class="mb-5">Our curriculum spans power systems, power electronics, electrical machines, control systems, renewable energy, and embedded design — backed by twelve dedicated laboratories featuring MATLAB/Simulink, PSCAD, high-voltage test benches, and modern machine setups. Students undertake industry-aligned projects, internships, and value-added courses in EV technology, smart grids, and IoT for energy systems.</p>
+              <p class="h6 mb-4">Research, Industry &amp; Society</p>
+              <p>Our faculty actively pursue research in renewable energy integration, power quality, electric mobility, and intelligent control — publishing in reputed journals and engaging with industry through consultancy and MoUs. Graduates of our programme go on to leading positions in power utilities, core manufacturers, R&amp;D labs, and global IT services. I warmly invite you to explore the department and look forward to welcoming you into our community.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To become a centre of excellence in electrical engineering that fosters learning, research and innovation with social relevance.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To build an environment that cultivates employability skills with human values and ethics.</li>
+                  <li class="mb-3">To establish collaborative interaction with industry for laboratory development, research and innovation.</li>
+                  <li class="mb-3">To create an ambience that encourages active participation of students and staff in the pursuits towards excellence.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                <img class="mw-100" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&h=600&fit=crop" alt="Electrical & Electronics Engineering">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=380&fit=crop" alt="Power Systems">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/eee/research-consultancy/">Power Systems</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/eee/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=380&fit=crop" alt="Power Electronics">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/eee/research-consultancy/">Power Electronics &amp; Drives</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/eee/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=380&fit=crop" alt="Renewable Energy">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/eee/research-consultancy/">Renewable Energy</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/eee/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=380&fit=crop" alt="Control Systems">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/eee/research-consultancy/">Control Systems &amp; Automation</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/eee/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">B.Tech Electrical &amp; Electronics Engg
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">NBA Accredited
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">Industry-Aligned Curriculum
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Postgraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">M.Tech Power Systems
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">2-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">Smart Grid &amp; EV Electives
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/academic-programs/" class="link__list">Research &amp; Thesis Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Research</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/research-consultancy/" class="link__list">Ph.D. Programs (JNTUK)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/research-consultancy/" class="link__list">Renewable Energy &amp; EV Research
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/research-consultancy/" class="link__list">Power Quality &amp; Smart Grids
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/eee/research-consultancy/" class="link__list">Funded Projects &amp; Patents
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">Four decades of excellence in electrical engineering education, research, and industry collaboration.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/eee/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="NBA Accreditation">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-award"></i></span>
+                      <a href="#">Accreditation</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>NBA Accredited</span>
+                    </div>
+                  </div>
+                  <a href="/departments/eee/achievements/" class="post-title">
+                    NBA-accredited B.Tech programme — a benchmark for outcome-based EEE education.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/eee/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="Research">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-flask"></i></span>
+                      <a href="#">Research</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Active Research Areas</span>
+                    </div>
+                  </div>
+                  <a href="/departments/eee/research-consultancy/" class="post-title">
+                    Research in renewable energy, electric vehicles, smart grids and power quality.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/eee/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Core + IT Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/eee/placements/" class="post-title">
+                    Recruitment by APTRANSCO, BHEL, TCS, Infosys, L&amp;T and other industry leaders.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/eee/facilities/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Facilities">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-bolt"></i></span>
+                      <a href="#">Facilities</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>12 Modern Laboratories</span>
+                    </div>
+                  </div>
+                  <a href="/departments/eee/facilities/" class="post-title">
+                    Twelve labs — including MATLAB/Simulink, PSCAD, High Voltage and Renewable Energy.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      /* Equal-height specialization cards */
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

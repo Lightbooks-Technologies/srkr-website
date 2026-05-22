@@ -4,12 +4,71 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Vitals";
+import { departments } from '../../data/departments';
+
+const pageTitle = "Institute Vitals";
+
+const naacCycles = [
+  { cycle: 'Cycle 1', grade: 'A',  cgpa: '3.60', from: '19.02.2016', to: '18.02.2022', href: 'https://srkrec.ac.in/files/mandates/nacc1.pdf' },
+  { cycle: 'Cycle 1 (Extension)', grade: 'A', cgpa: '3.60', from: '19.02.2022', to: '31.12.2022', href: 'https://srkrec.ac.in/files/mandates/nacc2.pdf' },
+  { cycle: 'Cycle 2', grade: 'A+', cgpa: '3.42', from: '20.12.2022', to: '19.12.2027', href: 'https://srkrec.ac.in/files/mandates/nacc3.pdf' },
+];
+
+const nirfYears = [
+  { year: 2026, links: [
+    { label: 'Overall', href: 'https://srkrec.ac.in/files/mandates/NIRF_2026_overall.pdf' },
+    { label: 'Engineering', href: 'https://srkrec.ac.in/files/mandates/NIRF_2026_engineering.pdf' },
+    { label: 'Innovation', href: 'https://srkrec.ac.in/files/mandates/NIRF_2026_innovation.pdf' },
+  ]},
+  { year: 2025, links: [
+    { label: 'Overall', href: 'https://srkrec.ac.in/files/mandates/NIRF_2025_overall.pdf' },
+    { label: 'Engineering', href: 'https://srkrec.ac.in/files/mandates/NIRF_2025_engineering.pdf' },
+    { label: 'Innovation', href: 'https://srkrec.ac.in/files/mandates/NIRF_2025_innovation.pdf' },
+    { label: 'SDG', href: 'https://srkrec.ac.in/files/mandates/NIRF_2025_sdg.pdf' },
+  ]},
+  { year: 2024, links: [
+    { label: 'Overall', href: 'https://srkrec.ac.in/files/mandates/NIRF_2024_overall.pdf' },
+    { label: 'Engineering', href: 'https://srkrec.ac.in/files/mandates/NIRF_2024_engineering.pdf' },
+    { label: 'Innovation', href: 'https://srkrec.ac.in/files/mandates/NIRF_2024_innovation.pdf' },
+  ]},
+  { year: 2023, links: [
+    { label: 'Overall', href: 'https://srkrec.ac.in/files/mandates/NIRF_2023_overall.pdf' },
+    { label: 'Engineering', href: 'https://srkrec.ac.in/files/mandates/NIRF_2023_engineering.pdf' },
+  ]},
+];
+
+const approvals = [
+  { name: 'UGC',   desc: 'Autonomous status since 2016',                         href: 'https://srkrec.ac.in/ugc.php' },
+  { name: 'AICTE', desc: 'All UG/PG programmes approved by AICTE',               href: 'https://srkrec.ac.in/aicte.php' },
+  { name: 'JNTUK', desc: 'Affiliated to Jawaharlal Nehru Technological University, Kakinada', href: 'https://srkrec.ac.in/jntuk.php' },
+  { name: 'NBA',   desc: 'Multiple programmes accredited by the National Board of Accreditation', href: 'https://srkrec.ac.in/nba.php' },
+  { name: 'NAAC',  desc: "A+ Grade with CGPA 3.42 (Cycle 2)",                    href: 'https://srkrec.ac.in/naac.php' },
+  { name: 'SIRO',  desc: 'Recognised as Scientific & Industrial Research Organisation by DSIR', href: 'https://srkrec.ac.in/siro.php' },
+  { name: 'NIRF',  desc: 'Participates in MoE NIRF rankings since 2023',          href: 'https://srkrec.ac.in/nirf.php' },
+  { name: 'ARIIA', desc: 'Atal Ranking of Institutions on Innovation Achievements', href: 'https://srkrec.ac.in/ariia.php' },
+];
+
+const codes = [
+  { code: 'SRKR',  desc: 'EAPCET / ECET admission code' },
+  { code: 'SRKR1', desc: 'M.Tech admission code' },
+  { code: '17086', desc: 'BBA admission code' },
+];
+
+const facts = [
+  { k: 'Established',                v: '1980' },
+  { k: 'Affiliation',                v: 'JNTUK, Kakinada' },
+  { k: 'Type',                       v: 'Autonomous Engineering College' },
+  { k: 'Campus',                     v: '30 Acres, Bhimavaram, AP' },
+  { k: 'UG Engineering Programmes',  v: '12 B.Tech' },
+  { k: 'PG Programmes',              v: '6 M.Tech + BBA' },
+  { k: 'Recognised Research Centres',v: 'Multiple under JNTUK / Andhra University' },
+  { k: 'Centres of Excellence',      v: '18+' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Institute vitals at a glance — NAAC, NBA, NIRF, AICTE, JNTUK, SIRO statistics and admission codes for SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +80,7 @@ const pageTitle = "Vitals";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +90,217 @@ const pageTitle = "Vitals";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Big headline funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">45+</h2>
+                <p>Years of Excellence (Est. 1980)</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">A+</h2>
+                <p>NAAC Grade · CGPA 3.42</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">12</h2>
+                <p>UG Engineering Programmes</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Secondary funfact: research/facilities -->
+    <div class="rts-funfact v_2 stroke pt--40">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">18+</h2>
+                <p>Centres of Excellence</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">30 Acres</h2>
+                <p>Green Campus</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">5</h2>
+                <p>NBA-Accredited Programmes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="rts-campus-section rts-section-padding">
+      <div class="container">
+
+        <!-- Quick facts -->
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Quick Facts</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {facts.map((f) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{f.k}</h5>
+                  <p class="card-text">{f.v}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Admission codes -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Admission Codes</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {codes.map((c) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                  <h2 class="single-cta-item__title">{c.code}</h2>
+                  <p class="card-text">{c.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Approvals & accreditations grid -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Approvals &amp; Accreditations</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {approvals.map((a) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{a.name}</h5>
+                  <p class="card-text">{a.desc}</p>
+                  <a class="rts-theme-btn" href={a.href} target="_blank" rel="noopener">View Mandate</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- NAAC table -->
+        <div class="row mt--80">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">NAAC Accreditation Cycles</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Cycle</td><td>Grade</td><td>CGPA</td><td>Valid From</td><td>Valid To</td><td>Certificate</td></tr>
+                    </thead>
+                    <tbody>
+                      {naacCycles.map((n) => (
+                        <tr>
+                          <td>{n.cycle}</td>
+                          <td>{n.grade}</td>
+                          <td>{n.cgpa}</td>
+                          <td>{n.from}</td>
+                          <td>{n.to}</td>
+                          <td><a href={n.href} target="_blank" rel="noopener">PDF</a></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NBA per-programme table -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">NBA Accreditation · UG Programmes</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Department</td><td>Code</td><td>Established</td><td>NBA Status</td></tr>
+                    </thead>
+                    <tbody>
+                      {departments.map((d) => (
+                        <tr>
+                          <td><a href={`/departments/${d.slug}/`}>{d.name}</a></td>
+                          <td>{d.code}</td>
+                          <td>{d.established}</td>
+                          <td>{d.nbaAccredited ? 'Accredited' : 'Eligible / In progress'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NIRF accordion -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="nirf-accordion">
+                  {nirfYears.map((y, i) => (
+                    <div class="accordion-item">
+                      <button class={`accordion-button ${i === 0 ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#nirf${y.year}`} aria-expanded={i === 0 ? 'true' : 'false'}>NIRF {y.year} Disclosures</button>
+                      <div id={`nirf${y.year}`} class={`accordion-collapse collapse ${i === 0 ? 'show' : ''}`} data-bs-parent="#nirf-accordion">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            {y.links.map((l) => (
+                              <li class="si__list--single"><a href={l.href} target="_blank" rel="noopener">NIRF {y.year} — {l.label} Category (PDF)</a></li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AQAR / NAAC supporting documents -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Quality Assurance Documents</h3>
+              <div class="application-deadline__content">
+                <ul class="list-unstyled mb--0">
+                  <li class="si__list--single"><a href="https://srkrec.edu.in/naac_ssr_main.php" target="_blank" rel="noopener">NAAC SSR (Cycle 2)</a></li>
+                  <li class="si__list--single"><a href="https://srkrec.ac.in/iqac.php" target="_blank" rel="noopener">IQAC AQAR Reports (2016-17 to 2023-24)</a></li>
+                  <li class="si__list--single"><a href="https://srkrec.ac.in/files/docs/BEST_PRACTICES23.pdf" target="_blank" rel="noopener">Best Practices 2023-24 (PDF)</a></li>
+                  <li class="si__list--single"><a href="https://srkrec.ac.in/files/docs/DISTINCTVENESS_WEBSITE_2023-24.pdf" target="_blank" rel="noopener">Institutional Distinctiveness 2023-24 (PDF)</a></li>
+                  <li class="si__list--single"><a href="https://srkrec.ac.in/files/mandates/naac/Student_Satisfaction_Survey_2023-24.pdf" target="_blank" rel="noopener">Student Satisfaction Survey 2023-24 (PDF)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

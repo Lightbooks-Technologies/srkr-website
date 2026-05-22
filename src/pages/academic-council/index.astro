@@ -4,12 +4,53 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Academic Council";
+
+const chair = { name: 'Dr. K.V. Murali Krishnam Raju', role: 'Principal · Chairperson' };
+
+const hods = [
+  { name: 'Dr. G. Sri Bala',                  role: 'Head, Dept. of Civil Engineering' },
+  { name: 'Dr. Bh.V.S.R.K. Raju',             role: 'Head, Dept. of CSE' },
+  { name: 'Dr. S.S. Mohan Reddy',             role: 'Head, Dept. of ECE' },
+  { name: 'Dr. Bh. Ravi Kumar Varma',         role: 'Head, Dept. of EEE' },
+  { name: 'Dr. P. Ravi Kiran Varma',          role: 'Head, Dept. of IT' },
+  { name: 'Dr. K. Sitarama Raju',             role: 'Head, Dept. of Mechanical Engineering' },
+  { name: 'Dr. Bh.V.N. Lakshmi',              role: 'Head, Dept. of English &amp; Foreign Languages' },
+  { name: 'Dr. G.N.V. Kishore',               role: 'Head, Dept. of Engg. Mathematics &amp; Humanities' },
+  { name: 'Dr. B.V.D.S. Sekhar',              role: 'Programme Coordinator, CSBS' },
+  { name: 'Dr. G.N.V.G. Sirisha',             role: 'Programme Coordinator, AIML' },
+  { name: 'Dr. M. Suresh Babu',               role: 'Programme Coordinator, CSG' },
+  { name: 'Dr. K.V. Krishnam Raju',           role: 'Programme Coordinator, CIC' },
+  { name: 'Dr. N. Gopala Krishna Murthy',     role: 'Programme Coordinator, CSIT' },
+];
+
+const seniorFaculty = [
+  { name: 'Dr. S. Rajesh',                    role: 'Dean, IQAC' },
+  { name: 'Dr. T. Vamsi Naga Raju',           role: 'Dean, R&amp;D' },
+  { name: 'Dr. M. Siva Krishnam Raju',        role: 'Controller of Examinations · Programme Coordinator, BBA' },
+  { name: 'Dr. K.R. Satyanarayana',           role: 'Dean, Training &amp; Placements' },
+];
+
+const externalExperts = [
+  { name: 'Prof. K. Ramji',                   role: 'VC, Krishna University · Professor of ME, AUCE, Visakhapatnam' },
+  { name: 'Dr. S. Viswanadha Raju',           role: 'Professor of CSE, JNTUH College of Engineering, Jagtial' },
+  { name: 'Dr. G. Bharat',                    role: 'Principal Scientist, Flexible Pavement Division, CSIR-CRRI, New Delhi' },
+  { name: 'Sri D. Viswanatha Raju',           role: 'Chairman, Winfo Solutions, Hyderabad' },
+];
+
+const jntukNominees = [
+  { name: 'Prof. M.H.M. Krishna Prasad',      role: 'Professor of CSE &amp; Director-Academics, JNTUK, Kakinada' },
+  { name: 'Prof. G. Padmaja Rani',            role: 'Professor of Physics &amp; Director-Evaluations, JNTUK, Kakinada' },
+  { name: 'Prof. K. Padma Raju',              role: 'Professor of ECE, UCEK, JNTUK, Kakinada' },
+];
+
+const memberSecretary = { name: 'Dr. V. Chandra Sekhar', role: 'Professor of CSE · Dean, Academics · Member Secretary' };
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="The Academic Council is the apex academic body of SRKR Engineering College — composition, functions and meeting records." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +62,7 @@ const pageTitle = "Academic Council";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +72,224 @@ const pageTitle = "Academic Council";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">26</h2>
+                <p>Members across 6 categories</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4</h2>
+                <p>External Experts &amp; 3 JNTUK Nominees</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">2x</h2>
+                <p>Statutory Meetings per Academic Year</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+
+        <!-- Functions accordion -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+          <div class="col-lg-8 col-md-11">
+            <div class="program-about mb--40">
+              <h4 class="title">About the Academic Council</h4>
+              <p>The Academic Council is the apex statutory body for academic matters at SRKR Engineering College. It scrutinises and approves curricula, regulations and evaluation procedures recommended by the Boards of Studies, and advises the Governing Body on academic policy.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="ac-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acFunctions" aria-expanded="true">Functions &amp; Powers</button>
+                    <div id="acFunctions" class="accordion-collapse collapse show" data-bs-parent="#ac-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Scrutinise and approve proposals from Boards of Studies on courses of study, regulations, curricula, syllabi, instruction and evaluation methods.</li>
+                          <li class="si__list--single">Make regulations for admission of students to programmes, keeping in view the policy of the Government.</li>
+                          <li class="si__list--single">Make regulations for sports, extra-curricular activities, playgrounds and hostels.</li>
+                          <li class="si__list--single">Recommend institution of new programmes of study to the Governing Body.</li>
+                          <li class="si__list--single">Recommend institution of scholarships, studentships, fellowships, prizes and medals.</li>
+                          <li class="si__list--single">Advise the Governing Body on academic affairs and perform such other functions as may be assigned.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acReturn" aria-expanded="false">Return &amp; Reconsideration</button>
+                    <div id="acReturn" class="accordion-collapse collapse" data-bs-parent="#ac-accordion">
+                      <div class="accordion-body">
+                        <p>Where the Academic Council differs on any proposal, it shall have the right to return the matter for reconsideration to the Board of Studies concerned, or reject it, after giving reasons for the same.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acMeetings" aria-expanded="false">Meetings &amp; Cadence</button>
+                    <div id="acMeetings" class="accordion-collapse collapse" data-bs-parent="#ac-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Minimum two statutory meetings per academic year.</li>
+                          <li class="si__list--single">Special meetings convened on request of the Chairperson for time-bound academic matters.</li>
+                          <li class="si__list--single">{/* TODO: link meeting minutes when published */}Meeting minutes are archived by the Office of the Dean, Academics.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Related Bodies</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/governing"><span><i class="fa-light fa-arrow-right"></i></span>Governing Body</a></li>
+                    <li><a href="/board-of-studies"><span><i class="fa-light fa-arrow-right"></i></span>Board of Studies</a></li>
+                    <li><a href="/central-committee"><span><i class="fa-light fa-arrow-right"></i></span>Central Committee</a></li>
+                    <li><a href="/financial-committee"><span><i class="fa-light fa-arrow-right"></i></span>Finance Committee</a></li>
+                    <li><a href="/iqac"><span><i class="fa-light fa-arrow-right"></i></span>IQAC</a></li>
+                    <li><a href="https://srkrec.ac.in/academic_council.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Legacy AC Page</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="program-info">
+                <h5>Member Secretary</h5>
+                <p>{memberSecretary.name}<br/><small set:html={memberSecretary.role}></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chair -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Chairperson</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Role</td></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>{chair.name}</td><td>{chair.role}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HoDs -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Heads of Departments &amp; Programme Coordinators</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Role</td></tr>
+                    </thead>
+                    <tbody>
+                      {hods.map((m) => (
+                        <tr><td>{m.name}</td><td set:html={m.role}></td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Senior Faculty -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Senior Faculty</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Role</td></tr>
+                    </thead>
+                    <tbody>
+                      {seniorFaculty.map((m) => (
+                        <tr><td>{m.name}</td><td set:html={m.role}></td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- External Experts -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">External Experts</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Affiliation</td></tr>
+                    </thead>
+                    <tbody>
+                      {externalExperts.map((m) => (
+                        <tr><td>{m.name}</td><td>{m.role}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JNTUK Nominees -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">JNTUK Nominees</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Affiliation</td></tr>
+                    </thead>
+                    <tbody>
+                      {jntukNominees.map((m) => (
+                        <tr><td>{m.name}</td><td>{m.role}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

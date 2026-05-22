@@ -1,0 +1,227 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Research & Consultancy | Information Technology | SRKR" description="Research areas, projects, publications and consultancy services of the Information Technology department at SRKR." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/it/">Information Technology</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Research &amp; Consultancy</li>
+              </ul>
+              <h2 class="section-title">Research &amp; Consultancy</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="it" current="Research/Consultancy" />
+
+        <!-- Two Column Layout -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left: Overview + Accordion -->
+          <div class="col-lg-8 col-md-11">
+
+            <!-- Intro -->
+            <div class="program-about mb--40">
+              <h4 class="title">Research &amp; Consultancy Overview</h4>
+              <p>The Department of Information Technology actively engages in applied research and industry consultancy across web technologies, cloud computing, cyber security, data analytics, mobile computing and IoT. Faculty publications appear regularly in SCI / Scopus indexed journals and international conferences, and the department partners with local industry on cloud migration, web platform development and security audits — bridging academic research and real-world IT delivery.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="it-rts-accordion">
+
+                  <!-- Research Areas -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#it-collapseOne" aria-expanded="true">
+                      Research Areas
+                    </button>
+                    <div id="it-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#it-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Web Technologies &amp; Full-Stack Development</li>
+                              <li class="si__list--single">Cloud Computing &amp; DevOps</li>
+                              <li class="si__list--single">Cyber Security &amp; Cryptography</li>
+                              <li class="si__list--single">Data Analytics &amp; Machine Learning</li>
+                              <li class="si__list--single">Mobile Computing &amp; Wireless Networks</li>
+                              <li class="si__list--single">Internet of Things (IoT) &amp; Edge Computing</li>
+                              <li class="si__list--single">Software Engineering &amp; DevOps Practices</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Industry Collaborations -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-collapseTwo" aria-expanded="false">
+                      Industry Collaborations &amp; Certifications
+                    </button>
+                    <div id="it-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#it-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">AWS Academy &amp; AWS Educate cloud certifications</li>
+                              <li class="si__list--single">Microsoft Learn / Azure Fundamentals partnerships</li>
+                              <li class="si__list--single">Google Developer Student Club activities</li>
+                              <li class="si__list--single">Salesforce Trailhead Academy &amp; admin certifications</li>
+                              <li class="si__list--single">Red Hat &amp; Linux Foundation open-source training</li>
+                              <li class="si__list--single">TCS iON / Infosys Springboard skill-building modules</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Funded Projects -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-collapseThree" aria-expanded="false">
+                      Funded Projects
+                    </button>
+                    <div id="it-collapseThree" class="accordion-collapse collapse" data-bs-parent="#it-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              {/* TODO: replace with real funded-project counts and titles for IT department */}
+                              <li class="si__list--single">AICTE-funded research project on secure web applications.</li>
+                              <li class="si__list--single">Faculty-led project on cloud-native microservices and DevOps adoption in SMEs.</li>
+                              <li class="si__list--single">Student innovation projects supported under institute seed-funding scheme.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Publications -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-collapseFour" aria-expanded="false">
+                      Publications
+                    </button>
+                    <div id="it-collapseFour" class="accordion-collapse collapse" data-bs-parent="#it-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              {/* TODO: replace with real publication counts from VIDWAN / department records */}
+                              <li class="si__list--single">75+ research papers published in SCI / Scopus indexed journals.</li>
+                              <li class="si__list--single">40+ papers presented at IEEE / ACM / Springer international conferences.</li>
+                              <li class="si__list--single">Book chapters and edited volumes on cloud, IoT and cyber security.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Consultancy -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-collapseFive" aria-expanded="false">
+                      Consultancy Services
+                    </button>
+                    <div id="it-collapseFive" class="accordion-collapse collapse" data-bs-parent="#it-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <h4 class="title">Domains</h4>
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Web &amp; mobile application development for local businesses and educational institutions.</li>
+                              <li class="si__list--single">Cloud migration, AWS / Azure architecture reviews and cost optimisation.</li>
+                              <li class="si__list--single">Cyber security audits, vulnerability assessments and secure-coding workshops.</li>
+                              <li class="si__list--single">Data analytics dashboards, BI reporting and Power BI / Tableau training.</li>
+                              <li class="si__list--single">Corporate training programmes on full-stack, DevOps and cyber security.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">The department's consultancy work focuses on practical, deployable IT solutions for industry partners in Andhra Pradesh and beyond.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <!-- Quick Links -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Research Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/departments/it/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
+                    <li><a href="/departments/it/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Research Facilities</a></li>
+                    <li><a href="/departments/it/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>Academic Programs</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Publications List</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="program-info">
+                <h5>Department Contact</h5>
+                <p>Information Technology Department<br>SRKR Engineering College</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:hod.it@srkr.ac.in">hod.it@srkr.ac.in</a>
+                  <a href="mailto:research.it@srkr.ac.in">research.it@srkr.ac.in</a>
+                </div>
+                <div class="contact-info mt--20 mb--20">
+                  <h5>Phone:</h5>
+                  <a href="tel:+918842226666">+91 884 222 6666</a>
+                </div>
+                <div class="social-info mt--20">
+                  <h5>Connect With Us:</h5>
+                  <div class="social-info-link">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

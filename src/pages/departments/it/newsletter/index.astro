@@ -1,0 +1,162 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Newsletter | Information Technology | SRKR" description="Department newsletters from the Information Technology department at SRKR Engineering College." />
+    <style>
+      .newsletter-item {
+        border: 1px solid #e5e5e5;
+        border-radius: 0px;
+        padding: 15px;
+        background: #fff;
+        transition: all 0.3s ease;
+        margin-bottom: 24px;
+      }
+      .newsletter-item:hover {
+        box-shadow: 0 8px 24px rgba(139, 15, 29, 0.1);
+        border-color: #8b0f1d;
+      }
+      .newsletter-content-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+      .newsletter-icon {
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #8b0f1d 0%, #8b0f1d 100%);
+        border-radius: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 32px;
+      }
+      .newsletter-content {
+        flex: 1;
+      }
+      .newsletter-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #8b0f1d;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .newsletter-period {
+        display: inline-block;
+        background: #f0f4f8;
+        color: #1a3c6b;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      .newsletter-description {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .newsletter-action {
+        flex-shrink: 0;
+      }
+      .newsletter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: #8b0f1d;
+        color: white;
+        border-radius: 0px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .newsletter-btn:hover {
+        background: #6b0c16;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(139, 15, 29, 0.3);
+      }
+      @media (max-width: 768px) {
+        .newsletter-content-wrapper {
+          flex-direction: column;
+          text-align: center;
+        }
+        .newsletter-action {
+          width: 100%;
+        }
+        .newsletter-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/it/">Information Technology</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Newsletter</li>
+              </ul>
+              <h2 class="section-title">Newsletter</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="it" current="Newsletter" />
+        <div class="row">
+          <div class="col-12">
+            <div class="newsletter-item">
+              <div class="newsletter-content-wrapper">
+                <div class="newsletter-icon">
+                  <i class="fa-regular fa-newspaper"></i>
+                </div>
+                <div class="newsletter-content">
+                  <h5 class="newsletter-title">Volume 1, Issue 1 — Jan–Jun 2025</h5>
+                  <!-- <span class="newsletter-period">January – June 2025</span> -->
+                  <p class="newsletter-description">
+                    The inaugural issue of the Information Technology department newsletter — highlighting the highest recent placement of 17.16 LPA, AWS / Azure certification drives, full-stack and cyber security hackathons, faculty publications, and notable student capstone projects across web, cloud and data.
+                  </p>
+                </div>
+                <div class="newsletter-action">
+                  <a href="/assets/documents/it-newsletter-v1-iss1.pdf" class="newsletter-btn" target="_blank">
+                    <i class="fa-regular fa-download"></i>
+                    <span>Download PDF</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="text-muted small" style="margin-top: 24px;"><i class="fa-regular fa-info-circle"></i> <em>Older issues will be available shortly.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

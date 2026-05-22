@@ -4,12 +4,37 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Well-Being";
+
+const pillars = [
+  { icon: 'fa-brain', name: 'Mental Wellness', desc: 'Confidential counselling, stress &amp; anxiety support and resilience workshops.' },
+  { icon: 'fa-heart-pulse', name: 'Physical Health', desc: 'On-campus medical room, tie-ups with hospitals &amp; routine health camps.' },
+  { icon: 'fa-graduation-cap', name: 'Academic Counselling', desc: 'Faculty mentors, study skills sessions &amp; one-on-one academic advising.' },
+  { icon: 'fa-hand-holding-dollar', name: 'Financial Aid &amp; Scholarships', desc: 'AP/Govt scholarships, merit awards &amp; emergency financial assistance.' },
+  { icon: 'fa-shield-halved', name: 'Anti-Ragging Cell', desc: 'Zero-tolerance policy, UGC-compliant committee &amp; 24x7 reporting channel.' },
+  { icon: 'fa-comments', name: 'Grievance Redressal', desc: 'Confidential grievance &amp; women-cell complaint handling with timelines.' },
+];
+
+const counselors = [
+  { name: 'Dr. {TODO: Counselor 1}', role: 'Chief Counsellor &amp; Psychologist', specialty: 'Cognitive &amp; behavioural therapy' },
+  { name: 'Ms. {TODO: Counselor 2}', role: 'Student Counsellor (Girls)', specialty: 'Stress, anxiety &amp; relationship issues' },
+  { name: 'Mr. {TODO: Counselor 3}', role: 'Student Counsellor (Boys)', specialty: 'Academic pressure &amp; career anxiety' },
+  { name: 'Dr. {TODO: Doctor}', role: 'Visiting Medical Officer', specialty: 'General medicine &amp; first-line health' },
+];
+
+const externalLinks = [
+  { name: 'iCALL India Helpline', url: 'https://icallhelpline.org' },
+  { name: 'Vandrevala Foundation (24x7)', url: 'https://www.vandrevalafoundation.com' },
+  { name: 'NIMHANS Helpline', url: 'https://nimhans.ac.in' },
+  { name: 'The Live Love Laugh Foundation', url: 'https://www.thelivelovelaughfoundation.org' },
+  { name: 'KIRAN — Govt of India Mental Health Helpline (1800-599-0019)', url: 'https://www.mohfw.gov.in' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Student wellness, counselling, mental &amp; physical health support at SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,25 +46,220 @@ const pageTitle = "Well-Being";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Life @ SRKR</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
-              <h2 class="section-title">{pageTitle}</h2>
+              <h2 class="section-title">Student Well-Being</h2>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- HERO INTRO -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">A Caring Campus</h3>
+              <p class="rts-section-description">Your well-being matters. SRKR offers confidential counselling, peer support, medical care and a 24x7 anti-ragging response — because thriving students build the strongest engineers.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- PILLARS -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Six Pillars of Student Well-Being</h3>
+        </div>
+        <div class="row g-4">
+          {pillars.map((p) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm single-cta-item">
+                <div class="card-body">
+                  <h2 class="single-cta-item__title"><i class={`fa-light ${p.icon}`}></i></h2>
+                  <h5 class="mt-3 mb-2">{p.name}</h5>
+                  <p class="mb-0 small text-muted" set:html={p.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNSELORS -->
+    <div class="rts-multi-row-content py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Counselling Team</h3>
+        </div>
+        <div class="row g-4">
+          {counselors.map((c) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace placeholder photo */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/well-being/PLACEHOLDER.jpg" alt={c.name} />
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-1" set:html={c.name}></h5>
+                  <p class="mb-2 small" set:html={c.role}></p>
+                  <p class="mb-0 small text-muted">{c.specialty}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES ACCORDION -->
+    <div class="py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Services Offered</h3>
+        </div>
+        <div class="program-credit-area faq rts-scholarship-description">
+          <div class="program-accordion">
+            <div class="accordion" id="wb-accordion">
+              <div class="accordion-item">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#wb1" aria-expanded="true">
+                  Confidential 1-on-1 Counselling
+                </button>
+                <div id="wb1" class="accordion-collapse collapse show" data-bs-parent="#wb-accordion">
+                  <div class="accordion-body">
+                    <p>Drop-in or scheduled sessions with our counsellors. All conversations are strictly confidential. Walk-ins welcome at the Student Welfare Office.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb2" aria-expanded="false">
+                  Faculty Mentorship Program
+                </button>
+                <div id="wb2" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
+                  <div class="accordion-body">
+                    <p>Every student is assigned a faculty mentor who monitors academic progress and provides personal guidance throughout the semester.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb3" aria-expanded="false">
+                  Peer Support Network
+                </button>
+                <div id="wb3" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
+                  <div class="accordion-body">
+                    <p>Senior-junior buddy system &amp; trained peer-listener volunteers across hostels and day-scholar wings.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb4" aria-expanded="false">
+                  Workshops &amp; Sensitisation Sessions
+                </button>
+                <div id="wb4" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
+                  <div class="accordion-body">
+                    <p>Periodic workshops on stress management, exam anxiety, mindfulness, gender sensitisation and digital wellness.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb5" aria-expanded="false">
+                  Anti-Ragging Cell &amp; Women's Cell
+                </button>
+                <div id="wb5" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
+                  <div class="accordion-body">
+                    <p>UGC-mandated anti-ragging committee with a 24x7 hotline. Women's Cell handles all sexual-harassment complaints confidentially. See <a href="/code-of-conduct">Code of Conduct</a> for procedures.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="rts-multi-row-section py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Resources</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5><i class="fa-light fa-phone"></i> 24x7 Campus Helpline</h5>
+                <p class="mb-2">For urgent personal or safety concerns inside campus.</p>
+                <p class="mb-0"><a href="tel:+918842226666"><strong>+91 884 222 6666</strong></a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5><i class="fa-light fa-mobile"></i> Mental Health Apps</h5>
+                <p class="mb-2">Recommended apps for daily wellness &amp; mood tracking.</p>
+                <ul class="list-unstyled mb-0 small">
+                  <li class="si__list--single">Wysa, YourDost</li>
+                  <li class="si__list--single">Headspace, Calm</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5><i class="fa-light fa-book-open"></i> Articles &amp; Reading</h5>
+                <p class="mb-2">Curated reading list shared by counsellors on mental wellness, study habits and resilience.</p>
+                <p class="mb-0 small text-muted">{/* TODO: link the curated reading list PDF */}Available at the Student Welfare desk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTERNAL LINKS -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">External Helplines &amp; Trusted Resources</h3>
+        </div>
+        <div class="program-list">
+          <ul class="list-unstyled one-column-list">
+            {externalLinks.map((l) => (
+              <li class="si__list--single mb-2">
+                <a href={l.url} target="_blank" rel="noopener">{l.name} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMERGENCY CONTACT -->
+    <div class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card shadow-sm border-danger">
+              <div class="card-body text-center">
+                <h4 class="mb-3 text-danger"><i class="fa-light fa-triangle-exclamation"></i> Emergency Contacts</h4>
+                <p class="mb-2"><strong>Anti-Ragging Helpline:</strong> <a href="tel:1800-180-5522">1800-180-5522</a> · <a href="https://antiragging.in" target="_blank" rel="noopener">antiragging.in</a></p>
+                <p class="mb-2"><strong>National Mental Health Helpline (KIRAN):</strong> <a href="tel:1800-599-0019">1800-599-0019</a></p>
+                <p class="mb-2"><strong>Women Helpline:</strong> <a href="tel:1091">1091</a> · <strong>Police:</strong> <a href="tel:100">100</a></p>
+                <p class="mb-0"><strong>Campus Security 24x7:</strong> <a href="tel:+918842226666">+91 884 222 6666</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

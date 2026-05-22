@@ -1,0 +1,286 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Electrical & Electronics Engineering | SRKR" description="B.Tech and M.Tech academic programs offered by the Department of Electrical & Electronics Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/eee/">Electrical &amp; Electronics Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="eee" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Electrical &amp; Electronics Engineering offers two JNTUK-affiliated programs: a four-year B.Tech in Electrical &amp; Electronics Engineering and a two-year M.Tech in Power Systems. Both programs blend strong fundamentals in circuits, machines, and control with modern electives in renewable energy, electric mobility, and intelligent power management — preparing graduates for careers across utilities, core industry, R&amp;D, and IT services.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop" alt="B.Tech Electrical & Electronics Engineering" style="height: 100%; object-fit: cover;">
+                    <a href="#btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#btech">B.Tech Electrical &amp; Electronics Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop" alt="M.Tech Power Systems" style="height: 100%; object-fit: cover;">
+                    <a href="#mtech" class="cat-link-btn">Postgraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#mtech">M.Tech Power Systems</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#mtech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Electrical &amp; Electronics Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="eee-btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#eee-btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="eee-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#eee-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives describe what graduates of our B.Tech Electrical &amp; Electronics Engineering programme are expected to achieve within a few years of graduation. They guide curriculum design and align our outcomes with industry expectations and the needs of society.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Graduates will possess strong domain knowledge and analytical skills enabling employability and entrepreneurship in electrical and allied industries.</li>
+                              <li class="si__list--single">Graduates will develop life skills to address real-world challenges with a firm grounding in human values, ethics, and professional responsibility.</li>
+                              <li class="si__list--single">Graduates will become responsible citizens and contribute to the cultural and technological growth of the nation.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="eee-btech-po" class="accordion-collapse collapse" data-bs-parent="#eee-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes capture the knowledge, skills, and professional attributes our graduates will demonstrate by the time of graduation. They are aligned with national accreditation standards and ensure preparedness for engineering practice in EEE.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply principles of mathematics, science, and electrical engineering to power systems, machines, electronics, and control.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate, and analyse complex electrical engineering problems using first principles.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design electrical systems, components, and processes meeting specified needs with consideration for safety and sustainability.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Conduct investigations using research-based methods, simulation, and experimentation.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Apply MATLAB/Simulink, PSCAD, PSpice, and industry-standard EDA tools to electrical engineering problems.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Assess societal, health, safety, and legal issues relevant to engineering practice.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of engineering solutions on environment and the need for sustainable development.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and commit to professional norms.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as a member or leader in multidisciplinary teams.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports, documentation, and presentations.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Apply engineering management principles to projects and multidisciplinary environments.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for and engage in independent and lifelong learning.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="eee-btech-pso" class="accordion-collapse collapse" data-bs-parent="#eee-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes are the specialised competencies that distinguish our EEE programme — focused on modern digital electrical systems and the clean-energy transition.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Analyse electrical system problems and develop innovative solutions by integrating digital hardware and software systems.</li>
+                              <li class="si__list--single">Study and develop renewable energy systems and electric vehicles to promote environmental wellness and sustainable growth.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: M.Tech -->
+            <div id="mtech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">M.Tech — Power Systems</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="eee-mtech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#eee-mtech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="eee-mtech-peo" class="accordion-collapse collapse show" data-bs-parent="#eee-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The M.Tech Power Systems programme develops advanced expertise in analysis, operation, control, and protection of modern electrical power networks. Our objectives equip graduates for leadership roles in utilities, industry, research, and academia, with particular emphasis on the changing energy mix.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Build strong foundations in power system analysis, stability, protection, and modern control techniques to address complex grid problems.</li>
+                              <li class="si__list--single">Expose students to emerging trends in renewable integration, smart grids, FACTS, HVDC, and power quality, fostering research orientation.</li>
+                              <li class="si__list--single">Develop competent power systems engineers capable of professional leadership, ethical conduct, and lifelong learning.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-mtech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="eee-mtech-po" class="accordion-collapse collapse" data-bs-parent="#eee-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Our M.Tech program outcomes ensure that graduates demonstrate advanced analytical, design, and research capabilities — meeting AICTE guidelines and the expectations of industry, utilities, and research institutions.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Independently carry out research, investigation, and development work in power systems and allied areas.</li>
+                              <li class="si__list--single">Prepare substantial technical reports, dissertations, and conference/journal papers.</li>
+                              <li class="si__list--single">Demonstrate mastery over the specialisation at a level higher than the bachelor programme.</li>
+                              <li class="si__list--single">Address societal needs through interdisciplinary use of advanced power and control concepts.</li>
+                              <li class="si__list--single">Apply modern tools such as MATLAB/Simulink, PSCAD/EMTDC, PowerWorld, and ETAP to industry-grade problems.</li>
+                              <li class="si__list--single">Inculcate ethical practices and an understanding of professionalism, safety, and sustainability.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eee-mtech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="eee-mtech-pso" class="accordion-collapse collapse" data-bs-parent="#eee-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">PSOs for M.Tech Power Systems focus on advanced competencies in power system operation, control, protection, and the integration of renewable and distributed energy resources.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Model, simulate, and analyse modern interconnected power systems including FACTS, HVDC, and renewable integration scenarios.</li>
+                              <li class="si__list--single">Design protection schemes, control strategies, and energy management solutions for distribution and smart-grid environments.</li>
+                              <li class="si__list--single">Apply industry-standard simulation tools and contribute to research, consultancy, and innovation in power and energy.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">EEE Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/eee/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/eee/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities & Labs</a></li>
+                      <li><a href="/departments/eee/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research & Projects</a></li>
+                      <li><a href="/departments/eee/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/eee/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=800&fit=crop" alt="EEE Campus" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -4,12 +4,32 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Training Activities";
+
+const pageTitle = 'Training Activities';
+
+const pillars = [
+  { icon: 'fa-light fa-code',           title: 'Technical Training',        desc: 'Programming, data structures, full-stack, cloud and emerging tech bootcamps aligned with industry hiring.' },
+  { icon: 'fa-light fa-calculator',     title: 'Aptitude & Reasoning',      desc: 'Quantitative, logical and verbal aptitude practice modeled on TCS, Infosys and Wipro hiring patterns.' },
+  { icon: 'fa-light fa-comments',       title: 'Communication & Soft Skills', desc: 'Spoken English, presentation, business writing and workplace etiquette workshops.' },
+  { icon: 'fa-light fa-file-lines',     title: 'Resume Building',           desc: 'One-on-one resume reviews, LinkedIn profile crafting and portfolio guidance.' },
+  { icon: 'fa-light fa-user-tie',       title: 'Mock Interviews',           desc: 'Domain technical interviews, HR rounds and behavioral practice with industry mentors.' },
+  { icon: 'fa-light fa-users-rectangle', title: 'Group Discussions',         desc: 'Structured GD sessions on current affairs, ethical dilemmas and case studies.' },
+];
+
+const partners = [
+  { name: 'TCS iON',     desc: 'TCS Career Edge & National Qualifier Test' },
+  { name: 'NPTEL',       desc: 'IIT-led MOOCs and certification courses' },
+  { name: 'Coursera',    desc: 'Coursera for Campus learning licenses' },
+  { name: 'AICTE-IDEA',  desc: 'Innovation, Design & Entrepreneurship Academy' },
+  { name: 'APSSDC',      desc: 'Andhra Pradesh State Skill Development Corporation' },
+  { name: 'IIT Bombay',  desc: 'Spoken Tutorial & Remote Centre programs' },
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Campus Recruitment Training (CRT), aptitude, communication, mock interviews and external learning partners at SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +41,7 @@ const pageTitle = "Training Activities";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/placements">Placements</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +51,178 @@ const pageTitle = "Training Activities";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Hero + Funfact -->
+    <section class="rts-about-university pt--60 pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Training Activities</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                A four-year structured Campus Recruitment Training (CRT) program builds technical depth, aptitude, communication and interview readiness for every SRKR student.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt--30">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">600+</h2>
+              <p class="item-description">Training Hours / Year</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">90%+</h2>
+              <p class="item-description">Placement Rate</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">20+</h2>
+              <p class="item-description">Certification Tracks</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">50+</h2>
+              <p class="item-description">Industry Trainers</p>
+            </div></div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Program Pillars -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Program Pillars</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {pillars.map((p) => (
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__meta" style="padding: 28px;">
+                    <h5 class="item-title"><i class={p.icon}></i> &nbsp;{p.title}</h5>
+                    <p class="item-description">{p.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Year-wise schedule accordion -->
+    <section class="rts-scholarship pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Year-wise Training Schedule</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="accordion" id="trainingAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#year1">Year 1 — Foundation</button></h2>
+                <div id="year1" class="accordion-collapse collapse show" data-bs-parent="#trainingAccordion">
+                  <div class="accordion-body">
+                    Spoken English &amp; communication labs · Programming foundations (C, Python) · Basic aptitude · Career awareness sessions.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#year2">Year 2 — Skill Building</button></h2>
+                <div id="year2" class="accordion-collapse collapse" data-bs-parent="#trainingAccordion">
+                  <div class="accordion-body">
+                    Data structures &amp; algorithms · Object-oriented programming · Quantitative &amp; logical reasoning · NPTEL certifications.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#year3">Year 3 — Specialization</button></h2>
+                <div id="year3" class="accordion-collapse collapse" data-bs-parent="#trainingAccordion">
+                  <div class="accordion-body">
+                    Full-stack / cloud / DevOps electives · Coding contests · Mock aptitude tests · Domain projects · Internship preparation.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#year4">Year 4 — Placement Readiness</button></h2>
+                <div id="year4" class="accordion-collapse collapse" data-bs-parent="#trainingAccordion">
+                  <div class="accordion-body">
+                    Company-specific drills · Mock interviews (technical + HR) · Group discussions · Resume reviews · Offer negotiation guidance.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Partners -->
+    <div class="rts-multi-row-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Training Partners &amp; Resources</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {partners.map((p) => (
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="program-item">
+                <span><strong>{p.name}</strong><br /><small>{p.desc}</small></span>
+                <i class="fa-regular fa-chevron-right"></i>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- External Resources sidebar -->
+    <section class="rts-research-section pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-research-section__content">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Active Programs</h3>
+              <div class="program-list">
+                <a href="https://docs.google.com/forms/d/1lz1VOC0R-pzNJpaSyFlfUrzK2wZa9gUDuoT2GmQ2BUU/edit" class="program-item" target="_blank" rel="noopener"><span>Web Development Course (Technology Centre) <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://docs.google.com/forms/d/1lz1VOC0R-pzNJpaSyFlfUrzK2wZa9gUDuoT2GmQ2BUU/edit" class="program-item" target="_blank" rel="noopener"><span>Startup Club <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/internships" class="program-item"><span>Internship Opportunities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/career-guidance" class="program-item"><span>Career Guidance <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="research__text">
+            <div class="research__text--single">
+              <h3 class="rts-section-title">External Learning Resources</h3>
+              <div class="program-list">
+                <a href="https://www.nptel.ac.in" class="program-item" target="_blank" rel="noopener"><span>NPTEL — IIT Online Courses <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.coursera.org" class="program-item" target="_blank" rel="noopener"><span>Coursera <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://learning.tcsionhub.in/" class="program-item" target="_blank" rel="noopener"><span>TCS iON Digital Learning <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://spoken-tutorial.org/" class="program-item" target="_blank" rel="noopener"><span>IIT Bombay Spoken Tutorial <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.srkrexams.in" class="program-item" target="_blank" rel="noopener"><span>Examinations Portal <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TODO: confirm precise CRT timetable (per semester) and link the official training calendar PDF */}
 
     <SrkrFooter />
     <OffCanvas />

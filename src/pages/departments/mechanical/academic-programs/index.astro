@@ -1,0 +1,286 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Mechanical Engineering | SRKR" description="B.Tech and M.Tech academic programs offered by the Department of Mechanical Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Mechanical Engineering offers JNTUK-affiliated programs spanning undergraduate, postgraduate, and doctoral levels. The four-year B.Tech in Mechanical Engineering builds strong fundamentals in thermodynamics, design, manufacturing, and mechatronics, while the two-year M.Tech in Thermal Engineering develops advanced expertise in heat transfer, IC engines, refrigeration, and computational fluid dynamics. A recognised Ph.D. research centre under Andhra University and JNTUK supports scholars across thermal, design, and manufacturing streams — preparing graduates for careers in automotive, aerospace, energy, manufacturing, and IT.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=600&fit=crop" alt="B.Tech Mechanical Engineering" style="height: 100%; object-fit: cover;">
+                    <a href="#btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#btech">B.Tech Mechanical Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop" alt="M.Tech Thermal Engineering" style="height: 100%; object-fit: cover;">
+                    <a href="#mtech" class="cat-link-btn">Postgraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#mtech">M.Tech Thermal Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#mtech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Mechanical Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="me-btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#me-btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="me-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#me-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives describe what graduates of our B.Tech Mechanical Engineering programme are expected to achieve within a few years of graduation. They guide curriculum design and align our outcomes with industry expectations and the needs of society.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Educate graduates of the programme to build successful technical or professional careers in mechanical engineering and allied industries.</li>
+                              <li class="si__list--single">Envisage graduate engineers to achieve their goals through higher education and active participation in research and development.</li>
+                              <li class="si__list--single">Help graduates become morally and ethically responsible citizens contributing to nation-building.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="me-btech-po" class="accordion-collapse collapse" data-bs-parent="#me-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes capture the knowledge, skills, and professional attributes our graduates will demonstrate by the time of graduation. They are aligned with national accreditation standards and ensure preparedness for engineering practice in ME.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science, and mechanical engineering fundamentals to the solution of complex engineering problems.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate, review research literature, and analyse complex mechanical engineering problems.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design solutions for complex problems and design components or processes meeting specified needs with appropriate consideration for public health, safety, culture, society, and environment.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based knowledge and methods including design of experiments, data analysis and interpretation, and synthesis of information to provide valid conclusions.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Apply AutoCAD, SolidWorks, CATIA, ANSYS, Pro-E, MATLAB, and modern CAD/CAM/CAE tools to mechanical engineering problems.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Assess societal, health, safety, legal, and cultural issues relevant to professional engineering practice.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of engineering solutions in societal and environmental contexts and the need for sustainable development.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and commit to professional ethics, responsibilities, and norms.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual and as a member or leader in diverse, multidisciplinary teams.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports, design documentation, and presentations.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Apply engineering and management principles to manage projects in multidisciplinary environments.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for and engage in independent and lifelong learning amid technological change.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="me-btech-pso" class="accordion-collapse collapse" data-bs-parent="#me-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes are the specialised competencies that distinguish our Mechanical Engineering programme — focused on design of mechanical and thermal systems and modern manufacturing practice.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Apply mechanical engineering fundamentals to design mechanical engineering systems and thermal systems.</li>
+                              <li class="si__list--single">Identify and select appropriate manufacturing processes and apply quality control methods for the production of various components.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: M.Tech -->
+            <div id="mtech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">M.Tech — Thermal Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="me-mtech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#me-mtech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="me-mtech-peo" class="accordion-collapse collapse show" data-bs-parent="#me-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The M.Tech Thermal Engineering programme develops advanced expertise in heat transfer, IC engines, refrigeration, computational fluid dynamics, and clean-energy systems. Our objectives equip graduates for leadership roles in core industries, R&amp;D, and academia.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Build strong foundations in advanced thermodynamics, heat &amp; mass transfer, fluid mechanics, and combustion to address complex thermal problems.</li>
+                              <li class="si__list--single">Expose students to emerging trends in CFD, renewable thermal systems, EV thermal management, and energy efficiency, fostering research orientation.</li>
+                              <li class="si__list--single">Develop competent thermal engineers capable of professional leadership, ethical conduct, and lifelong learning.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-mtech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="me-mtech-po" class="accordion-collapse collapse" data-bs-parent="#me-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Our M.Tech program outcomes ensure that graduates demonstrate advanced analytical, design, and research capabilities — meeting AICTE guidelines and the expectations of industry, PSUs, and research institutions.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Independently carry out research, investigation, and development work in thermal engineering and allied areas.</li>
+                              <li class="si__list--single">Prepare substantial technical reports, dissertations, and conference/journal papers.</li>
+                              <li class="si__list--single">Demonstrate mastery over the specialisation at a level higher than the bachelor programme.</li>
+                              <li class="si__list--single">Address societal needs through interdisciplinary use of advanced thermal and energy concepts.</li>
+                              <li class="si__list--single">Apply modern tools such as ANSYS Fluent, CFX, MATLAB, SolidWorks, and CATIA to industry-grade problems.</li>
+                              <li class="si__list--single">Inculcate ethical practices and an understanding of professionalism, safety, and sustainability.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-mtech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="me-mtech-pso" class="accordion-collapse collapse" data-bs-parent="#me-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">PSOs for M.Tech Thermal Engineering focus on advanced competencies in modelling, simulation, and design of thermal systems, with emphasis on energy efficiency and sustainable engineering.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Model, simulate, and analyse complex thermal and fluid systems including IC engines, HVAC, and renewable thermal energy systems.</li>
+                              <li class="si__list--single">Design and optimise thermal equipment, energy systems, and combustion processes for industrial and societal applications.</li>
+                              <li class="si__list--single">Apply industry-standard CFD and simulation tools and contribute to research, consultancy, and innovation in thermal and energy engineering.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">ME Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/mechanical/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/mechanical/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities & Labs</a></li>
+                      <li><a href="/departments/mechanical/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research & Projects</a></li>
+                      <li><a href="/departments/mechanical/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/mechanical/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600&h=800&fit=crop" alt="ME Campus" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

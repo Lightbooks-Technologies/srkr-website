@@ -4,12 +4,34 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Internship Opportunities";
+
+const pageTitle = 'Internship Opportunities';
+
+const types = [
+  { icon: 'fa-light fa-sun',         title: 'Summer Internships',         desc: '6–8 week vacation internships with industry, research labs and partner firms.' },
+  { icon: 'fa-light fa-book-open',   title: 'Semester Internships',       desc: 'Final-year semester-long, credit-linked internships with sponsored projects.' },
+  { icon: 'fa-light fa-flask',       title: 'Research Internships',       desc: 'IIT/NIT/IIIT and IISc research internships under faculty mentorship.' },
+  { icon: 'fa-light fa-industry',    title: 'Industry-Embedded',          desc: 'Year-long industry-embedded programs through TCS, Cognizant and partner MoUs.' },
+];
+
+// Companies that have hosted SRKR interns — reuse the recruiter logo paths
+const internshipCompanies = [
+  { name: 'TCS',          logo: '/assets/images/recruiters/tcs.png' },
+  { name: 'Infosys',      logo: '/assets/images/recruiters/infosys.png' },
+  { name: 'Cognizant',    logo: '/assets/images/recruiters/cts.png' },
+  { name: 'Wipro',        logo: '/assets/images/recruiters/wipro.png' },
+  { name: 'HCL',          logo: '/assets/images/recruiters/hcl.png' },
+  { name: 'Tech Mahindra',logo: '/assets/images/recruiters/tm.png' },
+  { name: 'Ernst & Young',logo: '/assets/images/recruiters/ey.png' },
+  { name: 'NCC',          logo: '/assets/images/recruiters/ncc.png' },
+  { name: 'L&T',          logo: '/assets/images/recruiters/lt.png' },
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Summer, semester, research and industry-embedded internships, application process and partner companies at SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +43,7 @@ const pageTitle = "Internship Opportunities";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/placements">Placements</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +53,169 @@ const pageTitle = "Internship Opportunities";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Hero + Funfact -->
+    <section class="rts-about-university pt--60 pb--40">
       <div class="container">
         <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Internships</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Hands-on industry exposure through summer, semester, research and embedded internships — many converting into pre-placement offers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt--30">
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">500+</h2>
+            <p class="item-description">Internships / Year</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">120+</h2>
+            <p class="item-description">Partner Companies</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">30+</h2>
+            <p class="item-description">Pre-Placement Offers</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">12</h2>
+            <p class="item-description">Departments</p>
+          </div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internship Types -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Internship Types</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {types.map((t) => (
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__meta" style="padding: 28px;">
+                    <h5 class="item-title"><i class={t.icon}></i> &nbsp;{t.title}</h5>
+                    <p class="item-description">{t.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process accordion -->
+    <section class="rts-scholarship pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Application Process</h3>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+            <div class="accordion" id="internAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1">Step 1 — Eligibility &amp; Discovery</button></h2>
+                <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#internAccordion"><div class="accordion-body">
+                  Verify CGPA and backlog criteria. Discover openings via department TPRs, T&amp;P notice board or partner portals (AICTE, Internshala).
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2">Step 2 — Apply via T&amp;P Cell</button></h2>
+                <div id="step2" class="accordion-collapse collapse" data-bs-parent="#internAccordion"><div class="accordion-body">
+                  Submit application with resume, transcripts and recommendation through the official T&amp;P portal or department TPR.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3">Step 3 — Selection</button></h2>
+                <div id="step3" class="accordion-collapse collapse" data-bs-parent="#internAccordion"><div class="accordion-body">
+                  Online assessment, technical screening and interviews (virtual or on-campus depending on company).
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step4">Step 4 — Offer &amp; Approval</button></h2>
+                <div id="step4" class="accordion-collapse collapse" data-bs-parent="#internAccordion"><div class="accordion-body">
+                  Offer letter received → faculty mentor &amp; HoD approval → internship registration form submission.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step5">Step 5 — Report &amp; Evaluation</button></h2>
+                <div id="step5" class="accordion-collapse collapse" data-bs-parent="#internAccordion"><div class="accordion-body">
+                  Weekly logs, mid-term review, final report and presentation evaluated by faculty + industry mentor.
+                </div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Past Internship Companies -->
+    <div class="rts-multi-row-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Past Internship Companies</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {internshipCompanies.map((c) => (
+            <div class="col-lg-2 col-md-3 col-4">
+              <div class="recruiter-logo-box">
+                <img src={c.logo} alt={c.name} />
+              </div>
+            </div>
+          ))}
+          {/* TODO: add more recruiter logos */}
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports/Forms downloads + Quick Links -->
+    <section class="rts-research-section pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-research-section__content">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Forms &amp; Reports</h3>
+              <div class="program-list">
+                <a href="/assets/documents/internship-registration-form.pdf" class="program-item" target="_blank" rel="noopener"><span>Internship Registration Form <i class="fa-regular fa-chevron-right"></i></span><span>PDF</span></a>
+                <a href="/assets/documents/internship-weekly-log.pdf" class="program-item" target="_blank" rel="noopener"><span>Weekly Log Template <i class="fa-regular fa-chevron-right"></i></span><span>PDF</span></a>
+                <a href="/assets/documents/internship-final-report-template.pdf" class="program-item" target="_blank" rel="noopener"><span>Final Report Template <i class="fa-regular fa-chevron-right"></i></span><span>PDF</span></a>
+                <a href="/assets/documents/internship-evaluation-rubric.pdf" class="program-item" target="_blank" rel="noopener"><span>Evaluation Rubric <i class="fa-regular fa-chevron-right"></i></span><span>PDF</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="research__text">
+            <div class="research__text--single">
+              <h3 class="rts-section-title">External Portals</h3>
+              <div class="program-list">
+                <a href="https://internship.aicte-india.org" class="program-item" target="_blank" rel="noopener"><span>AICTE Internship Portal <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://internshala.com" class="program-item" target="_blank" rel="noopener"><span>Internshala <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.aicte-india.org/schemes/students-development-schemes/AICTE-IDEA-Lab" class="program-item" target="_blank" rel="noopener"><span>AICTE-IDEA Lab <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.nptel.ac.in" class="program-item" target="_blank" rel="noopener"><span>NPTEL Industry Associate <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/training" class="program-item"><span>Training Activities <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TODO: replace placeholder form PDFs in /assets/documents/ with official templates */}
+    {/* TODO: add past internship project gallery / student testimonials section */}
 
     <SrkrFooter />
     <OffCanvas />

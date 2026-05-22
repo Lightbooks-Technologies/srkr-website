@@ -1,0 +1,288 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Electronics & Communication Engineering | SRKR" description="B.Tech and M.Tech academic programs offered by the Department of Electronics & Communication Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ece/">Electronics &amp; Communication Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="ece" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Electronics &amp; Communication Engineering offers a four-year B.Tech in ECE (sanctioned intake 240), a two-year M.Tech in Communication Systems, and a Ph.D. research program — all JNTUK affiliated. Our curriculum balances classical electronics foundations with modern industry skills in VLSI design, embedded systems, IoT, signal processing and wireless communications.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="B.Tech ECE" style="height: 100%; object-fit: cover;">
+                    <a href="#ece-btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#ece-btech">B.Tech Electronics &amp; Communication Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#ece-btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=600&fit=crop" alt="M.Tech Communication Systems" style="height: 100%; object-fit: cover;">
+                    <a href="#ece-mtech" class="cat-link-btn">Postgraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#ece-mtech">M.Tech Communication Systems</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#ece-mtech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="ece-btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Electronics &amp; Communication Engineering</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="ece-btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ece-btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="ece-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#ece-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives define the career and professional accomplishments that our B.Tech ECE graduates are prepared to achieve within a few years of graduation. They guide our curriculum design and ensure alignment with industry needs, research aspirations and societal expectations.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Prepare graduates for successful careers in design, installation, operation and maintenance of modern electronic systems and processes.</li>
+                              <li class="si__list--single">Develop the ability for life-long learning by pursuing higher education, research and continuing professional development.</li>
+                              <li class="si__list--single">Empower graduates to attain leadership roles in industry, academia and research organisations through continuous innovation.</li>
+                              <li class="si__list--single">Cultivate management skills and entrepreneurial mind-set to translate technology into ventures.</li>
+                              <li class="si__list--single">Shape ethical, responsible and value-based professionals who contribute to the welfare of society.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ece-btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="ece-btech-po" class="accordion-collapse collapse" data-bs-parent="#ece-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes describe the knowledge, skills and attributes that B.Tech ECE students will acquire by graduation. They are aligned with NBA/AICTE graduate attributes and ensure our students are well-prepared for professional practice in electronics, communications and allied domains.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science, engineering fundamentals and ECE specialization to solve complex engineering problems.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse complex engineering problems using first principles of mathematics and engineering sciences.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design solutions and system components that meet specified needs with appropriate consideration for safety, environment and culture.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based knowledge and methods including experiment design, data analysis and interpretation to reach valid conclusions.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Create, select and apply appropriate modern engineering tools — EDA, embedded IDEs, MATLAB, simulation and modelling — to complex engineering activities.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply contextual reasoning to assess societal, health, safety, legal and cultural issues relevant to professional engineering practice.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of engineering solutions in societal and environmental contexts and demonstrate the need for sustainable development.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and commit to professional responsibilities and norms of engineering practice.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual and as a member or leader in diverse and multidisciplinary teams.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports, design documentation and presentations with peers and society at large.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Apply engineering and management principles to manage projects in multidisciplinary environments.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and have the ability to engage in, independent and life-long learning amidst rapid technological change.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ece-btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="ece-btech-pso" class="accordion-collapse collapse" data-bs-parent="#ece-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes describe the specialised competencies that distinguish our B.Tech ECE program — competencies that prepare graduates for focused careers in networking, communication systems, VLSI design, embedded systems and IoT applications.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Clearly understand and apply concepts in networking, communication systems and VLSI design to model and implement real-world electronic systems.</li>
+                              <li class="si__list--single">Integrate learning from core ECE courses, embedded systems and Internet of Things (IoT) to deliver practical solutions for industry and society.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: M.Tech -->
+            <div id="ece-mtech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">M.Tech — Communication Systems</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="ece-mtech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ece-mtech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="ece-mtech-peo" class="accordion-collapse collapse show" data-bs-parent="#ece-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The M.Tech Communication Systems program — started in 2006 — develops advanced expertise in analog &amp; digital communication, wireless networks, signal processing and antenna design. Our Program Educational Objectives prepare graduates for leadership roles in industry, R&amp;D organisations and academia.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Build strong foundations in advanced concepts of communication systems to formulate, analyse and solve societal problems related to sustainable communication technology.</li>
+                              <li class="si__list--single">Expose students to the latest innovations and emerging trends — 5G/6G, software-defined radio, IoT, satellite communications — fostering research orientation in multidisciplinary domains.</li>
+                              <li class="si__list--single">Develop competent engineers for professional leadership, effective teamwork, lifelong learning and accelerated career growth.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ece-mtech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="ece-mtech-po" class="accordion-collapse collapse" data-bs-parent="#ece-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Our M.Tech program outcomes ensure that graduates possess advanced analytical, design and research capabilities in communication systems and allied areas. They reflect AICTE post-graduate attributes and emphasise independent research, technical writing and specialised domain mastery.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Independently carry out research, investigation and development work to solve practical problems in communication systems.</li>
+                              <li class="si__list--single">Write and present substantial technical reports and research papers in reputed forums.</li>
+                              <li class="si__list--single">Demonstrate mastery over the area of specialisation at a level distinctly higher than the bachelor programme.</li>
+                              <li class="si__list--single">Address societal needs through an interdisciplinary approach using advanced courses spanning communications, signal processing and networking.</li>
+                              <li class="si__list--single">Gain hands-on training on the latest equipment, EDA tools and software-defined radio platforms to be industry-ready or to pursue advanced research.</li>
+                              <li class="si__list--single">Inculcate ethical practices and an understanding of professionalism, safety and sustainability.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ece-mtech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="ece-mtech-pso" class="accordion-collapse collapse" data-bs-parent="#ece-mtech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes for M.Tech Communication Systems focus on advanced competencies in modulation techniques, wireless protocols, antenna theory and computational tools used in modern communications research and product development.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Advanced study of digital, wireless, satellite and optical communication systems with emphasis on emerging standards (5G/6G, LoRa, SDR) and sustainable practices.</li>
+                              <li class="si__list--single">Address societal and sustainability challenges through interdisciplinary courses such as Detection &amp; Estimation Theory, Wireless Sensor Networks, Antenna Theory &amp; Design and Advanced DSP.</li>
+                              <li class="si__list--single">Hands-on training on the latest hardware (USRP/SDR, antenna analysers, spectrum analysers) and software (MATLAB, GNU Radio, HFSS, ADS) to become industry-ready professionals and pursue advanced research.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">ECE Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/ece/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/ece/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities &amp; Labs</a></li>
+                      <li><a href="/departments/ece/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research &amp; Projects</a></li>
+                      <li><a href="/departments/ece/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/ece/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=800&fit=crop" alt="ECE Campus" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

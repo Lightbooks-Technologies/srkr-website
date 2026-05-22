@@ -1,0 +1,271 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
+
+interface LinkItem {
+  title: string;
+  url: string;
+  desc: string;
+  icon: string;
+  internal?: boolean;
+}
+
+interface LinkCategory {
+  id: string;
+  title: string;
+  subtitle: string;
+  links: LinkItem[];
+}
+
+const categories: LinkCategory[] = [
+  {
+    id: 'student-academic',
+    title: 'Student & Academic Portals',
+    subtitle: 'Day-to-day learning, examination, and academic engagement systems used across SRKR.',
+    links: [
+      { title: 'SRKR Exams Portal', url: 'https://www.srkrexams.in/', desc: 'Hall tickets, results, registration, and revaluation for all autonomous exams.', icon: 'fa-light fa-file-certificate' },
+      { title: 'SRKR IRINS Faculty Profiles', url: 'https://srkrec.irins.org/', desc: 'VIDWAN-linked Indian Research Information Network for SRKR faculty research profiles.', icon: 'fa-light fa-user-graduate' },
+      { title: 'JNTUK (Affiliating University)', url: 'https://jntuk.edu.in/', desc: 'Jawaharlal Nehru Technological University Kakinada — affiliation, regulations & exams.', icon: 'fa-light fa-university' },
+      { title: 'SRKR Online Fee Payment', url: '/online-fee', desc: 'Secure internal portal for tuition, hostel, and miscellaneous fee payments.', icon: 'fa-light fa-credit-card', internal: true },
+    ],
+  },
+  {
+    id: 'approvals-accreditation',
+    title: 'Approvals & Accreditation',
+    subtitle: 'Statutory, regulatory, and quality-assurance bodies that validate every SRKR programme.',
+    links: [
+      { title: 'SRKR Approvals & Accreditations', url: 'https://srkrec.edu.in/ugc.php', desc: 'Consolidated portal listing every UGC, AICTE, NAAC, and NBA approval letter.', icon: 'fa-light fa-shield-check' },
+      { title: 'AICTE', url: 'https://www.aicte-india.org/', desc: 'All India Council for Technical Education — technical-programme regulator.', icon: 'fa-light fa-building-columns' },
+      { title: 'UGC', url: 'https://www.ugc.gov.in/', desc: 'University Grants Commission — higher-education statutory body.', icon: 'fa-light fa-landmark' },
+      { title: 'NAAC', url: 'https://www.naac.gov.in/', desc: 'National Assessment & Accreditation Council — SRKR is NAAC A+ accredited.', icon: 'fa-light fa-award' },
+      { title: 'NBA India', url: 'https://www.nbaind.org/', desc: 'National Board of Accreditation — outcome-based programme accreditation.', icon: 'fa-light fa-badge-check' },
+      { title: 'NIRF (MoE Ranking)', url: 'https://www.nirfindia.org/', desc: 'National Institutional Ranking Framework by the Ministry of Education.', icon: 'fa-light fa-ranking-star' },
+    ],
+  },
+  {
+    id: 'admissions',
+    title: 'Admissions',
+    subtitle: 'Entrance examination authorities and SRKR’s own admission resources.',
+    links: [
+      { title: 'AP EAPCET', url: 'https://cets.apsche.ap.gov.in/', desc: 'Andhra Pradesh Engineering, Agriculture & Pharmacy Common Entrance Test.', icon: 'fa-light fa-pen-field' },
+      { title: 'AP ECET', url: 'https://cets.apsche.ap.gov.in/', desc: 'Lateral-entry common entrance test for diploma & B.Sc. graduates.', icon: 'fa-light fa-pen-ruler' },
+      { title: 'AP PGECET', url: 'https://cets.apsche.ap.gov.in/', desc: 'Post-graduate entrance test for M.Tech and M.Pharm admissions.', icon: 'fa-light fa-graduation-cap' },
+      { title: 'GATE', url: 'https://gate2025.iitr.ac.in/', desc: 'Graduate Aptitude Test in Engineering — gateway to M.Tech and PSU careers.', icon: 'fa-light fa-microscope' },
+      { title: 'SRKR Programmes', url: '/programmes', desc: 'Browse every B.Tech, M.Tech, MBA, and PhD programme offered at SRKR.', icon: 'fa-light fa-list-tree', internal: true },
+      { title: 'Admission Procedure', url: '/procedure', desc: 'Step-by-step convener and management-quota admission workflow.', icon: 'fa-light fa-clipboard-list-check', internal: true },
+      { title: 'Admission Brochure', url: '/admission-brochure', desc: 'Downloadable prospectus with fee structure, intake, and key dates.', icon: 'fa-light fa-book-open-cover', internal: true },
+    ],
+  },
+  {
+    id: 'research-innovation',
+    title: 'Research & Innovation',
+    subtitle: 'Funding agencies, indexing databases, and innovation councils relevant to SRKR researchers.',
+    links: [
+      { title: "MoE Institution's Innovation Council", url: 'https://iic.mic.gov.in/', desc: 'IIC platform driving innovation, IPR awareness, and start-up culture in HEIs.', icon: 'fa-light fa-lightbulb-on' },
+      { title: 'IP India (Patents & Trademarks)', url: 'https://ipindia.gov.in/', desc: 'Office of the Controller General of Patents, Designs & Trademarks.', icon: 'fa-light fa-copyright' },
+      { title: 'SCOPUS', url: 'https://www.scopus.com/', desc: 'World’s largest abstract and citation database of peer-reviewed literature.', icon: 'fa-light fa-database' },
+      { title: 'Web of Science', url: 'https://www.webofscience.com/', desc: 'Clarivate’s multidisciplinary citation index used for impact tracking.', icon: 'fa-light fa-chart-network' },
+      { title: 'Startup India', url: 'https://www.startupindia.gov.in/', desc: 'DPIIT national platform for start-up registration, schemes, and mentorship.', icon: 'fa-light fa-rocket-launch' },
+      { title: 'DST India', url: 'https://dst.gov.in/', desc: 'Department of Science & Technology — funding for FIST, SERB, and SIRO grants.', icon: 'fa-light fa-flask' },
+    ],
+  },
+  {
+    id: 'elearning-skills',
+    title: 'E-Learning & Skill Development',
+    subtitle: 'Curated MOOC, skill, and tutorial platforms integrated with SRKR’s academic calendar.',
+    links: [
+      { title: 'NPTEL (IIT Madras)', url: 'https://nptel.ac.in/', desc: 'National Programme on Technology Enhanced Learning — SRKR is an NPTEL Local Chapter.', icon: 'fa-light fa-circle-play' },
+      { title: 'SWAYAM (MoE)', url: 'https://swayam.gov.in/', desc: 'Government of India MOOC platform with UGC-approved credit transfer courses.', icon: 'fa-light fa-laptop-file' },
+      { title: 'IIT Bombay Spoken Tutorial', url: 'https://spoken-tutorial.org/', desc: 'FOSS skill training; SRKR is a Lead College for spoken-tutorial dissemination.', icon: 'fa-light fa-microphone-lines' },
+      { title: 'APSSDC', url: 'https://apssdc.in/', desc: 'Andhra Pradesh State Skill Development Corporation — campus skill courses & jobs.', icon: 'fa-light fa-screwdriver-wrench' },
+      { title: 'Coursera', url: 'https://www.coursera.org/', desc: 'Industry-recognised certificates and specialisations from global universities.', icon: 'fa-light fa-globe' },
+      { title: 'edX', url: 'https://www.edx.org/', desc: 'University-grade MOOCs and MicroMasters from MIT, Harvard, and partners.', icon: 'fa-light fa-graduation-cap' },
+    ],
+  },
+  {
+    id: 'placements-career',
+    title: 'Placements & Career',
+    subtitle: 'Internship, coding-practice, and professional-network portals recommended by the T&P Cell.',
+    links: [
+      { title: 'Internshala', url: 'https://internshala.com/', desc: 'India’s largest internship and fresher-jobs marketplace.', icon: 'fa-light fa-briefcase' },
+      { title: 'AICTE Internship Portal', url: 'https://internship.aicte-india.org/', desc: 'Government-backed internship matching platform for engineering students.', icon: 'fa-light fa-handshake' },
+      { title: 'LinkedIn Learning', url: 'https://www.linkedin.com/learning/', desc: 'Professional video courses with certifications visible on your LinkedIn profile.', icon: 'fa-brands fa-linkedin' },
+      { title: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/', desc: 'Tutorials, interview prep, and practice problems across CS topics.', icon: 'fa-light fa-code' },
+      { title: 'HackerRank', url: 'https://www.hackerrank.com/', desc: 'Coding-skill assessments, certifications, and recruiter challenges.', icon: 'fa-light fa-terminal' },
+      { title: 'LeetCode', url: 'https://leetcode.com/', desc: 'DSA and system-design practice for top-tier product-company interviews.', icon: 'fa-light fa-square-code' },
+    ],
+  },
+  {
+    id: 'government-compliance',
+    title: 'Government & Compliance',
+    subtitle: 'Mandatory student-welfare, scholarship, and document-verification portals.',
+    links: [
+      { title: 'UGC Anti-Ragging', url: 'https://antiragging.in/', desc: 'File anti-ragging complaints and access the 24×7 national helpline 1800-180-5522.', icon: 'fa-light fa-shield-exclamation' },
+      { title: 'National Scholarship Portal', url: 'https://scholarships.gov.in/', desc: 'One-stop portal for central and state government scholarship schemes.', icon: 'fa-light fa-hand-holding-dollar' },
+      { title: 'DigiLocker', url: 'https://www.digilocker.gov.in/', desc: 'Issue and verify academic and identity documents through Government of India.', icon: 'fa-light fa-folder-tree' },
+      { title: 'MyGov', url: 'https://www.mygov.in/', desc: 'Citizen-engagement platform for national policy consultations and challenges.', icon: 'fa-light fa-people-group' },
+      { title: 'National Career Service', url: 'https://www.ncs.gov.in/', desc: 'Ministry of Labour career-counselling, jobs, and skill-training portal.', icon: 'fa-light fa-compass' },
+    ],
+  },
+  {
+    id: 'wellness-helplines',
+    title: 'Wellness & Helplines',
+    subtitle: 'Free and confidential mental-health and counselling resources for every SRKR student.',
+    links: [
+      { title: 'iCall', url: 'https://icallhelpline.org/', desc: 'TISS-run psychosocial helpline offering free email & telephone counselling.', icon: 'fa-light fa-heart-pulse' },
+      { title: 'Vandrevala Foundation', url: 'https://www.vandrevalafoundation.com/', desc: '24×7 free mental-health helpline: 1860-2662-345.', icon: 'fa-light fa-phone-volume' },
+      { title: 'The Live Love Laugh Foundation', url: 'https://www.thelivelovelaughfoundation.org/', desc: 'Awareness and support for depression, anxiety, and well-being.', icon: 'fa-light fa-face-smile' },
+      { title: 'NIMHANS', url: 'https://nimhans.ac.in/', desc: 'National Institute of Mental Health & Neurosciences — clinical care & helplines.', icon: 'fa-light fa-hospital' },
+    ],
+  },
+];
+
+const totalExternalLinks = categories.reduce(
+  (n, c) => n + c.links.filter((l) => !l.internal).length,
+  0,
+);
+
+const pageTitle = 'Quick Links & External Resources';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="One-stop hub of SRKR portals, partner platforms, regulatory bodies, e-learning, and wellness resources." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Quick Links</li>
+              </ul>
+              <h2 class="section-title">{pageTitle}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt--60 pb--30">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <p class="text-muted mb-0">
+              A single, curated landing page for every SRKR portal, partner platform, regulatory body, e-learning service, and student-welfare helpline — organised by purpose so that students, faculty, and visitors always find the right link in one click.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rts-funfact v_2 stroke">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">8</h2>
+                <p>Categories</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">{totalExternalLinks}+</h2>
+                <p>Resources</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">24/7</h2>
+                <p>Anytime Access</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">100%</h2>
+                <p>Free For All</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {categories.map((cat) => (
+      <section class="pt--60 pb--40" id={cat.id}>
+        <div class="container">
+          <div class="row">
+            <div class="rts-section">
+              <div class="col-lg-4 col-md-3 col-sm-12">
+                <h3 class="rts-section-title">{cat.title}</h3>
+              </div>
+              <div class="col-lg-8 col-md-9 col-sm-12">
+                <p class="rts-section-description">{cat.subtitle}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4 mt--20">
+            {cat.links.map((l) => (
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body d-flex flex-column">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class={`${l.icon} me-3`} style="font-size: 1.75rem; color: var(--rt-primary);"></i>
+                      <h5 class="card-title mb-0" style="color:#1a3c6b;">{l.title}</h5>
+                    </div>
+                    <p class="card-text flex-grow-1">{l.desc}</p>
+                    {l.internal ? (
+                      <a href={l.url} class="rts-theme-btn mt-2 align-self-start">Open Page</a>
+                    ) : (
+                      <a href={l.url} class="rts-theme-btn mt-2 align-self-start" target="_blank" rel="noopener">Visit Site</a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="pt--40 pb--80" id="departments-quick-access">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Departments Quick Access</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Jump directly to any academic department home page for programmes, faculty, facilities, research, and placements.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mt--20">
+          <div class="col-12">
+            <div class="program-list">
+              {departments.map((d) => (
+                <a href={`/departments/${d.slug}/`} class="program-item">
+                  <span><i class={`${d.icon} me-2`}></i>{d.name}</span>
+                  <span>{d.code} <i class="fa-regular fa-chevron-right ms-2"></i></span>
+                </a>
+              ))}
+              <a href="/departments" class="program-item">
+                <span><i class="fa-light fa-grid-2 me-2"></i>All Departments Overview</span>
+                <span>View <i class="fa-regular fa-chevron-right ms-2"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

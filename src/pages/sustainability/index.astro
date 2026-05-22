@@ -4,12 +4,35 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Sustainability";
+
+const pillars = [
+  { icon: 'fa-tree', name: 'Green Campus', desc: 'A 30-acre tree-rich campus with native species, miyawaki pockets &amp; biodiversity-friendly landscaping.' },
+  { icon: 'fa-solar-panel', name: 'Energy Conservation', desc: 'Rooftop solar plants, LED retrofits and energy-audit driven HVAC upgrades.' },
+  { icon: 'fa-droplet', name: 'Water Management', desc: 'Rainwater harvesting, sewage-treatment plant &amp; recycled water for landscaping.' },
+  { icon: 'fa-recycle', name: 'Waste Management', desc: 'Segregation at source, composting of wet waste &amp; tie-ups with authorised e-waste recyclers.' },
+];
+
+const sdgs = [
+  { num: 4, name: 'Quality Education', icon: 'fa-graduation-cap' },
+  { num: 7, name: 'Affordable &amp; Clean Energy', icon: 'fa-solar-panel' },
+  { num: 11, name: 'Sustainable Cities &amp; Communities', icon: 'fa-city' },
+  { num: 13, name: 'Climate Action', icon: 'fa-cloud' },
+  { num: 17, name: 'Partnerships for the Goals', icon: 'fa-handshake' },
+];
+
+const recognitions = [
+  { name: 'Green Campus Recognition', body: 'Andhra Pradesh State Pollution Control Board (TODO)', year: '20XX' },
+  { name: 'Swachhata Ranking', body: 'AICTE / MoE Swachh Campus Initiative', year: '20XX' },
+  { name: 'Best Solar Adoption — Institutional', body: '{TODO: awarding body}', year: '20XX' },
+  { name: 'Tree Plantation Champion', body: 'Forest Dept., West Godavari (TODO)', year: '20XX' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Sustainability at SRKR — green campus, solar power, water recycling, waste management and UN SDG alignment." />
   </head>
   <body>
     <SrkrHeader />
@@ -23,23 +46,205 @@ const pageTitle = "Sustainability";
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
-              <h2 class="section-title">{pageTitle}</h2>
+              <h2 class="section-title">Sustainability &amp; Green Campus</h2>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- HERO -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Engineering a Sustainable Future</h3>
+              <p class="rts-section-description">Sustainability at SRKR isn't a slogan — it's wired into our campus operations, curriculum and community projects. Together, we work towards a low-carbon, resource-efficient and biodiverse institution.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- 4 PILLARS -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Our Four Pillars</h3>
+        </div>
+        <div class="row g-4">
+          {pillars.map((p) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm single-cta-item">
+                <div class="card-body text-center">
+                  <h2 class="single-cta-item__title"><i class={`fa-light ${p.icon}`}></i></h2>
+                  <h5 class="mt-3 mb-2">{p.name}</h5>
+                  <p class="mb-0 small text-muted" set:html={p.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- INITIATIVES ACCORDION -->
+    <div class="py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Key Initiatives</h3>
+        </div>
+        <div class="program-credit-area faq rts-scholarship-description">
+          <div class="program-accordion">
+            <div class="accordion" id="sus-accordion">
+              <div class="accordion-item">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#si1" aria-expanded="true">
+                  Solar Power Installation
+                </button>
+                <div id="si1" class="accordion-collapse collapse show" data-bs-parent="#sus-accordion">
+                  <div class="accordion-body">
+                    <p>Rooftop solar PV panels installed on academic blocks &amp; hostel roofs contribute to peak-hour demand and reduce grid dependency.</p>
+                    <p class="mb-0 small text-muted">{/* TODO: confirm current installed capacity in kWp */}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#si2" aria-expanded="false">
+                  Tree Plantation &amp; Biodiversity
+                </button>
+                <div id="si2" class="accordion-collapse collapse" data-bs-parent="#sus-accordion">
+                  <div class="accordion-body">
+                    <p>Annual NSS-led plantation drives have added thousands of native trees to the campus, supporting birdlife and improving local microclimate.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#si3" aria-expanded="false">
+                  Rainwater Harvesting
+                </button>
+                <div id="si3" class="accordion-collapse collapse" data-bs-parent="#sus-accordion">
+                  <div class="accordion-body">
+                    <p>Rooftop &amp; surface rainwater is channelled to recharge pits and storage tanks, replenishing groundwater on a 30-acre campus.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#si4" aria-expanded="false">
+                  Plastic-Free Campus
+                </button>
+                <div id="si4" class="accordion-collapse collapse" data-bs-parent="#sus-accordion">
+                  <div class="accordion-body">
+                    <p>Single-use plastics phased out from canteens &amp; events; reusable bottles &amp; refill stations promoted across blocks.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#si5" aria-expanded="false">
+                  Composting &amp; Waste Segregation
+                </button>
+                <div id="si5" class="accordion-collapse collapse" data-bs-parent="#sus-accordion">
+                  <div class="accordion-body">
+                    <p>Wet waste from canteen &amp; hostels composted on-site; dry waste segregated &amp; recycled through authorised vendors. E-waste handled separately under CPCB norms.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNFACT IMPACT BAR -->
+    <div class="rts-funfact pb-5">
+      <div class="container">
+        <div class="row justify-content-center mx-0">
+          <div class="col-lg-12 px-0">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">100+</h2>
+                <p>kWp Solar Capacity {/* TODO */}</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">5,000+</h2>
+                <p>Trees Planted {/* TODO */}</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">60%</h2>
+                <p>Water Recycled {/* TODO */}</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">25%</h2>
+                <p>Energy Saved YoY {/* TODO */}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECOGNITIONS -->
+    <div class="rts-multi-row-section py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Recognitions &amp; Awards</h3>
+        </div>
+        <div class="row g-4">
+          {recognitions.map((r) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h6 class="mb-1"><i class="fa-light fa-award"></i> {r.name}</h6>
+                  <p class="small text-muted mb-1" set:html={r.body}></p>
+                  <p class="small mb-0">{r.year}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- UN SDG ALIGNMENT -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">UN Sustainable Development Goals Alignment</h3>
+        </div>
+        <div class="row g-4">
+          {sdgs.map((s) => (
+            <div class="col-lg-2 col-md-4 col-6">
+              <div class="card h-100 shadow-sm single-cta-item text-center">
+                <div class="card-body">
+                  <h2 class="single-cta-item__title">{s.num}</h2>
+                  <i class={`fa-light ${s.icon}`} style="font-size:1.5rem"></i>
+                  <p class="mt-2 mb-0 small" set:html={s.name}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-3 small text-muted">Aligned with the United Nations <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">Sustainable Development Goals <i class="fa-regular fa-arrow-up-right-from-square"></i></a>.</p>
+      </div>
+    </div>
+
+    <!-- REPORTS -->
+    <div class="py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Reports &amp; Policies</h3>
+        </div>
+        <div class="program-list">
+          <ul class="list-unstyled one-column-list">
+            <li class="si__list--single mb-2"><a href="/assets/docs/green-audit-report.pdf"><i class="fa-regular fa-file-pdf"></i> Green Audit Report</a> {/* TODO: upload */}</li>
+            <li class="si__list--single mb-2"><a href="/assets/docs/energy-audit-report.pdf"><i class="fa-regular fa-file-pdf"></i> Energy Audit Report</a> {/* TODO: upload */}</li>
+            <li class="si__list--single mb-2"><a href="/assets/docs/environment-audit-report.pdf"><i class="fa-regular fa-file-pdf"></i> Environment Audit Report</a> {/* TODO: upload */}</li>
+            <li class="si__list--single mb-2"><a href="/assets/docs/sustainability-policy.pdf"><i class="fa-regular fa-file-pdf"></i> SRKR Sustainability Policy</a> {/* TODO: upload */}</li>
+            <li class="si__list--single mb-2"><a href="https://www.ugc.gov.in" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> UGC Green Campus Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

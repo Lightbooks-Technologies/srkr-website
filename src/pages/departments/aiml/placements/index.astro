@@ -1,0 +1,212 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Placements | Artificial Intelligence & Machine Learning | SRKR" description="Placement records and recruiter information for the AI & ML department at SRKR Engineering College." />
+    <style>
+      .recruiter-logo-box {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        transition: all 0.3s ease;
+      }
+      .recruiter-logo-box:hover {
+        border-color: #1a3c6b;
+        box-shadow: 0 4px 12px rgba(26, 60, 107, 0.1);
+        transform: translateY(-2px);
+      }
+      .recruiter-logo-box img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+      }
+      .recruiter-logo-box:hover img {
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/aiml/">Artificial Intelligence & Machine Learning</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Placements</li>
+              </ul>
+              <h2 class="section-title">Placements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40">
+      <div class="container">
+        <DeptNav dept="aiml" current="Placements" />
+      </div>
+    </section>
+
+    <!-- About Placements -->
+    <section class="rts-about-university pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Placements</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Graduates of the AI &amp; ML program are highly sought-after as ML Engineers, Data Scientists, AI Researchers, NLP &amp; Computer Vision Engineers, and AI Product Managers. Our students are prepared through a project-driven curriculum, GPU-enabled lab work, internships at IITs / NITs and industry, and structured placement training — and recruit consistently with leading IT services firms, product companies, and AI-focused startups.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="academic-picture">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=400&fit=crop" alt="placements" style="max-height: 400px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi Row Sections -->
+    <div class="rts-multi-row-section pb--80">
+      <div class="container">
+        <!-- Top Recruiters -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=800&h=600&fit=crop" alt="top recruiters" style="border-radius: 10px;">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Top Recruiters</h4>
+              <p>Our graduates are recruited by leading IT services firms and product companies — and increasingly by global AI-focused organisations such as Google, Microsoft, Amazon, NVIDIA, and AI-first startups.</p>
+              <div class="row g-4 mt-3">
+                {/* TODO: Replace placeholder recruiter logos with AI-focused brands (Google, Microsoft, Amazon, NVIDIA, OpenAI, etc.) when available. */}
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tcs.png" alt="Tata Consultancy Services" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/cts.png" alt="Cognizant Technology Solutions" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/infosys.png" alt="Infosys" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/hcl.png" alt="HCL Technologies" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/wipro.png" alt="Wipro" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/ey.png" alt="Ernst & Young" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/lt.png" alt="L&T" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/ncc.png" alt="NCC" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placement Training -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content left-side">
+              <h4 class="row-title">AI-Ready Placement Training</h4>
+              <p>The Training &amp; Placement Cell, in collaboration with the AI &amp; ML department, runs focused training to prepare students for ML interviews, system design rounds, and applied AI roles.</p>
+              <div class="program-list">
+                <a href="#" class="program-item"><span>ML &amp; Data Science Interview Prep <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Coding (DSA) &amp; Aptitude Training <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Applied ML Case Studies &amp; Mock Interviews <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Portfolio, GitHub &amp; Kaggle Profile Building <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Communication, GD &amp; Behavioural Rounds <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop" alt="placement training" style="border-radius: 10px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Year-wise Records -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="placement records" style="border-radius: 10px;">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Year-wise Placement Records</h4>
+              <p>Download year-wise placement reports covering recruiter list, offers, and notable student outcomes.</p>
+              <div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/aiml-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                    <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Multi Row Sections End -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

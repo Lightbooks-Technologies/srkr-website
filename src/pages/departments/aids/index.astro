@@ -1,0 +1,406 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Artificial Intelligence & Data Science | SRKR Engineering College" description="Department of Artificial Intelligence & Data Science at SRKR Engineering College, Bhimavaram — established 2021, B.Tech AI & Data Science with an industry-aligned, analytics-first curriculum." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Artificial Intelligence &amp; Data Science</li>
+              </ul>
+              <h2 class="section-title">Department of Artificial Intelligence &amp; Data Science</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="aids" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: replace with real HoD photo at /assets/images/faculty/aids/hod.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/aids/PLACEHOLDER.jpg" alt="Dr. P. Kiran Sree">
+              <div class="h5 mb-2 mt-5">Dr. P. Kiran Sree</div>
+              <span>Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Artificial Intelligence &amp; Data Science</p>
+              <p class="mb-5">Established in 2021, the Department of Artificial Intelligence &amp; Data Science at SRKR Engineering College is a fast-growing, future-focused department built for the data-driven economy. With an annual intake of 240 students in our B.Tech program, we equip students to design intelligent systems, engineer large-scale data pipelines, and turn raw data into decisions that move organisations forward.</p>
+              <p class="h6 mb-4">Where AI Meets Data</p>
+              <p class="mb-5">Our curriculum sits at the intersection of statistics, computer science, and applied AI — covering data mining, statistical learning, big data engineering, predictive modelling, deep learning, business analytics, and MLOps. Students work in modern labs equipped with Python, R, Tableau/Power BI, Hadoop &amp; Spark, GPU clusters, and cloud analytics platforms, and graduate ready to step into roles as Data Scientists, Data Engineers, ML Engineers, and Business Intelligence Analysts.</p>
+              <p class="h6 mb-4">Industry-Aligned &amp; Research-Driven</p>
+              <p>We collaborate closely with industry through capstone analytics projects, hackathons, data competitions, and internships, and encourage faculty-student research in NLP, computer vision, recommender systems, and responsible AI. I warmly invite you to explore our programs, facilities, and people — and to consider AIDS at SRKR as the launchpad for your career in AI and Data Science.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To be a leading centre for education and applied research in Artificial Intelligence and Data Science.</li>
+                  <li>To develop industry-ready data professionals who build intelligent, ethical, and impactful data-driven solutions.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To deliver an analytics-first curriculum that blends mathematics, computing, and modern AI with strong industry alignment.</li>
+                  <li class="mb-3">To foster hands-on competence in data engineering, machine learning, deep learning, and business intelligence through state-of-the-art labs.</li>
+                  <li class="mb-3">To cultivate responsible, lifelong learners who apply AI and data science to address societal and industrial challenges.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: replace with real department/lab photo at /assets/images/faculty/aids/AIDSHome.png */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop" alt="Artificial Intelligence & Data Science">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=380&fit=crop" alt="Data Science & Analytics">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aids/research-consultancy/">Data Science &amp; Analytics</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aids/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=380&fit=crop" alt="Big Data Engineering">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aids/research-consultancy/">Big Data Engineering</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aids/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=380&fit=crop" alt="Machine Learning & Deep Learning">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aids/research-consultancy/">Machine Learning &amp; Deep Learning</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aids/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=380&fit=crop" alt="Business Intelligence">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aids/research-consultancy/">Business Intelligence</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aids/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">B.Tech AI &amp; Data Science
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Annual Intake: 240
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Industry-Aligned Curriculum
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Specialization Tracks</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Data Engineering
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Applied Analytics
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Deep Learning
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/academic-programs/" class="link__list">Business Intelligence
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Research &amp; Innovation</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/research-consultancy/" class="link__list">Applied AI Research Group
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/research-consultancy/" class="link__list">Industry Capstone Projects
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/research-consultancy/" class="link__list">Hackathons &amp; Data Competitions
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aids/research-consultancy/" class="link__list">Publications &amp; Patents
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">A modern, fast-growing department building India's next generation of data professionals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/aids/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="Modern AI & Data Science Programs">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-award"></i></span>
+                      <a href="#">Future-Ready</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Established 2021 · Intake 240</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aids/achievements/" class="post-title">
+                    A modern AI &amp; Data Science department engineered for the data economy.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aids/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="Applied AI Research">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-flask"></i></span>
+                      <a href="#">Research</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Applied AI Research</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aids/research-consultancy/" class="post-title">
+                    Faculty-led research in NLP, computer vision, big data &amp; responsible AI.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aids/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Data Career Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Data-Focused Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aids/placements/" class="post-title">
+                    Pathways into Data Scientist, Data Engineer, ML Engineer and BI Analyst roles.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aids/facilities/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Modern Labs">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-server"></i></span>
+                      <a href="#">Facilities</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Modern AI &amp; Data Labs</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aids/facilities/" class="post-title">
+                    Big Data, GPU, Cloud Analytics and Visualization labs powering hands-on learning.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      /* Equal-height specialization cards */
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

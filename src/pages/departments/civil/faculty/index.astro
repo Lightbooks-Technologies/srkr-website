@@ -4,7 +4,7 @@ import FooterScripts from '../../../../components/FooterScripts.astro';
 import SrkrHeader from '../../../../components/SrkrHeader.astro';
 import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
-import CivilDeptNav from '../../../../components/CivilDeptNav.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
 
 const hod = [
   { name: 'Dr.G.Sri Bala',designation: 'Associate Professor & Head of Department', specialization: 'Environmental Engineering', profile: 'https://srkrec.irins.org/profile/500999', imgsrc: '550' },
@@ -78,7 +78,7 @@ const assistantProfessors = [
 
     <section class="rts-faculty py-5">
       <div class="container">
-        <CivilDeptNav current="Faculty" />
+        <DeptNav dept="civil" current="Faculty" />
 
         <!-- HoD -->
         <div class="rts-section mb--40">

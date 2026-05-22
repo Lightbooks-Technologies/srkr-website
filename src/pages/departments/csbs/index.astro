@@ -1,0 +1,405 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Computer Science & Business Systems | SRKR Engineering College" description="Department of Computer Science & Business Systems at SRKR Engineering College, Bhimavaram — established 2021, TCS-designed curriculum integrating computer science, business, and analytics." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Computer Science &amp; Business Systems</li>
+              </ul>
+              <h2 class="section-title">Department of Computer Science &amp; Business Systems</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="csbs" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: Replace with actual HoD photo at /assets/images/faculty/csbs/hod.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/csbs/PLACEHOLDER.jpg" alt="Dr. K. V. Sambasiva Rao">
+              <div class="h5 mb-2 mt-5">Dr. K. V. Sambasiva Rao</div>
+              <span>Associate Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Computer Science &amp; Business Systems</p>
+              <p class="mb-5">The Department of Computer Science &amp; Business Systems (CSBS) at SRKR Engineering College was established in 2021 to address the growing demand for engineering talent that blends deep digital skills with business acumen. Our curriculum is uniquely designed in partnership with Tata Consultancy Services (TCS) and leading academicians across India, producing graduates who are equally fluent in code, data, and the language of business.</p>
+              <p class="h6 mb-4">A TCS-Designed Curriculum for Industry 4.0</p>
+              <p class="mb-5">Our four-year B.Tech programme integrates core Computer Science with contemporary topics such as Data Analytics, Machine Learning, Cloud Computing, Cyber Security, Internet of Things, and Management Principles. Students learn to architect software, model financial systems, and design data-driven business solutions using industry-standard tools and platforms — all within a small, mentor-rich cohort of 60 students.</p>
+              <p class="h6 mb-4">Business Discipline. Service Orientation. Innovation.</p>
+              <p>Beyond the technical core, our graduates develop strong communication, ethics, and entrepreneurial mindset through humanities and management electives. With an intentionally small intake, every student receives personalised mentorship, a dedicated internship pipeline, and exposure to consulting, fintech, ERP, and IT-strategy practice. I warmly invite you to explore our programme and discover how CSBS at SRKR can launch your career at the intersection of technology and business.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To be a centre of excellence that produces industry-ready professionals at the intersection of computer science, business systems, and analytics.</li>
+                  <li>To nurture innovative thinkers and ethical leaders who design technology solutions for sustainable business and societal impact.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To deliver a TCS-aligned, industry-driven curriculum integrating computer science fundamentals with business systems and emerging technologies.</li>
+                  <li class="mb-3">To develop strong analytical, problem-solving, and entrepreneurial skills through experiential learning, internships, and capstone projects.</li>
+                  <li class="mb-3">To inculcate ethics, communication, and lifelong learning — preparing graduates for global IT consulting, analytics, and product roles.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: Replace with CSBS department photo at /assets/images/faculty/csbs/CSBSHome.png */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&h=700&fit=crop" alt="CSBS Business Intelligence Lab">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=380&fit=crop" alt="Business Analytics">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csbs/research-consultancy/">Business Analytics</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csbs/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=380&fit=crop" alt="Financial Analytics & FinTech">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csbs/research-consultancy/">Financial Analytics &amp; FinTech</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csbs/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=380&fit=crop" alt="Enterprise Systems & ERP">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csbs/research-consultancy/">Enterprise Systems &amp; ERP</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csbs/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=380&fit=crop" alt="IT Consulting & Strategy">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/csbs/research-consultancy/">IT Consulting &amp; Strategy</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/csbs/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">B.Tech CS &amp; Business Systems
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">TCS-Designed Curriculum
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">Intake of 60 — Personal Mentorship
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Domain Electives</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">Financial Analytics
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">Business Intelligence
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">Operations Research
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/academic-programs/" class="link__list">IT Strategy &amp; Consulting
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Industry &amp; Innovation</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/research-consultancy/" class="link__list">TCS Industry Partnership
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/facilities/" class="link__list">Analytics &amp; ERP Labs
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/placements/" class="link__list">Internships &amp; Live Projects
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/csbs/research-consultancy/" class="link__list">FinTech &amp; Business Innovation Cell
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">A TCS-designed curriculum, a small cohort, and a sharp focus on business technology careers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/csbs/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="TCS Curriculum Partnership">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-handshake"></i></span>
+                      <a href="#">Curriculum Partner</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Designed with TCS</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csbs/achievements/" class="post-title">
+                    TCS-designed Industry 4.0 curriculum spanning analytics, cloud, IoT, and management.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csbs/academic-programs/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="Personalised Mentorship">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-user-graduate"></i></span>
+                      <a href="#">Small Cohort</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Intake of 60</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csbs/academic-programs/" class="post-title">
+                    Intake of just 60 — personalised mentorship and a tight-knit learning community.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csbs/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Consulting &amp; FinTech</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csbs/placements/" class="post-title">
+                    Recruitment focus on TCS, Deloitte, Accenture, EY, KPMG, and leading banks.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/csbs/facilities/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Analytics Labs">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-chart-line"></i></span>
+                      <a href="#">Facilities</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Analytics &amp; ERP Labs</span>
+                    </div>
+                  </div>
+                  <a href="/departments/csbs/facilities/" class="post-title">
+                    Dedicated labs for Business Analytics, ERP, Financial Modeling, and IT Consulting.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const labs = [
+  { name: 'Programming Lab (C, Python, Java)',          img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop' },
+  { name: 'Data Structures & Algorithms Lab',            img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop' },
+  { name: 'Database Management Systems Lab',             img: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop' },
+  { name: 'Operating Systems & Networks Lab',            img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&h=600&fit=crop' },
+  { name: 'Web Technologies Lab',                        img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop' },
+  { name: 'Business Analytics Lab (Power BI, Tableau)',  img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
+  { name: 'ERP Lab (SAP / Odoo Sandboxes)',              img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop' },
+  { name: 'Financial Modeling Lab (Python, R, Excel)',   img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop' },
+  { name: 'IT Consulting & Case-Study Studio',           img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop' },
+  { name: 'Software Engineering & DevOps Lab',           img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=600&fit=crop' },
+  { name: 'Capstone Project Lab',                        img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop' },
+];
+---
+
+<style>
+  .single-cat-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cat-thumb {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cat-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cat-meta {
+    padding: 1.5rem 1rem;
+  }
+
+  .cat-title a {
+    font-size: 1.5rem;;
+  }
+
+  .cat-link {
+    display: none;
+  }
+
+  .cat-title {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Facilities | Computer Science & Business Systems | SRKR" description="Laboratories and digital infrastructure of the Computer Science & Business Systems department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csbs/">Computer Science &amp; Business Systems</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Facilities</li>
+              </ul>
+              <h2 class="section-title">Facilities</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="csbs" current="Facilities" />
+        <div class="row">
+          <div class="col-12">
+
+            <div class="program-about">
+              <h4 class="title">Our Laboratories</h4>
+              <p>The CSBS department is equipped with modern computing laboratories, business analytics studios, and ERP sandboxes that mirror real industry environments. Students work hands-on with Python, R, SQL, cloud platforms, Power BI, Tableau, SAP, and financial modeling tools — the same stack used by leading IT consulting and FinTech firms. Each lab is designed to support the TCS-aligned curriculum and the small-cohort, mentor-rich learning model of the department.</p>
+            </div>
+
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Laboratory Infrastructure</h3>
+            </div>
+
+            <div class="row g-5">
+              {labs.map(lab => (
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img src={lab.img} alt={lab.name} />
+                      <a href="#" class="cat-link-btn">Laboratory</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="#">{lab.name}</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
