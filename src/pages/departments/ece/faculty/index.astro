@@ -8,29 +8,55 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
 /* TODO: replace placeholder names, designations, specializations, profile links and imgsrc filenames with verified ECE faculty data */
 const hod = [
-  { name: 'Dr. S.S. Mohan Reddy', designation: 'Professor & Head of Department', specialization: 'VLSI Design & Signal Processing', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. S.S.Mohan Reddy', designation: 'Professor', specialization: 'Antennas, Cellular and Mobile Communication, Wireless', profile: 'https://srkrec.irins.org/profile/180182', imgsrc: '313' },
 ];
 
 const professors = [
-  { name: 'Dr. P. Rajesh Kumar',        designation: 'Professor', specialization: 'VLSI Design',                profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. K. Babulu',              designation: 'Professor', specialization: 'Signal Processing',          profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. M. Kamaraju',            designation: 'Professor', specialization: 'Embedded Systems',           profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. B. Rama Rao',            designation: 'Professor', specialization: 'Microwave & Antennas',       profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr.N.Udaya Kumar', designation: 'Professor', specialization: 'Digital Image Processing, Digital Signal Processing, VLSI', profile: 'https://srkrec.irins.org/profile/245635', imgsrc: '219' },
+  { name: 'Dr.B.V.S.S.N. Raju', designation: 'Professor', specialization: 'Communications & Signal Processing', profile: 'https://srkrec.irins.org/profile/320452', imgsrc: '214' },
+  { name: 'Prof.G.V.S.Padma Rao', designation: 'Professor', specialization: 'Electronics and Communications', profile: 'https://srkrec.irins.org/profile/320302', imgsrc: '288' },
+  { name: 'Dr. S.S.Mohan Reddy', designation: 'Professor', specialization: 'Antennas, Cellular and Mobile Communication, Wireless', profile: 'https://srkrec.irins.org/profile/180182', imgsrc: '313' },
 ];
 
 const associateProfessors = [
-  { name: 'Dr. T. Venkata Lakshmi',     designation: 'Associate Professor', specialization: 'Image Processing',  profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. K. Srinivasa Naik',      designation: 'Associate Professor', specialization: 'Communications',    profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. P. Naga Malleswari',     designation: 'Associate Professor', specialization: 'VLSI Design',       profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr .Y.Rama. Lakshmanna', designation: 'Associative Professor', specialization: 'Bio Medical Signal Processing', profile: 'https://srkrec.irins.org/profile/320308', imgsrc: '319' },
+  { name: 'Dr. G.Naga Raju', designation: 'Associative Professor', specialization: 'Image Processing', profile: 'https://srkrec.irins.org/profile/320422', imgsrc: '367' },
+  { name: 'Dr. T.V.H.Lakshmi', designation: 'Associative Professor', specialization: 'Image Processing', profile: 'https://srkrec.irins.org/profile/245666', imgsrc: '415' },
+  { name: 'Dr..K.Bala Sinduri', designation: 'Associative Professor', specialization: 'VLSI and Signal Processing', profile: 'https://srkrec.irins.org/profile/320329', imgsrc: '574' },
+  { name: 'Dr.R.K.Chaitanya', designation: 'Associative Professor', specialization: 'Antennas', profile: 'https://srkrec.irins.org/profile/320304', imgsrc: '377' },
+  { name: 'Dr.B.Sanjay', designation: 'Associative Professor', specialization: 'Communication', profile: 'https://srkrec.irins.org/profile/180184', imgsrc: '638' },
+  { name: 'Dr P.K. K. Varma', designation: 'Associative Professor', specialization: 'Antenna, CCNA, Networking', profile: 'https://srkrec.irins.org/profile/320408', imgsrc: '559' },
+  { name: 'Dr.V.Naga Valli', designation: 'Associative Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320403', imgsrc: '1008' },
 ];
 
 const assistantProfessors = [
-  { name: 'Mr. K. Phani Srinivas',      designation: 'Assistant Professor', specialization: 'Embedded Systems',  profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Ms. M. Lakshmi Prasanna',    designation: 'Assistant Professor', specialization: 'Signal Processing', profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mr. A. Rajesh',              designation: 'Assistant Professor', specialization: 'Communications',    profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Ms. G. Pravallika',          designation: 'Assistant Professor', specialization: 'VLSI Design',       profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mr. D. Surya Prakash',       designation: 'Assistant Professor', specialization: 'IoT & Embedded',    profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Ms. B. Sai Sushma',          designation: 'Assistant Professor', specialization: 'Image Processing',  profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Sri T.V.Syamala Raju', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/245674', imgsrc: '501' },
+  { name: 'Sri.K N V S Varma', designation: 'Assistant Professor', specialization: 'Communication and Radar Systems', profile: 'https://srkrec.irins.org/profile/320251', imgsrc: '594' },
+  { name: 'Mrs.B.Revathi', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320293', imgsrc: '601' },
+  { name: 'Dr .K.N.V Satyanarayana', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/245650', imgsrc: '604' },
+  { name: 'Mrs.G.Prathima', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320355', imgsrc: '603' },
+  { name: 'Sri.B.Bhagya Prasad', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320247', imgsrc: '643' },
+  { name: 'Sri.V.Rama Krishna', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/245482', imgsrc: '642' },
+  { name: 'Sri. T.Venkata Narayana', designation: 'Assistant Professor', specialization: 'Image Processing, Antennas', profile: 'https://srkrec.irins.org/profile/320429', imgsrc: '640' },
+  { name: 'Mrs.D.V.N.Bharathi', designation: 'Assistant Professor', specialization: 'VLSI', profile: 'https://srkrec.irins.org/profile/320294', imgsrc: '892' },
+  { name: 'Ms.D.Bhavani', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320451', imgsrc: '876' },
+  { name: 'Dr.B.Tapasvi', designation: 'Assistant Professor', specialization: 'Computer Vision, Deep Learning', profile: 'https://srkrec.irins.org/profile/320245', imgsrc: '826' },
+  { name: 'Dr. J. Ravi', designation: 'Assistant Professor', specialization: 'Image Processing', profile: 'https://srkrec.irins.org/profile/245677', imgsrc: '974' },
+  { name: 'Sri.K.Venkatrao', designation: 'Assistant Professor', specialization: 'Microstrip Patch Antennas', profile: 'https://srkrec.irins.org/profile/245639', imgsrc: '981' },
+  { name: 'Mrs.K.Lakshmi Divya', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/245998', imgsrc: '1009' },
+  { name: 'Sri.P.Kanaka Raju', designation: 'Assistant Professor', specialization: 'VLSI & Embedded Systems', profile: 'https://srkrec.irins.org/profile/320376', imgsrc: '1011' },
+  { name: 'Sri.N.Kishore Chandra dev', designation: 'Assistant Professor', specialization: 'Wireless Communication', profile: 'https://srkrec.irins.org/profile/320300', imgsrc: '1043' },
+  { name: 'Sri.T.Nalini Prasad', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320417', imgsrc: '1063' },
+  { name: 'Sri.M.Praveen Kumar', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320445', imgsrc: '1177' },
+  { name: 'Sri.N.V.Phani Sai kumar', designation: 'Assistant Professor', specialization: 'Communication Systems', profile: 'https://srkrec.irins.org/profile/320307', imgsrc: '1198' },
+  { name: 'Sri.Y.S.S Sriramam', designation: 'Assistant Professor', specialization: 'Electronics and Communication', profile: 'https://srkrec.irins.org/profile/320446', imgsrc: '1211' },
+  { name: 'Dr . S. Swathi', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320254', imgsrc: '1273' },
+  { name: 'Sri.K.Phani varma', designation: 'Assistant Professor', specialization: 'VLSI', profile: 'https://srkrec.irins.org/profile/320443', imgsrc: '1246' },
+  { name: 'Mrs.P.S.S.N.Mowlika', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320476', imgsrc: '1312' },
+  { name: 'Mrs.R.Devi', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320248', imgsrc: '1266' },
+  { name: 'Dr.A.V.S.Surya Varma', designation: 'Assistant Professor', specialization: 'VLSI Design', profile: 'https://srkrec.irins.org/profile/320316', imgsrc: '1333' },
+  { name: 'Dr.M.Satish Kumar', designation: 'Assistant Professor', specialization: 'EMI/EMC in Design', profile: 'https://srkrec.irins.org/profile/320598', imgsrc: '1338' },
+  { name: 'Mrs.D.Rajeswari', designation: 'Assistant Professor', specialization: 'Digital Electronics and Communication Systems', profile: 'https://srkrec.irins.org/profile/509376', imgsrc: '1367' },
 ];
 ---
 
