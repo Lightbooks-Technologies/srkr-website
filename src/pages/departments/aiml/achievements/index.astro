@@ -1,0 +1,292 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<style>
+  .rts-about-section {
+    height: 100%;
+  }
+
+  .rts-about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rts-about-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.25rem;
+  }
+
+  .rts-about-details .single-about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Achievements | Artificial Intelligence & Machine Learning | SRKR" description="Department, faculty, and student achievements of the AI & ML department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/aiml/">Artificial Intelligence & Machine Learning</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Achievements</li>
+              </ul>
+              <h2 class="section-title">Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Achievements Section -->
+    <section class="rts-about-university py-5">
+      <div class="container">
+        <DeptNav dept="aiml" current="Achievements" />
+
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-5">
+              <h3 class="rts-section-title">A Fast-Growing Modern Department</h3>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <p class="rts-section-description">
+                Since its launch in 2021, the AI &amp; ML department at SRKR has scaled from an initial intake of 60 to 240 students — one of the institution's fastest-growing programs. Our students compete on Kaggle, win at AI hackathons, ship capstone projects featured at expos, and intern at IITs, NITs, and leading technology companies. We are building a community defined by curiosity, rigour, and impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Image + Stat Cards -->
+        <div class="container">
+          <div class="row g-5 justify-content-md-center justify-content-start align-items-stretch">
+            <div class="col-lg-7 col-xl-8 col-md-11">
+              <div class="rts-about-section">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop" alt="AI & ML Department">
+              </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 col-md-11">
+              <div class="rts-about-details">
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">4×</h3>
+                    <img src="/assets/images/icon/11.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Intake Growth Since 2021 (60 → 240 Seats)</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">10+</h3>
+                    <img src="/assets/images/icon/12.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>AI/ML Hackathon &amp; Kaggle Recognitions</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">IITs / NITs</h3>
+                    <img src="/assets/images/icon/13.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Summer Research Internships Each Year</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="rts-funfact pt-5">
+          <div class="container">
+            <div class="row justify-content-center mx-0">
+              <div class="col-lg-12 px-0">
+                <div class="rts-funfact-wrapper">
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">240</h2>
+                    <p>Sanctioned B.Tech Intake</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">4</h2>
+                    <p>Specialization Tracks</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">12+</h2>
+                    <p>AI/ML Laboratories</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">2021</h2>
+                    <p>Year Established</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="rts-history rts-section-padding">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=800&h=600&fit=crop" alt="Faculty Excellence">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Faculty Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: Replace with verified faculty achievements */}
+                      <li class="si__list--single">Faculty publications in Scopus / IEEE / Springer indexed AI &amp; ML venues</li>
+                      <li class="si__list--single">Invited talks and workshops on Deep Learning, NLP, and Generative AI</li>
+                      <li class="si__list--single">Faculty mentorship of student teams at national AI hackathons</li>
+                      <li class="si__list--single">Collaborations with IIT and NIT research groups for student internships</li>
+                      <li class="si__list--single">Industry-recognised certifications across PyTorch, TensorFlow, AWS, and Azure AI</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Achievements -->
+        <section class="rts-mission rts-section-padding pt-0">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Student Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: Replace with verified student achievements */}
+                      <li class="si__list--single">Top finishes by SRKR teams in Kaggle community competitions</li>
+                      <li class="si__list--single">Winners and finalists at national AI &amp; ML hackathons and ideathons</li>
+                      <li class="si__list--single">Selected for summer research internships at IITs, NITs, and IIITs</li>
+                      <li class="si__list--single">Capstone projects featured at AI project expos and innovation summits</li>
+                      <li class="si__list--single">Strong placements with TCS, Infosys, Deloitte, and AI-focused startups</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop" alt="Student Success">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Department Milestones Timeline -->
+        <section class="rts__section rts-section-padding pt-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                  <h2 class="rts__section--title">Department Milestones</h2>
+                  <p class="rts__section--description">A young department on a steep growth curve — from launch in 2021 to four specialization tracks and 240 sanctioned seats. Our trajectory reflects sustained investment in faculty, infrastructure, and student opportunity.</p>
+                  <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                  <!-- 2021 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2021</a></h4>
+                        <p class="campus__life--single--description">B.Tech in AI &amp; ML launched with an initial intake of 60 students under the CSE umbrella.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2022 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2022</a></h4>
+                        <p class="campus__life--single--description">Intake expanded; dedicated Deep Learning and Computer Vision labs commissioned with GPU compute.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2023 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2023</a></h4>
+                        <p class="campus__life--single--description">Specialization tracks introduced in Computer Vision, NLP, Deep Learning &amp; MLOps, and Generative AI.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2024-25 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2024–25</a></h4>
+                        <p class="campus__life--single--description">Intake reaches 240 seats. Generative AI &amp; MLOps labs added; first cohorts graduate into AI-focused careers.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

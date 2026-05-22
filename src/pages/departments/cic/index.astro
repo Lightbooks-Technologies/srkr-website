@@ -1,0 +1,405 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of CSE — IoT, Cybersecurity & Blockchain | SRKR Engineering College" description="Department of CSE (IoT, Cyber Security & Blockchain Technology) at SRKR Engineering College, Bhimavaram — established 2022, future-ready B.Tech program in smart connected systems, cybersecurity and blockchain." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">CSE — IoT, Cybersecurity & Blockchain</li>
+              </ul>
+              <h2 class="section-title">Department of CSE (IoT, Cyber Security &amp; Blockchain Technology)</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="cic" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: Replace with actual HoD photo at /assets/images/faculty/cic/PLACEHOLDER.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/cic/PLACEHOLDER.jpg" alt="Dr. S. Suresh Kumar">
+              <div class="h5 mb-2 mt-5">Dr. S. Suresh Kumar</div>
+              <span>Associate Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of CSE — IoT, Cybersecurity &amp; Blockchain</p>
+              <p class="mb-5">Launched in 2022, the Department of CSE (IoT, Cyber Security &amp; Blockchain Technology) — CIC — is one of SRKR's most forward-looking programs. We prepare engineers for a world where billions of connected devices, smart cities, decentralized finance and AI-driven attack surfaces are converging at extraordinary speed. Our four-year B.Tech program is built around a strong Computer Science core extended by deep tracks in IoT systems, applied cybersecurity and blockchain technology.</p>
+              <p class="h6 mb-4">A Future-Ready Curriculum</p>
+              <p class="mb-5">Students master the fundamentals — programming, data structures, algorithms, operating systems, databases and computer networks — and then specialise through hands-on courses in Cryptography &amp; Network Security, Internet of Things, Cyber Security, Ethical Hacking, Blockchain Technologies and Smart Contracts. Labs are equipped for embedded prototyping, packet capture, penetration testing, and end-to-end blockchain DApp development on Ethereum, Hyperledger and Solana-style stacks.</p>
+              <p class="h6 mb-4">Built for the Next Decade of Tech Careers</p>
+              <p>CIC graduates are positioned for high-demand roles as IoT developers, security analysts, ethical hackers, blockchain engineers and smart-contract auditors. With access to SRKR's Technology Centre, AICTE IDEA Lab, CTF teams and start-up mentorship, our students don't just learn the future — they build it. I invite you to explore the department and join us in shaping the next generation of secure, intelligent and decentralized systems.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To be a centre of excellence in Internet of Things, Cyber Security and Blockchain Technology — producing engineers who design secure, intelligent and decentralized systems for a connected world.</li>
+                  <li>To foster a culture of innovation, ethical practice and entrepreneurship aligned with the rapidly evolving digital economy.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To deliver a rigorous, industry-aligned curriculum that blends core Computer Science with hands-on expertise in IoT, cybersecurity and blockchain.</li>
+                  <li class="mb-3">To build a strong research and project culture through hackathons, CTF competitions, bug bounty programs and start-up mentorship.</li>
+                  <li class="mb-3">To develop ethical, articulate and team-oriented professionals committed to building trustworthy and resilient digital infrastructure.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: Replace with CIC department / IoT lab photo */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="CIC IoT & Cybersecurity Lab">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=380&fit=crop" alt="Internet of Things">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cic/research-consultancy/">Internet of Things (IoT)</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cic/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=380&fit=crop" alt="Cyber Security">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cic/research-consultancy/">Cyber Security &amp; Ethical Hacking</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cic/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=380&fit=crop" alt="Blockchain Technology">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cic/research-consultancy/">Blockchain &amp; Smart Contracts</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cic/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=380&fit=crop" alt="Edge & Smart Computing">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cic/research-consultancy/">Edge &amp; Smart Computing</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cic/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">B.Tech CSE — IoT, CS &amp; Blockchain
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">Sanctioned Intake — 60
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">Established 2022
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Specialization Tracks</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">IoT Systems Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">Cyber Security Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">Blockchain Technology Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/academic-programs/" class="link__list">Edge &amp; Smart Computing Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Innovation</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/research-consultancy/" class="link__list">CTF &amp; Bug Bounty Programs
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/research-consultancy/" class="link__list">Blockchain Hackathons
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/research-consultancy/" class="link__list">IoT Project Expos
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cic/research-consultancy/" class="link__list">AICTE IDEA Lab Access
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">A future-ready department building expertise in IoT, cybersecurity and blockchain — the technologies redefining the next decade.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/cic/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="Future-Ready Program">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-shield-keyhole"></i></span>
+                      <a href="#">Curriculum</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Established 2022 · Intake 60</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cic/achievements/" class="post-title">
+                    A B.Tech designed around the three forces shaping tomorrow — IoT, security and blockchain.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cic/facilities/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="Specialised Labs">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-microchip"></i></span>
+                      <a href="#">Infrastructure</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>IoT · Security · Blockchain Labs</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cic/facilities/" class="post-title">
+                    Specialised labs for embedded prototyping, ethical hacking and blockchain DApp development.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cic/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Security &amp; IoT Focused Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cic/placements/" class="post-title">
+                    Pipeline aligned to roles in cybersecurity, IoT engineering and blockchain development.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cic/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Innovation">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-lightbulb-on"></i></span>
+                      <a href="#">Innovation</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>CTFs · Hackathons · Bug Bounties</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cic/research-consultancy/" class="post-title">
+                    Active student teams in Capture-the-Flag, blockchain hackathons and responsible disclosure programs.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

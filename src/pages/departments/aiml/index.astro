@@ -1,0 +1,405 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Artificial Intelligence & Machine Learning | SRKR Engineering College" description="Department of Artificial Intelligence & Machine Learning at SRKR Engineering College, Bhimavaram — established 2021, industry-aligned B.Tech in AI & ML." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Artificial Intelligence & Machine Learning</li>
+              </ul>
+              <h2 class="section-title">Department of Artificial Intelligence & Machine Learning</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="aiml" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: Replace with HoD photo at /assets/images/faculty/aiml/hod.jpg */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/aiml/PLACEHOLDER.jpg" alt="Dr. K. Madhuri">
+              <div class="h5 mb-2 mt-5">Dr. K. Madhuri</div>
+              <span>Associate Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Artificial Intelligence &amp; Machine Learning</p>
+              <p class="mb-5">Established in 2021, the Department of Artificial Intelligence &amp; Machine Learning at SRKR Engineering College is one of the institution's fastest-growing programs. From an initial intake of 60, our B.Tech in AI &amp; ML has expanded to 240 sanctioned seats — a direct reflection of student demand and the surging industry need for AI talent. Our mission is to equip the next generation of engineers to build, deploy, and reason responsibly about intelligent systems that touch every domain of modern life.</p>
+              <p class="h6 mb-4">Curriculum Built for an AI-First World</p>
+              <p class="mb-5">Our curriculum blends rigorous foundations in mathematics, statistics, and computer science with applied tracks in Deep Learning, Computer Vision, Natural Language Processing, Reinforcement Learning, MLOps, and Generative AI. Students work with modern GPU-accelerated infrastructure, industry-standard frameworks such as PyTorch and TensorFlow, and cloud platforms — including hands-on capstone projects that ship end-to-end ML systems.</p>
+              <p class="h6 mb-4">Industry, Research &amp; Responsible AI</p>
+              <p>We partner with leading technology companies for internships, expert seminars, and live projects, and our students regularly participate in Kaggle competitions, AI hackathons, and national project expos. Equally important, we embed Ethical and Responsible AI throughout the curriculum so our graduates not only build powerful models, but also understand their societal impact. I warmly invite you to explore the department and discover why AI &amp; ML at SRKR is a launchpad for impactful, future-ready careers.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To be a leading centre for education and applied research in Artificial Intelligence and Machine Learning, producing engineers who build trustworthy and impactful intelligent systems.</li>
+                  <li>To advance human well-being through responsible AI innovation, interdisciplinary collaboration, and globally relevant talent.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To deliver an industry-aligned, research-informed curriculum spanning core AI, modern ML, deep learning, NLP, computer vision, and generative AI.</li>
+                  <li class="mb-3">To cultivate problem-solving, computational thinking, and engineering rigour through GPU-enabled labs, open-source tooling, and capstone projects.</li>
+                  <li class="mb-3">To instil ethical practice, data responsibility, and a societal lens so graduates design AI that is fair, safe, and beneficial.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: Replace with department hero image at /assets/images/faculty/aiml/AIMLEngineeringHome.png */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop" alt="AI & ML Lab">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=380&fit=crop" alt="Deep Learning">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aiml/research-consultancy/">Deep Learning</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aiml/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=380&fit=crop" alt="Computer Vision">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aiml/research-consultancy/">Computer Vision</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aiml/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?w=600&h=380&fit=crop" alt="Natural Language Processing">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aiml/research-consultancy/">Natural Language Processing</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aiml/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=600&h=380&fit=crop" alt="Generative AI">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/aiml/research-consultancy/">Generative AI</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/aiml/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">B.Tech AI &amp; Machine Learning
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">Intake of 240 Seats
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">Industry-Aligned Curriculum
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Specialization Tracks</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">Computer Vision Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">NLP &amp; Conversational AI
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">Deep Learning &amp; MLOps
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/academic-programs/" class="link__list">Generative AI Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Research &amp; Innovation</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/research-consultancy/" class="link__list">Applied AI Research Group
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/research-consultancy/" class="link__list">GPU-Accelerated DL Lab
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/research-consultancy/" class="link__list">Kaggle &amp; Hackathon Teams
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/aiml/research-consultancy/" class="link__list">IIT/NIT Research Internships
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">A young, fast-growing program built for the AI-first decade.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/aiml/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="Fast Growing AIML Department">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-rocket"></i></span>
+                      <a href="#">Growth</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>60 → 240 Seats Since 2021</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aiml/achievements/" class="post-title">
+                    From 60 to 240 sanctioned seats — one of SRKR's fastest-growing programs.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aiml/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="GPU Deep Learning Lab">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-microchip-ai"></i></span>
+                      <a href="#">Infrastructure</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>GPU-Enabled Labs</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aiml/research-consultancy/" class="post-title">
+                    GPU-accelerated Deep Learning Lab with PyTorch, TensorFlow, and cloud access.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aiml/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Top Tech Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aiml/placements/" class="post-title">
+                    Graduates placed with TCS, Infosys, Deloitte, and AI-focused startups.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/aiml/achievements/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Kaggle and Hackathons">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-trophy"></i></span>
+                      <a href="#">Competitions</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Kaggle &amp; Hackathons</span>
+                    </div>
+                  </div>
+                  <a href="/departments/aiml/achievements/" class="post-title">
+                    Active Kaggle teams, AI hackathon winners, and project-expo recognitions.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

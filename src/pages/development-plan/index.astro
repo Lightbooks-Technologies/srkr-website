@@ -4,12 +4,94 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Institute Development Plan";
+
+const pillars = [
+  {
+    id: 'idpAcademics',
+    title: 'Academic Excellence',
+    items: [
+      'Continuous curriculum reform aligned with NEP-2020 outcome-based learning.',
+      'Strengthening choice-based credit system and minor-degree offerings across departments.',
+      'Expansion of NBA-accredited programmes from current 5 to all eligible UG programmes.',
+      'Faculty Development Programmes (FDPs) and pedagogy certifications every semester.',
+    ],
+  },
+  {
+    id: 'idpResearch',
+    title: 'Research, Innovation &amp; Consultancy',
+    items: [
+      'Grow externally funded research grants from DST, SERB, AICTE, MoE and industry sponsors.',
+      'Scale Centres of Excellence (currently 18+) with patent-translation roadmaps.',
+      'Establish full-time PhD support for 20+ scholars per academic year.',
+      'Strengthen AICTE IDEA Lab and Technology Incubation Centre for student-led startups.',
+    ],
+  },
+  {
+    id: 'idpInfra',
+    title: 'Infrastructure &amp; Campus',
+    items: [
+      'Upgrade department-level laboratories with smart instrumentation and remote-access kits.',
+      'Expand hostel capacity, sports complex and student wellness facilities.',
+      'Green campus initiatives — rooftop solar, EV charging, rainwater harvesting expansion.',
+      'Universal accessibility (Divyangjan) compliance across academic blocks.',
+    ],
+  },
+  {
+    id: 'idpIndustry',
+    title: 'Industry Engagement &amp; Placements',
+    items: [
+      'Deepen Industry-Institute Partnership Cell (IIPC) MoUs with marquee employers.',
+      'Co-develop industry-elective tracks (Data Engineering, EV, VLSI, Smart Construction).',
+      'Increase median CTC and number of "super-dream" offers year over year.',
+      'Scale international internships through European academic partners and alumni network.',
+    ],
+  },
+  {
+    id: 'idpDigital',
+    title: 'Digital Transformation',
+    items: [
+      'Single sign-on student information system across academics, exams and library.',
+      'Cloud-hosted LMS with analytics-driven personalised learning paths.',
+      'Modernised college website and student/parent mobile experience.',
+      'Cybersecurity hardening of campus networks and exam workflows.',
+    ],
+  },
+  {
+    id: 'idpSustainability',
+    title: 'Sustainability &amp; Outreach',
+    items: [
+      'NIRF SDG and ARIIA participation with measurable annual improvement.',
+      'Unnat Bharat Abhiyan village adoption programmes (current cohort: 5+ villages).',
+      'NSS &amp; student-led environmental drives — plantation, energy audits, e-waste.',
+      'Community engagement: continuing education, skill workshops for rural youth.',
+    ],
+  },
+];
+
+const roadmap = [
+  { period: '2024-25', focus: 'Foundation', items: [
+    'Roll out NEP-aligned curriculum across UG programmes',
+    'Onboard new Centres of Excellence in AI, EV and Sustainable Construction',
+    'Launch unified SSO for academics, exams and library',
+  ]},
+  { period: '2025-27', focus: 'Acceleration', items: [
+    'Apply for NAAC Cycle 3 reaccreditation with target CGPA improvement',
+    'Triple externally funded research portfolio',
+    'Expand international academic linkages (EU, North America, ASEAN)',
+  ]},
+  { period: '2027-30', focus: 'Leadership', items: [
+    'Position SRKR in NIRF top-100 Engineering category',
+    'Scale Tech Incubation Centre — 25 active startups, 50 patents filed',
+    'Net-zero campus operations roadmap with measurable annual reduction',
+  ]},
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Strategic Institute Development Plan of SRKR Engineering College — pillars, roadmap (2024-30) and outcome metrics." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +103,7 @@ const pageTitle = "Institute Development Plan";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +113,138 @@ const pageTitle = "Institute Development Plan";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Outcome metrics funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">6</h2>
+                <p>Strategic Pillars</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">2030</h2>
+                <p>Long-range Horizon</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">18+</h2>
+                <p>Centres of Excellence Powering R&amp;D</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+          <div class="col-lg-8 col-md-11">
+            <div class="program-about mb--40">
+              <h4 class="title">A Vision for the Next Decade</h4>
+              <p>The Institute Development Plan (IDP) sets SRKR Engineering College's roadmap to evolve from a regional autonomous institution into a nationally benchmarked, research-intensive engineering college — anchored in academic rigour, sustainable infrastructure and strong industry engagement.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="idp-accordion">
+                  {pillars.map((p, i) => (
+                    <div class="accordion-item">
+                      <button class={`accordion-button ${i === 0 ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#${p.id}`} aria-expanded={i === 0 ? 'true' : 'false'} set:html={p.title}></button>
+                      <div id={p.id} class={`accordion-collapse collapse ${i === 0 ? 'show' : ''}`} data-bs-parent="#idp-accordion">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            {p.items.map((it) => (
+                              <li class="si__list--single">{it}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Related Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/vision"><span><i class="fa-light fa-arrow-right"></i></span>Vision &amp; Mission</a></li>
+                    <li><a href="/iqac"><span><i class="fa-light fa-arrow-right"></i></span>IQAC &amp; AQAR Reports</a></li>
+                    <li><a href="/vitals"><span><i class="fa-light fa-arrow-right"></i></span>Institute Vitals</a></li>
+                    <li><a href="/governing"><span><i class="fa-light fa-arrow-right"></i></span>Governing Body</a></li>
+                    <li><a href="https://srkrec.ac.in/nirf.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NIRF Data</a></li>
+                    <li><a href="https://srkrec.ac.in/naac.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NAAC Mandates</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="program-info">
+                <h5>IDP Custodian</h5>
+                <p>Office of the Principal in coordination with IQAC and Dean, R&amp;D.</p>
+                <a class="rts-theme-btn mt--10" href="/assets/documents/institute-development-plan.pdf">Download IDP (PDF)</a>
+                {/* TODO: upload final IDP PDF to /assets/documents/institute-development-plan.pdf */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="row mt--60">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Roadmap · 2024 → 2030</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {roadmap.map((r) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{r.period} · {r.focus}</h5>
+                  <ul class="list-unstyled mb--0">
+                    {r.items.map((it) => (
+                      <li class="si__list--single">{it}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Outcome metrics table -->
+        <div class="row mt--60">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Outcome Metrics</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Metric</td><td>Baseline (2024)</td><td>Target (2030)</td></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>NAAC CGPA</td><td>3.42 (A+)</td><td>3.60+ (A+)</td></tr>
+                      <tr><td>NBA-accredited UG programmes</td><td>5</td><td>All eligible UG programmes</td></tr>
+                      <tr><td>Externally funded research (₹ Cr / year)</td><td>~₹1.2 Cr</td><td>₹5+ Cr</td></tr>
+                      <tr><td>SCI/Scopus publications / year</td><td>200+</td><td>500+</td></tr>
+                      <tr><td>Patents filed / year</td><td>10+</td><td>50+</td></tr>
+                      <tr><td>PhD scholars on roll</td><td>{/* TODO: confirm baseline */}—</td><td>100+</td></tr>
+                      <tr><td>Industry MoUs (active)</td><td>{/* TODO: confirm baseline */}—</td><td>50+</td></tr>
+                      <tr><td>NIRF Engineering rank</td><td>—</td><td>Top 100</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

@@ -4,12 +4,51 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Placements Summary";
+import { departments } from '../../data/departments';
+
+const pageTitle = 'Placements Summary';
+
+// Year-wise consolidated stats (drawn from public T&P updates)
+const yearStats = [
+  { year: '2024–25', offers: '900+', topLPA: '17.16', avgLPA: '4.8',  recruiters: '210+' },
+  { year: '2023–24', offers: '850+', topLPA: '12.00', avgLPA: '4.5',  recruiters: '190+' },
+  { year: '2022–23', offers: '780+', topLPA: '10.50', avgLPA: '4.2',  recruiters: '170+' },
+  { year: '2021–22', offers: '720+', topLPA: '9.50',  avgLPA: '4.0',  recruiters: '150+' },
+];
+
+// Highest packages — sourced from the live srkrec.ac.in homepage placement ticker
+const topOffers = [
+  { company: 'Amazon SDE',  lpa: '17.16 LPA', offers: '1 Offer'   },
+  { company: 'JTG',         lpa: '14.20 LPA', offers: '1 Offer'   },
+  { company: 'Amazon',      lpa: '13.20 LPA', offers: '1 Offer'   },
+  { company: 'Akrivia HCM', lpa: '10.00 LPA', offers: '4 Offers'  },
+  { company: 'Infosys',     lpa: '9.50 LPA',  offers: '3 Offers'  },
+  { company: 'TCS',         lpa: '9.00 LPA',  offers: '9 Offers'  },
+  { company: 'BOSON',       lpa: '8.00 LPA',  offers: '8 Offers'  },
+  { company: 'rootsquare labs', lpa: '7.80 LPA', offers: '3 Offers' },
+  { company: 'TCS Digital', lpa: '7.00 LPA',  offers: '23 Offers' },
+  { company: 'Agumentik',   lpa: '7.00 LPA',  offers: '3 Offers'  },
+];
+
+// Volume recruiters
+const volumeRecruiters = [
+  { company: 'TCS NINJA',   offers: '368', lpa: '3.36 LPA' },
+  { company: 'Infosys',     offers: '270', lpa: '3.60 LPA' },
+  { company: 'Cognizant',   offers: '147', lpa: '4.25 LPA' },
+  { company: 'Tech Mahindra', offers: '123', lpa: '3.25 LPA' },
+  { company: 'Transenergy', offers: '84',  lpa: '2.20 LPA' },
+  { company: 'Brakes India',offers: '53',  lpa: '2.40 LPA' },
+  { company: 'MEIL',        offers: '43',  lpa: '3.00 LPA' },
+  { company: 'techwave',    offers: '33',  lpa: '2.80 LPA' },
+];
+
+const reportYears = ['2024-25', '2023-24', '2022-23', '2021-22'];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Year-wise placement summary, top recruiters, highest packages and department-wise statistics at SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +60,7 @@ const pageTitle = "Placements Summary";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/placements">Placements</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +70,216 @@ const pageTitle = "Placements Summary";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Hero + Funfact bar -->
+    <section class="rts-about-university pt--60 pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Placements Summary</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Consolidated placement statistics across all UG and PG programs — offers, top packages, recruiter participation and department-wise outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt--30">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">900+</h2>
+              <p class="item-description">Total Offers (2024–25)</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">17.16 LPA</h2>
+              <p class="item-description">Top Package</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">4.8 LPA</h2>
+              <p class="item-description">Average Package</p>
+            </div></div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+              <h2 style="color: var(--rt-primary); margin: 0;">210+</h2>
+              <p class="item-description">Recruiters</p>
+            </div></div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Year-wise Stats Table -->
+    <section class="rts-scholarship pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Year-wise Placement Statistics</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered table-striped">
+              <thead style="background: var(--rt-primary); color: #fff;">
+                <tr>
+                  <th>Academic Year</th>
+                  <th>Total Offers</th>
+                  <th>Highest LPA</th>
+                  <th>Average LPA</th>
+                  <th>Recruiters</th>
+                </tr>
+              </thead>
+              <tbody>
+                {yearStats.map((y) => (
+                  <tr>
+                    <td><strong>{y.year}</strong></td>
+                    <td>{y.offers}</td>
+                    <td>₹{y.topLPA} LPA</td>
+                    <td>₹{y.avgLPA} LPA</td>
+                    <td>{y.recruiters}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highest Packages -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Highest Packages — 2024–25</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {topOffers.map((o) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__meta" style="text-align:center; padding:20px;">
+                  <h5 class="item-title">{o.company}</h5>
+                  <p class="item-description" style="color: var(--rt-primary); font-weight: 700; font-size: 1.2rem;">{o.lpa}</p>
+                  <p class="item-description">{o.offers}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Recruiters logo grid (reuse civil pattern) -->
+    <div class="rts-multi-row-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Top Recruiters</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/tcs.png" alt="TCS" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/cts.png" alt="Cognizant" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/infosys.png" alt="Infosys" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/wipro.png" alt="Wipro" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/hcl.png" alt="HCL" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ey.png" alt="Ernst &amp; Young" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ncc.png" alt="NCC" /></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/lt.png" alt="L&amp;T" /></div></div>
+          {/* TODO: add more recruiter logos */}
+        </div>
+      </div>
+    </div>
+
+    <!-- Volume Recruiters table -->
+    <section class="rts-scholarship pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Volume Recruiters (by offers)</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered table-striped">
+              <thead style="background: var(--rt-primary); color: #fff;">
+                <tr><th>Company</th><th>Offers</th><th>Package</th></tr>
+              </thead>
+              <tbody>
+                {volumeRecruiters.map((r) => (
+                  <tr><td><strong>{r.company}</strong></td><td>{r.offers}</td><td>{r.lpa}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Department-wise stats card grid -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Department-wise Placements</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {departments.map((d) => (
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <a href={`/departments/${d.slug}/placements/`} class="program-item">
+                <span><i class={d.icon}></i> <strong>{d.code}</strong> — {d.name}</span>
+                <i class="fa-regular fa-chevron-right"></i>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Year-wise PDFs + Quick Links -->
+    <section class="rts-research-section pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-research-section__content">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Year-wise Placement Reports</h3>
+              <div class="program-list">
+                {reportYears.map((y) => (
+                  <a href={`/assets/documents/placements-${y}.pdf`} class="program-item" target="_blank" rel="noopener">
+                    <span>{y} Placement Report <i class="fa-regular fa-chevron-right"></i></span>
+                    <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="research__text">
+            <div class="research__text--single">
+              <h3 class="rts-section-title">Quick Links</h3>
+              <div class="program-list">
+                <a href="/placements" class="program-item"><span>About Placement Cell <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/placements-team" class="program-item"><span>Placements Team <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/training" class="program-item"><span>Training Activities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/internships" class="program-item"><span>Internship Opportunities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.srkrexams.in" class="program-item" target="_blank" rel="noopener"><span>Examinations Portal <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TODO: replace placeholder year-wise PDFs once finalized reports uploaded to /assets/documents/ */}
+    {/* TODO: confirm department-wise per-year offer counts and add a breakdown table per dept */}
 
     <SrkrFooter />
     <OffCanvas />

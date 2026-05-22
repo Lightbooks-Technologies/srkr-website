@@ -4,12 +4,76 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Central Committee";
+
+const statutory = [
+  { name: 'Governing Body',      href: '/governing' },
+  { name: 'Academic Council',    href: '/academic-council' },
+  { name: 'Board of Studies',    href: '/board-of-studies' },
+  { name: 'Finance Committee',   href: '/financial-committee' },
+];
+
+const grievance = [
+  { sno: 1, name: 'Dr. K.V. Murali Krishnam Raju',  designation: 'Principal',                                role: 'Chairman' },
+  { sno: 2, name: 'Dr. S. Venkata Ramana',          designation: 'Professor, Dept. of Information Technology', role: 'Coordinator (SC/ST/OBC Representative)' },
+  { sno: 3, name: 'Dr. Bh.V.N Lakshmi',             designation: 'Professor, Dept. of E&amp;FL',              role: 'Member (Professor — Women)' },
+  { sno: 4, name: 'Dr. S. Rajesh',                  designation: 'Professor, Dept. of ME · Dean, IQAC',       role: 'Member (Teaching Faculty)' },
+  { sno: 5, name: 'Dr. G.N.V.G. Sirisha',           designation: 'Associate Professor · Programme Coordinator, AIML', role: 'Member (Female Teaching Faculty)' },
+  { sno: 6, name: 'Mr. Ponnana Babji',              designation: 'III B.Tech., IT, 22B91A12D8',               role: 'Member (Student)' },
+  { sno: 7, name: 'Ombudsperson',                   designation: 'Nominee from JNTUK, Kakinada',              role: 'Member (JNTUK)' },
+];
+
+const antiRagging = [
+  { sno: 1, name: 'Dr. K.V. Murali Krishnam Raju',  designation: 'Principal',                                role: 'Chairman' },
+  { sno: 2, name: 'Mr. K. Srinivas',                designation: 'Associate Professor, Dept. of IT',         role: 'Coordinator' },
+  { sno: 3, name: 'Sri G. Kalicharan',              designation: 'Circle Inspector, II Town, Bhimavaram',    role: 'External Member' },
+  { sno: 4, name: 'Dr. R. Rama Krishnam Raju',      designation: 'Psychiatrist',                             role: 'External Member' },
+  { sno: 5, name: 'Sri Ch. Bangar Rao',             designation: 'Local Media Person',                       role: 'External Member' },
+  { sno: 6, name: 'Sri P. Murali Rama Raju',        designation: 'Honorary Chairman, Rythu Karyacharana Samithi, AP', role: 'External Member' },
+];
+
+const internalCommittee = [
+  { sno: 1, name: 'Prof. Bh.V.N. Lakshmi',          designation: 'Professor &amp; Head, Dept. of E&amp;FL',   role: 'Chairperson' },
+  { sno: 2, name: 'Dr. P.V.S.L. Aparna',            designation: 'Assistant Professor, Dept. of Engg. Physics', role: 'Coordinator' },
+  { sno: 3, name: 'Ms. G. Satya Vijnana Devi',      designation: 'Advocate &amp; Counselor',                 role: 'External Member' },
+  { sno: 4, name: 'Dr. Vejju Deepika',              designation: 'Doctor &amp; Counselor',                   role: 'External Member' },
+];
+
+const otherCommittees = [
+  { name: 'Planning &amp; Evaluation Committee',           coord: 'Dr. Bh.V.S. Rama Krishnam Raju' },
+  { name: 'Academic Audit Committee',                       coord: 'Dr. V. Chandra Sekhar' },
+  { name: 'Student Mentoring &amp; Monitoring Committee',   coord: 'Dr. U. Naga Babu' },
+  { name: 'Student Welfare Committee',                      coord: 'Prof. G.V.S. Padma Rao' },
+  { name: 'Disciplinary Committee',                         coord: 'Prof. G.V.S. Padma Rao' },
+  { name: 'Results Committee',                              coord: 'Dr. M. Siva Krishnam Raju' },
+  { name: 'Research Advisory Committee',                    coord: 'Dr. T. Vamsi Nagaraju' },
+  { name: 'Research Ethics Committee',                      coord: 'Dr. T. Vamsi Nagaraju' },
+  { name: 'SC / ST Committee',                              coord: 'Dr. S. Venkata Ramana' },
+  { name: 'OBC Committee',                                  coord: 'Dr. G. Kusuma' },
+  { name: 'Minority Committee',                             coord: 'Ms. Rameeza Begum Shaik' },
+  { name: 'Differently-Abled Committee',                    coord: 'Dr. S.S. Mohan Reddy' },
+  { name: 'Website Committee',                              coord: 'Dr. M. Suresh Babu (Web Master)' },
+  { name: 'Library Committee',                              coord: 'Prof. N. Srinivasu' },
+  { name: 'Hostel Committee',                               coord: 'Dr. K. Kishore Raju' },
+  { name: 'Alumni Coordination Committee',                  coord: 'Dr. V.K. Viswanadha Raju' },
+  { name: 'Extra-Curricular Activities Committee',          coord: 'Ms. K. Neelima' },
+  { name: 'Sports Committee',                               coord: 'Dr. Ch. Hari Mohan' },
+  { name: 'NSS Unit Committee',                             coord: 'Dr. R. Krishna Chaitanya' },
+  { name: 'Swachh Action Plan Committee',                   coord: 'Dr. U. Naga Babu' },
+  { name: 'Unnat Bharat Abhiyan (UBA) Committee',           coord: 'Dr. T. Rambabu' },
+  { name: 'Entrepreneurship Development Cell',              coord: 'Dr. M. Suresh Babu' },
+  { name: 'Skill Development &amp; Innovation Committee',   coord: 'Dr. N.G.K. Murthy' },
+  { name: 'Industry-Institute Partnership Cell (IIPC)',     coord: 'Dr. K.R. Satyanarayana' },
+  { name: 'Intellectual Property Rights Cell',              coord: 'Dr. T. Vamsi Nagaraju' },
+  { name: 'Psychological Counselling Cell',                 coord: 'Dr. Satish Kumar Nadimpalli' },
+  { name: 'People Association for Inner Engineering (PAIE)',coord: 'Dr. D. Chandra Sekhar' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="College-level statutory and non-statutory committees at SRKR Engineering College — grievance, anti-ragging, internal committee and 25+ others." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +85,7 @@ const pageTitle = "Central Committee";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +95,190 @@ const pageTitle = "Central Committee";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4</h2>
+                <p>Statutory Committees</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">25+</h2>
+                <p>Non-Statutory Cells &amp; Committees</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">100%</h2>
+                <p>Categories of stakeholders represented</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+
+        <!-- Statutory -->
+        <div class="row mb--40">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Statutory Committees</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {statutory.map((s) => (
+            <div class="col-lg-3 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title"><a href={s.href}>{s.name}</a></h5>
+                  <p class="card-text">Visit the dedicated page for composition, functions and meeting records.</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Non-statutory accordion + key tables -->
+        <div class="row mt--80 sticky-coloum-wrap justify-content-md-center justify-content-start">
+          <div class="col-lg-8 col-md-11">
+            <div class="program-about mb--40">
+              <h4 class="title">Non-Statutory College Committees</h4>
+              <p>These college-level committees enable inclusive governance, student welfare, research ethics and quality assurance. Each committee meets at the frequency required by its terms of reference and reports to the Principal.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="cc-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ccGRC" aria-expanded="true">Student Grievance Redressal Committee (SGRC)</button>
+                    <div id="ccGRC" class="accordion-collapse collapse show" data-bs-parent="#cc-accordion">
+                      <div class="accordion-body">
+                        <div class="application-deadline__content">
+                          <table class="table">
+                            <thead class="table-theme"><tr><td>S.No</td><td>Name</td><td>Designation</td><td>Role</td></tr></thead>
+                            <tbody>
+                              {grievance.map((m) => (
+                                <tr><td>{m.sno}</td><td>{m.name}</td><td set:html={m.designation}></td><td>{m.role}</td></tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ccAntiRag" aria-expanded="false">Anti-Ragging Committee</button>
+                    <div id="ccAntiRag" class="accordion-collapse collapse" data-bs-parent="#cc-accordion">
+                      <div class="accordion-body">
+                        <div class="application-deadline__content">
+                          <table class="table">
+                            <thead class="table-theme"><tr><td>S.No</td><td>Name</td><td>Designation</td><td>Role</td></tr></thead>
+                            <tbody>
+                              {antiRagging.map((m) => (
+                                <tr><td>{m.sno}</td><td>{m.name}</td><td>{m.designation}</td><td>{m.role}</td></tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          <p class="mt--10"><small>National Anti-Ragging Helpline: <a href="tel:18001805522">1800-180-5522</a></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ccIC" aria-expanded="false">Internal Committee (PoSH)</button>
+                    <div id="ccIC" class="accordion-collapse collapse" data-bs-parent="#cc-accordion">
+                      <div class="accordion-body">
+                        <div class="application-deadline__content">
+                          <table class="table">
+                            <thead class="table-theme"><tr><td>S.No</td><td>Name</td><td>Designation</td><td>Role</td></tr></thead>
+                            <tbody>
+                              {internalCommittee.map((m) => (
+                                <tr><td>{m.sno}</td><td>{m.name}</td><td set:html={m.designation}></td><td>{m.role}</td></tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          <p class="mt--10"><small>For full member list see legacy site.</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ccTOR" aria-expanded="false">Terms of Reference (Common)</button>
+                    <div id="ccTOR" class="accordion-collapse collapse" data-bs-parent="#cc-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Operate as advisory bodies to the Principal within their defined scope.</li>
+                          <li class="si__list--single">Convene scheduled meetings; minutes are circulated and archived by the convener.</li>
+                          <li class="si__list--single">Provide annual reports of activities to the IQAC for the AQAR.</li>
+                          <li class="si__list--single">Recommend policy revisions and corrective action where required.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/iqac"><span><i class="fa-light fa-arrow-right"></i></span>IQAC</a></li>
+                    <li><a href="/governing"><span><i class="fa-light fa-arrow-right"></i></span>Governing Body</a></li>
+                    <li><a href="/academic-council"><span><i class="fa-light fa-arrow-right"></i></span>Academic Council</a></li>
+                    <li><a href="/financial-committee"><span><i class="fa-light fa-arrow-right"></i></span>Finance Committee</a></li>
+                    <li><a href="/board-of-studies"><span><i class="fa-light fa-arrow-right"></i></span>Board of Studies</a></li>
+                    <li><a href="https://srkrec.ac.in/college_committees.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Legacy Committees Page</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="program-info">
+                <h5>Reach a Committee</h5>
+                <p>Contact the Principal's Office to raise an issue with the relevant committee.</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:principal@srkrec.edu.in">principal@srkrec.edu.in</a>
+                  {/* TODO: confirm Principal email */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Committee index table -->
+        <div class="row mt--60">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">All College Committees · Coordinators</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Committee / Cell</td><td>Coordinator</td></tr>
+                    </thead>
+                    <tbody>
+                      {otherCommittees.map((c) => (
+                        <tr><td set:html={c.name}></td><td>{c.coord}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

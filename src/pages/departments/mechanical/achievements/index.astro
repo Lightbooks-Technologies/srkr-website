@@ -1,0 +1,293 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<style>
+  .rts-about-section {
+    height: 100%;
+  }
+
+  .rts-about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rts-about-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.25rem;
+  }
+
+  .rts-about-details .single-about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Achievements | Mechanical Engineering | SRKR" description="Department, faculty, and student achievements of the Mechanical Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Achievements</li>
+              </ul>
+              <h2 class="section-title">Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Achievements Section -->
+    <section class="rts-about-university py-5">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Achievements" />
+
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-5">
+              <h3 class="rts-section-title">Department Excellence</h3>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <p class="rts-section-description">
+                The Department of Mechanical Engineering at SRKR has built a four-decade legacy of academic and professional excellence. With four cycles of NBA accreditation, strong research output, active industry collaboration, and a long record of student success in placements, GATE, and SAE/national-level competitions, the department continues to set benchmarks in mechanical engineering education.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Image + Stat Cards -->
+        <div class="container">
+          <div class="row g-5 justify-content-md-center justify-content-start align-items-stretch">
+            <div class="col-lg-7 col-xl-8 col-md-11">
+              <div class="rts-about-section">
+                <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=600&fit=crop" alt="Mechanical Engineering Department">
+              </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 col-md-11">
+              <div class="rts-about-details">
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">NBA 4×</h3>
+                    <img src="/assets/images/icon/11.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>B.Tech ME Accredited Four Times by NBA</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">300+</h3>
+                    <img src="/assets/images/icon/12.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Research Publications in Journals &amp; Conferences</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">45+</h3>
+                    <img src="/assets/images/icon/13.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Years of Mechanical Engineering Excellence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="rts-funfact pt-5">
+          <div class="container">
+            <div class="row justify-content-center mx-0">
+              <div class="col-lg-12 px-0">
+                <div class="rts-funfact-wrapper">
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">12</h2>
+                    <p>Modern Laboratories</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">120</h2>
+                    <p>B.Tech Sanctioned Intake</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">43</h2>
+                    <p>Faculty Members</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">50+</h2>
+                    <p>Recruiting Companies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="rts-history rts-section-padding">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop" alt="Faculty Excellence">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Faculty Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: replace with verified faculty achievements */}
+                      <li class="si__list--single">Recognised research centre of Andhra University and JNTUK with multiple Ph.D. supervisors</li>
+                      <li class="si__list--single">300+ research papers in International and National journals &amp; conferences</li>
+                      <li class="si__list--single">Best Paper Awards at international conferences in thermal, manufacturing, and design</li>
+                      <li class="si__list--single">Patents filed in additive manufacturing, automotive systems, and thermal devices</li>
+                      <li class="si__list--single">Active MoUs with leading automotive, manufacturing, and PSU partners</li>
+                      <li class="si__list--single">Faculty Development Programmes on CFD, ANSYS, and Industry 4.0</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Achievements -->
+        <section class="rts-mission rts-section-padding pt-0">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Student Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: replace with verified student achievements */}
+                      <li class="si__list--single">Consistent toppers in JNTUK university examinations</li>
+                      <li class="si__list--single">Top ranks in GATE and recruitment by PSUs such as BHEL, ISRO, DRDO and ONGC</li>
+                      <li class="si__list--single">Participation and awards at SAE BAJA, SUPRA, and Efficycle national competitions</li>
+                      <li class="si__list--single">Awards at national-level project expos, Smart India Hackathon, and design challenges</li>
+                      <li class="si__list--single">Placements in L&amp;T, Mahindra, Tata Motors, Ashok Leyland, BHEL, TCS, Infosys and more</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="Student Success">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Accreditation Timeline -->
+        <section class="rts__section rts-section-padding pt-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                  <h2 class="rts__section--title">Accreditation &amp; Milestones</h2>
+                  <p class="rts__section--description">Established in 1980, the Department of Mechanical Engineering has consistently evolved its curriculum, infrastructure, and research focus to align with the changing landscape of automotive, manufacturing, energy, and Industry 4.0. Four cycles of NBA accreditation affirm the department's commitment to outcome-based education and continuous quality improvement.</p>
+                  <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                  <!-- 1980 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">1980</a></h4>
+                        <p class="campus__life--single--description">Department of Mechanical Engineering established with B.Tech programme, intake 120.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2000s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2000s</a></h4>
+                        <p class="campus__life--single--description">M.Tech Thermal Engineering introduced; modernisation of workshop, CAD/CAM and CNC labs.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2010s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2010s</a></h4>
+                        <p class="campus__life--single--description">Recognised research centre of AU and JNTUK; multiple NBA cycles and SAE student team success.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2020s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2020s</a></h4>
+                        <p class="campus__life--single--description">Autonomy, EV and Industry 4.0 focus areas, robotics &amp; additive manufacturing initiatives.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

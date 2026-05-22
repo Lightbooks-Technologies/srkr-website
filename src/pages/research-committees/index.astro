@@ -4,12 +4,44 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Research Committees";
+
+// Placeholder rosters — TODO: replace with real names once notified
+const racMembers = [
+  { name: 'Principal', role: 'Chairman' },
+  { name: 'Dean &mdash; Research &amp; Development', role: 'Convenor' },
+  { name: 'External Expert (IIT / NIT)', role: 'External Member' },
+  { name: 'Industry Research Lead', role: 'Industry Member' },
+  { name: 'Sr. Faculty &mdash; Engineering Sciences', role: 'Member' },
+  { name: 'Sr. Faculty &mdash; Applied Sciences', role: 'Member' },
+  { name: 'Coordinator &mdash; IPR Cell', role: 'Member' },
+  { name: 'Coordinator &mdash; IIC', role: 'Member' }
+];
+
+const ethicsMembers = [
+  { name: 'Senior Faculty (Chairperson)', role: 'Chairperson' },
+  { name: 'Member Secretary', role: 'Member Secretary' },
+  { name: 'External Subject Expert', role: 'External Member' },
+  { name: 'Legal / Social Scientist Nominee', role: 'External Member' },
+  { name: 'Biomedical / Statistician Nominee', role: 'External Member' },
+  { name: 'Internal Faculty Member', role: 'Member' }
+];
+
+const deptCells = [
+  { dept: 'Civil Engineering', focus: 'Structural, Geotech, Environment, Transportation', link: '/departments/civil/research-consultancy/' },
+  { dept: 'Mechanical Engineering', focus: 'Manufacturing, Nano-composites, Thermal', link: '/departments/mechanical/' },
+  { dept: 'ECE', focus: 'VLSI, Signal Processing, Embedded Systems', link: '/departments/ece/' },
+  { dept: 'EEE', focus: 'Smart Grids, EV Charging, Power Electronics', link: '/departments/eee/' },
+  { dept: 'CSE', focus: 'AI/ML, Cloud, Cyber Security', link: '/departments/cse/' },
+  { dept: 'IT', focus: 'Data Analytics, Bioinformatics, IoT', link: '/departments/it/' }
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College Research Committees: Research Advisory, Research Ethics and Departmental Research Cells.`} />
   </head>
   <body>
     <SrkrHeader />
@@ -30,12 +62,220 @@ const pageTitle = "Research Committees";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Intro -->
+    <div class="rts-campus-life rts-section-padding pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="campus-life">
+            <div class="campus-life__content">
+              <h1 class="rts-section-title">Governance of Research</h1>
+              <p class="description w-680">
+                Research at SRKR is governed by three layers &mdash; an institute-level Research Advisory Committee, a Research Ethics Committee and Departmental Research Cells that own discipline-specific roadmaps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Committee Type Cards -->
+    <section class="rts-faculty-details pb--40">
+      <div class="container">
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Three Committees, One Vision</h3>
+          </div>
+
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg1.jpg" alt="">
+              </div>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item"><a href="#rac" class="link__list">Research Advisory Committee<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#rac" class="link__list">Policy &amp; Roadmap<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#rac" class="link__list">Grant Approvals<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#rac" class="link__list">Performance Review<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg2.jpg" alt="">
+              </div>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item"><a href="#ethics" class="link__list">Research Ethics Committee<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#ethics" class="link__list">Protocol Review<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#ethics" class="link__list">Plagiarism Policy<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#ethics" class="link__list">Data &amp; Consent</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg3.jpg" alt="">
+              </div>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item"><a href="#dept-cells" class="link__list">Departmental Research Cells<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#dept-cells" class="link__list">Faculty Roadmaps<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#dept-cells" class="link__list">Project Funding Drafts<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+                <li class="program__single--item--list--item"><a href="#dept-cells" class="link__list">Publication Targets<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAC roster -->
+    <section class="rts-scholarship pt--40 pb--60" id="rac">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--40 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Research Advisory Committee (RAC)</h3>
+              <p>Sets institute-wide research direction, reviews funded-project proposals and monitors annual research KPIs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-deadline">
+          <div class="application-deadline__content">
+            <div class="application-deadline__content--table">
+              <table class="table">
+                <thead class="table-theme">
+                  <tr>
+                    <td>S.No</td>
+                    <td>Name</td>
+                    <td>Role</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* TODO: replace placeholder roster with the current Research Advisory Committee composition */}
+                  {racMembers.map((m, i) => (
+                    <tr>
+                      <td>{i + 1}</td>
+                      <td set:html={m.name}></td>
+                      <td>{m.role}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ethics roster -->
+    <section class="rts-scholarship pt--40 pb--60" id="ethics" style="background:#f7f7f7;">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--40 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Research Ethics Committee</h3>
+              <p>Reviews human-subject, biomedical and data-driven research protocols and enforces SRKR's anti-plagiarism and authorship policies.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-deadline">
+          <div class="application-deadline__content">
+            <div class="application-deadline__content--table">
+              <table class="table">
+                <thead class="table-theme">
+                  <tr>
+                    <td>S.No</td>
+                    <td>Name</td>
+                    <td>Role</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* TODO: replace placeholder roster with current Research Ethics Committee composition */}
+                  {ethicsMembers.map((m, i) => (
+                    <tr>
+                      <td>{i + 1}</td>
+                      <td>{m.name}</td>
+                      <td>{m.role}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Departmental Research Cells -->
+    <section class="rts-scholarship pt--40 pb--60" id="dept-cells">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--40 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Departmental Research Cells</h3>
+              <p>Every department maintains its own Research Cell which sets discipline-specific publication, patent and project targets.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-deadline">
+          <div class="application-deadline__content">
+            <div class="application-deadline__content--table">
+              <table class="table">
+                <thead class="table-theme">
+                  <tr>
+                    <td>Department</td>
+                    <td>Research Focus</td>
+                    <td>Link</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {deptCells.map((d) => (
+                    <tr>
+                      <td>{d.dept}</td>
+                      <td>{d.focus}</td>
+                      <td><a href={d.link}>View &rarr;</a></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="row mt--40">
+          <div class="col-md-6">
+            <div class="program-curriculum">
+              <h6 class="heading-title">Policy Documents</h6>
+              <div class="program-menu">
+                <ul class="list-unstyled">
+                  {/* TODO: replace with actual hosted PDFs */}
+                  <li><a href="/assets/documents/research-policy.pdf"><span><i class="fa-light fa-arrow-right"></i></span>SRKR Research Policy</a></li>
+                  <li><a href="/assets/documents/research-ethics-policy.pdf"><span><i class="fa-light fa-arrow-right"></i></span>Research Ethics &amp; Plagiarism Policy</a></li>
+                  <li><a href="/assets/documents/rac-minutes.pdf"><span><i class="fa-light fa-arrow-right"></i></span>RAC Minutes of Meeting</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="program-curriculum">
+              <h6 class="heading-title">Related Pages</h6>
+              <div class="program-menu">
+                <ul class="list-unstyled">
+                  <li><a href="/research-overview/"><span><i class="fa-light fa-arrow-right"></i></span>Research Overview</a></li>
+                  <li><a href="/development-cell/"><span><i class="fa-light fa-arrow-right"></i></span>R &amp; D Cell</a></li>
+                  <li><a href="/ipr-cell/"><span><i class="fa-light fa-arrow-right"></i></span>IPR Cell</a></li>
+                  <li><a href="/iic/"><span><i class="fa-light fa-arrow-right"></i></span>Institution's Innovation Council</a></li>
+                  <li><a href="/research-projects/"><span><i class="fa-light fa-arrow-right"></i></span>Research Projects</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

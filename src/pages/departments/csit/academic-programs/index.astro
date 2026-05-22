@@ -1,0 +1,306 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Computer Science & Information Technology | SRKR" description="B.Tech program and Honors / Minors specializations offered by the Department of Computer Science & Information Technology at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csit/">Computer Science & Information Technology</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="csit" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Computer Science &amp; Information Technology offers a four-year JNTUK-affiliated B.Tech program with a sanctioned intake of 120 seats. The curriculum couples a strong CS core — algorithms, data structures, OS, networks, databases — with applied IT specializations in cloud, full-stack, AI/ML and cybersecurity. Students can further deepen expertise through B.Tech Honors and Minor specializations.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop" alt="B.Tech CSIT" style="height: 100%; object-fit: cover;">
+                    <a href="#btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#btech">B.Tech CS &amp; Information Technology</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop" alt="Honors & Minors" style="height: 100%; object-fit: cover;">
+                    <a href="#honors" class="cat-link-btn">Specializations</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#honors">Honors &amp; Minor Specializations</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#honors" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Computer Science &amp; Information Technology</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="csit-btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csit-btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="csit-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#csit-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional accomplishments that our B.Tech CSIT graduates are expected to achieve within a few years of graduation. They guide our curriculum, lab design and industry engagement.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Graduates will apply strong foundations in computer science and information technology to design, develop and deploy reliable software, data and cloud systems.</li>
+                              <li class="si__list--single">Graduates will analyse and solve real-world problems using modern programming, data engineering and AI/ML techniques while considering security, ethics and sustainability.</li>
+                              <li class="si__list--single">Graduates will engage in lifelong learning, professional development and entrepreneurship to thrive in a fast-evolving technology landscape.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="csit-btech-po" class="accordion-collapse collapse" data-bs-parent="#csit-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes (POs) define the knowledge, skills and attributes our students acquire by graduation. They are aligned with NBA / NEP guidelines and reflect the expectations of modern technology employers.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, computing fundamentals and IT principles to solve complex engineering problems.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse computing problems using algorithmic and data-driven reasoning.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software systems and IT solutions that meet specified requirements with attention to performance, scalability and security.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Use research methods including literature review, experimentation and data analysis to derive valid conclusions.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Apply modern engineering and IT tools — version control, cloud platforms, CI/CD pipelines, ML frameworks — with an understanding of their limitations.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Assess societal, legal and cultural issues relevant to computing practice.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Build systems that consider environmental impact, energy efficiency and long-term maintainability.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Practise professional ethics including responsible AI, data privacy and cybersecurity.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as members and leaders of diverse, cross-functional engineering teams.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Communicate clearly in writing, code reviews and presentations to both technical and non-technical audiences.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Apply engineering and management principles to plan, execute and deliver software projects on time and within budget.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Engage in continuous self-learning to keep pace with rapidly evolving technology.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="csit-btech-pso" class="accordion-collapse collapse" data-bs-parent="#csit-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Specific Outcomes (PSOs) reflect the unique technical capabilities developed by our B.Tech CSIT graduates through specialised electives, labs and project work.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Design, build and deploy full-stack web and mobile applications using contemporary frameworks, cloud services and DevOps workflows.</li>
+                              <li class="si__list--single">Apply data engineering, machine learning and cybersecurity techniques to build secure, intelligent and data-driven IT solutions.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Curriculum Snapshot -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-btech-curriculum" aria-expanded="false">
+                      Curriculum Snapshot
+                    </button>
+                    <div id="csit-btech-curriculum" class="accordion-collapse collapse" data-bs-parent="#csit-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">{/* TODO: Replace with the latest JNTUK / autonomous CSIT scheme once published. */}A 4-year, 8-semester JNTUK-affiliated B.Tech with a mix of core, professional elective and open elective courses, capped by a full-semester industry internship and capstone project.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Year 1:</strong> Engineering Mathematics, Programming in C, Python, Engineering Physics &amp; Chemistry, Communicative English.</li>
+                              <li class="si__list--single"><strong>Year 2:</strong> Data Structures, OOP with Java, Discrete Mathematics, Computer Organization, DBMS, Operating Systems.</li>
+                              <li class="si__list--single"><strong>Year 3:</strong> Computer Networks, Software Engineering, Web Technologies, AI &amp; ML, Cryptography &amp; Network Security, Cloud Computing.</li>
+                              <li class="si__list--single"><strong>Year 4:</strong> DevOps, Mobile App Development, Big Data Analytics, Generative AI Electives, Industry Internship &amp; Capstone Project.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: Honors / Minors -->
+            <div id="honors" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">Honors &amp; Minor Specializations</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="csit-honors-accordion">
+
+                  <!-- Honors -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csit-honors-info" aria-expanded="true">
+                      B.Tech Honors Tracks
+                    </button>
+                    <div id="csit-honors-info" class="accordion-collapse collapse show" data-bs-parent="#csit-honors-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">{/* TODO: Confirm honors tracks with department once published */}High-performing students can opt for a B.Tech Honors specialization, earning an additional 18–20 credits beyond the standard B.Tech requirement in one chosen domain.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Honors in AI &amp; ML:</strong> Advanced Machine Learning, Deep Learning, NLP, Reinforcement Learning, Applied AI Capstone.</li>
+                              <li class="si__list--single"><strong>Honors in Cybersecurity:</strong> Network Security, Ethical Hacking, Cryptography, Cloud Security, Security Operations Capstone.</li>
+                              <li class="si__list--single"><strong>Honors in Cloud &amp; DevOps:</strong> Cloud Architecture, Containers &amp; Kubernetes, Site Reliability Engineering, Cloud Capstone.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Minors -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-minors-info" aria-expanded="false">
+                      Minor Specializations
+                    </button>
+                    <div id="csit-minors-info" class="accordion-collapse collapse" data-bs-parent="#csit-honors-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">{/* TODO: Confirm minor tracks with department once published */}Minors allow students from any branch to develop competency in a CSIT specialisation through 4–5 carefully sequenced courses.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Minor in Full-Stack &amp; Cloud Development:</strong> Web Technologies, Modern JavaScript, Cloud Native Applications, DevOps Essentials.</li>
+                              <li class="si__list--single"><strong>Minor in Data Science:</strong> Statistics for Data Science, Python for Data Analytics, Machine Learning, Data Visualization.</li>
+                              <li class="si__list--single"><strong>Minor in Cybersecurity:</strong> Information Security Foundations, Web Application Security, Ethical Hacking, Digital Forensics.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Career Paths -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-careers-info" aria-expanded="false">
+                      Career Paths
+                    </button>
+                    <div id="csit-careers-info" class="accordion-collapse collapse" data-bs-parent="#csit-honors-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">CSIT graduates are equipped for a wide spectrum of roles across product, service and start-up companies.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Software Development Engineer &middot; Full-Stack Developer &middot; Mobile App Developer.</li>
+                              <li class="si__list--single">Cloud / DevOps / SRE Engineer at AWS, Azure and Google Cloud-aligned firms.</li>
+                              <li class="si__list--single">Data Analyst, Data Engineer, Machine Learning Engineer.</li>
+                              <li class="si__list--single">Cybersecurity Analyst, Information Security Engineer.</li>
+                              <li class="si__list--single">Higher Education — M.Tech / M.S. / MBA programs in India and abroad.</li>
+                              <li class="si__list--single">Entrepreneurship and product-led start-ups through the Technology Centre.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">CSIT Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/csit/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/csit/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities &amp; Labs</a></li>
+                      <li><a href="/departments/csit/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research &amp; Projects</a></li>
+                      <li><a href="/departments/csit/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/csit/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=800&fit=crop" alt="CSIT Programs" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

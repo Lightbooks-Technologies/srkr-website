@@ -4,12 +4,41 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
+
 const pageTitle = "Leadership Team";
+
+const apex = [
+  { name: 'Sri Sagi Prasad Raju',          role: 'President, SRKR Engineering College Association',  msgHref: 'https://srkrec.ac.in/president_message.php' },
+  { name: 'Sri P. Krishnam Raju',          role: 'Honorary Chairman, Governing Body',                 msgHref: '' },
+  { name: 'Sri S.R.K. Nishant Varma',      role: 'Secretary cum Correspondent',                       msgHref: '' },
+];
+
+const executive = [
+  { name: 'Dr. M. Jagapathi Raju',         role: 'Director',                                          msgHref: 'https://srkrec.ac.in/director_message.php' },
+  { name: 'Dr. K.V. Murali Krishnam Raju', role: 'Principal',                                         msgHref: 'https://srkrec.ac.in/principal_message.php' },
+  { name: 'Dr. Bh.V.S. Rama Krishnam Raju',role: 'Head (Campus Development) · HoD, Information Technology', msgHref: '' },
+];
+
+const deans = [
+  { name: 'Dr. V. Chandra Sekhar',         role: 'Dean, Academics' },
+  { name: 'Dr. T. Vamsi Nagaraju',         role: 'Dean, Research and Development' },
+  { name: 'Dr. K.R. Satyanarayana',        role: 'Dean, Training and Placements' },
+  { name: 'Dr. S. Rajesh',                 role: 'Dean, IQAC' },
+  { name: 'Dr. M. Siva Krishnam Raju',     role: 'Controller of Examinations' },
+];
+
+const administration = [
+  { name: 'Mr. Ch. Dileep Chakravarthy',   role: 'Chief Administrative Officer' },
+  { name: 'Mr. Ch. Amarendra',             role: 'Finance Officer' },
+  { name: 'Mr. P.V. Rambabu',              role: 'College Engineer' },
+  { name: 'Mr. G. Srinivasa Raju',         role: 'In-Charge, Central Library' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Meet the leadership team of SRKR Engineering College — Chairman, Director, Principal, Deans and Heads of Department." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +50,7 @@ const pageTitle = "Leadership Team";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +60,237 @@ const pageTitle = "Leadership Team";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- KPI funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">45+</h2>
+                <p>Years of Visionary Leadership</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">12</h2>
+                <p>Engineering Departments &amp; HoDs</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">5</h2>
+                <p>Deans &amp; Statutory Officers</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-campus-section rts-section-padding">
+      <div class="container">
+
+        <!-- Apex Leadership -->
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Apex Leadership · Management</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {apex.map((p) => (
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__image">
+                    {/* TODO: replace with real photo */}
+                    <img src="/assets/images/leadership/PLACEHOLDER.jpg" alt={p.name} />
+                  </div>
+                  <div class="single-item__meta">
+                    <h5 class="item-title"><a href={p.msgHref || '#'} {...(p.msgHref ? { target: '_blank', rel: 'noopener' } : {})}>{p.name}</a></h5>
+                    <p class="item-description">{p.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Executive Leadership -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Executive Leadership</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {executive.map((p) => (
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__image">
+                    {/* TODO: replace with real photo */}
+                    <img src="/assets/images/leadership/PLACEHOLDER.jpg" alt={p.name} />
+                  </div>
+                  <div class="single-item__meta">
+                    <h5 class="item-title"><a href={p.msgHref || '#'} {...(p.msgHref ? { target: '_blank', rel: 'noopener' } : {})}>{p.name}</a></h5>
+                    <p class="item-description">{p.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Deans & Statutory Officers (table) -->
+        <div class="row mt--80">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Deans &amp; Statutory Officers</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>Name</td>
+                        <td>Role</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {deans.map((p) => (
+                        <tr>
+                          <td>{p.name}</td>
+                          <td>{p.role}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Administration -->
+        <div class="row mt--40">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Administration &amp; Operations</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>Name</td>
+                        <td>Role</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {administration.map((p) => (
+                        <tr>
+                          <td>{p.name}</td>
+                          <td>{p.role}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HoDs grid -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Heads of Departments</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {departments.map((d) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title"><a href={`/departments/${d.slug}/`}>{d.name}</a></h5>
+                  <p class="card-text mb--5"><strong>{d.hod}</strong></p>
+                  <p class="card-text"><small>{d.hodDesignation}</small></p>
+                  {d.hodEmail && (
+                    <p class="card-text"><a href={`mailto:${d.hodEmail}`}>{d.hodEmail}</a></p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><a href="/humanities">Basic Science &amp; Humanities</a></h5>
+                <p class="card-text mb--5"><strong>HoDs across BS&amp;H departments</strong></p>
+                <p class="card-text"><small>English &amp; Foreign Languages, Mathematics, Physics, Chemistry</small></p>
+                {/* TODO: confirm consolidated BS&H HoD list */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links / Messages -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Leadership Messages &amp; Quick Links</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">President's Message</h5>
+                <p class="card-text">Vision and legacy from the founding family of SRKR Engineering College.</p>
+                <a class="rts-theme-btn" href="https://srkrec.ac.in/president_message.php" target="_blank" rel="noopener">Read Message</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Director's Message</h5>
+                <p class="card-text">Dr. M. Jagapathi Raju on shaping global citizens from the Godavari delta.</p>
+                <a class="rts-theme-btn" href="https://srkrec.ac.in/director_message.php" target="_blank" rel="noopener">Read Message</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Principal's Message</h5>
+                <p class="card-text">Prof. K.V. Murali Krishnam Raju on academic rigour and holistic education.</p>
+                <a class="rts-theme-btn" href="https://srkrec.ac.in/principal_message.php" target="_blank" rel="noopener">Read Message</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Governing Body</h5>
+                <p class="card-text">Composition and members of the Governing Body of SRKR Engineering College.</p>
+                <a class="rts-theme-btn" href="/governing">View Governing Body</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">College Advisory Council</h5>
+                <p class="card-text">Academicians, researchers and technocrats advising the institution.</p>
+                <a class="rts-theme-btn" href="/advisory-council">View Advisory Council</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Organizational Structure</h5>
+                <p class="card-text">How the academic, administrative and student-support arms are organised.</p>
+                <a class="rts-theme-btn" href="/org-structure">View Organogram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

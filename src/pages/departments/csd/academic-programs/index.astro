@@ -1,0 +1,311 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Computer Science & Design | SRKR" description="B.Tech Computer Science & Design programme and specialization tracks offered by the Department of CSD at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csd/">Computer Science & Design</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Academic Programs</li>
+              </ul>
+              <h2 class="section-title">Academic Programs</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="csd" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Computer Science &amp; Design offers a four-year JNTUK-affiliated B.Tech programme with an intake of 60 students. Designed under NEP 2020, the curriculum blends core computer science with design, immersive media, and creative technology — preparing students for roles in software engineering, UX, game development, animation, and AR/VR, as well as for launching their own ventures.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&h=600&fit=crop" alt="B.Tech Computer Science & Design" style="height: 100%; object-fit: cover;">
+                    <a href="#btech" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#btech">B.Tech Computer Science &amp; Design</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px;">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop" alt="Specialization Tracks" style="height: 100%; object-fit: cover;">
+                    <a href="#tracks" class="cat-link-btn">Tracks</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#tracks">Specialization Tracks</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#tracks" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: B.Tech -->
+            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">B.Tech — Computer Science &amp; Design</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="csd-btech-accordion">
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csd-btech-peo" aria-expanded="true">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="csd-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#csd-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional accomplishments our B.Tech CSD graduates are expected to attain within a few years of graduation, working at the intersection of computer science, design, and digital media.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Graduates will apply strong foundations in computer science, design thinking, and digital technologies to build user-centred products, games, and interactive experiences.</li>
+                              <li class="si__list--single">Graduates will work effectively in IT, gaming, animation, AR/VR, UX, and startup ecosystems, demonstrating creativity, technical depth, and entrepreneurial mindset.</li>
+                              <li class="si__list--single">Graduates will engage in lifelong learning, ethical practice, and leadership, contributing positively to society through technology and design.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-btech-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="csd-btech-po" class="accordion-collapse collapse" data-bs-parent="#csd-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Outcomes (POs) describe the technical, creative, and professional capabilities our students develop by graduation, aligned with national accreditation standards and the demands of creative-tech industries.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply principles of mathematics, computing, and design fundamentals to CSD problems including UX, graphics, animation, and immersive media.</li>
+                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate, and analyse computing and design problems through critical thinking and user research.</li>
+                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software, interactive products, games, and AR/VR experiences that meet user needs and ethical standards.</li>
+                              <li class="si__list--single"><strong>Investigation:</strong> Conduct user studies, usability tests, and experiments to inform design and engineering decisions.</li>
+                              <li class="si__list--single"><strong>Modern Tools:</strong> Use industry-standard tools (Figma, Unity, Unreal, Blender, Adobe Creative Suite, web/mobile frameworks) effectively.</li>
+                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Assess social, cultural, and accessibility implications of digital products and creative content.</li>
+                              <li class="si__list--single"><strong>Sustainability:</strong> Consider environmental and ethical impact in product, content, and platform design decisions.</li>
+                              <li class="si__list--single"><strong>Ethics:</strong> Commit to professional, design, and content-ethics principles in computing and media work.</li>
+                              <li class="si__list--single"><strong>Teamwork:</strong> Collaborate effectively in multidisciplinary studios with designers, developers, artists, and stakeholders.</li>
+                              <li class="si__list--single"><strong>Communication:</strong> Articulate ideas through writing, presentations, prototypes, and visual storytelling.</li>
+                              <li class="si__list--single"><strong>Project Management:</strong> Plan and ship creative-tech projects using agile methods, version control, and design ops practices.</li>
+                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Continuously adapt to evolving tools, platforms, and trends in computing and design.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PSOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-btech-pso" aria-expanded="false">
+                      Program Specific Outcomes (PSOs)
+                    </button>
+                    <div id="csd-btech-pso" class="accordion-collapse collapse" data-bs-parent="#csd-btech-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Program Specific Outcomes (PSOs) capture the unique creative-technical competencies that distinguish the CSD graduate — fluency in both engineering and design domains.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Apply computer science fundamentals together with human-centred design methods to build interactive products, games, and immersive experiences.</li>
+                              <li class="si__list--single">Use modern UX, 3D, animation, AR/VR, and web/mobile tools and frameworks to ship industry-grade digital deliverables across the design and engineering pipeline.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: Specialization Tracks -->
+            <div id="tracks" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">Specialization Tracks</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="csd-tracks-accordion">
+
+                  <!-- UX & Interaction Design -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csd-track-ux" aria-expanded="true">
+                      UX &amp; Interaction Design
+                    </button>
+                    <div id="csd-track-ux" class="accordion-collapse collapse show" data-bs-parent="#csd-tracks-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Focuses on human-centred design, user research, usability, accessibility, and interaction design for web, mobile, and emerging interfaces.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">User Research &amp; Design Thinking</li>
+                              <li class="si__list--single">Information Architecture &amp; Wireframing (Figma)</li>
+                              <li class="si__list--single">Interaction Design &amp; Prototyping</li>
+                              <li class="si__list--single">Usability Testing &amp; Accessibility</li>
+                              <li class="si__list--single">Design Systems &amp; UX Writing</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Game Development -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-track-game" aria-expanded="false">
+                      Game Development
+                    </button>
+                    <div id="csd-track-game" class="accordion-collapse collapse" data-bs-parent="#csd-tracks-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Covers the complete game development pipeline, from game design and mechanics to engine programming and 3D asset integration using Unity and Unreal Engine.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Game Design &amp; Mechanics</li>
+                              <li class="si__list--single">Unity / Unreal Engine Development</li>
+                              <li class="si__list--single">C# / C++ Game Programming</li>
+                              <li class="si__list--single">3D Asset Pipeline &amp; Level Design</li>
+                              <li class="si__list--single">Mobile, PC, and Console Game Publishing</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- AR/VR & Immersive Tech -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-track-arvr" aria-expanded="false">
+                      AR/VR &amp; Immersive Tech
+                    </button>
+                    <div id="csd-track-arvr" class="accordion-collapse collapse" data-bs-parent="#csd-tracks-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Builds expertise in augmented and virtual reality, spatial computing, and XR storytelling for education, healthcare, gaming, and enterprise applications.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Foundations of AR/VR &amp; XR</li>
+                              <li class="si__list--single">Unity XR &amp; Unreal VR Pipelines</li>
+                              <li class="si__list--single">3D Modelling for Immersive Experiences</li>
+                              <li class="si__list--single">Spatial UX &amp; Interaction Patterns</li>
+                              <li class="si__list--single">WebXR &amp; Mobile AR (ARKit / ARCore)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Animation & Multimedia -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-track-anim" aria-expanded="false">
+                      Animation &amp; Multimedia
+                    </button>
+                    <div id="csd-track-anim" class="accordion-collapse collapse" data-bs-parent="#csd-tracks-accordion">
+                      <div class="accordion-body">
+                        <p class="mb-4">Focuses on 2D/3D animation, motion graphics, visual storytelling, and multimedia production using industry-standard tools.</p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">2D Animation &amp; Motion Graphics</li>
+                              <li class="si__list--single">3D Modelling &amp; Animation (Blender, Maya)</li>
+                              <li class="si__list--single">Visual Effects &amp; Compositing</li>
+                              <li class="si__list--single">Digital Storytelling &amp; Storyboarding</li>
+                              <li class="si__list--single">Multimedia Production Pipeline</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+
+              <!-- Program Links -->
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">CSD Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/csd/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                      <li><a href="/departments/csd/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities & Labs</a></li>
+                      <li><a href="/departments/csd/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research & Innovation</a></li>
+                      <li><a href="/departments/csd/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
+                      <li><a href="/departments/csd/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="program-event-image mt-4">
+                  <img src="https://images.unsplash.com/photo-1561070791-2526d30994b8?w=600&h=800&fit=crop" alt="CSD Design Studio" style="width: 100%; height: auto; display: block;">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

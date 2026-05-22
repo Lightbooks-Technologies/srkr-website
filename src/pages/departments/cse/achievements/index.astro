@@ -1,0 +1,292 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<style>
+  .rts-about-section {
+    height: 100%;
+  }
+  
+  .rts-about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .rts-about-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.25rem;
+  }
+  
+  .rts-about-details .single-about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Achievements | Computer Science & Engineering | SRKR" description="Department, faculty, and student achievements of the Computer Science & Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/cse/">Computer Science & Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Achievements</li>
+              </ul>
+              <h2 class="section-title">Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Achievements Section -->
+    <section class="rts-about-university py-5">
+      <div class="container">
+        <DeptNav dept="cse" current="Achievements" />
+
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-5">
+              <h3 class="rts-section-title">Department Excellence</h3>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <p class="rts-section-description">
+                The Department of Computer Science &amp; Engineering at SRKR has built a three-decade legacy of academic and professional excellence. With NBA accreditation, recognition as a JNTUK Research Centre since 2019, 100+ research publications, and consistently strong placement outcomes with top software companies, the department continues to set benchmarks in CSE education across Andhra Pradesh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Image + Stat Cards -->
+        <div class="container">
+          <div class="row g-5 justify-content-md-center justify-content-start align-items-stretch">
+            <div class="col-lg-7 col-xl-8 col-md-11">
+              <div class="rts-about-section">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="Computer Science & Engineering Department">
+              </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 col-md-11">
+              <div class="rts-about-details">
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">NBA</h3>
+                    <img src="/assets/images/icon/11.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Accredited B.Tech CSE Program</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">100+</h3>
+                    <img src="/assets/images/icon/12.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Research Publications in SCI/Scopus Journals</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">90%+</h3>
+                    <img src="/assets/images/icon/13.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Eligible Students Placed Each Year</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="rts-funfact pt-5">
+          <div class="container">
+            <div class="row justify-content-center mx-0">
+              <div class="col-lg-12 px-0">
+                <div class="rts-funfact-wrapper">
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">300</h2>
+                    <p>B.Tech Sanctioned Intake</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">34+</h2>
+                    <p>Years of Academic Excellence</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">95%+</h2>
+                    <p>Pass Percentage</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">12+</h2>
+                    <p>Modern CSE Laboratories</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="rts-history rts-section-padding">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop" alt="Faculty Excellence">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Faculty Achievements</h4>
+                  <div class="si__list">
+                    {/* TODO: replace with real faculty achievement list */}
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      <li class="si__list--single">Multiple faculty members recognised as JNTUK Ph.D. supervisors</li>
+                      <li class="si__list--single">Faculty publications in IEEE Transactions and Elsevier journals</li>
+                      <li class="si__list--single">Best Teacher Awards from JNTUK and professional bodies</li>
+                      <li class="si__list--single">Active reviewers for Scopus / SCI-indexed journals</li>
+                      <li class="si__list--single">FDPs organised on AI/ML, Cloud, and Cyber Security domains</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Achievements -->
+        <section class="rts-mission rts-section-padding pt-0">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Student Achievements</h4>
+                  <div class="si__list">
+                    {/* TODO: replace with real student achievement list */}
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      <li class="si__list--single">Consistent top ranks in JNTUK B.Tech CSE examinations</li>
+                      <li class="si__list--single">High-package offers from TCS, Infosys, Wipro, Cognizant, HCL, and Tech Mahindra</li>
+                      <li class="si__list--single">Winners at Smart India Hackathon and national-level coding contests</li>
+                      <li class="si__list--single">Successful entrepreneurs and start-up founders among alumni</li>
+                      <li class="si__list--single">Higher studies admissions to top Indian and US universities</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop" alt="Student Success">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Accreditation Timeline -->
+        <section class="rts__section rts-section-padding pt-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                  <h2 class="rts__section--title">Key Milestones</h2>
+                  <p class="rts__section--description">From a modest beginning in 1991 to a 300-seat program with NBA accreditation, a JNTUK Research Centre, and active industry partnerships, the Department of CSE has continuously evolved to meet the demands of modern computing.</p>
+                  <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                  <!-- 1991 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">1991</a></h4>
+                        <p class="campus__life--single--description">Department of Computer Science &amp; Engineering established with an initial B.Tech intake of 40.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2006 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2006</a></h4>
+                        <p class="campus__life--single--description">Launched M.Tech in Computer Science &amp; Technology (CST), strengthening postgraduate research.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2019 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2019</a></h4>
+                        <p class="campus__life--single--description">Recognised as a Research Centre by JNTU Kakinada, opening doors to formal Ph.D. supervision.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Today -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">Today</a></h4>
+                        <p class="campus__life--single--description">B.Tech intake of 300, NBA-accredited, with AI/ML &amp; IoT specialisations and global industry tie-ups.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -1,0 +1,222 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Research & Consultancy | Computer Science & Information Technology | SRKR" description="Research focus areas, innovation projects, publications and consultancy activities of the Computer Science & Information Technology department at SRKR." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csit/">Computer Science & Information Technology</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Research &amp; Consultancy</li>
+              </ul>
+              <h2 class="section-title">Research &amp; Consultancy</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="csit" current="Research/Consultancy" />
+
+        <!-- Two Column Layout -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left: Overview + Accordion -->
+          <div class="col-lg-8 col-md-11">
+
+            <!-- Intro -->
+            <div class="program-about mb--40">
+              <h4 class="title">Research &amp; Consultancy Overview</h4>
+              <p>The Department of Computer Science &amp; Information Technology pursues applied research at the intersection of cloud, AI/ML, full-stack engineering and cybersecurity. Faculty and students collaborate through the SRKR Technology Centre — leveraging the AICTE IDEA Lab, Innovation Centre and on-campus start-up programs — to translate ideas into working prototypes, publications and products.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="csit-rts-accordion">
+
+                  <!-- Research Areas -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csit-collapseOne" aria-expanded="true">
+                      Research Areas
+                    </button>
+                    <div id="csit-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#csit-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Artificial Intelligence, Machine Learning &amp; Generative AI</li>
+                              <li class="si__list--single">Cloud Computing, Containers &amp; DevOps</li>
+                              <li class="si__list--single">Full-Stack Web &amp; Mobile Engineering</li>
+                              <li class="si__list--single">Cybersecurity, Cryptography &amp; Digital Forensics</li>
+                              <li class="si__list--single">Data Engineering &amp; Big Data Analytics</li>
+                              <li class="si__list--single">Internet of Things &amp; Edge Computing</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Innovation Centres -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-collapseTwo" aria-expanded="false">
+                      Innovation Centres &amp; Hubs
+                    </button>
+                    <div id="csit-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#csit-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">AICTE IDEA Lab — prototyping, electronics &amp; rapid product development.</li>
+                              <li class="si__list--single">Innovation Centre — design thinking, mentorship and pitch labs.</li>
+                              <li class="si__list--single">On-Campus Start-Up Hub — incubation for student-led ventures.</li>
+                              <li class="si__list--single">Technology Training Hub — industry certifications in cloud, full-stack and AI.</li>
+                              <li class="si__list--single">High-Performance Computing Cluster — 400+ systems with 24×7 access.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Funded Projects -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-collapseThree" aria-expanded="false">
+                      Funded &amp; In-House Projects
+                    </button>
+                    <div id="csit-collapseThree" class="accordion-collapse collapse" data-bs-parent="#csit-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">{/* TODO: Replace with real funded project list */}AICTE-supported initiatives under the IDEA Lab and Institution's Innovation Council (IIC).</li>
+                              <li class="si__list--single">In-house product development in cloud-native SaaS, AI assistants and learning platforms.</li>
+                              <li class="si__list--single">Industry-sponsored mini-projects in collaboration with the Technology Training Hub.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Publications -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-collapseFour" aria-expanded="false">
+                      Publications
+                    </button>
+                    <div id="csit-collapseFour" class="accordion-collapse collapse" data-bs-parent="#csit-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">{/* TODO: Add real publication count once available */}Faculty publications in Scopus / SCI-indexed journals on AI, cloud and cybersecurity.</li>
+                              <li class="si__list--single">Conference papers at IEEE, ACM and Springer venues.</li>
+                              <li class="si__list--single">Student-led research papers and open-source contributions through capstone projects.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Consultancy & Industry -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csit-collapseFive" aria-expanded="false">
+                      Consultancy &amp; Industry Collaborations
+                    </button>
+                    <div id="csit-collapseFive" class="accordion-collapse collapse" data-bs-parent="#csit-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <h4 class="title">Focus Domains</h4>
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Software Development &amp; Modernization — full-stack, cloud-native applications.</li>
+                              <li class="si__list--single">AI / ML Solutions — recommendation, computer vision and NLP pilots.</li>
+                              <li class="si__list--single">DevOps &amp; Cloud Migration — CI/CD pipelines, AWS / Azure / GCP advisory.</li>
+                              <li class="si__list--single">Cybersecurity Assessments — web app security and vulnerability audits.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">CSIT works closely with the Technology Centre and SRKR's Industry-Institute Cell to mentor students through real consulting engagements and live product builds.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <!-- Quick Links -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Research Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/departments/csit/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
+                    <li><a href="/departments/csit/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Research Facilities</a></li>
+                    <li><a href="/departments/csit/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>Honors &amp; Minor Tracks</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Publications List</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="program-info">
+                <h5>Department Contact</h5>
+                <p>Computer Science &amp; Information Technology<br>SRKR Engineering College, Bhimavaram</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:hod.csit@srkr.ac.in">hod.csit@srkr.ac.in</a>
+                  <a href="mailto:research.csit@srkr.ac.in">research.csit@srkr.ac.in</a>
+                </div>
+                <div class="contact-info mt--20 mb--20">
+                  <h5>Phone:</h5>
+                  <a href="tel:+918842226666">+91 884 222 6666</a>
+                </div>
+                <div class="social-info mt--20">
+                  <h5>Connect With Us:</h5>
+                  <div class="social-info-link">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -1,0 +1,184 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+// TODO: replace with real CSE faculty roster from srkrec.ac.in
+const hod = [
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', designation: 'Professor & Head of Department', specialization: 'Software Engineering & Data Mining', profile: '', imgsrc: 'PLACEHOLDER' },
+];
+
+// TODO: replace with real CSE faculty roster from srkrec.ac.in
+const professors = [
+  { name: 'Dr. P. Kiran Sree',         designation: 'Professor', specialization: 'Soft Computing & Bioinformatics', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. M. Suresh Babu',        designation: 'Professor', specialization: 'Data Mining & Machine Learning',   profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. V. Chandra Sekhar',     designation: 'Professor', specialization: 'Computer Networks & Distributed Systems', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. K. V. Ramana',          designation: 'Professor', specialization: 'Cyber Security & Cryptography',    profile: '', imgsrc: 'PLACEHOLDER' },
+];
+
+// TODO: replace with real CSE faculty roster from srkrec.ac.in
+const associateProfessors = [
+  { name: 'Dr. K. Madhuri',            designation: 'Associate Professor', specialization: 'Artificial Intelligence & Machine Learning', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. P. Srinivasa Rao',      designation: 'Associate Professor', specialization: 'Cloud Computing & DevOps',                    profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. S. Naga Mallik Raj',    designation: 'Associate Professor', specialization: 'Internet of Things',                          profile: '', imgsrc: 'PLACEHOLDER' },
+];
+
+// TODO: replace with real CSE faculty roster from srkrec.ac.in
+const assistantProfessors = [
+  { name: 'Mr. K. Hemanth',            designation: 'Assistant Professor', specialization: 'Web Technologies',           profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Mrs. G. Lakshmi',           designation: 'Assistant Professor', specialization: 'Database Systems',           profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Mr. T. Ravi Kumar',         designation: 'Assistant Professor', specialization: 'Software Engineering',       profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Mrs. Y. Padma',             designation: 'Assistant Professor', specialization: 'Computer Networks',          profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Mr. B. Sreekanth',          designation: 'Assistant Professor', specialization: 'Artificial Intelligence & ML', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Mr. R. Anil Kumar',         designation: 'Assistant Professor', specialization: 'Cyber Security',             profile: '', imgsrc: 'PLACEHOLDER' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Faculty | Computer Science & Engineering | SRKR" description="Faculty of the Department of Computer Science & Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/cse/">Computer Science & Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Faculty</li>
+              </ul>
+              <h2 class="section-title">Faculty</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="cse" current="Faculty" />
+
+        <!-- HoD -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professor &amp; Head of Department</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photo */}
+                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {professors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photo */}
+                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Associate Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Associate Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {associateProfessors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photo */}
+                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Assistant Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Assistant Professors</h3>
+        </div>
+        <div class="row g-5">
+          {assistantProfessors.map((f, i) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photo */}
+                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

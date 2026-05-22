@@ -1,0 +1,406 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Electronics & Communication Engineering | SRKR Engineering College" description="Department of Electronics & Communication Engineering at SRKR Engineering College, Bhimavaram — established 1980, NBA accredited four times, B.Tech / M.Tech / Ph.D programs." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Electronics &amp; Communication Engineering</li>
+              </ul>
+              <h2 class="section-title">Department of Electronics &amp; Communication Engineering</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="ece" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: replace with real faculty photo */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/ece/PLACEHOLDER.jpg" alt="Dr. S.S. Mohan Reddy">
+              <div class="h5 mb-2 mt-5">Dr. S.S. Mohan Reddy</div>
+              <span>Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Electronics &amp; Communication Engineering</p>
+              <p class="mb-5">Since its establishment in 1980, the Department of Electronics &amp; Communication Engineering at SRKR Engineering College has grown into one of the most reputed ECE programs in coastal Andhra Pradesh. Across four decades, we have built a legacy of academic excellence, cutting-edge research in VLSI, embedded systems and communications, and an alumni network that thrives in leading global technology companies, ISRO, DRDO, and the IITs.</p>
+              <p class="h6 mb-4">A Curriculum Built for Tomorrow's Industry</p>
+              <p class="mb-5">Our programs combine strong fundamentals in electronic devices, signals &amp; systems, communications and digital design with modern hands-on exposure to VLSI tools, embedded platforms, IoT, MATLAB/Simulink, and software-defined radio. Twelve well-equipped laboratories — including a dedicated Centre of Excellence in VLSI Design — ensure that every student graduates with practical, industry-relevant skills.</p>
+              <p class="h6 mb-4">Research, Innovation &amp; a Vibrant Student Community</p>
+              <p>The department is NBA accredited four times consecutively and is home to an active research culture with publications in reputed journals and conferences. Our IETE and ISTE student chapters drive technical fests, paper presentations and hardware competitions, while strong placement support guides students into roles with TCS, Cognizant, Infosys, Texas Instruments, Intel, BEL, ISRO and DRDO. I warmly invite you to explore everything our department has to offer.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To envision a diverse and stimulating academic and research ambience that shapes students into competent professionals in Electronics &amp; Communication Engineering.</li>
+                  <li>To serve the needs of society and industry with a keen sense of environmental consciousness and ethical responsibility.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To educate students in state-of-the-art technologies in Electronics &amp; Communication Engineering to meet the ever-growing challenges of industry.</li>
+                  <li class="mb-3">To nurture the spirit of innovation and creativity in faculty and students, fostering research in collaboration with industry and research organizations.</li>
+                  <li class="mb-3">To provide ethical and value-based education that promotes activities pertaining to societal needs.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                {/* TODO: replace with real ECE department hero image */}
+                <img class="mw-100" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=600&fit=crop" alt="Electronics & Communication Engineering Lab">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item ece-spec-card">
+              <div class="cat-thumb ece-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=380&fit=crop" alt="VLSI Design">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/ece/research-consultancy/">VLSI Design</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/ece/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item ece-spec-card">
+              <div class="cat-thumb ece-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=380&fit=crop" alt="Embedded Systems">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/ece/research-consultancy/">Embedded Systems &amp; IoT</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/ece/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item ece-spec-card">
+              <div class="cat-thumb ece-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8d?w=600&h=380&fit=crop" alt="Signal Processing">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/ece/research-consultancy/">Signal &amp; Image Processing</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/ece/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item ece-spec-card">
+              <div class="cat-thumb ece-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&h=380&fit=crop" alt="Communications & Antennas">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/ece/research-consultancy/">Communications &amp; Antennas</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/ece/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">B.Tech ECE (Intake 240)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">NBA Accredited (4×)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">VLSI, Embedded &amp; IoT Tracks
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Postgraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">M.Tech Communication Systems
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">2-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">Advanced Design Studios
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/academic-programs/" class="link__list">Research &amp; Thesis Track
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Research</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/research-consultancy/" class="link__list">Ph.D. Programs (JNTUK &amp; AU)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/research-consultancy/" class="link__list">Centre of Excellence — VLSI
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/research-consultancy/" class="link__list">Funded Research Projects
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/ece/research-consultancy/" class="link__list">200+ Scopus/SCI Publications
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">Four decades of excellence in electronics education, research, and global industry placements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/ece/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="NBA Accreditation">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-award"></i></span>
+                      <a href="#">Accreditation</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>NBA Accredited 4 Times</span>
+                    </div>
+                  </div>
+                  <a href="/departments/ece/achievements/" class="post-title">
+                    NBA-accredited four times consecutively — a benchmark of sustained academic quality.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/ece/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="VLSI Centre of Excellence">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-microchip"></i></span>
+                      <a href="#">Research</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Centre of Excellence — VLSI</span>
+                    </div>
+                  </div>
+                  <a href="/departments/ece/research-consultancy/" class="post-title">
+                    Dedicated Centre of Excellence in VLSI Design, recognised as a hub for IC design research.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/ece/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Global Tech Recruiters</span>
+                    </div>
+                  </div>
+                  <a href="/departments/ece/placements/" class="post-title">
+                    Strong placements with TCS, Cognizant, Infosys, Texas Instruments, BEL, ISRO and DRDO.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/ece/achievements/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Alumni Network">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-globe"></i></span>
+                      <a href="#">Alumni</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>40+ Batches Worldwide</span>
+                    </div>
+                  </div>
+                  <a href="/departments/ece/achievements/" class="post-title">
+                    Alumni in Intel, Apple, Google, AMD, ISRO, DRDO and leading IITs and NITs.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      /* Equal-height specialization cards */
+      .ece-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .ece-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .ece-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

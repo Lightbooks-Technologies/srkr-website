@@ -4,12 +4,64 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
+
 const pageTitle = "Organizational Structure";
+
+const governance = [
+  { name: 'SRKR Engineering College Association',  href: '/governing',          desc: 'Society and Management of the institution.' },
+  { name: 'Governing Body',                         href: '/governing',          desc: 'Apex statutory body responsible for institutional policy.' },
+  { name: 'Academic Council',                       href: '/academic-council',   desc: 'Approves curricula, regulations and academic matters.' },
+  { name: 'Board of Studies (per programme)',       href: '/board-of-studies',   desc: 'Designs syllabi for each department and programme.' },
+  { name: 'Finance Committee',                      href: '/financial-committee',desc: 'Advises Governing Body on budget, fees and accounts.' },
+  { name: 'College Advisory Council',               href: '/advisory-council',   desc: 'Academicians, researchers and technocrats advising the College.' },
+  { name: 'Internal Quality Assurance Cell (IQAC)', href: '/iqac',               desc: 'Drives quality enhancement and NAAC AQAR processes.' },
+];
+
+const academic = [
+  { name: 'Office of the Principal',          desc: 'Academic and administrative head of the institution.' },
+  { name: 'Office of the Director',           desc: 'Strategic leadership and external linkages.' },
+  { name: 'Dean, Academics',                  desc: 'Academic planning, regulations, time-tabling and audits.' },
+  { name: 'Dean, Research &amp; Development', desc: 'Funded research, publications and Centres of Excellence.' },
+  { name: 'Dean, Training &amp; Placements',  desc: 'Industry interaction, placement drives and training.' },
+  { name: 'Controller of Examinations',       desc: 'Examinations, evaluation and result processing.' },
+  { name: 'Heads of Departments (12 + BS&amp;H)', desc: 'Departmental academic delivery, faculty and committees.' },
+];
+
+const administrative = [
+  { name: 'Chief Administrative Officer',     desc: 'Day-to-day administration and HR operations.' },
+  { name: 'Finance Officer',                  desc: 'Budgeting, accounts and statutory compliance.' },
+  { name: 'College Engineer / Campus Development', desc: 'Civil works, maintenance and campus infrastructure.' },
+  { name: 'Central Library',                  desc: 'Knowledge resources, e-resources and reading spaces.' },
+  { name: 'IT Infrastructure &amp; Web',      desc: 'Network, software services and college website.' },
+  { name: 'Examinations Cell',                desc: 'Internal/external exam operations and confidential records.' },
+];
+
+const studentSupport = [
+  { name: 'Student Grievance Redressal Committee', desc: 'Receives and resolves student grievances.' },
+  { name: 'Internal Committee (PoSH)',             desc: 'Prevention of sexual harassment, complaints and counselling.' },
+  { name: 'Anti-Ragging Committee',                desc: 'Ensures a ragging-free campus and disciplinary action.' },
+  { name: 'Mentoring &amp; Monitoring Committee',  desc: 'Faculty mentors track student progress and well-being.' },
+  { name: 'Student Welfare Committee',             desc: 'Welfare schemes, scholarships and outreach.' },
+  { name: 'SC/ST · OBC · Minority · Differently-Abled Cells', desc: 'Dedicated cells supporting diverse student groups.' },
+  { name: 'Psychological Counselling Cell',        desc: 'Mental wellness and counselling services on campus.' },
+  { name: 'Hostel Committee',                      desc: 'Boys and Girls hostel administration and welfare.' },
+  { name: 'NSS Unit · Sports · Extra-Curricular',  desc: 'Co-curricular and extracurricular engagement.' },
+];
+
+const researchInnovation = [
+  { name: 'Centres of Excellence (18+)',           desc: 'Core and frontier R&amp;D centres across departments.' },
+  { name: 'Entrepreneurship Development Cell',     desc: 'Startup mentoring and incubation.' },
+  { name: 'AICTE IDEA Lab',                        desc: 'Hands-on innovation facility for students.' },
+  { name: 'Institutional Innovation Council (IIC)',desc: 'MoE-mandated innovation ecosystem activities.' },
+  { name: 'Industry-Institute Partnership Cell',   desc: 'Industry linkages, internships and MoUs.' },
+  { name: 'Intellectual Property Rights Cell',     desc: 'Patents, copyrights and technology transfer.' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Organisational structure of SRKR Engineering College — Governance, Academic, Administrative, Research & Innovation, and Student Support arms." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +73,7 @@ const pageTitle = "Organizational Structure";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +83,170 @@ const pageTitle = "Organizational Structure";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">5</h2>
+                <p>Organisational Pillars</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">12</h2>
+                <p>Engineering Departments</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">30+</h2>
+                <p>Cells, Committees &amp; Councils</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-campus-section rts-section-padding">
+      <div class="container">
+
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Governance &amp; Statutory Bodies</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {governance.map((g) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title"><a href={g.href}>{g.name}</a></h5>
+                  <p class="card-text" set:html={g.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Academic Arm</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {academic.map((a) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title" set:html={a.name}></h5>
+                  <p class="card-text" set:html={a.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Administrative Arm</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {administrative.map((a) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title" set:html={a.name}></h5>
+                  <p class="card-text" set:html={a.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Research &amp; Innovation</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {researchInnovation.map((r) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title" set:html={r.name}></h5>
+                  <p class="card-text">{r.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Student Support &amp; Welfare</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {studentSupport.map((s) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title" set:html={s.name}></h5>
+                  <p class="card-text" set:html={s.desc}></p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Academic departments table -->
+        <div class="row mt--80">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Academic Departments</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>Code</td>
+                        <td>Department</td>
+                        <td>Head of Department</td>
+                        <td>Link</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {departments.map((d) => (
+                        <tr>
+                          <td>{d.code}</td>
+                          <td>{d.name}</td>
+                          <td>{d.hod}</td>
+                          <td><a href={`/departments/${d.slug}/`}>Visit</a></td>
+                        </tr>
+                      ))}
+                      <tr>
+                        <td>BS&amp;H</td>
+                        <td>Basic Science &amp; Humanities</td>
+                        <td>{/* TODO: confirm consolidated BS&H HoD */}—</td>
+                        <td><a href="/humanities">Visit</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="row mt--40">
+          <div class="col-12 text-center">
+            <p class="mb--20"><strong>Reference:</strong> the official organisation chart is available on the legacy site.</p>
+            <a class="rts-theme-btn" href="https://srkrec.ac.in/organogram.php" target="_blank" rel="noopener">View Official Organogram</a>
+          </div>
+        </div>
+
       </div>
     </section>
 

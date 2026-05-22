@@ -1,0 +1,136 @@
+---
+import { getDepartment, DEPT_NAV_ITEMS } from '../data/departments';
+
+interface Props {
+  /** Department slug from src/data/departments.ts (e.g. "civil", "cse"). */
+  dept: string;
+  /** Label of the currently active item (e.g. "Home", "Faculty"). */
+  current: string;
+}
+
+const { dept, current } = Astro.props as Props;
+const d = getDepartment(dept);
+
+if (!d) {
+  throw new Error(`DeptNav: unknown department slug "${dept}". Add it to src/data/departments.ts.`);
+}
+
+const basePath = `/departments/${d.slug}/`;
+const navItems = DEPT_NAV_ITEMS.map((item) => ({
+  label: item.label,
+  href: `${basePath}${item.path}`,
+}));
+---
+
+<div class="row justify-content-md-center">
+  <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-center mb--60 border-bottom pb-5">
+    <div class="dept-topbar__left">
+      <div class="dept__title-wrapper">
+        <div class="dept__title mb-0">
+          <i class={`${d.icon} me-2`}></i>
+          <span class="h5 mb-0">{d.name}</span>
+          {current && current !== 'Home' && (
+            <>
+              <span class="dept-topbar__sep"> / </span>
+              <span class="dept-topbar__current">{current}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+    <div class="dept-topbar__right">
+      <div class="search-filter dropdown">
+        <button class="dept-topbar__btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-light fa-bars"></i> Navigate
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dept-topbar__menu">
+          {navItems.map((item) => (
+            <li class="mt-0 mb-0">
+              <a
+                href={item.href}
+                class={`dropdown-item dept-topbar__item${current === item.label ? ' active' : ''}`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dept-topbar__left { flex: 1; }
+  .dept__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 2.25rem;
+    color: var(--rt-heading);
+  }
+  .dept__title i { color: var(--rt-primary); }
+  .dept-topbar__sep {
+    color: var(--rt-body);
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  .dept-topbar__current {
+    color: var(--rt-body);
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .dept-topbar__right { display: flex; align-items: center; }
+  .dept-topbar__btn {
+    background: var(--rt-primary);
+    border: 1px solid var(--rt-primary);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .dept-topbar__btn:hover,
+  .dept-topbar__btn.show {
+    background: var(--rt-primary-2);
+    border-color: var(--rt-primary-2);
+    color: #fff;
+  }
+  .dept-topbar__btn i { font-size: 1.125rem; }
+  .dept-topbar__menu {
+    min-width: 220px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 0.25rem 0;
+    border: 1px solid #e0e5ef;
+    margin-top: 0.5rem;
+  }
+  .dept-topbar__item {
+    padding: 0.5rem 1.25rem;
+    font-size: 1.25rem;
+    color: var(--rt-body);
+    transition: background 0.12s, color 0.12s;
+  }
+  .dept-topbar__item:hover {
+    background: #f0f4fa;
+    color: var(--rt-primary);
+  }
+  .dept-topbar__item.active {
+    background: #eef2fb;
+    color: var(--rt-primary);
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .dept__title { font-size: 1.25rem; }
+    .dept-topbar__sep,
+    .dept-topbar__current { font-size: 1.1rem; }
+  }
+</style>

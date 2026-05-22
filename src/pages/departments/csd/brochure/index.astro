@@ -1,0 +1,62 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Brochure | Computer Science & Design | SRKR" description="Download the Computer Science & Design department brochure from SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csd/">Computer Science & Design</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Brochure</li>
+              </ul>
+              <h2 class="section-title">Brochure</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="csd" current="Brochure" />
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow-sm" style="max-width:440px;">
+              <div class="card-body text-center p-5">
+                <div style="font-size:3.5rem;color:#1a3c6b;" class="mb-3">
+                  <i class="fa-regular fa-book-open"></i>
+                </div>
+                <h5 style="color:#1a3c6b;">Department Brochure</h5>
+                <p class="text-muted small mb-4">A complete overview of B.Tech CSD — specialization tracks, studios, faculty, startups, and career pathways.</p>
+                {/* TODO: Upload the actual PDF at /assets/documents/csd-brochure.pdf */}
+                <a href="/assets/documents/csd-brochure.pdf" class="rts-theme-btn" target="_blank">Download Brochure (PDF)</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -4,12 +4,27 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
+
 const pageTitle = "Admission Brochure";
+
+const totalIntake = departments.reduce((sum, d) => sum + d.intake, 0);
+
+const importantDates = [
+  { label: 'AP EAPCET — Notification', date: 'Feb (annual)' },
+  { label: 'AP EAPCET — Exam', date: 'May (annual)' },
+  { label: 'AP EAPCET — Results', date: 'May / Jun (annual)' },
+  { label: 'AP EAPCET Counselling — Phase 1', date: 'Jul (annual)' },
+  { label: 'AP ECET — Lateral Entry Exam', date: 'May (annual)' },
+  { label: 'AP PGECET — M.Tech Exam', date: 'Jun (annual)' },
+  { label: 'SRKR Category-B / NRI Admissions Open', date: 'Jul – Aug' },
+  { label: 'Academic Year Commences', date: 'Aug / Sep' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="SRKR Engineering College admission brochure — programs offered, intake, eligibility, fees and how to apply." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +36,7 @@ const pageTitle = "Admission Brochure";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Admissions</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +46,249 @@ const pageTitle = "Admission Brochure";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- HERO -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Begin Your SRKR Journey</h3>
+              <p class="rts-section-description">Everything you need to know about applying to SRKR Engineering College — programs, eligibility, key dates and downloads — all in one place.</p>
+            </div>
+            <a href="/assets/docs/admission-brochure.pdf" class="rts-theme-btn"><i class="fa-regular fa-download"></i> Download Brochure (PDF)</a>
+            <p class="small text-muted mt-2">{/* TODO: upload final admission brochure PDF */}</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- QUICK SNAPSHOT -->
+    <div class="rts-funfact pb-5">
+      <div class="container">
+        <div class="row justify-content-center mx-0">
+          <div class="col-lg-12 px-0">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">{departments.length}+</h2>
+                <p>Programs Offered</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">{totalIntake}</h2>
+                <p>Total UG Intake</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">30</h2>
+                <p>Acre Green Campus</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">A+</h2>
+                <p>NAAC Cycle-II Grade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMS OFFERED -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Programs Offered (B.Tech)</h3>
+        </div>
+        <div class="row g-4">
+          {departments.map((d) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace with department-specific hero image */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/admission/PLACEHOLDER.jpg" alt={d.name} />
+                  <a href={`/departments/${d.slug}/`} class="cat-link-btn">{d.code}</a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-2">
+                    <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                  </h6>
+                  <p class="mb-1 small"><strong>Intake:</strong> {d.intake} {d.nbaAccredited && (<span class="text-success">· NBA</span>)}</p>
+                  <p class="mb-2 small text-muted">{d.tagline}</p>
+                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Curriculum</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="small text-muted mt-3 mb-0">Also see: <a href="/humanities">Basic Sciences &amp; Humanities</a> · <a href="/programmes">All Programs</a> · <a href="/procedure">Admission Procedure</a></p>
+      </div>
+    </div>
+
+    <!-- IMPORTANT DATES -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Important Dates</h3>
+        </div>
+        <div class="application-deadline__content--table">
+          <table class="table">
+            <thead class="table-theme">
+              <tr>
+                <td>Activity / Milestone</td>
+                <td>Indicative Timeline</td>
+              </tr>
+            </thead>
+            <tbody>
+              {importantDates.map((d) => (
+                <tr><td>{d.label}</td><td>{d.date}</td></tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="small text-muted mt-2 mb-0">{/* TODO: replace with current academic-year exact dates */}Dates indicative — refer to official AP EAPCET / JNTUK notifications.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOWNLOADS -->
+    <div class="rts-multi-row-section py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Downloads</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-file-pdf"></i></h2>
+                <h6 class="mt-3 mb-2">Admission Brochure</h6>
+                <a href="/assets/docs/admission-brochure.pdf" class="rts-theme-btn">Download</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-money-bill"></i></h2>
+                <h6 class="mt-3 mb-2">Fee Structure</h6>
+                <a href="/assets/docs/fee-structure.pdf" class="rts-theme-btn">Download</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-house"></i></h2>
+                <h6 class="mt-3 mb-2">Hostel Brochure</h6>
+                <a href="/assets/docs/hostel-brochure.pdf" class="rts-theme-btn">Download</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-award"></i></h2>
+                <h6 class="mt-3 mb-2">Scholarship Info</h6>
+                <a href="/assets/docs/scholarships.pdf" class="rts-theme-btn">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="small text-muted mt-3 mb-0">{/* TODO: upload final PDFs under /public/assets/docs/ */}</p>
+      </div>
+    </div>
+
+    <!-- HOW TO APPLY -->
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">How to Apply</h3>
+            </div>
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="apply-accordion">
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ap1" aria-expanded="true">
+                      B.Tech via AP EAPCET (Category A — 70% seats)
+                    </button>
+                    <div id="ap1" class="accordion-collapse collapse show" data-bs-parent="#apply-accordion">
+                      <div class="accordion-body">
+                        <p>Appear for AP EAPCET, register for web counselling at <a href="https://cets.apsche.ap.gov.in" target="_blank" rel="noopener">cets.apsche.ap.gov.in</a> and exercise SRKR options (College Code: <strong>SRKR</strong>) in your web option entry. Allotment is rank-based.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap2" aria-expanded="false">
+                      B.Tech via AP ECET (Lateral Entry — 2nd Year)
+                    </button>
+                    <div id="ap2" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
+                      <div class="accordion-body">
+                        <p>Diploma holders may apply via AP ECET. Counselling and seat allotment are handled by APSCHE — choose SRKR in option entry.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap3" aria-expanded="false">
+                      Category B (Management Quota — 30%) &amp; NRI Seats
+                    </button>
+                    <div id="ap3" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
+                      <div class="accordion-body">
+                        <p>Apply directly to SRKR Admissions office during the Cat-B notification window (typically July – August). Cat-B sub-divided into 15% NRI &amp; 15% non-NRI. Contact the office for the prescribed application form.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap4" aria-expanded="false">
+                      M.Tech via AP PGECET
+                    </button>
+                    <div id="ap4" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
+                      <div class="accordion-body">
+                        <p>Appear for AP PGECET / GATE, register for PGECET web counselling and choose SRKR options. M.Tech college code: <strong>SRKR1</strong>.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap5" aria-expanded="false">
+                      Foreign / Overseas Students
+                    </button>
+                    <div id="ap5" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
+                      <div class="accordion-body">
+                        <p>Foreign nationals may apply directly to the Principal's office with academic transcripts &amp; passport. Admissions are subject to AICTE &amp; JNTUK norms for international students.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">External Links</h3>
+            </div>
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a href="https://cets.apsche.ap.gov.in" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> AP EAPCET / APSCHE Portal</a></li>
+                  <li class="mb-2"><a href="https://jntuk.edu.in" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> JNTUK Kakinada</a></li>
+                  <li class="mb-2"><a href="https://www.aicte-india.org" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> AICTE</a></li>
+                  <li class="mb-2"><a href="https://www.ugc.gov.in" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> UGC</a></li>
+                  <li class="mb-2"><a href="https://www.naac.gov.in" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> NAAC</a></li>
+                  <li class="mb-2"><a href="https://www.nbaind.org" target="_blank" rel="noopener"><i class="fa-regular fa-arrow-up-right-from-square"></i> NBA India</a></li>
+                  <li class="mb-2"><a href="/procedure">Admission Procedure</a></li>
+                  <li class="mb-0"><a href="/regulations">Academic Regulations</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card shadow-sm mt-4">
+              <div class="card-body">
+                <h6 class="mb-2"><i class="fa-light fa-phone"></i> Admissions Office</h6>
+                <p class="mb-1 small">SRKR Engineering College, Bhimavaram – 534 204, A.P.</p>
+                <p class="mb-1 small"><strong>Phone:</strong> <a href="tel:+919848823332">+91 9848823332</a></p>
+                <p class="mb-0 small"><strong>Email:</strong> <a href="mailto:admissions@srkrec.ac.in">admissions@srkrec.ac.in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

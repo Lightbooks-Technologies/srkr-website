@@ -4,12 +4,20 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Transportation";
+
+const routes = [
+  { region: 'East Godavari', stops: ['Rajahmundry', 'Kakinada', 'Tanuku', 'Nidadavolu', 'Tadepalligudem'] },
+  { region: 'West Godavari', stops: ['Bhimavaram (Town)', 'Palakollu', 'Narsapur', 'Mogalthur', 'Veeravasaram', 'Akividu', 'Undi'] },
+  { region: 'Krishna District', stops: ['Vijayawada', 'Machilipatnam', 'Gudivada', 'Kaikalur', 'Mandavalli'] },
+  { region: 'Visakhapatnam / North AP', stops: ['Visakhapatnam (limited weekend service)', 'Vizianagaram (on-demand)'] },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="College bus transportation at SRKR — routes covering East/West Godavari, Krishna and Visakhapatnam districts." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +29,7 @@ const pageTitle = "Transportation";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Life @ SRKR</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +39,227 @@ const pageTitle = "Transportation";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- HERO INTRO -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Safe, Reliable, On-Time</h3>
+              <p class="rts-section-description">A dedicated fleet of college buses connects students &amp; staff from Bhimavaram and surrounding districts to campus — every working day.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- FLEET STATS -->
+    <div class="rts-funfact pb-5">
+      <div class="container">
+        <div class="row justify-content-center mx-0">
+          <div class="col-lg-12 px-0">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">50+</h2>
+                <p>Buses in Fleet</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">40+</h2>
+                <p>Daily Routes</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4</h2>
+                <p>Districts Covered</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">100+</h2>
+                <p>Trained Drivers &amp; Staff</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROUTES -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Route Network</h3>
+        </div>
+        <div class="row g-4">
+          {routes.map((r) => (
+            <div class="col-lg-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace placeholder route map */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/transportation/PLACEHOLDER.jpg" alt={`${r.region} route`} />
+                  <span class="cat-link-btn">{r.region}</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title mb-3">{r.region}</h5>
+                  <p class="mb-2"><strong>Major Stops:</strong></p>
+                  <ul class="list-unstyled mb-0">
+                    {r.stops.map((s) => (<li class="si__list--single">{s}</li>))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- FEE STRUCTURE -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Indicative Fee Structure</h3>
+        </div>
+        <div class="application-deadline__content--table">
+          <table class="table">
+            <thead class="table-theme">
+              <tr>
+                <td>Zone (Distance from Campus)</td>
+                <td>One-Way (per year)</td>
+                <td>Round-Trip (per year)</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Zone 1 — Bhimavaram (within 10 km)</td><td>₹ 8,000</td><td>₹ 14,000</td></tr>
+              <tr><td>Zone 2 — 10 to 25 km</td><td>₹ 12,000</td><td>₹ 20,000</td></tr>
+              <tr><td>Zone 3 — 25 to 50 km</td><td>₹ 16,000</td><td>₹ 26,000</td></tr>
+              <tr><td>Zone 4 — 50 to 80 km</td><td>₹ 20,000</td><td>₹ 32,000</td></tr>
+              <tr><td>Zone 5 — Beyond 80 km</td><td>₹ 24,000</td><td>₹ 38,000</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2 small text-muted">{/* TODO: confirm current academic-year fee with transport in-charge */}Fee shown is indicative. Final fee published each academic year.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY FEATURES -->
+    <div class="rts-multi-row-content py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Safety Features</h3>
+        </div>
+        <div class="program-list">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-location-dot"></i> GPS Tracking</h5>
+                <p>All buses fitted with GPS units; live route monitoring by the transport office.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-female"></i> Lady Attendants</h5>
+                <p>Dedicated lady attendants on every route serving girls' hostels &amp; day-scholars.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-kit-medical"></i> First-Aid Kits</h5>
+                <p>Each bus carries a first-aid kit and fire extinguisher, inspected monthly.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-id-badge"></i> Verified Drivers</h5>
+                <p>Licensed, police-verified drivers with periodic safety &amp; defensive-driving training.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-camera-cctv"></i> CCTV-Equipped</h5>
+                <p>Select routes fitted with CCTV for added safety on long-distance journeys.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="program-item single-cta-item">
+                <h5><i class="fa-light fa-phone-volume"></i> 24x7 Helpline</h5>
+                <p>Round-the-clock transport helpline for parents and students for any concern.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW TO REGISTER -->
+    <div class="py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">How to Register</h3>
+        </div>
+        <div class="program-credit-area faq rts-scholarship-description">
+          <div class="program-accordion">
+            <div class="accordion" id="trans-accordion">
+              <div class="accordion-item">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tr1" aria-expanded="true">
+                  Step 1 — Choose Your Boarding Point
+                </button>
+                <div id="tr1" class="accordion-collapse collapse show" data-bs-parent="#trans-accordion">
+                  <div class="accordion-body">
+                    <p>Pick the nearest boarding stop from the published route list at the start of each academic year.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tr2" aria-expanded="false">
+                  Step 2 — Fill the Transport Application
+                </button>
+                <div id="tr2" class="accordion-collapse collapse" data-bs-parent="#trans-accordion">
+                  <div class="accordion-body">
+                    <p>Collect the transport application form from the Admin Block or download it from the college portal. Submit with student details, route &amp; parent contact.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tr3" aria-expanded="false">
+                  Step 3 — Pay the Transport Fee
+                </button>
+                <div id="tr3" class="accordion-collapse collapse" data-bs-parent="#trans-accordion">
+                  <div class="accordion-body">
+                    <p>Pay the annual fee (one-way or round-trip) at the Accounts office or online. Get the receipt stamped at the Transport office.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tr4" aria-expanded="false">
+                  Step 4 — Collect Bus Pass &amp; ID
+                </button>
+                <div id="tr4" class="accordion-collapse collapse" data-bs-parent="#trans-accordion">
+                  <div class="accordion-body">
+                    <p>Bus pass with QR-coded student ID is issued by the Transport office. Carry it while boarding the bus every day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT CARD -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <h4 class="mb-3"><i class="fa-light fa-bus"></i> Transport In-Charge</h4>
+                <p class="mb-2"><strong>Office:</strong> Transport Section, Admin Block — SRKR Engineering College, Bhimavaram</p>
+                <p class="mb-2"><strong>Phone:</strong> <a href="tel:+918842226666">+91 884 222 6666</a></p>
+                <p class="mb-2"><strong>Email:</strong> <a href="mailto:transport@srkrec.ac.in">transport@srkrec.ac.in</a></p>
+                <p class="mb-0 small text-muted">{/* TODO: confirm transport in-charge name & direct line */}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

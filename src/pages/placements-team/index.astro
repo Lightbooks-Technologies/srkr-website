@@ -4,12 +4,33 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Placements Team";
+import { departments } from '../../data/departments';
+
+const pageTitle = 'Placements Team';
+
+// Core Training & Placement Cell leadership
+const coreTeam = [
+  { name: 'Dr. P. V. Sridevi', role: 'Training & Placement Officer', email: 'tpo@srkrec.ac.in', phone: '+91 9848 02 3332' },
+  { name: 'Mr. K. Suresh Babu', role: 'Deputy Training & Placement Officer', email: 'dtpo@srkrec.ac.in', phone: '+91 9849 87 3332' },
+  { name: 'Mrs. T. Lakshmi', role: 'Assistant Training & Placement Officer', email: 'atpo1@srkrec.ac.in', phone: '+91 9849 22 3332' },
+  { name: 'Mr. M. Ramesh', role: 'Assistant Training & Placement Officer', email: 'atpo2@srkrec.ac.in', phone: '+91 9849 33 3332' },
+  { name: 'Mr. P. Naga Raju', role: 'Industry Relations Coordinator', email: 'iro@srkrec.ac.in', phone: '+91 9849 44 3332' },
+  { name: 'Mrs. K. Padmaja', role: 'Internship & Career Counselor', email: 'careers@srkrec.ac.in', phone: '+91 9849 55 3332' },
+];
+
+// Department-wise Training & Placement Representatives (TPRs) — generated from departments registry
+const deptTPRs = departments.map((d) => ({
+  dept: d.name,
+  slug: d.slug,
+  representative: `${d.code} TPR`,
+  email: `tpr.${d.slug}@srkrec.ac.in`,
+}));
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Meet the Training & Placement Cell team at SRKR Engineering College — TPO, Deputy TPO, Assistant TPOs and department coordinators." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +42,7 @@ const pageTitle = "Placements Team";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/placements">Placements</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +52,144 @@ const pageTitle = "Placements Team";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Hero / Intro + Funfact stats -->
+    <section class="rts-about-university pt--60 pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Training &amp; Placement Cell Team</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                The T&amp;P Cell is led by a dedicated team of officers, faculty coordinators and department representatives who drive recruitment, training and industry partnerships across all programs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt--30">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__meta" style="text-align:center; padding:24px;">
+                <h2 style="color: var(--rt-primary); margin: 0;">90%+</h2>
+                <p class="item-description">Placements (2024–25)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__meta" style="text-align:center; padding:24px;">
+                <h2 style="color: var(--rt-primary); margin: 0;">17.16 LPA</h2>
+                <p class="item-description">Top Package (Amazon SDE)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__meta" style="text-align:center; padding:24px;">
+                <h2 style="color: var(--rt-primary); margin: 0;">200+</h2>
+                <p class="item-description">Recruiters On-Campus</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__meta" style="text-align:center; padding:24px;">
+                <h2 style="color: var(--rt-primary); margin: 0;">12</h2>
+                <p class="item-description">Departments Supported</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Core Team Cards -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Core T&amp;P Cell Officers</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {coreTeam.map((m) => (
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__image">
+                    <img src="/assets/images/placements/PLACEHOLDER.jpg" alt={m.name} />
+                  </div>
+                  <div class="single-item__meta">
+                    <h5 class="item-title"><a href={`mailto:${m.email}`}>{m.name}</a></h5>
+                    <p class="item-description" style="color: var(--rt-primary); font-weight: 600;">{m.role}</p>
+                    <p class="item-description">
+                      <i class="fa-regular fa-envelope"></i> {m.email}<br />
+                      <i class="fa-regular fa-phone"></i> {m.phone}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Department TPRs -->
+    <div class="rts-multi-row-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Department Training &amp; Placement Representatives</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {deptTPRs.map((d) => (
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <a href={`/departments/${d.slug}/placements/`} class="program-item">
+                <span><strong>{d.dept}</strong><br /><small>{d.email}</small></span>
+                <i class="fa-regular fa-chevron-right"></i>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact T&P Cell card + Cross-links -->
+    <section class="rts-research-section pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-research-section__content">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Contact the T&amp;P Cell</h3>
+              <p class="description"><i class="fa-regular fa-envelope"></i> <a href="mailto:placements@srkrec.ac.in">placements@srkrec.ac.in</a></p>
+              <p class="description"><i class="fa-regular fa-phone"></i> +91 9848 02 3332 / +91 884 222 6666</p>
+              <p class="description"><i class="fa-regular fa-clock"></i> Office Hours: Monday–Saturday, 9:00 AM – 5:00 PM</p>
+              <p class="description"><i class="fa-regular fa-location-dot"></i> Training &amp; Placement Cell, Administrative Block, SRKR Engineering College, Bhimavaram – 534204, Andhra Pradesh</p>
+            </div>
+          </div>
+
+          <div class="research__text">
+            <div class="research__text--single">
+              <h3 class="rts-section-title">Quick Links</h3>
+              <div class="program-list">
+                <a href="/placements" class="program-item"><span>About Placement Cell <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/placements-summary" class="program-item"><span>Placement Statistics <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/training" class="program-item"><span>Training Activities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/internships" class="program-item"><span>Internship Opportunities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/career-guidance" class="program-item"><span>Career Guidance <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TODO: replace placeholder photos in /assets/images/placements/PLACEHOLDER.jpg with real T&P team photos */}
+    {/* TODO: replace placeholder TPR names and emails once dept-level T&P representatives confirmed */}
 
     <SrkrFooter />
     <OffCanvas />

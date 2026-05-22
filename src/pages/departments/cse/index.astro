@@ -1,0 +1,405 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Department of Computer Science & Engineering | SRKR Engineering College" description="Department of Computer Science & Engineering at SRKR Engineering College, Bhimavaram — established 1991, NBA accredited, JNTUK Research Centre." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Computer Science & Engineering</li>
+              </ul>
+              <h2 class="section-title">Department of Computer Science & Engineering</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- content -->
+    <div class="rts-faculty-details py-5">
+      <div class="container">
+
+        <DeptNav dept="cse" current="Home" />
+
+        <!-- Message from HoD -->
+        <div class="row mt--30">
+          <div class="rts-section mb--60">
+            <h3 class="rts-section-title">Message from Head of Department</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="faculty-image text-center">
+              {/* TODO: replace with real faculty photo */}
+              <img class="img-fluid mw-100" src="/assets/images/faculty/cse/PLACEHOLDER.jpg" alt="Dr. Bh. Rama Krishnam Raju V S">
+              <div class="h5 mb-2 mt-5">Dr. Bh. Rama Krishnam Raju V S</div>
+              <span>Professor &amp; Head of Department</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text ms-lg-5 mt-5 mt-lg-0">
+              <p class="h6 mb-4">Welcome to the Department of Computer Science &amp; Engineering</p>
+              <p class="mb-5">Established in 1991, the Department of Computer Science &amp; Engineering at SRKR Engineering College has grown from a modest initial intake of 40 students to one of the largest and most reputed CSE programs in Andhra Pradesh, with a current B.Tech sanctioned intake of 300. Across three decades we have built a culture of academic rigour, innovation, and student success — preparing engineers who go on to lead at top product companies, research labs, and start-ups worldwide.</p>
+              <p class="h6 mb-4">A Curriculum Aligned to Industry &amp; Research</p>
+              <p class="mb-5">Our programmes combine foundational computer science with hands-on engagement in modern technologies — Artificial Intelligence, Machine Learning, Cyber Security, IoT, Cloud Computing, and DevOps. Students learn in ICT-enabled smart classrooms and specialized laboratories, supported by industry-aligned electives, Honors &amp; Minors tracks, and active collaborations with TCS iON, Netenrich, and Bennett University.</p>
+              <p class="h6 mb-4">Research, Placements &amp; Vibrant Campus Life</p>
+              <p>Recognised as a Research Centre by JNTU Kakinada since 2019, the department offers an M.Tech in Computer Science &amp; Technology (since 2006) and supports active doctoral work across AI, Data Science, and Networks. Strong placement records with leading software MNCs, vibrant student bodies such as the Association of Computer Engineers (ACE) and the ISTE chapter, and consistently high AP EAPCET admission ranks make CSE @ SRKR a top choice for ambitious students and supportive parents alike.</p>
+            </div>
+          </div>
+
+          <div class="border-top my-60"></div>
+
+          <!-- Mission & Vision -->
+          <div class="row align-items-center justify-content-md-center">
+            <div class="col-lg-6 col-md-11 rts-scholarship-description">
+              <div class="faculty-content-text si__list me-5">
+
+                <h4 class="font-32 mb-3 mt-4">Vision</h4>
+                <ul class="list-unstyled one-column-list mb-0">
+                  <li class="mb-3">To envision a diverse, stimulating, and continually improving academic and research environment that serves the needs of society.</li>
+                  <li>To mould students as socially responsible and competent professionals in the field of Computer Science &amp; Engineering.</li>
+                </ul>
+
+                <h4 class="font-32 mb-4">Mission</h4>
+                <ul class="list-unstyled one-column-list">
+                  <li class="mb-3">To provide a strong theoretical and practical foundation across the computer science and engineering discipline with an emphasis on software development.</li>
+                  <li class="mb-3">To impart modern technologies through industrial, academic, and research collaboration.</li>
+                  <li class="mb-3">To inculcate professional behaviour, strong ethical values, leadership abilities, and the skills necessary for lifelong learning and professional growth.</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-11">
+              <figure class="mt-5 mt-lg-0">
+                <img class="mw-100" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&h=700&fit=crop" alt="Computer Science & Engineering">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Specializations -->
+        <div class="row g-5 faculty-sub-details rts-section-padding">
+          <div class="rts-section mb-4 text-center">
+            <h3 class="rts-section-title">Core Specializations</h3>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=380&fit=crop" alt="Artificial Intelligence & Machine Learning">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cse/research-consultancy/">Artificial Intelligence &amp; ML</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cse/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=380&fit=crop" alt="Internet of Things">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cse/research-consultancy/">Internet of Things</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cse/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=380&fit=crop" alt="Cyber Security">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cse/research-consultancy/">Cyber Security</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cse/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-cat-item civil-spec-card">
+              <div class="cat-thumb civil-spec-thumb">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=380&fit=crop" alt="Cloud Computing">
+              </div>
+              <div class="cat-meta">
+                <div class="cat-title">
+                  <a href="/departments/cse/research-consultancy/">Cloud Computing</a>
+                </div>
+                <div class="cat-link">
+                  <a href="/departments/cse/research-consultancy/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academics & Programs -->
+        <div class="row justify-content-md-center g-0">
+          <div class="rts-section mb--60 text-center">
+            <h3 class="rts-section-title">Academics &amp; Programs</h3>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Undergraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">B.Tech Computer Science &amp; Engg
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">4-Year JNTUK Affiliated
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">NBA Accredited
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">AI/ML &amp; IoT Specializations
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item v__2">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Postgraduate</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">M.Tech Computer Science &amp; Technology
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">2-Year JNTUK Affiliated (Since 2006)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">Honors &amp; Minors Tracks
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/academic-programs/" class="link__list">Research &amp; Thesis Project
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-10">
+            <div class="program__single--item">
+              <div class="program__single--item--bg">
+                <img src="/assets/images/program/program__bg.jpg" alt="">
+              </div>
+              <h5 class="program__single--item--title">Research</h5>
+              <ul class="program__single--item--list">
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/research-consultancy/" class="link__list">Ph.D. Programs (JNTUK)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/research-consultancy/" class="link__list">JNTUK Research Centre (Since 2019)
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/research-consultancy/" class="link__list">Industry Collaborations
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <li class="program__single--item--list--item">
+                  <a href="/departments/cse/research-consultancy/" class="link__list">100+ SCI/Scopus Publications
+                    <span><i class="fa-regular fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content end -->
+
+    <!-- Department Highlights -->
+    <div class="rts-blog v_1 rts__light rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-11 col-lg-12">
+            <div class="rts-section rts-border-bottom-1 mb--50 pb--20">
+              <h2 class="rts-section-title text-uppercase">Department Highlights</h2>
+              <p class="rts-section-description">Three decades of excellence in computer science education, research, and placements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-md-center">
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post blog-v-full">
+              <div class="single-blog-post">
+                <a href="/departments/cse/achievements/" class="blog-thumb">
+                  <img src="/assets/images/blog/big-thumb-1.jpg" alt="NBA Accreditation">
+                </a>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-award"></i></span>
+                      <a href="#">Accreditation</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>NBA Accredited Program</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cse/achievements/" class="post-title">
+                    NBA-accredited B.Tech CSE program — a mark of sustained academic quality.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11 col-lg-6">
+            <div class="rts-blog-post">
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cse/research-consultancy/">
+                    <img src="/assets/images/blog/small-thumb-1.jpg" alt="Research Centre">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-flask"></i></span>
+                      <a href="#">Research</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>JNTUK Research Centre</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cse/research-consultancy/" class="post-title">
+                    Recognised Research Centre by JNTU Kakinada since 2019.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cse/placements/">
+                    <img src="/assets/images/blog/small-thumb-2.jpg" alt="Placements">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-briefcase"></i></span>
+                      <a href="#">Placements</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Top Recruiters Every Year</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cse/placements/" class="post-title">
+                    Strong placements with TCS, Infosys, Cognizant, Wipro, HCL, Tech Mahindra, and more.
+                  </a>
+                </div>
+              </div>
+              <div class="single-blog-post">
+                <div class="blog-thumb">
+                  <a href="/departments/cse/academic-programs/">
+                    <img src="/assets/images/blog/small-thumb-3.jpg" alt="Industry Collaboration">
+                  </a>
+                </div>
+                <div class="blog-content">
+                  <div class="post-meta">
+                    <div class="rt-author">
+                      <span><i class="fa-light fa-handshake"></i></span>
+                      <a href="#">Collaborations</a>
+                    </div>
+                    <div class="rt-date">
+                      <span><i class="fal fa-calendar"></i></span>
+                      <span>Industry &amp; Academia</span>
+                    </div>
+                  </div>
+                  <a href="/departments/cse/academic-programs/" class="post-title">
+                    Active collaborations with TCS iON, Netenrich, and Bennett University.
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Department Highlights end -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <style>
+      /* Equal-height specialization cards */
+      .civil-spec-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .civil-spec-thumb {
+        height: 220px;
+        overflow: hidden;
+      }
+      .civil-spec-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

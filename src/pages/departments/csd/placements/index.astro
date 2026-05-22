@@ -1,0 +1,215 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Placements | Computer Science & Design | SRKR" description="Placement records of the Computer Science & Design department at SRKR Engineering College." />
+    <style>
+      .recruiter-logo-box {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        transition: all 0.3s ease;
+      }
+      .recruiter-logo-box:hover {
+        border-color: #1a3c6b;
+        box-shadow: 0 4px 12px rgba(26, 60, 107, 0.1);
+        transform: translateY(-2px);
+      }
+      .recruiter-logo-box img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+        /* filter: grayscale(100%); */
+        transition: filter 0.3s ease;
+      }
+      .recruiter-logo-box:hover img {
+        /* filter: grayscale(0%); */
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/csd/">Computer Science & Design</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Placements</li>
+              </ul>
+              <h2 class="section-title">Placements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40">
+      <div class="container">
+        <DeptNav dept="csd" current="Placements" />
+      </div>
+    </section>
+
+    <!-- About Placements -->
+    <section class="rts-about-university pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Placements</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Graduates of the Computer Science &amp; Design programme are equipped for hybrid careers — software engineering with a design mindset. Backed by SRKR's strong central placement cell and the Technology Centre's industry network, CSD students target product companies, design studios, game and animation houses, AR/VR firms, and creative agencies — alongside the IT majors that traditionally recruit on campus.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="academic-picture">
+              {/* TODO: Replace with a CSD-specific placement drive photograph */}
+              <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=400&fit=crop" alt="placements" style="max-height: 400px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi Row Sections -->
+    <div class="rts-multi-row-section pb--80">
+      <div class="container">
+        <!-- Top Recruiters -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="top recruiters" style="border-radius: 10px;">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Top Recruiters</h4>
+              <p>CSD students are recruited by leading IT services firms alongside design studios, game developers, and creative-tech companies — Adobe, Autodesk, EA, Ubisoft, Disney-style studios, and Indian design agencies are key target employers for our specialization tracks.</p>
+              <div class="row g-4 mt-3">
+                {/* TODO: Replace with CSD-specific recruiter logos (Adobe, Autodesk, EA, Ubisoft, Disney, etc.) */}
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tcs.png" alt="Tata Consultancy Services" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/cts.png" alt="Cognizant Technology Solutions" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/infosys.png" alt="Infosys" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/lt.png" alt="L&T Construction" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/ey.png" alt="Ernst & Young" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/ncc.png" alt="NCC Limited" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/hcl.png" alt="HCL Technologies" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/wipro.png" alt="Wipro" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placement Training -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content left-side">
+              <h4 class="row-title">Placement Training</h4>
+              <p>CSD students receive both classical placement preparation and specialized creative-career coaching — portfolio reviews, design challenges, and game-jam style assessments alongside aptitude and coding interview prep.</p>
+              <div class="program-list">
+                <a href="#" class="program-item"><span>Technical &amp; DSA Interview Prep <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>UX/UI Portfolio Reviews &amp; Critique <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Design Challenges &amp; Whiteboarding <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Game Jam &amp; AR/VR Demo Sessions <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Aptitude, Communication &amp; Soft Skills <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop" alt="placement training" style="border-radius: 10px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Year-wise Records -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="placement records" style="border-radius: 10px;">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Year-wise Placement Records</h4>
+              <p>Download placement reports for the CSD programme, with company-wise offers, packages, and student details. {/* TODO: upload PDFs as CSD batches graduate; first batch graduates in 2024–25. */}</p>
+              <div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/csd-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                    <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Multi Row Sections End -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

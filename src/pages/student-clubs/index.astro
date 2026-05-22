@@ -4,16 +4,50 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Student Clubs";
+
+const techClubs = [
+  { name: 'ACE — Association of Computer Engineers', dept: 'CSE', advisor: 'Faculty Coordinator, CSE', mission: 'Coding contests, hackathons & technical workshops for CSE students.' },
+  { name: 'IEEE Student Branch', dept: 'ECE / EEE', advisor: 'IEEE Branch Counsellor', mission: 'IEEE technical talks, paper presentations & student membership programs.' },
+  { name: 'ISTE Student Chapter', dept: 'College-wide', advisor: 'ISTE Faculty Advisor', mission: 'Promote technical education & soft skills aligned with ISTE national activities.' },
+  { name: 'IETE Students Forum', dept: 'ECE', advisor: 'IETE Faculty Advisor', mission: 'Workshops on electronics, telecom & emerging communication tech.' },
+  { name: 'ASCE Student Chapter', dept: 'Civil', advisor: 'ASCE Faculty Advisor', mission: 'Site visits, structural design contests & civil engineering seminars.' },
+  { name: 'SAE Collegiate Club', dept: 'Mechanical', advisor: 'SAE Faculty Advisor', mission: 'BAJA / SUPRA design challenges & automotive engineering events.' },
+  { name: 'AeSI — Aeronautical Society of India Chapter', dept: 'Mechanical', advisor: 'AeSI Faculty Advisor', mission: 'Aero-modelling, drone workshops & aerospace lectures.' },
+  { name: 'Robotics Club', dept: 'College-wide', advisor: 'Robotics Club Mentor', mission: 'Build line-followers, bots & participate in inter-college robotics meets.' },
+  { name: 'Coding Club / Competitive Programming', dept: 'CSE / IT', advisor: 'CP Faculty Mentor', mission: 'Weekly DSA contests, LeetCode/Codeforces practice & ICPC prep.' },
+  { name: 'GDSC — Google Developer Student Club', dept: 'College-wide', advisor: 'GDSC Lead Faculty', mission: 'Google tech sessions, cloud study jams & solution challenge.' },
+  { name: 'CSI Student Branch', dept: 'CSE / IT', advisor: 'CSI Faculty Advisor', mission: 'Computer Society of India workshops, certifications & tech fests.' },
+  { name: 'Electronics Hobby Club', dept: 'ECE / EEE', advisor: 'EHC Faculty Mentor', mission: 'Circuit design, IoT projects & PCB-making hands-on workshops.' },
+];
+
+const culturalClubs = [
+  { name: 'Dance Club', mission: 'Classical, Western & folk dance — annual showcase at Spurthi.' },
+  { name: 'Music Club', mission: 'Vocal & instrumental ensembles, jam sessions, college band.' },
+  { name: 'Drama / Theatre Club', mission: 'Stage plays, monologues, street theatre & mime productions.' },
+  { name: 'Language Nest (Literary Club)', mission: 'Debates, elocution, SRKR Toastmasters & creative writing.' },
+  { name: 'Photography Club', mission: 'Photo walks, exhibitions & coverage of campus events.' },
+  { name: 'Fine Arts Club', mission: 'Sketching, painting, rangoli & live art competitions.' },
+];
+
+const serviceClubs = [
+  { name: 'NSS — National Service Scheme', mission: 'Village outreach, blood donation drives, plantation & health camps.' },
+  { name: 'NCC — National Cadet Corps', mission: 'Discipline, leadership training & national-level NCC camps.' },
+  { name: 'Rotaract Club', mission: 'Community service projects in association with Rotary International.' },
+  { name: 'Eco Club / Green Society', mission: 'Plantation drives, plastic-free campus & sustainability projects.' },
+  { name: 'Blood Donors Forum', mission: 'Voluntary blood-donation registry & emergency donor mobilisation.' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Tech, cultural and service clubs at SRKR Engineering College — IEEE, ISTE, ASCE, NSS, NCC and more." />
   </head>
   <body>
     <SrkrHeader />
 
+    <!-- BREADCRUMB -->
     <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
       <div class="container">
         <div class="row">
@@ -21,6 +55,7 @@ const pageTitle = "Student Clubs";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Life @ SRKR</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -29,17 +64,194 @@ const pageTitle = "Student Clubs";
         </div>
       </div>
     </section>
+    <!-- BREADCRUMB END -->
 
-    <section class="pt--60 pb--60">
+    <!-- HERO INTRO -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Beyond the Classroom</h3>
+              <p class="rts-section-description">SRKR is home to a vibrant ecosystem of technical, cultural and social clubs — student-led platforms where ideas turn into projects, friendships and lifelong skills.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- TECH CLUBS -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Technical &amp; Professional Clubs</h3>
+        </div>
+        <div class="row g-4">
+          {techClubs.map((c) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace placeholder logo */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/clubs/PLACEHOLDER.jpg" alt={c.name} />
+                  <span class="cat-link-btn">{c.dept}</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title mb-2">{c.name}</h5>
+                  <p class="mb-2"><strong>Faculty Advisor:</strong> {c.advisor}</p>
+                  <p class="mb-3 small text-muted">{c.mission}</p>
+                  <a href="/activities" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Activities</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CULTURAL CLUBS -->
+    <div class="rts-multi-row-section rts-multi-row-content pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Cultural Clubs</h3>
+        </div>
+        <div class="row g-4">
+          {culturalClubs.map((c) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace placeholder logo */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/clubs/PLACEHOLDER.jpg" alt={c.name} />
+                  <span class="cat-link-btn">Cultural</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title mb-2">{c.name}</h5>
+                  <p class="mb-0 small text-muted">{c.mission}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE & SOCIAL CLUBS -->
+    <div class="rts-multi-row-section pb-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Service &amp; Social Clubs</h3>
+        </div>
+        <div class="row g-4">
+          {serviceClubs.map((c) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm single-cat-item">
+                {/* TODO: replace placeholder logo */}
+                <div class="cat-thumb">
+                  <img src="/assets/images/clubs/PLACEHOLDER.jpg" alt={c.name} />
+                  <span class="cat-link-btn">Service</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title mb-2">{c.name}</h5>
+                  <p class="mb-0 small text-muted">{c.mission}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ANNUAL EVENTS ACCORDION -->
+    <div class="rts-mission py-5">
+      <div class="container">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">Annual Events &amp; Flagships</h3>
+        </div>
+        <div class="program-credit-area faq rts-scholarship-description">
+          <div class="program-accordion">
+            <div class="accordion" id="clubs-accordion">
+              <div class="accordion-item">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cl1" aria-expanded="true">
+                  Spurthi — Annual Cultural &amp; Tech Fest
+                </button>
+                <div id="cl1" class="accordion-collapse collapse show" data-bs-parent="#clubs-accordion">
+                  <div class="accordion-body">
+                    <p>Three-day flagship festival featuring inter-college cultural competitions, technical paper presentations, pro-shows and a host of student-run events.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cl2" aria-expanded="false">
+                  Department Tech Symposia
+                </button>
+                <div id="cl2" class="accordion-collapse collapse" data-bs-parent="#clubs-accordion">
+                  <div class="accordion-body">
+                    <p>ACE, IEEE, ASCE, SAE and other chapters host yearly symposia with hackathons, project expos and industry keynote talks.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cl3" aria-expanded="false">
+                  NSS Special Camps &amp; Outreach
+                </button>
+                <div id="cl3" class="accordion-collapse collapse" data-bs-parent="#clubs-accordion">
+                  <div class="accordion-body">
+                    <p>Annual 7-day village camps under NSS — covering health awareness, sanitation, literacy drives and skill-development workshops for local communities.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cl4" aria-expanded="false">
+                  SRKR Toastmasters &amp; Literary Meets
+                </button>
+                <div id="cl4" class="accordion-collapse collapse" data-bs-parent="#clubs-accordion">
+                  <div class="accordion-body">
+                    <p>Weekly Toastmasters sessions, debate tournaments, KYC/KYF/KYG events and the annual Language Nest extravaganza in January.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cl5" aria-expanded="false">
+                  Hackathons, Coding Marathons &amp; Project Expos
+                </button>
+                <div id="cl5" class="accordion-collapse collapse" data-bs-parent="#clubs-accordion">
+                  <div class="accordion-body">
+                    <p>24-hour hackathons hosted by Coding Club, GDSC and CSI featuring industry mentors, prize money and direct internship pipelines.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="rts-funfact py-5">
+      <div class="container">
+        <div class="row justify-content-center mx-0">
+          <div class="col-lg-12 px-0">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-calendar-star"></i></h2>
+                <p><a href="/activities">Student Activities</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-volleyball"></i></h2>
+                <p><a href="/sports">Sports Facilities</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-heart-pulse"></i></h2>
+                <p><a href="/well-being">Well-Being</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-house"></i></h2>
+                <p><a href="/hostels">Hostels</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <SrkrFooter />
     <OffCanvas />

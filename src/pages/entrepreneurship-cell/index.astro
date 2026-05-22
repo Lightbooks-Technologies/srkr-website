@@ -4,12 +4,31 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+
 const pageTitle = "Entrepreneurship Development Cell";
+
+const pillars = [
+  { num: '01', icon: 'assets/images/icon/14.svg', img: 'assets/images/apply/01.jpg', title: 'Idea to Startup', desc: 'Ideation workshops, design thinking and prototyping for student innovators.' },
+  { num: '02', icon: 'assets/images/icon/15.svg', img: 'assets/images/apply/02.jpg', title: 'Mentorship', desc: 'Faculty mentors, alumni founders and external industry experts on call.' },
+  { num: '03', icon: 'assets/images/icon/16.svg', img: 'assets/images/apply/03.jpg', title: 'Funding Access', desc: 'MSME schemes, AICTE seed grants and angel / VC investor connect.' },
+  { num: '04', icon: 'assets/images/icon/14.svg', img: 'assets/images/apply/01.jpg', title: 'Industry Connect', desc: 'CISCO, Dassault, MSME and IIT partnerships bring real problems to campus.' }
+];
+
+const startups = [
+  { name: 'Sri Maharshi Consultancy Pvt. Ltd.', year: '2016', founder: 'M. Srinivasa Varma (Alumni, 1990-96)', cin: 'U93000AP2016PTC103338' },
+  { name: 'Affine Labs IT Solutions Pvt. Ltd.', year: '2017', founder: 'BabuRamanjaneya Raju Pinnamraju', cin: 'U72900AP2017PTC105960' },
+  { name: 'MSR Techlabz', year: '2017', founder: 'M. Raja Sekhar (Alumni, 2012-16)', cin: 'U01409TG2016PTC109177' },
+  { name: 'MCR Web Solutions', year: '2017', founder: 'M. Suresh Babu (Faculty)', cin: 'Not yet registered' },
+  { name: 'SD Motor Speeds', year: '2017', founder: 'Saladi Sai Deepu (Alumni, 2013-17)', cin: 'Not yet registered' },
+  { name: 'Elon Motors Engineering', year: '2017', founder: 'Ch. Raghu Veer (Alumni, 2013-17)', cin: 'U34300AP2018PTC108766' },
+  { name: 'Carryshare Private Ltd.', year: '2023', founder: 'M. Pavan Kumar Raju', cin: 'DIPP119639' }
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College EDC: incubation, MSME BI-HI, AICTE IDEA Lab, hackathons, mentorship and startup support.`} />
   </head>
   <body>
     <SrkrHeader />
@@ -30,13 +49,254 @@ const pageTitle = "Entrepreneurship Development Cell";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Intro -->
+    <div class="rts-campus-life rts-section-padding pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="campus-life">
+            <div class="campus-life__content">
+              <h1 class="rts-section-title">Step in with an idea, step out with a product.</h1>
+              <p class="description w-680">
+                The EDC nurtures student and faculty entrepreneurs through the Technology Centre, I-Hub, MSME Business Incubator, AICTE IDEA Lab and Institution's Innovation Council &mdash; an end-to-end pipeline from ideation to commercialization.
+              </p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat funfact bar -->
+    <div class="rts-funfact v_3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">7+</h2>
+                <p>Registered Startups</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">&#x20B9;25.5L</h2>
+                <p>MSME Grants Won</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">3&#9733;</h2>
+                <p>MoE IIC Rating</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">ARIIA</h2>
+                <p>Best Performer 2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <section class="rts-research-section rts-section-padding">
+      <div class="container">
+        <div class="row mb--40">
+          <div class="rts-section text-center">
+            <h3 class="rts-section-title">Four Pillars of EDC</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="research__items">
+            <div class="row justify-content-sm-center justify-content-md-start g-5">
+              {pillars.map((p) => (
+                <div class="col-lg-3 col-md-6 col-sm-11">
+                  <div class="research-procedure">
+                    <div class="research-image"><img src={p.img} alt={p.title} /></div>
+                    <div class="rt-serial">{p.num}</div>
+                    <div class="icon"><img src={p.icon} alt="" /></div>
+                    <a href="#">{p.title}</a>
+                    <p>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs & Accordion + Sidebar layout -->
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left -->
+          <div class="col-lg-8 col-md-11">
+
+            <div class="program-about mb--40">
+              <h4 class="title">Programs &amp; Activities</h4>
+              <p>EDC organises year-round bootcamps, hackathons, FDPs and pre-incubation programs in collaboration with MSME, AICTE and IIT Bombay e-Yantra. Highlights include MSME Idea Hackathon 2.0, SWECHA Freedom Fest, KAVACH Hackathon and the IIT Bombay e-Yantra Innovation Sprint.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="edc-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#edcOne" aria-expanded="true">
+                      Bootcamps &amp; Hackathons
+                    </button>
+                    <div id="edcOne" class="accordion-collapse collapse show" data-bs-parent="#edc-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Internal Smart India Hackathon (SIH) &mdash; 150+ students/year</li>
+                          <li class="si__list--single">MSME Idea Hackathon 2.0 &mdash; selected for &#x20B9;25.5L funding</li>
+                          <li class="si__list--single">KAVACH Cyber Security Hackathon &mdash; 100+ participants</li>
+                          <li class="si__list--single">SWECHA Freedom Fest &mdash; 400+ open-source enthusiasts</li>
+                          <li class="si__list--single">IIT Bombay e-Yantra Innovation Sprint (Robotics &amp; IoT)</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edcTwo" aria-expanded="false">
+                      Skill &amp; Bootcamp Tracks
+                    </button>
+                    <div id="edcTwo" class="accordion-collapse collapse" data-bs-parent="#edc-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">IoT, Embedded Systems &amp; Robotics</li>
+                          <li class="si__list--single">VLSI &amp; Chip Design</li>
+                          <li class="si__list--single">Data Analytics &amp; Machine Learning with Python</li>
+                          <li class="si__list--single">PCB Design &amp; Prototyping (Semi-Automation Single Phase PCB Mate)</li>
+                          <li class="si__list--single">SOLIDWORKS &amp; Arduino school outreach (ATL partnership)</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edcThree" aria-expanded="false">
+                      Pre-Incubation &amp; Mentorship
+                    </button>
+                    <div id="edcThree" class="accordion-collapse collapse" data-bs-parent="#edc-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Innovation/Prototype Validation &mdash; converting innovation into a startup</li>
+                          <li class="si__list--single">Entrepreneurship Awareness Camp (funded by EDII, Ahmedabad)</li>
+                          <li class="si__list--single">Accelerator &amp; incubation opportunities for early-stage founders</li>
+                          <li class="si__list--single">Angel Investment / VC Funding awareness sessions</li>
+                          <li class="si__list--single">Project Expo &mdash; campus showcase with industry partners</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edcFour" aria-expanded="false">
+                      Recognition &amp; Awards
+                    </button>
+                    <div id="edcFour" class="accordion-collapse collapse" data-bs-parent="#edc-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Granted Atal Community Innovation Centre (2023)</li>
+                          <li class="si__list--single">ARIIA 2023 Ranking: 151-300 band</li>
+                          <li class="si__list--single">ARIIA 2022: Best Performer</li>
+                          <li class="si__list--single">MoE IIC 4.0 Rating: 3 Star (2022)</li>
+                          <li class="si__list--single">Ecosystem Enabler &mdash; Promising (AIC-SKDU, 2022)</li>
+                          <li class="si__list--single">AICTE Smart India Hackathon Winners (2020 &amp; 2021)</li>
+                          <li class="si__list--single">Stanford University Silicon Valley meetup &mdash; 4 student delegates</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Notable Startups Table -->
+            <div class="application-deadline mt--40">
+              <h4 class="title">Notable Startups Incubated</h4>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>Startup</td>
+                        <td>Year</td>
+                        <td>Founder</td>
+                        <td>CIN</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {startups.map((s) => (
+                        <tr>
+                          <td>{s.name}</td>
+                          <td>{s.year}</td>
+                          <td>{s.founder}</td>
+                          <td>{s.cin}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <div class="program-curriculum">
+                <h6 class="heading-title">Inside the EDC Ecosystem</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/iic/"><span><i class="fa-light fa-arrow-right"></i></span>Institution's Innovation Council</a></li>
+                    <li><a href="/ipr-cell/"><span><i class="fa-light fa-arrow-right"></i></span>IPR Cell</a></li>
+                    <li><a href="/development-cell/"><span><i class="fa-light fa-arrow-right"></i></span>R &amp; D Cell</a></li>
+                    <li><a href="/research-projects/"><span><i class="fa-light fa-arrow-right"></i></span>Research Projects</a></li>
+                    <li><a href="/research-overview/"><span><i class="fa-light fa-arrow-right"></i></span>Research Overview</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">External Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.startupindia.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Startup India</a></li>
+                    <li><a href="https://iic.mic.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>MoE IIC Portal</a></li>
+                    <li><a href="https://www.msme.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Ministry of MSME</a></li>
+                    <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>AICTE</a></li>
+                    <li><a href="https://seedfund.startupindia.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>SISFS Seed Fund</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">Downloads</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {/* TODO: replace with real PDFs once uploaded */}
+                    <li><a href="/assets/documents/edc-activities.pdf"><span><i class="fa-light fa-arrow-right"></i></span>EDC Activities Report (PDF)</a></li>
+                    <li><a href="/assets/documents/srkr-innovation-startup-policy.pdf"><span><i class="fa-light fa-arrow-right"></i></span>SRKR I&amp;E Startup Policy</a></li>
+                    <li><a href="/assets/documents/nisp-2019.pdf"><span><i class="fa-light fa-arrow-right"></i></span>National Innovation &amp; Startup Policy (NISP)</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-info">
+                <h5>EDC Coordinator</h5>
+                <p>Entrepreneurship Development Cell<br>SRKR Engineering College, Bhimavaram</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:edc@srkr.ac.in">edc@srkr.ac.in</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

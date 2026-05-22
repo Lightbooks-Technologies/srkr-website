@@ -4,12 +4,54 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Institution Innovation Council";
+
+const pageTitle = "Institution's Innovation Council (IIC)";
+
+const pillars = [
+  { num: '01', icon: 'assets/images/icon/14.svg', img: 'assets/images/apply/01.jpg', title: 'Innovation', desc: 'Scouting, prototyping and showcasing student &amp; faculty innovations.' },
+  { num: '02', icon: 'assets/images/icon/15.svg', img: 'assets/images/apply/02.jpg', title: 'Startup Support', desc: 'Pipeline from idea pitching to incubation, mentoring and seed funding.' },
+  { num: '03', icon: 'assets/images/icon/16.svg', img: 'assets/images/apply/03.jpg', title: 'Pre-Incubation', desc: 'Design-thinking workshops, hackathons and prototype validation.' },
+  { num: '04', icon: 'assets/images/icon/14.svg', img: 'assets/images/apply/02.jpg', title: 'IPR &amp; Industry', desc: 'Patent literacy, tech-transfer and industry interactions across departments.' }
+];
+
+const council = [
+  { name: 'Dr. M. Jagapathi Raju', role: 'President' },
+  { name: 'Dr. N. G. K. Murthy', role: 'Convener / ARIIA Coordinator' },
+  { name: 'Chigurupati Ravi Swaroop', role: 'Social Media Coordinator' },
+  { name: 'V. Venkata Durga Kiran', role: 'Innovation Activity Coordinator' },
+  { name: 'B. L. V. Siva Rama Krishna', role: 'Internship Activity Coordinator' },
+  { name: 'Dr. M. Suresh Babu', role: 'Startup Activity Coordinator' },
+  { name: 'Dr. N. Kameswara Rao', role: 'NIRF Coordinator' },
+  { name: 'Dr. R N V Jagan Mohan', role: 'IPR Activity Coordinator' },
+  { name: 'M. Venkata Rao', role: 'Member' },
+  { name: 'Penupothula Raju', role: 'Member' },
+  { name: 'K. Chalapathi Raju', role: 'Member' },
+  { name: 'Ch. Raghu Ram', role: 'Member' },
+  { name: 'V. Sai Baba', role: 'Member' },
+  { name: 'K D V Pavan Kumar Varma', role: 'Member' },
+  { name: 'Md Azahar Ahmed', role: 'Member' },
+  { name: 'G D K Prasad', role: 'Member' },
+  { name: 'K. Pavan Kumar', role: 'Member' },
+  { name: 'Dr. V. Chandra Sekhar', role: 'Member' },
+  { name: 'Dr. K V Murali Krishnam Raju', role: 'Member' },
+  { name: 'K M N V S A Sivaram', role: 'Member' },
+  { name: 'N. Harsha', role: 'Member' },
+  { name: 'Padma Balaji Sunkara', role: 'Member' },
+  { name: 'P. Lakshmi', role: 'Member' }
+];
+
+const ratings = [
+  { cycle: 'IIC 1.0 (2018-19)', rating: '3 Star' },
+  { cycle: 'IIC 2.0 (2019-20)', rating: '4.5 Star' },
+  { cycle: 'IIC 3.0 (2020-21)', rating: '2 Star' },
+  { cycle: 'IIC 4.0 (2021-22)', rating: '3 Star' }
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Institution's Innovation Council (IIC) - MoE Innovation Cell council fostering innovation, IPR and entrepreneurship on campus.`} />
   </head>
   <body>
     <SrkrHeader />
@@ -21,7 +63,7 @@ const pageTitle = "Institution Innovation Council";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
+                <li class="breadcrumb-item active" aria-current="page">IIC</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
             </div>
@@ -30,13 +72,271 @@ const pageTitle = "Institution Innovation Council";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- What is IIC -->
+    <div class="rts-campus-life rts-section-padding pb--40">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+          <div class="campus-life">
+            <div class="campus-life__content">
+              <h1 class="rts-section-title">A MoE Innovation Cell on Campus.</h1>
+              <p class="description w-680">
+                Launched by MoE's Innovation Cell (MIC) with AICTE in 2018, IIC engages faculty, students and staff in ideation, problem-solving, proof-of-concept, design thinking, IPR and project management so that innovation and entrepreneurship become embedded in everyday campus life.
+              </p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat funfact bar -->
+    <div class="rts-funfact v_3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">3&#9733;</h2>
+                <p>IIC 4.0 Rating</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">4.5&#9733;</h2>
+                <p>IIC 2.0 Best Cycle</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">23</h2>
+                <p>Council Members</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">ARIIA</h2>
+                <p>Best Performer 2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <section class="rts-research-section rts-section-padding">
+      <div class="container">
+        <div class="row mb--40">
+          <div class="rts-section text-center">
+            <h3 class="rts-section-title">Four Pillars of IIC</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="research__items">
+            <div class="row justify-content-sm-center justify-content-md-start g-5">
+              {pillars.map((p) => (
+                <div class="col-lg-3 col-md-6 col-sm-11">
+                  <div class="research-procedure">
+                    <div class="research-image"><img src={p.img} alt={p.title} /></div>
+                    <div class="rt-serial">{p.num}</div>
+                    <div class="icon"><img src={p.icon} alt="" /></div>
+                    <a href="#calendar"><span set:html={p.title}></span></a>
+                    <p set:html={p.desc}></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Council Composition + Calendar + Sidebar -->
+    <section class="rts-scholarship pt--40 pb--60" id="calendar">
+      <div class="container">
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left -->
+          <div class="col-lg-8 col-md-11">
+
+            <div class="program-about mb--40">
+              <h4 class="title">IIC Council Composition</h4>
+              <p>SRKR IIC is led by the Principal as President and supported by activity coordinators for Innovation, Internships, Startup, NIRF, ARIIA, IPR and Social Media.</p>
+            </div>
+
+            <div class="application-deadline">
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>S.No</td>
+                        <td>Name</td>
+                        <td>Position</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {council.map((m, i) => (
+                        <tr>
+                          <td>{i + 1}</td>
+                          <td>{m.name}</td>
+                          <td>{m.role}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- IIC Star Rating display -->
+            <div class="mt--60">
+              <h4 class="title">MIC Star Rating History</h4>
+              <div class="application-deadline mt--20">
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>IIC Cycle</td>
+                          <td>Star Rating</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ratings.map((r) => (
+                          <tr>
+                            <td>{r.cycle}</td>
+                            <td>{r.rating}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calendar accordion -->
+            <div class="program-credit-area faq rts-scholarship-description mt--60">
+              <h4 class="title mb--30">Annual Calendar of Activities</h4>
+              <div class="program-accordion">
+                <div class="accordion" id="iic-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#iicQ1" aria-expanded="true">
+                      Quarter 1 &mdash; Innovation Drive
+                    </button>
+                    <div id="iicQ1" class="accordion-collapse collapse show" data-bs-parent="#iic-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">IIC Annual Calendar planning &amp; orientation</li>
+                          <li class="si__list--single">Innovation &amp; design-thinking workshops</li>
+                          <li class="si__list--single">Idea pitching &amp; campus innovation challenge</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iicQ2" aria-expanded="false">
+                      Quarter 2 &mdash; Entrepreneurship &amp; Hackathons
+                    </button>
+                    <div id="iicQ2" class="accordion-collapse collapse" data-bs-parent="#iic-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Smart India Hackathon (Internal &amp; National)</li>
+                          <li class="si__list--single">MSME Idea Hackathon participation</li>
+                          <li class="si__list--single">Entrepreneurship Awareness Camp (EAC)</li>
+                          <li class="si__list--single">Angel / VC funding sessions for early-stage teams</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iicQ3" aria-expanded="false">
+                      Quarter 3 &mdash; IPR &amp; Prototyping
+                    </button>
+                    <div id="iicQ3" class="accordion-collapse collapse" data-bs-parent="#iic-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">IPR awareness drives &amp; patent literacy workshops</li>
+                          <li class="si__list--single">Prototype validation &amp; product clinic</li>
+                          <li class="si__list--single">Project Expo with industry partners</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iicQ4" aria-expanded="false">
+                      Quarter 4 &mdash; Industry &amp; Reporting
+                    </button>
+                    <div id="iicQ4" class="accordion-collapse collapse" data-bs-parent="#iic-accordion">
+                      <div class="accordion-body">
+                        <div class="si"><div class="si__list"><ul class="list-unstyled">
+                          <li class="si__list--single">Industry-academia interactions &amp; MoU drives</li>
+                          <li class="si__list--single">ARIIA / NIRF data preparation &amp; submission</li>
+                          <li class="si__list--single">IIC report submission to MIC portal</li>
+                          <li class="si__list--single">Innovation Day celebration &amp; felicitations</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <div class="program-curriculum">
+                <h6 class="heading-title">Official MoE Portal</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="https://iic.mic.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>MoE IIC Portal</a></li>
+                    <li><a href="https://mic.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>MoE Innovation Cell (MIC)</a></li>
+                    <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>AICTE</a></li>
+                    <li><a href="https://ariia.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>ARIIA Portal</a></li>
+                    <li><a href="https://www.sih.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Smart India Hackathon</a></li>
+                    <li><a href="https://www.startupindia.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Startup India</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">Downloads</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {/* TODO: replace with real PDFs */}
+                    <li><a href="/assets/documents/srkr-innovation-startup-policy.pdf"><span><i class="fa-light fa-arrow-right"></i></span>SRKR I&amp;E Startup Policy</a></li>
+                    <li><a href="/assets/documents/nisp-2019.pdf"><span><i class="fa-light fa-arrow-right"></i></span>National Innovation &amp; Startup Policy</a></li>
+                    <li><a href="/assets/documents/iic-appreciation-letter.pdf"><span><i class="fa-light fa-arrow-right"></i></span>IIC Appreciation Letter</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-curriculum mt--30">
+                <h6 class="heading-title">Related on Campus</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/entrepreneurship-cell/"><span><i class="fa-light fa-arrow-right"></i></span>EDC</a></li>
+                    <li><a href="/ipr-cell/"><span><i class="fa-light fa-arrow-right"></i></span>IPR Cell</a></li>
+                    <li><a href="/research-overview/"><span><i class="fa-light fa-arrow-right"></i></span>Research Overview</a></li>
+                    <li><a href="/development-cell/"><span><i class="fa-light fa-arrow-right"></i></span>R &amp; D Cell</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="program-info">
+                <h5>IIC Office</h5>
+                <p>Institution's Innovation Council<br>SRKR Engineering College, Bhimavaram</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:iic@srkr.ac.in">iic@srkr.ac.in</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

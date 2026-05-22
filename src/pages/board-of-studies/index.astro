@@ -4,12 +4,48 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { departments } from '../../data/departments';
+
 const pageTitle = "Board of Studies";
+
+// BoS chairpersons (from srkrec.ac.in/bos.php) keyed by display name
+const chairs: Record<string, string> = {
+  'Civil Engineering': 'Dr. G. Sri Bala',
+  'Computer Science & Engineering': 'Dr. Bh.V.S.R.K. Raju',
+  'Electronics & Communication Engineering': 'Dr. S.S. Mohan Reddy',
+  'Electrical & Electronics Engineering': 'Dr. Bh. Ravi Kumar Varma',
+  'Information Technology': 'Dr. P. Ravi Kiran Varma',
+  'Mechanical Engineering': 'Dr. K. Sitarama Raju',
+  'Artificial Intelligence & Data Science': 'Dr. P. Ravi Kiran Varma',
+  'Computer Science & Business Systems': 'Dr. P. Ravi Kiran Varma',
+  'Artificial Intelligence & Machine Learning': 'Dr. Bh.V.S.R.K. Raju',
+  'CSE — IoT, Cybersecurity & Blockchain': 'Dr. Bh.V.S.R.K. Raju',
+  'Computer Science & Design': 'Dr. M. Suresh Babu',
+  'Computer Science & Information Technology': 'Dr. N. Gopala Krishna Murthy',
+};
+
+const jntukNominees = [
+  { programme: 'Civil Engineering',                       nominee: 'Dr. P. Subba Rao, Professor of Civil Engineering, UCEK, JNTUK, Kakinada' },
+  { programme: 'Computer Science &amp; Engineering',      nominee: 'Dr. MHM Krishna Prasad, Professor of CSE, UCEK, JNTUK, Kakinada' },
+  { programme: 'Electronics &amp; Communication Engineering', nominee: 'Dr. N. Balaji, Professor of ECE, UCEK, JNTUK, Kakinada' },
+  { programme: 'Electrical &amp; Electronics Engineering',nominee: 'Dr. K. Ravindra, Professor of EEE, UCEK, JNTUK, Kakinada' },
+  { programme: 'Information Technology',                  nominee: 'Dr. O. Srinivasa Rao, Professor of CSE, UCEK, JNTUK, Kakinada' },
+  { programme: 'Mechanical Engineering',                  nominee: 'Dr. A. Gopala Krishna, Professor of ME, UCEK, JNTUK, Kakinada' },
+  { programme: 'AIDS &amp; CSBS',                         nominee: 'Dr. K. Sahadevaiah, Professor of CSE, UCEK, JNTUK, Kakinada' },
+  { programme: 'AIML &amp; CIC',                          nominee: 'Dr. ASN Chakravarthy, Professor of CSE, UCEK, JNTUK, Kakinada' },
+  { programme: 'CSG &amp; CSIT',                          nominee: 'Dr. N. Ramakrishnaiah, Professor of CSE, UCEK, JNTUK, Kakinada' },
+  { programme: 'Mathematics',                             nominee: 'Dr. GVSR Deekshitulu, Professor of Mathematics, UCEK, JNTUK, Kakinada' },
+  { programme: 'Physics',                                 nominee: 'Dr. P. Dakshina Murthy, Retired Professor of Physics, UCEK, JNTUK, Kakinada' },
+  { programme: 'Chemistry',                               nominee: 'Dr. S. Satyaveni, Asst. Professor of Chemistry, UCEK, JNTUK, Kakinada' },
+  { programme: 'English',                                 nominee: 'Dr. T. Viswanadha Rao, Retired Professor of English, Andhra University PG Center, Kakinada' },
+  { programme: 'Environmental Studies',                   nominee: 'Dr. P. Udaya Bhaskar, Professor of Civil Engineering, UCEK, JNTUK, Kakinada' },
+  { programme: 'Bachelor of Business Administration (BBA)', nominee: 'Prof. D. Suryachandra Rao, Professor, Dept. of Commerce and Business Management, Krishna University' },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Board of Studies for each programme at SRKR Engineering College — chairpersons, JNTUK nominees, functions and minutes." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +57,7 @@ const pageTitle = "Board of Studies";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Institute</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,14 +67,164 @@ const pageTitle = "Board of Studies";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Funfact -->
+    <div class="rts-funfact v_2 stroke pt--60">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">12</h2>
+                <p>Programme Boards of Studies</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">15</h2>
+                <p>JNTUK / University Nominees</p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title">1x</h2>
+                <p>Curriculum revision cycle per BoS</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+          <div class="col-lg-8 col-md-11">
+            <div class="program-about mb--40">
+              <h4 class="title">About Boards of Studies</h4>
+              <p>Each academic department of SRKR Engineering College constitutes a Board of Studies (BoS) for its programme. The BoS designs and reviews the curriculum, recommends panels of examiners, and coordinates research and teaching activities of the department, with proposals approved by the Academic Council.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="bos-accordion">
+
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bosFunctions" aria-expanded="true">Functions of the Board of Studies</button>
+                    <div id="bosFunctions" class="accordion-collapse collapse show" data-bs-parent="#bos-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Prepare syllabi for various courses keeping in view the objectives of the college, interest of the stakeholders and national requirement.</li>
+                          <li class="si__list--single">Suggest methodologies for innovative teaching and evaluation techniques.</li>
+                          <li class="si__list--single">Suggest panels of names to the Academic Council for appointment of examiners.</li>
+                          <li class="si__list--single">Coordinate research, teaching, extension and other academic activities in the department/college.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bosComp" aria-expanded="false">Standard Composition (per programme)</button>
+                    <div id="bosComp" class="accordion-collapse collapse" data-bs-parent="#bos-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single">Chairperson — Head of the Department.</li>
+                          <li class="si__list--single">JNTUK / Affiliating University Nominee.</li>
+                          <li class="si__list--single">Subject Expert from another university.</li>
+                          <li class="si__list--single">Expert from a national research organisation (e.g. CSIR / IITs).</li>
+                          <li class="si__list--single">Industry expert representing the relevant domain.</li>
+                          <li class="si__list--single">Internal senior faculty members of the department.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bosMinutes" aria-expanded="false">BoS Meeting Minutes</button>
+                    <div id="bosMinutes" class="accordion-collapse collapse" data-bs-parent="#bos-accordion">
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          <li class="si__list--single"><a href="https://srkrec.ac.in/files/minutes/BOS_MINUTES.pdf" target="_blank" rel="noopener">Consolidated BoS Minutes (PDF)</a></li>
+                          <li class="si__list--single">{/* TODO: link department-wise BoS minutes when published */}Department-wise minutes available on individual department pages.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Related Bodies</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/academic-council"><span><i class="fa-light fa-arrow-right"></i></span>Academic Council</a></li>
+                    <li><a href="/governing"><span><i class="fa-light fa-arrow-right"></i></span>Governing Body</a></li>
+                    <li><a href="/central-committee"><span><i class="fa-light fa-arrow-right"></i></span>Central Committee</a></li>
+                    <li><a href="/iqac"><span><i class="fa-light fa-arrow-right"></i></span>IQAC</a></li>
+                    <li><a href="https://srkrec.ac.in/bos.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Legacy BoS Page</a></li>
+                    <li><a href="https://jntuk.edu.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>JNTUK Website</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department BoS card grid -->
+        <div class="row mt--60">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Departmental Boards of Studies</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {departments.map((d) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{d.name}</h5>
+                  <p class="card-text mb--5"><strong>Chairperson:</strong> {chairs[d.name] || d.hod}</p>
+                  <p class="card-text"><small>{d.fullName}</small></p>
+                  <a class="rts-theme-btn" href={`/departments/${d.slug}/committees/`}>View Department BoS</a>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Bachelor of Business Administration (BBA)</h5>
+                <p class="card-text mb--5"><strong>Chairperson:</strong> Dr. M. Siva Krishnam Raju</p>
+                <p class="card-text"><small>Programme offered under the autonomous scheme</small></p>
+                {/* TODO: add BBA committees page if/when created */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JNTUK nominees table -->
+        <div class="row mt--60">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">JNTUK / University Nominees</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Programme / Discipline</td><td>JNTUK Nominee</td></tr>
+                    </thead>
+                    <tbody>
+                      {jntukNominees.map((n) => (
+                        <tr><td set:html={n.programme}></td><td>{n.nominee}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

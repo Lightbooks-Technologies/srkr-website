@@ -1,0 +1,292 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<style>
+  .rts-about-section {
+    height: 100%;
+  }
+
+  .rts-about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rts-about-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.25rem;
+  }
+
+  .rts-about-details .single-about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Achievements | Electrical & Electronics Engineering | SRKR" description="Department, faculty, and student achievements of the Electrical & Electronics Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/eee/">Electrical &amp; Electronics Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Achievements</li>
+              </ul>
+              <h2 class="section-title">Achievements</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Achievements Section -->
+    <section class="rts-about-university py-5">
+      <div class="container">
+        <DeptNav dept="eee" current="Achievements" />
+
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-5">
+              <h3 class="rts-section-title">Department Excellence</h3>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <p class="rts-section-description">
+                The Department of Electrical &amp; Electronics Engineering at SRKR has built a four-decade legacy of academic and professional excellence. With NBA accreditation, strong research output, active industry collaboration, and a long record of student success in placements and competitive exams, the department continues to set benchmarks in EEE education.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Image + Stat Cards -->
+        <div class="container">
+          <div class="row g-5 justify-content-md-center justify-content-start align-items-stretch">
+            <div class="col-lg-7 col-xl-8 col-md-11">
+              <div class="rts-about-section">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop" alt="Electrical & Electronics Engineering Department">
+              </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 col-md-11">
+              <div class="rts-about-details">
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">NBA</h3>
+                    <img src="/assets/images/icon/11.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>B.Tech EEE NBA Accredited Programme</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">100+</h3>
+                    <img src="/assets/images/icon/12.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Research Publications in SCI/Scopus Journals</p>
+                  </div>
+                </div>
+                <div class="single-about-info">
+                  <div class="content">
+                    <h3 class="title">45+</h3>
+                    <img src="/assets/images/icon/13.svg" alt="">
+                  </div>
+                  <div class="desc">
+                    <p>Years of EEE Education Excellence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="rts-funfact pt-5">
+          <div class="container">
+            <div class="row justify-content-center mx-0">
+              <div class="col-lg-12 px-0">
+                <div class="rts-funfact-wrapper">
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">12</h2>
+                    <p>Modern Laboratories</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">120</h2>
+                    <p>B.Tech Sanctioned Intake</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">95%+</h2>
+                    <p>Pass Percentage</p>
+                  </div>
+                  <div class="single-cta-item">
+                    <h2 class="single-cta-item__title">50+</h2>
+                    <p>Recruiting Companies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="rts-history rts-section-padding">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop" alt="Faculty Excellence">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Faculty Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: replace with verified faculty achievements */}
+                      <li class="si__list--single">Multiple faculty members recognised as JNTUK Ph.D. supervisors</li>
+                      <li class="si__list--single">Best Paper Awards at IEEE and Springer conferences in power and energy</li>
+                      <li class="si__list--single">Patents filed in EV charging, BLDC drives, and solar PV integration</li>
+                      <li class="si__list--single">Active MoUs with APTRANSCO, BHEL, and leading EV/renewable companies</li>
+                      <li class="si__list--single">Faculty Development Programmes hosted on Smart Grids and Power Quality</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Achievements -->
+        <section class="rts-mission rts-section-padding pt-0">
+          <div class="container">
+            <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-section rts-scholarship-description">
+                  <h4 class="rts-section-title mb--40">Student Achievements</h4>
+                  <div class="si__list">
+                    <ul class="list-unstyled" style="column-count: 1;">
+                      {/* TODO: replace with verified student achievements */}
+                      <li class="si__list--single">Consistent toppers in JNTUK university examinations</li>
+                      <li class="si__list--single">Top ranks in GATE and recruitment by PSUs such as BHEL and POWERGRID</li>
+                      <li class="si__list--single">Awards at national-level technical paper and project expos</li>
+                      <li class="si__list--single">Hackathon and SIH (Smart India Hackathon) finalists</li>
+                      <li class="si__list--single">Placements in APTRANSCO, BHEL, L&amp;T, TCS, Infosys, Wipro, HCL and more</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-11">
+                <div class="rts-history-image">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="Student Success">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Accreditation Timeline -->
+        <section class="rts__section rts-section-padding pt-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                  <h2 class="rts__section--title">Accreditation &amp; Milestones</h2>
+                  <p class="rts__section--description">Established in 1980, the Department of Electrical &amp; Electronics Engineering has consistently evolved its curriculum, infrastructure, and research orientation to align with the changing electrical industry. NBA accreditation cycles affirm the department's commitment to outcome-based education and continuous quality improvement.</p>
+                  <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                  <!-- 1980 -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">1980</a></h4>
+                        <p class="campus__life--single--description">Department of Electrical &amp; Electronics Engineering established with B.Tech programme, intake 120.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2000s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2000s</a></h4>
+                        <p class="campus__life--single--description">M.Tech Power Systems introduced; major lab modernisation in power electronics and simulation.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2010s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2010s</a></h4>
+                        <p class="campus__life--single--description">NBA accreditation cycles, growth in funded research and renewable energy initiatives.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2020s -->
+                  <div class="campus__life--single">
+                    <div class="campus__life--single--bg">
+                      <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&h=600&fit=crop" alt="">
+                    </div>
+                    <div class="campus__life--single--flex">
+                      <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="#">2020s</a></h4>
+                        <p class="campus__life--single--description">Autonomy, EV and smart-grid focus areas, industry MoUs and modernised value-added courses.</p>
+                      </div>
+                      <div class="campus__life--single--button">
+                        <a href="#"><i class="fa-sharp fa-regular fa-check"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

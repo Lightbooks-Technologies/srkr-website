@@ -1,0 +1,225 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+// TODO: replace with real CSE committee roster from srkrec.ac.in
+// DAC Committee Members
+const dacMembers = [
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. P. Kiran Sree',              role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. M. Suresh Babu',             role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. V. Chandra Sekhar',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. K. V. Ramana',               role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. K. Madhuri',                 role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. P. Srinivasa Rao',           role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. S. Naga Mallik Raj',         role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Mr. T. Ravi Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Mrs. G. Lakshmi',                role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Mr. B. Sreekanth',               role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Mr. R. Anil Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
+];
+
+// TODO: replace with real CSE committee roster from srkrec.ac.in
+// BoS Committee Members
+const bosMembers = [
+  { name: 'Dr. Bh. Rama Krishnam Raju V S',                                   role: 'Chairman\nProfessor and Head',                                                  link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. P. V. G. D. Prasad Reddy (JNTUK Nominee)',                     role: 'Member\nProfessor, Dept. of CS&SE, Andhra University',                          link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. S. Vasundra (Expert from Other University)',                   role: 'Member\nProfessor, Dept. of CSE, JNTU Anantapur',                               link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. M. Padmavathamma (Expert from Research Organization)',         role: 'Member\nProfessor, Dept. of Computer Science, SV University',                    link: '', image: 'PLACEHOLDER' },
+  { name: 'Mr. Srinivasa Rao K. (Expert from Industry)',                      role: 'Member\nSenior Architect, TCS, Hyderabad',                                       link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. K. V. Ramana',                                                 role: 'Member\nProfessor, Dept. of CSE, SRKR Engineering College',                      link: '', image: 'PLACEHOLDER' },
+];
+
+// TODO: replace with real CSE committee roster from srkrec.ac.in
+// PAQIC Committee Members
+const paqicMembers = [
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. P. Kiran Sree',              role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. M. Suresh Babu',             role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. V. Chandra Sekhar',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. K. Madhuri',                 role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. P. Srinivasa Rao',           role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. S. Naga Mallik Raj',         role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Mr. T. Ravi Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
+];
+---
+
+<style>
+  .single-cat-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cat-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .cat-title {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cat-role {
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .cat-role-text {
+    display: inline-block;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Committees | Computer Science & Engineering | SRKR" description="Department committees of the Computer Science & Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/cse/">Computer Science & Engineering</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Committees</li>
+              </ul>
+              <h2 class="section-title">Committees</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="cse" current="Committees" />
+
+        <!-- DAC Section -->
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Departmental Academic Committee (DAC)</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5 mb--80">
+          {dacMembers.map((member) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item">
+                <div class="cat-thumb" style="height: 250px;">
+                  {/* TODO: replace with real faculty photo */}
+                  <img src={`/assets/images/faculty/cse/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    {member.link ? (
+                      <a href={member.link}>{member.name}</a>
+                    ) : (
+                      <span>{member.name}</span>
+                    )}
+                  </div>
+                  <div class="cat-role">
+                    <span class="cat-role-text" style={member.role === 'Chairman' || member.role === 'Coordinator' ? 'color: var(--rt-primary); font-weight: 600;' : 'color: var(--rt-body);'}>
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- BoS Section -->
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Board of Studies (BoS)</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5 mb--80">
+          {bosMembers.map((member) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item">
+                <div class="cat-thumb" style="height: 250px;">
+                  {/* TODO: replace with real faculty photo */}
+                  <img src={`/assets/images/faculty/cse/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    {member.link ? (
+                      <a href={member.link}>{member.name}</a>
+                    ) : (
+                      <span>{member.name}</span>
+                    )}
+                  </div>
+                  <div class="cat-role">
+                    <span class="cat-role-text" style={member.role === 'Chairman' || member.role === 'Coordinator' ? 'color: var(--rt-primary); font-weight: 600;' : 'color: var(--rt-body);'}>
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- PAQIC Section -->
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Program Assessment and Quality Improvement Committee (PAQIC)</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5">
+          {paqicMembers.map((member) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item">
+                <div class="cat-thumb" style="height: 250px;">
+                  {/* TODO: replace with real faculty photo */}
+                  <img src={`/assets/images/faculty/cse/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    {member.link ? (
+                      <a href={member.link}>{member.name}</a>
+                    ) : (
+                      <span>{member.name}</span>
+                    )}
+                  </div>
+                  <div class="cat-role">
+                    <span class="cat-role-text" style={member.role === 'Chairman' || member.role === 'Coordinator' ? 'color: var(--rt-primary); font-weight: 600;' : 'color: var(--rt-body);'}>
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

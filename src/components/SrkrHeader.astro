@@ -1,4 +1,5 @@
 ---
+import { departments, DEPT_NAV_ITEMS } from '../data/departments';
 ---
 
 <style>
@@ -65,22 +66,17 @@
                       <li class="navigation__menu--item has-child has-arrow">
                         <a href="/departments" class="navigation__menu--item__link">Departments</a>
                         <ul class="submenu sub__style">
-                          <li class="has-child has-arrow">
-                            <a href="/departments/civil/">Civil Engineering</a>
-                            <ul class="sub__style">
-                              <li><a class="mobile-menu-link" href="/departments/civil/">Home</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/academic-programs/">Academic Programs</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/faculty/">Faculty</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/committees/">Committees</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/facilities/">Facilities</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/research-consultancy/">Research/Consultancy</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/achievements/">Achievements</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/placements/">Placements</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/newsletter/">Newsletter</a></li>
-                              <li><a class="mobile-menu-link" href="/departments/civil/brochure/">Brochure</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="humanities">Basic Science &amp; Humanities</a></li>
+                          {departments.map((d) => (
+                            <li class="has-child has-arrow">
+                              <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                              <ul class="sub__style">
+                                {DEPT_NAV_ITEMS.map((item) => (
+                                  <li><a class="mobile-menu-link" href={`/departments/${d.slug}/${item.path}`}>{item.label}</a></li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
+                          <li><a href="/humanities">Basic Science &amp; Humanities</a></li>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
@@ -98,22 +94,17 @@
                           <li class="has-child has-arrow">
                             <a href="/departments">Departments</a>
                             <ul class="sub__style">
-                              <li class="has-child has-arrow">
-                                <a class="mobile-menu-link" href="/departments/civil/">Civil Engineering</a>
-                                <ul class="sub__style">
-                                  <li><a class="mobile-menu-link" href="/departments/civil/">Home</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/academic-programs/">Academic Programs</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/faculty/">Faculty</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/committees/">Committees</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/facilities/">Facilities</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/research-consultancy/">Research/Consultancy</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/achievements/">Achievements</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/placements/">Placements</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/newsletter/">Newsletter</a></li>
-                                  <li><a class="mobile-menu-link" href="/departments/civil/brochure/">Brochure</a></li>
-                                </ul>
-                              </li>
-                              <li><a class="mobile-menu-link" href="humanities">Basic Science &amp; Humanities</a></li>
+                              {departments.map((d) => (
+                                <li class="has-child has-arrow">
+                                  <a class="mobile-menu-link" href={`/departments/${d.slug}/`}>{d.name}</a>
+                                  <ul class="sub__style">
+                                    {DEPT_NAV_ITEMS.map((item) => (
+                                      <li><a class="mobile-menu-link" href={`/departments/${d.slug}/${item.path}`}>{item.label}</a></li>
+                                    ))}
+                                  </ul>
+                                </li>
+                              ))}
+                              <li><a class="mobile-menu-link" href="/humanities">Basic Science &amp; Humanities</a></li>
                             </ul>
                           </li>
                           <li><a href="programmes">Programs</a></li>
@@ -160,14 +151,18 @@
                       <li class="navigation__menu--item has-child has-arrow">
                         <a href="#" class="navigation__menu--item__link">Life @ SRKR</a>
                         <ul class="submenu sub__style">
-                          <li><a href="student-clubs">Student Clubs</a></li>
-                          <li><a href="activities">Student Activities</a></li>
-                          <li><a href="sports">Sports Facilities</a></li>
-                          <li><a href="hostels">Hostels</a></li>
-                          <li><a href="transportation">Transportation</a></li>
-                          <li><a href="well-being">Well-Being</a></li>
-                          <li><a href="code-of-conduct">Code of Conduct</a></li>
+                          <li><a href="/student-clubs">Student Clubs</a></li>
+                          <li><a href="/activities">Student Activities</a></li>
+                          <li><a href="/sports">Sports Facilities</a></li>
+                          <li><a href="/hostels">Hostels</a></li>
+                          <li><a href="/transportation">Transportation</a></li>
+                          <li><a href="/well-being">Well-Being</a></li>
+                          <li><a href="/code-of-conduct">Code of Conduct</a></li>
+                          <li><a href="/sustainability">Sustainability</a></li>
                         </ul>
+                      </li>
+                      <li class="navigation__menu--item">
+                        <a href="/quick-links" class="navigation__menu--item__link">Quick Links</a>
                       </li>
                     </ul>
                   </nav>

@@ -4,12 +4,23 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-const pageTitle = "Career Guidance";
+
+const pageTitle = 'Career Guidance';
+
+const services = [
+  { icon: 'fa-light fa-file-lines',  title: 'Resume Reviews',           desc: 'Personalized resume audits, LinkedIn profile optimization and portfolio reviews.' },
+  { icon: 'fa-light fa-user-tie',    title: 'Interview Coaching',       desc: 'Mock technical, HR and behavioral interviews with structured feedback.' },
+  { icon: 'fa-light fa-graduation-cap', title: 'Higher Studies Counseling', desc: 'M.Tech, MS, MBA — university selection, SOP review and application timelines.' },
+  { icon: 'fa-light fa-handshake',   title: 'Industry Mentorship',      desc: 'One-on-one mentorship with SRKR alumni in product, services, GCC and PSU domains.' },
+  { icon: 'fa-light fa-landmark',    title: 'Govt Exam Coaching',       desc: 'UPSC, APPSC, GATE, IBPS and SSC — strategy sessions and study circles.' },
+  { icon: 'fa-light fa-lightbulb',   title: 'Entrepreneurship Support', desc: 'Startup ideation, EDC mentorship and pitch deck reviews.' },
+];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}`} />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Career counseling, resume reviews, interview coaching, higher studies and government exam guidance at SRKR Engineering College." />
   </head>
   <body>
     <SrkrHeader />
@@ -21,6 +32,7 @@ const pageTitle = "Career Guidance";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/placements">Placements</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
               <h2 class="section-title">{pageTitle}</h2>
@@ -30,16 +42,178 @@ const pageTitle = "Career Guidance";
       </div>
     </section>
 
-    <section class="pt--60 pb--60">
+    <!-- Hero + Funfact -->
+    <section class="rts-about-university pt--60 pb--40">
       <div class="container">
         <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Career Guidance</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                Whether you're targeting industry, higher studies, government services or starting up — our counselors and alumni mentors help you choose the right path.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt--30">
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">1500+</h2>
+            <p class="item-description">Counseling Sessions / Year</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">100+</h2>
+            <p class="item-description">Alumni Mentors</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">5</h2>
+            <p class="item-description">Career Pathways</p>
+          </div></div></div>
+          <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
+            <h2 style="color: var(--rt-primary); margin: 0;">45+</h2>
+            <p class="item-description">Higher-Studies Admits / Year</p>
+          </div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="rts-campus-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Services Offered</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          {services.map((s) => (
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item">
+                <div class="single-item__content">
+                  <div class="single-item__meta" style="padding: 28px;">
+                    <h5 class="item-title"><i class={s.icon}></i> &nbsp;{s.title}</h5>
+                    <p class="item-description">{s.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pathways Accordion -->
+    <section class="rts-scholarship pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Career Pathways</h3>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-12">
-            <h3>{pageTitle}</h3>
-            <p>Content coming soon.</p>
+            <div class="accordion" id="pathAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#path1">Industry — Software, GCC, Core Engineering</button></h2>
+                <div id="path1" class="accordion-collapse collapse show" data-bs-parent="#pathAccordion"><div class="accordion-body">
+                  Direct campus placements across product (Amazon, Akrivia), services (TCS, Infosys, Cognizant) and core companies (L&amp;T, NCC, Brakes India). Mock interviews and resume reviews supported through the T&amp;P Cell.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#path2">Higher Studies (M.Tech / MS / MBA)</button></h2>
+                <div id="path2" class="accordion-collapse collapse" data-bs-parent="#pathAccordion"><div class="accordion-body">
+                  GATE / GRE / GMAT / CAT preparation, university shortlisting, SOP &amp; LoR review, application timelines and funding guidance.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#path3">Government Jobs &amp; PSUs</button></h2>
+                <div id="path3" class="accordion-collapse collapse" data-bs-parent="#pathAccordion"><div class="accordion-body">
+                  UPSC ESE, GATE-PSU recruitment (BHEL, NTPC, ONGC, IOCL), APPSC, IBPS, SSC and Railway exam study circles.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#path4">Entrepreneurship</button></h2>
+                <div id="path4" class="accordion-collapse collapse" data-bs-parent="#pathAccordion"><div class="accordion-body">
+                  Entrepreneurship Development Cell (EDC), Startup Club, AICTE-IDEA Lab access, seed funding tie-ups and incubation support.
+                </div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#path5">Foreign Studies</button></h2>
+                <div id="path5" class="accordion-collapse collapse" data-bs-parent="#pathAccordion"><div class="accordion-body">
+                  US / UK / Germany / Australia / Canada — country selection, IELTS/TOEFL, GRE prep, visa &amp; scholarship guidance via alumni network.
+                </div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Resources -->
+    <div class="rts-multi-row-section pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Learning Resources</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://www.nptel.ac.in" class="program-item" target="_blank" rel="noopener"><span><strong>NPTEL</strong><br /><small>IIT-led online courses &amp; certification</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://www.coursera.org" class="program-item" target="_blank" rel="noopener"><span><strong>Coursera</strong><br /><small>Coursera for Campus licenses</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://www.linkedin.com/learning/" class="program-item" target="_blank" rel="noopener"><span><strong>LinkedIn Learning</strong><br /><small>Career-aligned courses &amp; videos</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://gate2025.iitr.ac.in" class="program-item" target="_blank" rel="noopener"><span><strong>GATE 2025</strong><br /><small>Official GATE portal &amp; study plan</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://www.ets.org/gre" class="program-item" target="_blank" rel="noopener"><span><strong>GRE Prep</strong><br /><small>Official ETS preparation hub</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="https://upsc.gov.in" class="program-item" target="_blank" rel="noopener"><span><strong>UPSC</strong><br /><small>Civil Services &amp; ESE notifications</small></span><i class="fa-regular fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counselor Contact + External Links -->
+    <section class="rts-research-section pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-research-section__content">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Counselor Contact</h3>
+              <p class="description"><strong>Mrs. K. Padmaja</strong> — Internship &amp; Career Counselor</p>
+              <p class="description"><i class="fa-regular fa-envelope"></i> <a href="mailto:careers@srkrec.ac.in">careers@srkrec.ac.in</a></p>
+              <p class="description"><i class="fa-regular fa-phone"></i> +91 9849 55 3332</p>
+              <p class="description"><i class="fa-regular fa-clock"></i> Walk-in: Monday–Friday, 2:00 PM – 5:00 PM</p>
+              <p class="description"><i class="fa-regular fa-location-dot"></i> T&amp;P Cell, Administrative Block, SRKR Engineering College</p>
+            </div>
+          </div>
+          <div class="research__text">
+            <div class="research__text--single">
+              <h3 class="rts-section-title">Quick Links</h3>
+              <div class="program-list">
+                <a href="/placements" class="program-item"><span>About Placement Cell <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/placements-team" class="program-item"><span>Placements Team <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/training" class="program-item"><span>Training Activities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="/internships" class="program-item"><span>Internship Opportunities <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="https://www.srkrexams.in" class="program-item" target="_blank" rel="noopener"><span>Examinations Portal <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TODO: add alumni mentor directory with department/role filtering */}
+    {/* TODO: add downloadable GATE/GRE/UPSC study-plan PDFs once curated */}
 
     <SrkrFooter />
     <OffCanvas />
