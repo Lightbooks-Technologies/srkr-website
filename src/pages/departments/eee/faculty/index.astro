@@ -9,29 +9,58 @@ import DeptNav from '../../../../components/DeptNav.astro';
 // TODO: replace placeholder faculty images at /assets/images/faculty/eee/<imgsrc>.jpg with real photographs.
 
 const hod = [
-  { name: 'Dr. B. Ravi Kumar Varma', designation: 'Professor & Head of Department', specialization: 'Power Systems & High Voltage Engineering', profile: '', imgsrc: 'hod' },
+   { name: 'Dr. B.R.K.Varma', designation: 'Professor & Head of Department', specialization: 'Power Systems', profile: 'https://srkrec.irins.org/profile/322259', image: '221' },
 ];
 
 const professors = [
-  { name: 'Dr. M. Venu Gopala Rao',  designation: 'Professor', specialization: 'Power Systems',           profile: '', imgsrc: 'prof-1' },
-  { name: 'Dr. K. Sreenivasa Rao',   designation: 'Professor', specialization: 'Power Electronics & Drives', profile: '', imgsrc: 'prof-2' },
-  { name: 'Dr. V. Subba Rao',        designation: 'Professor', specialization: 'Electrical Machines',     profile: '', imgsrc: 'prof-3' },
-  { name: 'Dr. P. Srinivasa Varma',  designation: 'Professor', specialization: 'Control Systems & Automation', profile: '', imgsrc: 'prof-4' },
+  { name: 'Dr. B.R.K.Varma', designation: 'Professor', specialization: 'Power Systems', profile: 'https://srkrec.irins.org/profile/322259', image: '221' },
+  { name: 'Prof. N.Srinivasu', designation: 'Professor', specialization: 'Power Systems', profile: 'https://srkrec.irins.org/profile/321889', image: '283' },
+  { name: 'Dr. M. Saiveerraju', designation: 'Professor', specialization: 'Power Systems, Power Quality', profile: 'https://srkrec.irins.org/profile/321781', image: '347' },
+  { name: 'Dr. P. Kantharao', designation: 'Professor', specialization: 'Power Systems', profile: 'https://srkrec.irins.org/profile/178381', image: '693' }
 ];
 
 const associateProfessors = [
-  { name: 'Dr. G. Naga Lakshmi',     designation: 'Associate Professor', specialization: 'Renewable Energy Systems', profile: '', imgsrc: 'assoc-1' },
-  { name: 'Dr. A. Suresh Kumar',     designation: 'Associate Professor', specialization: 'Power Systems Protection', profile: '', imgsrc: 'assoc-2' },
-  { name: 'Dr. K. Ramesh Babu',      designation: 'Associate Professor', specialization: 'Power Electronics',        profile: '', imgsrc: 'assoc-3' },
+  { name: 'Dr. G.Veeranna',          designation: 'Associate Professor', specialization: 'Power Electronics',                                              profile: 'https://srkrec.irins.org/profile/452426', image: '404' },
+  { name: 'Dr. G. Harish Kumar Varma', designation: 'Associate Professor', specialization: 'Renewables and Power Electronic Drives',                       profile: 'https://srkrec.irins.org/profile/322071', image: '881' },
+  { name: 'Dr. G Pavan Kumar',       designation: 'Associate Professor', specialization: 'Power Systems Deregulation, Automatic Generation Control, Ren',  profile: 'https://srkrec.irins.org/profile/537516', image: '395' },
+  { name: 'Dr. Md. Azahar Ahmed',    designation: 'Associate Professor', specialization: 'Automatic Generation Control with Renewables',                   profile: 'https://srkrec.irins.org/profile/540406', image: '882' },
+  { name: 'Dr. G. Kusuma',           designation: 'Associate Professor', specialization: 'Renewable Energy Sources, Microgrid, Distributed Load Flow Ana', profile: 'https://srkrec.irins.org/profile/178376', image: '1204' },
+  { name: 'Dr.G. Syamnaresh',        designation: 'Associate Professor', specialization: 'Power Electronics & Drives, Electric Vehicles',                  profile: 'https://srkrec.irins.org/profile/321332', image: '1205' },
+ 
 ];
 
 const assistantProfessors = [
-  { name: 'Sri. S. V. R. Murthy',    designation: 'Assistant Professor', specialization: 'Electrical Machines',      profile: '', imgsrc: 'asst-1' },
-  { name: 'Sri. P. Anil Kumar',      designation: 'Assistant Professor', specialization: 'Power Systems',            profile: '', imgsrc: 'asst-2' },
-  { name: 'Smt. K. Padmavathi',      designation: 'Assistant Professor', specialization: 'Control Systems',          profile: '', imgsrc: 'asst-3' },
-  { name: 'Sri. M. Naga Raju',       designation: 'Assistant Professor', specialization: 'Power Electronics & EV',   profile: '', imgsrc: 'asst-4' },
-  { name: 'Smt. B. Lakshmi Prasanna',designation: 'Assistant Professor', specialization: 'Renewable Energy',         profile: '', imgsrc: 'asst-5' },
-  { name: 'Sri. T. Sai Krishna',     designation: 'Assistant Professor', specialization: 'High Voltage Engineering', profile: '', imgsrc: 'asst-6' },
+  { name: 'Dr. Ch. Murali',           designation: 'Assistant Professor', specialization: 'Power Electronics',                                                   profile: 'https://srkrec.irins.org/profile/579063', image: '381'  },
+  { name: 'Sri K. Kiran Kumar',       designation: 'Assistant Professor', specialization: 'Power Systems',                                                        profile: 'https://srkrec.irins.org/profile/321828', image: '405'  },
+  { name: 'Dr. K.Swetha',             designation: 'Assistant Professor', specialization: 'Power Systems & Electric Vehicles',                                     profile: 'https://srkrec.irins.org/profile/321788', image: '496'  },
+  { name: 'Dr. K.S.S.Prasadraju',     designation: 'Assistant Professor', specialization: 'Power Electronics',                                                    profile: 'https://srkrec.irins.org/profile/321461', image: '529'  },
+  { name: 'Dr. I.Swetha Monica',      designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                            profile: 'https://srkrec.irins.org/profile/322128', image: '567'  },
+  { name: 'Dr. A.Kumarraja',          designation: 'Assistant Professor', specialization: 'Power System Relaying, Smart Grid Protection, Power Quality',           profile: 'https://srkrec.irins.org/profile/321155', image: '593'  },
+  { name: 'Sri V.Srinivas',           designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                            profile: 'https://srkrec.irins.org/profile/538014', image: '653'  },
+  { name: 'Sri Y.Bhanuchandar',       designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                            profile: 'https://srkrec.irins.org/profile/538001', image: '655'  },
+  { name: 'Dr. Sk.Nazeer',            designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                            profile: 'https://srkrec.irins.org/profile/579045', image: '652'  },
+  { name: 'Dr. N.V.A.Bhavani',        designation: 'Assistant Professor', specialization: 'Power Electronics, Power Systems',                                      profile: 'https://srkrec.irins.org/profile/321816', image: '654'  },
+  { name: 'Sri B.Venkata Krishna',    designation: 'Assistant Professor', specialization: 'Distributed Generation',                                               profile: 'https://srkrec.irins.org/profile/321852', image: '683'  },
+  { name: 'Dr. D.A.K.Rao',            designation: 'Assistant Professor', specialization: 'Power Quality in Renewable Energy Systems',                             profile: 'https://srkrec.irins.org/profile/537866', image: '691'  },
+  { name: 'Sri S.Rajasekhar Reddy',   designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                            profile: 'https://srkrec.irins.org/profile/579110', image: '692'  },
+  { name: 'Dr B S S Santosh',         designation: 'Assistant Professor', specialization: 'Solar Energy',                                                         profile: 'https://srkrec.irins.org/profile/321750', image: '699'  },
+  { name: 'Dr. P.Jagadeesh',          designation: 'Assistant Professor', specialization: 'Microgrids & Energy Management',                                        profile: 'https://srkrec.irins.org/profile/245971', image: '874'  },
+  { name: 'Dr. Ch.Durga Prasad',      designation: 'Assistant Professor', specialization: 'Power System Protection, AGC, Soft Computing Applications in P',        profile: 'https://srkrec.irins.org/profile/579003', image: '941'  },
+  { name: 'Sri M.E.C.Vidyasagar',     designation: 'Assistant Professor', specialization: 'Power Systems',                                                        profile: 'https://srkrec.irins.org/profile/321469', image: '965'  },
+  { name: 'Sri P.Sailesh Babu',       designation: 'Assistant Professor', specialization: 'Power Systems',                                                        profile: 'https://srkrec.irins.org/profile/536930', image: '967'  },
+  { name: 'Sri E.Suresh',             designation: 'Assistant Professor', specialization: 'Power Quality, AI Techniques Applied to Power Systems',                 profile: 'https://srkrec.irins.org/profile/536931', image: '970'  },
+  { name: 'Smt Bh.Sudharani',         designation: 'Assistant Professor', specialization: 'Microgrids Operation & Control',                                       profile: 'https://srkrec.irins.org/profile/321129', image: '986'  },
+  { name: 'Sri A.Hemanth Kumar Raju', designation: 'Assistant Professor', specialization: 'Renewables, Multilevel Inverters, Power Electronic Drives',             profile: 'https://srkrec.irins.org/profile/321352', image: '1046' },
+  { name: 'Sri K.Pavan Kumar',        designation: 'Assistant Professor', specialization: 'Control Systems, Machine Learning, IoT, EV Automation Aspects',        profile: 'https://srkrec.irins.org/profile/579147', image: '1075' },
+  { name: 'Sri P.S.P.R.Swamy',        designation: 'Assistant Professor', specialization: 'Power Systems',                                                        profile: 'https://srkrec.irins.org/profile/541679', image: '1087' },
+  { name: 'Sri D.Rajesh',             designation: 'Assistant Professor', specialization: 'Power Systems, Wind Power Generation',                                  profile: 'https://srkrec.irins.org/profile/321644', image: '1176' },
+  { name: 'Ms. A M S V Sushma',       designation: 'Assistant Professor', specialization: 'Renewable Energy Sources, Power System Protection',                    profile: 'https://srkrec.irins.org/profile/321834', image: '1183' },
+  { name: 'Sri. Y V V S Narayana',    designation: 'Assistant Professor', specialization: 'Microgrids, Power Electronics & Drives, EV, IoT, Data Science & A',    profile: 'https://srkrec.irins.org/profile/548736', image: '1185' },
+  { name: 'Smt. P.Udaya Bhanu',       designation: 'Assistant Professor', specialization: 'Power Systems & Automation, Renewable Energy Sources, Power',          profile: 'https://srkrec.irins.org/profile/321250', image: '1184' },
+  { name: 'Sri. I Kranthi Kumar',     designation: 'Assistant Professor', specialization: 'Power Electronics',                                                    profile: 'https://srkrec.irins.org/profile/548413', image: '1195' },
+  { name: 'Sri. B.Eswar Rao',         designation: 'Assistant Professor', specialization: 'Renewable Energy Sources, Power Systems',                              profile: 'https://srkrec.irins.org/profile/321643', image: '1209' },
+  { name: 'Smt. J.S.S.L.Bharani',     designation: 'Assistant Professor', specialization: 'Power Systems & Automation',                                           profile: 'https://srkrec.irins.org/profile/553424', image: '1345' }
+
 ];
 ---
 
@@ -76,7 +105,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real HoD photograph */}
-                    <img src={`/assets/images/faculty/eee/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/eee/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -103,7 +132,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real faculty photograph */}
-                    <img src={`/assets/images/faculty/eee/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/eee/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -130,7 +159,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real faculty photograph */}
-                    <img src={`/assets/images/faculty/eee/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/eee/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -157,7 +186,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real faculty photograph */}
-                    <img src={`/assets/images/faculty/eee/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/eee/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>

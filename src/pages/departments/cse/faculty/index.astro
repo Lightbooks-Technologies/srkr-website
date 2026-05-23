@@ -8,32 +8,108 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
 // TODO: replace with real CSE faculty roster from srkrec.ac.in
 const hod = [
-  { name: 'Dr. Bh. Rama Krishnam Raju V S', designation: 'Professor & Head of Department', specialization: 'Software Engineering & Data Mining', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/178533', imgsrc: '222' },
 ];
 
 // TODO: replace with real CSE faculty roster from srkrec.ac.in
 const professors = [
-  { name: 'Dr. P. Kiran Sree',         designation: 'Professor', specialization: 'Soft Computing & Bioinformatics', profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. M. Suresh Babu',        designation: 'Professor', specialization: 'Data Mining & Machine Learning',   profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. V. Chandra Sekhar',     designation: 'Professor', specialization: 'Computer Networks & Distributed Systems', profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. K. V. Ramana',          designation: 'Professor', specialization: 'Cyber Security & Cryptography',    profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/178533', imgsrc: '222' },
+  { name: 'Dr. K.RamPrasad Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/705039', imgsrc: '159' },
+  { name: 'Dr. M.S.V.S.B.Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/705041', imgsrc: '504' },
+  { name: 'Dr. K.V.Krishnam Raju', designation: 'Professor', specialization: 'Security in Data Engineering', profile: 'https://srkrec.irins.org/profile/407012', imgsrc: '354' },
+  { name: 'Dr. G.Mahesh', designation: 'Professor', specialization: 'Data science, Content Delivery Networks', profile: 'https://srkrec.irins.org/profile/406269', imgsrc: '376' },
+  { name: 'Dr. V.Chandra Sekhar', designation: 'Professor', specialization: 'Data Science, Machine Learning, Bigdata analytics', profile: 'https://srkrec.irins.org/profile/176536', imgsrc: '484' },
+ 
 ];
 
 // TODO: replace with real CSE faculty roster from srkrec.ac.in
 const associateProfessors = [
-  { name: 'Dr. K. Madhuri',            designation: 'Associate Professor', specialization: 'Artificial Intelligence & Machine Learning', profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. P. Srinivasa Rao',      designation: 'Associate Professor', specialization: 'Cloud Computing & DevOps',                    profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Dr. S. Naga Mallik Raj',    designation: 'Associate Professor', specialization: 'Internet of Things',                          profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. R N V Jagan Mohan', designation: 'Associate Professor', specialization: 'Image Processing, Machine Learning, Digital Twin', profile: 'https://srkrec.irins.org/profile/180096', image: '1072' },
+  { name: 'Dr. G N V G Sirisha', designation: 'Associate Professor', specialization: 'Data Science, Machine Learning, Deep Learning, Information Retrieval, Data Mining', profile: 'https://srkrec.irins.org/profile/410127', image: '375' },
+  { name: 'Dr. P Bharat Siva Varma', designation: 'Associate Professor', specialization: 'Information retrieval, data mining, machine learning', profile: 'https://srkrec.irins.org/profile/411009', image: '580' },
+  { name: 'Dr. M.Srihari Varma', designation: 'Associate Professor', specialization: 'Data Mining ,Machine Learning ,Image Processing, Cybersecurity', profile: 'https://srkrec.irins.org/profile/411103', image: '610' },
+  { name: 'Dr. V MNSSVKR Gupta', designation: 'Associate Professor', specialization: 'Data Mining, Machine Learning, Bio-Informatics', profile: 'https://srkrec.irins.org/profile/353573', image: '538' },
+  { name: 'Dr. K Aruna Kumari', designation: 'Associate Professor', specialization: 'Cloud Computing, Databases', profile: 'https://srkrec.irins.org/profile/406515', image: '499' },
+  { name: 'Dr. K.V. Nagendra', designation: 'Associate Professor', specialization: 'Machine Learning, Data Mining,Deep Learning', profile: 'https://srkrec.irins.org/profile/375325', image: '1403' },
+  { name: 'Dr. D N S B Kavitha', designation: 'Associate Professor', specialization: 'Data Mining,Machine Learning', profile: 'https://srkrec.irins.org/profile/410718', image: '1155' },
+  { name: 'Dr. J.Rajani Kanth', designation: 'Associate Professor', specialization: 'Spatial data mining', profile: 'https://srkrec.irins.org/profile/411089', image: '452' },
+  { name: 'Dr. R.Shiva Shankar', designation: 'Associate Professor', specialization: 'Data Mining,Medical Mining, Machine Learning, Deep Learning, Image Processing, Edge Computing', profile: 'https://srkrec.irins.org/profile/349042', image: '537' },
+
 ];
 
 // TODO: replace with real CSE faculty roster from srkrec.ac.in
 const assistantProfessors = [
-  { name: 'Mr. K. Hemanth',            designation: 'Assistant Professor', specialization: 'Web Technologies',           profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mrs. G. Lakshmi',           designation: 'Assistant Professor', specialization: 'Database Systems',           profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mr. T. Ravi Kumar',         designation: 'Assistant Professor', specialization: 'Software Engineering',       profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mrs. Y. Padma',             designation: 'Assistant Professor', specialization: 'Computer Networks',          profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mr. B. Sreekanth',          designation: 'Assistant Professor', specialization: 'Artificial Intelligence & ML', profile: '', imgsrc: 'PLACEHOLDER' },
-  { name: 'Mr. R. Anil Kumar',         designation: 'Assistant Professor', specialization: 'Cyber Security',             profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Smt. V.Priya Darshini', designation: 'Assistant Professor', specialization: 'EDGE COMPUTING, MACHINE LEARNING', profile: 'https://srkrec.irins.org/profile/406531', image: '437' },
+  { name: 'Smt. P.Neelima', designation: 'Assistant Professor', specialization: 'cloud, edge computing', profile: 'https://srkrec.irins.org/profile/406532', image: '482' },
+  { name: 'Sri. K V S S R Murthy', designation: 'Assistant Professor', specialization: 'Data Mining & ML', profile: 'https://srkrec.irins.org/profile/411111', image: '524' },
+  { name: 'Sri T.V.K.P.Prasad', designation: 'Assistant Professor', specialization: 'Artificial intelligence', profile: 'https://vidwan.inflibnet.ac.in/profile/411522', image: '320' },
+  { name: 'Smt. D.Hema Latha', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/407870', image: '587' },
+  { name: 'Sri. BNV Narasimha Raju', designation: 'Assistant Professor', specialization: 'Information Retrieval', profile: 'https://srkrec.irins.org/profile/406519', image: '590' },
+  { name: 'Smt. K Sravani', designation: 'Assistant Professor', specialization: 'Data Mining MachineA Learning', profile: 'https://srkrec.irins.org/profile/406535', image: '605' },
+  { name: 'Sri. V.Dilip Kumar', designation: 'Assistant Professor', specialization: 'Deep Learning Cryptography and Network Security', profile: 'https://srkrec.irins.org/profile/542295', image: '606' },
+  { name: 'Smt. M.Jeevana Sujitha', designation: 'Assistant Professor', specialization: 'Software Engineering and machine learning', profile: 'https://srkrec.irins.org/profile/410689', image: '607' },
+  { name: 'Smt A.L.Lavanya', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://srkrec.irins.org/profile/407571', image: '609' },
+  { name: 'Sri. T.Srinivasa Rao', designation: 'Assistant Professor', specialization: 'Data mining, Machine learning, Deep learning', profile: 'https://srkrec.irins.org/profile/539750', image: '632' },
+  { name: 'Sri. Ch.Vinod Varma', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://srkrec.irins.org/profile/410724', image: '818' },
+  { name: 'Sri. L.V.Srinivas', designation: 'Assistant Professor', specialization: 'Machine Learning,Deep Learning,Edge Computing', profile: 'https://srkrec.irins.org/profile/411356', image: '966' },
+  { name: 'Smt. V Anjani Kranthi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/407776', image: '952' },
+  { name: 'Miss. M Janaki Devi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/410678', image: '973' },
+  { name: 'Sri. Ch Rami Naidu', designation: 'Assistant Professor', specialization: 'Machine Learning, Image Processing', profile: 'https://srkrec.irins.org/profile/407496', image: '978' },
+  { name: 'Smt.P.Saroja', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://srkrec.irins.org/profile/411002', image: '1052' },
+  { name: 'Smt. K.V.N.Valli', designation: 'Assistant Professor', specialization: 'Machine learning,Cloud computing,DS,DAA', profile: 'https://srkrec.irins.org/profile/406547', image: '1153' },
+  { name: 'Smt. P.Jahnavi', designation: 'Assistant Professor', specialization: 'Artificial intelligence ,Machina Learning', profile: 'https://srkrec.irins.org/profile/407495', image: '1151' },
+  { name: 'Smt. B Mounika', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/407516', image: '1152' },
+  { name: 'Sri. DS Phandira Varma', designation: 'Assistant Professor', specialization: 'Image Processing', profile: 'https://srkrec.irins.org/profile/320399', image: '850' },
+  { name: 'Sri. M Kishore Varma', designation: 'Assistant Professor', specialization: 'Artificial Intelligence, Machine Learning and IoT', profile: 'https://srkrec.irins.org/profile/508777', image: '1220' },
+  { name: 'Dr. KDV Pavan Kumar', designation: 'Assistant Professor', specialization: 'Machine Learning , Image Processing', profile: 'https://srkrec.irins.org/profile/406923', image: '867' },
+  { name: 'Smt. K Durga Bhavani', designation: 'Assistant Professor', specialization: 'Computer Networks, Machine Learning', profile: 'https://srkrec.irins.org/profile/406980', image: '1093' },
+  { name: 'Sri. K Hari Krishna', designation: 'Assistant Professor', specialization: 'Artificial Intelligence, Machine Learning', profile: 'https://srkrec.irins.org/profile/410700', image: '1099' },
+  { name: 'Sri. K Gopala Varma', designation: 'Assistant Professor', specialization: 'Big data, Machine learning', profile: 'https://srkrec.irins.org/profile/410698', image: '1174' },
+  { name: 'Smt. A Neelima', designation: 'Assistant Professor', specialization: 'Machine Learning, Image processing', profile: 'https://srkrec.irins.org/profile/655371', image: '1100' },
+  { name: 'Smt. MS Suseela', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/407786', image: '1129' },
+  { name: 'Sri. Ch Raghuram', designation: 'Assistant Professor', specialization: 'Machine Learning, Image processing', profile: 'https://srkrec.irins.org/profile/410126', image: '1133' },
+  { name: 'Dr. Ch Ravi Swaroop', designation: 'Assistant Professor', specialization: 'Data Mining & Machine Learning', profile: 'https://srkrec.irins.org/profile/406091', image: '1138' },
+  { name: 'Sri. D VSRK Raju', designation: 'Assistant Professor', specialization: 'Internet of Things and Cloud computing', profile: 'https://srkrec.irins.org/profile/537833', image: '1178' },
+  { name: 'Miss. Ch. Suma', designation: 'Assistant Professor', specialization: 'Data Mining, Machine Learning', profile: 'https://srkrec.irins.org/profile/408425', image: '1191' },
+  { name: 'Smt. R Leela Jyothi', designation: 'Assistant Professor', specialization: 'IoT', profile: 'https://srkrec.irins.org/profile/579007', image: '1192' },
+  { name: 'Sri. S Suresh Kumar', designation: 'Assistant Professor', specialization: 'Machine Learning, Computer Security, IoT', profile: 'https://srkrec.irins.org/profile/406097', image: '1194' },
+  { name: 'Sri. K P Sai Rama Krishna', designation: 'Assistant Professor', specialization: 'Deep Learning, Mining unstructured data, Data Mining, Image Processing.', profile: 'https://srkrec.irins.org/profile/579074', image: '1304' },
+  { name: 'Miss. G Bhanu Priyanka', designation: 'Assistant Professor', specialization: 'Data Structure, Mobile Computing', profile: 'https://srkrec.irins.org/profile/411365', image: '1320' },
+  { name: 'Miss. L Padma', designation: 'Assistant Professor', specialization: 'Data Structure, Machine Learning', profile: 'https://srkrec.irins.org/profile/411357', image: '1319' },
+  { name: 'Sri. M V V S Subrahmanyam', designation: 'Assistant Professor', specialization: 'Machine learning and Network Security', profile: 'https://srkrec.irins.org/profile/407117', image: '1351' },
+  { name: 'Smt. K.V.Mounika', designation: 'Assistant Professor', specialization: 'CSE', profile: 'https://srkrec.irins.org/profile/406851', image: '1350' },
+  { name: 'Sri. K David Raju', designation: 'Assistant Professor', specialization: 'Artificial Intelligence and Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/406538', image: '1355' },
+  { name: 'Sri. J V Ramkumar', designation: 'Assistant Professor', specialization: 'CRYPTOGRAPHY & NETWORK SECURITY, CLOUD COMPUTING', profile: 'https://srkrec.irins.org/profile/406513', image: '1362' },
+  { name: 'Sri. D Srikar', designation: 'Assistant Professor', specialization: 'Cloud Computing ,Computer Networks', profile: 'https://srkrec.irins.org/profile/406528', image: '1361' },
+  { name: 'Sri. G Padma Rao', designation: 'Assistant Professor', specialization: 'Cloud Computing', profile: 'https://srkrec.irins.org/profile/406537', image: '1363' },
+  { name: 'Smt. T Rama Tulasi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/579070', image: '1368' },
+  { name: 'Smt. K Raja Rajeswari', designation: 'Assistant Professor', specialization: 'cloud computing', profile: 'https://srkrec.irins.org/profile/579068', image: '1384' },
+  { name: 'Smt. P Sandhya', designation: 'Assistant Professor', specialization: 'Machine Learning, Cyber Security', profile: 'https://srkrec.irins.org/profile/541971', image: '1380' },
+  { name: 'Smt. B Rekha Madhavi', designation: 'Assistant Professor', specialization: 'Data Mining and MachineA Learning', profile: 'https://srkrec.irins.org/profile/581598', image: '1378' },
+  { name: 'Smt. D Vasavi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/541967', image: '1385' },
+  { name: 'Sri. B. Radha Krishna', designation: 'Assistant Professor', specialization: 'Machine Learning & Deep Learning', profile: 'https://srkrec.irins.org/profile/581537', image: '1381' },
+  { name: 'Smt. K. Amrutha', designation: 'Assistant Professor', specialization: 'Machine learning,Data Mining,Deep learning', profile: 'https://srkrec.irins.org/profile/579022', image: '1393' },
+  { name: 'Smt. M. Sahaja', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://srkrec.irins.org/profile/581364', image: '1395' },
+  { name: 'Smt. M. Prasanna Kumari', designation: 'Assistant Professor', specialization: 'Artificial Intelligence', profile: 'https://vidwan.inflibnet.ac.in/profile/656496', image: '1402' },
+  { name: 'Sri. V. Ajay Kumar', designation: 'Assistant Professor', specialization: 'Cyber Security Using Machine Learning', profile: 'https://srkrec.irins.org/profile/656369', image: '1406' },
+  { name: 'Sri. P. Durga Prasad', designation: 'Assistant Professor', specialization: 'Data Mining and Machine Learning', profile: 'https://srkrec.irins.org/profile/656371', image: '1405' },
+  { name: 'Sri. Shaik Yacoob', designation: 'Assistant Professor', specialization: 'Information Security, Machine Learning', profile: 'https://srkrec.irins.org/profile/656370', image: '1407' },
+  { name: 'Smt. G. Prasanthi', designation: 'Assistant Professor', specialization: 'Software Engineering, Machine Learning & Deep Learning.', profile: 'https://vidwan.inflibnet.ac.in/profile/702592', image: '1473' },
+  { name: 'Sri. MVV Krishna', designation: 'Assistant Professor', specialization: 'Computer Science, Embedded Systems', profile: 'https://vidwan.inflibnet.ac.in/profile/404498', image: '1475' },
+  { name: 'Smt. D.Haritha Priya', designation: 'Assistant Professor', specialization: 'Business Intelligence', profile: 'https://srkrec.irins.org/profile/656621', image: '1477' },
+  { name: 'Smt. G. Anusha', designation: 'Assistant Professor', specialization: 'Bigdata Analytics and Machine Learning', profile: 'https://srkrec.irins.org/profile/656378', image: '1482' },
+  { name: 'Smt. D. Sravani', designation: 'Assistant Professor', specialization: 'Computer Science & Technology', profile: 'https://srkrec.irins.org/profile/656376', image: '1400' },
+  { name: 'Smt. P. Lavanya', designation: 'Assistant Professor', specialization: 'Network Programming, Internet of things', profile: 'https://srkrec.irins.org/profile/656626', image: '609' },
+  { name: 'Smt. N. Naga Soudhamani', designation: 'Assistant Professor', specialization: 'Machine Learning and Deep Learning', profile: 'https://srkrec.irins.org/profile/656397', image: '1485' },
+  { name: 'Miss. Bh. Nandita Lakshmi', designation: 'Assistant Professor', specialization: 'Cloud Computing, Machine Learning and Deep Learning', profile: 'https://srkrec.irins.org/profile/656433', image: '1484' },
+  { name: 'Smt. A. Hima Bala Padmini', designation: 'Assistant Professor', specialization: 'Machine Learning and Deep Learning, AI, GenAI, Cloud Computing, IoT', profile: '', image: '1486' },
+  { name: 'Smt. S. Ravali', designation: 'Assistant Professor', specialization: 'Data Structures and Machine Learning', profile: 'https://srkrec.irins.org/profile/656581', image: '1492' },
+  { name: 'Miss. K.V.Rishitha', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://srkrec.irins.org/profile/656468', image: '1490' },
+  { name: 'Miss. M. Pragna Sri', designation: 'Assistant Professor', specialization: 'Cloud Computing and AI', profile: 'https://srkrec.irins.org/profile/656546', image: '1491' },
+  { name: 'Smt. S.M.V. Sirisha', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/656673', image: '1489' },
+  { name: 'Sri. D. Sai Ganesh', designation: 'Assistant Professor', specialization: 'Machine Learning, Cyber Security', profile: 'https://srkrec.irins.org/profile/656830', image: '1493' },
+  { name: 'Sri. V. Srinivas', designation: 'Assistant Professor', specialization: 'Cloud Computing, Cyber Security, Artificial Intelligence', profile: 'https://vidwan.inflibnet.ac.in/profile/702578', image: '1496' }
+
 ];
 ---
 
@@ -132,7 +208,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -159,7 +235,7 @@ const assistantProfessors = [
                 <div class="single-staff__content">
                   <div class="staf-image">
                     {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
