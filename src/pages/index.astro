@@ -1,1007 +1,1260 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import SrkrHeader from '../components/SrkrHeader.astro';
+import SrkrFooter from '../components/SrkrFooter.astro';
 import FooterScripts from '../components/FooterScripts.astro';
 import OffCanvas from '../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import SrkrHeader from '../components/SrkrHeader.astro';
-import SrkrFooter from '../components/SrkrFooter.astro';
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="page">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="page">
+		<SrkrHeader />
 
-    <SrkrHeader />
-
-    <!-- ── NEWS TICKER ─────────────────────────────────────────── -->
-    <div class="srkr-ticker">
-      <span class="srkr-ticker__label">What's New</span>
-      <div class="srkr-ticker__track">
-        <div class="srkr-ticker__inner">
-          <span>Campus Placements 2025: Amazon SDE — 17.16 LPA (1 Offer) &nbsp;|&nbsp; TCS Ninja — 3.36 LPA &nbsp;|&nbsp; Infosys — 3.25 LPA &nbsp;|&nbsp; Capgemini — 4.75 LPA &nbsp;|&nbsp; Wipro — 3.5 LPA &nbsp;|&nbsp; Amaravati Quantum Valley Hackathon 2025 Semi-Finals Successfully Organised &nbsp;|&nbsp; NAAC A++ Accredited | NBA Accredited — B.Tech CSE, ECE, Civil, EEE, IT, ME &nbsp;|&nbsp; Admissions Open 2025–26 &nbsp;|&nbsp;</span>
-          <span aria-hidden="true">Campus Placements 2025: Amazon SDE — 17.16 LPA (1 Offer) &nbsp;|&nbsp; TCS Ninja — 3.36 LPA &nbsp;|&nbsp; Infosys — 3.25 LPA &nbsp;|&nbsp; Capgemini — 4.75 LPA &nbsp;|&nbsp; Wipro — 3.5 LPA &nbsp;|&nbsp; Amaravati Quantum Valley Hackathon 2025 Semi-Finals Successfully Organised &nbsp;|&nbsp; NAAC A++ Accredited | NBA Accredited — B.Tech CSE, ECE, Civil, EEE, IT, ME &nbsp;|&nbsp; Admissions Open 2025–26 &nbsp;|&nbsp;</span>
-        </div>
-      </div>
-    </div>
-    <!-- ── NEWS TICKER END ──────────────────────────────────────── -->
-
-    <!-- header banner -->
-    <div class="banner v__2">
-        <div class="banner__wrapper">
-            <div class="swiper  swiper-data" data-swiper='{
-                        "slidesPerView":1,
-                        "effect": "fade",
-                        "loop": true,
-                        "speed": 1000,
-                        "autoplay":{
-                            "delay":"7000"
-                }}'>
-                <div class="swiper-wrapper">
-                    <!-- single slides -->
-                    <div class="swiper-slide">
-                        <div class="banner__wrapper--bg" style="background-image: url(assets/images/banner/01.jpg);">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="banner__slides--container banner__height">
-                                            <div class="banner__slides--content">
-                                                <div class="banner__slides--content--sub">
-                                                    <img src="assets/images/icon/e-cap.svg" alt="cap"> knowledge meets
-                                                    innovation
-                                                </div>
-                                                <h1 class="banner__slides--content--title">
-                                                    Unleashing Potential
-                                                    Fostering Excellence
-                                                </h1>
-                                                <a href="program-single.html" class="rts-theme-btn btn-arrow">View Our Program
-                                                    <span><i class="fa-regular fa-arrow-right"></i></span>
-                                                </a>
+        <!-- header banner -->
+        <div class="banner v__2">
+            <div class="banner__wrapper">
+                <div class="swiper  swiper-data" data-swiper='{
+                            "slidesPerView":1,
+                            "effect": "fade",
+                            "loop": true,
+                            "speed": 1000,
+                            "autoplay":{
+                                "delay":"7000"
+                    }}'>
+                    <div class="swiper-wrapper">
+                        <!-- single slides -->
+                        <div class="swiper-slide">
+                            <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/nba.png);">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="banner__slides--container banner__height">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- single slides end -->
-                    <!-- single slides -->
-                    <div class="swiper-slide">
-                        <div class="banner__wrapper--bg" style="background-image: url(assets/images/banner/02.jpg);">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="banner__slides--container banner__height">
-                                            <div class="banner__slides--content">
-                                                <div class="banner__slides--content--sub">
-                                                    <img src="assets/images/icon/e-cap.svg" alt="cap"> knowledge meets
-                                                    innovation
-                                                </div>
-                                                <h1 class="banner__slides--content--title">
-                                                    Unleashing Potential
-                                                    Fostering Excellence
-                                                </h1>
-                                                <a href="program-single.html" class="rts-theme-btn btn-arrow">View Our Program
-                                                    <span><i class="fa-regular fa-arrow-right"></i></span>
-                                                </a>
+                        <!-- single slides end -->
+                        <!-- single slides -->
+                        <div class="swiper-slide">
+                            <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/naac.png);">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="banner__slides--container banner__height">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- single slides end -->
+                         <!-- single slides -->
+                        <div class="swiper-slide">
+                            <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/placements.png);">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="banner__slides--container banner__height">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single slides end -->
+                         <!-- single slides -->
+                        <div class="swiper-slide">
+                            <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/research.png);">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="banner__slides--container banner__height">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single slides end -->
                     </div>
-                    <!-- single slides end -->
                 </div>
-            </div>
-            <div class="banner__slides--navigation">
-                <div class="banner__slides--navigation--single">
-                    <h5 class="nav__title">Undergraduate</h5>
-                    <a href="academic.html" class="nav__description">Browse the undergraduate
-                        degrees</a>
-                </div>
-                <div class="banner__slides--navigation--single">
-                    <h5 class="nav__title">Graduate</h5>
-                    <a href="academic.html" class="nav__description">Browse the graduate degrees</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- header banner end -->
-
-    <!-- ── HERO BANNER ─────────────────────────────────────────── -->
-    <div class="banner v__1">
-      <div class="container">
-        <div class="col-sm-12">
-          <div class="banner__wrapper">
-            <div class="banner__wrapper--left">
-              <img src="/assets/images/banner/image__1.jpg" alt="">
-            </div>
-            <div class="banner__wrapper--middle">
-              <div class="banner__content">
-                <h6 class="banner__content--sub">
-                  <img src="/assets/images/icon/e-cap.svg" alt="cap"> Where Innovation Meets Excellence
-                </h6>
-                <h1 class="banner__content--title">
-                  SRKR Engineering
-                  <span>College</span>
-                </h1>
-                <div class="banner__content--circle rts__circle v__2">
-                  <svg class="spinner" viewBox="0 0 100 100">
-                    <defs>
-                      <path id="circle" d="M50,50 m-37,0a37,37 0 1,1 74,0a37,37 0 1,1 -74,0"></path>
-                    </defs>
-                    <text>
-                      <textPath xlink:href="#circle">SRKR Engineering * Estd. 1980 * Innovate * Inspire *</textPath>
-                    </text>
-                  </svg>
-                  <div class="rts__circle--icon save-from-hidden">
-                    <a href="https://www.youtube.com/watch?v=mMejQJX731k" class="video-play rts-video-btn popup-video">
-                      <i class="fa-sharp fa-solid fa-play"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="banner__content--description">
-                  <p>Explore a future where knowledge fuels innovation. SRKR Engineering College empowers students to excel globally.</p>
-                  <a href="programmes" class="rts-theme-btn btn-arrow">Explore Programs
-                    <span><i class="fa-regular fa-arrow-right"></i></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="banner__wrapper--right">
-              <img src="/assets/images/banner/image__2.jpg" alt="banner right">
-            </div>
-          </div>
-          <div class="banner__wrapper--shape">
-            <img src="/assets/images/banner/banner-svg.svg" alt="banner">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ── HERO BANNER END ─────────────────────────────────────── -->
-
-    <!-- ── QUICK LINKS BAR ─────────────────────────────────────── -->
-    <div class="srkr-quicklinks">
-      <div class="container">
-        <div class="srkr-quicklinks__inner">
-          <a href="https://webmail.srkrec.edu.in" target="_blank" class="srkr-quicklinks__item">
-            <i class="fa-light fa-envelope"></i> SRKREC Web Mail
-          </a>
-          <a href="https://www.srkrexams.in" target="_blank" class="srkr-quicklinks__item">
-            <i class="fa-light fa-file-pen"></i> Examinations
-          </a>
-          <a href="prominent-alumni" class="srkr-quicklinks__item">
-            <i class="fa-light fa-users"></i> Alumni Association
-          </a>
-          <a href="https://www.naac.gov.in" target="_blank" class="srkr-quicklinks__item">
-            <i class="fa-light fa-certificate"></i> Education Verification
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- ── QUICK LINKS BAR END ─────────────────────────────────── -->
-
-    <!-- ── ABOUT ───────────────────────────────────────────────── -->
-    <section class="about rts__padding--120-100 v__1">
-      <div class="container">
-        <div class="row justify-content-md-center align-items-center">
-          <div class="col-lg-6 col-md-10">
-            <div class="about__images">
-              <div class="about__images--wrapper">
-                <div class="about__images--wrapper--left">
-                  <img src="/assets/images/about/about__h1.png" alt="">
-                </div>
-                <div class="about__images--wrapper--center">
-                  <div class="rts__circle v__1">
-                    <svg class="spinner" viewBox="0 0 100 100">
-                      <defs>
-                        <path id="circle-2" d="M50,50 m-37,0a37,37 0 1,1 74,0a37,37 0 1,1 -74,0"></path>
-                      </defs>
-                      <text>
-                        <textPath xlink:href="#circle-2">SRKR Engineering * Estd. 1980 * Innovate * Inspire *</textPath>
-                      </text>
-                    </svg>
-                    <div class="rts__circle--icon">
-                      <i class="fa-light fa-arrow-right"></i>
+                <!-- <div class="banner__slides--navigation">
+                    <div class="banner__slides--navigation--single">
+                        <h5 class="nav__title">Undergraduate</h5>
+                        <a href="programmes" class="nav__description">Browse B.Tech programs</a>
                     </div>
-                  </div>
-                </div>
-                <div class="about__images--wrapper--right">
-                  <img src="/assets/images/about/about__h2.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-10">
-            <div class="about__content">
-              <h2 class="rts__title">About SRKR Engineering College</h2>
-              <p class="rts__description">Founded in 1980, SRKR Engineering College is one of the finest self-financing engineering institutions in Andhra Pradesh — NAAC A++ accredited, NBA accredited across six programmes, and recognised as a Scientific and Industrial Research Organisation (SIRO) by DSIR. Spread over 30 acres, the campus combines world-class facilities with a legacy of shaping industry-ready engineers.</p>
-              <div class="stroke__text v__1">EST. 1980</div>
-              <a href="college-profile" class="rts-nbg-btn btn-arrow">College Overview
-                <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ── ABOUT END ──────────────────────────────────────────── -->
-
-    <!-- ── UG PROGRAMS (department grid) ──────────────────────── -->
-    <section class="rts__section rts__light rts-section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="rts__section--wrapper">
-            <h4 class="rts__section--title">Programs</h4>
-            <div class="rts__section--link">
-              <a href="programmes" class="rts-nbg-btn btn-arrow">View All Programs<span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="row g-4">
-
-          <!-- Row 1 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=320&fit=crop" alt="Computer Science & Engineering">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Computer Science &amp; Engineering</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=320&fit=crop" alt="Artificial Intelligence & ML">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Artificial Intelligence &amp; ML</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=320&fit=crop" alt="AI & Data Science">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">AI &amp; Data Science</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=320&fit=crop" alt="Electronics & Communication">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Electronics &amp; Communication</a></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=320&fit=crop" alt="Electrical & Electronics">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Electrical &amp; Electronics</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=320&fit=crop" alt="Mechanical Engineering">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Mechanical Engineering</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=320&fit=crop" alt="Civil Engineering">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="/departments/civil/">Civil Engineering</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=320&fit=crop" alt="Information Technology">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Information Technology</a></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=320&fit=crop" alt="Computer Science & Design">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Computer Science &amp; Design</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=320&fit=crop" alt="CSE IoT & Cyber Security">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">CSE (IoT &amp; Cyber Security)</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=320&fit=crop" alt="Computer Science & IT">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">Computer Science &amp; IT</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=320&fit=crop" alt="CS & Business Systems">
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title"><a href="programmes">CS &amp; Business Systems</a></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- ── UG PROGRAMS END ─────────────────────────────────────── -->
-
-    <!-- ── SRKR AT A GLANCE ────────────────────────────────────── -->
-    <div class="container rts__pt100">
-      <div class="row justify-content-center">
-        <div class="col-lg-12 rts-funfact v__1">
-          <div class="rts-funfact-wrapper">
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">1980</h2>
-              <p>Established</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">A++</h2>
-              <p>NAAC Grade</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">400+</h2>
-              <p>Faculty Members</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">15,000+</h2>
-              <p>Students Enrolled</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-12 rts-funfact v__1">
-          <div class="rts-funfact-wrapper">
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">1,833</h2>
-              <p>Scopus Publications</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">180+</h2>
-              <p>Patents Filed</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">₹12.56 Cr</h2>
-              <p>Funded Projects</p>
-            </div>
-            <div class="single-cta-item">
-              <h2 class="single-cta-item__title">90%</h2>
-              <p>Placement Rate</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ── AT A GLANCE END ─────────────────────────────────────── -->
-
-    <!-- ── NOTICE BOARD + EVENTS ──────────────────────────────── -->
-    <section class="rts-notice rts-section-padding">
-      <div class="container">
-        <div class="row gy-5 gy-lg-0 justify-content-md-center">
-
-          <!-- Events column -->
-          <div class="col-md-11 col-lg-7">
-            <div class="rts-event-section">
-              <h4 class="rts-section-title mb--25">Upcoming Events</h4>
-              <div class="rts-event-section-content">
-                <ul class="list-unstyled rts-counter">
-                  <li class="single-event">
-                    <div class="single-event-counter">
-                      <img src="/assets/images/event/01.jpg" alt="Event">
+                    <div class="banner__slides--navigation--single">
+                        <h5 class="nav__title">Postgraduate</h5>
+                        <a href="programmes" class="nav__description">Browse M.Tech programs</a>
                     </div>
-                    <div class="single-event-content">
-                      <h5 class="event-title">National Conference on AI in Engineering Education</h5>
-                      <div class="single-event-content-meta">
-                        <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>May 20, 2025</span></div>
-                        <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>9:00 am</span></div>
-                      </div>
-                      <div class="single-event-content-meta">
-                        <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>SRKR Auditorium, Bhimavaram</span></div>
-                      </div>
+                    <div class="banner__slides--navigation--single">
+                        <h5 class="nav__title">Doctoral</h5>
+                        <a href="programmes" class="nav__description">Browse PhD programs</a>
                     </div>
-                  </li>
-                  <li class="single-event">
-                    <div class="single-event-counter">
-                      <img src="/assets/images/event/02.jpg" alt="Event">
+                    <div class="banner__slides--navigation--single">
+                        <h5 class="nav__title">Management</h5>
+                        <a href="programmes" class="nav__description">Browse BBA programs</a>
                     </div>
-                    <div class="single-event-content">
-                      <h5 class="event-title">Workshop: Blockchain for Sustainable Development</h5>
-                      <div class="single-event-content-meta">
-                        <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>Jun 10, 2025</span></div>
-                        <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>10:30 am</span></div>
-                      </div>
-                      <div class="single-event-content-meta">
-                        <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>Seminar Hall, SRKR</span></div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="single-event">
-                    <div class="single-event-counter">
-                      <img src="/assets/images/event/03.jpg" alt="Event">
-                    </div>
-                    <div class="single-event-content">
-                      <h5 class="event-title">Alumni Tech Summit 2025</h5>
-                      <div class="single-event-content-meta">
-                        <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>Jul 5, 2025</span></div>
-                        <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>11:00 am</span></div>
-                      </div>
-                      <div class="single-event-content-meta">
-                        <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>SRKR Campus, Bhimavaram</span></div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                </div> -->
             </div>
-          </div>
-
-          <!-- Notice board column -->
-          <div class="col-md-11 col-lg-5">
-            <div class="rts-notice-section">
-              <div class="rts-section rt-between pb--25 rts-border-bottom-2">
-                <h4 class="rts-section-title">Notice Board</h4>
-              </div>
-              <div class="rts-tab">
-                <ul class="nav nav-pills pb--30" id="pills-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-selected="true">Latest</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-exam-tab" data-bs-toggle="pill" data-bs-target="#pills-exam" type="button" role="tab" aria-selected="false">Exams</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-admission-tab" data-bs-toggle="pill" data-bs-target="#pills-admission" type="button" role="tab" aria-selected="false">Admissions</button>
-                  </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                  <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" tabindex="0">
-                    <ul class="list-unstyled notice-content-box">
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">12<span>May</span></div><div class="notice-content"><p><a href="#">Amaravati Quantum Valley Hackathon 2025 — Semi-Finals successfully organised by SRKR.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">08<span>May</span></div><div class="notice-content"><p><a href="#">NAAC Peer Team Visit — SRKR retains A++ Grade for the current cycle.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">02<span>May</span></div><div class="notice-content"><p><a href="#">Campus Placement Drive 2025 results — Amazon SDE 17.16 LPA offer confirmed.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">28<span>Apr</span></div><div class="notice-content"><p><a href="#">IIC Activity: Design Thinking Workshop — registrations now open.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">20<span>Apr</span></div><div class="notice-content"><p><a href="#">Professor elected as JNTUK Academic Senate member.</a></p></div></div></li>
-                    </ul>
-                  </div>
-                  <div class="tab-pane fade" id="pills-exam" role="tabpanel" tabindex="0">
-                    <ul class="list-unstyled notice-content-box">
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">15<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">B.Tech IV Year (R20) End Semester Examinations — Time Table released.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">10<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">M.Tech II Year Supplementary Exam Schedule — May 2025.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">05<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">B.Tech II Year (R23) Mid Examination — Hall Tickets available.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">28<span>Apr</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">Ph.D. Course Work Examination schedule — JNTUK notification.</a></p></div></div></li>
-                    </ul>
-                  </div>
-                  <div class="tab-pane fade" id="pills-admission" role="tabpanel" tabindex="0">
-                    <ul class="list-unstyled notice-content-box">
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">01<span>May</span></div><div class="notice-content"><p><a href="procedure">B.Tech Admissions 2025–26 — EAPCET Counselling schedule announced.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">25<span>Apr</span></div><div class="notice-content"><p><a href="procedure">M.Tech Admissions 2025–26 — PGECET merit list published.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">18<span>Apr</span></div><div class="notice-content"><p><a href="procedure">Lateral Entry (B.Tech II Year) 2025 — ECET counselling dates released.</a></p></div></div></li>
-                      <li class="single-notice"><div class="single-notice-item"><div class="notice-date">10<span>Apr</span></div><div class="notice-content"><p><a href="admission-brochure">Admissions Brochure 2025–26 — Download now.</a></p></div></div></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
-    <!-- ── NOTICE BOARD END ────────────────────────────────────── -->
+        <!-- header banner end -->
 
-    <!-- ── CAMPUS LIFE ─────────────────────────────────────────── -->
-    <section class="rts__section rts-section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6">
-            <div class="rts__section--wrapper v__2">
-              <h2 class="rts__section--title">Campus Life</h2>
-              <p class="rts__section--description">SRKR's campus blends rigorous academics with a vibrant student culture — world-class infrastructure, digital classrooms, thriving clubs, and community initiatives that foster holistic development and lifelong connections.</p>
-              <div class="campus__vector">
-                <img src="/assets/images/campus/campus__vector.svg" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-7 col-md-6">
-            <div class="campus__life">
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg"><img src="/assets/images/campus/campus__life__bg__1.jpg" alt=""></div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title"><a href="college-profile">Student Life</a></h4>
-                    <p class="campus__life--single--description">Technical clubs to cultural fests — SRKR fosters personal growth and vibrant peer connections.</p>
-                  </div>
-                  <div class="campus__life--single--button"><a href="college-profile"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
-                </div>
-              </div>
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg"><img src="/assets/images/campus/campus__life__bg__2.jpg" alt=""></div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title"><a href="activities">Arts &amp; Culture</a></h4>
-                    <p class="campus__life--single--description">Annual festivals like SANDHAAN celebrate heritage, talent, and student creativity.</p>
-                  </div>
-                  <div class="campus__life--single--button"><a href="activities"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
-                </div>
-              </div>
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg"><img src="/assets/images/campus/campus__life__bg__3.jpg" alt=""></div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title"><a href="sports">Athletics</a></h4>
-                    <p class="campus__life--single--description">State-level facilities and competitions make SRKR a sporting hub in coastal Andhra Pradesh.</p>
-                  </div>
-                  <div class="campus__life--single--button"><a href="sports"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ── CAMPUS LIFE END ─────────────────────────────────────── -->
-
-    <!-- ── PUBLICATION & RESEARCH ──────────────────────────────── -->
-    <section class="rts__section rts-section-padding rts__light">
-      <div class="container">
-        <div class="row">
-          <div class="rts__section--wrapper v__3">
-            <h2 class="rts__section--title">Publication &amp; <br> Research</h2>
-            <div class="rts__section--details">
-              <p class="rts__description">Recognised as a SIRO by DSIR, SRKR's research ecosystem spans Centres of Excellence, government-funded projects, 1,833 Scopus publications, and 180+ patents.</p>
-              <a href="research-centers" class="rts-nbg-btn btn-arrow">Learn More<span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="row g-5">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="rts__research--single">
-              <div class="rts__research--single--thumb"><a href="research-projects"><img src="/assets/images/research/01.jpg" alt="Research Projects"></a></div>
-              <div class="rts__research--single--meta">
-                <a class="rts__research--single--meta--title" href="research-projects">Funded Research Projects</a>
-                <p class="rts__research--single--meta--excerpt">₹12.56 Cr worth of ongoing &amp; completed projects funded by DST, AICTE, MSME &amp; more.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="rts__research--single">
-              <div class="rts__research--single--thumb"><a href="research-publications"><img src="/assets/images/research/02.jpg" alt="Publications"></a></div>
-              <div class="rts__research--single--meta">
-                <a class="rts__research--single--meta--title" href="research-publications">High-Impact Publications</a>
-                <p class="rts__research--single--meta--excerpt">1,833 Scopus publications and 9,320 citations — a testament to sustained research output.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="rts__research--single">
-              <div class="rts__research--single--thumb"><a href="patents"><img src="/assets/images/research/03.jpg" alt="Patents"></a></div>
-              <div class="rts__research--single--meta">
-                <a class="rts__research--single--meta--title" href="patents">Patents &amp; Innovations</a>
-                <p class="rts__research--single--meta--excerpt">180+ patents filed — translating cutting-edge research into industry-ready innovations.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ── PUBLICATION & RESEARCH END ─────────────────────────── -->
-
-    <!-- ── STUDENT FEEDBACK ────────────────────────────────────── -->
-    <section class="rts__section rts-section-padding rts__primary__bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="rts__section--wrapper v__4">
-              <h2 class="rts__section--title">Student Feedback</h2>
-              <p class="rts__section--description">Hear directly from our alumni about their transformative experiences at SRKR — where education transcends boundaries and fosters global success.</p>
-              <div class="rts__slider--arrow">
-                <div class="rts__prev slider__btn"><i class="fa-light fa-arrow-left"></i></div>
-                <div class="rts__next slider__btn"><i class="fa-light fa-arrow-right"></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="rts__testimonial--active swiper swiper-data" data-swiper='{"slidesPerView":1,"loop":true,"autoplay":{"delay":"4000"},"navigation":{"nextEl":".rts__next","prevEl":".rts__prev"}}'>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="rts__single--testimonial">
-                    <div class="rts__rating--star">
-                      <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
+        <!-- about us -->
+        <section class="about v__2 pt--120 pb--80">
+            <div class="container">
+                <div class="row justify-content-md-center g-5">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="about__left--content">
+                            <div class="about__left--content--left">
+                                <img src="assets/images/home/f1.jpg" alt="" style="min-width: 250px;">
+                            </div>
+                        </div>
                     </div>
-                    <p class="rts__single--testimonial--text">SRKR equipped me with knowledge and skills that paved the way to becoming a professor at IIT. It's a testament to the quality and dedication of the faculty here.</p>
-                    <div class="rts__single--testimonial--author">
-                      <div class="rts__author--img"><img src="/assets/images/testimonial/author-1.png" alt=""></div>
-                      <div class="rts__author--info"><h5 class="mb-0">Dr. Anand Reddy</h5><span class="designation">Professor, IIT Bombay</span></div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="about__right--content">
+                            <div class="about__right--content--sub">
+                                <img src="assets/images/icon/e-cap-pix.svg" alt="cap">
+                                knowledge meets innovation
+                            </div>
+                            <h2 class="about__right--content--title">About SRKR Engineering College</h2>
+                            <p class="about__right--content--description">Founded in 1980, SRKR Engineering College stands as one of Andhra Pradesh's premier self-financing engineering institutions. With NAAC A++ accreditation, NBA recognition across six programmes, and SIRO status from DSIR, we embody excellence in technical education.</p>
+                            <p class="about__right--content--description">Spread across 30 acres in Bhimavaram, our campus blends world-class infrastructure with a rich legacy of nurturing industry-ready engineers. We are committed to fostering innovation, empowering students to achieve their fullest potential, and contributing meaningfully to society through quality education and research.</p>
+                            <div class="about__right--content--vision">
+                                <div class="mision">
+                                    <div class="mision__icon">
+                                        <img src="assets/images/icon/mission.svg" alt="">
+                                    </div>
+                                    <div class="mision__title">
+                                        Our Mission
+                                        Statement
+                                    </div>
+                                </div>
+                                <div class="vision">
+                                    <div class="vision__icon">
+                                        <img src="assets/images/icon/vission.svg" alt="">
+                                    </div>
+                                    <div class="vision__title">
+                                        Our Vision &
+                                        Values
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="programmes" class="rts-theme-btn btn-arrow">Explore Programs
+                                <span><i class="fa-regular fa-arrow-right"></i></span>
+                            </a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="rts__single--testimonial">
-                    <div class="rts__rating--star">
-                      <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-light fa-star"></i>
-                    </div>
-                    <p class="rts__single--testimonial--text">The placement support and real-world exposure I received at SRKR were exceptional. The faculty's mentorship guided me to a career at L&T, something I could only dream of when I joined.</p>
-                    <div class="rts__single--testimonial--author">
-                      <div class="rts__author--img"><img src="/assets/images/testimonial/author-1.png" alt=""></div>
-                      <div class="rts__author--info"><h5 class="mb-0">Priya Lakshmi</h5><span class="designation">Senior Engineer, L&T Construction</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ── STUDENT FEEDBACK END ────────────────────────────────── -->
+        </section>
+        <!-- about us end -->
 
-    <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
-    <div class="rts-brand v_1 rts-section-padding-small">
-      <div class="container">
-        <div class="row justify-content-md-center mb--20">
-          <div class="col-lg-12 text-center">
-            <h2 class="rts-section-title mt-0">Placement Partners</h2>
-          </div>
-        </div>
-        <div class="row justify-content-md-center">
-          <div class="col-lg-12 col-md-11">
-            <div class="rts-brand-slider swiper swiper-data" data-swiper='{
-              "slidesPerView": 4,
-              "loop": true,
-              "spaceBetween": 30,
-              "autoplay": { "delay": "3000" },
-              "breakpoints": {
-                "320": { "slidesPerView": 1, "spaceBetween": 20 },
-                "576": { "slidesPerView": 2, "spaceBetween": 20 },
-                "768": { "slidesPerView": 3, "spaceBetween": 25 },
-                "992": { "slidesPerView": 4, "spaceBetween": 30 }
-              }
-            }'>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/tcs.png" alt="TCS">
-                    <p class="text-primary fw-bold mb-1">392+ Offers</p>
-                    <p class="text-muted mb-0">3.5 to 9 LPA</p>
-                  </div>
+        <!-- SRKREC at a Glance -->
+        <section class="srkr-glance rts-section-padding-small">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb--40">
+                        <h2 class="rts-section-title">SRKREC at a Glance</h2>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/infosys.png" alt="Infosys">
-                    <p class="text-primary fw-bold mb-1">270+ Offers</p>
-                    <p class="text-muted mb-0">3.5 to 9.5 LPA</p>
-                  </div>
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-building-columns"></i>
+                            </div>
+                            <div class="srkr-glance-label">Established In</div>
+                            <div class="srkr-glance-value">1980</div>
+                            <div class="srkr-glance-desc">45 Years of Academic Excellence</div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-award"></i>
+                            </div>
+                            <div class="srkr-glance-label">NAAC 'A+' Grade</div>
+                            <div class="srkr-glance-value">3.42<span class="small-text">/4</span></div>
+                            <div class="srkr-glance-desc">NAAC Cycle - II</div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-certificate"></i>
+                            </div>
+                            <div class="srkr-glance-label">N B A</div>
+                            <div class="srkr-glance-value">6</div>
+                            <div class="srkr-glance-desc">Programs CSE,IT,ECE,EEE,CE,ME</div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-chalkboard-user"></i>
+                            </div>
+                            <div class="srkr-glance-label">Total Faculty</div>
+                            <div class="srkr-glance-value">400<span class="plus">+</span></div>
+                            <div class="srkr-glance-desc">150+ PhD's</div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-user-graduate"></i>
+                            </div>
+                            <div class="srkr-glance-label">Graduates</div>
+                            <div class="srkr-glance-value">30000<span class="plus">+</span></div>
+                            <div class="srkr-glance-desc">Produced</div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-briefcase"></i>
+                            </div>
+                            <div class="srkr-glance-label">Placement Meter</div>
+                            <div class="srkr-glance-value">2080<span class="plus">+</span></div>
+                            <div class="srkr-glance-desc">Offers So far for 2025-26 Batch</div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-book"></i>
+                            </div>
+                            <div class="srkr-glance-label">Publications</div>
+                            <div class="srkr-glance-value">2357</div>
+                            <div class="srkr-glance-desc">Scopus Indexed</div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-handshake"></i>
+                            </div>
+                            <div class="srkr-glance-label">Citations</div>
+                            <div class="srkr-glance-value">12440</div>
+                            <div class="srkr-glance-desc">Scopus</div>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-flask"></i>
+                            </div>
+                            <div class="srkr-glance-label">Funded Projects</div>
+                            <div class="srkr-glance-value">1.49<span class="small-text">Cr</span></div>
+                            <div class="srkr-glance-desc">Ongoing By DST, DBT & MSME</div>
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-lightbulb"></i>
+                            </div>
+                            <div class="srkr-glance-label">Patents</div>
+                            <div class="srkr-glance-value">180<span class="plus">+</span></div>
+                            <div class="srkr-glance-desc">Published/Granted</div>
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-handshake-angle"></i>
+                            </div>
+                            <div class="srkr-glance-label">Collaborations</div>
+                            <div class="srkr-glance-value">65<span class="plus">+</span></div>
+                            <div class="srkr-glance-desc">MOUs</div>
+                        </div>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="srkr-glance-card">
+                            <div class="srkr-glance-icon">
+                                <i class="fa-light fa-rocket"></i>
+                            </div>
+                            <div class="srkr-glance-label">Supporting</div>
+                            <div class="srkr-glance-value">16</div>
+                            <div class="srkr-glance-desc">Start-ups by SRKREC Students & Faculty</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/wipro.png" alt="Wipro">
-                    <p class="text-primary fw-bold mb-1">185+ Offers</p>
-                    <p class="text-muted mb-0">3.5 to 8 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/hcl.png" alt="HCL">
-                    <p class="text-primary fw-bold mb-1">145+ Offers</p>
-                    <p class="text-muted mb-0">3.5 to 7 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/cts.png" alt="Cognizant">
-                    <p class="text-primary fw-bold mb-1">210+ Offers</p>
-                    <p class="text-muted mb-0">4 to 9 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra">
-                    <p class="text-primary fw-bold mb-1">123+ Offers</p>
-                    <p class="text-muted mb-0">3.5 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/lt.png" alt="L&T">
-                    <p class="text-primary fw-bold mb-1">95+ Offers</p>
-                    <p class="text-muted mb-0">4 to 10 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/ey.png" alt="EY">
-                    <p class="text-primary fw-bold mb-1">42+ Offers</p>
-                    <p class="text-muted mb-0">5 to 12 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/ncc.png" alt="NCC">
-                    <p class="text-primary fw-bold mb-1">35+ Offers</p>
-                    <p class="text-muted mb-0">3.5 to 6 LPA</p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img src="/assets/images/recruiters/tata.png" alt="Tata">
-                    <p class="text-primary fw-bold mb-1">48+ Offers</p>
-                    <p class="text-muted mb-0">4 to 9 LPA</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ── PLACEMENT PARTNERS END ──────────────────────────────── -->
+        </section>
+        <!-- SRKREC at a Glance end -->
 
-    <!-- newsletter -->
-    <div class="rts-newsletter v_1 rts-cta-background rts__white">
+        <!-- ── UG PROGRAMS (department grid) ──────────────────────── -->
+        <section class="rts__section rts__light rts-section-padding-small">
+            <div class="container">
+                <div class="row">
+                <div class="rts__section--wrapper">
+                    <h4 class="rts__section--title">SRKREC Programs</h4>
+                    <div class="rts__section--link">
+                    <a href="programmes" class="rts-nbg-btn btn-arrow">View All Programs<span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></a>
+                    </div>
+                </div>
+                </div>
+                <div class="row g-4">
+
+                <!-- Row 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/cse.png" alt="Computer Science & Engineering">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Computer Science &amp; Engineering</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/ai_ml.png" alt="Artificial Intelligence & ML">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Artificial Intelligence &amp; ML</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/ai_ds.png" alt="AI & Data Science">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">AI &amp; Data Science</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/ece.png" alt="Electronics & Communication">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Electronics &amp; Communication</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/eee.png" alt="Electrical & Electronics">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Electrical &amp; Electronics</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/mech.png" alt="Mechanical Engineering">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Mechanical Engineering</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=320&fit=crop" alt="Civil Engineering">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="/departments/civil/">Civil Engineering</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=320&fit=crop" alt="Information Technology">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Information Technology</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/csd.png" alt="Computer Science & Design">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Computer Science &amp; Design</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=320&fit=crop" alt="CSE IoT & Cyber Security">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">CSE (IoT &amp; Cyber Security)</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/cs_it.png" alt="Computer Science & IT">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">Computer Science &amp; IT</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-cat-item srkr-dept-card">
+                    <div class="cat-thumb srkr-dept-thumb">
+                        <img src="/assets/images/programs/cs_bs.png" alt="CS & Business Systems">
+                    </div>
+                    <div class="cat-meta">
+                        <div class="cat-title"><a href="programmes">CS &amp; Business Systems</a></div>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            </section>
+            <!-- ── UG PROGRAMS END ─────────────────────────────────────── -->
+
+        <!-- ── CAMPUS LIFE ─────────────────────────────────────────── -->
+        <section class="rts__section rts-section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="rts-newsletter-box" style="background-image: url(assets/images/newsletter/bg-1.jpg);">
-                        <div class="rts-newsletter-box-content">
-                            <h4 class="newsletter-title">Don’t Miss Awesome Story From Our Alumni
-                            </h4>
-                            <div class="newsletter-form w-530">
-                                <form action="#">
-                                    <input type="email" name="subscription" id="subscription" placeholder="Enter Your mail" required="">
-                                    <button type="submit" class="rts-nbg-btn btn-arrow">Subscribe <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
-                                </form>
+            <div class="col-lg-5 col-md-6">
+                <div class="rts__section--wrapper v__2">
+                <h2 class="rts__section--title">Campus Life</h2>
+                <p class="rts__section--description">SRKR's campus blends rigorous academics with a vibrant student culture — world-class infrastructure, digital classrooms, thriving clubs, and community initiatives that foster holistic development and lifelong connections.</p>
+                <div class="campus__vector">
+                    <img src="/assets/images/campus/campus__vector.svg" alt="">
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <div class="campus__life">
+                <div class="campus__life--single">
+                    <div class="campus__life--single--bg"><img src="/assets/images/campus/college-life.png" alt=""></div>
+                    <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="college-profile">Student Life</a></h4>
+                        <p class="campus__life--single--description">Technical clubs to cultural fests — SRKR fosters personal growth and vibrant peer connections.</p>
+                    </div>
+                    <div class="campus__life--single--button"><a href="college-profile"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="campus__life--single">
+                    <div class="campus__life--single--bg"><img src="/assets/images/campus/campus__life__bg__2.jpg" alt=""></div>
+                    <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="activities">Arts &amp; Culture</a></h4>
+                        <p class="campus__life--single--description">Annual festivals like SANDHAAN celebrate heritage, talent, and student creativity.</p>
+                    </div>
+                    <div class="campus__life--single--button"><a href="activities"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="campus__life--single">
+                    <div class="campus__life--single--bg"><img src="/assets/images/campus/campus__life__bg__3.jpg" alt=""></div>
+                    <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                        <h4 class="campus__life--single--title"><a href="sports">Athletics</a></h4>
+                        <p class="campus__life--single--description">State-level facilities and competitions make SRKR a sporting hub in coastal Andhra Pradesh.</p>
+                    </div>
+                    <div class="campus__life--single--button"><a href="sports"><i class="fa-sharp fa-regular fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <!-- ── CAMPUS LIFE END ─────────────────────────────────────── -->
+
+        <!-- scholarship appication -->
+        <section class="rts-scholarship rts-scholarship-bg rts-section-height">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="rts-scholarship-info">
+                            <h2 class="rts-section-title">Scholarships and Financial Aid</h2>
+                            <p class="w-740 mb--50">Each semester, Brac University is proud to honor academically talented and exceptionally skilled students with a variety of scholarships and awards. The university annually awards more than 100 million takas as scholarships to both undergraduate and postgraduate students.</p>
+                            <a href="scholarship.html" class="rts-theme-btn btn-arrow">Know More<span><i class="fa-thin fa-arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- scholarship appication end -->
+
+        <!-- Quick Links -->
+        <section class="program rts-section-padding">
+            <div class="container">
+                <div class="row rt-center">
+                    <div class="col-sm-12">
+                        <div class="rts__section--wrapper v__5">
+                            <h2 class="rts__section--title">Quick Links</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center g-0">
+                    <div class="col-lg-4 col-md-10">
+                        <div class="program__single--item">
+                            <div class="program__single--item--bg">
+                                <img src="assets/images/program/program__bg.jpg" alt="">
+                            </div>
+                            <h5 class="program__single--item--title">Skill Development</h5>
+
+                            <ul class="program__single--item--list">
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">AP CM Skill Excellence Centre
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">IIT Madras NPTEL
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">APSSDC Skill Dev Centre
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Dassault Systems Lab
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">EDC Cell
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">MIC IIC
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-10">
+                        <div class="program__single--item v__2">
+                            <div class="program__single--item--bg">
+                                <img src="assets/images/program/program__bg.jpg" alt="">
+                            </div>
+                            <h5 class="program__single--item--title">Centers & Labs</h5>
+
+                            <ul class="program__single--item--list">
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">IIT Bombay Remote Centre
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">CISCO Networking Academy
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">IIT Bombay Spoken Tutorial
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">AICTE IDEA Lab
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">MSME
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">IPR Cell
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-10">
+                        <div class="program__single--item">
+                            <div class="program__single--item--bg">
+                                <img src="assets/images/program/program__bg.jpg" alt="">
+                            </div>
+                            <h5 class="program__single--item--title">Departments</h5>
+
+                            <ul class="program__single--item--list">
+                                <li class="program__single--item--list--item">
+                                    <a href="/departments/civil/" class="link__list">Civil (CE)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Computer Science (CSE)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Electronics & Comm (ECE)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Electrical & Electronics (EEE)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Information Technology (IT)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="program__single--item--list--item">
+                                    <a href="#" class="link__list">Mechanical (ME)
+                                        <span><i class="fa-regular fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Quick Links end -->
+
+        <!-- research area -->
+        <section class="rts-research rt-relative research-bg rts-section-height">
+            <div class="container">
+                <div class="section-bg rt-relative">
+                    <div class="row justify-content-md-center">
+                        <div class="col-lg-5 col-md-11">
+                            <div class="rts-research-image">
+                                <img src="assets/images/research-2.png" alt="research">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-11">
+                            <div class="research-content-area">
+                                <h2 class="rts-section-title mt--40 mb--20">
+                                    University Research Centers
+                                    and Institutes:
+                                </h2>
+                                <p>Discover a network of cutting-edge research centers and institutes that serve as hubs of innovation
+                                    within Unipix University From state-of-the-art laboratories.</p>
+                                <div class="research-subject mt--30">
+                                    <div class="single-research">
+                                        <div class="icon">
+                                            <img src="assets/images/icon/09.svg" alt="biomedical">
+                                        </div>
+                                        <div class="content">
+                                            <h6>Biomedical Sciences</h6>
+                                            <p>
+                                                Delve into groundbreaking
+                                                research in biomedical Sciences
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-research">
+                                        <div class="icon">
+                                            <img src="assets/images/icon/10.svg" alt="biomedical">
+                                        </div>
+                                        <div class="content">
+                                            <h6>Health and Medicine</h6>
+                                            <p>
+                                                From clinical trials to public
+                                                health initiatives
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="research-subject mt--30  mb--70">
+                                    <div class="single-research">
+                                        <div class="icon">
+                                            <img src="assets/images/icon/09.svg" alt="biomedical">
+                                        </div>
+                                        <div class="content">
+                                            <h6>Biomedical Sciences</h6>
+                                            <p>
+                                                Delve into groundbreaking
+                                                research in biomedical Sciences
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-research">
+                                        <div class="icon">
+                                            <img src="assets/images/icon/10.svg" alt="biomedical">
+                                        </div>
+                                        <div class="content">
+                                            <h6>Health and Medicine</h6>
+                                            <p>
+                                                From clinical trials to public
+                                                health initiatives
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="research-big-text rt-clip-text">Our Research Community</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="rt-shape">
+                    <div class="rt-shape__1">
+                        <img src="assets/images/feature/research/01.svg" alt="">
+                    </div>
+                    <div class="rt-shape__2">
+                        <img src="assets/images/feature/research/02.svg" alt="">
+                    </div>
+                    <div class="rt-shape__3">
+                        <img src="assets/images/feature/research/03.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- research area end -->
+
+        <!-- ── NOTICE BOARD + EVENTS ──────────────────────────────── -->
+        <section class="rts-notice rts-section-padding-small">
+        <div class="container">
+            <div class="row gy-5 gy-lg-0 justify-content-md-center">
+
+            <!-- Events column -->
+            <div class="col-md-11 col-lg-6">
+                <div class="rts-event-section">
+                <h4 class="rts-section-title mb--25">Upcoming Events</h4>
+                <div class="rts-event-section-content">
+                    <ul class="list-unstyled rts-counter">
+                    <li class="single-event">
+                        <div class="single-event-counter">
+                        <img src="/assets/images/event/01.jpg" alt="Event">
+                        </div>
+                        <div class="single-event-content">
+                        <h5 class="event-title">National Conference on AI in Engineering Education</h5>
+                        <div class="single-event-content-meta">
+                            <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>May 20, 2025</span></div>
+                            <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>9:00 am</span></div>
+                        </div>
+                        <div class="single-event-content-meta">
+                            <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>SRKR Auditorium, Bhimavaram</span></div>
+                        </div>
+                        </div>
+                    </li>
+                    <li class="single-event">
+                        <div class="single-event-counter">
+                        <img src="/assets/images/event/02.jpg" alt="Event">
+                        </div>
+                        <div class="single-event-content">
+                        <h5 class="event-title">Workshop: Blockchain for Sustainable Development</h5>
+                        <div class="single-event-content-meta">
+                            <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>Jun 10, 2025</span></div>
+                            <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>10:30 am</span></div>
+                        </div>
+                        <div class="single-event-content-meta">
+                            <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>Seminar Hall, SRKR</span></div>
+                        </div>
+                        </div>
+                    </li>
+                    <li class="single-event">
+                        <div class="single-event-counter">
+                        <img src="/assets/images/event/03.jpg" alt="Event">
+                        </div>
+                        <div class="single-event-content">
+                        <h5 class="event-title">Alumni Tech Summit 2025</h5>
+                        <div class="single-event-content-meta">
+                            <div class="event-date"><span><i class="fal fa-calendar"></i></span><span>Jul 5, 2025</span></div>
+                            <div class="event-time"><span><i class="fa-sharp fa-thin fa-clock"></i></span><span>11:00 am</span></div>
+                        </div>
+                        <div class="single-event-content-meta">
+                            <div class="event-place"><span><i class="fa-sharp fa-thin fa-location-dot"></i></span><span>SRKR Campus, Bhimavaram</span></div>
+                        </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <!-- Notice board column -->
+            <div class="col-md-11 col-lg-6">
+                <div class="rts-notice-section ps-5">
+                <div class="rts-section rt-between">
+                    <h4 class="rts-section-title">Notice Board</h4>
+                </div>
+                <div class="rts-tab">
+                    <ul class="nav nav-pills pb--10" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-selected="true">Latest</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-exam-tab" data-bs-toggle="pill" data-bs-target="#pills-exam" type="button" role="tab" aria-selected="false">Exams</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-admission-tab" data-bs-toggle="pill" data-bs-target="#pills-admission" type="button" role="tab" aria-selected="false">Admissions</button>
+                    </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" tabindex="0">
+                        <ul class="list-unstyled notice-content-box">
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">12<span>May</span></div><div class="notice-content"><p><a href="#">Amaravati Quantum Valley Hackathon 2025 — Semi-Finals successfully organised by SRKR.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">08<span>May</span></div><div class="notice-content"><p><a href="#">NAAC Peer Team Visit — SRKR retains A++ Grade for the current cycle.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">02<span>May</span></div><div class="notice-content"><p><a href="#">Campus Placement Drive 2025 results — Amazon SDE 17.16 LPA offer confirmed.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">28<span>Apr</span></div><div class="notice-content"><p><a href="#">IIC Activity: Design Thinking Workshop — registrations now open.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">20<span>Apr</span></div><div class="notice-content"><p><a href="#">Professor elected as JNTUK Academic Senate member.</a></p></div></div></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="pills-exam" role="tabpanel" tabindex="0">
+                        <ul class="list-unstyled notice-content-box">
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">15<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">B.Tech IV Year (R20) End Semester Examinations — Time Table released.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">10<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">M.Tech II Year Supplementary Exam Schedule — May 2025.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">05<span>May</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">B.Tech II Year (R23) Mid Examination — Hall Tickets available.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">28<span>Apr</span></div><div class="notice-content"><p><a href="https://www.srkrexams.in" target="_blank">Ph.D. Course Work Examination schedule — JNTUK notification.</a></p></div></div></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="pills-admission" role="tabpanel" tabindex="0">
+                        <ul class="list-unstyled notice-content-box">
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">01<span>May</span></div><div class="notice-content"><p><a href="procedure">B.Tech Admissions 2025–26 — EAPCET Counselling schedule announced.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">25<span>Apr</span></div><div class="notice-content"><p><a href="procedure">M.Tech Admissions 2025–26 — PGECET merit list published.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">18<span>Apr</span></div><div class="notice-content"><p><a href="procedure">Lateral Entry (B.Tech II Year) 2025 — ECET counselling dates released.</a></p></div></div></li>
+                        <li class="single-notice"><div class="single-notice-item"><div class="notice-date">10<span>Apr</span></div><div class="notice-content"><p><a href="admission-brochure">Admissions Brochure 2025–26 — Download now.</a></p></div></div></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </section>
+        <!-- ── NOTICE BOARD END ────────────────────────────────────── -->
+
+        <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
+        <div class="rts-brand v_1 rts-section-padding-small">
+            <div class="container">
+                <div class="row justify-content-md-center mb--20">
+                <div class="col-lg-12 text-left">
+                    <h2 class="rts-section-title mt-0">Placement Partners</h2>
+                </div>
+                </div>
+                <div class="row justify-content-md-center">
+                <div class="col-lg-12 col-md-11">
+                    <div class="rts-brand-slider swiper swiper-data" data-swiper='{
+                    "slidesPerView": 4,
+                    "loop": true,
+                    "spaceBetween": 30,
+                    "autoplay": { "delay": "3000" },
+                    "breakpoints": {
+                        "320": { "slidesPerView": 1, "spaceBetween": 20 },
+                        "576": { "slidesPerView": 2, "spaceBetween": 20 },
+                        "768": { "slidesPerView": 3, "spaceBetween": 25 },
+                        "992": { "slidesPerView": 4, "spaceBetween": 30 }
+                    }
+                    }'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/tcs.png" alt="TCS">
+                            <p class="text-primary fw-bold mb-1">392+ Offers</p>
+                            <p class="text-muted mb-0">3.5 to 9 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/infosys.png" alt="Infosys">
+                            <p class="text-primary fw-bold mb-1">270+ Offers</p>
+                            <p class="text-muted mb-0">3.5 to 9.5 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/wipro.png" alt="Wipro">
+                            <p class="text-primary fw-bold mb-1">185+ Offers</p>
+                            <p class="text-muted mb-0">3.5 to 8 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/hcl.png" alt="HCL">
+                            <p class="text-primary fw-bold mb-1">145+ Offers</p>
+                            <p class="text-muted mb-0">3.5 to 7 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/cts.png" alt="Cognizant">
+                            <p class="text-primary fw-bold mb-1">210+ Offers</p>
+                            <p class="text-muted mb-0">4 to 9 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra">
+                            <p class="text-primary fw-bold mb-1">123+ Offers</p>
+                            <p class="text-muted mb-0">3.5 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/lt.png" alt="L&T">
+                            <p class="text-primary fw-bold mb-1">95+ Offers</p>
+                            <p class="text-muted mb-0">4 to 10 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/ey.png" alt="EY">
+                            <p class="text-primary fw-bold mb-1">42+ Offers</p>
+                            <p class="text-muted mb-0">5 to 12 LPA</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="single-brand-logo">
+                            <img src="/assets/images/recruiters/ncc.png" alt="NCC">
+                            <p class="text-primary fw-bold mb-1">35+ Offers</p>
+                            <p class="text-muted mb-0">3.5 to 6 LPA</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- ── PLACEMENT PARTNERS END ──────────────────────────────── -->
+
+        <!-- newsletter -->
+        <div class="rts-newsletter v_1 rts-cta-background rts__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rts-newsletter-box" style="background-image: url(assets/images/newsletter/bg-1.jpg);">
+                            <div class="rts-newsletter-box-content">
+                                <h4 class="newsletter-title">Don’t Miss Awesome Story From Our Alumni
+                                </h4>
+                                <div class="newsletter-form w-530">
+                                    <form action="#">
+                                        <input type="email" name="subscription" id="subscription" placeholder="Enter Your mail" required="">
+                                        <button type="submit" class="rts-nbg-btn btn-arrow">Subscribe <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- newsletter end -->
+        <!-- newsletter end -->
 
-    <SrkrFooter />
-    <OffCanvas />
+		<SrkrFooter />
+		<OffCanvas/>
+		<FooterScripts />
+        <style>
+        /* ── NEWS TICKER ── */
+        .srkr-ticker {
+            background: #1a3c6b;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            height: 38px;
+            overflow: hidden;
+            font-size: 0.82rem;
+        }
+        .srkr-ticker__label {
+            background: #f5c518;
+            color: #1a3c6b;
+            font-weight: 700;
+            padding: 0 1rem;
+            white-space: nowrap;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+        }
+        .srkr-ticker__track {
+            overflow: hidden;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .srkr-ticker__inner {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker-scroll 40s linear infinite;
+            color: rgba(255,255,255,0.9);
+        }
+        .srkr-ticker__inner span { padding-right: 2rem; }
+        @keyframes ticker-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-    <div class="search-input-area">
-      <div class="container">
-        <div class="search-input-inner">
-          <div class="input-div">
-            <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #" autocomplete="off">
-            <button><i class="far fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-      <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
-    </div>
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-      </svg>
-    </div>
-    <div id="anywhere-home"></div>
+        /* ── QUICK LINKS BAR ── */
+        .srkr-quicklinks {
+            background: #f0f4fa;
+            border-bottom: 1px solid #dde4f0;
+            padding: 0.6rem 0;
+        }
+        .srkr-quicklinks__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.25rem 1.5rem;
+        }
+        .srkr-quicklinks__item {
+            color: #1a3c6b;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            transition: background 0.15s;
+            letter-spacing: 0.02em;
+        }
+        .srkr-quicklinks__item:hover { background: #dde4f0; color: #1a3c6b; }
+        .srkr-quicklinks__item i { font-size: 0.85rem; }
 
-    <FooterScripts />
+        /* ── DEPT CARDS (equal height thumbnails) ── */
+        .srkr-dept-card { 
+            height: 100%; 
+            background: #ffffff; 
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+        }
+        .srkr-dept-thumb { height: 160px; overflow: hidden; border-radius: 6px 6px 0 0; }
+        .srkr-dept-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .srkr-dept-card .cat-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    <style>
-      /* ── NEWS TICKER ── */
-      .srkr-ticker {
-        background: #1a3c6b;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        height: 38px;
-        overflow: hidden;
-        font-size: 0.82rem;
-      }
-      .srkr-ticker__label {
-        background: #f5c518;
-        color: #1a3c6b;
-        font-weight: 700;
-        padding: 0 1rem;
-        white-space: nowrap;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        font-size: 0.78rem;
-        letter-spacing: 0.04em;
-        flex-shrink: 0;
-      }
-      .srkr-ticker__track {
-        overflow: hidden;
-        flex: 1;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
-      .srkr-ticker__inner {
-        display: flex;
-        white-space: nowrap;
-        animation: ticker-scroll 40s linear infinite;
-        color: rgba(255,255,255,0.9);
-      }
-      .srkr-ticker__inner span { padding-right: 2rem; }
-      @keyframes ticker-scroll {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
+        /* ── UG PROGRAMS SECTION FONT SIZES ── */      
+        .srkr-dept-card .cat-title a {
+            font-size: 1.5rem;
+        }
 
-      /* ── QUICK LINKS BAR ── */
-      .srkr-quicklinks {
-        background: #f0f4fa;
-        border-bottom: 1px solid #dde4f0;
-        padding: 0.6rem 0;
-      }
-      .srkr-quicklinks__inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.25rem 1.5rem;
-      }
-      .srkr-quicklinks__item {
-        color: #1a3c6b;
-        font-size: 0.82rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 3px;
-        transition: background 0.15s;
-        letter-spacing: 0.02em;
-      }
-      .srkr-quicklinks__item:hover { background: #dde4f0; color: #1a3c6b; }
-      .srkr-quicklinks__item i { font-size: 0.85rem; }
+        /* ── PLACEMENT PARTNERS LOGOS ── */
+        .rts-brand .single-brand-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            min-height: 260px;
+        }
+        .rts-brand .single-brand-logo:hover {
+            transform: translateY(-3px);
+        }
+        .rts-brand .single-brand-logo img {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 2.5rem;
+        }
+        .rts-brand .single-brand-logo h6 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+        .rts-brand .single-brand-logo p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
 
-      /* ── DEPT CARDS (equal height thumbnails) ── */
-      .srkr-dept-card { 
-        height: 100%; 
-        background: #ffffff; 
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-      }
-      .srkr-dept-thumb { height: 160px; overflow: hidden; border-radius: 6px 6px 0 0; }
-      .srkr-dept-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      .srkr-dept-card .cat-meta {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
+        /* ── RESEARCH SECTION IMAGES ── */
+        .rts__research--single--thumb {
+            height: 280px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .rts__research--single--thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-      /* ── UG PROGRAMS SECTION FONT SIZES ── */      
-      .srkr-dept-card .cat-title a {
-        font-size: 1.5rem;
-      }
+        /* ── EVENT COUNTER IMAGES ── */
+        .single-event-counter {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            /* border-radius: 8px; */
+            flex-shrink: 0;
+        }
+        .single-event-counter img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-      /* ── PLACEMENT PARTNERS LOGOS ── */
-      .rts-brand .single-brand-logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1.5rem;
-        text-align: center;
-        background: #fff;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        min-height: 260px;
-      }
-      .rts-brand .single-brand-logo:hover {
-        transform: translateY(-3px);
-      }
-      .rts-brand .single-brand-logo img {
-        max-height: 70px;
-        width: auto;
-        object-fit: contain;
-        margin-bottom: 2.5rem;
-      }
-      .rts-brand .single-brand-logo h6 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #1e293b;
-        margin-bottom: 0.75rem;
-      }
-      .rts-brand .single-brand-logo p {
-        font-size: 1.3rem;
-        line-height: 1.5;
-      }
+        /* Remove red background from even events */
+        .rts-event-section-content .single-event:nth-child(2n):not(:hover)::after {
+            opacity: 0 !important;
+        }
+        .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content-meta,
+        .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content h5 {
+            color: inherit !important;
+        }
 
-      /* ── RESEARCH SECTION IMAGES ── */
-      .rts__research--single--thumb {
-        height: 280px;
-        overflow: hidden;
-        border-radius: 8px;
-      }
-      .rts__research--single--thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+        /* ── REDUCED BANNER HEIGHT ── */
+        .banner__height {
+            min-height: 400px !important;
+        }
+        @media screen and (max-width: 768px) {
+            .banner__height {
+                min-height: 320px !important;
+            }
+        }
 
-      /* ── EVENT COUNTER IMAGES ── */
-      .single-event-counter {
-        width: 120px;
-        height: 120px;
-        overflow: hidden;
-        border-radius: 8px;
-        flex-shrink: 0;
-      }
-      .single-event-counter img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+        /* ── BANNER NAVIGATION 4 ITEMS (VERTICAL) ── */
+        .banner__slides--navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .banner__slides--navigation--single {
+            padding: 2rem 1.5rem;
+        }
 
-      /* Remove red background from even events */
-      .rts-event-section-content .single-event:nth-child(2n):not(:hover)::after {
-        opacity: 0 !important;
-      }
-      .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content-meta,
-      .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content h5 {
-        color: inherit !important;
-      }
-    </style>
+        /* ── QUICK LINKS FIXED HEIGHT CARDS ── */
+        .program__single--item {
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+        .program__single--item--list {
+            flex: 1;
+        }
 
-  </body>
+        /* ── SRKREC AT A GLANCE ── */
+        .srkr-glance {
+            background: #f8f9fa;
+        }
+        .srkr-glance-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .srkr-glance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .srkr-glance-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .srkr-glance-icon i {
+            font-size: 3.5rem;
+            color: var(--rt-primary-2);
+        }
+        .srkr-glance-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .srkr-glance-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .srkr-glance-value .small-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #718096;
+        }
+        .srkr-glance-value .plus {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .srkr-glance-desc {
+            font-size: 0.95rem;
+            color: #718096;
+            line-height: 1.4;
+        }
+        @media (max-width: 991px) {
+            .srkr-glance-card {
+                padding: 1.5rem 1rem;
+            }
+            .srkr-glance-value {
+                font-size: 2rem;
+            }
+        }
+        </style>
+	</body>
 </html>

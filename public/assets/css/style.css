@@ -15894,7 +15894,6 @@ xclip
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 33.79%, rgba(0, 0, 0, 0.7) 86.31%);
 }
 .banner.v__2 .banner__wrapper .banner__slides--container.banner__height {
   height: 550px;
