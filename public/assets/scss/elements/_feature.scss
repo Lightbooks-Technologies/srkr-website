@@ -241,7 +241,7 @@
 
         .single-event {
             margin: 0;
-            padding: 45px 40px;
+            padding: 10px;
             background: #f6f6f6;
             display: flex;
             gap: 20px;
@@ -313,11 +313,11 @@
 
             &::before {
                 @include position;
-                left: 22%;
-                height: 100%;
-                width: 1px;
-                background: var(--rt-white);
-                transition: var(--transition);
+                // left: 22%;
+                // height: 100%;
+                // width: 1px;
+                // background: var(--rt-white);
+                // transition: var(--transition);
 
                 @include mq($md) {
                     left: 140px;
@@ -368,7 +368,7 @@
         }
 
         .single-event-counter {
-            padding-right: 20px;
+            // padding-right: 20px;
 
             @include mq($xs) {
                 padding-right: 0;
@@ -414,7 +414,7 @@
         }
 
         .single-event-content {
-            padding-left: 20px;
+            // padding-left: 20px;
             @include mq($lg){
                 padding-left: 10px;
             }

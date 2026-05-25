@@ -14633,7 +14633,7 @@ xclip
 .navigation__menu ul {
   display: flex;
   max-width: max-content;
-  gap: 60px;
+  gap: 25px;
   position: relative;
   padding: 0;
   margin: 0;
@@ -14650,8 +14650,7 @@ xclip
   font-size: 15px;
   font-family: var(--font-primary);
   font-weight: 500;
-  text-transform: uppercase;
-  padding: 37px 0;
+  padding: 20px 0;
   display: block;
   color: var(--rt-heading);
 }
@@ -15898,7 +15897,7 @@ xclip
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 33.79%, rgba(0, 0, 0, 0.7) 86.31%);
 }
 .banner.v__2 .banner__wrapper .banner__slides--container.banner__height {
-  height: 895px;
+  height: 550px;
   display: flex;
   align-items: flex-end;
 }
@@ -15951,7 +15950,7 @@ xclip
 .banner.v__2 .banner__wrapper .banner__slides--navigation {
   position: absolute;
   z-index: 9;
-  bottom: 100px;
+  bottom: 30px;
   right: 200px;
 }
 @media screen and (max-width: 992px) {
@@ -15970,12 +15969,12 @@ xclip
   padding-bottom: 25px;
 }
 .banner.v__2 .banner__wrapper .banner__slides--navigation--single:not(:last-child) {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 .banner.v__2 .banner__wrapper .banner__slides--navigation--single {
   position: relative;
 }
-.banner.v__2 .banner__wrapper .banner__slides--navigation--single::before {
+.banner.v__2 .banner__wrapper .banner__slides--navigation--single:not(:last-child)::before {
   position: absolute;
   bottom: 0;
   height: 1px;
@@ -15984,7 +15983,7 @@ xclip
   background: #4a4a4a;
 }
 @media screen and (max-width: 992px) {
-  .banner.v__2 .banner__wrapper .banner__slides--navigation--single::before {
+  .banner.v__2 .banner__wrapper .banner__slides--navigation--single:not(:last-child)::before {
     left: 0;
   }
 }
@@ -17132,6 +17131,7 @@ xclip
   margin: 0 0;
 }
 .program__single--item--list--item .link__list {
+  width: 100%;
   padding: 11px 20px;
   border: 1px solid var(--rt-heading);
   display: inline-flex;
@@ -17359,7 +17359,7 @@ xclip
 }
 .rts-event-section-content .single-event {
   margin: 0;
-  padding: 45px 40px;
+  padding: 10px;
   background: #f6f6f6;
   display: flex;
   gap: 20px;
@@ -17409,11 +17409,6 @@ xclip
 .rts-event-section-content .single-event::before {
   position: absolute;
   content: "";
-  left: 22%;
-  height: 100%;
-  width: 1px;
-  background: var(--rt-white);
-  transition: var(--transition);
 }
 @media screen and (max-width: 992px) {
   .rts-event-section-content .single-event::before {
@@ -17457,9 +17452,6 @@ xclip
   opacity: 1;
   top: 0;
 }
-.rts-event-section-content .single-event-counter {
-  padding-right: 20px;
-}
 @media screen and (max-width: 576px) {
   .rts-event-section-content .single-event-counter {
     padding-right: 0;
@@ -17502,9 +17494,6 @@ xclip
 .rts-event-section-content .single-event-counter .count-number::before {
   content: counter(rt-counter, decimal-leading-zero);
   counter-increment: rt-counter;
-}
-.rts-event-section-content .single-event-content {
-  padding-left: 20px;
 }
 @media screen and (max-width: 1200px) {
   .rts-event-section-content .single-event-content {

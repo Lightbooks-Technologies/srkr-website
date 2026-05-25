@@ -612,7 +612,7 @@
 
         .banner__slides--container {
           &.banner__height {
-            height: 895px;
+            height: 550px;
             display: flex;
             align-items: flex-end;
             @include mq($md) {
@@ -666,7 +666,7 @@
         .banner__slides--navigation {
           position: absolute;
           z-index: 9;
-          bottom: 100px;
+          bottom: 30px;
           right: 200px;
           @include mq($md) {
             left: 200px;
@@ -680,12 +680,12 @@
             padding-bottom: 25px;
 
             &:not(:last-child) {
-              margin-bottom: 50px;
+              margin-bottom: 10px;
             }
 
             position: relative;
 
-            &::before {
+            &:not(:last-child)::before {
               position: absolute;
               bottom: 0;
               height: 1px;
