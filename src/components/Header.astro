@@ -3,6 +3,53 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
+<style>
+  /* Modern Hamburger Menu */
+  .menu__trigger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+  
+  .menu__trigger:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    margin: 3px 0;
+  }
+  
+  .menu__trigger:hover .hamburger-line {
+    background: var(--rt-primary-2, #d32f2f);
+  }
+  
+  /* Active state animation */
+  .menu__trigger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu__trigger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu__trigger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+</style>
+
 <!-- header area start -->
 <header class="header header__sticky v__1">
   <div class="container-fluid">
@@ -101,7 +148,9 @@ import { SITE_TITLE } from "../consts";
                 <i class="fa-sharp fa-light fa-magnifying-glass"></i>
               </div>
               <div id="menu-btn" class="menu__trigger">
-                <img src="assets/images/icon/bar__line.svg" alt="bar" / loading="lazy" decoding="async">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
               </div>
             </div>
           </div>
