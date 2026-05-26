@@ -65,7 +65,7 @@ const ratings = [
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">IIC</li>
               </ul>
-              <h2 class="section-title">{pageTitle}</h2>
+              <h1 class="section-title">{pageTitle}</h1>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ const ratings = [
                   <div class="research-procedure">
                     <div class="research-image"><img src={p.img} alt={p.title} /></div>
                     <div class="rt-serial">{p.num}</div>
-                    <div class="icon"><img src={p.icon} alt="" /></div>
+                    <div class="icon"><img src={p.icon} alt="" / loading="lazy" decoding="async"></div>
                     <a href="#calendar"><span set:html={p.title}></span></a>
                     <p set:html={p.desc}></p>
                   </div>

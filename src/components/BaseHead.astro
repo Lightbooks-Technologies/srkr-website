@@ -1,103 +1,196 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  ORG_SAME_AS,
+  ORG_ADDRESS,
+  ORG_TELEPHONE,
+  ORG_EMAIL,
+} from '../consts';
+import { getPageSeo, buildBreadcrumbs } from '../data/seo';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  /** Optional. If not provided, looked up from src/data/seo.ts by pathname. */
+  title?: string;
+  /** Optional. If not provided, looked up from src/data/seo.ts by pathname. */
+  description?: string;
+  image?: string;
+  /** Optional override for canonical / og:url (must be absolute). Defaults to current page URL on site. */
+  canonical?: string;
+  /** Page type — defaults to "website". Use "article" for news/blog. */
+  ogType?: 'website' | 'article' | 'profile';
+  /** Optional breadcrumb trail for JSON-LD. If omitted, picked up from seo.ts. */
+  breadcrumbs?: BreadcrumbItem[];
+  /** Optional extra JSON-LD blocks (Course, Person, etc.). */
+  extraJsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  /** Set to true to mark this page as noindex (drafts, internal). */
+  noindex?: boolean;
 }
 
-const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const props = Astro.props as Props;
 
-const { title, description, image = '/assets/images/og-image.png' } = Astro.props;
+const seoLookup = getPageSeo(Astro.url.pathname);
+
+// Treat the legacy starter placeholders as "not set" so they fall back to the lookup.
+const PLACEHOLDERS = new Set(['Astro Blog', 'Welcome to my website!', SITE_TITLE, SITE_DESCRIPTION]);
+
+const resolvedTitle =
+  props.title && !PLACEHOLDERS.has(props.title) ? props.title : seoLookup.title;
+const resolvedDescription =
+  props.description && !PLACEHOLDERS.has(props.description)
+    ? props.description
+    : seoLookup.description;
+const resolvedBreadcrumbs = props.breadcrumbs ?? seoLookup.breadcrumbs;
+
+const {
+  image = DEFAULT_OG_IMAGE,
+  canonical,
+  ogType = 'website',
+  extraJsonLd,
+  noindex = false,
+} = props;
+
+const title = resolvedTitle;
+const description = resolvedDescription;
+const breadcrumbs = resolvedBreadcrumbs
+  ? buildBreadcrumbs(resolvedBreadcrumbs)
+  : undefined;
+
+const siteBase = Astro.site ?? new URL(SITE_URL);
+
+// Per-page absolute canonical (strip trailing index slashes consistently)
+const pagePath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonicalURL = canonical ?? new URL(pagePath, siteBase).toString();
+const ogImageURL = image.startsWith('http') ? image : new URL(image, siteBase).toString();
+
+// Organization JSON-LD (homepage only — avoid duplicating on every page)
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollegeOrUniversity',
+  name: SITE_NAME,
+  alternateName: ['SRKR', 'SRKR Engineering College', 'Sagi Rama Krishnam Raju Engineering College'],
+  url: siteBase.toString(),
+  logo: new URL('/assets/images/logo/logo__two.svg', siteBase).toString(),
+  image: ogImageURL,
+  foundingDate: '1980',
+  sameAs: ORG_SAME_AS,
+  address: ORG_ADDRESS,
+  telephone: ORG_TELEPHONE,
+  email: ORG_EMAIL,
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: siteBase.toString(),
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteBase.toString().replace(/\/$/, '')}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: b.url.startsWith('http') ? b.url : new URL(b.url, siteBase).toString(),
+      })),
+    }
+  : null;
+
+const extraBlocks = extraJsonLd
+  ? Array.isArray(extraJsonLd) ? extraJsonLd : [extraJsonLd]
+  : [];
 ---
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SRKR Engineering College | Excellence in Engineering Education</title>
-<meta name="description" content="SRKR Engineering College is a premier institute offering top-notch engineering education, research opportunities, and vibrant campus life. Empower your future with us.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="theme-color" content="#1a3c6b" />
+<meta name="format-detection" content="telephone=no" />
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://srkr-website.vercel.app/">
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonicalURL} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+<meta name="author" content={SITE_NAME} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.facebook.com/SRKRECOFFICIAL">
-<meta property="og:title" content="SRKR Engineering College | Premier Institute for Engineering and Innovation">
-<meta property="og:description" content="Explore SRKR's engineering programs, world-class infrastructure, and career-oriented learning environment. Join the leaders of tomorrow.">
-<meta property="og:image" content="https://srkr-website.vercel.app/assets/images/og-image.png">
-<meta property="og:site_name" content="SRKR Engineering College">
-<meta property="og:locale" content="en_IN">
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content="en_IN" />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://x.com/SRKR_EC">
-<meta name="twitter:title" content="SRKR Engineering College | Empowering Future Engineers">
-<meta name="twitter:description" content="SRKR Engineering College nurtures talent with cutting-edge facilities, experienced faculty, and a strong placement record. Start your journey with us.">
-<meta name="twitter:image" content="https://srkr-website.vercel.app/assets/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SRKR_EC" />
+<meta name="twitter:creator" content="@SRKR_EC" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL} />
+<meta name="twitter:image:alt" content={title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`} />
 
-<!-- Additional SEO Tags -->
-<meta name="keywords" content="SRKR, engineering college, B.Tech, M.Tech, Andhra Pradesh, best engineering college, NAAC A++, admissions, placements">
-<meta name="author" content="SRKR Engineering College">
-<meta name="robots" content="index, follow">
-<meta name="language" content="English">
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo/logo__two.svg" />
+<link rel="apple-touch-icon" href="/assets/images/logo/logo__two.svg" />
+<link rel="manifest" href="/site.webmanifest" />
 
-<!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo/logo__two.svg">
+<!-- Performance hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.youtube.com" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<!-- Structured Data: Organization (homepage only) -->
+{isHomepage && (
+  <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+)}
+{isHomepage && (
+  <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+)}
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="site.webmanifest">
+<!-- Structured Data: Breadcrumb -->
+{breadcrumbJsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+)}
 
-<!-- Structured Data / JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "SRKR Engineering College",
-  "alternateName": "SRKR",
-  "url": "https://srkr-website.vercel.app/",
-  "logo": "/assets/images/logo/logo__two.svg"
-  "sameAs": [
-    "https://www.facebook.com/SRKRECOFFICIAL",
-    "https://x.com/SRKR_EC",
-    "https://www.instagram.com/srkr_engineering_college/",
-    "https://www.youtube.com/@srkreclive8303"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Chinna-Amiram, Bhimavaram",
-    "addressLocality": "Bhimavaram",
-    "addressRegion": "Andhra Pradesh",
-    "postalCode": "534204",
-    "addressCountry": "IN"
-  },
-  "telephone": "+91-8816-223332",
-  "email": "info@srkrec.edu.in"
-}
-</script>
+<!-- Structured Data: Page-specific extras -->
+{extraBlocks.map((block) => (
+  <script type="application/ld+json" set:html={JSON.stringify(block)} />
+))}
 
-<!-- animate css -->
-<link rel="stylesheet" href="/assets/css/plugins/animate.min.css">
-<!-- fontawesome 6.4.2 -->
-<link rel="stylesheet" href="/assets/css/plugins/fontawesome.min.css">
-<!-- bootstrap min css -->
-<link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
-<!-- swiper Css 10.2.0 -->
-<link rel="stylesheet" href="/assets/css/plugins/swiper.min.css">
-<!-- Bootstrap 5.0.2 -->
-<link rel="stylesheet" href="/assets/css/vendor/magnific-popup.css">
-<!-- metismenu scss -->
-<link rel="stylesheet" href="/assets/css/vendor/metismenu.css">
-<!-- nice select js -->
-<link rel="stylesheet" href="/assets/css/plugins/nice-select.css">
-<link rel="stylesheet" href="/assets/css/plugins/jquery-ui.css">
-<!-- custom style css -->
-<link rel="stylesheet" href="/assets/css/style.css">
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/plugins/animate.min.css" />
+<link rel="stylesheet" href="/assets/css/plugins/fontawesome.min.css" />
+<link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+<link rel="stylesheet" href="/assets/css/vendor/magnific-popup.css" />
+<link rel="stylesheet" href="/assets/css/vendor/metismenu.css" />
+<link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
+<link rel="stylesheet" href="/assets/css/plugins/jquery-ui.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />

@@ -1,0 +1,33 @@
+# robots.txt for SRKR Engineering College
+# https://www.srkrec.ac.in
+
+User-agent: *
+Allow: /
+
+# Block template/demo/backup pages from previous Astro starter
+Disallow: /index-bk
+Disallow: /index-copy
+Disallow: /index-two
+Disallow: /index-three
+Disallow: /index-four
+Disallow: /index-five
+Disallow: /test/
+Disallow: /blog/first-post/
+Disallow: /blog/second-post/
+
+# Block crawler abuse / parameterised duplicates
+Disallow: /*?*ref=
+Disallow: /*?*utm_
+
+# Allow major crawlers explicit access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.srkrec.ac.in/sitemap-index.xml

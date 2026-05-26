@@ -1,0 +1,27 @@
+{
+  "name": "SRKR Engineering College",
+  "short_name": "SRKR",
+  "description": "SRKR Engineering College, Bhimavaram — NAAC A++ accredited autonomous institution offering premier engineering education.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a3c6b",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/assets/images/logo/logo__two.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "lang": "en-IN",
+  "categories": ["education", "college", "university"]
+}

@@ -63,7 +63,7 @@ const all = [
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">MoUs</li>
               </ul>
-              <h2 class="section-title">{pageTitle}</h2>
+              <h1 class="section-title">{pageTitle}</h1>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ const all = [
           </div>
           <div class="col-lg-4 col-md-10">
             <div class="program__single--item v__2">
-              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg2.jpg" alt=""></div>
+              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg2.jpg" alt="" loading="lazy" decoding="async"></div>
               <ul class="program__single--item--list">
                 <li class="program__single--item--list--item"><a href="#gov-psu" class="link__list">Government &amp; PSU<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
                 <li class="program__single--item--list--item"><a href="#international" class="link__list">International<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
@@ -141,7 +141,7 @@ const all = [
           </div>
           <div class="col-lg-4 col-md-10">
             <div class="program__single--item">
-              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg3.jpg" alt=""></div>
+              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg3.jpg" alt="" loading="lazy" decoding="async"></div>
               <ul class="program__single--item--list">
                 <li class="program__single--item--list--item"><a href="/research-overview/" class="link__list">Research Overview<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
                 <li class="program__single--item--list--item"><a href="/research-projects/" class="link__list">Research Projects<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
@@ -171,7 +171,7 @@ const all = [
                       <div class="research-procedure" style="padding:24px;">
                         <div class="icon mb--10">
                           {/* TODO: replace placeholder logo with partner logo when available */}
-                          <img src="/assets/images/icon/14.svg" alt="" />
+                          <img src="/assets/images/icon/14.svg" alt="" / loading="lazy" decoding="async">
                         </div>
                         <a href="#">{m.partner}</a>
                         <p set:html={m.focus}></p>
