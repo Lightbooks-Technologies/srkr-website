@@ -42,7 +42,7 @@ const composition = [
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
               </ul>
-              <h2 class="section-title">{pageTitle}</h2>
+              <h1 class="section-title">{pageTitle}</h1>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ const composition = [
                   <div class="research-procedure">
                     <div class="research-image"><img src={s.img} alt={s.title} /></div>
                     <div class="rt-serial">{s.num}</div>
-                    <div class="icon"><img src={s.icon} alt="" /></div>
+                    <div class="icon"><img src={s.icon} alt="" / loading="lazy" decoding="async"></div>
                     <a href="#filing-process">{s.title}</a>
                     <p set:html={s.desc}></p>
                   </div>
