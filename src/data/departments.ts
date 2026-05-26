@@ -61,7 +61,7 @@ export const departments: Department[] = [
   {
     slug: 'civil',
     code: 'CIVIL',
-    name: 'Civil Engineering',
+    name: 'Civil',
     fullName: 'Department of Civil Engineering',
     icon: 'fa-light fa-building-columns',
     established: 1980,
@@ -78,7 +78,7 @@ export const departments: Department[] = [
   {
     slug: 'cse',
     code: 'CSE',
-    name: 'Computer Science & Engineering',
+    name: 'CSE',
     fullName: 'Department of Computer Science & Engineering',
     icon: 'fa-light fa-laptop-code',
     established: 1991,
@@ -95,7 +95,7 @@ export const departments: Department[] = [
   {
     slug: 'ece',
     code: 'ECE',
-    name: 'Electronics & Communication Engineering',
+    name: 'ECE',
     fullName: 'Department of Electronics & Communication Engineering',
     icon: 'fa-light fa-microchip',
     established: 1981,
@@ -112,7 +112,7 @@ export const departments: Department[] = [
   {
     slug: 'eee',
     code: 'EEE',
-    name: 'Electrical & Electronics Engineering',
+    name: 'EEE',
     fullName: 'Department of Electrical & Electronics Engineering',
     icon: 'fa-light fa-bolt',
     established: 1980,
@@ -129,7 +129,7 @@ export const departments: Department[] = [
   {
     slug: 'mechanical',
     code: 'ME',
-    name: 'Mechanical Engineering',
+    name: 'Mechanical',
     fullName: 'Department of Mechanical Engineering',
     icon: 'fa-light fa-gears',
     established: 1980,
@@ -146,7 +146,7 @@ export const departments: Department[] = [
   {
     slug: 'it',
     code: 'IT',
-    name: 'Information Technology',
+    name: 'IT',
     fullName: 'Department of Information Technology',
     icon: 'fa-light fa-network-wired',
     established: 2001,
@@ -163,7 +163,7 @@ export const departments: Department[] = [
   {
     slug: 'csit',
     code: 'CSIT',
-    name: 'Computer Science & Information Technology',
+    name: 'CS & IT',
     fullName: 'Department of Computer Science & Information Technology',
     icon: 'fa-light fa-display-code',
     established: 2020,
@@ -179,7 +179,7 @@ export const departments: Department[] = [
   {
     slug: 'aiml',
     code: 'AIML',
-    name: 'Artificial Intelligence & Machine Learning',
+    name: 'AI & ML',
     fullName: 'Department of Artificial Intelligence & Machine Learning',
     icon: 'fa-light fa-brain-circuit',
     established: 2021,
@@ -195,7 +195,7 @@ export const departments: Department[] = [
   {
     slug: 'aids',
     code: 'AIDS',
-    name: 'Artificial Intelligence & Data Science',
+    name: 'AI & Data Science',
     fullName: 'Department of Artificial Intelligence & Data Science',
     icon: 'fa-light fa-chart-network',
     established: 2021,
@@ -211,7 +211,7 @@ export const departments: Department[] = [
   {
     slug: 'csbs',
     code: 'CSBS',
-    name: 'Computer Science & Business Systems',
+    name: 'CS & Business',
     fullName: 'Department of Computer Science & Business Systems',
     icon: 'fa-light fa-chart-line',
     established: 2021,
@@ -227,7 +227,7 @@ export const departments: Department[] = [
   {
     slug: 'cic',
     code: 'CIC',
-    name: 'CSE — IoT, Cybersecurity & Blockchain',
+    name: 'CSE - IoT & Cyber',
     fullName: 'Department of CSE (IoT, Cyber Security & Blockchain Technology)',
     icon: 'fa-light fa-shield-keyhole',
     established: 2022,
@@ -243,7 +243,7 @@ export const departments: Department[] = [
   {
     slug: 'csd',
     code: 'CSD',
-    name: 'Computer Science & Design',
+    name: 'CS & Design',
     fullName: 'Department of Computer Science & Design',
     icon: 'fa-light fa-pen-ruler',
     established: 2021,

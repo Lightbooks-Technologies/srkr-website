@@ -15,8 +15,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class="page">
 		<SrkrHeader />
 
+        <div class="video-section">
+            <video 
+                class="hero-video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                poster="/assets/video/home.png"
+            >
+                <source src="/assets/video/home.mov" type="video/quicktime">
+                <source src="/assets/video/home.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <!-- header banner -->
-        <div class="banner v__2">
+        <!-- <div class="banner v__2">
             <div class="banner__wrapper">
                 <div class="swiper  swiper-data" data-swiper='{
                             "slidesPerView":1,
@@ -27,7 +41,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                 "delay":"7000"
                     }}'>
                     <div class="swiper-wrapper">
-                        <!-- single slides -->
                         <div class="swiper-slide">
                             <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/nba.png);">
                                 <div class="container">
@@ -41,8 +54,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                 </div>
                             </div>
                         </div>
-                        <!-- single slides end -->
-                        <!-- single slides -->
                         <div class="swiper-slide">
                             <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/naac.png);">
                                 <div class="container">
@@ -56,8 +67,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                 </div>
                             </div>
                         </div>
-                        <!-- single slides end -->
-                         <!-- single slides -->
                         <div class="swiper-slide">
                             <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/placements.png);">
                                 <div class="container">
@@ -71,8 +80,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                 </div>
                             </div>
                         </div>
-                        <!-- single slides end -->
-                         <!-- single slides -->
                         <div class="swiper-slide">
                             <div class="banner__wrapper--bg" style="background-image: url(assets/images/home/research.png);">
                                 <div class="container">
@@ -86,10 +93,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                 </div>
                             </div>
                         </div>
-                        <!-- single slides end -->
                     </div>
                 </div>
-                <!-- <div class="banner__slides--navigation">
+                <div class="banner__slides--navigation">
                     <div class="banner__slides--navigation--single">
                         <h5 class="nav__title">Undergraduate</h5>
                         <a href="/programmes/" class="nav__description">Browse B.Tech programs</a>
@@ -106,9 +112,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                         <h5 class="nav__title">Management</h5>
                         <a href="/programmes/" class="nav__description">Browse BBA programs</a>
                     </div>
-                </div> -->
+                </div>
             </div>
-        </div>
+        </div> -->
         <!-- header banner end -->
 
         <!-- about us -->
@@ -993,268 +999,292 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<SrkrFooter />
 		<OffCanvas/>
 		<FooterScripts />
-        <style is:inline>
-        /* ── NEWS TICKER ── */
-        .srkr-ticker {
-            background: #1a3c6b;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            height: 38px;
-            overflow: hidden;
-            font-size: 0.82rem;
-        }
-        .srkr-ticker__label {
-            background: #f5c518;
-            color: #1a3c6b;
-            font-weight: 700;
-            padding: 0 1rem;
-            white-space: nowrap;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
-            flex-shrink: 0;
-        }
-        .srkr-ticker__track {
-            overflow: hidden;
-            flex: 1;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-        .srkr-ticker__inner {
-            display: flex;
-            white-space: nowrap;
-            animation: ticker-scroll 40s linear infinite;
-            color: rgba(255,255,255,0.9);
-        }
-        .srkr-ticker__inner span { padding-right: 2rem; }
-        @keyframes ticker-scroll {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* ── QUICK LINKS BAR ── */
-        .srkr-quicklinks {
-            background: #f0f4fa;
-            border-bottom: 1px solid #dde4f0;
-            padding: 0.6rem 0;
-        }
-        .srkr-quicklinks__inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.25rem 1.5rem;
-        }
-        .srkr-quicklinks__item {
-            color: #1a3c6b;
-            font-size: 0.82rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 3px;
-            transition: background 0.15s;
-            letter-spacing: 0.02em;
-        }
-        .srkr-quicklinks__item:hover { background: #dde4f0; color: #1a3c6b; }
-        .srkr-quicklinks__item i { font-size: 0.85rem; }
-
-        /* ── DEPT CARDS (equal height thumbnails) ── */
-        .srkr-dept-card { 
-            height: 100%; 
-            background: #ffffff; 
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-        }
-        .srkr-dept-thumb { height: 160px; overflow: hidden; border-radius: 6px 6px 0 0; }
-        .srkr-dept-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .srkr-dept-card .cat-meta {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* ── UG PROGRAMS SECTION FONT SIZES ── */      
-        .srkr-dept-card .cat-title a {
-            font-size: 1.5rem;
-        }
-
-        /* ── PLACEMENT PARTNERS LOGOS ── */
-        .rts-brand .single-brand-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            background: #fff;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            min-height: 260px;
-        }
-        .rts-brand .single-brand-logo:hover {
-            transform: translateY(-3px);
-        }
-        .rts-brand .single-brand-logo img {
-            max-height: 70px;
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 2.5rem;
-        }
-        .rts-brand .single-brand-logo h6 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 0.75rem;
-        }
-        .rts-brand .single-brand-logo p {
-            font-size: 1.3rem;
-            line-height: 1.5;
-        }
-
-        /* ── RESEARCH SECTION IMAGES ── */
-        .rts__research--single--thumb {
-            height: 280px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .rts__research--single--thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* ── EVENT COUNTER IMAGES ── */
-        .single-event-counter {
-            width: 120px;
-            height: 120px;
-            overflow: hidden;
-            /* border-radius: 8px; */
-            flex-shrink: 0;
-        }
-        .single-event-counter img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Remove red background from even events */
-        .rts-event-section-content .single-event:nth-child(2n):not(:hover)::after {
-            opacity: 0 !important;
-        }
-        .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content-meta,
-        .rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content h5 {
-            color: inherit !important;
-        }
-
-        /* ── REDUCED BANNER HEIGHT ── */
-        .banner__height {
-            min-height: 400px !important;
-        }
-        @media screen and (max-width: 768px) {
-            .banner__height {
-                min-height: 320px !important;
-            }
-        }
-
-        /* ── BANNER NAVIGATION 4 ITEMS (VERTICAL) ── */
-        .banner__slides--navigation {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .banner__slides--navigation--single {
-            padding: 2rem 1.5rem;
-        }
-
-        /* ── QUICK LINKS FIXED HEIGHT CARDS ── */
-        .program__single--item {
-            min-height: 580px;
-            display: flex;
-            flex-direction: column;
-        }
-        .program__single--item--list {
-            flex: 1;
-        }
-
-        /* ── SRKREC AT A GLANCE ── */
-        .srkr-glance {
-            background: #f8f9fa;
-        }
-        .srkr-glance-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .srkr-glance-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .srkr-glance-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        .srkr-glance-icon i {
-            font-size: 3.5rem;
-            color: var(--rt-primary-2);
-        }
-        .srkr-glance-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .srkr-glance-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-        .srkr-glance-value .small-text {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #718096;
-        }
-        .srkr-glance-value .plus {
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        .srkr-glance-desc {
-            font-size: 0.95rem;
-            color: #718096;
-            line-height: 1.4;
-        }
-        @media (max-width: 991px) {
-            .srkr-glance-card {
-                padding: 1.5rem 1rem;
-            }
-            .srkr-glance-value {
-                font-size: 2rem;
-            }
-        }
-        </style>
 	</body>
 </html>
+
+<style>
+/* ── HERO VIDEO SECTION ── */
+.video-section {
+    width: 100%;
+    height: 70vh;
+    min-height: 400px;
+    max-height: 800px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+@media (max-width: 768px) {
+    .video-section {
+        height: 50vh;
+        min-height: 300px;
+    }
+}
+
+/* ── NEWS TICKER ── */
+.srkr-ticker {
+    background: #1a3c6b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 38px;
+    overflow: hidden;
+    font-size: 0.82rem;
+}
+.srkr-ticker__label {
+    background: #f5c518;
+    color: #1a3c6b;
+    font-weight: 700;
+    padding: 0 1rem;
+    white-space: nowrap;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+}
+.srkr-ticker__track {
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.srkr-ticker__inner {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 40s linear infinite;
+    color: rgba(255,255,255,0.9);
+}
+.srkr-ticker__inner span { padding-right: 2rem; }
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── QUICK LINKS BAR ── */
+.srkr-quicklinks {
+    background: #f0f4fa;
+    border-bottom: 1px solid #dde4f0;
+    padding: 0.6rem 0;
+}
+.srkr-quicklinks__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+}
+.srkr-quicklinks__item {
+    color: #1a3c6b;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    transition: background 0.15s;
+    letter-spacing: 0.02em;
+}
+.srkr-quicklinks__item:hover { background: #dde4f0; color: #1a3c6b; }
+.srkr-quicklinks__item i { font-size: 0.85rem; }
+
+/* ── DEPT CARDS (equal height thumbnails) ── */
+.srkr-dept-card { 
+    height: 100%; 
+    background: #ffffff; 
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+.srkr-dept-thumb { height: 160px; overflow: hidden; border-radius: 6px 6px 0 0; }
+.srkr-dept-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.srkr-dept-card .cat-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ── UG PROGRAMS SECTION FONT SIZES ── */      
+.srkr-dept-card .cat-title a {
+    font-size: 1.5rem;
+}
+
+/* ── PLACEMENT PARTNERS LOGOS ── */
+.rts-brand .single-brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    min-height: 260px;
+}
+.rts-brand .single-brand-logo:hover {
+    transform: translateY(-3px);
+}
+.rts-brand .single-brand-logo img {
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2.5rem;
+}
+.rts-brand .single-brand-logo h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+.rts-brand .single-brand-logo p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+/* ── RESEARCH SECTION IMAGES ── */
+.rts__research--single--thumb {
+    height: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.rts__research--single--thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── EVENT COUNTER IMAGES ── */
+.single-event-counter {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    /* border-radius: 8px; */
+    flex-shrink: 0;
+}
+.single-event-counter img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Remove red background from even events */
+.rts-event-section-content .single-event:nth-child(2n):not(:hover)::after {
+    opacity: 0 !important;
+}
+.rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content-meta,
+.rts-event-section-content .single-event:nth-child(2n):not(:hover) .single-event-content h5 {
+    color: inherit !important;
+}
+
+/* ── REDUCED BANNER HEIGHT ── */
+.banner__height {
+    min-height: 400px !important;
+}
+@media screen and (max-width: 768px) {
+    .banner__height {
+        min-height: 320px !important;
+    }
+}
+
+/* ── BANNER NAVIGATION 4 ITEMS (VERTICAL) ── */
+.banner__slides--navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.banner__slides--navigation--single {
+    padding: 2rem 1.5rem;
+}
+
+/* ── QUICK LINKS FIXED HEIGHT CARDS ── */
+.program__single--item {
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+}
+.program__single--item--list {
+    flex: 1;
+}
+
+/* ── SRKREC AT A GLANCE ── */
+.srkr-glance {
+    background: #f8f9fa;
+}
+.srkr-glance-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.srkr-glance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.srkr-glance-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.srkr-glance-icon i {
+    font-size: 3.5rem;
+    color: var(--rt-primary-2);
+}
+.srkr-glance-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.srkr-glance-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.srkr-glance-value .small-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #718096;
+}
+.srkr-glance-value .plus {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.srkr-glance-desc {
+    font-size: 0.95rem;
+    color: #718096;
+    line-height: 1.4;
+}
+@media (max-width: 991px) {
+    .srkr-glance-card {
+        padding: 1.5rem 1rem;
+    }
+    .srkr-glance-value {
+        font-size: 2rem;
+    }
+}
+</style>
