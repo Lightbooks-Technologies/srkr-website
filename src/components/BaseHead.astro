@@ -80,7 +80,7 @@ const orgJsonLd = {
   name: SITE_NAME,
   alternateName: ['SRKR', 'SRKR Engineering College', 'Sagi Rama Krishnam Raju Engineering College'],
   url: siteBase.toString(),
-  logo: new URL('/assets/images/logo/logo__two.svg', siteBase).toString(),
+  logo: new URL('/assets/images/logo/srkr-logo.png', siteBase).toString(),
   image: ogImageURL,
   foundingDate: '1980',
   sameAs: ORG_SAME_AS,
@@ -157,9 +157,13 @@ const extraBlocks = extraJsonLd
 <meta name="twitter:image:alt" content={title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`} />
 
 <!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="/assets/images/logo/logo__two.svg" />
-<link rel="apple-touch-icon" href="/assets/images/logo/logo__two.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#1a3c6b" />
+<meta name="msapplication-TileImage" content="/assets/images/android-chrome-192x192.png" />
 
 <!-- Performance hints -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
