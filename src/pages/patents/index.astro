@@ -1,7 +1,5 @@
 --- 
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import FooterScripts from '../../components/FooterScripts.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
@@ -22,7 +20,7 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
     <!-- BREADCRUMB AREA -->
     <section
     class="rts-breadcrumb breadcrumb-height breadcumb-bg"
-    style="background-image: url(assets/images/banner/breadcrumb.jpg)"
+    style="background-image: url(/assets/images/banner/breadcrumb.jpg)"
   >
     <div class="container">
       <div class="row">
@@ -1622,8 +1620,8 @@ Patents                            </button>
     <div class="inner-main-wrapper-desk">
       <div class="thumbnail">
         <img
-          src="assets/images/logo/logo__two.svg"
-          alt="Unipix-university"
+          src="/assets/images/logo/srkr-logo.png"
+          alt="SRKR Engineering College"
         />
       </div>
       <div class="inner-content">
@@ -1634,13 +1632,13 @@ Patents                            </button>
         <!-- offcanvase banner -->
         <div class="offcanvase__banner mt--50">
           <div class="offcanvase__banner--content">
-            <img src="assets/images/offcanvase.jpg" alt="offcanvase" / loading="lazy" decoding="async">
-            <a href="admission.html" class="rts-theme-btn">Apply Now</a>
+            <img src="/assets/images/offcanvase.jpg" alt="offcanvase" / loading="lazy" decoding="async">
+            <a href="/admission-brochure/" class="rts-theme-btn">Apply Now</a>
           </div>
         </div>
         <div class="offcanvase__info">
           <div class="offcanvase__info--content">
-            <a href="/callto:+91 9848823332/"
+            <a href="tel:+919848823332"
               ><span><i class="fa-sharp fa-light fa-phone"></i></span>+(61)
               485-826-710</a
             >
@@ -1674,22 +1672,22 @@ Patents                            </button>
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="index-two.html"
+                <a class="mobile-menu-link" href="/"
                   >Home Style Two</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="index-three.html"
+                <a class="mobile-menu-link" href="/"
                   >Home Style Three</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="index-four.html"
+                <a class="mobile-menu-link" href="/"
                   >Home Style Four</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="index-five.html"
+                <a class="mobile-menu-link" href="/"
                   >Home Style Five</a
                 >
               </li>
@@ -1699,10 +1697,10 @@ Patents                            </button>
             <a href="#" class="main">Pages</a>
             <ul class="submenu mm-collapse">
               <li>
-                <a class="mobile-menu-link" href="about.html">About Us</a>
+                <a class="mobile-menu-link" href="/college-profile/">About Us</a>
               </li>
               <li>
-                <a class="mobile-menu-link" href="athletics.html"
+                <a class="mobile-menu-link" href="/sports/"
                   >Athletics</a
                 >
               </li>
@@ -1710,31 +1708,31 @@ Patents                            </button>
                 <a href="javascript:void(0);">Faculty</a>
                 <ul class="submenu third-lvl base">
                   <li>
-                    <a class="mobile-menu-link" href="faculty-sub.html"
+                    <a class="mobile-menu-link" href="/departments/"
                       >Faculty</a
                     >
                   </li>
                   <li>
                     <a
                       class="mobile-menu-link"
-                      href="faculty-sub-details.html"
+                      href="/departments/"
                       >Faculty Details</a
                     >
                   </li>
                   <li>
-                    <a class="mobile-menu-link" href="faculty.html"
+                    <a class="mobile-menu-link" href="/departments/"
                       >Faculty</a
                     >
                   </li>
                   <li>
-                    <a class="mobile-menu-link" href="faculty-details.html"
+                    <a class="mobile-menu-link" href="/departments/"
                       >Faculty Staff details</a
                     >
                   </li>
                 </ul>
               </li>
               <li>
-                <a class="mobile-menu-link" href="research.html">Research</a>
+                <a class="mobile-menu-link" href="/research-overview/">Research</a>
               </li>
             </ul>
           </li>
@@ -1742,43 +1740,43 @@ Patents                            </button>
             <a href="#" class="main">Academics</a>
             <ul class="submenu mm-collapse">
               <li>
-                <a class="mobile-menu-link" href="academic.html">Academic</a>
+                <a class="mobile-menu-link" href="/programmes/">Academic</a>
               </li>
               <li>
-                <a class="mobile-menu-link" href="admission.html"
+                <a class="mobile-menu-link" href="/admission-brochure/"
                   >Admission</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="academic-area.html"
+                <a class="mobile-menu-link" href="/programmes/"
                   >Academic Area</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="campus-life.html"
+                <a class="mobile-menu-link" href="/activities/"
                   >Campus Life</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="scholarship.html"
+                <a class="mobile-menu-link" href="/fee/"
                   >Scholarship</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="tution-fee.html"
+                <a class="mobile-menu-link" href="/fee/"
                   >Tution Fee</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="alumni.html">Alumni</a>
+                <a class="mobile-menu-link" href="/prominent-alumni/">Alumni</a>
               </li>
               <li>
-                <a class="mobile-menu-link" href="program-single.html"
+                <a class="mobile-menu-link" href="/programmes/"
                   >Program Single</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="department-details.html"
+                <a class="mobile-menu-link" href="/departments/"
                   >Department Details</a
                 >
               </li>
@@ -1788,9 +1786,9 @@ Patents                            </button>
           <li class="has-droupdown">
             <a href="#" class="main">Events</a>
             <ul class="submenu mm-collapse">
-              <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+              <li><a class="mobile-menu-link" href="/activities/">Event</a></li>
               <li>
-                <a class="mobile-menu-link" href="event-details.html"
+                <a class="mobile-menu-link" href="/activities/"
                   >Event Details</a
                 >
               </li>
@@ -1799,32 +1797,32 @@ Patents                            </button>
           <li class="has-droupdown">
             <a href="#" class="main">Blog</a>
             <ul class="submenu mm-collapse">
-              <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+              <li><a class="mobile-menu-link" href="/">Blog</a></li>
               <li>
-                <a class="mobile-menu-link" href="blog-grid.html"
+                <a class="mobile-menu-link" href="/"
                   >Blog Grid</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="blog-list.html"
+                <a class="mobile-menu-link" href="/"
                   >Blog List</a
                 >
               </li>
               <li>
-                <a class="mobile-menu-link" href="blog-details.html"
+                <a class="mobile-menu-link" href="/"
                   >Blog Details</a
                 >
               </li>
             </ul>
           </li>
           <li>
-            <a href="contact.html" class="main">Contact Us</a>
+            <a href="/quick-links/" class="main">Contact Us</a>
           </li>
         </ul>
       </nav>
 
       <div class="offcanvase__info--content mt--30">
-        <a href="/callto:+91 9848823332/"
+        <a href="tel:+919848823332"
           ><span><i class="fa-sharp fa-light fa-phone"></i></span>+(61)
           485-826-710</a
         >
