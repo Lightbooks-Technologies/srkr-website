@@ -9,42 +9,37 @@ import DeptNav from '../../../../components/DeptNav.astro';
 // TODO: replace with real CSE committee roster from srkrec.ac.in
 // DAC Committee Members
 const dacMembers = [
-  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Kiran Sree',              role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Suresh Babu',             role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. V. Chandra Sekhar',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. V. Ramana',               role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Madhuri',                 role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Srinivasa Rao',           role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. S. Naga Mallik Raj',         role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. T. Ravi Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mrs. G. Lakshmi',                role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. B. Sreekanth',               role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. R. Anil Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman\nProfessor & HOD', link: '', image: '222' },
+  { name: 'Dr. K.Suresh Babu', role: 'Member\nProfessor', link: '', image: '200' },
+  { name: 'Dr V Chandra Sekhar', role: 'Member\nProfessor', link: '', image: '484' },
+  { name: 'Dr.P.Suresh Varma', role: 'Member\nExpert from Outside Institute', link: '', image: '' },
+  { name: 'Sri G.Appala Raju\nProject Manager, Infosys', role: 'Member\nAlumni', link: '', image: '' },
+  { name: 'Smt. A L Lavanya', role: 'Member\nParent', link: '', image: '' },
+  { name: 'Dr.Ch Someswararao\nCTO, YANTHRA INFORMATION SYSTEM Pvt LTD', role: 'Member\nIndustry Person', link: '', image: '' },
+
 ];
 
 // TODO: replace with real CSE committee roster from srkrec.ac.in
 // BoS Committee Members
 const bosMembers = [
-  { name: 'Dr. Bh. Rama Krishnam Raju V S',                                   role: 'Chairman\nProfessor and Head',                                                  link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. V. G. D. Prasad Reddy (JNTUK Nominee)',                     role: 'Member\nProfessor, Dept. of CS&SE, Andhra University',                          link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. S. Vasundra (Expert from Other University)',                   role: 'Member\nProfessor, Dept. of CSE, JNTU Anantapur',                               link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Padmavathamma (Expert from Research Organization)',         role: 'Member\nProfessor, Dept. of Computer Science, SV University',                    link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. Srinivasa Rao K. (Expert from Industry)',                      role: 'Member\nSenior Architect, TCS, Hyderabad',                                       link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. V. Ramana',                                                 role: 'Member\nProfessor, Dept. of CSE, SRKR Engineering College',                      link: '', image: 'PLACEHOLDER' },
+
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'CHAIRMAN\nProfessor & Head Dept of CSE SRKR Engineering College', link: '', image: '222' },
+  { name: 'Dr.MHM Krishna Prasad', role: 'JNTUK NOMINEE\nProfessor, Department of Computer Science and Engineering, University College of Engineering Kakinada, JNTUK.', link: '', image: 'MHMKrishnaPrasadx' },
+  { name: 'Dr.S Viswanadha Raju', role: 'EXPERTS FROM OTHER UNIVERSITIES\nProfessor, Dept. of CSE, JNTUH College of Engineering, Jagtial, TS - 505 501', link: '', image: 'ViswanadhaRaju' },
+  { name: 'Dr.P.Suresh Varma', role: 'EXPERTS FROM OTHER UNIVERSITIES\nProfessor, Department of Computer Science and Engineering, Adikavi Nannaya University', link: '', image: 'ProfPSureshVarma' },
+  { name: 'Sri. P C VARMA', role: 'INDUSTRY EXPERT\nCo-Founder & CEO, TekWissen Technologies Pvt.Ltd', link: '', image: 'PCVarma' },
+  { name: 'Dr. N. V. Ganapathi Raju', role: 'Alumni\nProfessor of IT and Dean Alumni affairs GRIET, Hyderabad', link: '', image: 'Ganapathiraju' }
+
 ];
 
 // TODO: replace with real CSE committee roster from srkrec.ac.in
 // PAQIC Committee Members
 const paqicMembers = [
-  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Kiran Sree',              role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Suresh Babu',             role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. V. Chandra Sekhar',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Madhuri',                 role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Srinivasa Rao',           role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. S. Naga Mallik Raj',         role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. T. Ravi Kumar',              role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. Bh. Rama Krishnam Raju V S', role: 'Chairman\nHOD & Professor', link: '', image: '222' },
+  { name: 'Dr. G Mahesh', role: 'Coordinator\nProfessor', link: '', image: '376' },
+  { name: 'Dr. K.Suresh Babu', role: 'Member\nProfessor from other Department', link: '', image: '200' },
+  { name: 'Dr. K V Krishnam Raju', role: 'Member\nProfessor', link: '', image: '354' },
+  { name: 'Dr. G N V G SIRISHA', role: 'Member\nAssociate Professor', link: '', image: '375' },
 ];
 ---
 

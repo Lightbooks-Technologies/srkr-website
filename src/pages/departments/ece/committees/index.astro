@@ -10,40 +10,32 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
 // DAC Committee Members
 const dacMembers = [
-  { name: 'Dr. S.S. Mohan Reddy',     role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Rajesh Kumar',      role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Babulu',            role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Kamaraju',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. B. Rama Rao',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. T. Venkata Lakshmi',   role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Srinivasa Naik',    role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Naga Malleswari',   role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. K. Phani Srinivas',    role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Ms. M. Lakshmi Prasanna',  role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. A. Rajesh',            role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. D. Surya Prakash',     role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. S.S.Mohan Reddy', role: 'Chairman\nProfessor and Head', link: 'https://srkrec.irins.org/profile/180182', image: '313' },
+  { name: 'Dr. N. Udaya Kumar', role: 'Member\nProfessor', link: 'https://srkrec.irins.org/profile/245635', image: '219' },
+  { name: 'Prof.G.V.S.Padma Rao', role: 'Member\nProfessor', link: 'https://srkrec.irins.org/profile/320302', image: '288' },
+  { name: 'Dr.N.Balaji', role: 'Member\nExperts from other Institute', link: '', image: '1' },
+  { name: 'Dr.G.Naga Raju', role: 'Member\nAlumini', link: '', image: '2' },
+  { name: 'Sri.M.Vijaya Rama Raju', role: 'Member\nParent', link: '', image: '3' },
+  { name: 'Sri.B.Srinivasa Rao, Scientist-F , RCI , DRDO , HYD', role: 'Member\nIndustry person', link: '', image: '5' },
 ];
 
 // BoS Committee Members
 const bosMembers = [
-  { name: 'Dr. S.S. Mohan Reddy',                                       role: 'Chairman\nProfessor and Head',                                  link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Surendra Prasad Babu (JNTUK Nominee)',                role: 'Member\nProfessor, Dept. of ECE, JNTUK',                         link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Jaya Sankar (Expert from Other University)',          role: 'Member\nProfessor, IIT Hyderabad',                               link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. N. Bhaskara Rao (Expert from Research Organization)',    role: 'Member\nScientist-G, DRDO',                                      link: '', image: 'PLACEHOLDER' },
-  { name: 'Sri V. Ramesh (Expert from Industry)',                       role: 'Member\nVP — VLSI Design, Texas Instruments, Bengaluru',        link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Babulu',                                              role: 'Member\nProfessor, Dept. of ECE',                                 link: '', image: 'PLACEHOLDER' },
+
+  { name: 'Dr. S.S.Mohan Reddy',          role: 'Chairman\nProfessor and Head',                                                                                                   link: 'https://srkrec.irins.org/profile/180182', image: '313' },
+  { name: 'Dr. N V S Narasimha Sharma',   role: 'Member\nProfessor, Dept. of ECE, NIT, Warangal.',                                                                                link: '', image: 'NVSNarasimhaSharma' },
+  { name: 'Dr. Narayana Balaji',          role: 'Member\nProfessor, Department of ECE, University College of Engineering Kakinada, JNTUK, Kakinada.',                             link: '', image: 'NarayanaBalaji' },
+  { name: 'Sri Voleti Siva Raghu Ram',    role: 'Member\nAssociate Vice President - ASIC Design, MosChip Technologies, Bangalore',                                                link: '', image: 'VShivaRaghuRam' },
+  { name: 'Sri. Mani Kumar Vedantam',     role: 'Member\nGroup Head, SRP Group/ DPA,National Remote Sensing Centre, Hyderabad',                                                   link: '', image: 'Manikumarvedantam' },
+  { name: 'Dr. Komperla Aparna',          role: 'Member\nAssociate Professor & Head, Department of ECE, JNTUA College of Engineering, Kalikiri, Annamayya District.',             link: '', image: 'KAparna' }
 ];
 
 // PAQIC Committee Members
 const paqicMembers = [
-  { name: 'Dr. S.S. Mohan Reddy',     role: 'Chairman',    link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. P. Rajesh Kumar',      role: 'Coordinator', link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Babulu',            role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. M. Kamaraju',          role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. T. Venkata Lakshmi',   role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Dr. K. Srinivasa Naik',    role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Mr. K. Phani Srinivas',    role: 'Member',      link: '', image: 'PLACEHOLDER' },
-  { name: 'Ms. M. Lakshmi Prasanna',  role: 'Member',      link: '', image: 'PLACEHOLDER' },
+  { name: 'Dr. S. S Mohan Reddy', role: 'Chairman\nProfessor and Head', link: 'https://srkrec.irins.org/profile/180182', image: '313' },
+  { name: 'Dr. N. Udaya Kumar', role: 'Coordinator\nProfessor', link: 'https://srkrec.irins.org/profile/245635', image: '219' },
+  { name: 'Dr. B. Sanjay', role: 'Member\nDepartment NBA Coordinator', link: '', image: '638' },
+  { name: 'Dr. B.V.D.S Sekhar', role: 'Member\nOther Department Professor', link: '', image: '332' },
 ];
 ---
 
