@@ -3,6 +3,7 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
 ---
 
 <style>
+  /* Remove any hide-on-scroll logic if present elsewhere in the project */
   /* Tighter submenu padding */
   .navigation__menu--item ul.submenu,
   .navigation__menu--item .sub__style {
@@ -39,7 +40,7 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
   .hamburger-line {
     width: 24px;
     height: 2px;
-    background: var(--rt-heading, #1a3c6b);
+    background: #fff;
     border-radius: 2px;
     transition: all 0.3s ease;
     margin: 3px 0;
@@ -67,7 +68,7 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
 <html lang="en">
   <body>
     <!-- header area start -->
-    <header class="header">
+    <header class="header header__sticky v__1">
       <div class="container">
         <div class="row">
           <div class="col-xl-12">

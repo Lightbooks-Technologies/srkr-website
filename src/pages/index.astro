@@ -15,20 +15,60 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class="page">
 		<SrkrHeader />
 
-        <div class="video-section">
-            <video 
-                class="hero-video" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                poster="/assets/video/home.png"
-            >
-                <source src="/assets/video/home.mov" type="video/quicktime">
-                <source src="/assets/video/home.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <!-- hero slider start -->
+        <div class="rts-hero-slider rt-relative v_2">
+            <div class="rts-hero-slider-active swiper swiper-data" data-swiper='{
+                "slidesPerView":1,
+                "effect": "fade",
+                "loop": false,
+                "speed": 1000,
+                "navigation":{
+                    "nextEl": ".rt-next",
+                    "prevEl": ".rt-prev"
+                },
+                "autoplay":{
+                    "delay":7000,
+                    "disableOnInteraction":false
+                }
+    }'>
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Video Slide -->
+                    <div class="swiper-slide" data-swiper-autoplay="20000">
+                        <div class="rts-slider-height rts-slider-overlay rt-relative" style="position:relative;overflow:hidden;">
+                            <video class="hero-video" autoplay muted loop playsinline poster="/assets/video/home.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"><source src="/assets/video/srkr-video.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                            <!-- Fullscreen dark overlay -->
+                            <div style="position:absolute;top:0;left:0;width:100%;height:100%;background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%);z-index:2;"></div>
+                            <div class="container" style="position:relative;z-index:3;">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
+                                        <div class="rts-slider">
+                                            <div class="rts-slider-content" style="text-align:center;padding:2rem 1rem;border-radius:16px;display:inline-block;margin-top:3vw;">
+                                                <h1 class="rts-slider-title mt-4" style="color:#fff;">Welcome to SRKR Engineering College</h1>
+                                                <p class="rts-slider-desc" style="color:#fff;">Discover SRKR Engineering College—our vibrant campus, advanced labs, and inspiring student life.</p>
+                                                <div class="rts-slider-btn">
+                                                    <a href="/college-profile/" class="rts-theme-btn btn-arrow">Explore College <span><i class="fa-thin fa-arrow-right"></i></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider arrow -->
+                <div class="rts-slider-arrow">
+                    <div class="rt-slider-btn rt-next">
+                        <i class="fa-regular fa-arrow-left"></i>
+                    </div>
+                    <div class="rt-slider-btn rt-prev">
+                        <i class="fa-regular fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- hero slider  end -->
+
         <!-- header banner -->
         <!-- <div class="banner v__2">
             <div class="banner__wrapper">
@@ -1006,7 +1046,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 /* ── HERO VIDEO SECTION ── */
 .video-section {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     min-height: 400px;
     max-height: 800px;
     overflow: hidden;

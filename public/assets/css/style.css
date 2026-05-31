@@ -14633,7 +14633,7 @@ xclip
 .navigation__menu ul {
   display: flex;
   max-width: max-content;
-  gap: 25px;
+  gap: 35px;
   position: relative;
   padding: 0;
   margin: 0;
@@ -14794,7 +14794,7 @@ xclip
   box-shadow: 0px 7px 18px rgba(24, 16, 16, 0.0509803922);
   background: var(--rt-white);
 }
-.header__sticky.fixed .header__logo--link img {
+.header__sticky.fixed .header__right--item .hamburger-line {
   filter: invert(100);
 }
 .header__sticky.fixed .header__right--item .menu__trigger img {

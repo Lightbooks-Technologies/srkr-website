@@ -311,25 +311,18 @@
         },
         // sticky header activation
         stickyHeader: function (e) {
-			function sticky_header() {
-				const headerSticky = $('header.header__sticky');
-				const scroll = $(window).scrollTop();
-				const isScrollingDown = scroll > lastScroll;
-				const header_height = headerSticky.innerHeight();
-				if (scroll > header_height && scroll > lastScroll) {
-				  headerSticky.addClass('back-hide-header');
-				} else if (scroll < lastScroll) {
-				  headerSticky.removeClass('back-hide-header');
-				}
-				headerSticky.toggleClass('fixed', scroll > 300);
-				$('.header-top-one-wrapper').toggle(scroll <= 100);
-				headerSticky.toggleClass('active', scroll === 100);
-				lastScroll = scroll;
-			  }
-			  let lastScroll = 0;
-			  $(document).ready(sticky_header);
-			  $(window).on('load scroll resize', sticky_header);	
-		  },
+            function sticky_header() {
+                const headerSticky = $('header.header__sticky');
+                const scroll = $(window).scrollTop();
+                // Always show header, never hide on scroll down
+                headerSticky.removeClass('back-hide-header');
+                headerSticky.toggleClass('fixed', scroll > 300);
+                $('.header-top-one-wrapper').toggle(scroll <= 100);
+                headerSticky.toggleClass('active', scroll === 100);
+            }
+            $(document).ready(sticky_header);
+            $(window).on('load scroll resize', sticky_header);
+        },
         progressAvtivation: function () {
           $(window).scroll(function () {
               if ($(this).scrollTop() > 250) {

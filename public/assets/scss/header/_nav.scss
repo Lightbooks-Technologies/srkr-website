@@ -5,7 +5,7 @@
         ul {
             display: flex;
             max-width: max-content;
-            gap: 25px;
+            gap: 35px;
             position: relative;
             padding: 0;
             margin: 0;
@@ -191,6 +191,9 @@
         box-shadow: 0px 7px 18px #1810100d;
         background: var(--rt-white);
         .header__logo--link img{
+            // filter: invert(100);
+        }
+        .header__right--item .hamburger-line {
             filter: invert(100);
         }
         .header__right--item .menu__trigger img{
