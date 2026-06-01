@@ -9,7 +9,7 @@ import DeptNav from '../../../../components/DeptNav.astro';
 // TODO: Replace placeholder faculty data with the official CSIT faculty list once published.
 // Faculty photos should be placed at /assets/images/faculty/csit/{imgsrc}.jpg
 const hod = [
-  { name: 'Dr. Y. Kiran Kumar', designation: 'Associate Professor & Head of Department', specialization: 'Cloud Computing & Software Engineering', profile: '', imgsrc: 'PLACEHOLDER' },
+  { name: 'Dr. Y. Kiran Kumar', designation: 'Associate Professor & Program Coordinator', specialization: 'Cloud Computing & Software Engineering', profile: '', imgsrc: 'PLACEHOLDER' },
 ];
 
 const professors = [
@@ -65,7 +65,7 @@ const assistantProfessors = [
 
         <!-- HoD -->
         <div class="rts-section mb--40">
-          <h3 class="rts-section-title">Associate Professor &amp; Head of Department</h3>
+          <h3 class="rts-section-title">Associate Professor &amp; Program Coordinator</h3>
         </div>
         <div class="row g-5 mb--50">
           {hod.map((f) => (
@@ -73,7 +73,7 @@ const assistantProfessors = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    {/* TODO: Replace /assets/images/faculty/csit/PLACEHOLDER.jpg with real HoD photo */}
+                    {/* TODO: Replace /assets/images/faculty/csit/PLACEHOLDER.jpg with real Program Coordinator photo */}
                     <img src={`/assets/images/faculty/csit/${f.imgsrc}.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">

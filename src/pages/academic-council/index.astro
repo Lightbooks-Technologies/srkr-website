@@ -7,7 +7,7 @@ import OffCanvas from '../../components/OffCanvas.astro';
 
 const pageTitle = "Academic Council";
 
-const chair = { name: 'Dr. K.V. Murali Krishnam Raju', role: 'Principal · Chairperson' };
+const chair = { name: 'Dr. K.V. Murali Krishnam Raju', role: 'Principal' };
 
 const hods = [
   { name: 'Dr. G. Sri Bala',                  role: 'Head, Dept. of Civil Engineering' },
@@ -23,12 +23,13 @@ const hods = [
   { name: 'Dr. M. Suresh Babu',               role: 'Programme Coordinator, CSG' },
   { name: 'Dr. K.V. Krishnam Raju',           role: 'Programme Coordinator, CIC' },
   { name: 'Dr. N. Gopala Krishna Murthy',     role: 'Programme Coordinator, CSIT' },
+  { name: 'Dr. M. Siva Krishnam Raju',       role: 'Programme Coordinator, BBA' },
 ];
 
 const seniorFaculty = [
   { name: 'Dr. S. Rajesh',                    role: 'Dean, IQAC' },
   { name: 'Dr. T. Vamsi Naga Raju',           role: 'Dean, R&amp;D' },
-  { name: 'Dr. M. Siva Krishnam Raju',        role: 'Controller of Examinations · Programme Coordinator, BBA' },
+  { name: 'Dr. V. Chandra Sekhar',           role: 'Dean, Academics' },
   { name: 'Dr. K.R. Satyanarayana',           role: 'Dean, Training &amp; Placements' },
 ];
 
@@ -83,7 +84,7 @@ const memberSecretary = { name: 'Dr. V. Chandra Sekhar', role: 'Professor of CSE
                 <p>Members across 6 categories</p>
               </div>
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">4</h2>
+                <h2 class="single-cta-item__title">7</h2>
                 <p>External Experts &amp; 3 JNTUK Nominees</p>
               </div>
               <div class="single-cta-item">
@@ -169,10 +170,10 @@ const memberSecretary = { name: 'Dr. V. Chandra Sekhar', role: 'Professor of CSE
                   </ul>
                 </div>
               </div>
-              <div class="program-info">
+              <!-- <div class="program-info">
                 <h5>Member Secretary</h5>
                 <p>{memberSecretary.name}<br/><small set:html={memberSecretary.role}></small></p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -190,6 +191,29 @@ const memberSecretary = { name: 'Dr. V. Chandra Sekhar', role: 'Professor of CSE
                     </thead>
                     <tbody>
                       <tr><td>{chair.name}</td><td>{chair.role}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Senior Faculty -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Deans</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr><td>Name</td><td>Role</td></tr>
+                    </thead>
+                    <tbody>
+                      {seniorFaculty.map((m) => (
+                        <tr><td>{m.name}</td><td set:html={m.role}></td></tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -221,28 +245,7 @@ const memberSecretary = { name: 'Dr. V. Chandra Sekhar', role: 'Professor of CSE
           </div>
         </div>
 
-        <!-- Senior Faculty -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">Senior Faculty</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <tr><td>Name</td><td>Role</td></tr>
-                    </thead>
-                    <tbody>
-                      {seniorFaculty.map((m) => (
-                        <tr><td>{m.name}</td><td set:html={m.role}></td></tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
         <!-- External Experts -->
         <div class="row mt--20">
