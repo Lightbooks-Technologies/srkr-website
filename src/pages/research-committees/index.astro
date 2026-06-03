@@ -9,23 +9,55 @@ const pageTitle = "Research Committees";
 
 // Placeholder rosters — TODO: replace with real names once notified
 const racMembers = [
-  { name: 'Principal', role: 'Chairman' },
-  { name: 'Dean &mdash; Research &amp; Development', role: 'Convenor' },
-  { name: 'External Expert (IIT / NIT)', role: 'External Member' },
-  { name: 'Industry Research Lead', role: 'Industry Member' },
-  { name: 'Sr. Faculty &mdash; Engineering Sciences', role: 'Member' },
-  { name: 'Sr. Faculty &mdash; Applied Sciences', role: 'Member' },
-  { name: 'Coordinator &mdash; IPR Cell', role: 'Member' },
-  { name: 'Coordinator &mdash; IIC', role: 'Member' }
+{ "name": "Dr. K.V. Murali Krishnam Raju", "designation": "Principal", "role": "Chairman" },
+  { "name": "Dr. T. Vamsi Nagaraju", "designation": "Dean, R&D", "role": "Coordinator" },
+  { "name": "Dr. G. Sri Bala", "designation": "Head, Dept. of Civil Engineering", "role": "Member" },
+  { "name": "Dr. Bh.V.S.R.K. Raju", "designation": "Head, Dept. of CSE", "role": "Member" },
+  { "name": "Dr. N. Udaya Kumar", "designation": "Head, Dept. of ECE", "role": "Member" },
+  { "name": "Dr. B.R.K. Varma", "designation": "Head, Dept. of EEE", "role": "Member" },
+  { "name": "Sri P. Ravi Kiran Varma", "designation": "Head, Dept. of IT", "role": "Member" },
+  { "name": "Dr. K. Suresh Babu", "designation": "Head, Dept. of Mechanical Engg.", "role": "Member" },
+  { "name": "Dr. Venu Reddy", "designation": "WET Centre & Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. G. Harish Kumar Varma", "designation": "Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. K. Chalapathi Raju", "designation": "Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. K. Bala Sindhuri", "designation": "Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. N. Gopala Krishna Murthy", "designation": "Head, Technology Centre & Program Coordinator, CS&IT", "role": "Member" },
+  { "name": "Dr. M. Suresh Babu", "designation": "Program Coordinator, CSD", "role": "Member" },
+  { "name": "Dr. B.V.D.S. Sekhar", "designation": "Program Coordinator, CSBS", "role": "Member" },
+  { "name": "Dr. G.N.V.G. Sirisha", "designation": "Program Coordinator, AIML", "role": "Member" },
+  { "name": "Dr. B.S. Diwakar", "designation": "Associate Professor, Dept. of Engg. Chemistry", "role": "Member" }
 ];
 
+
+const climateMembers = [
+{ "name": "Dr. K. V. Murali Krishnam Raju", "designation": "Principal", "role": "Chairman" },
+  { "name": "Dr. T. Vamsi Nagaraju", "designation": "Dean, R&D", "role": "Coordinator" },
+  { "name": "Dr. G. Sri Bala", "designation": "Head, Dept. of Civil Engineering", "role": "Coordinator" },
+  { "name": "Dr. Bh. V. S. R. K. Raju", "designation": "Head, Dept. of CSE", "role": "Member" },
+  { "name": "Dr. B. R. K. Varma", "designation": "Head, Dept. of EEE", "role": "Member" },
+  { "name": "Dr. G. Harish Kumar Varma", "designation": "Head, Entrepreneurship Development Cell", "role": "Member" },
+  { "name": "Dr. E Ramanjaneya Raju", "designation": "Head, Consultancy Cell", "role": "Member" },
+  { "name": "Dr. P. R. S. S. V. Raju", "designation": "Head, Center for Information Technology Infrastructure", "role": "Member" },
+  { "name": "Dr. P V Rambabu", "designation": "Assistant Professor and Executive Engineer", "role": "Member" },
+  { "name": "Dr. Venu Reddy", "designation": "Associate Dean, R&D Coordinator WET Centre", "role": "Member" },
+  { "name": "Dr. K M Ganesh", "designation": "Professor of Civil Engineering Coordinator, BCDE", "role": "Member" },
+  { "name": "Dr. R K Chaitanya", "designation": "Associate Professor of ECE Coordinator, NSS", "role": "Member" },
+  { "name": "Dr. T Rambabu", "designation": "Associate Professor, WET Centre Coordinator, UBA", "role": "Member" },
+  { "name": "Dr. B S S Santosh", "designation": "Assistant Professor of EEE", "role": "Member" }];
+
 const ethicsMembers = [
-  { name: 'Senior Faculty (Chairperson)', role: 'Chairperson' },
-  { name: 'Member Secretary', role: 'Member Secretary' },
-  { name: 'External Subject Expert', role: 'External Member' },
-  { name: 'Legal / Social Scientist Nominee', role: 'External Member' },
-  { name: 'Biomedical / Statistician Nominee', role: 'External Member' },
-  { name: 'Internal Faculty Member', role: 'Member' }
+   { "name": "Dr. K.V. Murali Krishnam Raju", "designation": "Principal", "role": "Chairman" },
+  { "name": "Dr. T. Vamsi Nagaraju", "designation": "Dean, R&D", "role": "Coordinator" },
+  { "name": "Dr. G. Sri Bala", "designation": "Head, Dept. of Civil Engineering", "role": "Member" },
+  { "name": "Dr. Bh.V.S.R.K. Raju", "designation": "Head, Dept. of CSE", "role": "Member" },
+  { "name": "Dr. N. Udaya Kumar", "designation": "Head, Dept. of ECE", "role": "Member" },
+  { "name": "Dr. B.R.K. Varma", "designation": "Head, Dept. of EEE", "role": "Member" },
+  { "name": "Dr. P. Ravi Kiran Varma", "designation": "Head, Dept. of IT", "role": "Member" },
+  { "name": "Dr. K. Suresh Babu", "designation": "Head, Dept. of Mechanical Engg.", "role": "Member" },
+  { "name": "Dr. Venu Reddy", "designation": "WET Centre & Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. G. Harish Kumar Varma", "designation": "Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. K. Chalapathi Raju", "designation": "Associate Dean, R&D", "role": "Member" },
+  { "name": "Dr. K. Bala Sindhuri", "designation": "Associate Dean, R&D", "role": "Member" }
 ];
 
 const deptCells = [
@@ -149,9 +181,11 @@ const deptCells = [
               <table class="table">
                 <thead class="table-theme">
                   <tr>
-                    <td>S.No</td>
-                    <td>Name</td>
-                    <td>Role</td>
+                    <th >S.No</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Role</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -160,7 +194,9 @@ const deptCells = [
                     <tr>
                       <td>{i + 1}</td>
                       <td set:html={m.name}></td>
+                      <td>{m.designation}</td>
                       <td>{m.role}</td>
+                      
                     </tr>
                   ))}
                 </tbody>
@@ -192,6 +228,7 @@ const deptCells = [
                     <td>S.No</td>
                     <td>Name</td>
                     <td>Role</td>
+                    <td>Designation</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -201,6 +238,7 @@ const deptCells = [
                       <td>{i + 1}</td>
                       <td>{m.name}</td>
                       <td>{m.role}</td>
+                      <td>{m.designation}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -210,6 +248,50 @@ const deptCells = [
         </div>
       </div>
     </section>
+
+
+    <!-- Climate  Research Cells -->
+    <section class="rts-scholarship pt--40 pb--60" id="dept-cells">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--40 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Climate Cells</h3>
+              <p>The Climate Cell Committee promotes sustainability initiatives, environmental awareness, and climate-resilient practices within the institution and community.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-deadline">
+          <div class="application-deadline__content">
+            <div class="application-deadline__content--table">
+              <table class="table">
+                <thead class="table-theme">
+                  <tr>
+                   <td>S.No</td>
+                    <td>Name</td>
+                    <td>Designation</td>
+                    <td>Role</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {climateMembers.map((m, i) => (
+                    <tr>
+                      <td>{i + 1}</td>
+                      <td>{m.name}</td>
+                      <td>{m.role}</td>
+                      <td>{m.designation}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+
 
     <!-- Departmental Research Cells -->
     <section class="rts-scholarship pt--40 pb--60" id="dept-cells">
