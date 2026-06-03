@@ -258,9 +258,6 @@ export const departments: Department[] = [
   //   tagline: 'Established 2021 · B.Tech CS & Design · Creative Tech Programs',
   //   legacyCode: 'csd',
   // },
-=======
- 
->>>>>>> 523fb95ac87032f28dc6439e2070a83eaf7d972f
 ];
 
 export function getDepartment(slug: string): Department | undefined {
