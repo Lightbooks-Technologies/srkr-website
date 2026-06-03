@@ -126,6 +126,7 @@ export const departments: Department[] = [
     nbaAccredited: true,
     legacyCode: 'eee',
   },
+  
   {
     slug: 'mechanical',
     code: 'ME',
