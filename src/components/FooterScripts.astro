@@ -1,5 +1,255 @@
 <!-- In your Astro component or layout file -->
 
+<style>
+	.color-config-launcher {
+		position: fixed;
+		right: 20px;
+		bottom: 90px;
+		width: 46px;
+		height: 46px;
+		border: none;
+		border-radius: 50%;
+		background: var(--rt-primary, #890C25);
+		color: var(--rt-white, #fff);
+		font-size: 21px;
+		line-height: 1;
+		cursor: pointer;
+		z-index: 10001;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+	}
+
+	.color-config-panel {
+		position: fixed;
+		right: 20px;
+		bottom: 145px;
+		width: min(92vw, 330px);
+		max-height: min(70vh, 560px);
+		overflow-y: auto;
+		background: #fff;
+		border: 1px solid var(--rt-border, #D9D9D9);
+		border-radius: 12px;
+		box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+		padding: 14px;
+		z-index: 10001;
+	}
+
+	.color-config-panel[hidden] {
+		display: none;
+	}
+
+	.color-config-title {
+		font-size: 16px;
+		font-weight: 700;
+		color: var(--rt-heading, #262626);
+		margin: 0 0 10px;
+	}
+
+	.color-config-grid {
+		display: grid;
+		gap: 8px;
+	}
+
+	.color-config-row {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 10px;
+		align-items: center;
+		padding: 5px 0;
+	}
+
+	.color-config-row label {
+		color: var(--rt-heading, #262626);
+		font-size: 13px;
+		line-height: 1.3;
+		margin: 0;
+	}
+
+	.color-config-row input[type="color"] {
+		width: 42px;
+		height: 30px;
+		padding: 0;
+		border: 1px solid var(--rt-border, #D9D9D9);
+		border-radius: 6px;
+		cursor: pointer;
+		background: transparent;
+	}
+
+	.color-config-actions {
+		margin-top: 12px;
+		display: flex;
+		gap: 8px;
+		justify-content: flex-end;
+	}
+
+	.color-config-actions button {
+		border: 1px solid var(--rt-border, #D9D9D9);
+		border-radius: 8px;
+		padding: 7px 10px;
+		background: #fff;
+		color: var(--rt-heading, #262626);
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.color-config-actions button.primary {
+		background: var(--rt-primary, #890C25);
+		border-color: var(--rt-primary, #890C25);
+		color: #fff;
+	}
+</style>
+
+<button
+	id="colorConfigLauncher"
+	class="color-config-launcher"
+	type="button"
+	aria-label="Open color settings"
+	title="Color settings"
+>
+	⚙
+</button>
+
+<div id="colorConfigPanel" class="color-config-panel" hidden>
+	<h3 class="color-config-title">Theme Color Settings</h3>
+	<div class="color-config-grid">
+		<div class="color-config-row"><label for="cfg-rt-primary">Primary Brand Color</label><input id="cfg-rt-primary" type="color" data-var="--rt-primary" /></div>
+		<div class="color-config-row"><label for="cfg-rt-primary-1">Primary Light Variant</label><input id="cfg-rt-primary-1" type="color" data-var="--rt-primary-1" /></div>
+		<div class="color-config-row"><label for="cfg-rt-primary-2">Primary Dark Variant</label><input id="cfg-rt-primary-2" type="color" data-var="--rt-primary-2" /></div>
+		<div class="color-config-row"><label for="cfg-rt-secondary">Secondary Brand Color</label><input id="cfg-rt-secondary" type="color" data-var="--rt-secondary" /></div>
+		<div class="color-config-row"><label for="cfg-rt-body">Body Text Color</label><input id="cfg-rt-body" type="color" data-var="--rt-body" /></div>
+		<div class="color-config-row"><label for="cfg-rt-heading">Heading Text Color</label><input id="cfg-rt-heading" type="color" data-var="--rt-heading" /></div>
+		<div class="color-config-row"><label for="cfg-rt-white">Pure White / Inverse Text</label><input id="cfg-rt-white" type="color" data-var="--rt-white" /></div>
+	</div>
+	<div class="color-config-actions">
+		<button id="cfgReset" type="button">Reset</button>
+		<button id="cfgClose" type="button" class="primary">Close</button>
+	</div>
+</div>
+
+<script is:inline>
+	(function () {
+		var STORAGE_KEY = 'srkr-color-config-v1';
+		var DEFAULTS = {
+			'--rt-theme': '#09A24F',
+			'--rt-primary': '#890C25',
+			'--rt-primary-1': '#B71A34',
+			'--rt-primary-2': '#890C25',
+			'--rt-secondary': '#110C2D',
+			'--rt-footer': '#181818',
+			'--rt-body': '#737477',
+			'--rt-heading': '#262626',
+			'--rt-white': '#FFFFFF',
+			'--rt-rating': '#890C25',
+			'--rt-border': '#D9D9D9',
+			'--rt-line': '#EEEEEE',
+			'--rt-hover': '#AF0E2E'
+		};
+
+		function normalizeHex(value) {
+			if (!value || typeof value !== 'string') return '#000000';
+			var hex = value.trim();
+			if (hex[0] !== '#') hex = '#' + hex;
+			if (/^#[0-9a-fA-F]{3}$/.test(hex)) {
+				return '#' + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
+			}
+			if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return '#000000';
+			return hex.toUpperCase();
+		}
+
+		function loadStored() {
+			try {
+				var raw = window.localStorage.getItem(STORAGE_KEY);
+				if (!raw) return {};
+				var parsed = JSON.parse(raw);
+				return parsed && typeof parsed === 'object' ? parsed : {};
+			} catch (err) {
+				return {};
+			}
+		}
+
+		function saveStored(colors) {
+			try {
+				window.localStorage.setItem(STORAGE_KEY, JSON.stringify(colors));
+			} catch (err) {
+				// Ignore localStorage errors.
+			}
+		}
+
+		function applyColors(colors) {
+			var root = document.documentElement;
+			Object.keys(DEFAULTS).forEach(function (cssVar) {
+				var color = normalizeHex(colors[cssVar] || DEFAULTS[cssVar]);
+				root.style.setProperty(cssVar, color);
+			});
+		}
+
+		function initColorConfig() {
+			var launcher = document.getElementById('colorConfigLauncher');
+			var panel = document.getElementById('colorConfigPanel');
+			var resetBtn = document.getElementById('cfgReset');
+			var closeBtn = document.getElementById('cfgClose');
+			if (!launcher || !panel || !resetBtn || !closeBtn) return;
+
+			var colors = Object.assign({}, DEFAULTS, loadStored());
+			applyColors(colors);
+
+			var inputs = Array.prototype.slice.call(panel.querySelectorAll('input[data-var]'));
+			inputs.forEach(function (input) {
+				var cssVar = input.getAttribute('data-var');
+				input.value = normalizeHex(colors[cssVar] || DEFAULTS[cssVar]);
+				input.addEventListener('input', function (event) {
+					var next = normalizeHex(event.target.value);
+					colors[cssVar] = next;
+					document.documentElement.style.setProperty(cssVar, next);
+					if (cssVar === '--rt-primary') {
+						launcher.style.background = next;
+					}
+					saveStored(colors);
+				});
+			});
+
+			launcher.addEventListener('click', function () {
+				panel.hidden = !panel.hidden;
+			});
+
+			closeBtn.addEventListener('click', function () {
+				panel.hidden = true;
+			});
+
+			resetBtn.addEventListener('click', function () {
+				colors = Object.assign({}, DEFAULTS);
+				inputs.forEach(function (input) {
+					var cssVar = input.getAttribute('data-var');
+					var value = normalizeHex(DEFAULTS[cssVar]);
+					input.value = value;
+				});
+				applyColors(colors);
+				launcher.style.background = normalizeHex(DEFAULTS['--rt-primary']);
+				try {
+					window.localStorage.removeItem(STORAGE_KEY);
+				} catch (err) {
+					// Ignore localStorage errors.
+				}
+			});
+
+			document.addEventListener('click', function (event) {
+				if (panel.hidden) return;
+				var target = event.target;
+				if (panel.contains(target) || launcher.contains(target)) return;
+				panel.hidden = true;
+			});
+
+			launcher.style.background = normalizeHex(colors['--rt-primary']);
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initColorConfig);
+		} else {
+			initColorConfig();
+		}
+	})();
+</script>
+
 <!-- Method 1: Using Astro's script tag with the is:inline attribute -->
 <script is:inline src="/assets/js/vendor/jquery.min.js"></script>
 

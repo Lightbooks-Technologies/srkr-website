@@ -1,5 +1,9 @@
 ---
 import { departments, DEPT_NAV_ITEMS } from '../data/departments';
+
+const headerDepartments = departments.filter((department) =>
+  ['civil', 'cse', 'ece', 'eee', 'mechanical', 'it'].includes(department.slug),
+);
 ---
 
 <style>
@@ -128,7 +132,7 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
                       <li class="navigation__menu--item has-child has-arrow">
                         <a href="/departments" class="navigation__menu--item__link">Departments</a>
                         <ul class="submenu sub__style">
-                          {departments.map((d) => (
+                          {headerDepartments.map((d) => (
                             <li>
                               <a href={`/departments/${d.slug}/`}>{d.name}</a>
                             </li>
@@ -151,7 +155,7 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
                           <li class="has-child has-arrow">
                             <a href="/departments">Departments</a>
                             <ul class="sub__style">
-                              {departments.map((d) => (
+                              {headerDepartments.map((d) => (
                                 <li>
                                   <a class="mobile-menu-link" href={`/departments/${d.slug}/`}>{d.name}</a>
                                 </li>
