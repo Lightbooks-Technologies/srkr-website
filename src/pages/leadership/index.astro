@@ -17,6 +17,9 @@ const apex = [
 const executive = [
   { name: 'Dr. M. Jagapathi Raju',       image:'/assets/images/faculty/civil/1255.jpg',  role: 'Director',                                         msgHref: 'https://srkrec.ac.in/director_message.php' },
   { name: 'Dr. K.V. Murali Krishnam Raju', image:'/assets/images/campus/gb/g8.jpeg', role: 'Principal',                                         msgHref: 'https://srkrec.ac.in/principal_message.php' },
+  {
+    name:'Mr. Ch. Dileep Chakravarthy', image:'/assets/images/campus/dc.jpg', role: 'Chief Administrative Officer',                      msgHref: ''
+  }
 ];
 
 const deans = [
@@ -28,10 +31,11 @@ const deans = [
 ];
 
 const administration = [
-  { name: 'Mr. Ch. Dileep Chakravarthy',   role: 'Chief Administrative Officer' },
-  { name: 'Mr. Ch. Amarendra',             role: 'Finance Officer' },
+  { name: 'Dr. G. Harish Kumar Varma',     role: 'Head, E-Cell' },
+  { name: 'Dr. P.V.S.S. Raju',             role: 'Head, Centre for IT Infrastructure' },
+  { name: 'Dr. E. Ramanjaneya Raju',       role: 'Head, Consultancy Cell' },
   { name: 'Dr. P.V. Rambabu',              role: 'College Engineer' },
-  { name: 'Mr. G. Srinivasa Raju',         role: 'In-Charge, Central Library' },
+  { name: 'Mr. Ch. Amarendra',             role: 'Finance Officer' },
 ];
 ---
 <!doctype html>
@@ -66,16 +70,13 @@ const administration = [
           <div class="col-lg-10">
             <div class="rts-funfact-wrapper">
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">45+</h2>
-                <p>Years of Visionary Leadership</p>
+                <p>Executive Leadership</p>
               </div>
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">12</h2>
-                <p>Engineering Departments &amp; HoDs</p>
+                <p>Academic Leadership</p>
               </div>
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">5</h2>
-                <p>Deans &amp; Statutory Officers</p>
+                <p>Institutional Operations</p>
               </div>
             </div>
           </div>
@@ -164,7 +165,29 @@ const administration = [
             </div>
           </div>
         </div>
-
+  <!-- HoDs grid -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Heads of Departments</h3>
+          </div>
+        </div>
+          <div class="row g-4">
+          {departments.map((d) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title"><a href={`/departments/${d.slug}/`}>{d.name}</a></h5>
+                  <p class="card-text mb--5"><strong>{d.hod}</strong></p>
+                  <p class="card-text"><small>{d.hodDesignation}</small></p>
+                  {d.hodEmail && (
+                    <p class="card-text"><a href={`mailto:${d.hodEmail}`}>{d.hodEmail}</a></p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+     
+        </div>
         <!-- Administration -->
         <div class="row mt--40">
           <div class="col-12">
@@ -194,38 +217,8 @@ const administration = [
           </div>
         </div>
 
-        <!-- HoDs grid -->
-        <div class="row mt--80">
-          <div class="rts-section rt-center mb--45">
-            <h3 class="rts-section-title">Heads of Departments</h3>
-          </div>
-        </div>
-        <div class="row g-4">
-          {departments.map((d) => (
-            <div class="col-lg-4 col-md-6">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title"><a href={`/departments/${d.slug}/`}>{d.name}</a></h5>
-                  <p class="card-text mb--5"><strong>{d.hod}</strong></p>
-                  <p class="card-text"><small>{d.hodDesignation}</small></p>
-                  {d.hodEmail && (
-                    <p class="card-text"><a href={`mailto:${d.hodEmail}`}>{d.hodEmail}</a></p>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title"><a href="/humanities">Basic Science &amp; Humanities</a></h5>
-                <p class="card-text mb--5"><strong>HoDs across BS&amp;H departments</strong></p>
-                <p class="card-text"><small>English &amp; Foreign Languages, Mathematics, Physics, Chemistry</small></p>
-                {/* TODO: confirm consolidated BS&H HoD list */}
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      
 
         <!-- Quick Links / Messages -->
         <div class="row mt--80">
