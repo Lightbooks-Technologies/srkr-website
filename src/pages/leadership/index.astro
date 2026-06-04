@@ -5,6 +5,8 @@ import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
 import { departments } from '../../data/departments';
+import { programs } from '../../data/programs';
+
 
 const pageTitle = "Leadership Team";
 
@@ -18,7 +20,7 @@ const executive = [
   { name: 'Dr. M. Jagapathi Raju',       image:'/assets/images/faculty/civil/1255.jpg',  role: 'Director',                                         msgHref: 'https://srkrec.ac.in/director_message.php' },
   { name: 'Dr. K.V. Murali Krishnam Raju', image:'/assets/images/campus/gb/g8.jpeg', role: 'Principal',                                         msgHref: 'https://srkrec.ac.in/principal_message.php' },
   {
-    name:'Mr. Ch. Dileep Chakravarthy', image:'/assets/images/campus/dc.jpg', role: 'Chief Administrative Officer',                      msgHref: ''
+    name:'Mr. Ch. Dileep Chakravarthy', image:'/assets/images/faculty/it/697.jpg', role: 'Chief Administrative Officer',                      msgHref: ''
   }
 ];
 
@@ -188,6 +190,33 @@ const administration = [
           ))}
      
         </div>
+      <!-- program co grid -->
+        <div class="row mt--80">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Program Coordinators</h3>
+          </div>
+        </div>
+          <div class="row g-4">
+          {programs.map((p) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title"><a href={`/departments/${p.slug}/`}>{p.name}</a></h5>
+                  <p class="card-text mb--5"><strong>{p.hod}</strong></p>
+                  <p class="card-text"><small>{p.hodDesignation}</small></p>
+                  {p.hodEmail && (
+                    <p class="card-text"><a href={`mailto:${p.hodEmail}`}>{p.hodEmail}</a></p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+     
+        </div>
+
+
+
+
         <!-- Administration -->
         <div class="row mt--40">
           <div class="col-12">
