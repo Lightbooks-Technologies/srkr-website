@@ -2,6 +2,8 @@
 // Single source of truth for navigation, department pages, and header menus.
 // Update this file when adding a new department or changing dept-wide metadata.
 
+import { programs } from './programs';
+
 export interface DepartmentRecruiter {
   name: string;
   logo?: string;
@@ -59,7 +61,7 @@ export const DEPT_NAV_ITEMS = [
 ] as const;
 
 
-export const departments: Department[] = [
+const coreDepartments: Department[] = [
   {
     slug: 'civil',
     code: 'CIVIL',
@@ -215,6 +217,11 @@ export const departments: Department[] = [
     legacyCode: 'physics',
   }
   
+];
+
+export const departments: Department[] = [
+  ...coreDepartments,
+  ...programs,
 ];
 
 export function getDepartment(slug: string): Department | undefined {
