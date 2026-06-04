@@ -1,5 +1,9 @@
 ---
 import { departments, DEPT_NAV_ITEMS } from '../data/departments';
+
+const headerDepartments = departments.filter((department) =>
+  ['civil', 'cse', 'ece', 'eee', 'mechanical', 'it'].includes(department.slug),
+);
 ---
 
 <style>
@@ -62,6 +66,22 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
   .menu__trigger.active .hamburger-line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  /* Use chevrons for menu indicators instead of plus signs. */
+  .navigation__menu--item.has-arrow::before {
+    content: "\f078" !important;
+    font-family: "Font Awesome 6 Pro" !important;
+    font-weight: 900;
+    font-size: 12px;
+  }
+
+  .navigation__menu--item ul.submenu li.has-arrow::before,
+  .navigation__menu--item .sub__style li.has-arrow::before {
+    content: "\f054" !important;
+    font-family: "Font Awesome 6 Pro" !important;
+    font-weight: 900;
+    font-size: 11px;
+  }
 </style>
 
 <!DOCTYPE html>
@@ -112,14 +132,9 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
                       <li class="navigation__menu--item has-child has-arrow">
                         <a href="/departments" class="navigation__menu--item__link">Departments</a>
                         <ul class="submenu sub__style">
-                          {departments.map((d) => (
-                            <li class="has-child has-arrow">
+                          {headerDepartments.map((d) => (
+                            <li>
                               <a href={`/departments/${d.slug}/`}>{d.name}</a>
-                              <ul class="sub__style">
-                                {DEPT_NAV_ITEMS.map((item) => (
-                                  <li><a class="mobile-menu-link" href={`/departments/${d.slug}/${item.path}`}>{item.label}</a></li>
-                                ))}
-                              </ul>
                             </li>
                           ))}
                           <li><a href="/humanities">Basic Science &amp; Humanities</a></li>
@@ -140,14 +155,9 @@ import { departments, DEPT_NAV_ITEMS } from '../data/departments';
                           <li class="has-child has-arrow">
                             <a href="/departments">Departments</a>
                             <ul class="sub__style">
-                              {departments.map((d) => (
-                                <li class="has-child has-arrow">
+                              {headerDepartments.map((d) => (
+                                <li>
                                   <a class="mobile-menu-link" href={`/departments/${d.slug}/`}>{d.name}</a>
-                                  <ul class="sub__style">
-                                    {DEPT_NAV_ITEMS.map((item) => (
-                                      <li><a class="mobile-menu-link" href={`/departments/${d.slug}/${item.path}`}>{item.label}</a></li>
-                                    ))}
-                                  </ul>
                                 </li>
                               ))}
                               <li><a class="mobile-menu-link" href="/humanities">Basic Science &amp; Humanities</a></li>
