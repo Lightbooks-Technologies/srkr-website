@@ -14466,7 +14466,8 @@ xclip
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .header__right--item {
   display: flex;
