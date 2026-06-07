@@ -30,6 +30,10 @@ export interface Department {
   hodDesignation: string;
   /** HoD email */
   hodEmail?: string;
+  /** Training and Placement coordinator name */
+  tpCoordinator?: string;
+  /** Training and Placement coordinator email */
+  tpCoordinatorEmail?: string;
   /** Generic department email */
   email: string;
   /** Department contact phone */
@@ -73,6 +77,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. G. Sri Bala',
     hodDesignation: 'Associate Professor & Head of Department',
     hodEmail: 'hod.civil@srkrec.ac.in',
+    tpCoordinator: 'K Jagadeep',
+    tpCoordinatorEmail: 'jagadeep.kankatala@gmail.com',
     email: 'hod.civil@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 1980 · NBA Accredited (4x) · B.Tech & M.Tech Programs',
@@ -90,6 +96,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. Bh. V. S. Rama Krishnam Raju',
     hodDesignation: 'Professor & Head of Department',
     hodEmail: 'cse@srkrec.ac.in',
+    tpCoordinator: 'T Srinivasa Rao',
+    tpCoordinatorEmail: 'srinu.tottempudi@gmail.com',
     email: 'cse@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 1991 · NBA Accredited · Research Centre (JNTUK) · B.Tech & M.Tech',
@@ -107,6 +115,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. S. S. Mohan Reddy',
     hodDesignation: 'Professor & Head of Department',
     hodEmail: 'ece@srkrec.ac.in',
+    tpCoordinator: 'K V N Suresh Varma',
+    tpCoordinatorEmail: 'varma.yuvaraj@gmail.com',
     email: 'ece@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 1981 · NBA Accredited · B.Tech, M.Tech & Ph.D Programs',
@@ -124,6 +134,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. B. Ravi Kumar Varma',
     hodDesignation: 'Professor & Head of Department',
     hodEmail: 'eee@srkrec.ac.in',
+    tpCoordinator: 'Dr. G Veeranna',
+    tpCoordinatorEmail: 'veerueee@gmail.com',
     email: 'eee@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 1980 · NBA Accredited · B.Tech & M.Tech Power Systems',
@@ -142,6 +154,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. K. Sita Rama Raju',
     hodDesignation: 'Professor & Head of Department',
     hodEmail: 'mech@srkrec.ac.in',
+    tpCoordinator: 'S V Manikanth',
+    tpCoordinatorEmail: 'manikanth.srkrec@gmail.com',
     email: 'mech@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 1980 · NBA Accredited · B.Tech & M.Tech Programs',
@@ -159,6 +173,8 @@ const coreDepartments: Department[] = [
     hod: 'Dr. P. Ravi Kiran Varma',
     hodDesignation: 'Professor & Head of Department',
     hodEmail: 'hod.it@srkrec.ac.in',
+    tpCoordinator: 'Dr. S Ramagopala Reddy',
+    tpCoordinatorEmail: 'sramagopalareddy@gmail.com',
     email: 'hod.it@srkrec.ac.in',
     phone: '+91 884 222 6666',
     tagline: 'Established 2001 · NBA Accredited · B.Tech Information Technology',

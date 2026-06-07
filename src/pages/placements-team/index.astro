@@ -9,20 +9,48 @@ import { departments } from '../../data/departments';
 const pageTitle = 'Placements Team';
 
 // Core Training & Placement Cell leadership
+// "dr_k_r_satyanarayana.jpg",
+// "c_baskar.jpg",
+// "g_ashok_reddy.jpg",
+// "m_harun_kumar.jpg",
+// "balagopala_ramesh_babu.jpg",
+// "bokka_nagababu.jpg",
+// "radhamadhuri_indukuri.jpg"
+
 const coreTeam = [
-  { name: 'Dr. P. V. Sridevi', role: 'Training & Placement Officer', email: 'tpo@srkrec.ac.in', phone: '+91 9848 02 3332' },
-  { name: 'Mr. K. Suresh Babu', role: 'Deputy Training & Placement Officer', email: 'dtpo@srkrec.ac.in', phone: '+91 9849 87 3332' },
-  { name: 'Mrs. T. Lakshmi', role: 'Assistant Training & Placement Officer', email: 'atpo1@srkrec.ac.in', phone: '+91 9849 22 3332' },
-  { name: 'Mr. M. Ramesh', role: 'Assistant Training & Placement Officer', email: 'atpo2@srkrec.ac.in', phone: '+91 9849 33 3332' },
-  { name: 'Mr. P. Naga Raju', role: 'Industry Relations Coordinator', email: 'iro@srkrec.ac.in', phone: '+91 9849 44 3332' },
-  { name: 'Mrs. K. Padmaja', role: 'Internship & Career Counselor', email: 'careers@srkrec.ac.in', phone: '+91 9849 55 3332' },
+  { "name": "Dr. K. R. Satyanarayana", "designation": "DEAN T&P", "email": "krsn@srkrec.ac.in", "phone": "9704195376", "image": "dr_k_r_satyanarayana.jpeg" },
+  { "name": "C. Baskar", "designation": "Manager International Affairs", "email": "baskar.c@srkrec.ac.in", "phone": "9790997707", "image": "c_baskar.jpeg" },
+  { "name": "G. Ashok Reddy", "designation": "Manager Corporate Relations", "email": "corporaterelations@srkrec.ac.in", "phone": "9440359517", "image": "g_ashok_reddy.jpeg" },
+  { "name": "M. Harun Kumar", "designation": "Asst Training & Placement Officer", "email": "harun@srkrec.ac.in", "phone": "9440622422", "image": "m_harun_kumar.jpeg" },
+  { "name": "Balagopala Ramesh Babu", "designation": "Assistant Professor", "email": "ramesh.balagopala@gmail.com", "phone": "9063370603", "image": "balagopala_ramesh_babu.jpeg" },
+  { "name": "Bokka Nagababu", "designation": "Assistant Professor", "email": "bnagababu1232@gmail.com", "phone": "9959177896", "image": "bokka_nagababu.jpeg" },
+  { "name": "Radhamadhuri Indukuri", "designation": "Assistant Professor", "email": "radhamadhuri.indukuri@gmail.com", "phone": "9704571528", "image": "radhamadhuri_indukuri.jpeg" },
+
 ];
+
+const tpcCord = [
+
+  { "name": "K Jagadeep", "branch": "CIVIL", "email": "jagadeep.kankatala@gmail.com", "image": "k_jagadeep.jpg" },
+  { "name": "Ch Vinod Varma", "branch": "AIML", "email": "vinodvarmaaa@gmail.com", "image": "ch_vinod_varma.jpg" },
+  { "name": "Ch Raghuram", "branch": "CIC", "email": "raghuram1133.ch@gmail.com", "image": "ch_raghuram.jpg" },
+  { "name": "T Srinivas Rao", "branch": "CSE", "email": "srinu.tottempudi@gmail.com", "image": "t_srinivasa_rao.jpg" },
+  { "name": "K V N Suresh Varma", "branch": "ECE", "email": "varma.yuvaraj@gmail.com", "image": "k_v_n_suresh_varma.jpg" },
+  { "name": "Dr. G Veeranna", "branch": "EEE", "email": "veerueee@gmail.com", "image": "dr_g_veeranna.jpg" },
+  { "name": "Dr. K. Pavan Raju", "branch": "AIDS", "email": "pavanraju666@gmail.com", "image": "dr_k_pavan_raju.jpg" },
+  { "name": "V Saibaba", "branch": "CSBS", "email": "sai.velidi@gmail.com", "image": "v_saibaba.jpg" },
+  { "name": "Dr. S Ramagopala Reddy", "branch": "IT", "email": "sramagopalareddy@gmail.com", "image": "dr_s_ramagopala_reddy.jpg" },
+  { "name": "S V Manikanth", "branch": "MECH", "email": "manikanth.srkec@gmail.com", "image": "s_v_manikanth.jpg" },
+  { "name": "N Praveen", "branch": "CSG & CSIT", "email": "neti.praveen@srkrec.edu.in", "image": "n_praveen.jpg" }
+];
+
 
 // Department-wise Training & Placement Representatives (TPRs) — generated from departments registry
 const deptTPRs = departments.map((d) => ({
   dept: d.name,
   slug: d.slug,
   representative: `${d.code} TPR`,
+  tpcmail: `${d.tpCoordinatorEmail}`,
+  tpc: `${d.tpCoordinator}`,
   email: `tpr.${d.slug}@srkrec.ac.in`,
 }));
 ---
@@ -96,8 +124,8 @@ const deptTPRs = departments.map((d) => ({
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item">
               <div class="single-item__meta" style="text-align:center; padding:24px;">
-                <h2 style="color: var(--rt-primary); margin: 0;">12</h2>
-                <p class="item-description">Departments Supported</p>
+                <h2 style="color: var(--rt-primary); margin: 0;">25</h2>
+                <p class="item-description">Industry Partners</p>
               </div>
             </div>
           </div>
@@ -119,11 +147,11 @@ const deptTPRs = departments.map((d) => ({
               <div class="single-item">
                 <div class="single-item__content">
                   <div class="single-item__image">
-                    <img src="/assets/images/placements/PLACEHOLDER.jpg" alt={m.name} />
+                    <img src={`/assets/images/campus/tp/${m.image}`} alt={m.name} />
                   </div>
                   <div class="single-item__meta">
                     <h5 class="item-title"><a href={`mailto:${m.email}`}>{m.name}</a></h5>
-                    <p class="item-description" style="color: var(--rt-primary); font-weight: 600;">{m.role}</p>
+                    <p class="item-description" style="color: var(--rt-primary); font-weight: 600;">{m.designation}</p>
                     <p class="item-description">
                       <i class="fa-regular fa-envelope"></i> {m.email}<br />
                       <i class="fa-regular fa-phone"></i> {m.phone}
@@ -146,12 +174,14 @@ const deptTPRs = departments.map((d) => ({
           </div>
         </div>
         <div class="row g-4">
-          {deptTPRs.map((d) => (
+          {tpcCord.map((d) => (
             <div class="col-lg-4 col-md-6 col-sm-12">
-              <a href={`/departments/${d.slug}/placements/`} class="program-item">
-                <span><strong>{d.dept}</strong><br /><small>{d.email}</small></span>
+              <a href={`/departments/${d.branch}/placements/`} class="program-item">
+              
+                <span><strong>{d.branch}</strong><br /><small>{d.name}</small><br><small><i class="fa-regular fa-envelope"></i> {d.email}</small></span>
                 <i class="fa-regular fa-chevron-right"></i>
               </a>
+              
             </div>
           ))}
         </div>
