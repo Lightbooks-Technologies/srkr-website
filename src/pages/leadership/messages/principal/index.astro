@@ -1,0 +1,156 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+
+const pageTitle = "Principal's Message";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Message from the Principal of SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/leadership/">Leadership</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Principal's Message</li>
+              </ul>
+              <h1 class="section-title">Principal's Message</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rts-scholarship rts-section-padding">
+      <div class="container">
+        <div class="rts-scholarship-description">
+          <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+            <div class="col-lg-8 col-md-11">
+              <div class="program-description-area">
+                <div class="program-about my-0">
+                  <h4 class="title">Principal's Message:</h4>
+                  <p><strong>A warm welcome to Sagi Rama Krishnam Raju Engineering College (SRKREC)</strong></p>
+                  <div class="message-intro">
+                    <img src="/assets/images/faculty/03.jpg" alt="Prof. K. V. Murali Krishnam Raju" loading="lazy" decoding="async" />
+                    <p>
+                      It is with great pleasure and enthusiasm that I extend my warmest greetings to each and every member of the S R K R Engineering College community. We take pride in our strong tradition of academic rigor combined with practical application, through a diverse array of programs, research opportunities, and extracurricular activities. We aim to provide a holistic education that goes beyond the classroom, preparing you for the challenges and opportunities that lie ahead.
+                    </p>
+                  </div>
+                  <p>
+                    This was established in the year 1980 to take immense pride in our role as catalysts for empowering the rural youth in the realm of technical education and successfully completed four decades of its journey. As we step into this new phase, I am filled with a sense of pride for the rich legacy and reputation that our institution has built over the years. At S R K R Engineering College, we are committed to providing a nurturing environment where creativity, critical thinking, and technical prowess flourish. Our dedicated faculty, renowned for their expertise and unwavering dedication, are here to guide and inspire you in your academic journey.
+                  </p>
+                  <p>
+                    We believe in fostering a holistic education that not only equips you with the latest technical knowledge but also hones your communication, leadership, and teamwork skills. We encourage active participation in various clubs, societies, and projects that offer opportunities for hands-on learning and personal growth. I encourage you all to seize the multitude of opportunities that await you here. Your time at S R K R Engineering College is not only about earning a degree but also about the transformative journey that will shape your future.
+                  </p>
+                  <p>
+                    In addition, our commitment to fostering a culture of inclusivity and diversity ensures that every voice is valued and heard. This diversity of thought and experience enriches our learning environment, enabling us to tackle global challenges with creativity and empathy. Remember, your potential is limitless, and you have the power to make a significant impact on the world.
+                  </p>
+                  <p>
+                    I look forward to witnessing your growth, achievements, and the positive impact you will undoubtedly have on the world and I have no doubt that together, we will continue to elevate the reputation of S R K R Engineering College.
+                  </p>
+                  <p>
+                    Wishing you all the best.
+                  </p>
+                  <div class="message-signoff">
+                    <p class="message-signoff__name">Prof. K V Murali Krishnam Raju</p>
+                    <p class="message-signoff__role">Principal</p>
+                  </div>
+                  <blockquote class="message-quote">
+                    <p>Develop a passion for learning.If you do, you will never cease to grow.</p>
+                    <cite>Anthony J. D'Angelo</cite>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-11 sticky-coloum-item">
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">Messages</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/leadership/messages/president/"><span><i class="fa-light fa-arrow-right"></i></span>President's Message</a></li>
+                      <li><a href="/leadership/messages/director/"><span><i class="fa-light fa-arrow-right"></i></span>Director's Message</a></li>
+                      <li><a class="active" href="/leadership/messages/principal/"><span><i class="fa-light fa-arrow-right"></i></span>Principal's Message</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .message-intro {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .message-intro img {
+        width: 170px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 1px solid #ddd;
+      }
+
+      .program-menu a.active {
+        color: var(--rt-primary);
+        font-weight: 600;
+      }
+
+      .message-signoff {
+        margin-top: 24px;
+      }
+
+      .message-signoff__name,
+      .message-signoff__role {
+        margin-bottom: 2px;
+        font-weight: 700;
+      }
+
+      .message-quote {
+        margin-top: 24px;
+        padding: 12px 16px;
+        border-left: 3px solid var(--rt-primary);
+        background: rgba(0, 0, 0, 0.02);
+      }
+
+      .message-quote p {
+        margin-bottom: 6px;
+        font-style: italic;
+      }
+
+      .message-quote cite {
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @media (max-width: 767px) {
+        .message-intro {
+          flex-direction: column;
+        }
+      }
+    </style>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

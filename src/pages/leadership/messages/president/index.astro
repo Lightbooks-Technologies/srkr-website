@@ -1,0 +1,141 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+
+const pageTitle = "President's Message";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Message from the President of SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/leadership/">Leadership</a></li>
+                <li class="breadcrumb-item active" aria-current="page">President's Message</li>
+              </ul>
+              <h1 class="section-title">President's Message</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rts-scholarship rts-section-padding">
+      <div class="container">
+        <div class="rts-scholarship-description">
+          <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+            <div class="col-lg-8 col-md-11">
+              <div class="program-description-area">
+                <div class="program-about">
+                  <h4 class="title">President's Message:</h4>
+                  <div class="message-intro">
+                    <img src="/assets/images/faculty/01.jpg" alt="Sri Sagi Prasad Raju" loading="lazy" decoding="async" />
+                    <p>
+                      One of the pillars of a progressive nation is an enlightened Policy of Education. Particularly, a country of India's size and population, with considerable illiteracy and poverty, which has set upon a democratic path since independence towards development and prosperity, has the urgent need of imparting knowledge to its citizens through a forward-looking and multi-disciplinary education system. SRKR Engineering College was the product of such a Vision of its founding father and my Late father Sri Sagi Rama Krishnam Raju, a patriot, philanthropist, and social reformer. I have the privilege as well as moral duty to carry forward the legacy of this giant visionary by sustaining his endeavors and transforming SRKREC into a modern and multi-disciplinary Higher Education Institution, integrating Humanities and STEM (Science, Technology, Engineering, and Mathematics).
+                    </p>
+                  </div>
+                  <p>
+                    I am proud that SRKREC today is one of the leading technical institutions of higher learning not just in the State of Andhra Pradesh but in entire India, and it has forged adacemic linkages both within and beyond the borders of our country. I am aware that the world in general, and the field of education in particular, have changed significantly since the time this great institution was established 45 years ago, and it is of critical importance that SRKREC evolves in alignment with the new challenges and future dynamics nationally and globally. It is in this spirit and with a view to providing high quality technical and integrated education to its students to instill in them creativity, build their character, and prepare them to face these challenges boldly and robustly, a dedicated team of academicians, policymakers and administrators has been constantly striving towards making SRKREC into a world-class academic Centre of Excellence. Our students are the future and the hope of our nation. Their holistic development underlined by higher values and moral standing is our goal as well as mission. We are investing all our energies, efforts, experience, and talents in moulding and training them into responsible global citizens par excellence. SRKREC's enviable record is a testimony to our commitment and dedication.
+                  </p>
+                  <p>
+                    Please come and join us in this fascinating, enriching, and rewarding journey.
+                  </p>
+                  <div class="message-signoff">
+                    <p class="message-signoff__line">Thank you and Best Wishes,</p>
+                    <img src="/assets/images/sign.png" alt="S. Prasad Raju Signature" loading="lazy" decoding="async" />
+                    <p class="message-signoff__name">S.Prasad Raju</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-11 sticky-coloum-item">
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">Messages</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a class="active" href="/leadership/messages/president/"><span><i class="fa-light fa-arrow-right"></i></span>President's Message</a></li>
+                      <li><a href="/leadership/messages/director/"><span><i class="fa-light fa-arrow-right"></i></span>Director's Message</a></li>
+                      <li><a href="/leadership/messages/principal/"><span><i class="fa-light fa-arrow-right"></i></span>Principal's Message</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .message-intro {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .message-intro img {
+        width: 170px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 1px solid #ddd;
+      }
+
+      .program-menu a.active {
+        color: var(--rt-primary);
+        font-weight: 600;
+      }
+
+      .message-signoff {
+        margin-top: 26px;
+        text-align: right;
+      }
+
+      .message-signoff__line {
+        margin-bottom: 4px;
+        font-weight: 600;
+      }
+
+      .message-signoff img {
+        width: 150px;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .message-signoff__name {
+        margin-top: 2px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 767px) {
+        .message-intro {
+          flex-direction: column;
+        }
+
+        .message-signoff {
+          text-align: left;
+        }
+      }
+    </style>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
