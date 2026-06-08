@@ -49,29 +49,40 @@
 		gap: 8px;
 	}
 
-	.color-config-row {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: 10px;
+	.color-preset-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		padding: 5px 0;
-	}
-
-	.color-config-row label {
-		color: var(--rt-heading, #262626);
-		font-size: 13px;
-		line-height: 1.3;
-		margin: 0;
-	}
-
-	.color-config-row input[type="color"] {
-		width: 42px;
-		height: 30px;
-		padding: 0;
+		gap: 12px;
+		padding: 10px 12px;
 		border: 1px solid var(--rt-border, #D9D9D9);
-		border-radius: 6px;
+		border-radius: 9px;
+		background: #fff;
+		color: var(--rt-heading, #262626);
 		cursor: pointer;
-		background: transparent;
+		font-size: 13px;
+		font-weight: 600;
+		text-align: left;
+		transition: border-color 0.2s ease, transform 0.2s ease;
+	}
+
+	.color-preset-btn:hover {
+		border-color: var(--rt-primary, #890C25);
+		transform: translateY(-1px);
+	}
+
+	.color-preset-swatches {
+		display: flex;
+		gap: 6px;
+		flex-shrink: 0;
+	}
+
+	.color-preset-swatches span {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		border: 1px solid rgba(0, 0, 0, 0.12);
 	}
 
 	.color-config-actions {
@@ -110,15 +121,48 @@
 </button>
 
 <div id="colorConfigPanel" class="color-config-panel" hidden>
-	<h3 class="color-config-title">Theme Color Settings</h3>
+	<h3 class="color-config-title">Theme Presets</h3>
 	<div class="color-config-grid">
-		<div class="color-config-row"><label for="cfg-rt-primary">Primary Brand Color</label><input id="cfg-rt-primary" type="color" data-var="--rt-primary" /></div>
-		<div class="color-config-row"><label for="cfg-rt-primary-1">Primary Light Variant</label><input id="cfg-rt-primary-1" type="color" data-var="--rt-primary-1" /></div>
-		<div class="color-config-row"><label for="cfg-rt-primary-2">Primary Dark Variant</label><input id="cfg-rt-primary-2" type="color" data-var="--rt-primary-2" /></div>
-		<div class="color-config-row"><label for="cfg-rt-secondary">Secondary Brand Color</label><input id="cfg-rt-secondary" type="color" data-var="--rt-secondary" /></div>
-		<div class="color-config-row"><label for="cfg-rt-body">Body Text Color</label><input id="cfg-rt-body" type="color" data-var="--rt-body" /></div>
-		<div class="color-config-row"><label for="cfg-rt-heading">Heading Text Color</label><input id="cfg-rt-heading" type="color" data-var="--rt-heading" /></div>
-		<div class="color-config-row"><label for="cfg-rt-white">Pure White / Inverse Text</label><input id="cfg-rt-white" type="color" data-var="--rt-white" /></div>
+		<button type="button" class="color-preset-btn" data-preset="srkr-classic">
+			<span>SRKR Classic</span>
+			<span class="color-preset-swatches"><span style="background:#890C25"></span><span style="background:#110C2D"></span><span style="background:#09A24F"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="executive-navy">
+			<span>Executive Navy</span>
+			<span class="color-preset-swatches"><span style="background:#0B3C5D"></span><span style="background:#1D2731"></span><span style="background:#328CC1"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="heritage-maroon">
+			<span>Heritage Maroon</span>
+			<span class="color-preset-swatches"><span style="background:#7A1E2C"></span><span style="background:#2E1F27"></span><span style="background:#CFA670"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="emerald-slate">
+			<span>Emerald Slate</span>
+			<span class="color-preset-swatches"><span style="background:#0E7C66"></span><span style="background:#203A43"></span><span style="background:#79B4A9"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="royal-violet">
+			<span>Royal Violet</span>
+			<span class="color-preset-swatches"><span style="background:#5A2E98"></span><span style="background:#2B1E4A"></span><span style="background:#8A6FD1"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="sunset-coral">
+			<span>Sunset Coral</span>
+			<span class="color-preset-swatches"><span style="background:#C44536"></span><span style="background:#2F3542"></span><span style="background:#F39C6B"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="midnight-teal">
+			<span>Midnight Teal</span>
+			<span class="color-preset-swatches"><span style="background:#0F766E"></span><span style="background:#1F2937"></span><span style="background:#2DD4BF"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="graphite-gold">
+			<span>Graphite Gold</span>
+			<span class="color-preset-swatches"><span style="background:#B08900"></span><span style="background:#2B2D42"></span><span style="background:#E6C65B"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="crimson-ink">
+			<span>Crimson Ink</span>
+			<span class="color-preset-swatches"><span style="background:#9B1C31"></span><span style="background:#1E1E2F"></span><span style="background:#D14D72"></span></span>
+		</button>
+		<button type="button" class="color-preset-btn" data-preset="forest-stone">
+			<span>Forest Stone</span>
+			<span class="color-preset-swatches"><span style="background:#2E7D32"></span><span style="background:#374151"></span><span style="background:#66BB6A"></span></span>
+		</button>
 	</div>
 	<div class="color-config-actions">
 		<button id="cfgReset" type="button">Reset</button>
@@ -143,6 +187,159 @@
 			'--rt-border': '#D9D9D9',
 			'--rt-line': '#EEEEEE',
 			'--rt-hover': '#AF0E2E'
+		};
+
+		var PRESETS = {
+			'srkr-classic': {
+				'--rt-theme': '#09A24F',
+				'--rt-primary': '#890C25',
+				'--rt-primary-1': '#B71A34',
+				'--rt-primary-2': '#890C25',
+				'--rt-secondary': '#110C2D',
+				'--rt-footer': '#181818',
+				'--rt-body': '#737477',
+				'--rt-heading': '#262626',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#890C25',
+				'--rt-border': '#D9D9D9',
+				'--rt-line': '#EEEEEE',
+				'--rt-hover': '#AF0E2E'
+			},
+			'executive-navy': {
+				'--rt-theme': '#328CC1',
+				'--rt-primary': '#0B3C5D',
+				'--rt-primary-1': '#145C87',
+				'--rt-primary-2': '#082D45',
+				'--rt-secondary': '#1D2731',
+				'--rt-footer': '#0F1620',
+				'--rt-body': '#5E6A76',
+				'--rt-heading': '#1A2530',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#0B3C5D',
+				'--rt-border': '#CED8E3',
+				'--rt-line': '#E8EEF4',
+				'--rt-hover': '#145C87'
+			},
+			'heritage-maroon': {
+				'--rt-theme': '#CFA670',
+				'--rt-primary': '#7A1E2C',
+				'--rt-primary-1': '#9D3143',
+				'--rt-primary-2': '#611523',
+				'--rt-secondary': '#2E1F27',
+				'--rt-footer': '#181114',
+				'--rt-body': '#6F6166',
+				'--rt-heading': '#2A2024',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#7A1E2C',
+				'--rt-border': '#DDD2D0',
+				'--rt-line': '#F1EAEA',
+				'--rt-hover': '#9D3143'
+			},
+			'emerald-slate': {
+				'--rt-theme': '#79B4A9',
+				'--rt-primary': '#0E7C66',
+				'--rt-primary-1': '#14947A',
+				'--rt-primary-2': '#0A6553',
+				'--rt-secondary': '#203A43',
+				'--rt-footer': '#16262C',
+				'--rt-body': '#5F6F74',
+				'--rt-heading': '#1E3036',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#0E7C66',
+				'--rt-border': '#CFE1DD',
+				'--rt-line': '#E7F0ED',
+				'--rt-hover': '#14947A'
+			},
+			'royal-violet': {
+				'--rt-theme': '#8A6FD1',
+				'--rt-primary': '#5A2E98',
+				'--rt-primary-1': '#7447B2',
+				'--rt-primary-2': '#47257A',
+				'--rt-secondary': '#2B1E4A',
+				'--rt-footer': '#1B1530',
+				'--rt-body': '#69607E',
+				'--rt-heading': '#2A2142',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#5A2E98',
+				'--rt-border': '#D7CEE8',
+				'--rt-line': '#EEE9F7',
+				'--rt-hover': '#7447B2'
+			},
+			'sunset-coral': {
+				'--rt-theme': '#F39C6B',
+				'--rt-primary': '#C44536',
+				'--rt-primary-1': '#D95E4F',
+				'--rt-primary-2': '#A7372B',
+				'--rt-secondary': '#2F3542',
+				'--rt-footer': '#1F2430',
+				'--rt-body': '#646B78',
+				'--rt-heading': '#2C3140',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#C44536',
+				'--rt-border': '#E5D5CF',
+				'--rt-line': '#F5ECE9',
+				'--rt-hover': '#D95E4F'
+			},
+			'midnight-teal': {
+				'--rt-theme': '#2DD4BF',
+				'--rt-primary': '#0F766E',
+				'--rt-primary-1': '#14958A',
+				'--rt-primary-2': '#0B5C56',
+				'--rt-secondary': '#1F2937',
+				'--rt-footer': '#111827',
+				'--rt-body': '#617083',
+				'--rt-heading': '#1D2A39',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#0F766E',
+				'--rt-border': '#CCE7E3',
+				'--rt-line': '#E9F6F4',
+				'--rt-hover': '#14958A'
+			},
+			'graphite-gold': {
+				'--rt-theme': '#E6C65B',
+				'--rt-primary': '#B08900',
+				'--rt-primary-1': '#CAA12A',
+				'--rt-primary-2': '#8E6D00',
+				'--rt-secondary': '#2B2D42',
+				'--rt-footer': '#1B1E2E',
+				'--rt-body': '#6B6D79',
+				'--rt-heading': '#2A2D3E',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#B08900',
+				'--rt-border': '#E4DDC3',
+				'--rt-line': '#F4F2E8',
+				'--rt-hover': '#CAA12A'
+			},
+			'crimson-ink': {
+				'--rt-theme': '#D14D72',
+				'--rt-primary': '#9B1C31',
+				'--rt-primary-1': '#B3354B',
+				'--rt-primary-2': '#7A1426',
+				'--rt-secondary': '#1E1E2F',
+				'--rt-footer': '#141423',
+				'--rt-body': '#6A6878',
+				'--rt-heading': '#252438',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#9B1C31',
+				'--rt-border': '#E2CFD5',
+				'--rt-line': '#F3EBEE',
+				'--rt-hover': '#B3354B'
+			},
+			'forest-stone': {
+				'--rt-theme': '#66BB6A',
+				'--rt-primary': '#2E7D32',
+				'--rt-primary-1': '#3F9444',
+				'--rt-primary-2': '#255F28',
+				'--rt-secondary': '#374151',
+				'--rt-footer': '#222B36',
+				'--rt-body': '#66707B',
+				'--rt-heading': '#2E3845',
+				'--rt-white': '#FFFFFF',
+				'--rt-rating': '#2E7D32',
+				'--rt-border': '#D1DED1',
+				'--rt-line': '#EDF3ED',
+				'--rt-hover': '#3F9444'
+			}
 		};
 
 		function normalizeHex(value) {
@@ -193,18 +390,15 @@
 			var colors = Object.assign({}, DEFAULTS, loadStored());
 			applyColors(colors);
 
-			var inputs = Array.prototype.slice.call(panel.querySelectorAll('input[data-var]'));
-			inputs.forEach(function (input) {
-				var cssVar = input.getAttribute('data-var');
-				input.value = normalizeHex(colors[cssVar] || DEFAULTS[cssVar]);
-				input.addEventListener('input', function (event) {
-					var next = normalizeHex(event.target.value);
-					colors[cssVar] = next;
-					document.documentElement.style.setProperty(cssVar, next);
-					if (cssVar === '--rt-primary') {
-						launcher.style.background = next;
-					}
+			var presetButtons = Array.prototype.slice.call(panel.querySelectorAll('[data-preset]'));
+			presetButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+					var presetKey = button.getAttribute('data-preset');
+					if (!presetKey || !PRESETS[presetKey]) return;
+					colors = Object.assign({}, DEFAULTS, PRESETS[presetKey]);
+					applyColors(colors);
 					saveStored(colors);
+					launcher.style.background = normalizeHex(colors['--rt-primary']);
 				});
 			});
 
@@ -218,11 +412,6 @@
 
 			resetBtn.addEventListener('click', function () {
 				colors = Object.assign({}, DEFAULTS);
-				inputs.forEach(function (input) {
-					var cssVar = input.getAttribute('data-var');
-					var value = normalizeHex(DEFAULTS[cssVar]);
-					input.value = value;
-				});
 				applyColors(colors);
 				launcher.style.background = normalizeHex(DEFAULTS['--rt-primary']);
 				try {
