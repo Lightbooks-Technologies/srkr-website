@@ -10,7 +10,8 @@ const pageTitle = 'Placements Summary';
 
 // Year-wise consolidated stats (drawn from public T&P updates)
 const yearStats = [
-  { year: '2024–25', offers: '900+', topLPA: '17.16', avgLPA: '4.8',  recruiters: '210+' },
+  { year: '2025–26', offers: '1334+', topLPA: '19.00', avgLPA: '4.5',  recruiters: '250+' },
+  { year: '2024–25', offers: '1174+', topLPA: '17.16', avgLPA: '4.8',  recruiters: '210+' },
   { year: '2023–24', offers: '850+', topLPA: '12.00', avgLPA: '4.5',  recruiters: '190+' },
   { year: '2022–23', offers: '780+', topLPA: '10.50', avgLPA: '4.2',  recruiters: '170+' },
   { year: '2021–22', offers: '720+', topLPA: '9.50',  avgLPA: '4.0',  recruiters: '150+' },
@@ -18,31 +19,50 @@ const yearStats = [
 
 // Highest packages — sourced from the live srkrec.ac.in homepage placement ticker
 const topOffers = [
-  { company: 'Amazon SDE',  lpa: '17.16 LPA', offers: '1 Offer'   },
-  { company: 'JTG',         lpa: '14.20 LPA', offers: '1 Offer'   },
-  { company: 'Amazon',      lpa: '13.20 LPA', offers: '1 Offer'   },
-  { company: 'Akrivia HCM', lpa: '10.00 LPA', offers: '4 Offers'  },
-  { company: 'Infosys',     lpa: '9.50 LPA',  offers: '3 Offers'  },
-  { company: 'TCS',         lpa: '9.00 LPA',  offers: '9 Offers'  },
-  { company: 'BOSON',       lpa: '8.00 LPA',  offers: '8 Offers'  },
-  { company: 'rootsquare labs', lpa: '7.80 LPA', offers: '3 Offers' },
-  { company: 'TCS Digital', lpa: '7.00 LPA',  offers: '23 Offers' },
-  { company: 'Agumentik',   lpa: '7.00 LPA',  offers: '3 Offers'  },
+  // { company: 'Amazon SDE',  lpa: '17.16 LPA', offers: '1 Offer'   },
+  // { company: 'JTG',         lpa: '14.20 LPA', offers: '1 Offer'   },
+  // { company: 'Amazon',      lpa: '13.20 LPA', offers: '1 Offer'   },
+  // { company: 'Akrivia HCM', lpa: '10.00 LPA', offers: '4 Offers'  },
+  // { company: 'Infosys',     lpa: '9.50 LPA',  offers: '3 Offers'  },
+  // { company: 'TCS',         lpa: '9.00 LPA',  offers: '9 Offers'  },
+  // { company: 'BOSON',       lpa: '8.00 LPA',  offers: '8 Offers'  },
+  // { company: 'rootsquare labs', lpa: '7.80 LPA', offers: '3 Offers' },
+  // { company: 'TCS Digital', lpa: '7.00 LPA',  offers: '23 Offers' },
+  // { company: 'Agumentik',   lpa: '7.00 LPA',  offers: '3 Offers'  },
+
+
+  { "company": "AT&T", "lpa": "19.00 LPA", "offers": "1 Offer" },
+  { "company": "Infosys L2", "lpa": "16.00 LPA", "offers": "1 Offer" },
+  { "company": "Aunix", "lpa": "12.00 LPA", "offers": "1 Offer" },
+  { "company": "Infosys SP", "lpa": "11.00 LPA", "offers": "11 Offers" },
+  { "company": "Cognizant", "lpa": "6.75 LPA", "offers": "26 Offers" },
+  { "company": "Forsys", "lpa": "6.6 LPA", "offers": "1 Offer" },
+  { "company": "Ultratech Cement", "lpa": "5 LPA", "offers": "1 Offer" },
+
+  { "company": "TCS Prime", "lpa": "9.00 LPA", "offers": "5 Offers" },
+  { "company": "JobAlchemy", "lpa": "9.00 LPA", "offers": "1 Offer" },
+  { "company": "BOSON", "lpa": "8.00 LPA", "offers": "8 Offers" },
+  { "company": "Bluconnect AI", "lpa": "7.80 LPA", "offers": "8 Offers" },
+  { "company": "TCS Digital", "lpa": "7.00 LPA", "offers": "64 Offers" },
+  { "company": "Infosys DSE", "lpa": "7.00 LPA", "offers": "42 Offers" },
+  { "company": "Vedya Labs", "lpa": "7.00 LPA", "offers": "7 Offers" },
+  { "company": "Reliance Industries", "lpa": "7.00 LPA", "offers": "2 Offers" },
+  { "company": "Epiroc Mining", "lpa": "6.00 LPA", "offers": "6 Offers" },
 ];
 
 // Volume recruiters
 const volumeRecruiters = [
-  { company: 'TCS NINJA',   offers: '368', lpa: '3.36 LPA' },
-  { company: 'Infosys',     offers: '270', lpa: '3.60 LPA' },
-  { company: 'Cognizant',   offers: '147', lpa: '4.25 LPA' },
-  { company: 'Tech Mahindra', offers: '123', lpa: '3.25 LPA' },
-  { company: 'Transenergy', offers: '84',  lpa: '2.20 LPA' },
-  { company: 'Brakes India',offers: '53',  lpa: '2.40 LPA' },
-  { company: 'MEIL',        offers: '43',  lpa: '3.00 LPA' },
-  { company: 'techwave',    offers: '33',  lpa: '2.80 LPA' },
+  { company: 'Infosys',     offers: '134', lpa: '3.60 - 16.00 LPA' },
+  { company: 'TCS',   offers: '302', lpa: '3.42 - 9.09 LPA' },
+  { company: 'Cognizant',   offers: '333', lpa: '4.00 - 6.75 LPA' },
+
+  { company: 'Transenergy', offers: '102',  lpa: '3.00 LPA' },
+  { company: 'Brakes India',offers: '221',  lpa: '3.00 LPA' },
+  { company: 'MEIL',        offers: '87',  lpa: '3.00 LPA' },
+  { company: 'LS Automotive',    offers: '98',  lpa: '3.00 LPA' },
 ];
 
-const reportYears = ['2024-25', '2023-24', '2022-23', '2021-22'];
+const reportYears = ['2025-26','2024-25', '2023-24', '2022-23', '2021-22'];
 ---
 
 <!doctype html>
@@ -89,25 +109,25 @@ const reportYears = ['2024-25', '2023-24', '2022-23', '2021-22'];
         <div class="row g-4 mt--30">
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">900+</h2>
-              <p class="item-description">Total Offers (2024–25)</p>
+              <h2 style="color: var(--rt-primary); margin: 0;">1334+</h2>
+              <p class="item-description">Total Offers (2025–26)</p>
             </div></div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">17.16 LPA</h2>
+              <h2 style="color: var(--rt-primary); margin: 0;">19.00 LPA</h2>
               <p class="item-description">Top Package</p>
             </div></div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">4.8 LPA</h2>
+              <h2 style="color: var(--rt-primary); margin: 0;">4.5 LPA</h2>
               <p class="item-description">Average Package</p>
             </div></div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">210+</h2>
+              <h2 style="color: var(--rt-primary); margin: 0;">250+</h2>
               <p class="item-description">Recruiters</p>
             </div></div>
           </div>
@@ -157,7 +177,7 @@ const reportYears = ['2024-25', '2023-24', '2022-23', '2021-22'];
       <div class="container">
         <div class="row">
           <div class="rts-section rt-center mb--45">
-            <h3 class="rts-section-title">Highest Packages — 2024–25</h3>
+            <h3 class="rts-section-title">Highest Packages (2025–26) </h3>
           </div>
         </div>
         <div class="row g-4">
@@ -188,12 +208,16 @@ const reportYears = ['2024-25', '2023-24', '2022-23', '2021-22'];
           <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/tcs.png" alt="TCS" /></div></div>
           <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/cts.png" alt="Cognizant" / loading="lazy" decoding="async"></div></div>
           <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/infosys.png" alt="Infosys" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/wipro.png" alt="Wipro" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/hcl.png" alt="HCL" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ey.png" alt="Ernst &amp; Young" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ncc.png" alt="NCC" / loading="lazy" decoding="async"></div></div>
-          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/lt.png" alt="L&amp;T" / loading="lazy" decoding="async"></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ut.png" alt="Ultratech" / loading="lazy" decoding="async"></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/att.png" alt="AT&T" / loading="lazy" decoding="async"></div></div>
+          <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ril.png" alt="RIL" / loading="lazy" decoding="async"></div></div>
+
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/wipro.png" alt="Wipro" / loading="lazy" decoding="async"></div></div> -->
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/hcl.png" alt="HCL" / loading="lazy" decoding="async"></div></div> -->
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" / loading="lazy" decoding="async"></div></div> -->
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ey.png" alt="Ernst &amp; Young" / loading="lazy" decoding="async"></div></div> -->
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/ncc.png" alt="NCC" / loading="lazy" decoding="async"></div></div> -->
+          <!-- <div class="col-lg-2 col-md-3 col-4"><div class="recruiter-logo-box"><img src="/assets/images/recruiters/lt.png" alt="L&amp;T" / loading="lazy" decoding="async"></div></div> -->
           {/* TODO: add more recruiter logos */}
         </div>
       </div>

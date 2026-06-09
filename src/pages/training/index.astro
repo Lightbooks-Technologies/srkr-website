@@ -8,8 +8,11 @@ import OffCanvas from '../../components/OffCanvas.astro';
 const pageTitle = 'Training Activities';
 
 const pillars = [
-  { icon: 'fa-light fa-code',           title: 'Technical Training',        desc: 'Programming, data structures, full-stack, cloud and emerging tech bootcamps aligned with industry hiring.' },
-  { icon: 'fa-light fa-calculator',     title: 'Aptitude & Reasoning',      desc: 'Quantitative, logical and verbal aptitude practice modeled on TCS, Infosys and Wipro hiring patterns.' },
+
+
+
+{ icon: 'fa-light fa-clipboard-check', title: 'Assessment Test', desc: 'A rigorous placement readiness benchmark designed to evaluate students technical and problem-solving skills to identify key areas for targeted improvement.' },
+  { icon: 'fa-light fa-code',           title: 'Campus Recruitment Training', desc: 'Training program equipping students with vital aptitude, technical, and soft skills to ace corporate recruitment drives and secure premier career placements.' },
   { icon: 'fa-light fa-comments',       title: 'Communication & Soft Skills', desc: 'Spoken English, presentation, business writing and workplace etiquette workshops.' },
   { icon: 'fa-light fa-file-lines',     title: 'Resume Building',           desc: 'One-on-one resume reviews, LinkedIn profile crafting and portfolio guidance.' },
   { icon: 'fa-light fa-user-tie',       title: 'Mock Interviews',           desc: 'Domain technical interviews, HR rounds and behavioral practice with industry mentors.' },
@@ -17,12 +20,13 @@ const pillars = [
 ];
 
 const partners = [
-  { name: 'TCS iON',     desc: 'TCS Career Edge & National Qualifier Test' },
   { name: 'NPTEL',       desc: 'IIT-led MOOCs and certification courses' },
   { name: 'Coursera',    desc: 'Coursera for Campus learning licenses' },
   { name: 'AICTE-IDEA',  desc: 'Innovation, Design & Entrepreneurship Academy' },
   { name: 'APSSDC',      desc: 'Andhra Pradesh State Skill Development Corporation' },
-  { name: 'IIT Bombay',  desc: 'Spoken Tutorial & Remote Centre programs' },
+  { name: 'APSCHE',      desc: 'Andhra Pradesh State Council of Higher Education' },
+
+  { name: 'IIT ',  desc: 'Spoken Tutorial & Remote Centre programs' },
 ];
 ---
 
@@ -70,22 +74,22 @@ const partners = [
         <div class="row g-4 mt--30">
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">600+</h2>
+              <h2 style="color: var(--rt-primary); margin: 0;">400+</h2>
               <p class="item-description">Training Hours / Year</p>
             </div></div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-              <h2 style="color: var(--rt-primary); margin: 0;">90%+</h2>
+              <h2 style="color: var(--rt-primary); margin: 0;">80%+</h2>
               <p class="item-description">Placement Rate</p>
             </div></div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <!-- <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
               <h2 style="color: var(--rt-primary); margin: 0;">20+</h2>
               <p class="item-description">Certification Tracks</p>
             </div></div>
-          </div>
+          </div> -->
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
               <h2 style="color: var(--rt-primary); margin: 0;">50+</h2>
@@ -122,7 +126,7 @@ const partners = [
     </section>
 
     <!-- Year-wise schedule accordion -->
-    <section class="rts-scholarship pb--60">
+    <!-- <section class="rts-scholarship pb--60">
       <div class="container">
         <div class="row">
           <div class="rts-section rt-center mb--45">
@@ -168,7 +172,7 @@ const partners = [
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Training Partners -->
     <div class="rts-multi-row-section pb--60">
