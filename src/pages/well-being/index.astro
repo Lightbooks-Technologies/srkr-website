@@ -23,6 +23,43 @@ const counselors = [
   { name: 'Dr. {TODO: Doctor}', role: 'Visiting Medical Officer', specialty: 'General medicine &amp; first-line health' },
 ];
 
+const antiRaggingCommittee = [
+  { name: 'Dr. K.V. Murali Krishnam Raju', designation: 'Principal', role: 'Chairman', contact: '9848381818' },
+  { name: 'Mr. K. Srinivas', designation: 'Associate Professor, Dept. of IT', role: 'Coordinator', contact: '9490501171' },
+  { name: 'Sri G. Kalicharan', designation: 'Circle Inspector, II Town, Bhimavaram', role: 'External Member', contact: '9121242999' },
+  { name: 'Dr. R. Rama Krishnam Raju', designation: 'Psychiatrist', role: 'External Member', contact: '9866237287' },
+  { name: 'Sri Ch. Bangar Rao', designation: 'Local Media Person', role: 'External Member', contact: '9347504477' },
+  { name: 'Sri P. Murali Rama Raju', designation: 'Honorary Chairman, Rythu Karyacharana Samithi, AP', role: 'External Member', contact: '9491222777' },
+  { name: 'Dr. G. Mahesh', designation: 'Professor, Dept. of CSE', role: 'Member', contact: '9493671967' },
+  { name: 'Prof. N. Srinivasu', designation: 'Professor, Dept. of EEE', role: 'Member', contact: '9441964739' },
+  { name: 'Prof. G.V.S. Padma Rao', designation: 'Professor, Dept. of ECE', role: 'Member', contact: '' },
+  { name: 'Mr. S. Rama Gopala Reddy', designation: 'Associate Professor, Dept. of IT', role: 'Member', contact: '9951344669' },
+  { name: 'Dr. S.K.V.S.T. Lava Kumar', designation: 'Associate Professor, Dept. of CE', role: 'Member', contact: '9949804908' },
+  { name: 'Dr. P. Satyanarayana Raju', designation: 'Physical Director', role: 'Member', contact: '9441814118' },
+  { name: 'Mr. B.V.D.S. Sekhar', designation: 'Parent', role: 'Member', contact: '9912575557' },
+  { name: 'Smt. N. Rama Devi', designation: 'Parent', role: 'Member', contact: '9963393259' },
+  { name: 'Sri Ch. Srinivasa Raju', designation: 'Lab Associate', role: 'Member', contact: '9849428077' },
+  { name: 'Sri P.G.V.N. Raj Kumar', designation: 'Technician, Dept. of ME', role: 'Member', contact: '9912555455' },
+  { name: 'A. Naveen', designation: 'IV B.Tech., EEE – 22B91A0202', role: 'Member', contact: '8688024146' },
+  { name: 'D. Uma Chaithanya Kumar', designation: 'III B.Tech., ME – 23B91A0343', role: 'Member', contact: '9618329315' },
+  { name: 'P. Revanth Kumar', designation: 'II B.Tech., CSBS – 24B91A5746', role: 'Member', contact: '7702071617' },
+  { name: 'B. Pranaya Teja', designation: 'I B.Tech., IT – 25B91A1215', role: 'Member', contact: '8500969198' },
+];
+
+const minorityCell = [
+  { name: 'Dr. K.V. Murali Krishnam Raju', designation: 'Principal', role: 'Chairman', contact: '9848381818' },
+  { name: 'Ms. Rameeza Begum Shaik', designation: 'Asst. Professor, Dept. of Engineering Physics', role: 'Coordinator', contact: '' },
+  { name: 'Mr. Md. Riyaz', designation: 'Asst. Professor, Dept. of E&FL', role: 'Member', contact: '' },
+  { name: 'Dr. Md Azahar Ahmed', designation: 'Asst. Professor, Dept. of EEE', role: 'Member', contact: '' },
+  { name: 'Mr. Sk. R. S. Mahaboob Ali', designation: 'Asst. Professor, Dept. of ME', role: 'Member', contact: '' },
+  { name: 'Mr. Abdul Riyaz Basha', designation: 'III B.Tech., AIML – 22B91A6101', role: 'Student', contact: '' },
+  { name: 'Ms. Shaik Safiya Begum', designation: 'III B.Tech., AIDS – 22B91A54D6', role: 'Student', contact: '' },
+  { name: 'Mr. Mohammed Vaseem', designation: 'II B.Tech., ECE – 24B91A04C6', role: 'Student', contact: '' },
+  { name: 'Ms. Shaik Ameena', designation: 'II B.Tech., CSIT – 24B91A07A9', role: 'Student', contact: '' },
+  { name: 'Mr. Shaik Rafi', designation: 'I B.Tech., CSE – 25B91A05T2', role: 'Student', contact: '' },
+  { name: 'Ms. Shaik Suhana', designation: 'I B.Tech., CIT – 25B91A07A6', role: 'Student', contact: '' },
+];
+
 const externalLinks = [
   { name: 'iCALL India Helpline', url: 'https://icallhelpline.org' },
   { name: 'Vandrevala Foundation (24x7)', url: 'https://www.vandrevalafoundation.com' },
@@ -176,6 +213,33 @@ const externalLinks = [
                 <div id="wb5" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
                   <div class="accordion-body">
                     <p>UGC-mandated anti-ragging committee with a 24x7 hotline. Women's Cell handles all sexual-harassment complaints confidentially. See <a href="/code-of-conduct">Code of Conduct</a> for procedures.</p>
+                    {
+                      antiRaggingCommittee.length > 0 && (
+                        <>
+                          <h6 class="mt-3">Anti-Ragging Committee Members:</h6>
+                          <table class="table table-sm table-striped">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Role</th>
+                                <th>Contact</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {antiRaggingCommittee.map((m) => (
+                                <tr>
+                                  <td><strong>{m.name}</strong></td>
+                                  <td>{m.designation}</td>
+                                  <td>{m.role}</td>
+                                  <td>{m.contact ? <a href={`tel:${m.contact}`}>{m.contact}</a> : 'Contact not available'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </>
+                      )
+                    }
                   </div>
                 </div>
               </div>
@@ -198,7 +262,33 @@ Staff and students may approach the ICC, Student Counsellor, or alternatively br
                 </button>
                 <div id="wb7" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
                   <div class="accordion-body">
-                    <p>TThe Minority Cell of SRKREC has been constituted with the purpose of empowering the minority communities in the institute. The cell is committed to providing an environment that ensures equal opportunities and respect for all sections of minorities, and to ensuring protection to everyone as per the provisions of the Constitution of India in such matters.</p>
+                    <p>The Minority Cell of SRKREC has been constituted with the purpose of empowering the minority communities in the institute. The cell is committed to providing an environment that ensures equal opportunities and respect for all sections of minorities, and to ensuring protection to everyone as per the provisions of the Constitution of India in such matters.</p>
+                      {
+                        minorityCell.length > 0 && (
+                          <>
+                            <h6 class="mt-3">Minority Cell Members:</h6>
+                            <table class="table table-sm table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Designation</th>
+                                  <th>Role</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {minorityCell.map((m) => (
+                                  <tr>
+                                    <td><strong>{m.name}</strong></td>
+                                    <td>{m.designation}</td>
+                                    <td>{m.role}</td>
+                                    <td>{m.contact ? <a href={`tel:${m.contact}`}>{m.contact}</a> : 'Contact not available'}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </>
+                        )
+                      }
                   </div>
                 </div>
               </div>
@@ -212,45 +302,7 @@ Staff and students may approach the ICC, Student Counsellor, or alternatively br
     </div>
 
     <!-- RESOURCES -->
-    <div class="rts-multi-row-section py-5">
-      <div class="container">
-        <div class="rts-section mb--30">
-          <h3 class="rts-section-title">Resources</h3>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5><i class="fa-light fa-phone"></i> 24x7 Campus Helpline</h5>
-                <p class="mb-2">For urgent personal or safety concerns inside campus.</p>
-                <p class="mb-0"><a href="tel:+918842226666"><strong>+91 884 222 6666</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5><i class="fa-light fa-mobile"></i> Mental Health Apps</h5>
-                <p class="mb-2">Recommended apps for daily wellness &amp; mood tracking.</p>
-                <ul class="list-unstyled mb-0 small">
-                  <li class="si__list--single">Wysa, YourDost</li>
-                  <li class="si__list--single">Headspace, Calm</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5><i class="fa-light fa-book-open"></i> Articles &amp; Reading</h5>
-                <p class="mb-2">Curated reading list shared by counsellors on mental wellness, study habits and resilience.</p>
-                <p class="mb-0 small text-muted">{/* TODO: link the curated reading list PDF */}Available at the Student Welfare desk.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <!-- EXTERNAL LINKS -->
     <!-- <div class="rts-mission py-5">
@@ -278,10 +330,8 @@ Staff and students may approach the ICC, Student Counsellor, or alternatively br
             <div class="card shadow-sm border-danger">
               <div class="card-body text-center">
                 <h4 class="mb-3 text-danger"><i class="fa-light fa-triangle-exclamation"></i> Contacts</h4>
-                <p class="mb-2"><strong>Anti-Ragging Helpline:</strong> <a href="tel:1800-180-5522">1800-180-5522</a> · <a href="https://antiragging.in" target="_blank" rel="noopener">antiragging.in</a></p>
-                <p class="mb-2"><strong>National Mental Health Helpline (KIRAN):</strong> <a href="tel:1800-599-0019">1800-599-0019</a></p>
-                <p class="mb-2"><strong>Women Helpline:</strong> <a href="tel:1091">1091</a> · <strong>Police:</strong> <a href="tel:100">100</a></p>
-                <p class="mb-0"><strong>Campus Security 24x7:</strong> <a href="tel:+918842226666">+91 884 222 6666</a></p>
+                <p class="mb-2"><strong>Anti-Ragging Helpline:</strong> <a href="tel:1800-180-5522">9490501171</a> · <a href="https://antiragging.in" target="_blank" rel="noopener">antiragging.in</a></p>
+                <p class="mb-2"><strong>Your voice matters. Every grievance is heard.</strong><br><a href="mailto:grievanceredressal@srkrec.ac.in">grievanceredressal@srkrec.ac.in</a></p>
               </div>
             </div>
           </div>

@@ -31,17 +31,108 @@ const pillars = [
 ];
 
 const sdgs = [
-  { num: 3, name: "Good Health &amp; Well-being", icon: "fa-heart-pulse" },
-  { num: 4, name: "Quality Education", icon: "fa-graduation-cap" },
-  { num: 7, name: "Affordable &amp; Clean Energy", icon: "fa-solar-panel" },
+  {
+    num: 1,
+    name: "No Poverty",
+    publications: 4,
+    icon: "fa-people-arrows",
+  },
+  {
+    num: 2,
+    name: "Zero Hunger",
+    publications: 61,
+    icon: "fa-bowl-food",
+  },
+  {
+    num: 3,
+    name: "Good Health &amp; Well-being",
+    publications: 265,
+    icon: "fa-heart-pulse",
+  },
+  {
+    num: 4,
+    name: "Quality Education",
+    publications: 38,
+    icon: "fa-graduation-cap",
+  },
+  {
+    num: 5,
+    name: "Gender Equality",
+    publications: 3,
+    icon: "fa-venus-mars",
+  },
+  {
+    num: 6,
+    name: "Clean Water and Sanitation",
+    publications: 77,
+    icon: "fa-droplet",
+  },
+  {
+    num: 7,
+    name: "Affordable &amp; Clean Energy",
+    publications: 280,
+    icon: "fa-solar-panel",
+  },
+  {
+    num: 8,
+    name: "Decent Work and Economic Growth",
+    publications: 51,
+    icon: "fa-briefcase",
+  },
   {
     num: 9,
     name: "Industry, Innovation &amp; Infrastructure",
+    publications: 216,
     icon: "fa-industry",
   },
-  { num: 11, name: "Sustainable Cities &amp; Communities", icon: "fa-city" },
-  { num: 13, name: "Climate Action", icon: "fa-cloud" },
-  { num: 17, name: "Partnerships for the Goals", icon: "fa-handshake" },
+  {
+    num: 10,
+    name: "Reduced Inequalities",
+    publications: 12,
+    icon: "fa-scale-balanced",
+  },
+  {
+    num: 11,
+    name: "Sustainable Cities and Communities",
+    publications: 112,
+    icon: "fa-city",
+  },
+  {
+    num: 12,
+    name: "Responsible Consumption and Production",
+    publications: 86,
+    icon: "fa-recycle",
+  },
+  {
+    num: 13,
+    name: "Climate Action",
+    publications: 53,
+    icon: "fa-cloud",
+  },
+  {
+    num: 14,
+    name: "Life Below Water",
+    publications: 51,
+    icon: "fa-water",
+  },
+  {
+    num: 15,
+    name: "Life on Land",
+    publications: 49,
+    icon: "fa-tree",
+  },
+  {
+    num: 16,
+    name: "Peace, Justice and Strong Institutions",
+    publications: 13,
+    icon: "fa-scale-unbalanced",
+  },
+  {
+    num: 17,
+    name: "Partnerships for the Goals",
+    publications: 46,
+    icon: "fa-handshake",
+  },
 ];
 
 const recognitions = [
@@ -381,7 +472,7 @@ const recognitions = [
                   <div class="card-body">
                     <h2 class="single-cta-item__title">{s.num}</h2>
                     <i class={`fa-light ${s.icon}`} style="font-size:1.5rem" />
-                    <p class="mt-2 mb-0 small" set:html={s.name} />
+                    <p class="mt-2 mb-0 small" set:html={`${s.name}<br />${s.publications} Publications`} />
                   </div>
                 </div>
               </div>
