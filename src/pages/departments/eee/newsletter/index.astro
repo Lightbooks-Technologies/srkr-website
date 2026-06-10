@@ -5,6 +5,44 @@ import SrkrHeader from '../../../../components/SrkrHeader.astro';
 import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
+
+const newsletters = [
+  {
+    title: 'January–June 2022',
+    description: 'Department newsletter for the first half of 2022.',
+    href: '/assets/documents/eee/newsletters/2022jan-june.pdf',
+  },
+  {
+    title: 'July–December 2022',
+    description: 'Department newsletter for the second half of 2022.',
+    href: '/assets/documents/eee/newsletters/2022july-dec.pdf',
+  },
+  {
+    title: 'January–June 2023',
+    description: 'Department newsletter for the first half of 2023.',
+    href: '/assets/documents/eee/newsletters/2023jan-june.pdf',
+  },
+  {
+    title: 'July–December 2023',
+    description: 'Department newsletter for the second half of 2023.',
+    href: '/assets/documents/eee/newsletters/2023july-dec.pdf',
+  },
+  {
+    title: 'January–June 2024',
+    description: 'Department newsletter for the first half of 2024.',
+    href: '/assets/documents/eee/newsletters/2024jan-june.pdf',
+  },
+  {
+    title: 'July–December 2024',
+    description: 'Department newsletter for the second half of 2024.',
+    href: '/assets/documents/eee/newsletters/2024july-dec.pdf',
+  },
+  {
+    title: 'January–June 2025',
+    description: 'Department newsletter for the first half of 2025.',
+    href: '/assets/documents/eee/newsletters/2025jan-june.pdf',
+  },
+];
 ---
 
 <!doctype html>
@@ -129,25 +167,25 @@ import DeptNav from '../../../../components/DeptNav.astro';
         <DeptNav dept="eee" current="Newsletter" />
         <div class="row">
           <div class="col-12">
-            <div class="newsletter-item">
-              <div class="newsletter-content-wrapper">
-                <div class="newsletter-icon">
-                  <i class="fa-regular fa-newspaper"></i>
-                </div>
-                <div class="newsletter-content">
-                  <h5 class="newsletter-title">Volume 1, Issue 1 — Jan–Jun 2025</h5>
-                  <p class="newsletter-description">
-                    Inaugural issue spotlighting research in renewable energy and electric mobility, faculty publications, student project showcases, industry MoUs, and major departmental events from the Electrical &amp; Electronics Engineering department.
-                  </p>
-                </div>
-                <div class="newsletter-action">
-                  <a href="/assets/documents/eee-newsletter-v1-iss1.pdf" class="newsletter-btn" target="_blank">
-                    <i class="fa-regular fa-download"></i>
-                    <span>Download PDF</span>
-                  </a>
+            {newsletters.map((newsletter) => (
+              <div class="newsletter-item">
+                <div class="newsletter-content-wrapper">
+                  <div class="newsletter-icon">
+                    <i class="fa-regular fa-newspaper"></i>
+                  </div>
+                  <div class="newsletter-content">
+                    <h5 class="newsletter-title">{newsletter.title}</h5>
+                    <p class="newsletter-description">{newsletter.description}</p>
+                  </div>
+                  <div class="newsletter-action">
+                    <a href={newsletter.href} class="newsletter-btn" target="_blank">
+                      <i class="fa-regular fa-download"></i>
+                      <span>Download PDF</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
             <p class="text-muted small" style="margin-top: 24px;"><i class="fa-regular fa-info-circle"></i> <em>Older issues will be available shortly.</em></p>
           </div>
         </div>
