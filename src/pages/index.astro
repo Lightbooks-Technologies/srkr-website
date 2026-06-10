@@ -35,7 +35,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                     <!-- Slide 1: Video Slide -->
                     <div class="swiper-slide" data-swiper-autoplay="20000">
                         <div class="rts-slider-height rts-slider-overlay rt-relative" style="position:relative;overflow:hidden;">
-                            <video class="hero-video" autoplay muted loop playsinline poster="/assets/video/home.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"><source src="/assets/video/srkr-video.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                            <video class="hero-video hero-video--desktop" autoplay muted loop playsinline poster="/assets/video/home.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+                                <source src="/assets/video/srkr-video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video class="hero-video hero-video--mobile" autoplay muted loop playsinline poster="/assets/video/srkr-video-mobile.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+                                <source src="/assets/video/srkr-video-mobile.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <!-- Fullscreen dark overlay -->
                             <div style="position:absolute;top:0;left:0;width:100%;height:100%;background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%);z-index:2;"></div>
                             <div class="container" style="position:relative;z-index:3;">
@@ -1076,10 +1083,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     object-fit: cover;
     display: block;
 }
+.hero-video--mobile {
+    display: none;
+}
 @media (max-width: 768px) {
     .video-section {
         height: 50vh;
         min-height: 300px;
+    }
+    .hero-video--desktop {
+        display: none;
+    }
+    .hero-video--mobile {
+        display: block;
     }
 }
 
