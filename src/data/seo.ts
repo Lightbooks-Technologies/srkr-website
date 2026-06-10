@@ -144,12 +144,12 @@ const institutePages: Record<string, PageSeo> = {
     ],
   },
   '/development-plan/': {
-    title: `Institute Development Plan (IDP) | ${BRAND}`,
+    title: `Institution Development Plan (IDP) | ${BRAND}`,
     description:
-      'Institute Development Plan (IDP) of SRKR Engineering College — strategic roadmap covering academic, research, infrastructure and outreach goals for the coming years.',
+      'Institution Development Plan (IDP) of SRKR Engineering College — strategic roadmap covering academic, research, infrastructure and outreach goals for the coming years.',
     breadcrumbs: [
       { name: 'About', url: '/college-profile/' },
-      { name: 'Institute Development Plan', url: '/development-plan/' },
+      { name: 'Institution Development Plan', url: '/development-plan/' },
     ],
   },
   '/vitals/': {
