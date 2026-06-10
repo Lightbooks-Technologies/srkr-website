@@ -36,6 +36,37 @@ const partners = [
     <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Campus Recruitment Training (CRT), aptitude, communication, mock interviews and external learning partners at SRKR Engineering College." />
   </head>
   <body>
+       <style>
+      .program-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          background-color 0.2s,
+          box-shadow 0.2s;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .program-item:hover {
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .program-item span {
+        display: flex;
+        align-items: center;
+        color: var(--rt-primary);
+      }
+      .program-item i {
+        margin-left: 8px;
+        transition: transform 0.2s;
+        padding: 8px;
+        color: var(--rt-secondary);
+      }
+    </style>
     <SrkrHeader />
 
     <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
@@ -186,8 +217,10 @@ const partners = [
           {partners.map((p) => (
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="program-item">
-                <span><strong>{p.name}</strong><br /><small>{p.desc}</small></span>
-                <i class="fa-regular fa-chevron-right"></i>
+                <div style="">
+                <h6><span><strong>{p.name}</strong></span></h6>
+                <p><small>{p.desc}</small></p>
+                </div>
               </div>
             </div>
           ))}

@@ -10,9 +10,9 @@ const pageTitle = 'Career Guidance';
 const services = [
   { icon: 'fa-light fa-file-lines',  title: 'Resume Reviews',           desc: 'Personalized resume audits, LinkedIn profile optimization and portfolio reviews.' },
   { icon: 'fa-light fa-user-tie',    title: 'Interview Coaching',       desc: 'Mock technical, HR and behavioral interviews with structured feedback.' },
-  // { icon: 'fa-light fa-graduation-cap', title: 'Higher Studies Counseling', desc: 'M.Tech, MS, MBA — university selection, SOP review and application timelines.' },
+  { icon: 'fa-light fa-graduation-cap', title: 'Career Studies Counseling', desc: 'M.Tech, MS, MBA — university selection, SOP review and application timelines.' },
   { icon: 'fa-light fa-handshake',   title: 'Industry Mentorship',      desc: 'One-on-one mentorship with SRKR alumni in product, services, GCC and PSU domains.' },
-  { icon: 'fa-light fa-landmark',    title: 'Govt Exam Coaching',       desc: 'UPSC, APPSC, GATE, IBPS and SSC — strategy sessions and study circles.' },
+  // { icon: 'fa-light fa-landmark',    title: 'Govt Exam Coaching',       desc: 'UPSC, APPSC, GATE, IBPS and SSC — strategy sessions and study circles.' },
   // { icon: 'fa-light fa-lightbulb',   title: 'Entrepreneurship Support', desc: 'Startup ideation, EDC mentorship and pitch deck reviews.' },
 ];
 ---
@@ -22,6 +22,43 @@ const services = [
   <head>
     <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Career counseling, resume reviews, interview coaching, higher studies and government exam guidance at SRKR Engineering College." />
   </head>
+     <style>
+      .program-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          background-color 0.2s,
+          box-shadow 0.2s;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .program-item:hover {
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .program-item span {
+        display: flex;
+        align-items: center;
+        color: var(--rt-primary);
+      }
+      .program-item i {
+        margin-left: 8px;
+        transition: transform 0.2s;
+        padding: 8px;
+        color: var(--rt-secondary);
+      }
+      .learning-resources span {
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+      }
+
+    </style>
   <body>
     <SrkrHeader />
 
@@ -159,7 +196,7 @@ const services = [
             <h3 class="rts-section-title">Learning Resources</h3>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 learning-resources">
           <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="https://www.nptel.ac.in" class="program-item" target="_blank" rel="noopener"><span><strong>NPTEL</strong><br /><small>IIT-led online courses &amp; certification</small></span><i class="fa-regular fa-chevron-right"></i></a>
           </div>
