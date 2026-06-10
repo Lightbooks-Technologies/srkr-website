@@ -5,6 +5,23 @@ import SrkrHeader from '../../../../components/SrkrHeader.astro';
 import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
+
+
+const newsletterIssues = [
+  {
+    title: 'Volume 5, Issue 1 — Jan–Jun 2025',
+    period: 'January – June 2025',
+    description: 'Highlights achievements, research activities, and notable developments of the Civil Engineering department. Features faculty accomplishments, student projects, infrastructure updates, and departmental milestones.',
+    pdfLink: '/assets/documents/civil-newsletter-v5-iss1.pdf',
+  },
+  {
+    title: 'Volume 5, Issue 2 — Jul–Dec 2025',
+    period: 'July – December 2025',
+    description: 'Covers the latest news, events, and accomplishments of the Civil Engineering department. Showcases faculty research, student achievements, infrastructure developments, and departmental initiatives.',
+    pdfLink: '/assets/documents/civil-newsletter-v5-iss2.pdf',
+  }
+  // Future issues can be added here
+];
 ---
 
 <!doctype html>
@@ -129,28 +146,33 @@ import DeptNav from '../../../../components/DeptNav.astro';
         <DeptNav dept="civil" current="Newsletter" />
         <div class="row">
           <div class="col-12">
+            {
+              newsletterIssues.map(issue => (
+      
             <div class="newsletter-item">
               <div class="newsletter-content-wrapper">
                 <div class="newsletter-icon">
                   <i class="fa-regular fa-newspaper"></i>
                 </div>
                 <div class="newsletter-content">
-                  <h5 class="newsletter-title">Volume 5, Issue 1 — Jan–Jun 2025</h5>
-                  <!-- <span class="newsletter-period">January – June 2025</span> -->
+                  <h5 class="newsletter-title">{issue.title}</h5>
+                  <!-- <span class="newsletter-period">{issue.period}</span> -->
                   <p class="newsletter-description">
-                    Highlights achievements, research activities, and notable developments of the Civil Engineering department. Features faculty accomplishments, student projects, infrastructure updates, and departmental milestones.
+                    {issue.description}
                   </p>
                 </div>
                 <div class="newsletter-action">
-                  <a href="/assets/documents/civil-newsletter-v5-iss1.pdf" class="newsletter-btn" target="_blank">
+                  <a href={issue.pdfLink} class="newsletter-btn" target="_blank">
                     <i class="fa-regular fa-download"></i>
                     <span>Download PDF</span>
                   </a>
                 </div>
               </div>
             </div>
+                ))}
             <p class="text-muted small" style="margin-top: 24px;"><i class="fa-regular fa-info-circle"></i> <em>Older issues will be available shortly.</em></p>
           </div>
+    
         </div>
       </div>
     </section>

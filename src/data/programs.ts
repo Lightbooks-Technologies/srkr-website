@@ -130,6 +130,22 @@ export const programs: Programs[] = [
     phone: '+91 08816 223332',
     tagline: 'Established 2021 · B.Tech CS & Design · Creative Tech Programs',
     legacyCode: 'csd',
+  },
+  {
+    slug: 'bba',
+    code: 'BBA',
+    name: 'BBA',
+    fullName: 'Department of Bachelor of Business Administration',
+    icon: 'fa-light fa-building-columns',
+    established: 2024,
+    intake: 60,
+    hod: 'Dr. M. Siva Krishnam Raju',
+    hodDesignation: 'Controller of Examinations & Program Coordinator',
+    hodEmail: 'hod.bba@srkrec.ac.in',
+    email: 'hod.bba@srkrec.ac.in',
+    phone: '+91 08816 223332',
+    tagline: 'Established 2024 · BBA · Industry Aligned Curriculum',
+    legacyCode: 'bba',
   }
 ];
 export function getProgram(slug: string): Programs | undefined {

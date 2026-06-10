@@ -29,7 +29,6 @@ const deans = [
   { name: 'Dr. T. Vamsi Nagaraju',         role: 'Dean, Research and Development' },
   { name: 'Dr. K.R. Satyanarayana',        role: 'Dean, Training and Placements' },
   { name: 'Dr. S. Rajesh',                 role: 'Dean, IQAC' },
-  { name: 'Dr. M. Siva Krishnam Raju',     role: 'Controller of Examinations' },
 ];
 
 const administration = [
@@ -174,7 +173,7 @@ const administration = [
           </div>
         </div>
           <div class="row g-4">
-          {departments.map((d) => (
+          {departments.filter((d) => !programs.some((p) => p.slug === d.slug)).map((d) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm">
                 <div class="card-body">

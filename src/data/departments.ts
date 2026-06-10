@@ -237,7 +237,7 @@ const coreDepartments: Department[] = [
 
 export const departments: Department[] = [
   ...coreDepartments,
-  ...programs,
+   ...programs,
 ];
 
 export function getDepartment(slug: string): Department | undefined {
