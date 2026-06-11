@@ -65,7 +65,7 @@
         align-items: center;
         gap: 5px;
         label{
-            color:  #110C2D;
+            color:  var(--rt-heading);
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -73,7 +73,7 @@
             &::before{
                 top: 5px;
                 background: transparent;
-                border: 1px solid #737477;
+                border: 1px solid var(--rt-body);
             }
             &::after{
                 top: 31%;
@@ -87,7 +87,7 @@
         }
     }
     span.number{
-        color:  #737477;
+        color:  var(--rt-body);
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -137,7 +137,7 @@ input[type=checkbox]:checked ~ label::after, input[type=radio]:checked ~ label::
         align-items: center;
         gap: 40px;
         span{
-            color:  #110C2D;
+            color:  var(--rt-heading);
             font-size: 16px;
             font-style: normal;
             font-weight: 400;

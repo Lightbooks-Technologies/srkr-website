@@ -12,9 +12,7 @@
 
 ========================================*/
 /* Default  */
-@import url("../css/vendor/canela-font.css");
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 :root {
   --rt-theme: #09A24F;
   --rt-primary: #890C25;
@@ -22,8 +20,8 @@
   --rt-primary-2: #890C25;
   --rt-secondary: #110C2D;
   --rt-footer: #181818;
-  --rt-body: #737477;
-  --rt-heading: #262626;
+  --rt-body: #5e6e7d;
+  --rt-heading: #2b3d4f;
   --rt-white:#fff;
   --rt-rating: var(--rt-primary);
   --rt-border: #D9D9D9;
@@ -57,26 +55,26 @@
   --f-black: 900;
   --translate: translate(-50%, -50%);
   --transition: all 0.4s ease;
-  --font-primary: 'Inter', sans-serif;
-  --font-secondary: 'Canela trial';
-  --font-hind: 'Hind', sans-serif;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-hind: 'Poppins', sans-serif;
   --fontawesome: "fontawesome", sans-serif;
   --line-height-b1: 26px;
   --line-height-b2: 26px;
   --line-height-b3: 1.7;
-  --h1: 64px;
-  --h2: 48px;
-  --h3: 40px;
-  --h4: 36px;
-  --h5: 24px;
-  --h6: 20px;
+  --h1: 48px;
+  --h2: 40px;
+  --h3: 36px;
+  --h4: 24px;
+  --h5: 20px;
+  --h6: 16px;
   --p-l: 24px;
   --p-m: 20px;
   --p-s: 16px;
   --p-xs: 14px;
 }
 
-/*==== canela font =======*/
+/*==== poppins font =======*/
 * {
   box-sizing: border-box;
 }
@@ -19949,7 +19947,7 @@ xclip
   margin: 0;
   position: relative;
   margin-left: 30px;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--rt-body);
   font-family: var(--font-primary);
   margin-bottom: 10px;
