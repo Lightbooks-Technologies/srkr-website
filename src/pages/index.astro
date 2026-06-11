@@ -35,7 +35,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                     <!-- Slide 1: Video Slide -->
                     <div class="swiper-slide" data-swiper-autoplay="20000">
                         <div class="rts-slider-height rts-slider-overlay rt-relative" style="position:relative;overflow:hidden;">
-                            <video class="hero-video" autoplay muted loop playsinline poster="/assets/video/home.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"><source src="/assets/video/srkr-video.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                            <video class="hero-video hero-video--desktop" autoplay muted loop playsinline poster="/assets/video/home.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+                                <source src="/assets/video/srkr-video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video class="hero-video hero-video--mobile" autoplay muted loop playsinline poster="/assets/video/srkr-video-mobile.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+                                <source src="/assets/video/srkr-video-mobile.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <!-- Fullscreen dark overlay -->
                             <div style="position:absolute;top:0;left:0;width:100%;height:100%;background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%);z-index:2;"></div>
                             <div class="container" style="position:relative;z-index:3;">
@@ -43,7 +50,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                     <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
                                         <div class="rts-slider">
                                             <div class="rts-slider-content" style="text-align:center;padding:2rem 1rem;border-radius:16px;display:inline-block;margin-top:3vw;">
-                                                <h1 class="rts-slider-title mt-4" style="color:#fff;">Welcome to SRKR Engineering College (A)</h1>
+                                                <h1 class="rts-slider-title mt-4" style="color:#fff;">Welcome to SRKR Engineering College </h1>
                                                 <p class="rts-slider-desc" style="color:#fff;">Discover SRKR Engineering College—our vibrant campus, advanced labs, and inspiring student life.</p>
                                                 <div class="rts-slider-btn">
                                                     <a href="/college-profile/" class="rts-theme-btn btn-arrow">Explore College <span><i class="fa-thin fa-arrow-right"></i></span></a>
@@ -184,59 +191,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div> -->
         <!-- header banner end -->
 
-        <!-- about us -->
-        <section class="about v__2 pt--120 pb--80">
-            <div class="container">
-                <div class="row justify-content-md-center g-5">
-                    <div class="col-lg-3 col-md-3">
-                        <div class="about__left--content">
-                            <div class="about__left--content--left">
-                                <img src="/assets/images/home/f1.jpg" alt="" style="min-width: 250px;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9">
-                        <div class="about__right--content">
-                          
-                            <h2 class="about__right--content--title">About SRKR Engineering College</h2>
-                            <p class="about__right--content--description">Founded in 1980, SRKR Engineering College stands as one of Andhra Pradesh's premier self-financing engineering institutions. With NAAC A++ accreditation, NBA recognition across six programmes, and SIRO status from DSIR, we embody excellence in technical education.</p>
-                            <p class="about__right--content--description">Spread across 30 acres in Bhimavaram, our campus blends world-class infrastructure with a rich legacy of nurturing industry-ready engineers. We are committed to fostering innovation, empowering students to achieve their fullest potential, and contributing meaningfully to society through quality education and research.</p>
-                            <div class="about__right--content--vision d-none">
-                                <div class="mision">
-                                    <div class="mision__icon">
-                                        <img src="/assets/images/icon/mission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="mision__title">
-                                        Our Mission
-                                        Statement
-                                    </div>
-                                </div>
-                                <div class="vision">
-                                    <div class="vision__icon">
-                                        <img src="/assets/images/icon/vission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="vision__title">
-                                        Our Vision &
-                                        Values
-                                    </div>
-                                </div>
-                            </div> 
-                            <a href="/programmes/" class="rts-theme-btn btn-arrow">Explore Programs
-                                <span><i class="fa-regular fa-arrow-right"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about us end -->
-
         <!-- SRKREC at a Glance -->
         <section class="srkr-glance rts-section-padding-small">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb--40">
-                        <h1 class="rts-section-title">SRKREC at a Glance</h1>
+                        <h4 class="rts-section-title">SRKREC at a Glance</h4>
                     </div>
                 </div>
                 <div class="row g-4">
@@ -755,11 +715,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                     Research and Innovation
                                 </h2>
                                 <p>Discover a thriving ecosystem of research and innovation dedicated to advancing knowledge, fostering creativity, and developing sustainable solutions. Join us in shaping the future through transformative research and technological advancement.</p>
-                                <div class="research-subject mt--30">
-                           
-                                 
-                                       <div class="single-research">
-                                       
+                                <div class="research-subject research-subject--grid mt--30">
+                                    <div class="single-research">
                                         <div class="content">
                                             <h6>Artificial Intelligence</h6>
                                             <p>
@@ -768,7 +725,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                      
                                         <div class="content">
                                             <h6>IoT and Embedded Systems</h6>
                                             <p>
@@ -777,7 +733,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                     
                                         <div class="content">
                                             <h6>Drone Technologies</h6>
                                             <p>
@@ -786,7 +741,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                      
                                         <div class="content">
                                             <h6>Sustainability</h6>
                                             <p>
@@ -1076,10 +1030,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     object-fit: cover;
     display: block;
 }
+.hero-video--mobile {
+    display: none;
+}
 @media (max-width: 768px) {
     .video-section {
         height: 50vh;
         min-height: 300px;
+    }
+    .hero-video--desktop {
+        display: none;
+    }
+    .hero-video--mobile {
+        display: block;
     }
 }
 
@@ -1272,6 +1235,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 .program__single--item--list {
     flex: 1;
+}
+
+/* ── RESEARCH SUBJECT TWO COLUMNS ── */
+.research-subject--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+@media (max-width: 768px) {
+    .research-subject--grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 /* ── SRKREC AT A GLANCE ── */

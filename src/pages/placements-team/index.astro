@@ -26,12 +26,20 @@ const coreTeam = [
     image: "dr_k_r_satyanarayana.jpeg",
   },
   {
+    name: "G. Ashok Reddy",
+    designation: "Manager Corporate Relations",
+    email: "corporaterelations@srkrec.ac.in",
+    phone: "",
+    image: "g_ashok_reddy.jpeg",
+  },
+  {
     name: "C. Baskar",
     designation: "Manager International Affairs",
     email: "baskar.c@srkrec.ac.in",
     phone: "9790997707",
     image: "c_baskar.jpeg",
   },
+
   {
     name: "M. Harun Kumar",
     designation: "Asst Training & Placement Officer",
@@ -287,12 +295,12 @@ const deptTPRs = departments.map((d) => ({
             <h3 class="rts-section-title">Core T&amp;P Cell Officers</h3>
           </div>
         </div>
-        <div class="row g-5">
+        <div class="row g-5" style="justify-content: center;">
           {
             coreTeam.map(
               (m, index) =>
                 index < 1 && (
-                  <div class="col-lg-4 col-md-6 col-sm-6">
+                  <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="single-item">
                       <div class="single-item__content">
                         {index < 1 && (
@@ -330,7 +338,7 @@ const deptTPRs = departments.map((d) => ({
           {
             coreTeam.map(
               (m, index) =>
-                index > 1 && (
+                index >= 1 && (
                   <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-item">
                       <div class="single-item__content">
