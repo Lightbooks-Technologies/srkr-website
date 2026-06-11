@@ -11,6 +11,12 @@ type ResearchData = {
   scopusCount: number | string;
 };
 
+type QuickFact = {
+  value: string;
+  label: string;
+  color: string;
+};
+
 var researchData: ResearchData[] = [
     {
      year: 2026,
@@ -49,6 +55,15 @@ var researchData: ResearchData[] = [
     scopusCount: 145,
   }
 ];
+
+const quickFacts: QuickFact[] = [
+  { value: '1434', label: 'Journal Articles', color: '#7a1cac' },
+  { value: '1696', label: 'Conference Papers', color: '#0077a6' },
+  { value: '185', label: 'Book Chapters', color: '#69be28' },
+  { value: '28,850', label: 'Citations', color: '#d00000' },
+  { value: '77', label: 'h-Index', color: '#8b008b' },
+  { value: '617', label: 'i10-Index', color: '#7b1fa2' }
+];
 ---
 
 <!doctype html>
@@ -82,6 +97,36 @@ var researchData: ResearchData[] = [
       </div>
     </section>
     <!-- BREADCRUMB AREA END -->
+
+    <!-- quick facts -->
+    <section class="research-quick-facts">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="research-quick-facts__eyebrow">QUICK FACTS - TILL DATE</p>
+            <h3 class="research-quick-facts__title">SCOPUS</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+          {quickFacts.map((fact) => (
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <div class="research-quick-facts__card">
+                <div
+                  class="research-quick-facts__value counter"
+                  data-counterup-time="900"
+                  data-counterup-delay="8"
+                  style={`color: ${fact.color};`}
+                >
+                  {fact.value}
+                </div>
+                <div class="research-quick-facts__label">{fact.label}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+     
     <!-- reasearch area -->
     <section class="rts-research-section rts-section-padding">
       <div class="container">
@@ -127,6 +172,83 @@ var researchData: ResearchData[] = [
     <!-- footer copyright end -->
 
     <OffCanvas/>
+
+    <style>
+      .research-quick-facts {
+        padding: 48px 0 24px;
+        background: var(--light-white);
+      }
+
+      .research-quick-facts__eyebrow {
+        margin: 0 0 10px;
+        color: #d62916;
+        font-size: 1.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .research-quick-facts__title {
+        margin: 0 0 18px;
+        color: #214d93;
+        font-size: 2.6rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .research-quick-facts__card {
+        height: 100%;
+        background: #ffffff;
+        border: 1px solid #e6e6e6;
+        padding: 18px 14px 16px;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      }
+
+      .research-quick-facts__value {
+        font-size: 3.8rem;
+        line-height: 1;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .research-quick-facts .counter.animated,
+      .research-quick-facts .counter.fadeInDownBig {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+
+      .research-quick-facts__label {
+        color: #5b5b5b;
+        font-size: 1.9rem;
+        line-height: 1.35;
+      }
+
+      @media (max-width: 991px) {
+        .research-quick-facts__value {
+          font-size: 4rem;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .research-quick-facts {
+          padding-top: 36px;
+        }
+
+        .research-quick-facts__title {
+          font-size: 2.2rem;
+        }
+
+        .research-quick-facts__value {
+          font-size: 3.4rem;
+        }
+
+        .research-quick-facts__label {
+          font-size: 1.7rem;
+        }
+      }
+    </style>
 
     <!-- scripts -->
     <FooterScripts />

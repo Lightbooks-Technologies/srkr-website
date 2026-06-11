@@ -51,6 +51,15 @@ const ratings = [
   { cycle: 'IIC 3.0 (2020-21)', rating: '2 Star' },
   { cycle: 'IIC 4.0 (2021-22)', rating: '3 Star' }
 ];
+
+const reunionGallery = [
+  { thumb: 'https://picsum.photos/seed/iic-gallery-01/800/520', full: 'https://picsum.photos/seed/iic-gallery-01/1600/1000', alt: 'Reunion sample 1' },
+  { thumb: 'https://picsum.photos/seed/iic-gallery-02/800/520', full: 'https://picsum.photos/seed/iic-gallery-02/1600/1000', alt: 'Reunion sample 2' },
+  { thumb: 'https://picsum.photos/seed/iic-gallery-03/800/520', full: 'https://picsum.photos/seed/iic-gallery-03/1600/1000', alt: 'Reunion sample 3' },
+  { thumb: 'https://picsum.photos/seed/iic-gallery-04/800/520', full: 'https://picsum.photos/seed/iic-gallery-04/1600/1000', alt: 'Reunion sample 4' },
+  { thumb: 'https://picsum.photos/seed/iic-gallery-05/800/520', full: 'https://picsum.photos/seed/iic-gallery-05/1600/1000', alt: 'Reunion sample 5' },
+  { thumb: 'https://picsum.photos/seed/iic-gallery-06/800/520', full: 'https://picsum.photos/seed/iic-gallery-06/1600/1000', alt: 'Reunion sample 6' }
+];
 ---
 
 <!doctype html>
@@ -121,8 +130,61 @@ const ratings = [
       </div>
     </div>
 
+    <!-- reunion gallery -->
+    <div class="rts-gallery rts-section-padding mt--40 ">
+      <div class="container">
+      <div class="row">
+        <div class="rts__section--wrapper v__5">
+        <h2 class="rts__section--title">University Reunion Gallery</h2>
+        </div>
+      </div>
+      <div class="gallery-area">
+        <div class="swiper reunion-gallery-slider swiper-data" id="reunion-gallery-swiper" data-swiper='{
+        "slidesPerView": 3,
+        "loop": true,
+        "spaceBetween": 24,
+        "speed": 4000,
+            "navigation": {
+              "nextEl": ".reunion-gallery-next",
+              "prevEl": ".reunion-gallery-prev"
+            },
+        "autoplay": { "delay": 0, "disableOnInteraction": false },
+        "breakpoints": {
+          "320": { "slidesPerView": 1, "spaceBetween": 12 },
+          "576": { "slidesPerView": 2, "spaceBetween": 16 },
+          "992": { "slidesPerView": 3, "spaceBetween": 24 }
+        }
+        }'>
+        <div class="swiper-wrapper">
+          {reunionGallery.map((item) => (
+          <div class="swiper-slide">
+            <div class="single-gallery">
+            <a href={item.full} class="single-gallery__item" target="_blank" rel="noopener noreferrer">
+              <img src={item.thumb} alt={item.alt} loading="lazy" decoding="async"/>
+              <div class="single-gallery__icon">
+              <i class="fa-light fa-circle-plus"></i>
+              </div>
+            </a>
+            </div>
+          </div>
+          ))}
+        </div>
+        </div>
+          <!-- <div class="reunion-gallery-controls mt--25">
+            <button type="button" class="reunion-gallery-btn reunion-gallery-prev" aria-label="Previous gallery image">
+              <i class="fa-regular fa-arrow-left"></i>
+            </button>
+            <button type="button" class="reunion-gallery-btn reunion-gallery-next" aria-label="Next gallery image">
+              <i class="fa-regular fa-arrow-right"></i>
+            </button>
+          </div> -->
+      </div>
+      </div>
+    </div>
+    <!-- reunion gallery end -->
+
     <!-- Pillars -->
-    <section class="rts-research-section rts-section-padding">
+    <section class="rts-research-section rts-section-padding-small">
       <div class="container">
         <div class="row mb--40">
           <div class="rts-section text-center">
@@ -345,6 +407,65 @@ const ratings = [
         </div>
       </div>
     </section>
+
+    <style>
+      .reunion-gallery-controls {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .reunion-gallery-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid #890c25;
+        background: #ffffff;
+        color: #890c25;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .reunion-gallery-btn:hover {
+        background: #890c25;
+        color: #ffffff;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var swiperEl = document.querySelector('#reunion-gallery-swiper');
+        var prevBtn = document.querySelector('.reunion-gallery-prev');
+        var nextBtn = document.querySelector('.reunion-gallery-next');
+
+        if (!swiperEl || !prevBtn || !nextBtn) return;
+
+        function getInstance() {
+          var swiperNode = /** @type {any} */ (swiperEl);
+          // @ts-ignore Swiper instance is attached by library at runtime
+          return swiperNode ? swiperNode.swiper || null : null;
+        }
+
+        prevBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var instance = getInstance();
+          if (!instance) return;
+          instance.slidePrev();
+        });
+
+        nextBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var instance = getInstance();
+          if (!instance) return;
+          instance.slideNext();
+        });
+      });
+    </script>
 
     <SrkrFooter />
     <OffCanvas />

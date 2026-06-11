@@ -622,6 +622,26 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
 
     <OffCanvas/>
 
+        <style>
+            .rts-academic-area .single-cat-item .cat-thumb {
+                height: 220px;
+                overflow: hidden;
+            }
+
+            .rts-academic-area .single-cat-item .cat-thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            @media (max-width: 767px) {
+                .rts-academic-area .single-cat-item .cat-thumb {
+                    height: 200px;
+                }
+            }
+        </style>
+
 
     <!-- scripts -->
     <FooterScripts />
