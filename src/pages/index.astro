@@ -191,59 +191,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div> -->
         <!-- header banner end -->
 
-        <!-- about us -->
-        <section class="about v__2 pt--120 pb--80">
-            <div class="container">
-                <div class="row justify-content-md-center g-5">
-                    <div class="col-lg-3 col-md-3">
-                        <div class="about__left--content">
-                            <div class="about__left--content--left">
-                                <img src="/assets/images/home/f1.jpg" alt="" style="min-width: 250px;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9">
-                        <div class="about__right--content">
-                          
-                            <h2 class="about__right--content--title">About SRKR Engineering College</h2>
-                            <p class="about__right--content--description">Founded in 1980, SRKR Engineering College stands as one of Andhra Pradesh's premier self-financing engineering institutions. With NAAC A++ accreditation, NBA recognition across six programmes, and SIRO status from DSIR, we embody excellence in technical education.</p>
-                            <p class="about__right--content--description">Spread across 30 acres in Bhimavaram, our campus blends world-class infrastructure with a rich legacy of nurturing industry-ready engineers. We are committed to fostering innovation, empowering students to achieve their fullest potential, and contributing meaningfully to society through quality education and research.</p>
-                            <div class="about__right--content--vision d-none">
-                                <div class="mision">
-                                    <div class="mision__icon">
-                                        <img src="/assets/images/icon/mission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="mision__title">
-                                        Our Mission
-                                        Statement
-                                    </div>
-                                </div>
-                                <div class="vision">
-                                    <div class="vision__icon">
-                                        <img src="/assets/images/icon/vission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="vision__title">
-                                        Our Vision &
-                                        Values
-                                    </div>
-                                </div>
-                            </div> 
-                            <a href="/programmes/" class="rts-theme-btn btn-arrow">Explore Programs
-                                <span><i class="fa-regular fa-arrow-right"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about us end -->
-
         <!-- SRKREC at a Glance -->
         <section class="srkr-glance rts-section-padding-small">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb--40">
-                        <h1 class="rts-section-title">SRKREC at a Glance</h1>
+                        <h4 class="rts-section-title">SRKREC at a Glance</h4>
                     </div>
                 </div>
                 <div class="row g-4">
@@ -762,11 +715,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                     Research and Innovation
                                 </h2>
                                 <p>Discover a thriving ecosystem of research and innovation dedicated to advancing knowledge, fostering creativity, and developing sustainable solutions. Join us in shaping the future through transformative research and technological advancement.</p>
-                                <div class="research-subject mt--30">
-                           
-                                 
-                                       <div class="single-research">
-                                       
+                                <div class="research-subject research-subject--grid mt--30">
+                                    <div class="single-research">
                                         <div class="content">
                                             <h6>Artificial Intelligence</h6>
                                             <p>
@@ -775,7 +725,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                      
                                         <div class="content">
                                             <h6>IoT and Embedded Systems</h6>
                                             <p>
@@ -784,7 +733,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                     
                                         <div class="content">
                                             <h6>Drone Technologies</h6>
                                             <p>
@@ -793,7 +741,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                                         </div>
                                     </div>
                                     <div class="single-research">
-                                      
                                         <div class="content">
                                             <h6>Sustainability</h6>
                                             <p>
@@ -1288,6 +1235,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 .program__single--item--list {
     flex: 1;
+}
+
+/* ── RESEARCH SUBJECT TWO COLUMNS ── */
+.research-subject--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+@media (max-width: 768px) {
+    .research-subject--grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 /* ── SRKREC AT A GLANCE ── */

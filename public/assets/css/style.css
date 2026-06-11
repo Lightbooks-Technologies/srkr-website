@@ -13984,7 +13984,7 @@ xclip
   background: rgba(0, 0, 0, 0.6);
 }
 .campus__life--single--content {
-  max-width: 340px;
+  max-width: 480px;
   transition: var(--transition);
 }
 .campus__life--single--title {
@@ -19950,8 +19950,8 @@ xclip
   position: relative;
   margin-left: 30px;
   font-size: 17px;
-  color: var(--rt-heading);
-  font-family: var(--font-secondary);
+  color: var(--rt-body);
+  font-family: var(--font-primary);
   margin-bottom: 10px;
 }
 .rts-scholarship-description .si__list ul li::before {
