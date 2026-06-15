@@ -6,7 +6,7 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+const years = ['2025â€“26', '2024â€“25', '2023â€“24', '2022â€“23'];
 ---
 
 <!doctype html>
@@ -52,7 +52,6 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
                 <li class="breadcrumb-item"><a href="/departments/aiml/">Artificial Intelligence & Machine Learning</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Placements</li>
               </ul>
               <h1 class="section-title">Placements</h1>
             </div>
@@ -77,7 +76,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
             </div>
             <div class="col-lg-8 col-md-9 col-sm-12">
               <p class="rts-section-description">
-                Graduates of the AI &amp; ML program are highly sought-after as ML Engineers, Data Scientists, AI Researchers, NLP &amp; Computer Vision Engineers, and AI Product Managers. Our students are prepared through a project-driven curriculum, GPU-enabled lab work, internships at IITs / NITs and industry, and structured placement training — and recruit consistently with leading IT services firms, product companies, and AI-focused startups.
+                Graduates of the AI &amp; ML program are highly sought-after as ML Engineers, Data Scientists, AI Researchers, NLP &amp; Computer Vision Engineers, and AI Product Managers. Our students are prepared through a project-driven curriculum, GPU-enabled lab work, internships at IITs / NITs and industry, and structured placement training â€” and recruit consistently with leading IT services firms, product companies, and AI-focused startups.
               </p>
             </div>
           </div>
@@ -105,7 +104,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
           <div class="col-lg-5 col-md-11">
             <div class="rts-multi-row-content">
               <h4 class="row-title">Top Recruiters</h4>
-              <p>Our graduates are recruited by leading IT services firms and product companies — and increasingly by global AI-focused organisations such as Google, Microsoft, Amazon, NVIDIA, and AI-first startups.</p>
+              <p>Our graduates are recruited by leading IT services firms and product companies â€” and increasingly by global AI-focused organisations such as Google, Microsoft, Amazon, NVIDIA, and AI-first startups.</p>
               <div class="row g-4 mt-3">
                 {/* TODO: Replace placeholder recruiter logos with AI-focused brands (Google, Microsoft, Amazon, NVIDIA, OpenAI, etc.) when available. */}
                 <div class="col-4">
@@ -193,7 +192,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
               <p>Download year-wise placement reports covering recruiter list, offers, and notable student outcomes.</p>
               <div class="program-list">
                 {years.map(year => (
-                  <a href={`/assets/documents/aiml-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                  <a href={`/assets/documents/aiml-placements-${year.replace('â€“', '-')}.pdf`} class="program-item" target="_blank">
                     <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                   </a>
                 ))}

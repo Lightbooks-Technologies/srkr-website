@@ -6,7 +6,7 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+const years = ['2025â€“26', '2024â€“25', '2023â€“24', '2022â€“23'];
 ---
 
 <!doctype html>
@@ -50,7 +50,6 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
                 <li class="breadcrumb-item"><a href="/departments/csbs/">Computer Science &amp; Business Systems</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Placements</li>
               </ul>
               <h1 class="section-title">Placements</h1>
             </div>
@@ -75,7 +74,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
             </div>
             <div class="col-lg-8 col-md-9 col-sm-12">
               <p class="rts-section-description">
-                The CSBS department combines a TCS-aligned technical curriculum with a focused career-readiness programme — preparing graduates for roles in IT consulting, business analytics, FinTech, ERP, and product engineering. With an intake of just 60, every student receives personal mentorship, mock interview support, and direct exposure to curriculum-partner TCS and other premier recruiters.
+                The CSBS department combines a TCS-aligned technical curriculum with a focused career-readiness programme â€” preparing graduates for roles in IT consulting, business analytics, FinTech, ERP, and product engineering. With an intake of just 60, every student receives personal mentorship, mock interview support, and direct exposure to curriculum-partner TCS and other premier recruiters.
               </p>
             </div>
           </div>
@@ -103,7 +102,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
           <div class="col-lg-5 col-md-11">
             <div class="rts-multi-row-content">
               <h4 class="row-title">Top Recruiters</h4>
-              <p>As the curriculum design partner, <strong>TCS</strong> remains the anchor recruiter for CSBS graduates, joined by leading consulting and FinTech firms — Deloitte, Accenture, EY, KPMG — and major banks and IT services companies.</p>
+              <p>As the curriculum design partner, <strong>TCS</strong> remains the anchor recruiter for CSBS graduates, joined by leading consulting and FinTech firms â€” Deloitte, Accenture, EY, KPMG â€” and major banks and IT services companies.</p>
               <div class="row g-4 mt-3">
                 {/* TODO: Replace placeholder recruiter logos with verified CSBS recruiter list and add Deloitte / Accenture / EY / KPMG / bank logos. */}
                 <div class="col-4">
@@ -192,7 +191,7 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
               <div class="program-list">
                 {/* TODO: Upload year-wise PDFs to /assets/documents/ once first-batch placement data is verified. */}
                 {years.map(year => (
-                  <a href={`/assets/documents/csbs-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                  <a href={`/assets/documents/csbs-placements-${year.replace('â€“', '-')}.pdf`} class="program-item" target="_blank">
                     <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                   </a>
                 ))}
