@@ -6,7 +6,7 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢â‚¬â€œ24', '2022Ã¢â‚¬â€œ23'];
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
 ---
 
 <!doctype html>
@@ -78,7 +78,7 @@ const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢
             </div>
             <div class="col-lg-8 col-md-9 col-sm-12">
               <p class="rts-section-description">
-                The Department of Computer Science &amp; Engineering at SRKR has built a strong, consistent placement record over three decades, partnering with leading IT services majors, product engineering firms, and emerging technology start-ups. Students are equipped with strong programming fundamentals, hands-on project experience, and structured placement training Ã¢â‚¬â€ including aptitude, coding, and soft-skill modules Ã¢â‚¬â€ through our dedicated Training &amp; Placement Cell.
+                The Department of Computer Science &amp; Engineering at SRKR has built a strong, consistent placement record over three decades, partnering with leading IT services majors, product engineering firms, and emerging technology start-ups. Students are equipped with strong programming fundamentals, hands-on project experience, and structured placement training — including aptitude, coding, and soft-skill modules — through our dedicated Training &amp; Placement Cell.
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢
               <p>Download detailed placement reports with company names, packages offered, and student achievements for each academic year.</p>
               <div class="program-list">
                 {years.map(year => (
-                  <a href={`/assets/documents/cse-placements-${year.replace('Ã¢â‚¬â€œ', '-')}.pdf`} class="program-item" target="_blank">
+                  <a href={`/assets/documents/cse-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
                     <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                   </a>
                 ))}

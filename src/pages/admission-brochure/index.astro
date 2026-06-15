@@ -11,20 +11,20 @@ const pageTitle = "Admission Brochure";
 const totalIntake = departments.reduce((sum, d) => sum + d.intake, 0);
 
 const importantDates = [
-  { label: 'AP EAPCET â€” Notification', date: 'Feb (annual)' },
-  { label: 'AP EAPCET â€” Exam', date: 'May (annual)' },
-  { label: 'AP EAPCET â€” Results', date: 'May / Jun (annual)' },
-  { label: 'AP EAPCET Counselling â€” Phase 1', date: 'Jul (annual)' },
-  { label: 'AP ECET â€” Lateral Entry Exam', date: 'May (annual)' },
-  { label: 'AP PGECET â€” M.Tech Exam', date: 'Jun (annual)' },
-  { label: 'SRKR Category-B / NRI Admissions Open', date: 'Jul â€“ Aug' },
+  { label: 'AP EAPCET — Notification', date: 'Feb (annual)' },
+  { label: 'AP EAPCET — Exam', date: 'May (annual)' },
+  { label: 'AP EAPCET — Results', date: 'May / Jun (annual)' },
+  { label: 'AP EAPCET Counselling — Phase 1', date: 'Jul (annual)' },
+  { label: 'AP ECET — Lateral Entry Exam', date: 'May (annual)' },
+  { label: 'AP PGECET — M.Tech Exam', date: 'Jun (annual)' },
+  { label: 'SRKR Category-B / NRI Admissions Open', date: 'Jul – Aug' },
   { label: 'Academic Year Commences', date: 'Aug / Sep' },
 ];
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="SRKR Engineering College admission brochure â€” programs offered, intake, eligibility, fees and how to apply." />
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="SRKR Engineering College admission brochure — programs offered, intake, eligibility, fees and how to apply." />
   </head>
   <body>
     <SrkrHeader />
@@ -52,7 +52,7 @@ const importantDates = [
           <div class="col-lg-10 text-center">
             <div class="rts-section mb--30">
               <h3 class="rts-section-title">Begin Your SRKR Journey</h3>
-              <p class="rts-section-description">Everything you need to know about applying to SRKR Engineering College â€” programs, eligibility, key dates and downloads â€” all in one place.</p>
+              <p class="rts-section-description">Everything you need to know about applying to SRKR Engineering College — programs, eligibility, key dates and downloads — all in one place.</p>
             </div>
             <a href="/assets/docs/admission-brochure.pdf" class="rts-theme-btn"><i class="fa-regular fa-download"></i> Download Brochure (PDF)</a>
             <p class="small text-muted mt-2">{/* TODO: upload final admission brochure PDF */}</p>
@@ -108,7 +108,7 @@ const importantDates = [
                   <h6 class="card-title mb-2">
                     <a href={`/departments/${d.slug}/`}>{d.name}</a>
                   </h6>
-                  <p class="mb-1 small"><strong>Intake:</strong> {d.intake} {d.nbaAccredited && (<span class="text-success">Â· NBA</span>)}</p>
+                  <p class="mb-1 small"><strong>Intake:</strong> {d.intake} {d.nbaAccredited && (<span class="text-success">· NBA</span>)}</p>
                   <p class="mb-2 small text-muted">{d.tagline}</p>
                   <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Curriculum</a>
                 </div>
@@ -116,7 +116,7 @@ const importantDates = [
             </div>
           ))}
         </div>
-        <p class="small text-muted mt-3 mb-0">Also see: <a href="/humanities">Basic Sciences &amp; Humanities</a> Â· <a href="/programmes">All Programs</a> Â· <a href="/procedure">Admission Procedure</a></p>
+        <p class="small text-muted mt-3 mb-0">Also see: <a href="/humanities">Basic Sciences &amp; Humanities</a> · <a href="/programmes">All Programs</a> · <a href="/procedure">Admission Procedure</a></p>
       </div>
     </div>
 
@@ -140,7 +140,7 @@ const importantDates = [
               ))}
             </tbody>
           </table>
-          <p class="small text-muted mt-2 mb-0">{/* TODO: replace with current academic-year exact dates */}Dates indicative â€” refer to official AP EAPCET / JNTUK notifications.</p>
+          <p class="small text-muted mt-2 mb-0">{/* TODO: replace with current academic-year exact dates */}Dates indicative — refer to official AP EAPCET / JNTUK notifications.</p>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@ const importantDates = [
                 <div class="accordion" id="apply-accordion">
                   <div class="accordion-item">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ap1" aria-expanded="true">
-                      B.Tech via AP EAPCET (Category A â€” 70% seats)
+                      B.Tech via AP EAPCET (Category A — 70% seats)
                     </button>
                     <div id="ap1" class="accordion-collapse collapse show" data-bs-parent="#apply-accordion">
                       <div class="accordion-body">
@@ -216,21 +216,21 @@ const importantDates = [
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap2" aria-expanded="false">
-                      B.Tech via AP ECET (Lateral Entry â€” 2nd Year)
+                      B.Tech via AP ECET (Lateral Entry — 2nd Year)
                     </button>
                     <div id="ap2" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
                       <div class="accordion-body">
-                        <p>Diploma holders may apply via AP ECET. Counselling and seat allotment are handled by APSCHE â€” choose SRKR in option entry.</p>
+                        <p>Diploma holders may apply via AP ECET. Counselling and seat allotment are handled by APSCHE — choose SRKR in option entry.</p>
                       </div>
                     </div>
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ap3" aria-expanded="false">
-                      Category B (Management Quota â€” 30%) &amp; NRI Seats
+                      Category B (Management Quota — 30%) &amp; NRI Seats
                     </button>
                     <div id="ap3" class="accordion-collapse collapse" data-bs-parent="#apply-accordion">
                       <div class="accordion-body">
-                        <p>Apply directly to SRKR Admissions office during the Cat-B notification window (typically July â€“ August). Cat-B sub-divided into 15% NRI &amp; 15% non-NRI. Contact the office for the prescribed application form.</p>
+                        <p>Apply directly to SRKR Admissions office during the Cat-B notification window (typically July – August). Cat-B sub-divided into 15% NRI &amp; 15% non-NRI. Contact the office for the prescribed application form.</p>
                       </div>
                     </div>
                   </div>
@@ -279,7 +279,7 @@ const importantDates = [
             <div class="card shadow-sm mt-4">
               <div class="card-body">
                 <h6 class="mb-2"><i class="fa-light fa-phone"></i> Admissions Office</h6>
-                <p class="mb-1 small">SRKR Engineering College, Bhimavaram â€“ 534 204, A.P.</p>
+                <p class="mb-1 small">SRKR Engineering College, Bhimavaram – 534 204, A.P.</p>
                 <p class="mb-1 small"><strong>Phone:</strong> <a href="tel:+919848823332">+91 9848823332</a></p>
                 <p class="mb-0 small"><strong>Email:</strong> <a href="mailto:admissions@srkrec.ac.in">admissions@srkrec.ac.in</a></p>
               </div>
