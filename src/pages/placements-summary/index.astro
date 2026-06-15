@@ -94,6 +94,27 @@ const volumeRecruiters = [
 ];
 
 const reportYears = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22"];
+
+const recentPlacements = [
+  {
+    name: "Soma Divya Sri",
+    company: "Amazon",
+    package: "46.38 LPA",
+    photo: "/assets/images/research/01.jpg",
+  },
+  {
+    name: "Gaddam Gopi Harishitha",
+    company: "Amazon",
+    package: "46.38 LPA",
+    photo: "/assets/images/research/01.jpg",
+  },
+  {
+    name: "Koushiki Singhamreddy",
+    company: "Amazon",
+    package: "46.38 LPA",
+    photo: "/assets/images/research/01.jpg",
+  },
+];
 ---
 
 <!doctype html>
@@ -133,6 +154,129 @@ const reportYears = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22"];
         transition: transform 0.2s;
         padding: 8px;
         color: var(--rt-secondary);
+      }
+
+      .placement-wall {
+        background: #f8f9fc;
+        overflow: hidden;
+        position: relative;
+      }
+      .placement-wall::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 2px 2px, #d8deee 1.1px, transparent 1.1px);
+        background-size: 26px 26px;
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .placement-wall .container {
+        position: relative;
+        z-index: 1;
+      }
+      .placement-wall__eyebrow {
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        font-weight: 700;
+        color: #5e71b3;
+      }
+      .placement-wall__title {
+        text-align: center;
+        margin: 8px 0 26px;
+        color: #203a86;
+        font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      }
+      .placement-wall__ticker {
+        overflow: hidden;
+        mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+      }
+      .placement-wall__track {
+        display: flex;
+        width: max-content;
+        gap: 18px;
+        animation: placementTicker 24s linear infinite;
+        will-change: transform;
+      }
+      .placement-wall__ticker:hover .placement-wall__track {
+        animation-play-state: paused;
+      }
+      .placement-wall-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 16px;
+        min-width: min(92vw, 360px);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.08);
+      }
+      .placement-wall-card__photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 999px;
+        border: 4px solid #dce4ff;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .placement-wall-card__meta {
+        min-width: 0;
+      }
+      .placement-wall-card__logo {
+        height: 24px;
+        width: auto;
+        max-width: 110px;
+        display: block;
+      }
+      .placement-wall-card__package {
+        margin: 8px 0 4px;
+        color: #1f3f96;
+        font-size: clamp(1.35rem, 2.3vw, 2rem);
+        font-weight: 800;
+        line-height: 1;
+      }
+      .placement-wall-card__name {
+        margin: 0;
+        color: #1f2a44;
+        font-weight: 700;
+        font-size: 1.05rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .placement-wall__hint {
+        text-align: center;
+        color: #7686bb;
+        font-size: 14px;
+        margin-top: 14px;
+        margin-bottom: 0;
+      }
+
+      @keyframes placementTicker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(-50% - 9px));
+        }
+      }
+
+      @media (max-width: 767px) {
+        .placement-wall-card {
+          min-width: min(96vw, 320px);
+          padding: 12px 14px;
+        }
+        .placement-wall-card__photo {
+          width: 82px;
+          height: 82px;
+        }
+        .placement-wall-card__name {
+          font-size: 0.95rem;
+        }
       }
     </style>
     </head>
@@ -225,6 +369,44 @@ const reportYears = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22"];
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="placement-wall pt--40 pb--50 mb--50" aria-label="Recent placement announcements">
+      <div class="container">
+        <p class="placement-wall__eyebrow">Live Placement Wall - 2026 Batch</p>
+        <h2 class="placement-wall__title">Recent Placement Announcements</h2>
+        <div class="placement-wall__ticker">
+          <div class="placement-wall__track">
+            {
+              [...recentPlacements, ...recentPlacements].map((entry) => (
+                <article class="placement-wall-card">
+                  <img
+                    class="placement-wall-card__photo"
+                    src={entry.photo}
+                    alt={entry.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="placement-wall-card__meta">
+                    <img
+                      class="placement-wall-card__logo"
+                      src="/assets/images/recruiters/amazon-logo.png"
+                      alt={entry.company}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <p class="placement-wall-card__package">₹{entry.package}</p>
+                    <p class="placement-wall-card__name">{entry.name}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+        <!-- <p class="placement-wall__hint">
+          Hover to pause · Auto-scrolling top placements of the season
+        </p> -->
       </div>
     </section>
 
