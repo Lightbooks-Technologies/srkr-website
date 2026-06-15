@@ -6,7 +6,7 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢â‚¬â€œ24'];
+const years = ['2025–26', '2024–25', '2023–24'];
 ---
 
 <!doctype html>
@@ -78,7 +78,7 @@ const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢
             </div>
             <div class="col-lg-8 col-md-9 col-sm-12">
               <p class="rts-section-description">
-                The Department of Information Technology has built a strong placement legacy over two decades, partnering with leading IT services and product companies. Our students consistently land roles in software engineering, cloud, full-stack, cyber security and data Ã¢â‚¬â€ with the highest recent offer of <strong>17.16 LPA</strong> from Amazon. A dedicated Training &amp; Placement Cell, full-semester internships, and continuous skill-building in modern stacks make our graduates job-ready from day one.
+                The Department of Information Technology has built a strong placement legacy over two decades, partnering with leading IT services and product companies. Our students consistently land roles in software engineering, cloud, full-stack, cyber security and data — with the highest recent offer of <strong>17.16 LPA</strong> from Amazon. A dedicated Training &amp; Placement Cell, full-semester internships, and continuous skill-building in modern stacks make our graduates job-ready from day one.
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ const years = ['2025Ã¢â‚¬â€œ26', '2024Ã¢â‚¬â€œ25', '2023Ã¢
               <p>Download detailed placement reports with company names, packages offered and student achievements for each academic year.</p>
               <div class="program-list">
                 {years.map(year => (
-                  <a href={`/assets/documents/it/placements/${year.replace('Ã¢â‚¬â€œ', '-')}.pdf`} class="program-item" target="_blank">
+                  <a href={`/assets/documents/it/placements/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
                     <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                   </a>
                 ))}
