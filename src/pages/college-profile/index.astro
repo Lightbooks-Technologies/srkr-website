@@ -1,298 +1,624 @@
---- 
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
 ---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+
+const timeline = [
+  {
+    img: "1.jpg",
+  },
+  {
+    img: "2.jpg",
+  },
+  {
+    img: "3.jpg",
+  },
+  {
+    img: "4.jpg",
+  },
+  {
+    img: "5.jpg",
+  },
+  {
+    img: "6.jpg",
+  },
+  {
+    img: "7.jpg",
+  },
+  {
+    img: "8.jpg",
+  },
+  {
+    img: "9.jpg",
+  },
+  {
+    img: "10.jpg",
+  },
+  {
+    img: "11.jpg",
+  },
+  {
+    img: "12.jpg",
+  },
+  {
+    img: "13.jpg",
+  },
+];
+
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <body>
-        <!-- header area start -->
-    <SrkrHeader />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .placement-wall {
+        background: #f8f9fc;
+        overflow: hidden;
+        position: relative;
+      }
+      .placement-wall::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          #d8deee 1.1px,
+          transparent 1.1px
+        );
+        background-size: 26px 26px;
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .placement-wall .container {
+        position: relative;
+        z-index: 1;
+      }
+      .placement-wall__eyebrow {
+        margin: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 22px;
+        font-weight: 700;
+        color: #5e71b3;
+      }
+      .placement-wall__title {
+        text-align: center;
+        margin: 8px 0 26px;
+        color: #203a86;
+        font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      }
+      .placement-wall__ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          #000 8%,
+          #000 92%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          #000 8%,
+          #000 92%,
+          transparent 100%
+        );
+      }
+      .placement-wall__ticker::-webkit-scrollbar {
+        display: none;
+      }
+      .placement-wall__track {
+        display: flex;
+        width: max-content;
+        gap: 18px;
+        padding-bottom: 6px;
+      }
+      .placement-wall-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 16px;
+        min-width: min(88vw, 320px);
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.08);
+      }
+      .placement-wall-card__photo {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .placement-wall-card__meta {
+        min-width: 0;
+      }
+      .placement-wall-card__logo {
+        height: 24px;
+        width: auto;
+        max-width: 110px;
+        display: block;
+      }
+      .placement-wall-card__package {
+        margin: 8px 0 4px;
+        color: #1f3f96;
+        font-size: clamp(1.35rem, 2.3vw, 2rem);
+        font-weight: 800;
+        line-height: 1;
+      }
+      .placement-wall-card__name {
+        margin: 0;
+        color: #1f2a44;
+        font-weight: 700;
+        font-size: 1.05rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     
+
+    </style>
+  </head>
+
+  <body>
+    <!-- header area start -->
+    <SrkrHeader />
+
     <!-- header area end -->
-     <!-- BREADCRUMB AREA -->
-     <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        </ul>
-                        <h1 class="section-title">Campus</h1>
-                    </div>
-                </div>
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Campus</h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- BREADCRUMB AREA END -->
 
-            <!-- about us -->
-        <section class="about v__2 pt--80 pb--40">
-            <div class="container">
-                <div class="row justify-content-md-center g-5">
-                    <div class="col-lg-3 col-md-3">
-                        <div class="about__left--content">
-                            <div class="about__left--content--left mt-0">
-                                <img src="/assets/images/home/f1.jpg" alt="" style="min-width: 250px;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9">
-                        <div class="about__right--content">
-                          
-                            <h2 class="about__right--content--title">About SRKR Engineering College</h2>
-                            <p class="about__right--content--description">Founded in 1980, SRKR Engineering College stands as one of Andhra Pradesh's premier self-financing engineering institutions. With NAAC A++ accreditation, NBA recognition across six programmes, and SIRO status from DSIR, we embody excellence in technical education.</p>
-                            <p class="about__right--content--description">Spread across 30 acres in Bhimavaram, our campus blends world-class infrastructure with a rich legacy of nurturing industry-ready engineers. We are committed to fostering innovation, empowering students to achieve their fullest potential, and contributing meaningfully to society through quality education and research.</p>
-                            <div class="about__right--content--vision d-none">
-                                <div class="mision">
-                                    <div class="mision__icon">
-                                        <img src="/assets/images/icon/mission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="mision__title">
-                                        Our Mission
-                                        Statement
-                                    </div>
-                                </div>
-                                <div class="vision">
-                                    <div class="vision__icon">
-                                        <img src="/assets/images/icon/vission.svg" alt="" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="vision__title">
-                                        Our Vision &
-                                        Values
-                                    </div>
-                                </div>
-                            </div> 
-                            <!-- <a href="/programmes/" class="rts-theme-btn btn-arrow">Explore Programs -->
-                                <!-- <span><i class="fa-regular fa-arrow-right"></i></span> -->
-                            </a>
-                        </div>
-                    </div>
+    <!-- about us -->
+    <section class="about v__2 pt--80 pb--40">
+      <div class="container">
+        <div class="row justify-content-md-center g-5">
+          <div class="col-lg-3 col-md-3">
+            <div class="about__left--content">
+              <div class="about__left--content--left mt-0">
+                <img
+                  src="/assets/images/home/f1.jpg"
+                  alt=""
+                  style="min-width: 250px;"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <div class="about__right--content">
+              <h2 class="about__right--content--title">
+                About SRKR Engineering College
+              </h2>
+              <p class="about__right--content--description">
+                Founded in 1980, SRKR Engineering College stands as one of
+                Andhra Pradesh's premier self-financing engineering
+                institutions. With NAAC A++ accreditation, NBA recognition
+                across six programmes, and SIRO status from DSIR, we embody
+                excellence in technical education.
+              </p>
+              <p class="about__right--content--description">
+                Spread across 30 acres in Bhimavaram, our campus blends
+                world-class infrastructure with a rich legacy of nurturing
+                industry-ready engineers. We are committed to fostering
+                innovation, empowering students to achieve their fullest
+                potential, and contributing meaningfully to society through
+                quality education and research.
+              </p>
+              <div class="about__right--content--vision d-none">
+                <div class="mision">
+                  <div class="mision__icon">
+                    <img
+                      src="/assets/images/icon/mission.svg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="mision__title">Our Mission Statement</div>
                 </div>
+                <div class="vision">
+                  <div class="vision__icon">
+                    <img
+                      src="/assets/images/icon/vission.svg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="vision__title">Our Vision & Values</div>
+                </div>
+              </div>
+              <!-- <a href="/programmes/" class="rts-theme-btn btn-arrow">Explore Programs -->
+              <!-- <span><i class="fa-regular fa-arrow-right"></i></span> -->
             </div>
-        </section>
-        <!-- about us end -->
-        <!-- campus life -->
-   
-        <!-- campus life end -->
-    
-        <!-- funfact -->
-    
-        <div class="rts-funfact v_2 stroke">
-            <div class="container">
-                <img src="/assets/images/campus/timeline.png" alt="funfact-bg" class="funfact-bg" loading="lazy" decoding="async">
-                
-            </div>
+          </div>
         </div>
-    
-        <!-- funfact end-->
-    
-        <!-- section one -->
-        <!-- single section -->
-        <div class="rts-campus-section rts-section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="rts-section rt-center mb--45">
-                        <h3 class="rts-section-title">Academic Distinction
-                        </h3>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/01.jpeg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Autonomous Institution</a></h5>
-                                    <p class="item-description">UGC-approved autonomous status since 2016 ensures academic freedom and innovation in curriculum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/02.jpeg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Quality Certified Education </a></h5>
-                                    <p class="item-description">CSE, IT, ECE, EEE, Civil, and Mechanical Engineering programs are accredited by NBA, reflecting excellence in academic quality and outcome-based education.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/03.jpeg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Global Recognition
-                                    </a></h5>
-                                    <p class="item-description">Accredited by NAAC with A+ (CGPA 3.42), NBA-certified programs, and JNTUK affiliation.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                </div>
-            </div>
-        </div>
-        <!-- single section end -->
-    
-        <!-- section two -->
-        <!-- single section -->
-        <div class="rts-campus-section rts-section-padding v_2">
-            <div class="container">
-                <div class="row">
-                    <div class="rts-section rt-center mb--45">
-                        <h3 class="rts-section-title">Innovation & Research Ecosystem
-                        </h3>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/04.jpg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Recognized Research Centres</a></h5>
-                                    <p class="item-description">JNTUK-recognized departments promote active PhD research in engineering and sciences.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/05.jpeg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Scientific Institution Status
-                                    </a></h5>
-                                    <p class="item-description">Designated as SIRO by the Ministry of Science & Tech for R&D excellence and outreach.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/06.jpg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Advanced Labs & Infrastructure</a></h5>
-                                    <p class="item-description">Equipped with AICTE IDEA Lab, DST-FIST funding, and MSME-backed incubation space.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                </div>
-            </div>
-        </div>
-        <!-- single section end -->
-    
-    
-        <!-- section three -->
-        <!-- single section -->
-        <div class="rts-campus-section rts-section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="rts-section rt-center mb--45">
-                        <h3 class="rts-section-title">Collaborations & Sustainability</h3>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/07.jpg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Collaborations</a></h5>
-                                    <p class="item-description">Fostering strategic partnerships with academia, research organizations, and industry to drive innovation, knowledge exchange, and societal impact.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/08.jpg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Unnat Bharat Abhiyan (UBA)</a></h5>
-                                    <p class="item-description">Transforming rural communities through sustainable development, innovation, and community engagement in nearby villages.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                    <!-- single item -->
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-item">
-                            <div class="single-item__content">
-                                <div class="single-item__image">
-                                    <img src="/assets/images/campus/09.jpg" alt="item-image" loading="lazy" decoding="async">
-                                </div>
-                                <div class="single-item__meta">
-                                    <h5 class="item-title"><a href="#">Societal Impact</a></h5>
-                                    <p class="item-description">Transforming lives by addressing community needs through technology-driven and socially responsible interventions.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item end -->
-                </div>
-            </div>
-        </div>
-        <!-- single section end -->
-    
-    
-    
-        <!-- footer -->
-        <SrkrFooter/>
+      </div>
+    </section>
 
-        <!-- footer copyright end -->
-    
-        <OffCanvas/>
-    
-    
-        <!-- scripts -->
-        <FooterScripts />
-    
-    </body>
-    </html>
+    <!-- about us end -->
+    <!-- campus life -->
+
+    <!-- campus life end -->
+
+    <!-- funfact -->
+
+    <section
+      class="placement-wall pt--40 pb--50 mb--50"
+      aria-label="Recent placement announcements"
+    >
+      <div class="container">
+        <p class="placement-wall__eyebrow">College timeline</p>
+        <div class="placement-wall__ticker">
+            <div class="placement-wall__track">
+              {
+              timeline.map((entry) => (
+                <article class="placement-wall-card">
+                  <img
+                    class="placement-wall-card__photo"
+                    src={"/assets/images/about/" + entry.img}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script is:inline>
+      (() => {
+        const ticker = document.querySelector('.placement-wall__ticker');
+        const track = document.querySelector('.placement-wall__track');
+        if (!ticker || !track) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+
+        let paused = false;
+        let lastTime = 0;
+
+        const getMaxScroll = () => Math.max(0, track.scrollWidth - ticker.clientWidth);
+
+        const step = (time) => {
+          if (!lastTime) lastTime = time;
+          const delta = time - lastTime;
+          lastTime = time;
+
+          if (!paused) {
+            ticker.scrollLeft += delta * 0.06;
+            const maxScroll = getMaxScroll();
+            if (maxScroll > 0 && ticker.scrollLeft >= maxScroll) {
+              ticker.scrollLeft = 0;
+            }
+          }
+
+          window.requestAnimationFrame(step);
+        };
+
+        ticker.addEventListener('mouseenter', () => {
+          paused = true;
+        });
+
+        ticker.addEventListener('mouseleave', () => {
+          paused = false;
+          lastTime = 0;
+        });
+
+        window.requestAnimationFrame(step);
+      })();
+    </script>
+
+
+
+    <!-- funfact end-->
+
+    <!-- section one -->
+    <!-- single section -->
+    <div class="rts-campus-section rts-section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Academic Distinction</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/01.jpeg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Autonomous Institution</a>
+                  </h5>
+                  <p class="item-description">
+                    UGC-approved autonomous status since 2016 ensures academic
+                    freedom and innovation in curriculum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/02.jpeg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Quality Certified Education </a>
+                  </h5>
+                  <p class="item-description">
+                    CSE, IT, ECE, EEE, Civil, and Mechanical Engineering
+                    programs are accredited by NBA, reflecting excellence in
+                    academic quality and outcome-based education.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/03.jpeg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Global Recognition </a>
+                  </h5>
+                  <p class="item-description">
+                    Accredited by NAAC with A+ (CGPA 3.42), NBA-certified
+                    programs, and JNTUK affiliation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+        </div>
+      </div>
+    </div>
+    <!-- single section end -->
+
+    <!-- section two -->
+    <!-- single section -->
+    <div class="rts-campus-section rts-section-padding v_2">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Innovation & Research Ecosystem</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/04.jpg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Recognized Research Centres</a>
+                  </h5>
+                  <p class="item-description">
+                    JNTUK-recognized departments promote active PhD research in
+                    engineering and sciences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/05.jpeg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Scientific Institution Status </a>
+                  </h5>
+                  <p class="item-description">
+                    Designated as SIRO by the Ministry of Science & Tech for R&D
+                    excellence and outreach.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/06.jpg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Advanced Labs & Infrastructure</a>
+                  </h5>
+                  <p class="item-description">
+                    Equipped with AICTE IDEA Lab, DST-FIST funding, and
+                    MSME-backed incubation space.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+        </div>
+      </div>
+    </div>
+    <!-- single section end -->
+
+    <!-- section three -->
+    <!-- single section -->
+    <div class="rts-campus-section rts-section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Collaborations & Sustainability</h3>
+          </div>
+        </div>
+        <div class="row g-5">
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/07.jpg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title"><a href="#">Collaborations</a></h5>
+                  <p class="item-description">
+                    Fostering strategic partnerships with academia, research
+                    organizations, and industry to drive innovation, knowledge
+                    exchange, and societal impact.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/08.jpg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title">
+                    <a href="#">Unnat Bharat Abhiyan (UBA)</a>
+                  </h5>
+                  <p class="item-description">
+                    Transforming rural communities through sustainable
+                    development, innovation, and community engagement in nearby
+                    villages.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-item">
+              <div class="single-item__content">
+                <div class="single-item__image">
+                  <img
+                    src="/assets/images/campus/09.jpg"
+                    alt="item-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="single-item__meta">
+                  <h5 class="item-title"><a href="#">Societal Impact</a></h5>
+                  <p class="item-description">
+                    Transforming lives by addressing community needs through
+                    technology-driven and socially responsible interventions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- single item end -->
+        </div>
+      </div>
+    </div>
+    <!-- single section end -->
+
+    <!-- footer -->
+    <SrkrFooter />
+
+    <!-- footer copyright end -->
+
+    <OffCanvas />
+
+    <!-- scripts -->
+    <FooterScripts />
+  </body>
+</html>

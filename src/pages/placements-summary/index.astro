@@ -396,7 +396,7 @@ const recentPlacements = [
                       loading="lazy"
                       decoding="async"
                     />
-                    <p class="placement-wall-card__package">?{entry.package}</p>
+                    <p class="placement-wall-card__package">{entry.package}</p>
                     <p class="placement-wall-card__name">{entry.name}</p>
                   </div>
                 </article>
@@ -438,8 +438,8 @@ const recentPlacements = [
                         <strong>{y.year}</strong>
                       </td>
                       <td>{y.offers}</td>
-                      <td>?{y.topLPA} LPA</td>
-                      <td>?{y.avgLPA} LPA</td>
+                      <td>{y.topLPA} LPA</td>
+                      <td>{y.avgLPA} LPA</td>
                       <td>{y.recruiters}</td>
                     </tr>
                   ))
