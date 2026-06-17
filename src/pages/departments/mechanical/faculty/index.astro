@@ -21,7 +21,7 @@ const professors = [
   { name: 'Dr. V.K.Viswanadha Raju', designation: 'Professor', specialization: 'Machine Design & Analysis, Industrial Engineering', profile: 'https://srkrec.irins.org/profile/581811', imgsrc: '203' },
   { name: 'Dr. S. Rajesh', designation: 'Professor', specialization: 'Manufacturing Sciences, Composites, Welding, Finite Element Analysis', profile: 'https://srkrec.irins.org/profile/245750', imgsrc: '434' },
   { name: 'Dr.Sita Rama Raju kalidindi', designation: 'Professor , HOD', specialization: 'Nano Composites, Characterization, Python Programming, Thermal Engineering', profile: 'https://srkrec.irins.org/profile/581525', imgsrc: '528' },
-  { name: 'Dr K R Satyanarayana', designation: 'Professor', specialization: 'Metal Matrix Nano Composites', profile: 'https://srkrec.irins.org/profile/704025', imgsrc: '1288' }
+  { name: 'Dr K R Satyanarayana', designation: 'Professor', specialization: 'Metal Matrix Nano Composites', profile: 'https://srkrec.irins.org/profile/704025', imgsrc: 'dr_k_r_satyanarayana' }
   
 ];
 
@@ -30,37 +30,73 @@ const associateProfessors = [
 ];
 
 const assistantProfessors = [
-  { name: 'Dr. I.R. Pavan Kumar Varma', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/320398', image: '565' },
-  { name: 'Sri. N. Harsha', designation: 'Assistant Professor', specialization: 'Manufacturing, Optimization, Machining', profile: 'https://srkrec.irins.org/profile/582666', image: '584' },
-  { name: 'Sri. V.V. M. Krishnam Raju', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/579015', image: '586' },
+
+
+{ name: 'Dr. I.R. Pavan Kumar Varma', designation: 'Assistant Professor', specialization: 'Engineering design', profile: 'https://srkrec.irins.org/profile/320398', image: '565' },
+  { name: 'Sri. N. Harsha', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/582666', image: '584' },
+  { name: 'Sri. V.V. M. Krishnam Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579015', image: '586' },
   { name: 'Dr. N. Sudheer Kumar Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579092', image: '602' },
-  { name: 'Dr. S. Madhava Rao', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/2444983', image: '616' },
+  { name: 'Dr. S. Madhava Rao', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/2444983', image: '616' },
   { name: 'Dr. G.S.V. Seshu Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320413', image: '678' },
-  { name: 'Dr. M. Anil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579442', image: '679' },
-  { name: 'Dr. N. Satish', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/581426', image: '677' },
-  { name: 'Dr. M. Indra Reddy', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/320381', image: '686' },
-  { name: 'Dr. P. Ravi Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/245611', image: '690' },
-  { name: 'Sri. G.H. Thammi Raju', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/579087', image: '758' },
-  { name: 'Sri. K.M.N.V.S.A. Siva Ram', designation: 'Assistant Professor', specialization: 'Design for Manufacturing', profile: 'https://srkrec.irins.org/profile/582485', image: '759' },
-  { name: 'Dr. K. Prasada Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538943', image: '888' },
-  { name: 'Sri. V. Manikanth', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/245384', image: '891' },
-  { name: 'Sri. U. Rajendra Prasad Varma', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/579133', image: '890' },
-  { name: 'Sri. Ch.N.V.S. Swamy', designation: 'Assistant Professor', specialization: 'Thermal & Fluid Engineering', profile: 'https://srkrec.irins.org/profile/320423', image: '889' },
-  { name: 'Sri. V. Praveen', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538715', image: '963' },
-  { name: 'Sri. SK. M.Z.M. Saqheeb Ali', designation: 'Assistant Professor', specialization: 'Tool Design', profile: 'https://srkrec.irins.org/profile/579020', image: '1000' },
-  { name: 'Sri. SK. R.S.M. Ali', designation: 'Assistant Professor', specialization: 'Advanced Design and Manufacturing', profile: 'https://srkrec.irins.org/profile/578950', image: '1001' },
-  { name: 'Dr. K. Sunil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/320747', image: '1018' },
+  { name: 'Dr. M. Anil Kumar', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/579442', image: '679' },
+  { name: 'Dr. N. Satish', designation: 'Assistant Professor', specialization: ' Thermal Engineering ', profile: 'https://srkrec.irins.org/profile/581426', image: '677' },
+  { name: 'Dr. M. Indra Reddy', designation: 'Assistant Professor', specialization: 'Machine Design ', profile: 'https://srkrec.irins.org/profile/320381', image: '686' },
+  { name: 'Dr. P. Ravi Varma', designation: 'Assistant Professor', specialization:'Manufacturing', profile: 'https://srkrec.irins.org/profile/245611', image: '690' },
+  { name: 'Sri. G.H. Thammi Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579087', image: '758' },
+  { name: 'Sri. K.M.N.V.S.A. Siva Ram', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/582485', image: '759' },
+  { name: 'Dr. K. Prasada Raju', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/538943', image: '888' },
+  { name: 'Sri. V. Manikanth', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/245384', image: '891' },
+  { name: 'Sri. U. Rajendra Prasad Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579133', image: '890' },
+  { name: 'Sri. Ch.N.V.S. Swamy', designation: 'Assistant Professor', specialization: 'Tool Design', profile: 'https://srkrec.irins.org/profile/320423', image: '889' },
+  { name: 'Sri. V. Praveen', designation: 'Assistant Professor', specialization: ' Advanced Design & Manufacturin', profile: 'https://srkrec.irins.org/profile/538715', image: '963' },
+  { name: 'Sri. SK. M.Z.M. Saqheeb Ali', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579020', image: '1000' },
+  { name: 'Sri. SK. R.S.M. Ali', designation: 'Assistant Professor', specialization: 'Thermal Engineering ', profile: 'https://srkrec.irins.org/profile/578950', image: '1001' },
+  { name: 'Dr. K. Sunil Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320747', image: '1018' },
   { name: 'Dr. K. Tarun Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579006', image: '1148' },
   { name: 'Sri. V.K. Chaitanya varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321054', image: '1186' },
-  { name: 'Dr. K. Sandeep varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/538940', image: '1187' },
+  { name: 'Dr. K. Sandeep varma', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/538940', image: '1187' },
   { name: 'Sri. M. Rajesh', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579103', image: '1179' },
-  { name: 'Miss. B.S. Santhoshi', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/320402', image: '1199' },
-  { name: 'Dr. D. Shantanu', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538605', image: '1201' },
-  { name: 'Sri. K. D. Hemanth Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538875', image: '1202' },
-  { name: 'Sri. P.V.Ch.R.K. Santosh', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/321087', image: '1200' },
+  { name: 'Miss. B.S. Santhoshi', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320402', image: '1199' },
+  { name: 'Dr. D. Shantanu', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/579091', image: '1201' },
+  { name: 'Sri. P.V.Ch.R.K. Santosh', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/321087', image: '1200' },
   { name: 'Sri. B. Durga Prasad', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321144', image: '1210' },
-  { name: 'Sri. R. S. Srikanth Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579065', image: '1223' },
-  { name: 'Dr. A.V.S Somasundar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/511946', image: '1330' }
+  { name: 'Sri. R. S. Srikanth Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579065', image: '1223' },
+  { name: 'Dr. A.V.S Somasundar', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/511946', image: '1330' }
+
+
+
+
+  // { name: 'Dr. I.R. Pavan Kumar Varma', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/320398', image: '565' },
+  // { name: 'Sri. N. Harsha', designation: 'Assistant Professor', specialization: 'Manufacturing, Optimization, Machining', profile: 'https://srkrec.irins.org/profile/582666', image: '584' },
+  // { name: 'Sri. V.V. M. Krishnam Raju', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/579015', image: '586' },
+  // { name: 'Dr. N. Sudheer Kumar Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579092', image: '602' },
+  // { name: 'Dr. S. Madhava Rao', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/2444983', image: '616' },
+  // { name: 'Dr. G.S.V. Seshu Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320413', image: '678' },
+  // { name: 'Dr. M. Anil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579442', image: '679' },
+  // { name: 'Dr. N. Satish', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/581426', image: '677' },
+  // { name: 'Dr. M. Indra Reddy', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/320381', image: '686' },
+  // { name: 'Dr. P. Ravi Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/245611', image: '690' },
+  // { name: 'Sri. G.H. Thammi Raju', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/579087', image: '758' },
+  // { name: 'Sri. K.M.N.V.S.A. Siva Ram', designation: 'Assistant Professor', specialization: 'Design for Manufacturing', profile: 'https://srkrec.irins.org/profile/582485', image: '759' },
+  // { name: 'Dr. K. Prasada Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538943', image: '888' },
+  // { name: 'Sri. V. Manikanth', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/245384', image: '891' },
+  // { name: 'Sri. U. Rajendra Prasad Varma', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/579133', image: '890' },
+  // { name: 'Sri. Ch.N.V.S. Swamy', designation: 'Assistant Professor', specialization: 'Thermal & Fluid Engineering', profile: 'https://srkrec.irins.org/profile/320423', image: '889' },
+  // { name: 'Sri. V. Praveen', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538715', image: '963' },
+  // { name: 'Sri. SK. M.Z.M. Saqheeb Ali', designation: 'Assistant Professor', specialization: 'Tool Design', profile: 'https://srkrec.irins.org/profile/579020', image: '1000' },
+  // { name: 'Sri. SK. R.S.M. Ali', designation: 'Assistant Professor', specialization: 'Advanced Design and Manufacturing', profile: 'https://srkrec.irins.org/profile/578950', image: '1001' },
+  // { name: 'Dr. K. Sunil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/320747', image: '1018' },
+  // { name: 'Dr. K. Tarun Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579006', image: '1148' },
+  // { name: 'Sri. V.K. Chaitanya varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321054', image: '1186' },
+  // { name: 'Dr. K. Sandeep varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/538940', image: '1187' },
+  // { name: 'Sri. M. Rajesh', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579103', image: '1179' },
+  // { name: 'Miss. B.S. Santhoshi', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/320402', image: '1199' },
+  // { name: 'Dr. D. Shantanu', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538605', image: '1201' },
+  // { name: 'Sri. K. D. Hemanth Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538875', image: '1202' },
+  // { name: 'Sri. P.V.Ch.R.K. Santosh', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/321087', image: '1200' },
+  // { name: 'Sri. B. Durga Prasad', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321144', image: '1210' },
+  // { name: 'Sri. R. S. Srikanth Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579065', image: '1223' },
+  // { name: 'Dr. A.V.S Somasundar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/511946', image: '1330' }
 ];
 ---
 
