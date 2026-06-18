@@ -96,24 +96,107 @@ const volumeRecruiters = [
 const reportYears = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22"];
 
 const recentPlacements = [
-  {
-    name: "Soma Divya Sri",
-    company: "Amazon",
-    package: "46.38 LPA",
-    photo: "/assets/images/research/01.jpg",
+
+{
+    name: "SHANMUKHI GUDAPATI",
+    branch: "AIDS",
+    company: "ATT",
+    package: "19 LPA",
+    photo: "/assets/images/placements/students/SHANMUKHIGUDAPATI.jpg",
   },
   {
-    name: "Gaddam Gopi Harishitha",
-    company: "Amazon",
-    package: "46.38 LPA",
-    photo: "/assets/images/research/01.jpg",
+    name: "Kodeti Sri Santhoshi",
+    branch: "CSE",
+    company: "Infosys",
+    package: "16 LPA",
+    photo: "/assets/images/placements/students/KodetiSriSanthoshi.jpg",
   },
   {
-    name: "Koushiki Singhamreddy",
-    company: "Amazon",
-    package: "46.38 LPA",
-    photo: "/assets/images/research/01.jpg",
+    name: "POTHAMSETTI KODANDA RAMA NAGA GANESH",
+    branch: "CSG",
+    company: "aunix",
+    package: "12 LPA",
+    photo: "/assets/images/placements/students/POTHAMSETTIKODANDARAMANAGAGANESH.jpg",
   },
+  {
+    name: "Dronamraju Rajasekhar",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/DronamrajuRajasekhar.jpg",
+  },
+  {
+    name: "GUGGILA VEERA VENKATA SAI",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/GUGGILAVEERAVENKATASAI.jpg",
+  },
+  {
+    name: "Ijji Mallikarjun",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/IjjiMallikarjun.jpg",
+  },
+  {
+    name: "Koduri Sai Satya Saketh",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/KoduriSaiSatyaSaketh.jpg",
+  },
+  {
+    name: "Pragallapati Harsha",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/PragallapatiHarsha.jpg",
+  },
+  {
+    name: "Vasu Deva Rao Sunkari",
+    branch: "CSE",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/VasuDevaRaoSunkari.jpg",
+  },
+  {
+    name: "Gudimetla Sai Kumar Varma",
+    branch: "IT",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/GudimetlaSaiKumarVarma.jpg",
+  },
+  {
+    name: "K. Lalitha Lasya Siri",
+    branch: "AIDS",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/K.LalithaLasyaSiri.jpg",
+  },
+  {
+    name: "SRIGIRI VYSHNAVI PADMAJA",
+    branch: "AIDS",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/SRIGIRIVYSHNAVIPADMAJA.jpg",
+  },
+  {
+    name: "Manne Rishendra",
+    branch: "AIML",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/ManneRishendra.jpg",
+  },
+  {
+    name: "Nandapuneedi Shyam",
+    branch: "AIML",
+    company: "Infosys",
+    package: "11 LPA",
+    photo: "/assets/images/placements/students/NandapuneediShyam.jpg",
+  }
+
+
 ];
 ---
 
@@ -198,7 +281,8 @@ const recentPlacements = [
         display: flex;
         width: max-content;
         gap: 18px;
-        animation: placementTicker 24s linear infinite;
+        
+        animation: placementTicker 80s linear infinite;
         will-change: transform;
       }
       .placement-wall__ticker:hover .placement-wall__track {
@@ -391,11 +475,11 @@ const recentPlacements = [
                   <div class="placement-wall-card__meta">
                     <img
                       class="placement-wall-card__logo"
-                      src="/assets/images/recruiters/amazon-logo.png"
+                      src={`/assets/images/recruiters/${entry.company.toLowerCase().replace(/\s/g, "")}.png`}
                       alt={entry.company}
                       loading="lazy"
                       decoding="async"
-                    />
+                    />  
                     <p class="placement-wall-card__package">{entry.package}</p>
                     <p class="placement-wall-card__name">{entry.name}</p>
                   </div>
