@@ -1,0 +1,119 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const hod = [
+  {
+    name: 'Dr. Penmetsa Bhavani',
+    designation: 'Professor & Head of Division',
+    specialization: 'Ceramics, Glass Materials, Bioenzymes',
+    profile: '#'
+  }
+];
+
+const faculty = [
+  { name: 'Dr. Venu Reddy', designation: 'Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Dr. D. Chandra Sekhar', designation: 'Associate Professor', specialization: 'Industrial chemistry', profile: '#' },
+  { name: 'Dr. B. S. Diwakar', designation: 'Associate Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Mrs. K. Balageetha', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Dr. U. Naga Babu', designation: 'Assistant Professor', specialization: 'Analytical Chemistry', profile: '#' },
+  { name: 'Mr. J. Suresh Kumar', designation: 'Assistant Professor', specialization: 'Applied Chemistry', profile: '#' },
+  { name: 'Mrs. K. Tulasi Bhavani', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Mrs. Ch. Lakshmi Prasanna', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Mrs. S. Prameela Devi', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
+  { name: 'Mrs. U. Venkata Lakshmi', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Faculty of Chemistry | Applied Sciences & Humanities | SRKR" description="Faculty of the Division of Chemistry at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/program/program__bg.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
+              </ul>
+              <h1 class="section-title">Faculty Chemistry</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="ash" current="Faculty Chemistry" />
+
+        <!-- HoD -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Division Head</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Faculty List -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Division Faculty</h3>
+        </div>
+        <div class="row g-5">
+          {faculty.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} loading="lazy" decoding="async" />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

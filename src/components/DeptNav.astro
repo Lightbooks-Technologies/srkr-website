@@ -16,10 +16,23 @@ if (!d) {
 }
 
 const basePath = `/departments/${d.slug}/`;
-const navItems = DEPT_NAV_ITEMS.map((item) => ({
-  label: item.label,
-  href: `${basePath}${item.path}`,
-}));
+let navItems = [];
+if (dept === 'ash') {
+  navItems = [
+    { label: 'Home', href: `/departments/ash/` },
+    { label: 'Faculty Maths', href: `/departments/ash/faculty-maths/` },
+    { label: 'Faculty Physics', href: `/departments/ash/faculty-physics/` },
+    { label: 'Faculty Chemistry', href: `/departments/ash/faculty-chemistry/` },
+    { label: 'Faculty English', href: `/departments/ash/faculty-english/` },
+    { label: 'IELTS Test Centre', href: `/departments/ash/ielts-test-centre/` },
+    { label: 'Indian Knowledge Traditions', href: `/departments/ash/indian-knowledge-traditions/` },
+  ];
+} else {
+  navItems = DEPT_NAV_ITEMS.map((item) => ({
+    label: item.label,
+    href: `${basePath}${item.path}`,
+  }));
+}
 ---
 
 <div class="row justify-content-md-center">
