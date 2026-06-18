@@ -14,6 +14,19 @@ const pillars = [
   { num: '04', icon: '/assets/images/icon/14.svg', img: '/assets/images/apply/ed03.jpg', title: 'Industry Connect', desc: 'CISCO, Dassault, MSME and IIT partnerships bring real problems to campus.' }
 ];
 
+const reunionGallery = [
+  { thumb: '/assets/images/entrepreneurshipcell/01_360_Innovation_Support.jpeg', full: '/assets/images/entrepreneurshipcell/01_360_Innovation_Support.jpeg', alt: '360 Innovation Support' },
+  { thumb: '/assets/images/entrepreneurshipcell/02_Identify_IP_Component.jpeg', full: '/assets/images/entrepreneurshipcell/02_Identify_IP_Component.jpeg', alt: 'Identify IP Component' },
+  { thumb: '/assets/images/entrepreneurshipcell/03_Preliminary_Identification_and_Drafting.jpeg', full: '/assets/images/entrepreneurshipcell/03_Preliminary_Identification_and_Drafting.jpeg', alt: 'Preliminary Identification and Drafting' },
+  { thumb: '/assets/images/entrepreneurshipcell/04_Workshop_on_IPR.jpeg', full: '/assets/images/entrepreneurshipcell/04_Workshop_on_IPR.jpeg', alt: 'Workshop on IPR' },
+  { thumb: '/assets/images/entrepreneurshipcell/05_Selection_of_Best_Ideas.jpeg', full: '/assets/images/entrepreneurshipcell/05_Selection_of_Best_Ideas.jpeg', alt: 'Selection of Best Ideas' },
+  { thumb: '/assets/images/entrepreneurshipcell/06_DESIGN_THINKING_WORKSHOP.jpeg', full: '/assets/images/entrepreneurshipcell/06_DESIGN_THINKING_WORKSHOP.jpeg', alt: 'Design Thinking Workshop' },
+  { thumb: '/assets/images/entrepreneurshipcell/07_Development_of_Proof_of_Concept_and_Validation.jpeg', full: '/assets/images/entrepreneurshipcell/07_Development_of_Proof_of_Concept_and_Validation.jpeg', alt: 'Development of Proof of Concept and Validation' },
+  { thumb: '/assets/images/entrepreneurshipcell/08_Selection_of_Test_Prototype.jpeg', full: '/assets/images/entrepreneurshipcell/08_Selection_of_Test_Prototype.jpeg', alt: 'Selection of Test Prototype' },
+  { thumb: '/assets/images/entrepreneurshipcell/09_Demo_Day_Presentation.jpeg', full: '/assets/images/entrepreneurshipcell/09_Demo_Day_Presentation.jpeg', alt: 'Demo Day Presentation' },
+  { thumb: '/assets/images/entrepreneurshipcell/10_360_Start_Up_Support.jpeg', full: '/assets/images/entrepreneurshipcell/10_360_Start_Up_Support.jpeg', alt: '360 Start-Up Support' }
+];
+
 const startups = [
   { name: 'Sri Maharshi Consultancy Pvt. Ltd.', year: '2016', founder: 'M. Srinivasa Varma (Alumni, 1990-96)', cin: 'U93000AP2016PTC103338' },
   { name: 'Affine Labs IT Solutions Pvt. Ltd.', year: '2017', founder: 'BabuRamanjaneya Raju Pinnamraju', cin: 'U72900AP2017PTC105960' },
@@ -88,6 +101,58 @@ const startups = [
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+      <!-- reunion gallery -->
+    <div class="rts-gallery rts-section-padding mt--40 ">
+      <div class="container">
+      <div class="row">
+        <div class="rts__section--wrapper v__5">
+        <h2 class="rts__section--title">EDC Support</h2>
+        </div>
+      </div>
+      <div class="gallery-area">
+        <div class="swiper reunion-gallery-slider swiper-data" id="reunion-gallery-swiper" data-swiper='{
+        "slidesPerView": 3,
+        "loop": true,
+        "spaceBetween": 24,
+        "speed": 4000,
+            "navigation": {
+              "nextEl": ".reunion-gallery-next",
+              "prevEl": ".reunion-gallery-prev"
+            },
+        "autoplay": { "delay": 0, "disableOnInteraction": false },
+        "breakpoints": {
+          "320": { "slidesPerView": 1, "spaceBetween": 12 },
+          "576": { "slidesPerView": 2, "spaceBetween": 16 },
+          "992": { "slidesPerView": 3, "spaceBetween": 24 }
+        }
+        }'>
+        <div class="swiper-wrapper">
+          {reunionGallery.map((item) => (
+          <div class="swiper-slide">
+            <div class="single-gallery">
+            <a href={item.full} class="single-gallery__item" target="_blank" rel="noopener noreferrer">
+              <img src={item.thumb} alt={item.alt} loading="lazy" decoding="async"/>
+              <div class="single-gallery__icon">
+              <i class="fa-light fa-circle-plus"></i>
+              </div>
+            </a>
+            </div>
+          </div>
+          ))}
+        </div>
+        </div>
+          <!-- <div class="reunion-gallery-controls mt--25">
+            <button type="button" class="reunion-gallery-btn reunion-gallery-prev" aria-label="Previous gallery image">
+              <i class="fa-regular fa-arrow-left"></i>
+            </button>
+            <button type="button" class="reunion-gallery-btn reunion-gallery-next" aria-label="Next gallery image">
+              <i class="fa-regular fa-arrow-right"></i>
+            </button>
+          </div> -->
+      </div>
       </div>
     </div>
 
