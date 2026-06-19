@@ -39,7 +39,7 @@ import { departments } from '../../data/departments';
           </div>
         </div>
         <div class="row g-4">
-          {departments.map((d) => (
+          {departments.filter((d) => !['ash', 'Engineering Mathematics & Humanities', 'Engineering Chemistry', 'Engineering Physics'].includes(d.slug)).map((d) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm dept-card">
                 <div class="card-body d-flex flex-column">
@@ -60,7 +60,7 @@ import { departments } from '../../data/departments';
 
         <div class="row justify-content-center mt--60 mb--40">
           <div class="col-12 text-center">
-            <h3>Basic Sciences &amp; Humanities</h3>
+            <h3>Applied Sciences &amp; Humanities</h3>
             <p class="text-muted">Foundation courses that strengthen every engineering programme.</p>
           </div>
         </div>
@@ -71,12 +71,12 @@ import { departments } from '../../data/departments';
                 <div class="d-flex align-items-center mb-3">
                   <i class="fa-light fa-flask-vial dept-card__icon me-3"></i>
                   <div>
-                    <h5 class="card-title mb-0" style="color:#1a3c6b;">Basic Sciences &amp; Humanities</h5>
-                    <span class="dept-card__code">BS&amp;H</span>
+                    <h5 class="card-title mb-0" style="color:#1a3c6b;">Applied Sciences &amp; Humanities</h5>
+                    <span class="dept-card__code">AS&amp;H</span>
                   </div>
                 </div>
                 <p class="card-text flex-grow-1">Mathematics, Physics, Chemistry, English &amp; Humanities — building the analytical and communication foundation for every SRKR engineer.</p>
-                <a href="/humanities" class="rts-theme-btn mt-2 align-self-start">View Department</a>
+                <a href="/departments/ash/" class="rts-theme-btn mt-2 align-self-start">View Department</a>
               </div>
             </div>
           </div>

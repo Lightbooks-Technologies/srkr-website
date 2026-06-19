@@ -299,13 +299,13 @@ const academicPages: Record<string, PageSeo> = {
       { name: 'Time Tables', url: '/time-tables/' },
     ],
   },
-  '/humanities/': {
-    title: `Basic Sciences & Humanities | Faculty | ${BRAND}`,
+  '/departments/ash/': {
+    title: `Applied Sciences & Humanities | Faculty | ${BRAND}`,
     description:
-      'Department of Basic Sciences & Humanities at SRKR Engineering College — Mathematics, Physics, Chemistry, English and Management courses with 50+ accomplished faculty.',
+      'Department of Applied Sciences & Humanities at SRKR Engineering College — Mathematics, Physics, Chemistry, English and Management courses with 50+ accomplished faculty.',
     breadcrumbs: [
       { name: 'Departments', url: '/departments/' },
-      { name: 'Basic Sciences & Humanities', url: '/humanities/' },
+      { name: 'Applied Sciences & Humanities', url: '/departments/ash/' },
     ],
   },
   '/departments/': {

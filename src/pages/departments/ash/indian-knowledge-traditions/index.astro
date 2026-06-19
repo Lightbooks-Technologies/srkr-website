@@ -1,0 +1,55 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Indian Knowledge Traditions | Applied Sciences & Humanities | SRKR" description="Indian Knowledge System (IKS) and traditional knowledge courses at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/program/program__bg.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
+              </ul>
+              <h1 class="section-title">Indian Knowledge Traditions</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <DeptNav dept="ash" current="Indian Knowledge Traditions" />
+
+        <div class="row align-items-center justify-content-md-center mb-5 pb-5">
+          <div class="col-lg-12">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-5">Indian Knowledge System (IKS)</h3>
+              <p style="text-align: justify;">The Division of Humanities offers special study units and seminars focused on the traditional Indian sciences, architecture, mathematics, and philosophical values as part of the holistic engineering curriculum.</p>
+              <p style="text-align: justify;">The Indian Knowledge System (IKS) curriculum intends to bridge historical Indian contributions in science, engineering, and metallurgy with modern mathematical tools and methods. By doing so, it helps students develop a balanced understanding of classical methodologies and their modern applications in various technological disciplines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

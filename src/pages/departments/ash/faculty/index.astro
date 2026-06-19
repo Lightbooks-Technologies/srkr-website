@@ -1,0 +1,246 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+// TODO: replace placeholder faculty images at /assets/images/faculty/mechanical/<imgsrc>.jpg with real photographs.
+
+const hod = [
+  { name: 'Dr.Sita Rama Raju kalidindi', designation: 'Professor & Head of Department', specialization: 'Nano Composites, Characterization, Python Programming, Thermal Engineering', profile: 'https://srkrec.irins.org/profile/581525', imgsrc: '528' },
+];
+
+const professors = [
+  { name: 'Dr. K. Brahma Raju', designation: 'Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/184738', imgsrc: '202' },
+  { name: 'Dr. V. Durga Prasad Rao', designation: 'Professor', specialization: 'Optimization, Composites, Production & Industrial Engineering', profile: 'https://srkrec.irins.org/profile/541775', imgsrc: '207' },
+  { name: 'Dr. P. Rama Murty Raju', designation: 'Professor', specialization: 'Machine Design and Analysis', profile: 'https://srkrec.irins.org/profile/245746', imgsrc: '217' },
+  { name: 'Dr. K. Suresh Babu', designation: 'Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/579455', imgsrc: '200' },
+  { name: 'Dr. K.V.M. Krishnam Raju', designation: 'Professor and Principal', specialization: 'Manufacturing Engineering', profile: 'https://srkrec.irins.org/profile/320394', imgsrc: '215' },
+  { name: 'Dr. V.K.Viswanadha Raju', designation: 'Professor', specialization: 'Machine Design & Analysis, Industrial Engineering', profile: 'https://srkrec.irins.org/profile/581811', imgsrc: '203' },
+  { name: 'Dr. S. Rajesh', designation: 'Professor', specialization: 'Manufacturing Sciences, Composites, Welding, Finite Element Analysis', profile: 'https://srkrec.irins.org/profile/245750', imgsrc: '434' },
+  { name: 'Dr.Sita Rama Raju kalidindi', designation: 'Professor , HOD', specialization: 'Nano Composites, Characterization, Python Programming, Thermal Engineering', profile: 'https://srkrec.irins.org/profile/581525', imgsrc: '528' },
+  { name: 'Dr K R Satyanarayana', designation: 'Professor', specialization: 'Metal Matrix Nano Composites', profile: 'https://srkrec.irins.org/profile/704025', imgsrc: 'dr_k_r_satyanarayana' }
+  
+];
+
+const associateProfessors = [
+  { name: 'Dr. Ch. Rama Bhadri Raju', designation: 'Associate Professor', specialization: 'Industrial Engineering', profile: 'https://srkrec.irins.org/profile/537832', image: '561' }
+];
+
+const assistantProfessors = [
+
+
+{ name: 'Dr. I.R. Pavan Kumar Varma', designation: 'Assistant Professor', specialization: 'Engineering design', profile: 'https://srkrec.irins.org/profile/320398', image: '565' },
+  { name: 'Sri. N. Harsha', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/582666', image: '584' },
+  { name: 'Sri. V.V. M. Krishnam Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579015', image: '586' },
+  { name: 'Dr. N. Sudheer Kumar Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579092', image: '602' },
+  { name: 'Dr. S. Madhava Rao', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/2444983', image: '616' },
+  { name: 'Dr. G.S.V. Seshu Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320413', image: '678' },
+  { name: 'Dr. M. Anil Kumar', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/579442', image: '679' },
+  { name: 'Dr. N. Satish', designation: 'Assistant Professor', specialization: ' Thermal Engineering ', profile: 'https://srkrec.irins.org/profile/581426', image: '677' },
+  { name: 'Dr. M. Indra Reddy', designation: 'Assistant Professor', specialization: 'Machine Design ', profile: 'https://srkrec.irins.org/profile/320381', image: '686' },
+  { name: 'Dr. P. Ravi Varma', designation: 'Assistant Professor', specialization:'Manufacturing', profile: 'https://srkrec.irins.org/profile/245611', image: '690' },
+  { name: 'Sri. G.H. Thammi Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579087', image: '758' },
+  { name: 'Sri. K.M.N.V.S.A. Siva Ram', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/582485', image: '759' },
+  { name: 'Dr. K. Prasada Raju', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/538943', image: '888' },
+  { name: 'Sri. V. Manikanth', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/245384', image: '891' },
+  { name: 'Sri. U. Rajendra Prasad Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579133', image: '890' },
+  { name: 'Sri. Ch.N.V.S. Swamy', designation: 'Assistant Professor', specialization: 'Tool Design', profile: 'https://srkrec.irins.org/profile/320423', image: '889' },
+  { name: 'Sri. V. Praveen', designation: 'Assistant Professor', specialization: ' Advanced Design & Manufacturin', profile: 'https://srkrec.irins.org/profile/538715', image: '963' },
+  { name: 'Sri. SK. M.Z.M. Saqheeb Ali', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579020', image: '1000' },
+  { name: 'Sri. SK. R.S.M. Ali', designation: 'Assistant Professor', specialization: 'Thermal Engineering ', profile: 'https://srkrec.irins.org/profile/578950', image: '1001' },
+  { name: 'Dr. K. Sunil Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320747', image: '1018' },
+  { name: 'Dr. K. Tarun Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579006', image: '1148' },
+  { name: 'Sri. V.K. Chaitanya varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321054', image: '1186' },
+  { name: 'Dr. K. Sandeep varma', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/538940', image: '1187' },
+  { name: 'Sri. M. Rajesh', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579103', image: '1179' },
+  { name: 'Miss. B.S. Santhoshi', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320402', image: '1199' },
+  { name: 'Dr. D. Shantanu', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/579091', image: '1201' },
+  { name: 'Sri. P.V.Ch.R.K. Santosh', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/321087', image: '1200' },
+  { name: 'Sri. B. Durga Prasad', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321144', image: '1210' },
+  { name: 'Sri. R. S. Srikanth Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579065', image: '1223' },
+  { name: 'Dr. A.V.S Somasundar', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/511946', image: '1330' }
+
+
+
+
+  // { name: 'Dr. I.R. Pavan Kumar Varma', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/320398', image: '565' },
+  // { name: 'Sri. N. Harsha', designation: 'Assistant Professor', specialization: 'Manufacturing, Optimization, Machining', profile: 'https://srkrec.irins.org/profile/582666', image: '584' },
+  // { name: 'Sri. V.V. M. Krishnam Raju', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/579015', image: '586' },
+  // { name: 'Dr. N. Sudheer Kumar Varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579092', image: '602' },
+  // { name: 'Dr. S. Madhava Rao', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/2444983', image: '616' },
+  // { name: 'Dr. G.S.V. Seshu Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/320413', image: '678' },
+  // { name: 'Dr. M. Anil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579442', image: '679' },
+  // { name: 'Dr. N. Satish', designation: 'Assistant Professor', specialization: 'Manufacturing', profile: 'https://srkrec.irins.org/profile/581426', image: '677' },
+  // { name: 'Dr. M. Indra Reddy', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/320381', image: '686' },
+  // { name: 'Dr. P. Ravi Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/245611', image: '690' },
+  // { name: 'Sri. G.H. Thammi Raju', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/579087', image: '758' },
+  // { name: 'Sri. K.M.N.V.S.A. Siva Ram', designation: 'Assistant Professor', specialization: 'Design for Manufacturing', profile: 'https://srkrec.irins.org/profile/582485', image: '759' },
+  // { name: 'Dr. K. Prasada Raju', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538943', image: '888' },
+  // { name: 'Sri. V. Manikanth', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/245384', image: '891' },
+  // { name: 'Sri. U. Rajendra Prasad Varma', designation: 'Assistant Professor', specialization: 'Advanced Manufacturing Systems', profile: 'https://srkrec.irins.org/profile/579133', image: '890' },
+  // { name: 'Sri. Ch.N.V.S. Swamy', designation: 'Assistant Professor', specialization: 'Thermal & Fluid Engineering', profile: 'https://srkrec.irins.org/profile/320423', image: '889' },
+  // { name: 'Sri. V. Praveen', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538715', image: '963' },
+  // { name: 'Sri. SK. M.Z.M. Saqheeb Ali', designation: 'Assistant Professor', specialization: 'Tool Design', profile: 'https://srkrec.irins.org/profile/579020', image: '1000' },
+  // { name: 'Sri. SK. R.S.M. Ali', designation: 'Assistant Professor', specialization: 'Advanced Design and Manufacturing', profile: 'https://srkrec.irins.org/profile/578950', image: '1001' },
+  // { name: 'Dr. K. Sunil Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/320747', image: '1018' },
+  // { name: 'Dr. K. Tarun Kumar', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579006', image: '1148' },
+  // { name: 'Sri. V.K. Chaitanya varma', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321054', image: '1186' },
+  // { name: 'Dr. K. Sandeep varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/538940', image: '1187' },
+  // { name: 'Sri. M. Rajesh', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/579103', image: '1179' },
+  // { name: 'Miss. B.S. Santhoshi', designation: 'Assistant Professor', specialization: 'Machine Design', profile: 'https://srkrec.irins.org/profile/320402', image: '1199' },
+  // { name: 'Dr. D. Shantanu', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538605', image: '1201' },
+  // { name: 'Sri. K. D. Hemanth Kumar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/538875', image: '1202' },
+  // { name: 'Sri. P.V.Ch.R.K. Santosh', designation: 'Assistant Professor', specialization: 'Production Engineering', profile: 'https://srkrec.irins.org/profile/321087', image: '1200' },
+  // { name: 'Sri. B. Durga Prasad', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/321144', image: '1210' },
+  // { name: 'Sri. R. S. Srikanth Varma', designation: 'Assistant Professor', specialization: 'Thermal Engineering', profile: 'https://srkrec.irins.org/profile/579065', image: '1223' },
+  // { name: 'Dr. A.V.S Somasundar', designation: 'Assistant Professor', specialization: 'CAD/CAM', profile: 'https://srkrec.irins.org/profile/511946', image: '1330' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Faculty | Mechanical Engineering | SRKR" description="Faculty of the Department of Mechanical Engineering at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/mechanical/mechhome.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+              </ul>
+              <h1 class="section-title">Faculty</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Faculty" />
+
+        <!-- HoD -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professor &amp; Head of Department</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real HoD photograph */}
+                    <img src={`/assets/images/faculty/mechanical/${f.imgsrc}.jpg`} alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {professors.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photograph */}
+                    <img src={`/assets/images/faculty/mechanical/${f.imgsrc}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Associate Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Associate Professors</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {associateProfessors.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photograph */}
+                    <img src={`/assets/images/faculty/mechanical/${f.image}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Assistant Professors -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Assistant Professors</h3>
+        </div>
+        <div class="row g-5">
+          {assistantProfessors.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    {/* TODO: replace with real faculty photograph */}
+                    <img src={`/assets/images/faculty/mechanical/${f.image}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
