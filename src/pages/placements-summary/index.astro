@@ -685,24 +685,34 @@ const recentPlacements = [
       <div class="container">
         <div class="row">
           <div class="rts-section rt-center mb--45">
-            <h3 class="rts-section-title">Department-wise Placements</h3>
+            <h3 class="rts-section-title">Program-wise Placements</h3>
           </div>
         </div>
         <div class="row g-4">
           {
-            departments.map((d) => (
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <a
-                  href={`/departments/${d.slug}/placements/`}
-                  class="program-item"
-                >
-                  <span>
-                    <span class={d.icon} /> <strong>{d.name}</strong>
-                  </span>
-                  <i class="fa-regular fa-chevron-right" />
-                </a>
-              </div>
-            ))
+            departments
+              .filter(
+                (d) =>
+                  ![
+                    "ash",
+                    "Engineering Mathematics & Humanities",
+                    "Engineering Chemistry",
+                    "Engineering Physics",
+                  ].includes(d.slug)
+              )
+              .map((d) => (
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a
+                    href={`/departments/${d.slug}/placements/`}
+                    class="program-item"
+                  >
+                    <span>
+                      <span class={d.icon} /> <strong>{d.name}</strong>
+                    </span>
+                    <i class="fa-regular fa-chevron-right" />
+                  </a>
+                </div>
+              ))
           }
         </div>
       </div>
