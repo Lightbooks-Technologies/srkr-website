@@ -169,6 +169,9 @@
         }
     }
 }
+.header__logo--link img{
+    max-width: 75px;
+}
 
 // sticky header
 .header__sticky {
@@ -192,6 +195,7 @@
         background: var(--rt-white);
         .header__logo--link img{
             // filter: invert(100);
+            max-width: 75px;
         }
         .header__right--item .hamburger-line {
             filter: invert(100);
