@@ -1,0 +1,62 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="IELTS Test Centre | Applied Sciences & Humanities | SRKR" description="SRKREC - IELTS Test Centre, Bhimavaram. First academic institution in both Telugu states to establish an IELTS Test centre on campus." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/program/program__bg.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
+              </ul>
+              <h1 class="section-title">IELTS Test Centre</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <DeptNav dept="ash" current="IELTS Test Centre" />
+
+        <div class="row align-items-center justify-content-md-center mb-5 pb-5">
+          <div class="col-lg-12 col-md-11">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-5">SRKREC – IELTS Test Centre, Bhimavaram</h3>
+              <p class="h6 mb-4" style="color: var(--rt-primary);">The first academic institution in both Telugu states to establish an IELTS Test centre on campus.</p>
+              
+              <p style="text-align: justify; margin-bottom: 20px;">The International English Language Testing System (IELTS) is an international standardized test of English language proficiency for non-native English language speakers. IELTS is developed to provide a fair and accurate assessment of English language proficiency. Test questions are developed by language specialists from Australia, Canada, New Zealand, the UK, and the USA. The test covers four sections: Listening, Reading, Writing and Speaking. There are four papers: Listening, Reading, Writing and Speaking. There are two different IELTS modules: Academic and General Training.</p>
+              
+              <p style="text-align: justify; margin-bottom: 20px;">SRKREC has penned an Expression of Interest (EOI) with IDP-IELTS for opening official IELTS Test Centre on the Campus. The first round of Test held on 02 September 2023. There were 80 candidates who took the test on the campus.</p>
+              
+              <p style="text-align: justify; margin-bottom: 20px;">The department of English and Foreign Languages has been imparting quality training for all the test takers for free of cost. There are numerous candidates who have benefitted with the training.</p>
+              
+              <p style="text-align: justify; margin-bottom: 20px;">The department is committed to buttress the student’s higher education dreams of abroad by providing rudimentary consultancy services as well, besides imparting quality training for various entrance/essential exams. The team is guiding the students in preparing SOPs and LORs and handholding them to realize their higher education abroad dreams. In this connection the team has organized several seminars by abled and certified consultants for the students to prepare themselves better. The department hence is preparing the grounds for establishing on campus consultancy services to help students in selecting the universities, guiding in application process and preparing them to face visa interview.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

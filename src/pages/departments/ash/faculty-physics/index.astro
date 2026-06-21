@@ -1,0 +1,121 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const hod = [
+  {
+    name: 'Dr. M. V. Someswara Rao',
+    designation: 'Associate Professor & Head of Division',
+    specialization: 'Nano fibers and Solar cells',
+    profile: '#'
+  }
+];
+
+const faculty = [
+  { name: 'Dr. K. V. Ramana Murty', designation: 'Professor', specialization: 'Ferroelectric and Piezoelectric Ceramics', profile: '#' },
+  { name: 'Dr. V. Seetaramaiah', designation: 'Professor', specialization: 'DFT spectroscopic studies of Pharmaceutical drugs', profile: '#' },
+  { name: 'Sri. P. V. Prasanna Kumar', designation: 'Assistant Professor', specialization: 'Spectroscopy-DFT functional theory', profile: '#' },
+  { name: 'Dr. Rameeza Begum Sheik', designation: 'Assistant Professor', specialization: 'Spectroscopic investigations and Quantum mechanical studies by DFT calculations', profile: '#' },
+  { name: 'Dr. Narayanam P. S. Acharyulu', designation: 'Assistant Professor', specialization: 'Material Science and Nanotechnology', profile: '#' },
+  { name: 'Dr. P. V. S. Lakshmi Aparna', designation: 'Assistant Professor', specialization: 'Ultrasonic investigations and Dye synthesized solar cells', profile: '#' },
+  { name: 'Sri. CH. Shivanarayana', designation: 'Assistant Professor', specialization: 'Spectroscopic analysis of Pharmaceutical drugs', profile: '#' },
+  { name: 'Dr. CH. J. N. Pavan Kumar', designation: 'Assistant Professor', specialization: 'Ferrites and Nanoferrites', profile: '#' },
+  { name: 'Dr. S. Srikanth', designation: 'Assistant Professor', specialization: 'Nuclear Techniques in Material Science-Quantization of Trace elements', profile: '#' },
+  { name: 'Miss. G. Anusha', designation: 'Assistant Professor', specialization: 'Solid State Physics', profile: '#' },
+  { name: 'Vegesina Likhita', designation: 'Assistant Professor', specialization: 'Physics', profile: '#' },
+  { name: 'Talabattula Rupavalli', designation: 'Assistant Professor', specialization: 'Physics', profile: '#' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Faculty of Physics | Applied Sciences & Humanities | SRKR" description="Faculty of the Division of Physics at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/program/program__bg.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
+              </ul>
+              <h1 class="section-title">Faculty Physics</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="ash" current="Faculty Physics" />
+
+        <!-- HoD -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Division Head</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Faculty List -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Division Faculty</h3>
+        </div>
+        <div class="row g-5">
+          {faculty.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} loading="lazy" decoding="async" />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p>{f.specialization}</p>
+                    </div>
+                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

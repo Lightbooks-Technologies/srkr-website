@@ -157,6 +157,16 @@ const recognitions = [
     year: "20XX",
   },
 ];
+
+const greenGlimpses = [
+  { url: "/assets/images/specilization/1.jpg", caption: "Floating Wet Land" },
+  { url: "/assets/images/specilization/1.jpg", caption: "Rooftop Solar PV Installation" },
+  { url: "/assets/images/specilization/1.jpg", caption: "Clean Energy & Energy Efficiency Initiatives" },
+  { url: "/assets/images/specilization/1.jpg", caption: "Rich Plant Diversity & Ayurveda Nursery" },
+  { url: "/assets/images/specilization/1.jpg", caption: "NSS Plantations & Lush Greenery" },
+  { url: "/assets/images/specilization/1.jpg", caption: "Smart Campus & IoT Resource Tracking" },
+  { url: "/assets/images/specilization/1.jpg", caption: "Rainwater Harvesting & Ground Recharge" }
+];
 ---
 
 <!doctype html>
@@ -380,6 +390,85 @@ const recognitions = [
         </div>
       </div>
     </div>
+
+    <!-- PHOTO ROLLING BLOCK (MARQUEE TICKER) -->
+    <section class="sustainability-glimpses-section pb-5">
+      <div class="container-fluid px-0">
+        <div class="rts-section text-center mb--45">
+          <h3 class="rts-section-title">SRKR Green Campus Glimpses</h3>
+        </div>
+        <div class="sustainability-ticker">
+          <div class="sustainability-track">
+            {
+              [...greenGlimpses, ...greenGlimpses].map((g) => (
+                <div class="sustainability-card">
+                  <img src={g.url} alt={g.caption} loading="lazy" decoding="async" />
+                  <div class="sustainability-caption">{g.caption}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .sustainability-ticker {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        padding: 10px 0;
+        mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+      }
+      .sustainability-track {
+        display: flex;
+        width: max-content;
+        gap: 20px;
+        animation: scrollGreenGlimpses 40s linear infinite;
+      }
+      .sustainability-ticker:hover .sustainability-track {
+        animation-play-state: paused;
+      }
+      .sustainability-card {
+        position: relative;
+        width: 320px;
+        height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+      }
+      .sustainability-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .sustainability-card:hover img {
+        transform: scale(1.08);
+      }
+      .sustainability-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        color: #fff;
+        padding: 15px 12px 10px;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: normal;
+      }
+      @keyframes scrollGreenGlimpses {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-55%));
+        }
+      }
+    </style>
 
     <!-- FUNFACT IMPACT BAR -->
     <div class="rts-funfact pb-5">
