@@ -14772,6 +14772,10 @@ xclip
   transition: var(--transition);
 }
 
+.header__logo--link img {
+  max-width: 75px;
+}
+
 .header__sticky {
   position: relative;
   top: 0;
@@ -14792,6 +14796,9 @@ xclip
   position: fixed !important;
   box-shadow: 0px 7px 18px rgba(24, 16, 16, 0.0509803922);
   background: var(--rt-white);
+}
+.header__sticky.fixed .header__logo--link img {
+  max-width: 75px;
 }
 .header__sticky.fixed .header__right--item .hamburger-line {
   filter: invert(100);
