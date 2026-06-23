@@ -1,29 +1,39 @@
 ---
-import BaseHead from '../../../../components/BaseHead.astro';
-import FooterScripts from '../../../../components/FooterScripts.astro';
-import SrkrHeader from '../../../../components/SrkrHeader.astro';
-import SrkrFooter from '../../../../components/SrkrFooter.astro';
-import OffCanvas from '../../../../components/OffCanvas.astro';
-import DeptNav from '../../../../components/DeptNav.astro';
+import BaseHead from "../../../../components/BaseHead.astro";
+import FooterScripts from "../../../../components/FooterScripts.astro";
+import SrkrHeader from "../../../../components/SrkrHeader.astro";
+import SrkrFooter from "../../../../components/SrkrFooter.astro";
+import OffCanvas from "../../../../components/OffCanvas.astro";
+import DeptNav from "../../../../components/DeptNav.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Academic Programs | Computer Science & Engineering | SRKR" description="B.Tech and M.Tech academic programs offered by the Department of Computer Science & Engineering at SRKR Engineering College." />
+    <BaseHead
+      title="Academic Programs | Computer Science & Engineering | SRKR"
+      description="B.Tech and M.Tech academic programs offered by the Department of Computer Science & Engineering at SRKR Engineering College."
+    />
   </head>
   <body>
     <SrkrHeader />
 
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/cse/csehome.jpeg);">
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/faculty/cse/csehome.jpeg);"
+    >
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
-                <li class="breadcrumb-item"><a href="/departments/cse/">Computer Science & Engineering</a></li>
+                <li class="breadcrumb-item">
+                  <a href="/departments">Departments</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="/departments/cse/">Computer Science & Engineering</a>
+                </li>
               </ul>
               <h1 class="section-title">Academic Programs</h1>
             </div>
@@ -37,11 +47,20 @@ import DeptNav from '../../../../components/DeptNav.astro';
         <DeptNav dept="cse" current="Academic Programs" />
         <div class="row sticky-coloum-wrap">
           <div class="col-lg-8 col-md-12">
-
             <!-- Intro -->
             <div class="program-about">
               <h4 class="title">Programs Offered</h4>
-              <p>The Department of Computer Science &amp; Engineering offers two JNTUK-affiliated flagship programs: a four-year B.Tech in Computer Science &amp; Engineering (sanctioned intake 300) and a two-year M.Tech in Computer Science &amp; Technology (offered since 2006). Both programs are designed to produce industry-ready software professionals with deep fundamentals, research aptitude, and strong ethical practice — complemented by Honors and Minors tracks in AI/ML and IoT for high-achieving students.</p>
+              <p>
+                The Department of Computer Science &amp; Engineering offers two
+                JNTUK-affiliated flagship programs: a four-year B.Tech in
+                Computer Science &amp; Engineering (sanctioned intake 300) and a
+                two-year M.Tech in Computer Science &amp; Technology (offered
+                since 2006). Both programs are designed to produce
+                industry-ready software professionals with deep fundamentals,
+                research aptitude, and strong ethical practice — complemented by
+                Honors and Minors tracks in AI/ML and IoT for high-achieving
+                students.
+              </p>
             </div>
 
             <!-- Program Cards -->
@@ -52,15 +71,23 @@ import DeptNav from '../../../../components/DeptNav.astro';
               <div class="col-lg-6 col-md-6">
                 <div class="single-cat-item">
                   <div class="cat-thumb" style="height: 200px;">
-                    <img src="/assets/images/programs/cse.png" alt="B.Tech Computer Science & Engineering" style="height: 100%; object-fit: cover;">
+                    <img
+                      src="/assets/images/programs/cse.png"
+                      alt="B.Tech Computer Science & Engineering"
+                      style="height: 100%; object-fit: cover;"
+                    />
                     <a href="#btech" class="cat-link-btn">Undergraduate</a>
                   </div>
                   <div class="cat-meta">
                     <div class="cat-title">
-                      <a href="#btech">B.Tech Computer Science &amp; Engineering</a>
+                      <a href="#btech"
+                        >B.Tech Computer Science &amp; Engineering</a
+                      >
                     </div>
                     <div class="cat-link">
-                      <a href="#btech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      <a href="#btech" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
                     </div>
                   </div>
                 </div>
@@ -68,15 +95,25 @@ import DeptNav from '../../../../components/DeptNav.astro';
               <div class="col-lg-6 col-md-6">
                 <div class="single-cat-item">
                   <div class="cat-thumb" style="height: 200px;">
-                    <img src="/assets/images/programs/csTechnology.png" alt="M.Tech Computer Science & Technology" style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    <img
+                      src="/assets/images/programs/csTechnology.png"
+                      alt="M.Tech Computer Science & Technology"
+                      style="height: 100%; object-fit: cover;"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <a href="#mtech" class="cat-link-btn">Postgraduate</a>
                   </div>
                   <div class="cat-meta">
                     <div class="cat-title">
-                      <a href="#mtech">M.Tech Computer Science &amp; Technology</a>
+                      <a href="#mtech"
+                        >M.Tech Computer Science &amp; Technology</a
+                      >
                     </div>
                     <div class="cat-link">
-                      <a href="#mtech" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      <a href="#mtech" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
                     </div>
                   </div>
                 </div>
@@ -84,27 +121,66 @@ import DeptNav from '../../../../components/DeptNav.astro';
             </div>
 
             <!-- Accordion: B.Tech -->
-            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+            <div
+              id="btech"
+              class="program-credit-area faq mt--50 rts-scholarship-description"
+            >
               <div class="rts-section mb--30">
-                <h3 class="rts-section-title">B.Tech — Computer Science &amp; Engineering</h3>
+                <h3 class="rts-section-title">
+                  B.Tech — Computer Science &amp; Engineering
+                </h3>
               </div>
               <div class="program-accordion">
                 <div class="accordion" id="cse-btech-accordion">
-
                   <!-- PEOs -->
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cse-btech-peo" aria-expanded="true">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-btech-peo"
+                      aria-expanded="true"
+                    >
                       Program Educational Objectives (PEOs)
                     </button>
-                    <div id="cse-btech-peo" class="accordion-collapse collapse show" data-bs-parent="#cse-btech-accordion">
+                    <div
+                      id="cse-btech-peo"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#cse-btech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">The Program Educational Objectives (PEOs) define the career and professional accomplishments that our B.Tech Computer Science &amp; Engineering program is designed to help graduates achieve within a few years after graduation. These objectives guide our curriculum and ensure alignment with industry needs and societal expectations.</p>
+                        <p class="mb-4">
+                          The Program Educational Objectives (PEOs) define the
+                          career and professional accomplishments that our
+                          B.Tech Computer Science &amp; Engineering program is
+                          designed to help graduates achieve within a few years
+                          after graduation. These objectives guide our
+                          curriculum and ensure alignment with industry needs
+                          and societal expectations.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Graduates will become significant contributors to the computer industry with strong basic and specialised knowledge in computer science and engineering, blended with mathematics and modern technologies.</li>
-                              <li class="si__list--single">Graduates will have the adequate knowledge and technical skills required for continuous education, advanced research, and lifelong learning.</li>
-                              <li class="si__list--single">Graduates will become socially responsible computing professionals and entrepreneurs, demonstrating effective communication, presentation, teamwork, leadership, and professional ethics.</li>
+                              <li class="si__list--single">
+                                Graduates will become significant contributors
+                                to the computer industry with strong basic and
+                                specialised knowledge in computer science and
+                                engineering, blended with mathematics and modern
+                                technologies.
+                              </li>
+                              <li class="si__list--single">
+                                Graduates will have the adequate knowledge and
+                                technical skills required for continuous
+                                education, advanced research, and lifelong
+                                learning.
+                              </li>
+                              <li class="si__list--single">
+                                Graduates will become socially responsible
+                                computing professionals and entrepreneurs,
+                                demonstrating effective communication,
+                                presentation, teamwork, leadership, and
+                                professional ethics.
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -114,27 +190,102 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- POs -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cse-btech-po" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-btech-po"
+                      aria-expanded="false"
+                    >
                       Program Outcomes (POs)
                     </button>
-                    <div id="cse-btech-po" class="accordion-collapse collapse" data-bs-parent="#cse-btech-accordion">
+                    <div
+                      id="cse-btech-po"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#cse-btech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills, and attributes that students will acquire by the time of graduation. They are aligned with national accreditation standards and ensure our graduates are well-prepared for professional practice in software and computing.</p>
+                        <p class="mb-4">
+                          Program Outcomes (POs) describe the knowledge, skills,
+                          and attributes that students will acquire by the time
+                          of graduation. They are aligned with national
+                          accreditation standards and ensure our graduates are
+                          well-prepared for professional practice in software
+                          and computing.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply knowledge of mathematics, science, engineering fundamentals, and a computing specialisation to solve complex engineering problems.</li>
-                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate, review research literature, and analyse complex engineering problems reaching substantiated conclusions.</li>
-                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design solutions for complex engineering problems and components that meet specified needs with consideration of public health, safety, cultural, societal, and environmental factors.</li>
-                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based knowledge and methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions.</li>
-                              <li class="si__list--single"><strong>Modern Tool Usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools, including prediction and modelling.</li>
-                              <li class="si__list--single"><strong>The Engineer &amp; Society:</strong> Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal, and cultural issues.</li>
-                              <li class="si__list--single"><strong>Environment &amp; Sustainability:</strong> Understand the impact of professional engineering solutions in societal and environmental contexts and demonstrate sustainable development practices.</li>
-                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and commit to professional responsibilities and norms of the engineering practice.</li>
-                              <li class="si__list--single"><strong>Individual &amp; Team Work:</strong> Function effectively as an individual and as a member or leader in diverse, multidisciplinary teams.</li>
-                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively on complex engineering activities through reports, design documentation, and presentations.</li>
-                              <li class="si__list--single"><strong>Project Management &amp; Finance:</strong> Demonstrate knowledge of engineering and management principles, and apply these to manage projects in multidisciplinary environments.</li>
-                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and have the preparation and ability to engage in independent and lifelong learning in a context of technological change.</li>
+                              <li class="si__list--single">
+                                <strong>Engineering Knowledge:</strong> Apply knowledge
+                                of mathematics, science, engineering fundamentals,
+                                and a computing specialisation to solve complex engineering
+                                problems.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Problem Analysis:</strong> Identify, formulate,
+                                review research literature, and analyse complex engineering
+                                problems reaching substantiated conclusions.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Design &amp; Development:</strong> Design
+                                solutions for complex engineering problems and components
+                                that meet specified needs with consideration of public
+                                health, safety, cultural, societal, and environmental
+                                factors.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Investigation:</strong> Use research-based
+                                knowledge and methods including design of experiments,
+                                analysis and interpretation of data, and synthesis
+                                of information to provide valid conclusions.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Modern Tool Usage:</strong> Create, select,
+                                and apply appropriate techniques, resources, and modern
+                                engineering and IT tools, including prediction and
+                                modelling.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>The Engineer &amp; Society:</strong> Apply
+                                reasoning informed by contextual knowledge to assess
+                                societal, health, safety, legal, and cultural issues.
+                              </li>
+                              <li class="si__list--single">
+                                <strong
+                                  >Environment &amp; Sustainability:</strong
+                                > Understand the impact of professional engineering
+                                solutions in societal and environmental contexts and
+                                demonstrate sustainable development practices.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Ethics:</strong> Apply ethical principles
+                                and commit to professional responsibilities and norms
+                                of the engineering practice.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Individual &amp; Team Work:</strong> Function
+                                effectively as an individual and as a member or leader
+                                in diverse, multidisciplinary teams.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Communication:</strong> Communicate effectively
+                                on complex engineering activities through reports,
+                                design documentation, and presentations.
+                              </li>
+                              <li class="si__list--single">
+                                <strong
+                                  >Project Management &amp; Finance:</strong
+                                > Demonstrate knowledge of engineering and management
+                                principles, and apply these to manage projects in
+                                multidisciplinary environments.
+                              </li>
+                              <li class="si__list--single">
+                                <strong>Lifelong Learning:</strong> Recognise the
+                                need for, and have the preparation and ability to
+                                engage in independent and lifelong learning in a context
+                                of technological change.
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -144,304 +295,435 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- PSOs -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cse-btech-pso" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-btech-pso"
+                      aria-expanded="false"
+                    >
                       Program Specific Outcomes (PSOs)
                     </button>
-                    <div id="cse-btech-pso" class="accordion-collapse collapse" data-bs-parent="#cse-btech-accordion">
+                    <div
+                      id="cse-btech-pso"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#cse-btech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">Program Specific Outcomes (PSOs) are the specialised competencies that distinguish our Computer Science &amp; Engineering program. These focus on the unique technical and professional capabilities that graduates develop through our curriculum and laboratory experiences.</p>
+                        <p class="mb-4">
+                          Program Specific Outcomes (PSOs) are the specialised
+                          competencies that distinguish our Computer Science
+                          &amp; Engineering program. These focus on the unique
+                          technical and professional capabilities that graduates
+                          develop through our curriculum and laboratory
+                          experiences.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Ability to apply in-depth problem solving and programming skills to design and implement efficient software solutions.</li>
-                              <li class="si__list--single">Ability to collaboratively develop software solutions for trans-disciplinary engineering problems using modern tools and frameworks.</li>
-                              <li class="si__list--single">Ability to design and integrate hardware and software components for the advancement of computing technology.</li>
+                              <li class="si__list--single">
+                                Ability to apply in-depth problem solving and
+                                programming skills to design and implement
+                                efficient software solutions.
+                              </li>
+                              <li class="si__list--single">
+                                Ability to collaboratively develop software
+                                solutions for trans-disciplinary engineering
+                                problems using modern tools and frameworks.
+                              </li>
+                              <li class="si__list--single">
+                                Ability to design and integrate hardware and
+                                software components for the advancement of
+                                computing technology.
+                              </li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-<!--raghu start -->
+
+        <!--raghu start -->
 
 <!-- AIML -->
-            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
-              <div class="rts-section mb--30">
-                <h3 class="rts-section-title">B.Tech — AIDS </h3>
+<div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+  <div class="rts-section mb--30">
+    <h3 class="rts-section-title">B.Tech — AIDS </h3>
+  </div>
+
+  <div class="department-message-region mb--30">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-4 col-md-5">
+        <div class="department-message-image">
+          <img src="/assets/images/faculty/cse/375.jpg" alt="Department message image" class="img-fluid rounded" />
+          <div class="mt-3 text-center">
+            <h5 class="mb-1">Dr. G N V G Sirisha</h5>
+            <p class="mb-0">Program Coordinator</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-7">
+        <div class="department-message-content">
+          <h4 class="mb-3">Vision</h4>
+          <p class="mb-0" justify-content="space-between">
+            To envision a diverse, stimulating, continually improving academic and research environment to fulfill the
+            needs of the society and to mould students as socially responsible and competent professionals in the field
+            of computer science and engineering.
+          </p>
+          <br>
+          <h4 class="mb-3">Mission</h4>
+          <div class="si">
+            <div class="si__list">
+              <ul class="list-unstyled">
+                <li class="si__list--single">To provide a strong theoretical and practical background across the
+                  computer science and engineering discipline with an emphasis on software development.</li>
+                <li class="si__list--single">To impart modern technologies with industrial, academic and research
+                  collaboration.</li>
+                <li class="si__list--single">To inculcate professional behavior, strong ethical values, leadership
+                  abilities and impart the skills necessary to continue education for professional growth.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="program-accordion">
+    <div class="accordion" id="it-btech-accordion">
+
+      <!-- PEOs -->
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#it-btech-peo" aria-expanded="false">
+          Program Educational Objectives (PEOs)
+        </button>
+        <div id="it-btech-peo" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+          <div class="accordion-body">
+            <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional
+              accomplishments that our B.Tech AIDS graduates are expected to attain within a few years of graduation.
+              They guide curriculum design and ensure alignment with industry expectations.</p>
+            <div class="si">
+              <div class="si__list">
+                <ul class="list-unstyled">
+
+                  <li class="si__list--single">To prepare knowledgeable graduates in computer science and engineering
+                    with specialized skills in Internet of Things and Cyber security including Block chain Technology.
+                  </li>
+                  <li class="si__list--single">To prepare graduates as lifelong learners and researchers.</li>
+                  <li class="si__list--single">To prepare graduates to be socially responsible professionals with
+                    ethical attitude, team spirit, leadership qualities and effective communication skills.</li>
+                </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <div class="department-message-region mb--30">
-                <div class="row g-4 align-items-center">
-                  <div class="col-lg-4 col-md-5">
-                    <div class="department-message-image">
-                      <img src="/assets/images/faculty/cse/375.jpg" alt="Department message image" class="img-fluid rounded" />
-                      <div class="mt-3 text-center">
-                        <h5 class="mb-1">Dr. G N V G Sirisha</h5>
-                        <p class="mb-0">Program Coordinator</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-7">
-                    <div class="department-message-content">
-                      <h4 class="mb-3">Vision</h4>
-                      <p class="mb-0" justify-content="space-between">
-                        To envision a diverse, stimulating, continually improving academic and research environment to fulfill the needs of the society and to mould students as socially responsible and competent professionals in the field of computer science and engineering.
-                      </p>
-                      <br>
-                      <h4 class="mb-3">Mission</h4>
-                      <div class="si">
-                        <div class="si__list">
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">To provide a strong theoretical and practical background across the computer science and engineering discipline with an emphasis on software development.</li>
-                            <li class="si__list--single">To impart modern technologies with industrial, academic and research collaboration.</li>
-                            <li class="si__list--single">To inculcate professional behavior, strong ethical values, leadership abilities and impart the skills necessary to continue education for professional growth.</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+      <!-- POs -->
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-po"
+          aria-expanded="false">
+          Program Outcomes (POs)
+        </button>
+        <div id="it-btech-po" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+          <div class="accordion-body">
+            <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills and attributes that students acquire
+              by the time of graduation. They are aligned with NBA / Washington Accord outcomes and ensure our graduates
+              are well prepared for professional practice in information technology.</p>
+            <div class="si">
+              <div class="si__list">
+                <ul class="list-unstyled">
+                  <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science and
+                    computing fundamentals to information technology problems.</li>
+                  <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse
+                    complex IT problems using first principles of computing and software engineering.</li>
+                  <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software, web, cloud
+                    and mobile solutions that meet specified needs with appropriate consideration for safety, security
+                    and sustainability.</li>
+                  <li class="si__list--single"><strong>Investigation:</strong> Use research-based methods, including
+                    design of experiments and analysis of data, to draw valid conclusions.</li>
+                  <li class="si__list--single"><strong>Modern Tools:</strong> Use modern programming languages,
+                    frameworks, cloud platforms and devops tools effectively in engineering practice.</li>
+                  <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply reasoning to assess
+                    societal, health, safety, legal and cultural issues relevant to IT systems.</li>
+                  <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of IT solutions on
+                    society and the environment, and the need for sustainable development.</li>
+                  <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and norms of
+                    professional practice in computing.</li>
+                  <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual and as a
+                    member or leader in diverse, multidisciplinary teams.</li>
+                  <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports,
+                    design documents, presentations and code reviews.</li>
+                  <li class="si__list--single"><strong>Project Management:</strong> Apply software engineering and
+                    project management principles in multi-disciplinary environments.</li>
+                  <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and engage
+                    in, independent and lifelong learning in a rapidly changing technological landscape.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSOs -->
+      <div class="accordion-item">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#it-btech-pso" aria-expanded="false">
+          Program Specific Outcomes (PSOs)
+        </button>
+        <div id="it-btech-pso" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+          <div class="accordion-body">
+            <p class="mb-4">Program Specific Outcomes (PSOs) are the specialised competencies that distinguish our
+              Information Technology graduates. They focus on the practical, industry-aligned skills students develop
+              through our curriculum, laboratories and project work.</p>
+            <div class="si">
+              <div class="si__list">
+                <ul class="list-unstyled">
+                  <li class="si__list--single"><strong>PSO 1:</strong> Ability to apply various tools related to IoT
+                    applications, Cyber Security solutions including Blockchain Technology.</li>
+                  <li class="si__list--single"><strong>PSO 2:</strong> Ability to design and develop various
+                    applications using IoT and Cyber Security to provide solutions to real world problems.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
+
+
+
+      <!--raghu end -->
+
+      <!--cse iot start -->
+
+      <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
+        <div class="rts-section mb--30">
+          <h3 class="rts-section-title">B.Tech — CSE (IOT)</h3>
+        </div>
+
+        <div class="department-message-region mb--30">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-4 col-md-5">
+              <div class="department-message-image">
+                <img src="/assets/images/faculty/cse/354.jpg" alt="Department message image"
+                  class="img-fluid rounded" />
+                <div class="mt-3 text-center">
+                  <h5 class="mb-1">Dr. K.V.Krishnam Raju</h5>
+                  <p class="mb-0">Program Coordinator</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <div class="department-message-content">
+                <h4 class="mb-3">Vision</h4>
+                <p class="mb-0" justify-content="space-between">
+                  To envision a diverse, stimulating, continually improving academic and research environment to fulfill
+                  the needs of the society and to mould students as socially responsible and competent professionals in
+                  the field of computer science and engineering.
+                </p>
+                <br>
+                <h4 class="mb-3">Mission</h4>
+                <div class="si">
+                  <div class="si__list">
+                    <ul class="list-unstyled">
+                      <li class="si__list--single">To provide a strong theoretical and practical background across the
+                        computer science and engineering discipline with an emphasis on software development.</li>
+                      <li class="si__list--single">To impart modern technologies with industrial, academic and research
+                        collaboration.</li>
+                      <li class="si__list--single">To inculcate professional behavior, strong ethical values, leadership
+                        abilities and impart the skills necessary to continue education for professional growth.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              
-              <div class="program-accordion">
-                <div class="accordion" id="it-btech-accordion">
 
-                  <!-- PEOs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-peo" aria-expanded="false">
-                      Program Educational Objectives (PEOs)
-                    </button>
-                    <div id="it-btech-peo" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional accomplishments that our B.Tech AIDS graduates are expected to attain within a few years of graduation. They guide curriculum design and ensure alignment with industry expectations.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
+            </div>
+          </div>
+        </div>
 
 
-                              
-                              <li class="si__list--single">Graduates of the program will become a significant component of computer industry with basic and specialized knowledge in Artificial Intelligence and Machine Learning blended with knowledge in core Computer Science and Engineering, mathematics and modern technologies.</li>
-                              <li class="si__list--single">Graduates will have adequate knowledge and technical skills for continuous education, innovation and interdisciplinary research.</li>
-                              <li class="si__list--single">Graduates are prepared to be socio-ecologically responsible computing professionals/entrepreneurs by creating necessary environment that fosters the graduates’ communication, presentation, teamwork, leadership skills, and professional ethics.</li>                              
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+        <div class="program-accordion">
+          <div class="accordion" id="it-btech-accordion">
+
+            <!-- PEOs -->
+            <div class="accordion-item">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#it-btech-peo" aria-expanded="false">
+                Program Educational Objectives (PEOs)
+              </button>
+              <div id="it-btech-peo" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+                <div class="accordion-body">
+                  <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional
+                    accomplishments that our B.Tech AIDS graduates are expected to attain within a few years of
+                    graduation. They guide curriculum design and ensure alignment with industry expectations.</p>
+                  <div class="si">
+                    <div class="si__list">
+                      <ul class="list-unstyled">
+
+
+
+                        <li class="si__list--single">To prepare knowledgeable graduates in computer science and
+                          engineering with specialized skills in Internet of Things and Cyber Security, including
+                          Blockchain Technology.</li>
+                        <li class="si__list--single">To prepare graduates as lifelong learners and researchers.</li>
+                        <li class="si__list--single">To prepare graduates to be socially responsible professionals with
+                          ethical attitude, team spirit, leadership qualities, and effective communication skills.</li>
+                      </ul>
                     </div>
-                  </div>
-
-                  <!-- POs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-po" aria-expanded="false">
-                      Program Outcomes (POs)
-                    </button>
-                    <div id="it-btech-po" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills and attributes that students acquire by the time of graduation. They are aligned with NBA / Washington Accord outcomes and ensure our graduates are well prepared for professional practice in information technology.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
-                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science and computing fundamentals to information technology problems.</li>
-                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse complex IT problems using first principles of computing and software engineering.</li>
-                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software, web, cloud and mobile solutions that meet specified needs with appropriate consideration for safety, security and sustainability.</li>
-                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based methods, including design of experiments and analysis of data, to draw valid conclusions.</li>
-                              <li class="si__list--single"><strong>Modern Tools:</strong> Use modern programming languages, frameworks, cloud platforms and devops tools effectively in engineering practice.</li>
-                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply reasoning to assess societal, health, safety, legal and cultural issues relevant to IT systems.</li>
-                              <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of IT solutions on society and the environment, and the need for sustainable development.</li>
-                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and norms of professional practice in computing.</li>
-                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual and as a member or leader in diverse, multidisciplinary teams.</li>
-                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports, design documents, presentations and code reviews.</li>
-                              <li class="si__list--single"><strong>Project Management:</strong> Apply software engineering and project management principles in multi-disciplinary environments.</li>
-                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and engage in, independent and lifelong learning in a rapidly changing technological landscape.</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- PSOs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-pso" aria-expanded="false">
-                      Program Specific Outcomes (PSOs)
-                    </button>
-                    <div id="it-btech-pso" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">Program Specific Outcomes (PSOs) are the specialised competencies that distinguish our Information Technology graduates. They focus on the practical, industry-aligned skills students develop through our curriculum, laboratories and project work.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
-                              
-                              <li class="si__list--single"><strong>PSO 1:</strong> Ability to apply in-depth problem-solving and programming skills.</li>
-                              <li class="si__list--single"><strong>PSO 2:</strong> Ability to design, develop, and deploy AI and ML models to solve real-world problems.</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-<!--raghu end -->
-
-<!--cse iot start -->
-
-<!-- AIML -->
-            <div id="btech" class="program-credit-area faq mt--50 rts-scholarship-description">
-              <div class="rts-section mb--30">
-                <h3 class="rts-section-title">B.Tech — AIDS </h3>
-              </div>
-
-              <div class="department-message-region mb--30">
-                <div class="row g-4 align-items-center">
-                  <div class="col-lg-4 col-md-5">
-                    <div class="department-message-image">
-                      <img src="/assets/images/faculty/cse/375.jpg" alt="Department message image" class="img-fluid rounded" />
-                      <div class="mt-3 text-center">
-                        <h5 class="mb-1">Dr. G N V G Sirisha</h5>
-                        <p class="mb-0">Program Coordinator</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-7">
-                    <div class="department-message-content">
-                      <h4 class="mb-3">Vision</h4>
-                      <p class="mb-0" justify-content="space-between">
-                        To envision a diverse, stimulating, continually improving academic and research environment to fulfill the needs of the society and to mould students as socially responsible and competent professionals in the field of computer science and engineering.
-                      </p>
-                      <br>
-                      <h4 class="mb-3">Mission</h4>
-                      <div class="si">
-                        <div class="si__list">
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">To provide a strong theoretical and practical background across the computer science and engineering discipline with an emphasis on software development.</li>
-                            <li class="si__list--single">To impart modern technologies with industrial, academic and research collaboration.</li>
-                            <li class="si__list--single">To inculcate professional behavior, strong ethical values, leadership abilities and impart the skills necessary to continue education for professional growth.</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-
                   </div>
                 </div>
               </div>
+            </div>
 
-              
-              <div class="program-accordion">
-                <div class="accordion" id="it-btech-accordion">
-
-                  <!-- PEOs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-peo" aria-expanded="false">
-                      Program Educational Objectives (PEOs)
-                    </button>
-                    <div id="it-btech-peo" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">The Program Educational Objectives (PEOs) describe the career and professional accomplishments that our B.Tech AIDS graduates are expected to attain within a few years of graduation. They guide curriculum design and ensure alignment with industry expectations.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
-
-
-                              
-                              <li class="si__list--single">Graduates of the program will become a significant component of computer industry with basic and specialized knowledge in Artificial Intelligence and Machine Learning blended with knowledge in core Computer Science and Engineering, mathematics and modern technologies.</li>
-                              <li class="si__list--single">Graduates will have adequate knowledge and technical skills for continuous education, innovation and interdisciplinary research.</li>
-                              <li class="si__list--single">Graduates are prepared to be socio-ecologically responsible computing professionals/entrepreneurs by creating necessary environment that fosters the graduates’ communication, presentation, teamwork, leadership skills, and professional ethics.</li>                              
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+            <!-- POs -->
+            <div class="accordion-item">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#it-btech-po" aria-expanded="false">
+                Program Outcomes (POs)
+              </button>
+              <div id="it-btech-po" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+                <div class="accordion-body">
+                  <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills and attributes that students
+                    acquire by the time of graduation. They are aligned with NBA / Washington Accord outcomes and ensure
+                    our graduates are well prepared for professional practice in information technology.</p>
+                  <div class="si">
+                    <div class="si__list">
+                      <ul class="list-unstyled">
+                        <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science
+                          and computing fundamentals to information technology problems.</li>
+                        <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse
+                          complex IT problems using first principles of computing and software engineering.</li>
+                        <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software, web,
+                          cloud and mobile solutions that meet specified needs with appropriate consideration for
+                          safety, security and sustainability.</li>
+                        <li class="si__list--single"><strong>Investigation:</strong> Use research-based methods,
+                          including design of experiments and analysis of data, to draw valid conclusions.</li>
+                        <li class="si__list--single"><strong>Modern Tools:</strong> Use modern programming languages,
+                          frameworks, cloud platforms and devops tools effectively in engineering practice.</li>
+                        <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply reasoning to assess
+                          societal, health, safety, legal and cultural issues relevant to IT systems.</li>
+                        <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of IT
+                          solutions on society and the environment, and the need for sustainable development.</li>
+                        <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and norms of
+                          professional practice in computing.</li>
+                        <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual
+                          and as a member or leader in diverse, multidisciplinary teams.</li>
+                        <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through
+                          reports, design documents, presentations and code reviews.</li>
+                        <li class="si__list--single"><strong>Project Management:</strong> Apply software engineering and
+                          project management principles in multi-disciplinary environments.</li>
+                        <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and
+                          engage in, independent and lifelong learning in a rapidly changing technological landscape.
+                        </li>
+                      </ul>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  <!-- POs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-po" aria-expanded="false">
-                      Program Outcomes (POs)
-                    </button>
-                    <div id="it-btech-po" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">Program Outcomes (POs) describe the knowledge, skills and attributes that students acquire by the time of graduation. They are aligned with NBA / Washington Accord outcomes and ensure our graduates are well prepared for professional practice in information technology.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
-                              <li class="si__list--single"><strong>Engineering Knowledge:</strong> Apply mathematics, science and computing fundamentals to information technology problems.</li>
-                              <li class="si__list--single"><strong>Problem Analysis:</strong> Identify, formulate and analyse complex IT problems using first principles of computing and software engineering.</li>
-                              <li class="si__list--single"><strong>Design &amp; Development:</strong> Design software, web, cloud and mobile solutions that meet specified needs with appropriate consideration for safety, security and sustainability.</li>
-                              <li class="si__list--single"><strong>Investigation:</strong> Use research-based methods, including design of experiments and analysis of data, to draw valid conclusions.</li>
-                              <li class="si__list--single"><strong>Modern Tools:</strong> Use modern programming languages, frameworks, cloud platforms and devops tools effectively in engineering practice.</li>
-                              <li class="si__list--single"><strong>Engineer &amp; Society:</strong> Apply reasoning to assess societal, health, safety, legal and cultural issues relevant to IT systems.</li>
-                              <li class="si__list--single"><strong>Sustainability:</strong> Understand the impact of IT solutions on society and the environment, and the need for sustainable development.</li>
-                              <li class="si__list--single"><strong>Ethics:</strong> Apply ethical principles and norms of professional practice in computing.</li>
-                              <li class="si__list--single"><strong>Teamwork:</strong> Function effectively as an individual and as a member or leader in diverse, multidisciplinary teams.</li>
-                              <li class="si__list--single"><strong>Communication:</strong> Communicate effectively through reports, design documents, presentations and code reviews.</li>
-                              <li class="si__list--single"><strong>Project Management:</strong> Apply software engineering and project management principles in multi-disciplinary environments.</li>
-                              <li class="si__list--single"><strong>Lifelong Learning:</strong> Recognise the need for, and engage in, independent and lifelong learning in a rapidly changing technological landscape.</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+            <!-- PSOs -->
+            <div class="accordion-item">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#it-btech-pso" aria-expanded="false">
+                Program Specific Outcomes (PSOs)
+              </button>
+              <div id="it-btech-pso" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
+                <div class="accordion-body">
+                  <p class="mb-4">Program Specific Outcomes (PSOs) are the specialised competencies that distinguish our
+                    Information Technology graduates. They focus on the practical, industry-aligned skills students
+                    develop through our curriculum, laboratories and project work.</p>
+                  <div class="si">
+                    <div class="si__list">
+                      <ul class="list-unstyled">
+
+                        <li class="si__list--single"><strong>PSO 1:</strong> Ability to apply in-depth problem-solving
+                          and programming skills.</li>
+                        <li class="si__list--single"><strong>PSO 2:</strong> Ability to design, develop, and deploy AI
+                          and ML models to solve real-world problems.</li>
+                      </ul>
                     </div>
                   </div>
-
-                  <!-- PSOs -->
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#it-btech-pso" aria-expanded="false">
-                      Program Specific Outcomes (PSOs)
-                    </button>
-                    <div id="it-btech-pso" class="accordion-collapse collapse" data-bs-parent="#it-btech-accordion">
-                      <div class="accordion-body">
-                        <p class="mb-4">Program Specific Outcomes (PSOs) are the specialised competencies that distinguish our Information Technology graduates. They focus on the practical, industry-aligned skills students develop through our curriculum, laboratories and project work.</p>
-                        <div class="si">
-                          <div class="si__list">
-                            <ul class="list-unstyled">
-                              
-                              <li class="si__list--single"><strong>PSO 1:</strong> Ability to apply in-depth problem-solving and programming skills.</li>
-                              <li class="si__list--single"><strong>PSO 2:</strong> Ability to design, develop, and deploy AI and ML models to solve real-world problems.</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-<!--cse iot end -->
-
-
-
-
+                </div>
+              </div>
+            </div>
+            <!--cse iot end -->
+            </div>
+        </div>
+      </div>
+      </div>
 
 
             <!-- Accordion: M.Tech -->
-            <div id="mtech" class="program-credit-area faq mt--50 rts-scholarship-description">
+            <div
+              id="mtech"
+              class="program-credit-area faq mt--50 rts-scholarship-description"
+            >
               <div class="rts-section mb--30">
-                <h3 class="rts-section-title">M.Tech — Computer Science &amp; Technology</h3>
+                <h3 class="rts-section-title">
+                  M.Tech — Computer Science &amp; Technology
+                </h3>
               </div>
               <div class="program-accordion">
                 <div class="accordion" id="cse-mtech-accordion">
-
                   <!-- PEOs -->
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cse-mtech-peo" aria-expanded="true">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-mtech-peo"
+                      aria-expanded="true"
+                    >
                       Program Educational Objectives (PEOs)
                     </button>
-                    <div id="cse-mtech-peo" class="accordion-collapse collapse show" data-bs-parent="#cse-mtech-accordion">
+                    <div
+                      id="cse-mtech-peo"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#cse-mtech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">The M.Tech Computer Science &amp; Technology program (offered since 2006) is designed to develop advanced expertise in software architecture, data engineering, intelligent systems, and applied research. Our Program Educational Objectives prepare graduates for leadership roles in product engineering, R&amp;D, and academia, with a strong emphasis on innovation.</p>
+                        <p class="mb-4">
+                          The M.Tech Computer Science &amp; Technology program
+                          (offered since 2006) is designed to develop advanced
+                          expertise in software architecture, data engineering,
+                          intelligent systems, and applied research. Our Program
+                          Educational Objectives prepare graduates for
+                          leadership roles in product engineering, R&amp;D, and
+                          academia, with a strong emphasis on innovation.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Provide strong foundations in advanced concepts of computer science and engineering to formulate, analyse, and solve real-world computing problems.</li>
-                              <li class="si__list--single">Expose students to emerging research areas in AI, Data Science, Cyber Security, Cloud, and IoT to foster research orientation and innovation.</li>
-                              <li class="si__list--single">Develop competent software engineers and researchers with leadership, teamwork, lifelong learning, and ethical practice for sustained career growth.</li>
+                              <li class="si__list--single">
+                                Provide strong foundations in advanced concepts
+                                of computer science and engineering to
+                                formulate, analyse, and solve real-world
+                                computing problems.
+                              </li>
+                              <li class="si__list--single">
+                                Expose students to emerging research areas in
+                                AI, Data Science, Cyber Security, Cloud, and IoT
+                                to foster research orientation and innovation.
+                              </li>
+                              <li class="si__list--single">
+                                Develop competent software engineers and
+                                researchers with leadership, teamwork, lifelong
+                                learning, and ethical practice for sustained
+                                career growth.
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -451,21 +733,61 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- POs -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cse-mtech-po" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-mtech-po"
+                      aria-expanded="false"
+                    >
                       Program Outcomes (POs)
                     </button>
-                    <div id="cse-mtech-po" class="accordion-collapse collapse" data-bs-parent="#cse-mtech-accordion">
+                    <div
+                      id="cse-mtech-po"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#cse-mtech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">Our M.Tech program outcomes ensure graduates possess advanced analytical and research capabilities in computing. These outcomes reflect AICTE guidelines and industry expectations for postgraduate engineers, emphasising independent research, technical writing, and specialised domain mastery.</p>
+                        <p class="mb-4">
+                          Our M.Tech program outcomes ensure graduates possess
+                          advanced analytical and research capabilities in
+                          computing. These outcomes reflect AICTE guidelines and
+                          industry expectations for postgraduate engineers,
+                          emphasising independent research, technical writing,
+                          and specialised domain mastery.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Independently carry out research, investigation, and development work to solve practical computing problems.</li>
-                              <li class="si__list--single">Write and present a substantial technical report or research thesis.</li>
-                              <li class="si__list--single">Demonstrate mastery over the area of specialisation at a level higher than the bachelor programme.</li>
-                              <li class="si__list--single">Address societal needs through an interdisciplinary approach using advanced computing courses.</li>
-                              <li class="si__list--single">Gain hands-on training on the latest tools and platforms to be industry-ready or pursue advanced research.</li>
-                              <li class="si__list--single">Inculcate ethical practices and an understanding of professionalism, data privacy, security, and sustainability.</li>
+                              <li class="si__list--single">
+                                Independently carry out research, investigation,
+                                and development work to solve practical
+                                computing problems.
+                              </li>
+                              <li class="si__list--single">
+                                Write and present a substantial technical report
+                                or research thesis.
+                              </li>
+                              <li class="si__list--single">
+                                Demonstrate mastery over the area of
+                                specialisation at a level higher than the
+                                bachelor programme.
+                              </li>
+                              <li class="si__list--single">
+                                Address societal needs through an
+                                interdisciplinary approach using advanced
+                                computing courses.
+                              </li>
+                              <li class="si__list--single">
+                                Gain hands-on training on the latest tools and
+                                platforms to be industry-ready or pursue
+                                advanced research.
+                              </li>
+                              <li class="si__list--single">
+                                Inculcate ethical practices and an understanding
+                                of professionalism, data privacy, security, and
+                                sustainability.
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -475,59 +797,112 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- PSOs -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cse-mtech-pso" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cse-mtech-pso"
+                      aria-expanded="false"
+                    >
                       Program Specific Outcomes (PSOs)
                     </button>
-                    <div id="cse-mtech-pso" class="accordion-collapse collapse" data-bs-parent="#cse-mtech-accordion">
+                    <div
+                      id="cse-mtech-pso"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#cse-mtech-accordion"
+                    >
                       <div class="accordion-body">
-                        <p class="mb-4">The Program Specific Outcomes for M.Tech CST focus on advanced competencies in modern software engineering, data science, AI/ML, and distributed systems. These outcomes ensure graduates can handle complex computing challenges and contribute to research and development in the field.</p>
+                        <p class="mb-4">
+                          The Program Specific Outcomes for M.Tech CST focus on
+                          advanced competencies in modern software engineering,
+                          data science, AI/ML, and distributed systems. These
+                          outcomes ensure graduates can handle complex computing
+                          challenges and contribute to research and development
+                          in the field.
+                        </p>
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Advanced courses in algorithms, distributed systems, machine learning, and data engineering as per current industry and research practice.</li>
-                              <li class="si__list--single">Address societal and sustainability challenges through interdisciplinary courses such as AI for social good, secure systems, and large-scale data analytics.</li>
-                              <li class="si__list--single">Hands-on training in the latest frameworks, cloud platforms, and research tools to become industry-ready professionals and pursue advanced research.</li>
+                              <li class="si__list--single">
+                                Advanced courses in algorithms, distributed
+                                systems, machine learning, and data engineering
+                                as per current industry and research practice.
+                              </li>
+                              <li class="si__list--single">
+                                Address societal and sustainability challenges
+                                through interdisciplinary courses such as AI for
+                                social good, secure systems, and large-scale
+                                data analytics.
+                              </li>
+                              <li class="si__list--single">
+                                Hands-on training in the latest frameworks,
+                                cloud platforms, and research tools to become
+                                industry-ready professionals and pursue advanced
+                                research.
+                              </li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-
           </div>
 
           <!-- Sidebar -->
           <div class="col-lg-4 col-md-11 sticky-coloum-item">
             <div class="theiaStickySidebar">
-
               <!-- Program Links -->
               <div class="program-sidebar">
                 <div class="program-curriculum">
-                  <h6 class="heading-title">Computer Science &amp; Engineering Programs</h6>
+                  <h6 class="heading-title">
+                    Computer Science &amp; Engineering Programs
+                  </h6>
                   <div class="program-menu">
                     <ul class="list-unstyled">
-                      <li><a href="/departments/cse/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
-                      <li><a href="/departments/cse/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Facilities & Labs</a></li>
-                      <li><a href="/departments/cse/research-consultancy/"><span><i class="fa-light fa-arrow-right"></i></span>Research & Projects</a></li>
-                      <li><a href="/departments/cse/placements/"><span><i class="fa-light fa-arrow-right"></i></span>Placements</a></li>
-                      <li><a href="/departments/cse/achievements/"><span><i class="fa-light fa-arrow-right"></i></span>Achievements</a></li>
+                      <li>
+                        <a href="/departments/cse/faculty/"
+                          ><span><i class="fa-light fa-arrow-right"></i></span
+                          >Faculty Members</a>
+                      </li>
+                      <li>
+                        <a href="/departments/cse/facilities/"
+                          ><span><i class="fa-light fa-arrow-right"></i></span
+                          >Facilities & Labs</a>
+                      </li>
+                      <li>
+                        <a href="/departments/cse/research-consultancy/"
+                          ><span><i class="fa-light fa-arrow-right"></i></span
+                          >Research & Projects</a>
+                      </li>
+                      <li>
+                        <a href="/departments/cse/placements/"
+                          ><span><i class="fa-light fa-arrow-right"></i></span
+                          >Placements</a>
+                      </li>
+                      <li>
+                        <a href="/departments/cse/achievements/"
+                          ><span><i class="fa-light fa-arrow-right"></i></span
+                          >Achievements</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <!-- Image -->
                 <div class="program-event-image mt-4">
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop" alt="Computer Science Campus" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop"
+                    alt="Computer Science Campus"
+                    style="width: 100%; height: auto; display: block;"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
-
-
             </div>
           </div>
-
         </div>
       </div>
     </section>
