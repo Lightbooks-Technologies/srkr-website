@@ -16,16 +16,19 @@ const hod = [
 ];
 
 const faculty = [
-  { name: 'Dr. Venu Reddy', designation: 'Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Dr. D. Chandra Sekhar', designation: 'Associate Professor', specialization: 'Industrial chemistry', profile: '#' },
-  { name: 'Dr. B. S. Diwakar', designation: 'Associate Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Mrs. K. Balageetha', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Dr. U. Naga Babu', designation: 'Assistant Professor', specialization: 'Analytical Chemistry', profile: '#' },
-  { name: 'Mr. J. Suresh Kumar', designation: 'Assistant Professor', specialization: 'Applied Chemistry', profile: '#' },
-  { name: 'Mrs. K. Tulasi Bhavani', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Mrs. Ch. Lakshmi Prasanna', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Mrs. S. Prameela Devi', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' },
-  { name: 'Mrs. U. Venkata Lakshmi', designation: 'Assistant Professor', specialization: 'Organic Chemistry', profile: '#' }
+
+  { subject: "Engineering Chemistry", name: "Dr.P.Bhavani", profile: "https://srkrec.irins.org/profile/320165", email: "Bhavani.penmatsa@srkrec.ac.in", specialization: "Applied Chemistry", designation: "Professor And HOD", photo: "506" },
+  { subject: "Engineering Chemistry", name: "Dr. Venu Reddy", profile: "https://srkrec.irins.org/profile/245699", email: "rvenu8@srkrec.ac.in", specialization: "Chemistry", designation: "Professor", photo: "1166" },
+  { subject: "Engineering Chemistry", name: "Dr.D.Chandra Sekhar", profile: "https://srkrec.irins.org/profile/537596", email: "chandu1884@srkrec.ac.in", specialization: "Industrial chemistry", designation: "Associate Professor", photo: "532" },
+  { subject: "Engineering Chemistry", name: "Dr.B.S.Diwakar", profile: "https://srkrec.irins.org/profile/248105", email: "diwakar.b@srkrec.ac.in", specialization: "Organic Chemistry", designation: "Associate Professor", photo: "1048" },
+  { subject: "Engineering Chemistry", name: "K.Bala Geeta", profile: "https://srkrec.irins.org/profile/537861", email: "kbgeeta@srkrec.ac.in", specialization: "Organic Chemistry", designation: "Assistant Professor", photo: "1188" },
+  { subject: "Engineering Chemistry", name: "Dr.U.Naga Babu", profile: "https://srkrec.irins.org/profile/536925", email: "nagababu.u@srkrec.ac.in", specialization: "Analytical Chemistry", designation: "Assistant Professor", photo: "1290" },
+  { subject: "Engineering Chemistry", name: "K.Tulasi Bhavani", profile: "https://srkrec.irins.org/profile/538012", email: "tulasibhavani1995@srkrec.ac.in", specialization: "Organic Chemistry", designation: "Assistant Professor", photo: "1299" },
+  { subject: "Engineering Chemistry", name: "J.Suresh Kumar", profile: "https://srkrec.irins.org/profile/656578", email: "Suresh.j@srkrec.ac.in", specialization: "Applied chemistry", designation: "Assistant Professor", photo: "1303" },
+  { subject: "Engineering Chemistry", name: "CH.L.Prasanna", profile: "https://srkrec.irins.org/profile/538026", email: "chlprasanna@srkrec.ac.in", specialization: "Organic Chemistry", designation: "Assistant professor", photo: "1324" },
+  { subject: "Engineering Chemistry", name: "U.Venkata Lakshmi", profile: "https://srkrec.irins.org/profile/536982", email: "uvlakshmi@srkrec.ac.in", specialization: "Organic Chemistry", designation: "Assistant professor", photo: "1328" },
+  { subject: "Engineering Chemistry", name: "S.Prameela devi", profile: "https://srkrec.irins.org/profile/657040", email: "prameeladevi90@srkrec.ac.in", specialization: "Organic chemistry", designation: "Assistant professor", photo: "1325" }
+
 ];
 ---
 
@@ -68,7 +71,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} />
+                    <img src="/assets/images/faculty/chemistry/506.jpg" alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -94,7 +97,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} loading="lazy" decoding="async" />
+                    <img src={`/assets/images/faculty/chemistry/${f.photo}.jpg`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -117,3 +120,4 @@ const faculty = [
     <FooterScripts />
   </body>
 </html>
+/
