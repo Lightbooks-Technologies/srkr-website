@@ -12,7 +12,7 @@ const governance = [
   { name: 'SRKR Engineering College Association',  href: '/governing',          desc: 'Society and Management of the institution.' },
   { name: 'Governing Body',                         href: '/governing',          desc: 'Apex statutory body responsible for institutional policy.' },
   { name: 'Academic Council',                       href: '/academic-council',   desc: 'Approves curricula, regulations and academic matters.' },
-  { name: 'Board of Studies (per programme)',       href: '/board-of-studies',   desc: 'Designs syllabi for each department and programme.' },
+  { name: 'Board of Studies (per program)',       href: '/board-of-studies',   desc: 'Designs syllabi for each department and program.' },
   { name: 'Finance Committee',                      href: '/financial-committee',desc: 'Advises Governing Body on budget, fees and accounts.' },
   { name: 'College Advisory Council',               href: '/advisory-council',   desc: 'Academicians, researchers and technocrats advising the College.' },
   { name: 'Internal Quality Assurance Cell (IQAC)', href: '/iqac',               desc: 'Drives quality enhancement and NAAC AQAR processes.' },
@@ -25,7 +25,7 @@ const academic = [
   { name: 'Dean, Research &amp; Development', desc: 'Funded research, publications and Centres of Excellence.' },
   { name: 'Dean, Training &amp; Placements',  desc: 'Industry interaction, placement drives and training.' },
   { name: 'Controller of Examinations',       desc: 'Examinations, evaluation and result processing.' },
-  { name: 'Heads of Departments (12 + AS&amp;H)', desc: 'Departmental academic delivery, faculty and committees.' },
+  { name: 'Heads of Departments', desc: 'Departmental academic delivery, faculty and committees.' },
 ];
 
 const administrative = [
@@ -62,6 +62,11 @@ const researchInnovation = [
 <html lang="en">
   <head>
     <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Organisational structure of SRKR Engineering College — Governance, Academic, Administrative, Research & Innovation, and Student Support arms." />
+    <style>
+      .card-text {
+        text-align: justify !important;
+      }
+    </style>
   </head>
   <body>
     <SrkrHeader />
@@ -93,8 +98,8 @@ const researchInnovation = [
                 <p>Organisational Pillars</p>
               </div>
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">12</h2>
-                <p>Engineering Departments</p>
+                <h2 class="single-cta-item__title">10</h2>
+                <p>Departments</p>
               </div>
               <div class="single-cta-item">
                 <h2 class="single-cta-item__title">30+</h2>

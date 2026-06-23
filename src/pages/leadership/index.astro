@@ -43,6 +43,15 @@ const administration = [
 <html lang="en">
   <head>
     <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="Meet the leadership team of SRKR Engineering College — Chairman, Director, Principal, Deans and Heads of Department." />
+    <style>
+      .single-item__meta {
+        text-align: center !important;
+      }
+      .single-item__image img {
+        margin: 0 auto !important;
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <SrkrHeader />
@@ -172,7 +181,7 @@ const administration = [
           </div>
         </div>
           <div class="row g-4">
-          {departments.filter((d) => !programs.some((p) => p.slug === d.slug)).map((d) => (
+          {departments.filter((d) => d.slug !== 'ash' && !programs.some((p) => p.slug === d.slug)).map((d) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm">
                 <div class="card-body">
