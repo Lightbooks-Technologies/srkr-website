@@ -34,11 +34,6 @@ const jntukNominees = [
   { programme: 'AIDS &amp; CSBS',                         nominee: 'Dr. K. Sahadevaiah, Professor of CSE, UCEK, JNTUK, Kakinada' },
   { programme: 'AIML &amp; CIC',                          nominee: 'Dr. ASN Chakravarthy, Professor of CSE, UCEK, JNTUK, Kakinada' },
   { programme: 'CSG &amp; CSIT',                          nominee: 'Dr. N. Ramakrishnaiah, Professor of CSE, UCEK, JNTUK, Kakinada' },
-  { programme: 'Mathematics',                             nominee: 'Dr. GVSR Deekshitulu, Professor of Mathematics, UCEK, JNTUK, Kakinada' },
-  { programme: 'Physics',                                 nominee: 'Dr. P. Dakshina Murthy, Retired Professor of Physics, UCEK, JNTUK, Kakinada' },
-  { programme: 'Chemistry',                               nominee: 'Dr. S. Satyaveni, Asst. Professor of Chemistry, UCEK, JNTUK, Kakinada' },
-  { programme: 'English',                                 nominee: 'Dr. T. Viswanadha Rao, Retired Professor of English, Andhra University PG Center, Kakinada' },
-  { programme: 'Environmental Studies',                   nominee: 'Dr. P. Udaya Bhaskar, Professor of Civil Engineering, UCEK, JNTUK, Kakinada' },
   { programme: 'Bachelor of Business Administration (BBA)', nominee: 'Prof. D. Suryachandra Rao, Professor, Dept. of Commerce and Business Management, Krishna University' },
 ];
 ---
@@ -77,8 +72,8 @@ const jntukNominees = [
                 <p>Programme Boards of Studies</p>
               </div>
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">15</h2>
-                <p>JNTUK / University Nominees</p>
+                <h2 class="single-cta-item__title">4</h2>
+                <p>Externals per program (JNTUK/University/Industry/Alumni)</p>
               </div>
               <div class="single-cta-item">
                 <h2 class="single-cta-item__title">1x</h2>
@@ -177,7 +172,7 @@ const jntukNominees = [
           </div>
         </div>
         <div class="row g-4">
-          {departments.map((d) => (
+          {departments.filter(d => !['ash', 'Engineering Mathematics & Humanities', 'Engineering Chemistry', 'Engineering Physics'].includes(d.slug)).map((d) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm">
                 <div class="card-body">
