@@ -134,7 +134,7 @@ const tpcCord = [
   {
     name: "N Praveen",
     branch: "CSG & CSIT",
-    email: "neti.praveen@srkrec.edu.in",
+    email: "neti.praveen@srkrec.ac.in",
     image: "n_praveen.jpg",
   },
 ];
@@ -157,8 +157,7 @@ const deptTPRs = departments.map((d) => ({
       title={`${pageTitle} | SRKR Engineering College`}
       description="Meet the Training & Placement Cell team at SRKR Engineering College — TPO, Deputy TPO, Assistant TPOs and department coordinators."
     />
-  </head>
-     <style>
+    <style>
       .program-item {
         display: flex;
         flex-direction: row;
@@ -189,7 +188,9 @@ const deptTPRs = departments.map((d) => ({
         padding: 8px;
         color: var(--rt-secondary);
       }
-    </style>
+    </style></head
+  >
+
   <body>
     <SrkrHeader />
 
@@ -387,8 +388,7 @@ const deptTPRs = departments.map((d) => ({
                     <div>
                       <h6>{d.branch}</h6>
                       <p>{d.name}</p>
-                       <p> {d.email} </p>
-                     
+                      <p> {d.email} </p>
                     </div>
                   </span>
                   <i class="fa-regular fa-chevron-right" />
@@ -410,7 +410,8 @@ const deptTPRs = departments.map((d) => ({
               <p class="description">
                 <i class="fa-regular fa-envelope"></i>
                 <a href="mailto:dean.placements@srkrec.ac.in"
-                  >dean.placements@srkrec.ac.in</a>
+                  >dean.placements@srkrec.ac.in</a
+                >
               </p>
               <p class="description">
                 <i class="fa-regular fa-phone"></i> +91 970 419 5376 / +91 956 354
