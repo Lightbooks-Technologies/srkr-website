@@ -94,7 +94,16 @@ const volumeRecruiters = [
 ];
 
 const reportYears = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22"];
-
+const recentInternships = [
+  {
+    name: "Attuluri Vyshnavi ",
+    branch: "4/4 CSBS",
+    company: "Radware",
+    stipend: "24000",
+    photo :"/assets/images/placements/students/vyshnavi.jpg",
+    companyLogo :"/assets/images/placements/students/radware.png"
+  }
+]
 const recentPlacements = [
 
 {
@@ -277,6 +286,10 @@ const recentPlacements = [
         mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
       }
+      .placement-wall__ticker.limited {
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
       .placement-wall__track {
         display: flex;
         width: max-content;
@@ -284,6 +297,12 @@ const recentPlacements = [
         
         animation: placementTicker 80s linear infinite;
         will-change: transform;
+      }
+      .placement-wall__track.limited {
+        animation: none;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
       }
       .placement-wall__ticker:hover .placement-wall__track {
         animation-play-state: paused;
@@ -455,15 +474,52 @@ const recentPlacements = [
         </div>
       </div>
     </section>
+     <section class="placement-wall pt--40 pb--50 mb--50" aria-label="Recent placement announcements">
+      <div class="container">
+        <p class="placement-wall__eyebrow">Live Internship Wall - 2027 Batch</p>
+        <h2 class="placement-wall__title">Recent Internship Announcements</h2>
+        <div class={`placement-wall__ticker ${recentInternships.length < 4 ? 'limited' : ''}`}>
+          <div class={`placement-wall__track ${recentInternships.length < 4 ? 'limited' : ''}`}>
+            {
+              (recentInternships.length < 4 ? recentInternships : [...recentInternships, ...recentInternships]).map((entry) => (
+                <article class="placement-wall-card">
+                  <img
+                    class="placement-wall-card__photo"
+                    src={entry.photo}
+                    alt={entry.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="placement-wall-card__meta">
+                    <img
+                      class="placement-wall-card__logo"
+                      src={entry.companyLogo}
+                      alt={entry.company}
+                      loading="lazy"
+                      decoding="async"
+                    />  
+                    <p class="placement-wall-card__package">{entry.stipend} PM</p>
+                    <p class="placement-wall-card__name">{entry.name}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+        <!-- <p class="placement-wall__hint">
+          Hover to pause ? Auto-scrolling top placements of the season
+        </p> -->
+      </div>
+    </section>
 
     <section class="placement-wall pt--40 pb--50 mb--50" aria-label="Recent placement announcements">
       <div class="container">
         <p class="placement-wall__eyebrow">Live Placement Wall - 2026 Batch</p>
         <h2 class="placement-wall__title">Recent Placement Announcements</h2>
-        <div class="placement-wall__ticker">
-          <div class="placement-wall__track">
+        <div class={`placement-wall__ticker ${recentPlacements.length < 4 ? 'limited' : ''}`}>
+          <div class={`placement-wall__track ${recentPlacements.length < 4 ? 'limited' : ''}`}>
             {
-              [...recentPlacements, ...recentPlacements].map((entry) => (
+              (recentPlacements.length < 4 ? recentPlacements : [...recentPlacements, ...recentPlacements]).map((entry) => (
                 <article class="placement-wall-card">
                   <img
                     class="placement-wall-card__photo"

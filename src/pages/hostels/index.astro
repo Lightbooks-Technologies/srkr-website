@@ -11,6 +11,28 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .hostel-swiper {
+        padding: 15px 0 !important;
+      }
+      .hostel-swiper .swiper-slide {
+        padding: 10px !important;
+      }
+      .hostel-swiper .testimonial-item-image {
+        height: 300px !important;
+        background: #fff;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden;
+        border: 1px solid #eee;
+      }
+      .hostel-swiper img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 0 !important;
+      }
+    </style>
 	</head>
     <body>
     <!-- header area start -->
@@ -54,38 +76,38 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
                         <div class="testimonial-item rt-flex">
                             
                             <div class="testimonial-item-content rt-relative" style="width: 100%;">
-                                <div class="testmonial-v2">
+                                <div class="hostel-swiper swiper-container">
                                     <div class="swiper-wrapper">
-                                        <!-- single testimonial -->
+                                        <!-- single slide -->
                                         <div class="swiper-slide d-flex align-items-center">
                                             <div class="testimonial-item-image save-from-hidden" style="max-width: 100%; object-fit: cover; width: 100%;">
-                                                <img width="100%" src="/assets/images/testimonial/testimonial-big-19.jpg" alt="testimonial thumbnail">
-                                                
+                                                <img width="100%" src="/assets/images/banner/hostel1.jpg" alt="Hostel Block 1" loading="lazy" decoding="async">
                                             </div>
                                         </div>
                                         <div class="swiper-slide d-flex align-items-center">
                                             <div class="testimonial-item-image save-from-hidden" style="max-width: 100%; object-fit: cover; width: 100%;">
-                                                <img width="100%" src="/assets/images/testimonial/testimonial-big-20.jpg" alt="testimonial thumbnail" loading="lazy" decoding="async">
-                                                
+                                                <img width="100%" src="/assets/images/banner/hostel2.jpg" alt="Hostel Block 2" loading="lazy" decoding="async">
                                             </div>
                                         </div>
                                         <div class="swiper-slide d-flex align-items-center">
                                             <div class="testimonial-item-image save-from-hidden" style="max-width: 100%; object-fit: cover; width: 100%;">
-                                                <img width="100%" src="/assets/images/testimonial/testimonial-big-21.jpg" alt="testimonial thumbnail" loading="lazy" decoding="async">
-                                                
+                                                <img width="100%" src="/assets/images/banner/hoatel3.jpg" alt="Hostel Block 3" loading="lazy" decoding="async">
                                             </div>
                                         </div>
                                         <div class="swiper-slide d-flex align-items-center">
                                             <div class="testimonial-item-image save-from-hidden" style="max-width: 100%; object-fit: cover; width: 100%;">
-                                                <img width="100%" src="/assets/images/testimonial/testimonial-big-22.jpg" alt="testimonial thumbnail" loading="lazy" decoding="async">
-                                                
+                                                <img width="100%" src="/assets/images/banner/hostel4.jpg" alt="Hostel Facilities" loading="lazy" decoding="async">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide d-flex align-items-center">
+                                            <div class="testimonial-item-image save-from-hidden" style="max-width: 100%; object-fit: cover; width: 100%;">
+                                                <img width="100%" src="/assets/images/banner/hostel5.jpg" alt="Hostel Rooms" loading="lazy" decoding="async">
                                             </div>
                                         </div>
                                         </div>
                                     </div>
+                                <div class="swiper-pagination"></div>
                                 </div>
-                           <div class="swiper-pagination"></div>
-
                             </div>
                         </div>
                     </div>
@@ -109,6 +131,31 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
     <!-- scripts -->
     <FooterScripts />
 
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.hostel-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            }
+          }
+        });
+      });
+    </script>
 
 </body>
 

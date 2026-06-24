@@ -3,7 +3,7 @@
  * Production URL is centralised in astro.config.mjs (`site:`) — keep SITE_URL in sync.
  */
 
-export const SITE_URL = 'https://www.srkrec.ac.in';
+export const SITE_URL = 'https://www.srkrec.edu.in';
 export const SITE_NAME = 'SRKR Engineering College';
 export const SITE_SHORT_NAME = 'SRKR';
 export const SITE_TAGLINE = 'Where Innovation Meets Excellence — Estd. 1980, Bhimavaram';
