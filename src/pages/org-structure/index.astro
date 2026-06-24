@@ -214,7 +214,6 @@ const researchInnovation = [
                   <table class="table">
                     <thead class="table-theme">
                       <tr>
-                        <td>Code</td>
                         <td>Department</td>
                         <td>Head of Department</td>
                         <td>Link</td>
@@ -223,14 +222,12 @@ const researchInnovation = [
                     <tbody>
                       {departments.map((d) => (
                         <tr>
-                          <td>{d.code}</td>
                           <td>{d.name}</td>
                           <td>{d.hod}</td>
                           <td><a href={`/departments/${d.slug}/`}>Visit</a></td>
                         </tr>
                       ))}
                       <tr>
-                        <td>AS&amp;H</td>
                         <td>Applied Sciences &amp; Humanities</td>
                         <td>{/* TODO: confirm consolidated AS&H HoD */}—</td>
                         <td><a href="/departments/ash/">Visit</a></td>
