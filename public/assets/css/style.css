@@ -13330,7 +13330,7 @@ xclip
 }
 @media screen and (max-width: 768px) {
   .rts-section-padding {
-    padding: 60px 0;
+    padding: 10px 0;
   }
 }
 
@@ -16998,6 +16998,7 @@ xclip
   position: relative;
   display: flex;
   gap: 30px;
+  justify-content: center;
 }
 .about.v__2 .about__left--content--left {
   margin-top: 40px;
@@ -18058,6 +18059,8 @@ xclip
   .single-staff__content .staf-image {
     width: 100%;
     flex: 0 0 100%;
+    height: auto;
+    overflow: visible;
   }
 }
 .single-staff__content .staf-image img {
@@ -18075,6 +18078,7 @@ xclip
 @media screen and (max-width: 576px) {
   .single-staff__content .staf-image img {
     height: 300px;
+    object-fit: contain;
   }
 }
 .single-staff__content .staf-info {
@@ -19966,7 +19970,8 @@ xclip
   height: 18px;
   width: 14px;
   left: -30px;
-  top: 5px;
+  top: 8px;
+  background-repeat: no-repeat;
 }
 .rts-scholarship-description .si__list .one-column-list {
   column-count: 1;
@@ -20626,7 +20631,8 @@ xclip
   position: absolute;
   content: "";
   left: -30px;
-  top: 5px;
+  top: 8px;
+  background-repeat: no-repeat;
   background-image: url(../images/icon/arrow-rotate.svg);
   height: 18px;
   width: 14px;
@@ -22703,6 +22709,8 @@ xclip
   .single-staff__content .staf-image {
     width: 100%;
     flex: 0 0 100%;
+    height: auto;
+    overflow: visible;
   }
 }
 .single-staff__content .staf-image img {
@@ -22720,6 +22728,7 @@ xclip
 @media screen and (max-width: 576px) {
   .single-staff__content .staf-image img {
     height: 300px;
+    object-fit: contain;
   }
 }
 .single-staff__content .staf-info {

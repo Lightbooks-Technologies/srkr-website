@@ -1,196 +1,194 @@
---- 
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
     <!-- header area start -->
     <SrkrHeader />
     <!-- header area end -->
-     <!-- BREADCRUMB AREA -->
-<section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-    <div class="container">
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="breadcrumb-content">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    </ul>
-                    <h1 class="section-title">Sports and Games</h1>
-                </div>
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Sports and Games</h1>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-<!-- BREADCRUMB AREA END -->
-   <div class="container">
-    <div class="row">
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-            
-            <div class="admission-content-top">
+          <div class="admission-content-top">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">
+                Indoor And Outdoor Sports Facilities
+              </h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>S.NO</td>
+                        <td>Sports &amp; Games Facilities</td>
+                        <td>No. of courts</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Tennikoit Courts</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Throw Ball Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Basketball Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Volleyball Courts</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Badminton Outdoor Courts</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>Kabaddi Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Kho-Kho Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>Tennis Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>Cricket Ground including Running Track</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>Table Tennis<br />Carroms<br />Chess</td>
+                        <td>2 (Boards)<br />5 (Boards)<br />10 (Boards)</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td>Gym (Sandpit)</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td>Football Field</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>13</td>
+                        <td>Hand Ball Court</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>14</td>
+                        <td>Indoor Badminton Synthetic Courts</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>15</td>
+                        <td>Multi Station Gym (Boys)</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>16</td>
+                        <td>Gym (Girls)</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>17</td>
+                        <td>Hockey Field</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-               
-                <div class="application-deadline">
-                    <h3 class="rts-section-title">Indoor And Outdoor Sports Facilities</h3>
-                    <div class="application-deadline__content">
-                        <div class="application-deadline__content--table">
-                            <table class="table">
-                                <thead class="table-theme">
-                                    <tr>
-                                        <td>S.NO</td>
-                                        <td>Sports &amp; Games Facilities</td>
-                                        <td>No. of courts</td>
-                                    </tr>
-                                                                                  
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Tennikoit Courts</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Throw Ball Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Basketball Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Volleyball Courts</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Badminton Outdoor Courts</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Kabaddi Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Kho-Kho Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>Tennis Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>Cricket Ground including Running Track</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>Table Tennis<br>Carroms<br>Chess</td>
-                                        <td>2 (Boards)<br>5 (Boards)<br>10 (Boards)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11</td>
-                                        <td>Gym (Sandpit)</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>Football Field</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>13</td>
-                                        <td>Hand Ball Court</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>Indoor Badminton Synthetic Courts</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>Multi Station Gym (Boys)</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16</td>
-                                        <td>Gym (Girls)</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>17</td>
-                                        <td>Hockey Field</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                                
-                                
-                            </table>
-                        </div>
-                    </div>
-                </div>   
+            <div class="application-deadline">
+              <h3 class="rts-section-title">Faculty Of Physical Education</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>Faculty</td>
+                        <td>Designation</td>
+                        <td>Email</td>
+                        <td>Mobile</td>
+                      </tr>
+                    </thead><tbody>
+                      <tr>
+                        <td>Dr. P Satyanarayana Raju</td>
+                        <td>Assistant Professor</td>
+                        <td>srpenmethsa@gmail.com</td>
+                        <td>9441814118</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Ch Hari Mohan</td>
+                        <td>Assistant Professor</td>
+                        <td>hari.srkrpd@gmail.com</td>
+                        <td>9949111178</td>
+                      </tr>
+                      <tr>
+                        <td>Ms. G Sarika</td>
+                        <td>Assistant Professor</td>
+                        <td>sarikagedday@gmail.com</td>
+                        <td>9398385034</td>
+                      </tr>
+                      <tr>
+                        <td>Mr. V Avinash</td>
+                        <td>Assistant Professor</td>
+                        <td>avinash34vegesna@gmail.com</td>
+                        <td>9866474674</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-                 <div class="application-deadline">
-                    <h3 class="rts-section-title">Faculty Of Physical Education</h3>
-                    <div class="application-deadline__content">
-                        <div class="application-deadline__content--table">
-                            <table class="table">
-                                <thead class="table-theme">
-                                    <tr>
-                                        <td>Faculty</td>
-                                        <td>Designation</td>
-                                        <td>Email</td>
-                                        <td>Mobile</td>
-                                    </tr>                                                
-                                </thead><tbody>
-                                    <tr>
-                                        <td>Dr. P Satyanarayana Raju</td>
-                                        <td>Assistant Professor</td>
-                                        <td>srpenmethsa@gmail.com</td>
-                                        <td>9441814118</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dr. Ch Hari Mohan</td>
-                                        <td>Assistant Professor</td>
-                                        <td>hari.srkrpd@gmail.com</td>
-                                        <td>9949111178</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ms. G Sarika</td>
-                                        <td>Assistant Professor</td>
-                                        <td>sarikagedday@gmail.com</td>
-                                        <td>9398385034</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mr. V Avinash</td>
-                                        <td>Assistant Professor</td>
-                                        <td>avinash34vegesna@gmail.com</td>
-                                        <td>9866474674</td>
-                                    </tr>
-                                </tbody>
-                                
-                            </table>
-                        </div>
-                    </div>
-                </div> 
-
-                <!-- <div class="application-deadline">
+            <!-- <div class="application-deadline">
                     <h3 class="rts-section-title">Achievements 2023-2024</h3>
                     <div class="application-deadline__content">
                         <div class="application-deadline__content--table">
@@ -785,30 +783,27 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
                         </div>
                     </div>
                 </div>  -->
-                
-            <h6>Sports Achievements : <a href="https://srkrec.edu.in/files/sports/Students_Achievments_List_1987-2020.pdf" style="color: #c11909; font-weight: 600; text-decoration: underline;">Click for Full List</a> </h6>
 
-            </div>
+            <h6>
+              Sports Achievements : <a
+                href="https://srkrec.ac.in/files/sports/Students_Achievments_List_1987-2020.pdf"
+                style="color: #c11909; font-weight: 600; text-decoration: underline;"
+                >Click for Full List</a
+              >
+            </h6>
+          </div>
         </div>
+      </div>
     </div>
-   </div>
-    
-    
-
-
 
     <!-- footer -->
-    <SrkrFooter/>
+    <SrkrFooter />
 
     <!-- footer copyright end -->
 
-    <OffCanvas/>
-
+    <OffCanvas />
 
     <!-- scripts -->
     <FooterScripts />
-
-
-</body>
-
+  </body>
 </html>

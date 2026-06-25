@@ -1,56 +1,57 @@
---- 
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <body>
-        <!-- header area start -->
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <!-- header area start -->
     <SrkrHeader />
-    
+
     <!-- header area end -->
-    
-    
-        <!-- BREADCRUMB AREA -->
-        <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-content">
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            </ul>
-                            <h1 class="section-title">College Advisory Council</h1>
-                        </div>
-                    </div>
-                </div>
+
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">College Advisory Council</h1>
             </div>
-        </section>
-        <!-- BREADCRUMB AREA END -->
-    
-    
-        <!-- admission page content -->
-        <div class="rts-page-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="admission-content-top">
-                            <!-- <h3 class="rts-section-title">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- admission page content -->
+    <div class="rts-page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="admission-content-top">
+              <!-- <h3 class="rts-section-title">
                                 Advisory Council
                             </h3>
     
                             <div class="admission-big-thumb">
                                 <img src="/assets/images/course/admission-bg.jpg" alt="admission">
                             </div> -->
-    <!-- 
+              <!-- 
                             <div class="requirement-deadline">
                                 <h3 class="rts-section-title">Requirements and Deadlines</h3>
                                 <div class="requirement-deadline__content">
@@ -70,187 +71,225 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
                                     </ul>
                                 </div>
                             </div> -->
-                            <div class="application-deadline">
-                                <h3 class="rts-section-title">Management Members</h3>
-                                <div class="application-deadline__content">
-                                    <div class="application-deadline__content--table">
-                                        <table class="table">
-                                            <thead class="table-theme">
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Designation</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Sri S. Prasad Raju</td>
-                                                    <td>President, SRKR Engineering College Association, Bhimavaram</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sri P. Krishnam Raju</td>
-                                                    <td>Honorary Chairman, SRKR Engineering College Association, Bhimavaram</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sri G. Rama Raju</td>
-                                                    <td>Vice President-I, SRKR Engineering College Association, Bhimavaram</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sri S.V. Ranga Raju</td>
-                                                    <td>Vice President-II, SRKR Engineering College Association, Bhimavaram</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sri S.R.K. Nishant Varma</td>
-                                                    <td>Secretary cum Correspondent, SRKR Engineering College Association, Bhimavaram</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="application-deadline">
-                                <h3 class="rts-section-title">Academicians</h3>
-                                <div class="application-deadline__content">
-                                    <div class="application-deadline__content--table">
-                                        <table class="table">
-                                            <thead class="table-theme">
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Designation</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Prof. Dr. V.S. Raju</td>
-                                                    <td>Former Director, IIT Delhi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Prof. Dr. G.S.N. Raju</td>
-                                                    <td>Vice-Chancellor, Centurion University, Andhra Pradesh<br>Former Vice-Chancellor, A.U. Visakhapatnam</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Prof. S. Ramakrishna Rao</td>
-                                                    <td>Former Vice Chancellor, Krishna University, Machilipatnam,&nbsp;AP.<br>Former I/c Vice Chancellor, JNTUK, Adikavi Nannayya University, RJKUT, AP</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dr. Calay Rajnish Kaur</td>
-                                                    <td>Professor, UiT The Arctic University of Norway</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dr. Gyorgy Schneider</td>
-                                                    <td>Professor, Dept. of Medical Microbiology and Immunology, University of PECS Medical College, Hungary</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="application-deadline">
-                                <h3 class="rts-section-title">Researchers</h3>
-                                <div class="application-deadline__content">
-                                    <div class="application-deadline__content--table">
-                                        <table class="table">
-                                            <thead class="table-theme">
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Designation</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Dr. Y.V.N. Krishna Murthy</td>
-                                                    <td>Ex-Scientific Secretary, ISRO, Bangalore</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dr. D.R. Prasada Raju</td>
-                                                    <td>Former Scientist, Dept. of Science & Technology (DST), Govt. of India</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="application-deadline">
-                                <h3 class="rts-section-title">Technocrats</h3>
-                                <div class="application-deadline__content">
-                                    <div class="application-deadline__content--table">
-                                        <table class="table">
-                                            <thead class="table-theme">
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Designation</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Sri Ananta Koti Raju Vegesna</td>
-                                                    <td>Chairman, Chief Executive Officer & MD at Sify Technologies Ltd., USA</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dr. Kovacs Tamas</td>
-                                                    <td>Chief Executive Officer, Enviroinvest, Hungary</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>   
-                            <div class="application-deadline">
-                                <h3 class="rts-section-title">Helmsmen of the Institution</h3>
-                                <div class="application-deadline__content">
-                                    <div class="application-deadline__content--table">
-                                        <table class="table">
-                                            <thead class="table-theme">
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Designation</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Dr. M. Jagapathi Raju</td>
-                                                    <td>Director, SRKR Engineering College, Bhimavaram</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dr. K.V. Murali Krishnam Raju</td>
-                                                    <td>Principal, SRKR Engineering College, Bhimavaram</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
+              <div class="application-deadline">
+                <h3 class="rts-section-title">Management Members</h3>
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>Name</td>
+                          <td>Designation</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Sri S. Prasad Raju</td>
+                          <td
+                            >President, SRKR Engineering College Association,
+                            Bhimavaram</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Sri P. Krishnam Raju</td>
+                          <td
+                            >Honorary Chairman, SRKR Engineering College
+                            Association, Bhimavaram</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Sri G. Rama Raju</td>
+                          <td
+                            >Vice President-I, SRKR Engineering College
+                            Association, Bhimavaram</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Sri S.V. Ranga Raju</td>
+                          <td
+                            >Vice President-II, SRKR Engineering College
+                            Association, Bhimavaram</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Sri S.R.K. Nishant Varma</td>
+                          <td
+                            >Secretary cum Correspondent, SRKR Engineering
+                            College Association, Bhimavaram</td
+                          >
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+              </div>
+              <div class="application-deadline">
+                <h3 class="rts-section-title">Academicians</h3>
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>Name</td>
+                          <td>Designation</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Prof. Dr. V.S. Raju</td>
+                          <td>Former Director, IIT Delhi</td>
+                        </tr>
+                        <tr>
+                          <td>Prof. Dr. G.S.N. Raju</td>
+                          <td
+                            >Vice-Chancellor, Centurion University, Andhra
+                            Pradesh<br />Former Vice-Chancellor, A.U.
+                            Visakhapatnam</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Prof. S. Ramakrishna Rao</td>
+                          <td
+                            >Former Vice Chancellor, Krishna University,
+                            Machilipatnam,&nbsp;AP.<br />Former I/c Vice
+                            Chancellor, JNTUK, Adikavi Nannayya University,
+                            RJKUT, AP</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Dr. Calay Rajnish Kaur</td>
+                          <td>Professor, UiT The Arctic University of Norway</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Dr. Gyorgy Schneider</td>
+                          <td
+                            >Professor, Dept. of Medical Microbiology and
+                            Immunology, University of PECS Medical College,
+                            Hungary</td
+                          >
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="application-deadline">
+                <h3 class="rts-section-title">Researchers</h3>
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>Name</td>
+                          <td>Designation</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Dr. Y.V.N. Krishna Murthy</td>
+                          <td>Ex-Scientific Secretary, ISRO, Bangalore</td>
+                        </tr>
+                        <tr>
+                          <td>Dr. D.R. Prasada Raju</td>
+                          <td
+                            >Former Scientist, Dept. of Science & Technology
+                            (DST), Govt. of India</td
+                          >
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="application-deadline">
+                <h3 class="rts-section-title">Technocrats</h3>
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>Name</td>
+                          <td>Designation</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Sri Ananta Koti Raju Vegesna</td>
+                          <td
+                            >Chairman, Chief Executive Officer & MD at Sify
+                            Technologies Ltd., USA</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Dr. Kovacs Tamas</td>
+                          <td>Chief Executive Officer, Enviroinvest, Hungary</td
+                          >
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="application-deadline">
+                <h3 class="rts-section-title">Helmsmen of the Institution</h3>
+                <div class="application-deadline__content">
+                  <div class="application-deadline__content--table">
+                    <table class="table">
+                      <thead class="table-theme">
+                        <tr>
+                          <td>Name</td>
+                          <td>Designation</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Dr. M. Jagapathi Raju</td>
+                          <td>Director, SRKR Engineering College, Bhimavaram</td
+                          >
+                        </tr>
+                        <tr>
+                          <td>Dr. K.V. Murali Krishnam Raju</td>
+                          <td
+                            >Principal, SRKR Engineering College, Bhimavaram</td
+                          >
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- admission page content end -->
-    
-       <!-- footer -->
-       <SrkrFooter/>
+      </div>
+    </div>
+    <!-- admission page content end -->
 
-    
-        <!-- footer copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="copyright__wrapper">
-                            <p>Copyright &copy; 2024 All Rights Reserved by <a href="https://srkrec.edu.in" target="_blank">SRKR Engineering College</a></p>
-                        </div>
-                    </div>
-                </div>
+    <!-- footer -->
+    <SrkrFooter />
+
+    <!-- footer copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright__wrapper">
+              <p>
+                Copyright &copy; 2024 All Rights Reserved by <a
+                  href="https://srkrec.ac.in"
+                  target="_blank">SRKR Engineering College</a>
+              </p>
             </div>
+          </div>
         </div>
-        <!-- footer copyright end -->
-    
-    
-        <OffCanvas/>
-    
-    
-        <!-- scripts -->
-<FooterScripts />
-        
-    
-    </body>
-    </html>
+      </div>
+    </div>
+    <!-- footer copyright end -->
+
+    <OffCanvas />
+
+    <!-- scripts -->
+    <FooterScripts />
+  </body>
+</html>

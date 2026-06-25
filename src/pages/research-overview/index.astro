@@ -1,28 +1,52 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
 
 const pageTitle = "Research Overview";
 
 const strengths = [
-  { num: '01', icon: '/assets/images/icon/14.svg', img: '/assets/images/apply/01.jpg', title: 'Publications', desc: 'Promoting a culture of scholarly excellence through impactful publications in reputed national and international journals, conferences, and patents.' },
-  { num: '02', icon: '/assets/images/icon/15.svg', img: '/assets/images/apply/02.jpg', title: 'Projects', desc: 'Securing competitive funding from government agencies, industries, and research organizations to address societal and technological challenges.' },
-  { num: '03', icon: '/assets/images/icon/16.svg', img: '/assets/images/apply/03.jpg', title: 'Product Development', desc: 'Encouraging the creation of prototypes, products, and technology solutions that translate research into real-world applications and entrepreneurship.' }
+  {
+    num: "01",
+    icon: "/assets/images/icon/14.svg",
+    img: "/assets/images/apply/01.jpg",
+    title: "Publications",
+    desc: "Promoting a culture of scholarly excellence through impactful publications in reputed national and international journals, conferences, and patents.",
+  },
+  {
+    num: "02",
+    icon: "/assets/images/icon/15.svg",
+    img: "/assets/images/apply/02.jpg",
+    title: "Projects",
+    desc: "Securing competitive funding from government agencies, industries, and research organizations to address societal and technological challenges.",
+  },
+  {
+    num: "03",
+    icon: "/assets/images/icon/16.svg",
+    img: "/assets/images/apply/03.jpg",
+    title: "Product Development",
+    desc: "Encouraging the creation of prototypes, products, and technology solutions that translate research into real-world applications and entrepreneurship.",
+  },
 ];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`SRKR Engineering College - ${pageTitle}: research vision, focus areas, centres of excellence, funded projects and publications.`} />
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description={`SRKR Engineering College - ${pageTitle}: research vision, focus areas, centres of excellence, funded projects and publications.`}
+    />
   </head>
   <body>
     <SrkrHeader />
 
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -43,7 +67,7 @@ const strengths = [
         <div class="row justify-content-center">
           <div class="col-lg-10 col-xl-10">
             <div class="rts-funfact-wrapper">
-                  <div class="single-cta-item">
+              <div class="single-cta-item">
                 <h2 class="single-cta-item__title">8</h2>
                 <p>Centres of Excellence</p>
               </div>
@@ -51,7 +75,7 @@ const strengths = [
                 <h2 class="single-cta-item__title">2600+</h2>
                 <p>Research Publications</p>
               </div>
-          
+
               <div class="single-cta-item">
                 <h2 class="single-cta-item__title">&#x20B9;12.5 Cr+</h2>
                 <p>Funded Research Projects</p>
@@ -69,32 +93,39 @@ const strengths = [
     <!-- Main content: 8/4 layout -->
     <section class="rts-scholarship pt--40 pb--60">
       <div class="container">
-        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
-
+        <div
+          class="row sticky-coloum-wrap justify-content-md-center justify-content-start"
+        >
           <!-- Left -->
           <div class="col-lg-8 col-md-11">
-
             <div class="program-about mb--40">
               <h4 class="title">Research Excellence</h4>
-              <p>Conducive environment for research and state-of-the-art laboratories resulting into enhanced research outcome.</p>
+              <p>
+                Conducive environment for research and state-of-the-art
+                laboratories resulting into enhanced research outcome.
+              </p>
             </div>
 
             <!-- Research strength cards -->
             <section class="rts-research-section pb--40">
               <div class="research__items">
-                <div class="row justify-content-sm-center justify-content-md-start g-5">
-                  {strengths.map((s) => (
-                    <div class="col-lg-4 col-md-6 col-sm-11">
-                      <div class="research-procedure">
-                        <div class="research-image">
-                          <img src={s.img} alt={s.title} />
+                <div
+                  class="row justify-content-sm-center justify-content-md-start g-5"
+                >
+                  {
+                    strengths.map((s) => (
+                      <div class="col-lg-4 col-md-6 col-sm-11">
+                        <div class="research-procedure">
+                          <div class="research-image">
+                            <img src={s.img} alt={s.title} />
+                          </div>
+                          <div class="rt-serial">{s.num}</div>
+                          <a href="#">{s.title}</a>
+                          <p>{s.desc}</p>
                         </div>
-                        <div class="rt-serial">{s.num}</div>
-                        <a href="#">{s.title}</a>
-                        <p>{s.desc}</p>
                       </div>
-                    </div>
-                  ))}
+                    ))
+                  }
                 </div>
               </div>
             </section>
@@ -103,15 +134,26 @@ const strengths = [
             <div class="program-credit-area faq rts-scholarship-description">
               <div class="program-accordion">
                 <div class="accordion" id="rts-accordion">
-
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#roOne" aria-expanded="true">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#roOne"
+                      aria-expanded="true"
+                    >
                       Research Centres
                     </button>
-                    <div id="roOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                    <div
+                      id="roOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#rts-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list">
-                          {/* <ul class="list-unstyled">
+                        <div class="si">
+                          <div class="si__list">
+                            {
+                              /* <ul class="list-unstyled">
                             <li class="si__list--single">Structural Engineering &amp; Advanced Construction Materials</li>
                             <li class="si__list--single">Environmental Engineering, Water Quality &amp; Kolleru Lake Studies</li>
                             <li class="si__list--single">Geotechnical &amp; Transportation Engineering</li>
@@ -120,33 +162,65 @@ const strengths = [
                             <li class="si__list--single">Renewable Energy, EV Charging &amp; Smart Grids</li>
                             <li class="si__list--single">Bioinformatics, Nanotechnology &amp; Biomedical Engineering</li>
                             <li class="si__list--single">Remote Sensing &amp; GIS Applications</li>
-                        </ul> */}
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">Centre for Research in Geotechnical Engineering and Transportation Engineering (CRGETE)</li>
-                            <li class="si__list--single">Centre of Clean and Sustainable Environment (CCSE)</li>
-                            <li class="si__list--single">Centre for Sustainable Inland Aquaculture (CSIA)</li>
-                            <li class="si__list--single">Centre for Bioinformatics Research (CBR)</li>
-                            <li class="si__list--single">Centre for Metal Matrix Composites (CMMC)</li>
-                            <li class="si__list--single">Nanotechnology Research Centre (NRC)</li>
-                            <li class="si__list--single">Centre of Excellence in VLSI Design</li>
-                            <li class="si__list--single">Centre for Testing of Biodiesels</li>
-                            <li class="si__list--single">Centre for Indian Knowledge Traditions</li>
-                          </ul>
-
-
-                        </div></div>
+                        </ul> */
+                            }
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Centre for Research in Geotechnical Engineering
+                                and Transportation Engineering (CRGETE)
+                              </li>
+                              <li class="si__list--single">
+                                Centre of Clean and Sustainable Environment
+                                (CCSE)
+                              </li>
+                              <li class="si__list--single">
+                                Centre for Sustainable Inland Aquaculture (CSIA)
+                              </li>
+                              <li class="si__list--single">
+                                Centre for Bioinformatics Research (CBR)
+                              </li>
+                              <li class="si__list--single">
+                                Centre for Metal Matrix Composites (CMMC)
+                              </li>
+                              <li class="si__list--single">
+                                Nanotechnology Research Centre (NRC)
+                              </li>
+                              <li class="si__list--single">
+                                Centre of Excellence in VLSI Design
+                              </li>
+                              <li class="si__list--single">
+                                Centre for Testing of Biodiesels
+                              </li>
+                              <li class="si__list--single">
+                                Centre for Indian Knowledge Traditions
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#roTwo" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#roTwo"
+                      aria-expanded="false"
+                    >
                       Centres of Excellence
                     </button>
-                    <div id="roTwo" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                    <div
+                      id="roTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#rts-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list">
-                        {/* <ul class="list-unstyled">
+                        <div class="si">
+                          <div class="si__list">
+                            {
+                              /* <ul class="list-unstyled">
                           <li class="si__list--single">Geospatial Information Centre (GIC)</li>
                           <li class="si__list--single">Kolleru Lake Info Centre (KLIC)</li>
                           <li class="si__list--single">Water &amp; Environment Technology (WET) Centre</li>
@@ -155,83 +229,218 @@ const strengths = [
                           <li class="si__list--single">Centre for Bio-Informatics Research (CBR)</li>
                           <li class="si__list--single">Centre for Sustainable Inland Aquaculture (CSIA)</li>
                           <li class="si__list--single">Nano Research Centre (NRC) &amp; VLSI Hub</li>
-                        </ul> */}
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">Embedded Systems and Internet of Things</li>
-                            <li class="si__list--single">Drone Technologies</li>
-                            <li class="si__list--single">Centre of Excellence in Solar Energy</li>
-                            <li class="si__list--single">Cyber Physical Systems</li>
-                            <li class="si__list--single">Artificial Intelligence</li>
-                            <li class="si__list--single">Quantum Technologies</li>
-                            <li class="si__list--single">Water Environment and Technology</li>
-                            <li class="si__list--single">Sustainability</li>
-                          </ul>
-
-                        </div></div>
-                        <p class="mt--20"><a href="/research-excellence/">View all Centres of Excellence &rarr;</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#roThree" aria-expanded="false">
-                      Funded Research Projects
-                    </button>
-                    <div id="roThree" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
-                      <div class="accordion-body">
-                        <div class="si"><div class="si__list"><ul class="list-unstyled">
-                          <li class="si__list--single">DST &mdash; FIST, INSPIRE Faculty Awards, Smart Grid Technologies, Indo-Israeli and Indo-Korean Joint Research Projects supporting advanced infrastructure and global research collaborations.</li>
-                          <li class="si__list--single">DBT &mdash; SPRING Project on Strategic Water Resources Planning (&#x20B9;1.46 Cr) and National Biotechnology Research Network Projects addressing sustainable development challenges.</li>
-                          <li class="si__list--single">AICTE &mdash; IDEA Lab (&#x20B9;1.13 Cr), MODROBS, RPS, PRERANA, SAMRIDDHI, and SPDP schemes promoting innovation, laboratory modernization, entrepreneurship, and student development.</li>
-                          <li class="si__list--single">MSME &mdash; Champion Scheme and Idea Hackathons supporting innovations in Smart Vision Systems, Disaster Management Drones, EV Charging Solutions, Battery Swapping Stations, and Health-Tech Products.</li>
-                          <li class="si__list--single">National Research Agencies &mdash; SERB, UGC, NRSC, and ICSSR funded projects in Machine Learning, Cyber Security, Geospatial Technologies, Water Resources, Language Learning Tools, and Rural Development.</li>
-                          <li class="si__list--single">Emerging Technologies &amp; Sustainability &mdash; Major projects in Artificial Intelligence, Inland Aquaculture, Renewable Energy, Electric Vehicles, Smart Infrastructure, Healthcare Analytics, and Environmental Engineering with cumulative funding exceeding several crores.</li>
-                        </ul></div></div>
-                        <p class="mt--20"><a href="/research-projects/">View all Research Projects &rarr;</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#roFour" aria-expanded="false">
-                      Publications &amp; Patents
-                    </button>
-                    <div id="roFour" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
-                      <div class="accordion-body">
-                        <div class="si"><div class="si__list"><ul class="list-unstyled">
-                          <li class="si__list--single">700+ peer-reviewed articles in SCI / Scopus / Web of Science journals</li>
-                          <li class="si__list--single">200+ conference papers at national &amp; international venues</li>
-                          <li class="si__list--single">Multiple book chapters with reputed international publishers</li>
-                          <li class="si__list--single">Patents &amp; design registrations filed through the Institute IPR Cell</li>
-                        </ul></div></div>
+                        </ul> */
+                            }
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Embedded Systems and Internet of Things
+                              </li>
+                              <li class="si__list--single">
+                                Drone Technologies
+                              </li>
+                              <li class="si__list--single">
+                                Centre of Excellence in Solar Energy
+                              </li>
+                              <li class="si__list--single">
+                                Cyber Physical Systems
+                              </li>
+                              <li class="si__list--single">
+                                Artificial Intelligence
+                              </li>
+                              <li class="si__list--single">
+                                Quantum Technologies
+                              </li>
+                              <li class="si__list--single">
+                                Water Environment and Technology
+                              </li>
+                              <li class="si__list--single">Sustainability</li>
+                            </ul>
+                          </div>
+                        </div>
                         <p class="mt--20">
-                          Browse SRKR researchers on
-                          <a href="https://srkrec.irins.org" target="_blank" rel="noopener">IRINS</a>
-                          and indexed publications on
-                          <a href="https://www.scopus.com" target="_blank" rel="noopener">Scopus</a>.
+                          <a href="/research-excellence/"
+                            >View all Centres of Excellence &rarr;</a>
                         </p>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#roFive" aria-expanded="false">
-                      Industry &amp; Academic Collaborations
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#roThree"
+                      aria-expanded="false"
+                    >
+                      Funded Research Projects
                     </button>
-                    <div id="roFive" class="accordion-collapse collapse" data-bs-parent="#rts-accordion">
+                    <div
+                      id="roThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#rts-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list"><ul class="list-unstyled">
-                          <li class="si__list--single">Active MoUs with industry, PSU and international universities</li>
-                          <li class="si__list--single">IIT Bombay Remote Centre &amp; Spoken Tutorial Lead College</li>
-                          <li class="si__list--single">IIT Madras NPTEL Local Chapter</li>
-                          <li class="si__list--single">CISCO Networking Academy &amp; Dassault Systems Lab</li>
-                          <li class="si__list--single">Collaborative research with Wageningen University, The Netherlands</li>
-                        </ul></div></div>
-                        <p class="mt--20"><a href="/mous/">View full list of MoUs &rarr;</a></p>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                DST &mdash; FIST, INSPIRE Faculty Awards, Smart
+                                Grid Technologies, Indo-Israeli and Indo-Korean
+                                Joint Research Projects supporting advanced
+                                infrastructure and global research
+                                collaborations.
+                              </li>
+                              <li class="si__list--single">
+                                DBT &mdash; SPRING Project on Strategic Water
+                                Resources Planning (&#x20B9;1.46 Cr) and
+                                National Biotechnology Research Network Projects
+                                addressing sustainable development challenges.
+                              </li>
+                              <li class="si__list--single">
+                                AICTE &mdash; IDEA Lab (&#x20B9;1.13 Cr),
+                                MODROBS, RPS, PRERANA, SAMRIDDHI, and SPDP
+                                schemes promoting innovation, laboratory
+                                modernization, entrepreneurship, and student
+                                development.
+                              </li>
+                              <li class="si__list--single">
+                                MSME &mdash; Champion Scheme and Idea Hackathons
+                                supporting innovations in Smart Vision Systems,
+                                Disaster Management Drones, EV Charging
+                                Solutions, Battery Swapping Stations, and
+                                Health-Tech Products.
+                              </li>
+                              <li class="si__list--single">
+                                National Research Agencies &mdash; SERB, UGC,
+                                NRSC, and ICSSR funded projects in Machine
+                                Learning, Cyber Security, Geospatial
+                                Technologies, Water Resources, Language Learning
+                                Tools, and Rural Development.
+                              </li>
+                              <li class="si__list--single">
+                                Emerging Technologies &amp; Sustainability
+                                &mdash; Major projects in Artificial
+                                Intelligence, Inland Aquaculture, Renewable
+                                Energy, Electric Vehicles, Smart Infrastructure,
+                                Healthcare Analytics, and Environmental
+                                Engineering with cumulative funding exceeding
+                                several crores.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">
+                          <a href="/research-projects/"
+                            >View all Research Projects &rarr;</a>
+                        </p>
                       </div>
                     </div>
                   </div>
 
+                  <div class="accordion-item">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#roFour"
+                      aria-expanded="false"
+                    >
+                      Publications &amp; Patents
+                    </button>
+                    <div
+                      id="roFour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#rts-accordion"
+                    >
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                700+ peer-reviewed articles in SCI / Scopus /
+                                Web of Science journals
+                              </li>
+                              <li class="si__list--single">
+                                200+ conference papers at national &amp;
+                                international venues
+                              </li>
+                              <li class="si__list--single">
+                                Multiple book chapters with reputed
+                                international publishers
+                              </li>
+                              <li class="si__list--single">
+                                Patents &amp; design registrations filed through
+                                the Institute IPR Cell
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">
+                          Browse SRKR researchers on
+                          <a
+                            href="https://srkrec.irins.org"
+                            target="_blank"
+                            rel="noopener">IRINS</a
+                          >
+                          and indexed publications on
+                          <a
+                            href="https://www.scopus.com"
+                            target="_blank"
+                            rel="noopener">Scopus</a
+                          >.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#roFive"
+                      aria-expanded="false"
+                    >
+                      Industry &amp; Academic Collaborations
+                    </button>
+                    <div
+                      id="roFive"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#rts-accordion"
+                    >
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Active MoUs with industry, PSU and international
+                                universities
+                              </li>
+                              <li class="si__list--single">
+                                IIT Bombay Remote Centre &amp; Spoken Tutorial
+                                Lead College
+                              </li>
+                              <li class="si__list--single">
+                                IIT Madras NPTEL Local Chapter
+                              </li>
+                              <li class="si__list--single">
+                                CISCO Networking Academy &amp; Dassault Systems
+                                Lab
+                              </li>
+                              <li class="si__list--single">
+                                Collaborative research with Wageningen
+                                University, The Netherlands
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">
+                          <a href="/mous/">View full list of MoUs &rarr;</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -240,19 +449,50 @@ const strengths = [
           <!-- Right sidebar -->
           <div class="col-lg-4 col-md-11 sticky-coloum-item">
             <div class="program-sidebar">
-
               <div class="program-curriculum">
                 <h6 class="heading-title">Research Resources</h6>
                 <div class="program-menu">
                   <ul class="list-unstyled">
-                    <li><a href="/development-cell/"><span><i class="fa-light fa-arrow-right"></i></span>R &amp; D Cell</a></li>
-                    <li><a href="/research-excellence/"><span><i class="fa-light fa-arrow-right"></i></span>Centres of Excellence</a></li>
-                    <li><a href="/research-projects/"><span><i class="fa-light fa-arrow-right"></i></span>Research Projects</a></li>
-                    <li><a href="/research-committees/"><span><i class="fa-light fa-arrow-right"></i></span>Research Committees</a></li>
-                    <li><a href="/ipr-cell/"><span><i class="fa-light fa-arrow-right"></i></span>IPR Cell &amp; Patents</a></li>
-                    <li><a href="/iic/"><span><i class="fa-light fa-arrow-right"></i></span>Innovation Council (IIC)</a></li>
-                    <li><a href="/entrepreneurship-cell/"><span><i class="fa-light fa-arrow-right"></i></span>Entrepreneurship Cell</a></li>
-                    <li><a href="/mous/"><span><i class="fa-light fa-arrow-right"></i></span>MoUs &amp; Collaborations</a></li>
+                    <li>
+                      <a href="/development-cell/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span>R
+                        &amp; D Cell</a>
+                    </li>
+                    <li>
+                      <a href="/research-excellence/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Centres of Excellence</a>
+                    </li>
+                    <li>
+                      <a href="/research-projects/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Research Projects</a>
+                    </li>
+                    <li>
+                      <a href="/research-committees/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Research Committees</a>
+                    </li>
+                    <li>
+                      <a href="/ipr-cell/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span>IPR
+                        Cell &amp; Patents</a>
+                    </li>
+                    <li>
+                      <a href="/iic/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Innovation Council (IIC)</a>
+                    </li>
+                    <li>
+                      <a href="/entrepreneurship-cell/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Entrepreneurship Cell</a>
+                    </li>
+                    <li>
+                      <a href="/mous/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >MoUs &amp; Collaborations</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -261,32 +501,75 @@ const strengths = [
                 <h6 class="heading-title">External Portals</h6>
                 <div class="program-menu">
                   <ul class="list-unstyled">
-                    <li><a href="https://srkrec.irins.org" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>SRKR IRINS Profiles</a></li>
-                    <li><a href="https://www.scopus.com" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Scopus</a></li>
-                    <li><a href="https://scholar.google.com" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>Google Scholar</a></li>
-                    <li><a href="https://nptel.ac.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NPTEL</a></li>
-                    <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>AICTE</a></li>
-                    <li><a href="https://dst.gov.in" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>DST, Govt. of India</a></li>
+                    <li>
+                      <a
+                        href="https://srkrec.irins.org"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >SRKR IRINS Profiles</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.scopus.com"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Scopus</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://scholar.google.com"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Google Scholar</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://nptel.ac.in"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >NPTEL</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.aicte-india.org"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >AICTE</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://dst.gov.in"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >DST, Govt. of India</a>
+                    </li>
                   </ul>
                 </div>
               </div>
 
               <div class="program-info">
                 <h5>R&D Cell</h5>
-                <p>Dr. T Vamsi Nagaraju<br>SRKR Engineering College, Bhimavaram</p>
+                <p>
+                  Dr. T Vamsi Nagaraju<br />SRKR Engineering College, Bhimavaram
+                </p>
                 <div class="contact-info mt--10 mb--10">
                   <h5>Email:</h5>
-                  <a href="mailto:tvnraju@srkrec.edu.in">research@srkrec.ac.in</a>
+                  <a href="mailto:tvnraju@srkrec.ac.in">research@srkrec.ac.in</a
+                  >
                 </div>
                 <div class="contact-info mt--20 mb--20">
                   <h5>Phone:</h5>
                   <a href="tel:+91 949636738">+91 949636738</a>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

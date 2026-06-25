@@ -1,29 +1,39 @@
 ---
-import BaseHead from '../../../../components/BaseHead.astro';
-import FooterScripts from '../../../../components/FooterScripts.astro';
-import SrkrHeader from '../../../../components/SrkrHeader.astro';
-import SrkrFooter from '../../../../components/SrkrFooter.astro';
-import OffCanvas from '../../../../components/OffCanvas.astro';
-import DeptNav from '../../../../components/DeptNav.astro';
+import BaseHead from "../../../../components/BaseHead.astro";
+import FooterScripts from "../../../../components/FooterScripts.astro";
+import SrkrHeader from "../../../../components/SrkrHeader.astro";
+import SrkrFooter from "../../../../components/SrkrFooter.astro";
+import OffCanvas from "../../../../components/OffCanvas.astro";
+import DeptNav from "../../../../components/DeptNav.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Research & Consultancy | Computer Science & Design | SRKR" description="Research areas, innovation projects, and consultancy of the Computer Science & Design department at SRKR Engineering College." />
+    <BaseHead
+      title="Research & Consultancy | Computer Science & Design | SRKR"
+      description="Research areas, innovation projects, and consultancy of the Computer Science & Design department at SRKR Engineering College."
+    />
   </head>
   <body>
     <SrkrHeader />
 
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
-                <li class="breadcrumb-item"><a href="/departments/csd/">Computer Science & Design</a></li>
+                <li class="breadcrumb-item">
+                  <a href="/departments">Departments</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="/departments/csd/">Computer Science & Design</a>
+                </li>
               </ul>
               <h1 class="section-title">Research &amp; Consultancy</h1>
             </div>
@@ -37,37 +47,70 @@ import DeptNav from '../../../../components/DeptNav.astro';
         <DeptNav dept="csd" current="Research/Consultancy" />
 
         <!-- Two Column Layout -->
-        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
-          
+        <div
+          class="row sticky-coloum-wrap justify-content-md-center justify-content-start"
+        >
           <!-- Left: Overview + Accordion -->
           <div class="col-lg-8 col-md-11">
-            
             <!-- Intro -->
             <div class="program-about mb--40">
               <h4 class="title">Research &amp; Innovation Overview</h4>
-              <p>The Department of Computer Science &amp; Design pursues applied research and innovation at the intersection of computing, human-centred design, and immersive media. Operating from within the SRKR Technology Centre, our faculty and students collaborate on UX research, game prototypes, AR/VR experiences, creative coding tools, and digital products — many of which are incubated as on-campus startups. {/* TODO: Add concrete project counts, publication counts, and funding figures once the department reports them. */}</p>
+              <p>
+                The Department of Computer Science &amp; Design pursues applied
+                research and innovation at the intersection of computing,
+                human-centred design, and immersive media. Operating from within
+                the SRKR Technology Centre, our faculty and students collaborate
+                on UX research, game prototypes, AR/VR experiences, creative
+                coding tools, and digital products — many of which are incubated
+                as on-campus startups. {
+                  /* TODO: Add concrete project counts, publication counts, and funding figures once the department reports them. */
+                }
+              </p>
             </div>
 
             <div class="program-credit-area faq rts-scholarship-description">
               <div class="program-accordion">
                 <div class="accordion" id="csd-rts-accordion">
-
                   <!-- Research Areas -->
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#csd-collapseOne" aria-expanded="true">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#csd-collapseOne"
+                      aria-expanded="true"
+                    >
                       Research Areas
                     </button>
-                    <div id="csd-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#csd-rts-accordion">
+                    <div
+                      id="csd-collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#csd-rts-accordion"
+                    >
                       <div class="accordion-body">
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">Human-Computer Interaction (HCI) &amp; UX Research</li>
-                              <li class="si__list--single">Game Design, Mechanics &amp; Serious Games</li>
-                              <li class="si__list--single">Augmented, Virtual &amp; Mixed Reality (XR)</li>
-                              <li class="si__list--single">Computer Graphics, Animation &amp; Visualization</li>
-                              <li class="si__list--single">Creative Coding &amp; Generative Design</li>
-                              <li class="si__list--single">Design Thinking, Innovation &amp; Entrepreneurship</li>
+                              <li class="si__list--single">
+                                Human-Computer Interaction (HCI) &amp; UX
+                                Research
+                              </li>
+                              <li class="si__list--single">
+                                Game Design, Mechanics &amp; Serious Games
+                              </li>
+                              <li class="si__list--single">
+                                Augmented, Virtual &amp; Mixed Reality (XR)
+                              </li>
+                              <li class="si__list--single">
+                                Computer Graphics, Animation &amp; Visualization
+                              </li>
+                              <li class="si__list--single">
+                                Creative Coding &amp; Generative Design
+                              </li>
+                              <li class="si__list--single">
+                                Design Thinking, Innovation &amp;
+                                Entrepreneurship
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -77,19 +120,46 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- Centres / Innovation Hubs -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-collapseTwo" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#csd-collapseTwo"
+                      aria-expanded="false"
+                    >
                       Innovation Hubs &amp; Centres
                     </button>
-                    <div id="csd-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#csd-rts-accordion">
+                    <div
+                      id="csd-collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#csd-rts-accordion"
+                    >
                       <div class="accordion-body">
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">SRKR Technology Centre — host hub for CSD with shared infrastructure.</li>
-                              <li class="si__list--single">AICTE IDEA Lab — prototyping, electronics, fabrication, and product design.</li>
-                              <li class="si__list--single">Innovation Centre — design sprints, hackathons, and product incubation.</li>
-                              <li class="si__list--single">On-Campus Startup Studio — mentoring student-led ventures.</li>
-                              <li class="si__list--single">Design &amp; XR Studio — UX research, AR/VR experimentation, and immersive prototyping. {/* TODO: confirm naming */}</li>
+                              <li class="si__list--single">
+                                SRKR Technology Centre — host hub for CSD with
+                                shared infrastructure.
+                              </li>
+                              <li class="si__list--single">
+                                AICTE IDEA Lab — prototyping, electronics,
+                                fabrication, and product design.
+                              </li>
+                              <li class="si__list--single">
+                                Innovation Centre — design sprints, hackathons,
+                                and product incubation.
+                              </li>
+                              <li class="si__list--single">
+                                On-Campus Startup Studio — mentoring student-led
+                                ventures.
+                              </li>
+                              <li class="si__list--single">
+                                Design &amp; XR Studio — UX research, AR/VR
+                                experimentation, and immersive prototyping. {
+                                  /* TODO: confirm naming */
+                                }
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -99,17 +169,39 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- Funded / Sponsored Projects -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-collapseThree" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#csd-collapseThree"
+                      aria-expanded="false"
+                    >
                       Sponsored &amp; Industry Projects
                     </button>
-                    <div id="csd-collapseThree" class="accordion-collapse collapse" data-bs-parent="#csd-rts-accordion">
+                    <div
+                      id="csd-collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#csd-rts-accordion"
+                    >
                       <div class="accordion-body">
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">{/* TODO: List active AICTE / DST / industry-sponsored projects */} Student-led product prototypes funded through AICTE IDEA Lab and Innovation Centre grants.</li>
-                              <li class="si__list--single">Industry collaborations on UX redesign and game prototypes with regional startups and SMEs.</li>
-                              <li class="si__list--single">Hackathon-derived projects evolving into incubated startups (e.g. Bhimavaram Online — NIT-AP Startup Expo winner).</li>
+                              <li class="si__list--single">
+                                {
+                                  /* TODO: List active AICTE / DST / industry-sponsored projects */
+                                } Student-led product prototypes funded through AICTE
+                                IDEA Lab and Innovation Centre grants.
+                              </li>
+                              <li class="si__list--single">
+                                Industry collaborations on UX redesign and game
+                                prototypes with regional startups and SMEs.
+                              </li>
+                              <li class="si__list--single">
+                                Hackathon-derived projects evolving into
+                                incubated startups (e.g. Bhimavaram Online —
+                                NIT-AP Startup Expo winner).
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -119,17 +211,38 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- Publications -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-collapseFour" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#csd-collapseFour"
+                      aria-expanded="false"
+                    >
                       Publications
                     </button>
-                    <div id="csd-collapseFour" class="accordion-collapse collapse" data-bs-parent="#csd-rts-accordion">
+                    <div
+                      id="csd-collapseFour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#csd-rts-accordion"
+                    >
                       <div class="accordion-body">
                         <div class="si">
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">{/* TODO: confirm exact counts */} Conference and journal papers in HCI, computer graphics, game studies, and design education.</li>
-                              <li class="si__list--single">Student-authored case studies and design reports published through departmental newsletters.</li>
-                              <li class="si__list--single">Portfolio publications on platforms like Behance, GitHub, and itch.io showcasing student work.</li>
+                              <li class="si__list--single">
+                                {/* TODO: confirm exact counts */} Conference and
+                                journal papers in HCI, computer graphics, game studies,
+                                and design education.
+                              </li>
+                              <li class="si__list--single">
+                                Student-authored case studies and design reports
+                                published through departmental newsletters.
+                              </li>
+                              <li class="si__list--single">
+                                Portfolio publications on platforms like
+                                Behance, GitHub, and itch.io showcasing student
+                                work.
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -139,28 +252,60 @@ import DeptNav from '../../../../components/DeptNav.astro';
 
                   <!-- Consultancy -->
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csd-collapseFive" aria-expanded="false">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#csd-collapseFive"
+                      aria-expanded="false"
+                    >
                       Consultancy Services
                     </button>
-                    <div id="csd-collapseFive" class="accordion-collapse collapse" data-bs-parent="#csd-rts-accordion">
+                    <div
+                      id="csd-collapseFive"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#csd-rts-accordion"
+                    >
                       <div class="accordion-body">
                         <div class="si">
                           <h4 class="title">Domains</h4>
                           <div class="si__list">
                             <ul class="list-unstyled">
-                              <li class="si__list--single">UX &amp; Interaction Design — user research, usability audits, and product redesign.</li>
-                              <li class="si__list--single">Web &amp; Mobile App Development — MVPs and digital products for startups and institutions.</li>
-                              <li class="si__list--single">Game &amp; Interactive Media — serious games, simulations, and educational interactive content.</li>
-                              <li class="si__list--single">AR/VR &amp; Immersive Experiences — XR prototypes for education, training, and marketing.</li>
-                              <li class="si__list--single">Animation, Motion Graphics &amp; Brand Design — multimedia and visual identity work.</li>
+                              <li class="si__list--single">
+                                UX &amp; Interaction Design — user research,
+                                usability audits, and product redesign.
+                              </li>
+                              <li class="si__list--single">
+                                Web &amp; Mobile App Development — MVPs and
+                                digital products for startups and institutions.
+                              </li>
+                              <li class="si__list--single">
+                                Game &amp; Interactive Media — serious games,
+                                simulations, and educational interactive
+                                content.
+                              </li>
+                              <li class="si__list--single">
+                                AR/VR &amp; Immersive Experiences — XR
+                                prototypes for education, training, and
+                                marketing.
+                              </li>
+                              <li class="si__list--single">
+                                Animation, Motion Graphics &amp; Brand Design —
+                                multimedia and visual identity work.
+                              </li>
                             </ul>
                           </div>
                         </div>
-                        <p class="mt--20">CSD consultancy is delivered jointly with the SRKR Technology Centre, leveraging its established infrastructure and industry network. {/* TODO: Add specific consultancy clients / revenue numbers when available. */}</p>
+                        <p class="mt--20">
+                          CSD consultancy is delivered jointly with the SRKR
+                          Technology Centre, leveraging its established
+                          infrastructure and industry network. {
+                            /* TODO: Add specific consultancy clients / revenue numbers when available. */
+                          }
+                        </p>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -169,17 +314,36 @@ import DeptNav from '../../../../components/DeptNav.astro';
           <!-- Right: Sidebar -->
           <div class="col-lg-4 col-md-11 sticky-coloum-item">
             <div class="program-sidebar">
-              
               <!-- Quick Links -->
               <div class="program-curriculum">
                 <h6 class="heading-title">Research Resources</h6>
                 <div class="program-menu">
                   <ul class="list-unstyled">
-                    <li><a href="/departments/csd/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
-                    <li><a href="/departments/csd/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Studios &amp; Labs</a></li>
-                    <li><a href="/departments/csd/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>Academic Programs</a></li>
-                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
-                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Student Portfolios</a></li>
+                    <li>
+                      <a href="/departments/csd/faculty/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Faculty Profiles</a>
+                    </li>
+                    <li>
+                      <a href="/departments/csd/facilities/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Studios &amp; Labs</a>
+                    </li>
+                    <li>
+                      <a href="/departments/csd/academic-programs/"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Academic Programs</a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Ongoing Projects</a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Student Portfolios</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -187,11 +351,15 @@ import DeptNav from '../../../../components/DeptNav.astro';
               <!-- Contact Info -->
               <div class="program-info">
                 <h5>Department Contact</h5>
-                <p>Computer Science &amp; Design Department<br>2nd Floor, Technology Centre, Z-Block<br>SRKR Engineering College, Bhimavaram</p>
+                <p>
+                  Computer Science &amp; Design Department<br />2nd Floor,
+                  Technology Centre, Z-Block<br />SRKR Engineering College,
+                  Bhimavaram
+                </p>
                 <div class="contact-info mt--10 mb--10">
                   <h5>Email:</h5>
                   <a href="mailto:hod.csd@srkrec.ac.in">hod.csd@srkrec.ac.in</a>
-                  <a href="mailto:csd@srkrec.edu.in">csd@srkrec.edu.in</a>
+                  <a href="mailto:csd@srkrec.ac.in">csd@srkrec.ac.in</a>
                 </div>
                 <div class="contact-info mt--20 mb--20">
                   <h5>Phone:</h5>
@@ -207,10 +375,8 @@ import DeptNav from '../../../../components/DeptNav.astro';
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>
