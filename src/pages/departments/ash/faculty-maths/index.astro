@@ -7,7 +7,7 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
 const hod = [
-  { name: 'Dr. G. N. V. Kishore', designation: 'Professor & Head of Division', specialization: 'Fixed Point Theory', profile: '#' }
+  { name: 'Dr. G. N. V. Kishore', designation: 'Professor & Head of Department', specialization: 'Fixed Point Theory', profile: '#' }
 ];
 
 const faculty = [
@@ -63,7 +63,7 @@ const faculty = [
                 <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
                 <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
               </ul>
-              <h1 class="section-title">Faculty Maths</h1>
+              <h1 class="section-title">Mathematics &amp; Humanities Faculty</h1>
             </div>
           </div>
         </div>
@@ -72,11 +72,11 @@ const faculty = [
 
     <section class="rts-faculty py-5">
       <div class="container">
-        <DeptNav dept="ash" current="Faculty Maths" />
+        <DeptNav dept="ash" current="Maths &amp; Humanities Faculty" />
 
         <!-- HoD -->
         <div class="rts-section mb--40">
-          <h3 class="rts-section-title">Division Head</h3>
+          <h3 class="rts-section-title">Department Head</h3>
         </div>
         <div class="row g-5 mb--50">
           {hod.map((f) => (
@@ -102,7 +102,7 @@ const faculty = [
 
         <!-- Faculty List -->
         <div class="rts-section mb--40">
-          <h3 class="rts-section-title">Division Faculty</h3>
+          <h3 class="rts-section-title">Department Faculty</h3>
         </div>
         <div class="row g-5">
           {faculty.map((f) => (

@@ -1,0 +1,114 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Overseas Education & Languages | Applied Sciences & Humanities | SRKR" description="SRKR Overseas Education, Centre for Foreign Languages, and JNTUK-Recognized Research Centre for English." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/ash.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ash/">Applied Sciences & Humanities</a></li>
+              </ul>
+              <h1 class="section-title">Overseas Education &amp; Languages</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <DeptNav dept="ash" current="Overseas Education &amp; Languages" />
+
+        <!-- SRKR Overseas Education Section -->
+        <div class="row mb-5 pb-4 align-items-center">
+          <div class="col-lg-12">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">SRKR Overseas Education</h3>
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;"><strong>SRKR Overseas Education</strong> helps students achieve their global dreams with expert guidance for university admissions, profile building, test preparation, visa assistance, and internship/job support abroad. It provides a seamless experience for students aiming to study, work, or intern abroad.</p>
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;">With zero processing fees, experienced consultants, and high visa success rates, it offers personalized, transparent solutions, including loan assistance, housing, and travel support, ensuring a smooth journey to your future.</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5" />
+
+        <!-- Foreign Languages Section -->
+        <div class="row mb-5 pb-4">
+          <div class="col-lg-12">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">Centre for Foreign Languages</h3>
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;">The Centre for Foreign Languages at SRKR Engineering College was established in 2021 with the aim of helping students learn international languages and develop an understanding of different cultures. The Centre offers training in popular foreign languages such as German, French, Spanish, and Japanese. Through well-planned courses and regular guidance, it helps students improve their communication skills and prepares them for higher studies and career opportunities in a global environment. The Centre is supported by dedicated in-house trainers, with Dr. Riyaz Mohammad imparting training in Spanish and Mrs. K. Esther Rani providing training in German, thereby ensuring quality instruction and continuous mentoring for students.</p>
+              
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;">To ensure effective learning and meaningful language acquisition, the Centre follows a student-centric and activity-based approach. The classes are conducted in both online and offline modes, providing flexibility to students. The teaching methodology encourages active participation through interactive activities, discussions, and practical exercises. Our faculty members closely guide students, clarify their doubts, and assist them in completing assignments and language tasks, ensuring steady progress. This supportive learning environment at SRKR has enabled students to develop language proficiency for better placements, high package offers, and pursue higher studies for global career opportunities. The sustained efforts of the Centre have yielded encouraging results, with several students who completed German Language securing admissions to prestigious public universities (zero fee) in Germany.</p>
+            </div>
+          </div>
+
+          <!-- Trainers Sub-section -->
+          <div class="col-lg-12 mt-4">
+            <h4 class="mb-4" style="color: var(--rt-primary);">In-House Language Instructors</h4>
+            <div class="row gap-4 justify-content-center">
+              <div class="col-md-5 p-4 border rounded text-center" style="background-color: #f8fafc; border-color: #e2e8f0 !important;">
+                <div class="staf-image mb-3 text-center d-flex justify-content-center">
+                  <img src="/assets/images/faculty/maths_humanitites/1307.jpg" alt="Dr. Riyaz Mohammad" style="width: 120px; height: 120px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid #e2e8f0;" />
+                </div>
+                <h5>Dr. Riyaz Mohammad</h5>
+                <span class="badge px-3 py-2 mt-1" style="background-color: var(--rt-primary); color: white;">Spanish Language Trainer</span>
+              </div>
+
+              <div class="col-md-5 p-4 border rounded text-center" style="background-color: #f8fafc; border-color: #e2e8f0 !important;">
+                <div class="staf-image mb-3 text-center d-flex justify-content-center">
+                  <img src="/assets/images/faculty/maths_humanitites/980.jpg" alt="Mrs. K. Esther Rani" style="width: 120px; height: 120px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid #e2e8f0;" />
+                </div>
+                <h5>Mrs. K. Esther Rani</h5>
+                <span class="badge px-3 py-2 mt-1" style="background-color: var(--rt-primary); color: white;">German Language Trainer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5" />
+
+        <!-- Research Centre Section -->
+        <div class="row mb-5 pb-4 align-items-center">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="p-4 border rounded shadow-sm text-center" style="background-color: #f8fafc; border-color: #e2e8f0 !important;">
+              <i class="fa-light fa-graduation-cap mb-3" style="font-size: 3rem; color: var(--rt-primary);"></i>
+              <h5>JNTUK Recognized</h5>
+              <p class="small text-muted mb-0">Offering PhD programmes in English promoting advanced academic research and publication.</p>
+              <div class="mt-3 font-weight-bold" style="font-size: 1.2rem; color: var(--rt-primary);">3 Active Scholars</div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">JNTUK-Recognized Research Centre for English</h3>
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;">The Department of English and Foreign Languages, SRKR Engineering College, has been recognized as a Research Centre by Jawaharlal Nehru Technological University Kakinada (JNTUK), offering Ph.D. programmes in English. This recognition reflects the department's commitment to quality research in English Language Teaching (ELT), Linguistics, Literature, Communication Skills, and interdisciplinary studies.</p>
+              <p style="text-align: justify; margin-bottom: 20px; line-height: 1.7;">The Research Centre provides a vibrant academic environment for doctoral scholars through expert supervision, research seminars, workshops, and scholarly interactions. Equipped with qualified research supervisors and research infrastructure, the Centre promotes innovative and impactful research that contributes to the advancement of English language education and literary studies while fostering a strong culture of academic excellence and inquiry. Currently, 3 research scholars are carrying out doctoral research with the Research Centre of the Department.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
