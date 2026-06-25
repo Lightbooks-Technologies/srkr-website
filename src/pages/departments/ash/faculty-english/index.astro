@@ -7,25 +7,27 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
 const hod = [
-  {
-    name: 'Dr. Bh. V. N. Lakshmi',
-    designation: 'Professor & Head of Department',
-    specialization: 'English & Foreign Languages, TESOL',
-    profile: '#',
-    image: '/assets/images/faculty/maths_humanitites/1002.jpg'
-  }
+    { name: 'Dr. Satish Kumar Nadimpalli', profile: 'https://srkrec.irins.org/profile/579086', email: 'saketarama77@gmail.com', specialization: 'Language & Linguistics', designation: 'Associate Professor & Head I/c', image: '1050.jpg' },
+
 ];
 
 const faculty = [
-  { name: 'Dr. Riyaz Mohammad', designation: 'Assistant Professor', specialization: 'English Language Teaching and English Drama', profile: '#', image: '/assets/images/faculty/maths_humanitites/1307.jpg' },
-  { name: 'Ramesh Vijaya Babu K', designation: 'Assistant Professor', specialization: 'ELT, Indian Literature in English', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'N. Pavan Kumar', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'E. Sita Rama Raju', designation: 'Personality Development Trainer', specialization: 'Soft Skills', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'Musunoori Sankar', designation: 'Assistant Professor', specialization: 'ELT, Ecocritical Studies', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'Aruna Kumari K', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'Hari Nair', designation: 'Assistant Professor', specialization: 'Indian Literature', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
-  { name: 'Mrs. K. Esther Rani', designation: 'Assistant Professor', specialization: 'English Literature', profile: '#', image: '/assets/images/faculty/maths_humanitites/980.jpg' },
-  { name: 'S. Madhuri', designation: 'Assistant Professor', specialization: 'English Language and Literature, ELT', profile: '#', image: '/assets/images/faculty/placeholder.jpg' }
+ 
+  { name: 'Dr. Satish Kumar Nadimpalli', profile: 'https://srkrec.irins.org/profile/579086', email: 'saketarama77@gmail.com', specialization: 'Language & Linguistics', designation: 'Associate Professor & Head I/c', image: '1050.jpg' },
+  { name: 'Dr. Bhuvaneswari Pagidipati', profile: 'https://srkrec.irins.org/profile/579101', email: 'pbsrkrec@gmail.com', specialization: 'Literature', designation: 'Associate Professor', image: '399.jpg' },
+  { name: 'B. Pavan Kumar', profile: 'https://srkrec.irins.org/profile/579083', email: 'pavankbonda@gmail.com', specialization: 'Indian Writing in English and Travel Literature', designation: 'Assistant Professor', image: '564.jpg' },
+  { name: 'Dr. P. Vijay Kumar', profile: 'https://srkrec.irins.org/profile/579060', email: 'vijaysaralapilli@gmail.com', specialization: 'ELT', designation: 'Assistant Professor', image: '589.jpg' },
+  { name: 'Dr. Ch. Rupa Jhansi Rani', profile: 'https://srkrec.irins.org/profile/321367', email: 'rupajhansirani@gmail.com', specialization: 'Indian Writing in English', designation: 'Assistant Professor', image: '945.jpg' },
+  { name: 'Dr. K. Neelima', profile: 'https://srkrec.irins.org/profile/', email: '', specialization: '', designation: '', image: '980.jpg' },
+  { name: 'Dr. Riyaz Mohammad', profile: 'https://srkrec.irins.org/profile/579005', email: 'riyazsrkr412@gmail.com', specialization: 'Indian Drama & English Language Education', designation: 'Assistant Professor', image: '989.jpg' },
+  { name: 'Ramesh Vijaya Babu Kothapalli', profile: 'https://srkrec.irins.org/profile/579071', email: 'rameshvijaybabu@gmail.com', specialization: 'Australian Aboroginla Literature', designation: 'Assistant Professor', image: '1089.jpg' },
+  { name: 'N. Pavan Kumar', profile: 'https://srkrec.irins.org/profile/578987', email: 'pavankumar.nowbattula@gmail.com', specialization: 'English Language Teaching', designation: 'Assistant Professor', image: '1090.jpg' },
+  { name: 'K. Aruna Kumari', profile: 'https://srkrec.irins.org/profile/579061', email: 'aruna.kaanuri@gmail.com', specialization: 'Indian Literature', designation: 'Assistant Professor', image: '1112.jpg' },
+  { name: 'Hari Nair', profile: 'https://srkrec.irins.org/profile/321980', email: 'hnkrishnan2028@gmail.com', specialization: 'Indian Literature & Gender Studies', designation: 'Assistant Professor', image: '1316.jpg' },
+  { name: 'Kasarapu Esther Rani', profile: 'https://srkrec.irins.org/profile/579062', email: 'kerenglish1347@gmail.com', specialization: 'English Language Teaching', designation: 'Assistant Professor', image: '1347.jpg' },
+  { name: 'S. Madhuri', profile: 'https://srkrec.irins.org/profile/714966', email: 'madhurisambana@gmail.com', specialization: 'English Language Teaching', designation: 'Assistant Professor', image: '1494.jpg' },
+  { name: 'Sankar Musunoori', profile: 'https://srkrec.irins.org/profile/578996', email: 'sankarmusunoori@gmail.com', specialization: 'Literature in English', designation: 'Assistant Professor', image: '1111.jpg' }
+
 ];
 ---
 
@@ -68,7 +70,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src={f.image} alt={f.name} />
+                    <img src='/assets/images/faculty/english/1050.jpg' alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -94,7 +96,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src={f.image} alt={f.name} loading="lazy" decoding="async" />
+                    <img src={`/assets/images/faculty/english/${f.image}`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
