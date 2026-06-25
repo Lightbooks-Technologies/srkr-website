@@ -1,0 +1,20 @@
+/* Fix for accordion button text visibility when open */
+.accordion-button {
+  color: #1c2d3a !important;
+  background-color: #f8fafc !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff !important;
+  background: var(--rt-primary, #0d6efd) !important;
+  background-color: var(--rt-primary, #0d6efd) !important;
+}
+
+/* Ensure the expand/collapse arrow changes color appropriately */
+.accordion-button::after {
+  filter: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: invert(1) grayscale(1) brightness(2) !important;
+}
