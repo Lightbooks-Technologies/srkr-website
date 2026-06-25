@@ -8,9 +8,9 @@ export const SITE_NAME = 'SRKR Engineering College';
 export const SITE_SHORT_NAME = 'SRKR';
 export const SITE_TAGLINE = 'Where Innovation Meets Excellence — Estd. 1980, Bhimavaram';
 
-export const SITE_TITLE = `${SITE_NAME} | NAAC A++ Autonomous Engineering College, Bhimavaram`;
+export const SITE_TITLE = `${SITE_NAME} | NAAC A+ Autonomous Engineering College, Bhimavaram`;
 export const SITE_DESCRIPTION =
-  'SRKR Engineering College, Bhimavaram — NAAC A++ accredited autonomous institution (Est. 1980) offering NBA-accredited B.Tech, M.Tech, MBA & MCA programs in CSE, ECE, EEE, Civil, Mechanical, IT, AI/ML, AI/DS and emerging tech. Top placements, world-class labs, premier engineering education in Andhra Pradesh.';
+  'SRKR Engineering College, Bhimavaram — NAAC A+ accredited autonomous institution (Est. 1980) offering NBA-accredited B.Tech, M.Tech, MBA & MCA programs in CSE, ECE, EEE, Civil, Mechanical, IT, AI/ML, AI/DS and emerging tech. Top placements, world-class labs, premier engineering education in Andhra Pradesh.';
 
 export const DEFAULT_OG_IMAGE = '/assets/images/og-image.png';
 
