@@ -9,22 +9,23 @@ import DeptNav from '../../../../components/DeptNav.astro';
 const hod = [
   {
     name: 'Dr. Bh. V. N. Lakshmi',
-    designation: 'Professor & Head of Division',
+    designation: 'Professor & Head of Department',
     specialization: 'English & Foreign Languages, TESOL',
-    profile: '#'
+    profile: '#',
+    image: '/assets/images/faculty/maths_humanitites/1002.jpg'
   }
 ];
 
 const faculty = [
-  { name: 'Dr. Riyaz Mohammad', designation: 'Assistant Professor', specialization: 'English Language Teaching and English Drama', profile: '#' },
-  { name: 'Ramesh Vijaya Babu K', designation: 'Assistant Professor', specialization: 'ELT, Indian Literature in English', profile: '#' },
-  { name: 'N. Pavan Kumar', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#' },
-  { name: 'E. Sita Rama Raju', designation: 'Personality Development Trainer', specialization: 'Soft Skills', profile: '#' },
-  { name: 'Musunoori Sankar', designation: 'Assistant Professor', specialization: 'ELT, Ecocritical Studies', profile: '#' },
-  { name: 'Aruna Kumari K', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#' },
-  { name: 'Hari Nair', designation: 'Assistant Professor', specialization: 'Indian Literature', profile: '#' },
-  { name: 'Mrs. K. Esther Rani', designation: 'Assistant Professor', specialization: 'English Literature', profile: '#' },
-  { name: 'S. Madhuri', designation: 'Assistant Professor', specialization: 'English Language and Literature, ELT', profile: '#' }
+  { name: 'Dr. Riyaz Mohammad', designation: 'Assistant Professor', specialization: 'English Language Teaching and English Drama', profile: '#', image: '/assets/images/faculty/maths_humanitites/1307.jpg' },
+  { name: 'Ramesh Vijaya Babu K', designation: 'Assistant Professor', specialization: 'ELT, Indian Literature in English', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'N. Pavan Kumar', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'E. Sita Rama Raju', designation: 'Personality Development Trainer', specialization: 'Soft Skills', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'Musunoori Sankar', designation: 'Assistant Professor', specialization: 'ELT, Ecocritical Studies', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'Aruna Kumari K', designation: 'Assistant Professor', specialization: 'English Language Teaching', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'Hari Nair', designation: 'Assistant Professor', specialization: 'Indian Literature', profile: '#', image: '/assets/images/faculty/placeholder.jpg' },
+  { name: 'Mrs. K. Esther Rani', designation: 'Assistant Professor', specialization: 'English Literature', profile: '#', image: '/assets/images/faculty/maths_humanitites/980.jpg' },
+  { name: 'S. Madhuri', designation: 'Assistant Professor', specialization: 'English Language and Literature, ELT', profile: '#', image: '/assets/images/faculty/placeholder.jpg' }
 ];
 ---
 
@@ -59,7 +60,7 @@ const faculty = [
 
         <!-- HoD -->
         <div class="rts-section mb--40">
-          <h3 class="rts-section-title">Division Head</h3>
+          <h3 class="rts-section-title">Department Head</h3>
         </div>
         <div class="row g-5 mb--50">
           {hod.map((f) => (
@@ -67,7 +68,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} />
+                    <img src={f.image} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -85,7 +86,7 @@ const faculty = [
 
         <!-- Faculty List -->
         <div class="rts-section mb--40">
-          <h3 class="rts-section-title">Division Faculty</h3>
+          <h3 class="rts-section-title">Department Faculty</h3>
         </div>
         <div class="row g-5">
           {faculty.map((f) => (
@@ -93,7 +94,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} loading="lazy" decoding="async" />
+                    <img src={f.image} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>

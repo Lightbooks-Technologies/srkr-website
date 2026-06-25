@@ -33,7 +33,7 @@ def main():
     # 4. Replace the SITE definition in astro.config.mjs
     content = content.replace(
         "const SITE = 'https://www.srkrec.ac.in';",
-        "const SITE = 'https://www.srkrec.edu.in';"
+        "const SITE = 'https://www.srkrec.ac.in';"
     )
 
     # Update SITE_URL in src/consts.ts
@@ -41,7 +41,7 @@ def main():
         consts_content = CONSTS_PATH.read_text(encoding="utf-8")
         consts_content = consts_content.replace(
             "export const SITE_URL = 'https://www.srkrec.ac.in';",
-            "export const SITE_URL = 'https://www.srkrec.edu.in';"
+            "export const SITE_URL = 'https://www.srkrec.ac.in';"
         )
         CONSTS_PATH.write_text(consts_content, encoding="utf-8")
 

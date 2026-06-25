@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // Single source of truth for production URL.
 // If the site moves to a different domain later, change ONLY this value
 // (and the matching SITE_URL constant in src/consts.ts).
-const SITE = 'https://www.srkrec.edu.in';
+const SITE = 'https://www.srkrec.ac.in';
 
 /** @type {Record<string, import('astro').RedirectConfig>} */
 const astroRedirects = {

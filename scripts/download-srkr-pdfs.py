@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Download syllabus + institute PDFs from srkrec.ac.in / srkrec.edu.in into public/.
+Download syllabus + institute PDFs from srkrec.ac.in / srkrec.ac.in into public/.
 
 Usage:
   python3 scripts/download-srkr-pdfs.py --institute
@@ -25,7 +25,7 @@ PUBLIC = ROOT / "public"
 SYLLABUS_PAGE = ROOT / "src/pages/syllabus/index.astro"
 
 AC_IN = "https://srkrec.ac.in"
-AC_EDU = "https://srkrec.edu.in"
+AC_EDU = "https://srkrec.ac.in"
 
 # Old-site path -> local SEO-friendly path (under public/)
 INSTITUTE_MAP: list[tuple[str, str, str]] = [

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Map old URLs from srkrec.edu.in to the new URLs in this project.
+Map old URLs from srkrec.ac.in to the new URLs in this project.
 Supports resolving a single URL, batch processing a list of URLs,
 and running a local 302 HTTP redirection server.
 
 Usage:
   # Resolve a single URL
-  python scripts/map-old-urls.py resolve "https://srkrec.edu.in/civil.php"
+  python scripts/map-old-urls.py resolve "https://srkrec.ac.in/civil.php"
   
   # Run a local 302 redirect server
   python scripts/map-old-urls.py server --port 8080 --target-host "http://localhost:4321"
@@ -158,12 +158,12 @@ def run_server(port: int, target_host: str, compiled_rules: list):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Map old URLs from srkrec.edu.in to new URLs.")
+    parser = argparse.ArgumentParser(description="Map old URLs from srkrec.ac.in to new URLs.")
     subparsers = parser.add_subparsers(dest="command", required=True)
     
     # Resolve sub-command
     resolve_parser = subparsers.add_parser("resolve", help="Resolve a single old URL.")
-    resolve_parser.add_argument("url", help="Old URL to map (e.g. /about.php or https://srkrec.edu.in/about.php)")
+    resolve_parser.add_argument("url", help="Old URL to map (e.g. /about.php or https://srkrec.ac.in/about.php)")
     resolve_parser.add_argument("--target-host", default="https://srkrec.ac.in", help="Domain to prepend (default: https://srkrec.ac.in)")
     
     # Batch sub-command

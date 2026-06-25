@@ -99,13 +99,11 @@ const importantDates = [
           {departments.map((d) => (
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="card h-100 shadow-sm single-cat-item">
-                {/* TODO: replace with department-specific hero image */}
-                <div class="cat-thumb">
-                  <img src="/assets/images/admission/PLACEHOLDER.jpg" alt={d.name} />
-                  <a href={`/departments/${d.slug}/`} class="cat-link-btn">{d.code}</a>
-                </div>
                 <div class="card-body">
-                  <h6 class="card-title mb-2">
+                  <div class="mb-2">
+                    <span class="badge" style="background-color: var(--rt-primary); color: white; padding: 6px 12px; font-size: 0.8rem; font-weight: 600;">{d.code}</span>
+                  </div>
+                  <h6 class="card-title mb-2 mt-2">
                     <a href={`/departments/${d.slug}/`}>{d.name}</a>
                   </h6>
                   <p class="mb-1 small"><strong>Intake:</strong> {d.intake} {d.nbaAccredited && (<span class="text-success">· NBA</span>)}</p>

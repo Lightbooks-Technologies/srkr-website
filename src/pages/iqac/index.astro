@@ -1,83 +1,308 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
 
 const pageTitle = "Internal Quality Assurance Cell";
 
 const iqacMembers = [
-  { sno: 1,  category: 'Head of the Institution',        name: 'Dr. K.V. Murali Krishnam Raju',  designation: 'Principal',                                                  position: 'Chairperson' },
-  { sno: 2,  category: 'Management Representative',      name: 'Sri. S.S. Pratik Varma',          designation: 'Member, Governing Body',                                     position: 'Member' },
-  { sno: 3,  category: 'Senior Administrative Officer',  name: 'Dr. M. Jagapathi Raju',           designation: 'Director',                                                   position: 'Member' },
-  { sno: 4,  category: 'Senior Administrative Officer',  name: 'Dr. V. Chandra Sekhar',           designation: 'Dean, Academics',                                            position: 'Member' },
-  { sno: 5,  category: 'Senior Administrative Officer',  name: 'Dr. T. Vamsi Nagaraju',           designation: 'Dean, Research and Development',                             position: 'Member' },
-  { sno: 6,  category: 'Senior Administrative Officer',  name: 'Dr. K.R. Satyanarayana',          designation: 'Dean, Training and Placements',                              position: 'Member' },
-  { sno: 7,  category: 'Senior Administrative Officer',  name: 'Dr. M. Siva Krishnam Raju',       designation: 'Controller of Examinations',                                 position: 'Member' },
-  { sno: 8,  category: 'Senior Administrative Officer',  name: 'Mr. Ch. Dileep Chakravarthy',     designation: 'Chief Administrative Officer',                               position: 'Member' },
-  { sno: 9,  category: 'Senior Administrative Officer',  name: 'Mr. Ch. Amarendra',               designation: 'Finance Officer',                                            position: 'Member' },
-  { sno: 10, category: 'Teacher',                        name: 'Dr. G. Sri Bala',                 designation: 'Head, Dept. of Civil Engineering',                            position: 'Member' },
-  { sno: 11, category: 'Teacher',                        name: 'Dr. Bh.V.S.R.K. Raju',            designation: 'Head, Dept. of Computer Science and Engineering',             position: 'Member' },
-  { sno: 12, category: 'Teacher',                        name: 'Dr. S.S. Mohan Reddy',            designation: 'Head, Dept. of Electronics and Communication Engineering',    position: 'Member' },
-  { sno: 13, category: 'Teacher',                        name: 'Dr. B.R.K. Varma',                designation: 'Head, Dept. of Electrical and Electronics Engineering',       position: 'Member' },
-  { sno: 14, category: 'Teacher',                        name: 'Dr. P. Ravi Kiran Varma',         designation: 'Head, Dept. of Information Technology',                       position: 'Member' },
-  { sno: 15, category: 'Teacher',                        name: 'Dr. K. Sita Rama Raju',           designation: 'Head, Dept. of Mechanical Engineering',                       position: 'Member' },
-  { sno: 16, category: 'Teacher',                        name: 'Dr. N. Gopala Krishna Murthy',    designation: 'Head, Technology Centre',                                     position: 'Member' },
-  { sno: 17, category: 'Teacher',                        name: 'Dr. D. Chandra Sekhar',           designation: 'Associate Professor, Dept. of Engineering Chemistry',         position: 'Member' },
-  { sno: 18, category: 'Teacher',                        name: 'Mrs. P. Lakshmi',                 designation: 'Assistant Professor, Dept. of Information Technology',        position: 'Member' },
-  { sno: 19, category: 'Student Nominee',                name: 'Mr. Dheeraj Mutyala',             designation: 'Regd. No. 24B91A0443, II Year B.Tech., ECE',                  position: 'Member' },
-  { sno: 20, category: 'Local Society Nominee',          name: 'Mr. D. Someswara Rao',            designation: 'Sarpanch, Peda Amiram Panchayat, Kalla',                      position: 'Member' },
-  { sno: 21, category: 'Employer Nominee',               name: 'Mr. M. Srinivasa Varma',          designation: 'Founder & CEO, Maharshi Consultancy Pvt. Ltd., Bhimavaram',   position: 'Member' },
-  { sno: 22, category: 'Alumni Nominee',                 name: 'Mr. M. Anil Kumar',               designation: 'Chief Operating Officer, SRKREC Alumni Association',          position: 'Member' },
-  { sno: 23, category: 'External Peer',                  name: 'Dr. N. Venkata Rao',              designation: 'Professor & Dean Academics, DNR College of Engg. & Tech., Bhimavaram', position: 'Member' },
-  { sno: 24, category: 'External Peer',                  name: 'Dr. M.S.R. Niranjan Kumar',       designation: 'Professor & CoE, P.V.P. Siddhartha Institute of Tech., Vijayawada',     position: 'Member' },
-  { sno: 25, category: 'IQAC Coordinator',               name: 'Dr. S. Rajesh',                   designation: 'Dean, IQAC',                                                  position: 'Member Secretary' },
+  {
+    sno: 1,
+    category: "Head of the Institution",
+    name: "Dr. K.V. Murali Krishnam Raju",
+    designation: "Principal",
+    position: "Chairperson",
+  },
+  {
+    sno: 2,
+    category: "Management Representative",
+    name: "Sri. S.S. Pratik Varma",
+    designation: "Member, Governing Body",
+    position: "Member",
+  },
+  {
+    sno: 3,
+    category: "Senior Administrative Officer",
+    name: "Dr. M. Jagapathi Raju",
+    designation: "Director",
+    position: "Member",
+  },
+  {
+    sno: 4,
+    category: "Senior Administrative Officer",
+    name: "Dr. V. Chandra Sekhar",
+    designation: "Dean, Academics",
+    position: "Member",
+  },
+  {
+    sno: 5,
+    category: "Senior Administrative Officer",
+    name: "Dr. T. Vamsi Nagaraju",
+    designation: "Dean, Research and Development",
+    position: "Member",
+  },
+  {
+    sno: 6,
+    category: "Senior Administrative Officer",
+    name: "Dr. K.R. Satyanarayana",
+    designation: "Dean, Training and Placements",
+    position: "Member",
+  },
+  {
+    sno: 7,
+    category: "Senior Administrative Officer",
+    name: "Dr. M. Siva Krishnam Raju",
+    designation: "Controller of Examinations",
+    position: "Member",
+  },
+  {
+    sno: 8,
+    category: "Senior Administrative Officer",
+    name: "Mr. Ch. Dileep Chakravarthy",
+    designation: "Chief Administrative Officer",
+    position: "Member",
+  },
+  {
+    sno: 9,
+    category: "Senior Administrative Officer",
+    name: "Mr. Ch. Amarendra",
+    designation: "Finance Officer",
+    position: "Member",
+  },
+  {
+    sno: 10,
+    category: "Teacher",
+    name: "Dr. G. Sri Bala",
+    designation: "Head, Dept. of Civil Engineering",
+    position: "Member",
+  },
+  {
+    sno: 11,
+    category: "Teacher",
+    name: "Dr. Bh.V.S.R.K. Raju",
+    designation: "Head, Dept. of Computer Science and Engineering",
+    position: "Member",
+  },
+  {
+    sno: 12,
+    category: "Teacher",
+    name: "Dr. S.S. Mohan Reddy",
+    designation: "Head, Dept. of Electronics and Communication Engineering",
+    position: "Member",
+  },
+  {
+    sno: 13,
+    category: "Teacher",
+    name: "Dr. B.R.K. Varma",
+    designation: "Head, Dept. of Electrical and Electronics Engineering",
+    position: "Member",
+  },
+  {
+    sno: 14,
+    category: "Teacher",
+    name: "Dr. P. Ravi Kiran Varma",
+    designation: "Head, Dept. of Information Technology",
+    position: "Member",
+  },
+  {
+    sno: 15,
+    category: "Teacher",
+    name: "Dr. K. Sita Rama Raju",
+    designation: "Head, Dept. of Mechanical Engineering",
+    position: "Member",
+  },
+  {
+    sno: 16,
+    category: "Teacher",
+    name: "Dr. N. Gopala Krishna Murthy",
+    designation: "Head, Technology Centre",
+    position: "Member",
+  },
+  {
+    sno: 17,
+    category: "Teacher",
+    name: "Dr. D. Chandra Sekhar",
+    designation: "Associate Professor, Dept. of Engineering Chemistry",
+    position: "Member",
+  },
+  {
+    sno: 18,
+    category: "Teacher",
+    name: "Mrs. P. Lakshmi",
+    designation: "Assistant Professor, Dept. of Information Technology",
+    position: "Member",
+  },
+  {
+    sno: 19,
+    category: "Student Nominee",
+    name: "Mr. Dheeraj Mutyala",
+    designation: "Regd. No. 24B91A0443, II Year B.Tech., ECE",
+    position: "Member",
+  },
+  {
+    sno: 20,
+    category: "Local Society Nominee",
+    name: "Mr. D. Someswara Rao",
+    designation: "Sarpanch, Peda Amiram Panchayat, Kalla",
+    position: "Member",
+  },
+  {
+    sno: 21,
+    category: "Employer Nominee",
+    name: "Mr. M. Srinivasa Varma",
+    designation: "Founder & CEO, Maharshi Consultancy Pvt. Ltd., Bhimavaram",
+    position: "Member",
+  },
+  {
+    sno: 22,
+    category: "Alumni Nominee",
+    name: "Mr. M. Anil Kumar",
+    designation: "Chief Operating Officer, SRKREC Alumni Association",
+    position: "Member",
+  },
+  {
+    sno: 23,
+    category: "External Peer",
+    name: "Dr. N. Venkata Rao",
+    designation:
+      "Professor & Dean Academics, DNR College of Engg. & Tech., Bhimavaram",
+    position: "Member",
+  },
+  {
+    sno: 24,
+    category: "External Peer",
+    name: "Dr. M.S.R. Niranjan Kumar",
+    designation:
+      "Professor & CoE, P.V.P. Siddhartha Institute of Tech., Vijayawada",
+    position: "Member",
+  },
+  {
+    sno: 25,
+    category: "IQAC Coordinator",
+    name: "Dr. S. Rajesh",
+    designation: "Dean, IQAC",
+    position: "Member Secretary",
+  },
 ];
 
 const aqarReports = [
-  { year: '2023-2024', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2023_24.pdf' },
-  { year: '2022-2023', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2022_23.pdf' },
-  { year: '2021-2022', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2021_22.pdf' },
-  { year: '2020-2021', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2020_21.pdf' },
-  { year: '2019-2020', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2019_20.pdf' },
-  { year: '2018-2019', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2018_19.pdf' },
-  { year: '2017-2018', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2017_18.pdf' },
-  { year: '2016-2017', href: 'https://srkrec.ac.in/files/mandates/AQAR_Report_2016_17.pdf' },
+  {
+    year: "2023-2024",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2023_24.pdf",
+  },
+  {
+    year: "2022-2023",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2022_23.pdf",
+  },
+  {
+    year: "2021-2022",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2021_22.pdf",
+  },
+  {
+    year: "2020-2021",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2020_21.pdf",
+  },
+  {
+    year: "2019-2020",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2019_20.pdf",
+  },
+  {
+    year: "2018-2019",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2018_19.pdf",
+  },
+  {
+    year: "2017-2018",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2017_18.pdf",
+  },
+  {
+    year: "2016-2017",
+    href: "https://srkrec.ac.in/files/mandates/AQAR_Report_2016_17.pdf",
+  },
 ];
 
 const recentMeetings = [
-  { date: '20/02/2024', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_20_02_2024.pdf' },
-  { date: '04/12/2023', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_04_12_2023.pdf' },
-  { date: '10/10/2023', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_10_10_2023.pdf' },
-  { date: '09/06/2023', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_09_06_2023.pdf' },
-  { date: '22/03/2023', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_22_03_2023.pdf' },
-  { date: '09/12/2022', href: 'https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_09_12_2022.pdf' },
+  {
+    date: "20/02/2024",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_20_02_2024.pdf",
+  },
+  {
+    date: "04/12/2023",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_04_12_2023.pdf",
+  },
+  {
+    date: "10/10/2023",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_10_10_2023.pdf",
+  },
+  {
+    date: "09/06/2023",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_09_06_2023.pdf",
+  },
+  {
+    date: "22/03/2023",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_22_03_2023.pdf",
+  },
+  {
+    date: "09/12/2022",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/IQAC_Meeting_09_12_2022.pdf",
+  },
 ];
 
 const reconstitutionOrders = [
-  { date: '27/10/2025', href: 'https://srkrec.ac.in/files/mandates/IQAC/order_27_10_2025.pdf' },
-  { date: '30/09/2023', href: 'https://srkrec.ac.in/files/mandates/IQAC/order_30_09_2023.pdf' },
-  { date: '30/05/2022', href: 'https://srkrec.ac.in/files/mandates/IQAC/order_30_05_2022.pdf' },
-  { date: '18/02/2021', href: 'https://srkrec.ac.in/files/mandates/IQAC/order_18_02_2021.pdf' },
-  { date: '20/11/2019', href: 'https://srkrec.ac.in/files/mandates/IQAC/order_20_11_2019.pdf' },
+  {
+    date: "27/10/2025",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/order_27_10_2025.pdf",
+  },
+  {
+    date: "30/09/2023",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/order_30_09_2023.pdf",
+  },
+  {
+    date: "30/05/2022",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/order_30_05_2022.pdf",
+  },
+  {
+    date: "18/02/2021",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/order_18_02_2021.pdf",
+  },
+  {
+    date: "20/11/2019",
+    href: "https://srkrec.ac.in/files/mandates/IQAC/order_20_11_2019.pdf",
+  },
 ];
 
 const bestPractices = [
-  { year: '2023-24', href: 'https://srkrec.ac.in/files/docs/BEST_PRACTICES23.pdf' },
-  { year: '2022-23', href: 'https://srkrec.ac.in/files/docs/BEST_PRACTICES22.pdf' },
-  { year: '2021-22', href: 'https://srkrec.ac.in/files/docs/BEST_PRACTICES.pdf' },
+  {
+    year: "2023-24",
+    href: "https://srkrec.ac.in/files/docs/BEST_PRACTICES23.pdf",
+  },
+  {
+    year: "2022-23",
+    href: "https://srkrec.ac.in/files/docs/BEST_PRACTICES22.pdf",
+  },
+  {
+    year: "2021-22",
+    href: "https://srkrec.ac.in/files/docs/BEST_PRACTICES.pdf",
+  },
 ];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description={`Internal Quality Assurance Cell (IQAC) at SRKR Engineering College — composition, AQAR reports, meeting minutes and best practices.`} />
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description={`Internal Quality Assurance Cell (IQAC) at SRKR Engineering College — composition, AQAR reports, meeting minutes and best practices.`}
+    />
   </head>
   <body>
     <SrkrHeader />
 
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -119,92 +344,239 @@ const bestPractices = [
 
     <section class="rts-scholarship pt--60 pb--60">
       <div class="container">
-
         <!-- Vision / Mission / Strategies / Functions / Benefits -->
-        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+        <div
+          class="row sticky-coloum-wrap justify-content-md-center justify-content-start"
+        >
           <div class="col-lg-8 col-md-11">
             <div class="program-about mb--40">
               <h4 class="title">About IQAC</h4>
-              <p>The Internal Quality Assurance Cell (IQAC) is the nodal body responsible for planning, sustaining and driving quality enhancement initiatives across academic, research and administrative functions at SRKR Engineering College. Established in line with NAAC guidelines, the IQAC builds a culture of continuous improvement through systematic documentation, stakeholder feedback and data-driven decision making.</p>
+              <p>
+                The Internal Quality Assurance Cell (IQAC) is the nodal body
+                responsible for planning, sustaining and driving quality
+                enhancement initiatives across academic, research and
+                administrative functions at SRKR Engineering College.
+                Established in line with NAAC guidelines, the IQAC builds a
+                culture of continuous improvement through systematic
+                documentation, stakeholder feedback and data-driven decision
+                making.
+              </p>
             </div>
 
             <div class="program-credit-area faq rts-scholarship-description">
               <div class="program-accordion">
                 <div class="accordion" id="iqac-accordion">
-
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#iqacStrategies" aria-expanded="true">Strategies</button>
-                    <div id="iqacStrategies" class="accordion-collapse collapse show" data-bs-parent="#iqac-accordion">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#iqacStrategies"
+                      aria-expanded="true">Strategies</button
+                    >
+                    <div
+                      id="iqacStrategies"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#iqac-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list">
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">Ensure timely, efficient and progressive performance of academic, administrative and financial tasks.</li>
-                            <li class="si__list--single">Strengthen relevance and quality of academic and research programmes.</li>
-                            <li class="si__list--single">Provide equitable access to and affordability of academic programmes for various sections of society.</li>
-                            <li class="si__list--single">Optimise and integrate modern methods of teaching and learning.</li>
-                            <li class="si__list--single">Uphold the credibility of evaluation procedures.</li>
-                            <li class="si__list--single">Maintain adequacy and effective functioning of support structure and services.</li>
-                            <li class="si__list--single">Encourage research sharing and networking with institutions in India and abroad.</li>
-                          </ul>
-                        </div></div>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Ensure timely, efficient and progressive
+                                performance of academic, administrative and
+                                financial tasks.
+                              </li>
+                              <li class="si__list--single">
+                                Strengthen relevance and quality of academic and
+                                research programmes.
+                              </li>
+                              <li class="si__list--single">
+                                Provide equitable access to and affordability of
+                                academic programmes for various sections of
+                                society.
+                              </li>
+                              <li class="si__list--single">
+                                Optimise and integrate modern methods of
+                                teaching and learning.
+                              </li>
+                              <li class="si__list--single">
+                                Uphold the credibility of evaluation procedures.
+                              </li>
+                              <li class="si__list--single">
+                                Maintain adequacy and effective functioning of
+                                support structure and services.
+                              </li>
+                              <li class="si__list--single">
+                                Encourage research sharing and networking with
+                                institutions in India and abroad.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqacFunctions" aria-expanded="false">Functions</button>
-                    <div id="iqacFunctions" class="accordion-collapse collapse" data-bs-parent="#iqac-accordion">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#iqacFunctions"
+                      aria-expanded="false">Functions</button
+                    >
+                    <div
+                      id="iqacFunctions"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#iqac-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list">
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">Develop and apply quality benchmarks for academic and administrative activities.</li>
-                            <li class="si__list--single">Facilitate a learner-centric environment and faculty maturation for participatory teaching-learning.</li>
-                            <li class="si__list--single">Collect feedback from students, parents and stakeholders on quality-related processes.</li>
-                            <li class="si__list--single">Disseminate information on quality parameters of higher education.</li>
-                            <li class="si__list--single">Organise inter and intra institutional workshops and seminars on quality themes.</li>
-                            <li class="si__list--single">Document programmes/activities leading to quality improvement.</li>
-                            <li class="si__list--single">Act as a nodal agency for coordinating quality-related activities and best practices.</li>
-                            <li class="si__list--single">Maintain an institutional MIS database for quality enhancement.</li>
-                            <li class="si__list--single">Prepare the Annual Quality Assurance Report (AQAR) per NAAC guidelines.</li>
-                          </ul>
-                        </div></div>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Develop and apply quality benchmarks for
+                                academic and administrative activities.
+                              </li>
+                              <li class="si__list--single">
+                                Facilitate a learner-centric environment and
+                                faculty maturation for participatory
+                                teaching-learning.
+                              </li>
+                              <li class="si__list--single">
+                                Collect feedback from students, parents and
+                                stakeholders on quality-related processes.
+                              </li>
+                              <li class="si__list--single">
+                                Disseminate information on quality parameters of
+                                higher education.
+                              </li>
+                              <li class="si__list--single">
+                                Organise inter and intra institutional workshops
+                                and seminars on quality themes.
+                              </li>
+                              <li class="si__list--single">
+                                Document programmes/activities leading to
+                                quality improvement.
+                              </li>
+                              <li class="si__list--single">
+                                Act as a nodal agency for coordinating
+                                quality-related activities and best practices.
+                              </li>
+                              <li class="si__list--single">
+                                Maintain an institutional MIS database for
+                                quality enhancement.
+                              </li>
+                              <li class="si__list--single">
+                                Prepare the Annual Quality Assurance Report
+                                (AQAR) per NAAC guidelines.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqacBenefits" aria-expanded="false">Benefits</button>
-                    <div id="iqacBenefits" class="accordion-collapse collapse" data-bs-parent="#iqac-accordion">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#iqacBenefits"
+                      aria-expanded="false">Benefits</button
+                    >
+                    <div
+                      id="iqacBenefits"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#iqac-accordion"
+                    >
                       <div class="accordion-body">
-                        <div class="si"><div class="si__list">
-                          <ul class="list-unstyled">
-                            <li class="si__list--single">Heightened clarity and focus in institutional functioning towards quality enhancement.</li>
-                            <li class="si__list--single">Internalisation of a quality culture across departments and units.</li>
-                            <li class="si__list--single">Better coordination and institutionalisation of good practices.</li>
-                            <li class="si__list--single">Sound basis for evidence-based decision-making.</li>
-                            <li class="si__list--single">Organised methodology of documentation and internal communication.</li>
-                          </ul>
-                        </div></div>
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">
+                                Heightened clarity and focus in institutional
+                                functioning towards quality enhancement.
+                              </li>
+                              <li class="si__list--single">
+                                Internalisation of a quality culture across
+                                departments and units.
+                              </li>
+                              <li class="si__list--single">
+                                Better coordination and institutionalisation of
+                                good practices.
+                              </li>
+                              <li class="si__list--single">
+                                Sound basis for evidence-based decision-making.
+                              </li>
+                              <li class="si__list--single">
+                                Organised methodology of documentation and
+                                internal communication.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqacBestPractices" aria-expanded="false">Best Practices &amp; Distinctiveness</button>
-                    <div id="iqacBestPractices" class="accordion-collapse collapse" data-bs-parent="#iqac-accordion">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#iqacBestPractices"
+                      aria-expanded="false"
+                      >Best Practices &amp; Distinctiveness</button
+                    >
+                    <div
+                      id="iqacBestPractices"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#iqac-accordion"
+                    >
                       <div class="accordion-body">
                         <ul class="list-unstyled">
-                          {bestPractices.map((bp) => (
-                            <li class="si__list--single"><a href={bp.href} target="_blank" rel="noopener">Best Practices — {bp.year} (PDF)</a></li>
-                          ))}
-                          <li class="si__list--single"><a href="https://srkrec.ac.in/files/docs/DISTINCTVENESS_WEBSITE_2023-24.pdf" target="_blank" rel="noopener">Institutional Distinctiveness 2023-24 (PDF)</a></li>
-                          <li class="si__list--single"><a href="https://srkrec.ac.in/files/docs/DISTINCTVENESS_WEBSITE_2022-23.pdf" target="_blank" rel="noopener">Institutional Distinctiveness 2022-23 (PDF)</a></li>
-                          <li class="si__list--single"><a href="https://srkrec.ac.in/files/mandates/naac/Student_Satisfaction_Survey_2023-24.pdf" target="_blank" rel="noopener">Student Satisfaction Survey 2023-24 (PDF)</a></li>
+                          {
+                            bestPractices.map((bp) => (
+                              <li class="si__list--single">
+                                <a
+                                  href={bp.href}
+                                  target="_blank"
+                                  rel="noopener"
+                                >
+                                  Best Practices — {bp.year} (PDF)
+                                </a>
+                              </li>
+                            ))
+                          }
+                          <li class="si__list--single">
+                            <a
+                              href="https://srkrec.ac.in/files/docs/DISTINCTVENESS_WEBSITE_2023-24.pdf"
+                              target="_blank"
+                              rel="noopener"
+                              >Institutional Distinctiveness 2023-24 (PDF)</a>
+                          </li>
+                          <li class="si__list--single">
+                            <a
+                              href="https://srkrec.ac.in/files/docs/DISTINCTVENESS_WEBSITE_2022-23.pdf"
+                              target="_blank"
+                              rel="noopener"
+                              >Institutional Distinctiveness 2022-23 (PDF)</a>
+                          </li>
+                          <li class="si__list--single">
+                            <a
+                              href="https://srkrec.ac.in/files/mandates/naac/Student_Satisfaction_Survey_2023-24.pdf"
+                              target="_blank"
+                              rel="noopener"
+                              >Student Satisfaction Survey 2023-24 (PDF)</a>
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -217,21 +589,57 @@ const bestPractices = [
                 <h6 class="heading-title">Quality Resources</h6>
                 <div class="program-menu">
                   <ul class="list-unstyled">
-                    <li><a href="https://srkrec.edu.in/naac_ssr_main.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NAAC SSR</a></li>
-                    <li><a href="https://srkrec.ac.in/naac.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NAAC Mandates</a></li>
-                    <li><a href="https://srkrec.ac.in/nirf.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NIRF Disclosures</a></li>
-                    <li><a href="https://srkrec.ac.in/nba.php" target="_blank" rel="noopener"><span><i class="fa-light fa-arrow-right"></i></span>NBA Accreditation</a></li>
-                    <li><a href="/vitals"><span><i class="fa-light fa-arrow-right"></i></span>Institute Vitals</a></li>
-                    <li><a href="/development-plan"><span><i class="fa-light fa-arrow-right"></i></span>Institution Development Plan</a></li>
+                    <li>
+                      <a
+                        href="https://srkrec.ac.in/naac_ssr_main.php"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >NAAC SSR</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://srkrec.ac.in/naac.php"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >NAAC Mandates</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://srkrec.ac.in/nirf.php"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >NIRF Disclosures</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://srkrec.ac.in/nba.php"
+                        target="_blank"
+                        rel="noopener"
+                        ><span><i class="fa-light fa-arrow-right"></i></span>NBA
+                        Accreditation</a>
+                    </li>
+                    <li>
+                      <a href="/vitals"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Institute Vitals</a>
+                    </li>
+                    <li>
+                      <a href="/development-plan"
+                        ><span><i class="fa-light fa-arrow-right"></i></span
+                        >Institution Development Plan</a>
+                    </li>
                   </ul>
                 </div>
               </div>
               <div class="program-info">
                 <h5>IQAC Coordinator</h5>
-                <p>Dr. S. Rajesh<br/>Dean, IQAC · Member Secretary</p>
+                <p>Dr. S. Rajesh<br />Dean, IQAC · Member Secretary</p>
                 <div class="contact-info mt--10 mb--10">
                   <h5>Email:</h5>
-                  <a href="mailto:iqac@srkrec.edu.in">iqac@srkrec.edu.in</a>
+                  <a href="mailto:iqac@srkrec.ac.in">iqac@srkrec.ac.in</a>
                   {/* TODO: confirm official IQAC email */}
                 </div>
               </div>
@@ -257,15 +665,17 @@ const bestPractices = [
                       </tr>
                     </thead>
                     <tbody>
-                      {iqacMembers.map((m) => (
-                        <tr>
-                          <td>{m.sno}</td>
-                          <td>{m.category}</td>
-                          <td>{m.name}</td>
-                          <td>{m.designation}</td>
-                          <td>{m.position}</td>
-                        </tr>
-                      ))}
+                      {
+                        iqacMembers.map((m) => (
+                          <tr>
+                            <td>{m.sno}</td>
+                            <td>{m.category}</td>
+                            <td>{m.name}</td>
+                            <td>{m.designation}</td>
+                            <td>{m.position}</td>
+                          </tr>
+                        ))
+                      }
                     </tbody>
                   </table>
                 </div>
@@ -280,53 +690,105 @@ const bestPractices = [
             <div class="program-credit-area faq rts-scholarship-description">
               <div class="program-accordion">
                 <div class="accordion" id="iqac-docs-accordion">
-
                   <div class="accordion-item">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aqarList" aria-expanded="true">Annual Quality Assurance Reports (AQAR)</button>
-                    <div id="aqarList" class="accordion-collapse collapse show" data-bs-parent="#iqac-docs-accordion">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#aqarList"
+                      aria-expanded="true"
+                      >Annual Quality Assurance Reports (AQAR)</button
+                    >
+                    <div
+                      id="aqarList"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#iqac-docs-accordion"
+                    >
                       <div class="accordion-body">
                         <ul class="list-unstyled">
-                          {aqarReports.map((r) => (
-                            <li class="si__list--single"><a href={r.href} target="_blank" rel="noopener">AQAR Report {r.year} (PDF)</a></li>
-                          ))}
+                          {
+                            aqarReports.map((r) => (
+                              <li class="si__list--single">
+                                <a href={r.href} target="_blank" rel="noopener">
+                                  AQAR Report {r.year} (PDF)
+                                </a>
+                              </li>
+                            ))
+                          }
                         </ul>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#meetingMinutes" aria-expanded="false">Recent IQAC Meeting Minutes</button>
-                    <div id="meetingMinutes" class="accordion-collapse collapse" data-bs-parent="#iqac-docs-accordion">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#meetingMinutes"
+                      aria-expanded="false">Recent IQAC Meeting Minutes</button
+                    >
+                    <div
+                      id="meetingMinutes"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#iqac-docs-accordion"
+                    >
                       <div class="accordion-body">
                         <ul class="list-unstyled">
-                          {recentMeetings.map((m) => (
-                            <li class="si__list--single"><a href={m.href} target="_blank" rel="noopener">IQAC Meeting — {m.date} (PDF)</a></li>
-                          ))}
-                          <li class="si__list--single"><a href="https://srkrec.ac.in/iqac.php" target="_blank" rel="noopener">View full archive (2016 onwards)</a></li>
+                          {
+                            recentMeetings.map((m) => (
+                              <li class="si__list--single">
+                                <a href={m.href} target="_blank" rel="noopener">
+                                  IQAC Meeting — {m.date} (PDF)
+                                </a>
+                              </li>
+                            ))
+                          }
+                          <li class="si__list--single">
+                            <a
+                              href="https://srkrec.ac.in/iqac.php"
+                              target="_blank"
+                              rel="noopener"
+                              >View full archive (2016 onwards)</a>
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orderList" aria-expanded="false">IQAC Reconstitution Orders</button>
-                    <div id="orderList" class="accordion-collapse collapse" data-bs-parent="#iqac-docs-accordion">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#orderList"
+                      aria-expanded="false">IQAC Reconstitution Orders</button
+                    >
+                    <div
+                      id="orderList"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#iqac-docs-accordion"
+                    >
                       <div class="accordion-body">
                         <ul class="list-unstyled">
-                          {reconstitutionOrders.map((o) => (
-                            <li class="si__list--single"><a href={o.href} target="_blank" rel="noopener">IQAC Order dated {o.date} (PDF)</a></li>
-                          ))}
+                          {
+                            reconstitutionOrders.map((o) => (
+                              <li class="si__list--single">
+                                <a href={o.href} target="_blank" rel="noopener">
+                                  IQAC Order dated {o.date} (PDF)
+                                </a>
+                              </li>
+                            ))
+                          }
                         </ul>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
