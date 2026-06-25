@@ -7,57 +7,41 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
 const hod = [
-  {
-    name: 'Dr. G. N. V. Kishore',
-    designation: 'Professor & Head of Division',
-    specialization: 'Fixed Point Theory',
-    profile: '#'
-  }
+  { name: 'Dr. G. N. V. Kishore', designation: 'Professor & Head of Division', specialization: 'Fixed Point Theory', profile: '#' }
 ];
 
 const faculty = [
-  { name: 'Dr. D. Venkatapathi Raju', designation: 'Professor', specialization: 'Finance and Marketing', profile: '#' },
-  { name: 'Dr. R. Subba Rao', designation: 'Professor', specialization: 'Software Reliability, Mathematical Modeling, Circular Modeling and Statistical Inference', profile: '#' },
-  { name: 'Dr. K. Kiran Kumar Varma', designation: 'Associate Professor', specialization: 'Human Resource and Management', profile: '#' },
-  { name: 'Dr. P. A. R. K. Raju', designation: 'Professor Emeritus', specialization: 'Hydrogeology', profile: '#' },
-  { name: 'Dr. K. Radha Krishnam Raju', designation: 'Professor Emeritus', specialization: 'Water Resources, Remote Sensing', profile: '#' },
-  { name: 'Dr. M. Siva Krishnam Raju', designation: 'Associate Professor', specialization: 'Rural Marketing', profile: '#' },
-  { name: 'Dr. P. Raghuram', designation: 'Associate Professor', specialization: 'Remote Sensing & GIS, Geology, Application of Geospatial technologies in Civil Engineering and Environment', profile: '#' },
-  { name: 'Dr. T. Rambabu', designation: 'Associate Professor', specialization: 'Remote Sensing & GIS, Geology, Morphometric analysis, Watershed management', profile: '#' },
-  { name: 'Dr. S. Ramalingeswara Rao', designation: 'Associate Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Dr. Y. Sobhanbabu', designation: 'Associate Professor', specialization: 'Relativity and Cosmology', profile: '#' },
-  { name: 'Dr. N. Veerraju', designation: 'Associate Professor', specialization: 'Fuzzy Sets and Applications to O.R', profile: '#' },
-  { name: 'Dr. K. S. Srinivas Babu', designation: 'Associate Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Dr. M. Satyanarayana', designation: 'Professor Emeritus', specialization: 'Marine Living Resources, Environmental Sciences', profile: '#' },
-  { name: 'Dr. G. Suribabu', designation: 'Associate Professor', specialization: 'Environmental Science, Microbiology', profile: '#' },
-  { name: 'Dr. Kosuri Satya Vara Prasada Raju', designation: 'Professor Emeritus', specialization: 'Geology', profile: '#' },
-  { name: 'Dr. I Anil', designation: 'Assistant Professor', specialization: 'MBA', profile: '#' },
-  { name: 'Dr. M. Sarojini', designation: 'Professor Emeritus', specialization: 'economics', profile: '#' },
-  { name: 'Sri S. N. V. Satyanarayana', designation: 'Professor Emeritus', specialization: 'politics', profile: '#' },
-  { name: 'Dr. G. Santhi', designation: 'Assistant Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Dr. T. R. K. D. V. Prasad', designation: 'Assistant Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Dr. Dandu Sridevi', designation: 'Assistant Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Dr. T. Satish', designation: 'Assistant Professor', specialization: 'Algebra', profile: '#' },
-  { name: 'Dr. K. Venkatrao', designation: 'Assistant Professor', specialization: 'Nano Fluids', profile: '#' },
-  { name: 'Dr. K. Neelima', designation: 'Assistant Professor', specialization: 'Soft Skills', profile: '#' },
-  { name: 'Sri V. S. K. Chaturya', designation: 'Assistant Professor', specialization: 'Rural Marketing', profile: '#' },
-  { name: 'Dr. G. Vidya Sagar', designation: 'Assistant Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Sri B. Srinivasu', designation: 'Assistant Professor', specialization: 'Differential Equations', profile: '#' },
-  { name: 'Sri M. Prudhvy Raju', designation: 'Assistant Professor', specialization: 'Management Studies', profile: '#' },
-  { name: 'A. Kiran Kumar', designation: 'Assistant Professor', specialization: 'Algebra', profile: '#' },
-  { name: 'Sri N. Krishna Mohana Raju', designation: 'Assistant Professor', specialization: 'Marketing and Supply Chain', profile: '#' },
-  { name: 'Smt R. Lakshmi Hyma', designation: 'Assistant Professor', specialization: 'Management Studies', profile: '#' },
-  { name: 'Dr. M. Pushpa Latha', designation: 'Assistant Professor', specialization: 'Reliability, Statistical Inference', profile: '#' },
-  { name: 'Dr. N. Udaya Bhaskara Varma', designation: 'Assistant Professor', specialization: 'Fluid Dynamics', profile: '#' },
-  { name: 'Smt P. Vasundhara', designation: 'Assistant Professor', specialization: 'Human resource management and marketing management', profile: '#' },
-  { name: 'R. Sirisha', designation: 'Assistant Professor', specialization: 'Management Studies', profile: '#' },
-  { name: 'Sri J. Jeevan Kumar', designation: 'Assistant Professor', specialization: 'Analytical Chemistry, Water Chemistry and Nano Materials', profile: '#' },
-  { name: 'Dr. T. Basha Shaik', designation: 'Professor Emeritus', specialization: 'Biotechnology', profile: '#' },
-  { name: 'Ms. G. Rajeswari Mallika', designation: 'Assistant Professor', specialization: 'Real Analysis', profile: '#' },
-  { name: 'Ms. Veduruparthi P. N. V. Kumari', designation: 'Assistant Professor', specialization: 'Algebra', profile: '#' },
-  { name: 'Baskar C', designation: 'Manager, International Affairs', specialization: 'Human Resource', profile: '#' },
-  { name: 'Balagopala Ramesh Babu', designation: 'Aptitude Trainer', specialization: 'Computer science and engineering', profile: '#' },
-  { name: 'Dr. R. Mrutyunjaya Rao', designation: 'Professor Emeritus', specialization: 'chemistry', profile: '#' }
+  { "name": "Dr. G.N.V. Kishore", "profile": "https://srkrec.irins.org/profile/452412", "email": "kishore.apr2@gmail.com", "specialization": "Metric Fixed point theory, Non Linear Functional Analysis", "designation": "Professor & Head", "image": "1141.jpg" },
+  { "name": "Dr. R. Subba Rao", "profile": "https://srkrec.irins.org/profile/453167", "email": "rsubbarao9@gmail.com", "specialization": "Mathemadelling, Circular Probability Analysis, Statistical Inference, Population and Reliability", "designation": "Professor", "image": "1013.jpg" },
+  { "name": "Dr. D. Venkatapathi Raju", "profile": "", "email": "drdvpr@gmail.com", "specialization": "Finance", "designation": "Professor", "image": "1301.jpg" },
+  { "name": "Dr. K. Kirankumar Varma", "profile": "", "email": "kiranvarm5995@gmail.com", "specialization": "Marketing", "designation": "Associate Professor", "image": "1102.jpg" },
+  { "name": "Dr. S. Ramalingeswara Rao", "profile": "https://srkrec.irins.org/profile/554286", "email": "ramu.eswar30@gmail.com", "specialization": "Fluid Dynamics", "designation": "Associate Professor", "image": "533.jpg" },
+  { "name": "Dr. Y. Sobhan Babu", "profile": "https://srkrec.irins.org/profile/450111", "email": "sobhan.maths@gmail.com", "specialization": "Relativity and Cosmology", "designation": "Associate Professor", "image": "681.jpg" },
+  { "name": "Dr. Nalla Veerraju", "profile": "https://srkrec.irins.org/profile/322430", "email": "veerrajunalla@gmail.com", "specialization": "Fuzzy sets with operations research", "designation": "Associate Professor", "image": "462.jpg" },
+  { "name": "Dr. K.S. Srinivasa Babu", "profile": "https://srkrec.irins.org/profile/321844", "email": "kssb@srkrec.ac.in", "specialization": "Fluid Dynamics", "designation": "Associate Professor", "image": "463.jpg" },
+  { "name": "Dr. G. Santhi", "profile": "https://srkrec.irins.org/profile/554255", "email": "gottumukkala.santhi@gmail.com", "specialization": "Fluid Dynamics, HMT, Numerical Analysis, Probability & Statistics", "designation": "Assistant Professor", "image": "337.jpg" },
+  { "name": "Dr. T.R.K.D.V. Prasad", "profile": "https://srkrec.irins.org/profile/554222", "email": "trkdvprasad@gmail.com", "specialization": "Fluid Dynamics", "designation": "Assistant Professor", "image": "507.jpg" },
+  { "name": "Dr. D. Sridevi", "profile": "https://srkrec.irins.org/profile/554249", "email": "sridevi9701311198@gmail.com", "specialization": "Fluid Dynamics", "designation": "Assistant Professor", "image": "547.jpg" },
+  { "name": "Dr. T. Satish", "profile": "https://srkrec.irins.org/profile/554275", "email": "tsatishmaths@gmail.com", "specialization": "Algebra", "designation": "Assistant Professor", "image": "617.jpg" },
+  { "name": "Dr. K. V. Rao", "profile": "https://srkrec.irins.org/profile/548529", "email": "venkatarao.k@srkrec.ac.in", "specialization": "Nano Fluids", "designation": "Assistant Professor", "image": "753.jpg" },
+  { "name": "Dr. G. Vidyasagar", "profile": "https://srkrec.irins.org/profile/554283", "email": "vidyasagar.g@srkrec.edu.in", "specialization": "Fluid Dynamics", "designation": "Assistant Professor", "image": "1146.jpg" },
+  { "name": "B. Srinivas", "profile": "https://srkrec.irins.org/profile/545824", "email": "sballa1974@gmail.com", "specialization": "Syatem theorey and Computer Modeling", "designation": "Assistant Professor", "image": "1269.jpg" },
+  { "name": "M. Prudhvy Raju", "profile": "", "email": "prudhvysrkr@gmail.com", "specialization": "Marketing", "designation": "Assistant Professor", "image": "1293.jpg" },
+  { "name": "A. Kiran Kumar", "profile": "https://srkrec.irins.org/profile/579066", "email": "kirankumarappana@gmail.com", "specialization": "Fixed point theory", "designation": "Assistant Professor", "image": "1306.jpg" },
+  { "name": "N. Krishna Mohan Raju", "profile": "", "email": "nkmrmbavit@gmail.com", "specialization": "Marketing", "designation": "Assistant Professor", "image": "default.jpg" },
+  { "name": "R. Lakshmi Hyma", "profile": "https://srkrec.irins.org/profile/579106", "email": "rlhyma@srkrec.ac.in", "specialization": "Human Resource Management", "designation": "Assistant Professor", "image": "1329.jpg" },
+  { "name": "Dr. M. Pushpa Latha", "profile": "https://srkrec.irins.org/profile/180033", "email": "pushpamamidi@gmail.com", "specialization": "Statistical Inference, Reliability, Mathematical Modelling", "designation": "Assistant Professor", "image": "1331.jpg" },
+  { "name": "Dr. N. Udaya Bhaskara Varma", "profile": "https://srkrec.irins.org/profile/554243", "email": "varma9866157035@gmail.com", "specialization": "Fluid Dynamics", "designation": "Assistant Professor", "image": "1335.jpg" },
+  { "name": "Patri Vasundhara", "profile": "https://srkrec.irins.org/profile/579052", "email": "vasundhara@srkrec.ac.in", "specialization": "Human Resource Management", "designation": "Assistant Professor", "image": "1280.jpg" },
+  { "name": "R. Sirisha", "profile": "https://srkrec.irins.org/profile/578992", "email": "rsirisha@srkrec.ac.in", "specialization": "Human Resource Management, Marketing", "designation": "Assistant Professor", "image": "1262.jpg" },
+  { "name": "G. R. Mallika", "profile": "https://srkrec.irins.org/profile/590399", "email": "grmallika@srkrec.ac.in", "specialization": "Pure Mathematics", "designation": "Assistant Professor", "image": "1373.jpg" },
+  { "name": "V. P.N.V Kumari", "profile": "", "email": "veduruperthipriyanka23@gmail.com", "specialization": "Operation Research", "designation": "Assistant Professor", "image": "1374.jpg" },
+  { "name": "Dr. M. Siva Krishnam Raju", "profile": "https://srkrec.irins.org/profile/715190", "email": "mskr007@gmail.com", "specialization": "HR & Marketing", "designation": "Associate Professor", "image": "990.jpg" },
+  { "name": "V.S.K. Chaturya", "profile": "https://srkrec.irins.org/profile/715179", "email": "chaturyavegesna@gamil.com", "specialization": "Finance Marketing", "designation": "Assistant Professor", "image": "1132.jpg" },
+  { "name": "Dr. P. Raghuram", "profile": "https://srkrec.irins.org/profile/268757", "email": "praghuram@srkrec.ac.in", "specialization": "Remote Sensing & GIS, Geology, Application of Geospatial Technologies in Civil Engineering and Environment", "designation": "Associate Professor", "image": "618.jpg" },
+  { "name": "Dr. G. Suribabu", "profile": "https://srkrec.irins.org/profile/536941", "email": "gsuribabu@srkrec.edu.in", "specialization": "Environmental Science, Microbiology", "designation": "Associate Professor", "image": "619.jpg" },
+  { "name": "Sri. J. Jeevan Kumar", "profile": "https://srkrec.irins.org/profile/702501", "email": "jeevankumar@srkrec.ac.in", "specialization": "Analytical Chemistry, Water Chemistry and Nano Materials", "designation": "Assistant Professor", "image": "762.jpg" },
+  { "name": "Dr. T. Rambabu", "profile": "https://srkrec.irins.org/profile/500161", "email": "rambabu.tenneti@srkrec.edu.in", "specialization": "Remote Sensing & GIS, Geology, Morphometric Analysis, Watershed Management", "designation": "Associate Professor", "image": "763.jpg" },
 ];
 ---
 
@@ -100,7 +84,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} />
+                    <img src={`/assets/images/faculty/maths_humanitites/1141.jpg`} alt={f.name} />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -126,7 +110,7 @@ const faculty = [
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    <img src="/assets/images/faculty/placeholder.jpg" alt={f.name} loading="lazy" decoding="async" />
+                    <img src={`/assets/images/faculty/maths_humanitites/${f.image}`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
