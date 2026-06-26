@@ -46,6 +46,28 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "srkrec.edu.in"
+        }
+      ],
+      "destination": "https://www.srkrec.ac.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.srkrec.edu.in"
+        }
+      ],
+      "destination": "https://www.srkrec.ac.in/:path*",
+      "permanent": true
+    },
     { "source": "/index.php", "destination": "/", "permanent": true },
     { "source": "/home.php", "destination": "/", "permanent": true },
 
