@@ -31,26 +31,57 @@
 // mobile menu scss
 
 .mobile-menu-main {
-    nav {
-        ul {
-            padding: 0px;
-            display: block;
+   nav {
+    ul {
+        padding: 0;
+        display: block;
 
-            li {
-                margin: 0;
-                padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+            position: relative;
 
-                a.main {
-                    padding: 12px 0 17px 0;
-                    border-bottom: 1px solid #f3f3f3;
+            a.main {
+                padding: 12px 0 17px;
+                border-bottom: 1px solid #f3f3f3;
+                cursor: pointer;
+            }
+
+            &.has-droupdown {
+                position: relative;
+
+                // Apply to all dropdown levels
+                &::after {
+                    position: absolute;
+                    content: '\2b';
+                    font-family: var(--fontawesome) !important;
+                    font-size: 16px;
+                    right: 0;
+                    top: 5px;
+                    padding: 8px 13px;
+                    color: #fff;
+                    background: var(--rt-primary-2);
+                    font-weight: 400;
+                    pointer-events: none;
                     cursor: pointer;
                 }
 
-                &.has-droupdown {
-                    position: relative;
+                &.mm-active::after {
+                    content: '\f068';
+                }
 
-                    ul {
-                        padding: 0;
+                > ul {
+                    padding: 0;
+
+                    li {
+                        margin: 7px 0 !important;
+                        border-bottom: 1px solid #f3f3f3;
+
+                        // Nested dropdowns automatically get the icon
+                        &.has-droupdown::after {
+                            top: 5px;
+                            right: 0;
+                        }
 
                         a {
                             padding: 10px 0;
@@ -63,72 +94,46 @@
                             border-bottom: 2px solid var(--rt-primary);
                             padding: 10px 0;
                         }
+                    }
+                }
+
+                &.third-lvl {
+                    &::after {
+                        font-size: 10px;
+                        padding: 3px 10px;
+                    }
+
+                    ul {
+                        padding: 0 20px;
 
                         li {
-                            margin: 7px 0 !important;
-                            border-bottom: 1px solid #f3f3f3;
-                        }
-                    }
+                            margin: 10px 0 !important;
+                            position: relative;
+                            z-index: 1;
+                            transition: all .3s;
 
-                    &::after {
-                        position: absolute;
-                        content: '\2b';
-                        font-family: var(--fontawesome) !important;
-                        font-size: 16px;
-                        right: 0;
-                        font-weight: 400;
-                        top: 5px;
-                        padding: 8px 13px;
-                        color: #fff;
-                        background: var(--rt-primary-2) !important;
-                        pointer-events: none;
-                        cursor: pointer;
-                    }
+                            &:hover {
+                                color: var(--rt-primary);
+                            }
 
-                    &.mm-active {
-                        &::after {
-                            content: '\f068';
-                        }
-                    }
-
-                    &.third-lvl {
-                        &::after {
-                            font-size: 10px;
-                            padding: 3px 10px;
-                        }
-
-                        ul {
-                            padding: 0 20px;
-
-                            li {
-                                margin: 10px 0 !important;
-                                position: relative;
-                                z-index: 1;
+                            a {
+                                position: absolute;
+                                inset: 0;
                                 transition: all .3s;
-
-                                &:hover {
-                                    color: var(--rt-primary);
-                                }
-
-                                a {
-                                    position: absolute;
-                                    width: 100%;
-                                    height: 100%;
-                                    transition: all .3s;
-                                }
                             }
                         }
                     }
                 }
+            }
 
-                a {
-                    display: block;
-                    color: var(--rt-body);
-                    font-size: 15px;
-                }
+            a {
+                display: block;
+                color: var(--rt-body);
+                font-size: 15px;
             }
         }
     }
+}
 
     .social-wrapper-one {
         margin-top: 50px;
