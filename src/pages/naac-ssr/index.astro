@@ -1,0 +1,72 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+
+const pageTitle = "NAAC Self Study Report (SSR)";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${pageTitle} | SRKR Engineering College`} description="SRKR Engineering College NAAC Self Study Report (SSR) Cycle 2." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/iqac/">IQAC</a></li>
+              </ul>
+              <h1 class="section-title">NAAC SSR Report</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-about-area rts-section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-md-12 text-center">
+            <div class="ssr-download-card mb--40 p-5 border shadow-sm bg-white rounded">
+              <h3>NAAC SSR Cycle 2 Report (2022)</h3>
+              <p class="text-muted">The complete Self Study Report submitted to NAAC for Cycle 2 accreditation.</p>
+              <a 
+                href="/assets/documents/naac/srkr_naac_ssr_report_2022.pdf" 
+                class="rts-theme-btn btn-lg mb--30" 
+                target="_blank" 
+                rel="noopener"
+              >
+                Download Full SSR Report (PDF)
+              </a>
+              <div class="pdf-container" style="position: relative; width: 100%; height: 800px;">
+                <object 
+                  data="/assets/documents/naac/srkr_naac_ssr_report_2022.pdf#toolbar=0&navpanes=0" 
+                  type="application/pdf" 
+                  style="width: 100%; height: 100%;"
+                >
+                  <p>Your browser does not support embedding PDFs. <a href="/assets/documents/naac/srkr_naac_ssr_report_2022.pdf">Download the PDF</a> instead.</p>
+                </object>
+              </div>
+            </div>
+            
+            <div class="back-btn-wrapper">
+              <a href="/iqac/" class="rts-theme-btn">Back to IQAC</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

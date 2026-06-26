@@ -31,13 +31,22 @@ const bosMembers = [
 
 // PAQIC Committee Members
 const paqicMembers = [
-  { name: 'Dr. B. Ravi Kumar Varma', role: 'Chairman',    link: '', image: 'hod' },
+  { name: 'Dr. B. Ravi Kumar Varma', role: 'Chairman',    link: '', image: '221' },
   { name: 'Dr. M. Venu Gopala Rao',  role: 'Coordinator', link: '', image: 'prof-1' },
   { name: 'Dr. K. Sreenivasa Rao',   role: 'Member',      link: '', image: 'prof-2' },
   { name: 'Dr. V. Subba Rao',        role: 'Member',      link: '', image: 'prof-3' },
   { name: 'Dr. G. Naga Lakshmi',     role: 'Member',      link: '', image: 'assoc-1' },
   { name: 'Dr. A. Suresh Kumar',     role: 'Member',      link: '', image: 'assoc-2' },
 ];
+
+const validImages = [
+  '221', '693', '283', '347', '404', '881', '395', '882', '1204', '1205', 
+  '381', '405', '496', '529', '567', '593', '653', '655', '652', '654', 
+  '683', '691', '692', '699', '874', '941', '965', '970', '986', '1046', 
+  '1075', '1087', '1176', '1183', '1185', '1184', '1195', '1209', '1345', 
+  'DrKRavindraPhD', 'Ravikumar_Bhimasingu', 'Dr.VuddantiSandeep', 'Dr.AdapaAnil', 'V.naga-Mohan-Krishna-P'
+];
+
 ---
 
 <style>
@@ -111,8 +120,12 @@ const paqicMembers = [
           {dacMembers.map((member) => (
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
-                <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                  {member.image && validImages.includes(member.image) ? (
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                  ) : (
+                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
+                  )}
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
@@ -146,8 +159,12 @@ const paqicMembers = [
           {bosMembers.map((member) => (
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
-                <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                  {member.image && validImages.includes(member.image) ? (
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                  ) : (
+                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
+                  )}
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
@@ -181,8 +198,12 @@ const paqicMembers = [
           {paqicMembers.map((member) => (
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
-                <div class="cat-thumb" style="height: 250px;">
-                  <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                  {member.image && validImages.includes(member.image) ? (
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                  ) : (
+                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
+                  )}
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">

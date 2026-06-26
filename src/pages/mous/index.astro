@@ -7,43 +7,7 @@ import OffCanvas from '../../components/OffCanvas.astro';
 
 const pageTitle = "MoUs & Collaborations";
 
-// TODO: replace placeholder MoU list with the verified institutional MoU register
-const academic = [
-  { partner: 'IIT Bombay', focus: 'Remote Centre, Spoken Tutorial Lead College, e-Yantra', year: '2014' },
-  { partner: 'IIT Madras', focus: 'NPTEL Local Chapter &mdash; online certification courses', year: '2015' },
-  { partner: 'Wageningen University, The Netherlands', focus: 'Kolleru lake &amp; Upputeru estuary rehabilitation', year: '2006' },
-  { partner: 'University of Hyderabad', focus: 'DBT National Network Project on Biotech R&amp;D', year: '2024' }
-];
 
-const industry = [
-  { partner: 'CISCO', focus: 'CISCO Networking Academy &mdash; certifications', year: '2017' },
-  { partner: 'Dassault Systèmes', focus: 'Dassault Systems Lab &mdash; SOLIDWORKS &amp; 3DEXPERIENCE', year: '2019' },
-  { partner: 'Siemens (via APSSDC)', focus: 'PLC, automation &amp; mechatronics labs', year: '2020' },
-  { partner: 'PossiBuild Building Technologies, Hyderabad', focus: 'Industry expert &amp; consultancy partner (Civil Engg.)', year: '2022' }
-];
-
-const govPsu = [
-  { partner: 'MSME, Govt. of India', focus: 'Business Incubator (BI) / Host Institute', year: '2016' },
-  { partner: 'AICTE &mdash; IDEA Lab', focus: 'Idea Development, Evaluation &amp; Application Lab', year: '2021' },
-  { partner: 'MoE Innovation Cell (MIC)', focus: 'Institution\'s Innovation Council (IIC)', year: '2018' },
-  { partner: 'APSSDC', focus: 'AP Skill Development &amp; CM Skill Excellence Centre', year: '2017' },
-  { partner: 'DST &mdash; FIST', focus: 'S&amp;T Infrastructure improvement grant', year: '2018' },
-  { partner: 'NRSC / ISRO &mdash; Bhuvan', focus: 'Asset mapping using Bhuvan Panchayat mobile app', year: '2017' }
-];
-
-const international = [
-  { partner: 'Stanford University, USA', focus: 'Student exchange visits, Silicon Valley meetups', year: '2022' },
-  { partner: 'Indo-Israeli Joint Project (DST)', focus: 'Longitudinal Electronic Health Records research', year: '2018' },
-  { partner: 'Indo-Korean Joint Research Project (DST)', focus: 'Miniaturised electrochemical devices for cancer biomarkers', year: '2018' },
-  { partner: 'EPICS in IEEE', focus: 'Engineering Projects in Community Service', year: '2019' }
-];
-
-const all = [
-  { group: 'Academic Partners', items: academic, anchor: 'academic' },
-  { group: 'Industry Partners', items: industry, anchor: 'industry' },
-  { group: 'Government &amp; PSU', items: govPsu, anchor: 'gov-psu' },
-  { group: 'International', items: international, anchor: 'international' }
-];
 ---
 
 <!doctype html>
@@ -90,22 +54,10 @@ const all = [
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10 col-xl-10">
-            <div class="rts-funfact-wrapper">
+            <div class="rts-funfact-wrapper justify-content-center">
               <div class="single-cta-item">
-                <h2 class="single-cta-item__title">{academic.length + industry.length + govPsu.length + international.length}+</h2>
+                <h2 class="single-cta-item__title">50+</h2>
                 <p>Active MoUs</p>
-              </div>
-              <div class="single-cta-item">
-                <h2 class="single-cta-item__title">{academic.length}</h2>
-                <p>Academic Partners</p>
-              </div>
-              <div class="single-cta-item">
-                <h2 class="single-cta-item__title">{industry.length}+</h2>
-                <p>Industry Partners</p>
-              </div>
-              <div class="single-cta-item">
-                <h2 class="single-cta-item__title">{international.length}</h2>
-                <p>International Collabs</p>
               </div>
             </div>
           </div>
@@ -113,108 +65,12 @@ const all = [
       </div>
     </div>
 
-    <!-- Category Card Grid (navigation) -->
-    <section class="rts-faculty-details pt--40 pb--40">
-      <div class="container">
-        <div class="row justify-content-md-center g-0">
-          <div class="rts-section mb--40 text-center">
-            <h3 class="rts-section-title">Browse by Category</h3>
-          </div>
-          <div class="col-lg-4 col-md-10">
-            <div class="program__single--item">
-              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg1.jpg" alt=""></div>
-              <ul class="program__single--item--list">
-                <li class="program__single--item--list--item"><a href="#academic" class="link__list">Academic Partners<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-                <li class="program__single--item--list--item"><a href="#industry" class="link__list">Industry Partners<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-10">
-            <div class="program__single--item v__2">
-              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg2.jpg" alt="" loading="lazy" decoding="async"></div>
-              <ul class="program__single--item--list">
-                <li class="program__single--item--list--item"><a href="#gov-psu" class="link__list">Government &amp; PSU<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-                <li class="program__single--item--list--item"><a href="#international" class="link__list">International<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-10">
-            <div class="program__single--item">
-              <div class="program__single--item--bg"><img src="/assets/images/program/program__bg3.jpg" alt="" loading="lazy" decoding="async"></div>
-              <ul class="program__single--item--list">
-                <li class="program__single--item--list--item"><a href="/research-overview/" class="link__list">Research Overview<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-                <li class="program__single--item--list--item"><a href="/research-projects/" class="link__list">Research Projects<span><i class="fa-regular fa-arrow-right"></i></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MoU Cards by category + Sidebar -->
+    <!-- Sidebar only -->
     <section class="rts-scholarship pt--40 pb--60">
       <div class="container">
         <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
-
-          <!-- Left -->
+          <!-- Sidebar -->
           <div class="col-lg-8 col-md-11">
-
-            {all.map((cat) => (
-              <div class="mb--60" id={cat.anchor}>
-                <div class="rts-section mb--30 border-bottom pb-3">
-                  <h3 class="rts-section-title" set:html={cat.group}></h3>
-                </div>
-                <div class="row g-4">
-                  {cat.items.map((m) => (
-                    <div class="col-md-6">
-                      <div class="research-procedure" style="padding:24px;">
-                        <div class="icon mb--10">
-                          {/* TODO: replace placeholder logo with partner logo when available */}
-                          <img src="/assets/images/icon/14.svg" alt="" / loading="lazy" decoding="async">
-                        </div>
-                        <a href="#">{m.partner}</a>
-                        <p set:html={m.focus}></p>
-                        <p class="mt--10"><strong>Signed:</strong> {m.year}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-
-            <!-- Filter categories accordion (no JS, just expandable lists) -->
-            <div class="program-credit-area faq rts-scholarship-description mt--40">
-              <h4 class="title mb--30">All MoUs at a Glance</h4>
-              <div class="program-accordion">
-                <div class="accordion" id="mou-accordion">
-
-                  {all.map((cat, idx) => (
-                    <div class="accordion-item">
-                      <button class={`accordion-button ${idx === 0 ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#mou-${cat.anchor}`} aria-expanded={idx === 0 ? 'true' : 'false'}>
-                        <span set:html={cat.group}></span> ({cat.items.length})
-                      </button>
-                      <div id={`mou-${cat.anchor}`} class={`accordion-collapse collapse ${idx === 0 ? 'show' : ''}`} data-bs-parent="#mou-accordion">
-                        <div class="accordion-body">
-                          <div class="si"><div class="si__list">
-                            <ul class="list-unstyled">
-                              {cat.items.map((m) => (
-                                <li class="si__list--single"><strong>{m.partner}</strong> &mdash; <span set:html={m.focus}></span> ({m.year})</li>
-                              ))}
-                            </ul>
-                          </div></div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right sidebar -->
-          <div class="col-lg-4 col-md-11 sticky-coloum-item">
             <div class="program-sidebar">
 
               <div class="program-curriculum">

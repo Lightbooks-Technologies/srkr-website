@@ -162,6 +162,8 @@
     { "source": "/digital.php", "destination": "/digital/", "permanent": true },
     { "source": "/computer_center.php", "destination": "/computer-center/", "permanent": true },
     { "source": "/tech_center.php", "destination": "/tech-center/", "permanent": true },
+    { "source": "/gcc.php", "destination": "/center-for-it-infrastructure/", "permanent": true },
+    { "source": "/it-infrastructure", "destination": "/center-for-it-infrastructure/", "permanent": true },
     { "source": "/facilities.php", "destination": "/facilities/", "permanent": true },
     { "source": "/foreign.php", "destination": "/foreign/", "permanent": true },
     { "source": "/international.php", "destination": "/foreign/", "permanent": true },

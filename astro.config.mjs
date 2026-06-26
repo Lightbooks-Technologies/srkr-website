@@ -330,11 +330,7 @@ const astroRedirects = {
     "/EEE_Department.php": { status: 302, destination: "/departments/eee/" },
     "/IT_Department.php": { status: 302, destination: "/departments/it/" },
     "/Mechanical_Department.php": { status: 302, destination: "/departments/mechanical/" },
-    "/Departments.php": { status: 302, destination: "/departments/" },
     "/Faculty.php": { status: 302, destination: "/departments/" },
-    "/Placements.php": { status: 302, destination: "/placements/" },
-    "/Iqac.php": { status: 302, destination: "/iqac/" },
-    "/About.php": { status: 302, destination: "/college-profile/" },
   };
 
 export default defineConfig({

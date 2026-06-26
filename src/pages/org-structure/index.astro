@@ -206,17 +206,20 @@ const researchInnovation = [
 
         <!-- Academic departments table -->
         <div class="row mt--80">
-          <div class="col-12">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">Academic Departments</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10 col-12">
             <div class="application-deadline">
-              <h3 class="rts-section-title">Academic Departments</h3>
               <div class="application-deadline__content">
                 <div class="application-deadline__content--table">
                   <table class="table">
                     <thead class="table-theme">
                       <tr>
                         <td>Department</td>
-                        <td>Head of Department</td>
-                        <td>Link</td>
+                        <td>Head of Department / Program Coordinator</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -224,14 +227,8 @@ const researchInnovation = [
                         <tr>
                           <td>{d.name}</td>
                           <td>{d.hod}</td>
-                          <td><a href={`/departments/${d.slug}/`}>Visit</a></td>
                         </tr>
                       ))}
-                      <tr>
-                        <td>Applied Sciences &amp; Humanities</td>
-                        <td>{/* TODO: confirm consolidated AS&H HoD */}—</td>
-                        <td><a href="/departments/ash/">Visit</a></td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -243,8 +240,7 @@ const researchInnovation = [
         <!-- Quick links -->
         <div class="row mt--40">
           <div class="col-12 text-center">
-            <p class="mb--20"><strong>Reference:</strong> the official organisation chart is available on the legacy site.</p>
-            <a class="rts-theme-btn" href="https://srkrec.ac.in/organogram.php" target="_blank" rel="noopener">View Official Organogram</a>
+            <a class="rts-theme-btn" href="/organogram/">View Official Organogram</a>
           </div>
         </div>
 
