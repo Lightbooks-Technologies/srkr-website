@@ -11,6 +11,17 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style is:global>
+      body.page p,
+      body.page .description,
+      body.page .campus-life__content p,
+      body.page .rts-section p,
+      body.page .single-feature p,
+      body.page .program-about p,
+      body.page .blog__single--item p {
+        text-align: justify;
+      }
+    </style>
   </head>
   <body class="page">
     <SrkrHeader />

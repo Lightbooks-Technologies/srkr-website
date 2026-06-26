@@ -581,6 +581,15 @@ const lifePages: Record<string, PageSeo> = {
       { name: 'Sustainability', url: '/sustainability/' },
     ],
   },
+  '/center-for-it-infrastructure/': {
+    title: `Centre for IT Infrastructure (CITI) | ${BRAND}`,
+    description:
+      'Centre for IT Infrastructure (CITI) at SRKR Engineering College — managing campus network backbone, high-speed optical fiber LAN, dedicated 24x7 internet leased line and digital learning platforms.',
+    breadcrumbs: [
+      { name: 'Life @ SRKR', url: '/student-clubs/' },
+      { name: 'Centre for IT Infrastructure (CITI)', url: '/center-for-it-infrastructure/' },
+    ],
+  },
   '/gallery/': {
     title: `Campus Gallery | Photos & Events | ${BRAND}`,
     description:

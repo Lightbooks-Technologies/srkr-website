@@ -46,6 +46,28 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "srkrec.edu.in"
+        }
+      ],
+      "destination": "https://www.srkrec.ac.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.srkrec.edu.in"
+        }
+      ],
+      "destination": "https://www.srkrec.ac.in/:path*",
+      "permanent": true
+    },
     { "source": "/index.php", "destination": "/", "permanent": true },
     { "source": "/home.php", "destination": "/", "permanent": true },
 
@@ -162,6 +184,8 @@
     { "source": "/digital.php", "destination": "/digital/", "permanent": true },
     { "source": "/computer_center.php", "destination": "/computer-center/", "permanent": true },
     { "source": "/tech_center.php", "destination": "/tech-center/", "permanent": true },
+    { "source": "/gcc.php", "destination": "/center-for-it-infrastructure/", "permanent": true },
+    { "source": "/it-infrastructure", "destination": "/center-for-it-infrastructure/", "permanent": true },
     { "source": "/facilities.php", "destination": "/facilities/", "permanent": true },
     { "source": "/foreign.php", "destination": "/foreign/", "permanent": true },
     { "source": "/international.php", "destination": "/foreign/", "permanent": true },

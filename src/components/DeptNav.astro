@@ -27,13 +27,23 @@ if (dept === 'ash') {
     { label: 'Faculty English', href: `/departments/ash/faculty-english/` },
     { label: 'EFL Highlights', href: `/departments/ash/ielts-test-centre/` },
     { label: 'SRKR Overseas', href: `/departments/ash/overseas-education-languages/` },
-    { label: 'Indian Knowledge Traditions', href: `/departments/ash/indian-knowledge-traditions/` },
+    { label: 'Indian Knowledge Systems', href: `/departments/ash/indian-knowledge-traditions/` },
   ];
 } else {
-  navItems = DEPT_NAV_ITEMS.map((item) => ({
-    label: item.label,
-    href: `${basePath}${item.path}`,
-  }));
+  navItems = DEPT_NAV_ITEMS.map((item) => {
+    let href = `${basePath}${item.path}`;
+    if (item.path === 'academic-programs/') {
+      if (['aids', 'csit', 'csbs'].includes(dept)) {
+        href = '/departments/it/academic-programs/';
+      } else if (['csd', 'aiml', 'cic'].includes(dept)) {
+        href = '/departments/cse/academic-programs/';
+      }
+    }
+    return {
+      label: item.label,
+      href,
+    };
+  });
 }
 ---
 
