@@ -12,6 +12,7 @@ import {
   ORG_EMAIL,
 } from '../consts';
 import { getPageSeo, buildBreadcrumbs } from '../data/seo';
+import Analytics from '@vercel/analytics/astro';
 
 interface BreadcrumbItem {
   name: string;
@@ -198,3 +199,4 @@ const extraBlocks = extraJsonLd
 <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
 <link rel="stylesheet" href="/assets/css/plugins/jquery-ui.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
+<Analytics />
