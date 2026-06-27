@@ -8004,6 +8004,12 @@ ol ul {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .my_sm--10 {
+    margin: 10px !important;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
