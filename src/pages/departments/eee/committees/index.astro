@@ -122,7 +122,7 @@ const validImages = [
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
                   {member.image && validImages.includes(member.image) ? (
-                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;">
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;">
                   ) : (
                     <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
                   )}
@@ -161,7 +161,7 @@ const validImages = [
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
                   {member.image && validImages.includes(member.image) ? (
-                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;" loading="lazy" decoding="async">
                   ) : (
                     <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
                   )}
@@ -200,7 +200,7 @@ const validImages = [
               <div class="single-cat-item">
                 <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
                   {member.image && validImages.includes(member.image) ? (
-                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;" loading="lazy" decoding="async">
                   ) : (
                     <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
                   )}
