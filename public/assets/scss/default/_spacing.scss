@@ -641,5 +641,11 @@ $gap: 5;
     }
 }
 
+.my_sm--10{
+    @media #{$sm-layout} {
+       margin: 10px !important;
+    }
+}
+
 
 
