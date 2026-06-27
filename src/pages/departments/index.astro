@@ -5,6 +5,26 @@ import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
 import { departments } from '../../data/departments';
+import { programs } from '../../data/programs';
+
+const programSlugs = new Set(programs.map((p) => p.slug));
+
+const associatedDeptPrograms: Record<string, string> = {
+  aids: '/departments/it/academic-programs/',
+  aiml: '/departments/cse/academic-programs/',
+  csbs: '/departments/it/academic-programs/',
+  cic: '/departments/cse/academic-programs/',
+  csit: '/departments/csit/academic-programs/',
+  csd: '/departments/csd/academic-programs/',
+  bba: '/departments/ash/',
+};
+
+const getDeptLink = (slug: string) => {
+  if (programSlugs.has(slug)) {
+    return associatedDeptPrograms[slug] || `/departments/${slug}/academic-programs/`;
+  }
+  return `/departments/${slug}/`;
+};
 ---
 
 <!doctype html>
@@ -51,7 +71,7 @@ import { departments } from '../../data/departments';
                     </div>
                   </div>
                   <p class="card-text flex-grow-1">{d.tagline}</p>
-                  <a href={`/departments/${d.slug}/`} class="rts-theme-btn mt-2 align-self-start">View Department</a>
+                  <a href={getDeptLink(d.slug)} class="rts-theme-btn mt-2 align-self-start">View Department</a>
                 </div>
               </div>
             </div>
