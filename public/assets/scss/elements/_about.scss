@@ -394,6 +394,14 @@
         width: 100%;
     }
 }
+@media (max-width: 767px) {
+    .rts-history-image {
+        height: auto;
+        img {
+            height: auto;
+        }
+    }
+}
 
 .rts-history-section {
     padding-left: 30px;

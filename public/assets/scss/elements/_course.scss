@@ -367,6 +367,7 @@
             }
 
             .accordion-body-content {
+                overflow-y: auto;   
                 .table {
                     margin-top: 20px;
 
@@ -1042,10 +1043,10 @@
                         border-bottom: 1px solid var(--rt-line);
 
                         &:first-child {
-                            td {
-                                font-weight: 600;
-                                color: var(--rt-secondary);
-                                vertical-align: middle;
+                            tdaccordion-body-content {
+                                // font-weight: 600;
+                                // color: var(--rt-secondary);
+                                // vertical-align: middle;
                             }
                         }
 
