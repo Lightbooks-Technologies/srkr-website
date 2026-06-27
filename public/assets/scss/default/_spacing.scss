@@ -626,3 +626,20 @@ $gap: 5;
     gap: #{$base + $i * $gap}px;
   }
 }
+
+.justify-content-sm-between{
+    
+    @media #{$sm-layout} {
+       justify-content: space-between !important;
+    }
+}
+
+.max-w-sm-100{
+    
+    @media #{$sm-layout} {
+       max-width: 100% !important;
+    }
+}
+
+
+
