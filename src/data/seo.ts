@@ -36,16 +36,16 @@ export function buildBreadcrumbs(
 }
 
 const home: PageSeo = {
-  title: `${BRAND} | NAAC A++ Autonomous Engineering College, Bhimavaram`,
+  title: `${BRAND} | NAAC A+ Autonomous Engineering College, Bhimavaram`,
   description:
-    'SRKR Engineering College, Bhimavaram (Est. 1980) — NAAC A++ accredited, autonomous engineering institution. NBA accredited B.Tech in CSE, ECE, EEE, Civil, Mechanical, IT. Top placements, world-class labs. Admissions 2025–26 open.',
+    'SRKR Engineering College, Bhimavaram (Est. 1980) — NAAC A+ accredited, autonomous engineering institution. NBA accredited B.Tech in CSE, ECE, EEE, Civil, Mechanical, IT. Top placements, world-class labs. Admissions 2025–26 open.',
 };
 
 const institutePages: Record<string, PageSeo> = {
   '/college-profile/': {
     title: `About SRKR | College Profile, History & Campus | ${BRAND}`,
     description:
-      'Discover SRKR Engineering College — 45+ years of academic excellence since 1980, 30+ acre green campus in Bhimavaram, AP. NAAC A++ accredited autonomous institution offering premier UG, PG and research programs.',
+      'Discover SRKR Engineering College — 45+ years of academic excellence since 1980, 30+ acre green campus in Bhimavaram, AP. NAAC A+ accredited autonomous institution offering premier UG, PG and research programs.',
     breadcrumbs: [{ name: 'About', url: '/college-profile/' }],
   },
   '/vision/': {
@@ -189,9 +189,9 @@ const institutePages: Record<string, PageSeo> = {
     ],
   },
   '/accreditations/': {
-    title: `Accreditations | NAAC A++, NBA, NIRF, AICTE, UGC | ${BRAND}`,
+    title: `Accreditations | NAAC A+, NBA, NIRF, AICTE, UGC | ${BRAND}`,
     description:
-      'Accreditations and approvals of SRKR Engineering College — NAAC A++ (Cycle II), NBA (B.Tech CSE/ECE/EEE/Civil/IT/ME), NIRF ranking, AICTE-approved, JNTUK-affiliated, SIRO-recognized.',
+      'Accreditations and approvals of SRKR Engineering College — NAAC A+ (Cycle II), NBA (B.Tech CSE/ECE/EEE/Civil/IT/ME), NIRF ranking, AICTE-approved, JNTUK-affiliated, SIRO-recognized.',
     breadcrumbs: [
       { name: 'About', url: '/college-profile/' },
       { name: 'Accreditations', url: '/accreditations/' },
@@ -732,9 +732,9 @@ export function getPageSeo(pathname: string): PageSeo {
   const key = pathname.endsWith('/') ? pathname : `${pathname}/`;
   return (
     flatMap[key] ?? {
-      title: `${BRAND} | NAAC A++ Engineering College, Bhimavaram`,
+      title: `${BRAND} | NAAC A+ Engineering College, Bhimavaram`,
       description:
-        'SRKR Engineering College, Bhimavaram — NAAC A++ accredited autonomous institution offering premier engineering education across 12 specializations.',
+        'SRKR Engineering College, Bhimavaram — NAAC A+ accredited autonomous institution offering premier engineering education across 12 specializations.',
     }
   );
 }
