@@ -6,19 +6,54 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-const labs = [
-  { name: 'Programming & Problem Solving Lab',       img: '/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg' },
-  { name: 'Data Structures & Algorithms Lab',        img: '/assets/images/placeholder/photo-1555066931-4365d14bab8c_800x600.jpg' },
-  { name: 'Database Management Systems Lab',         img: '/assets/images/placeholder/photo-1544383835-bda2bc66a55d_800x600.jpg' },
-  { name: 'Operating Systems Lab',                   img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
-  { name: 'Computer Networks Lab',                   img: '/assets/images/placeholder/photo-1558494949-ef010cbdcc31_800x600.jpg' },
-  { name: 'AI / Machine Learning Lab',               img: '/assets/images/placeholder/photo-1677442136019-21780ecad995_800x600.jpg' },
-  { name: 'Cyber Security Lab',                      img: '/assets/images/placeholder/photo-1614064641938-3bbee52942c7_800x600.jpg' },
-  { name: 'Cloud Computing Lab',                     img: '/assets/images/placeholder/photo-1544197150-b99a580bb7a8_800x600.jpg' },
-  { name: 'Internet of Things (IoT) Lab',            img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
-  { name: 'Software Engineering Lab',                img: '/assets/images/placeholder/photo-1461749280684-dccba630e2f6_800x600.jpg' },
-  { name: 'Project / Research Lab',                  img: '/assets/images/placeholder/photo-1581094288338-2314dddb7ece_800x600.jpg' },
-  { name: 'E-Classroom & Seminar Hall',              img: '/assets/images/placeholder/photo-1497486751825-1233686d5d80_800x600.jpg' },
+const programs = [
+  {
+    title: 'Program: B.Tech (Computer Science & Engineering)',
+    labs: [
+      { name: 'Software Engineering Lab', room: 'C109 (Lab-1)', img: '/assets/images/placeholder/photo-1461749280684-dccba630e2f6_800x600.jpg' },
+      { name: 'Database Management Systems Lab', room: 'C108 (Lab-2)', img: '/assets/images/placeholder/photo-1544383835-bda2bc66a55d_800x600.jpg' },
+      { name: 'Networks & Security Lab', room: 'B201 (Lab-7)', img: '/assets/images/placeholder/photo-1558494949-ef010cbdcc31_800x600.jpg' },
+      { name: 'Operating Systems Lab', room: 'B202 (Lab-8)', img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
+      { name: 'Skill Development Lab', room: 'C405A (Lab-9)', img: '/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg' },
+      { name: 'Competitive Coding Lab', room: 'C405B (Lab-9)', img: '/assets/images/placeholder/photo-1555066931-4365d14bab8c_800x600.jpg' },
+      { name: 'C-Programming Lab', room: 'M204A (Mech)', img: '/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg' },
+      { name: 'Compiler Design Lab', room: 'M204B (Mech)', img: '/assets/images/placeholder/photo-1555066931-4365d14bab8c_800x600.jpg' }
+    ]
+  },
+  {
+    title: 'Program: M.Tech (Computer Science & Technology)',
+    labs: [
+      { name: 'Research & Projects Lab', room: 'C103 (Lab-3)', img: '/assets/images/placeholder/photo-1581094288338-2314dddb7ece_800x600.jpg' },
+      { name: 'Algorithms Lab', room: 'CAB101C (Lab-6)', img: '/assets/images/placeholder/photo-1555066931-4365d14bab8c_800x600.jpg' }
+    ]
+  },
+  {
+    title: 'Program: B.Tech (Artificial Intelligence and Machine Learning)',
+    labs: [
+      { name: 'Machine Learning Lab', room: 'CAB101A (Lab-4)', img: '/assets/images/placeholder/photo-1677442136019-21780ecad995_800x600.jpg' },
+      { name: 'Data Analytics Lab', room: 'CAB101B (Lab-5)', img: '/assets/images/placeholder/photo-1551288049-bebda4e38f71_800x600.jpg' },
+      { name: 'Java Programming Lab', room: 'GCC304A', img: '/assets/images/placeholder/photo-1555066931-4365d14bab8c_800x600.jpg' },
+      { name: 'Python Programming Lab', room: 'GCC304B', img: '/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg' },
+      { name: 'Data Structures Lab', room: 'GCC304C', img: '/assets/images/placeholder/photo-1542831371-29b0f74f9713_800x600.jpg' },
+      { name: 'Web Application Development Lab', room: 'GCC304D', img: '/assets/images/placeholder/photo-1547658719-da2b51169166_800x600.jpg' }
+    ]
+  },
+  {
+    title: 'Program: B.Tech (CSE–IoT Cyber Security including Block Chain Technology)',
+    labs: [
+      { name: 'Internet of Things Lab', room: 'B301A (Lab-10)', img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
+      { name: 'Cyber Security Lab', room: 'B301B (Lab-11)', img: '/assets/images/placeholder/photo-1614064641938-3bbee52942c7_800x600.jpg' }
+    ]
+  },
+  {
+    title: 'B.Tech CSE – Facilities',
+    labs: [
+      { name: 'ThinQube', room: 'CAB-201', img: '/assets/images/placeholder/photo-1581094288338-2314dddb7ece_800x600.jpg' },
+      { name: 'E-Classroom', room: 'CAB-202', img: '/assets/images/placeholder/photo-1497486751825-1233686d5d80_800x600.jpg' },
+      { name: 'Seminar Hall', room: 'C-305', img: '/assets/images/placeholder/photo-1497486751825-1233686d5d80_800x600.jpg' },
+      { name: 'Mini Auditorium', room: 'Auditorium', img: '/assets/images/placeholder/photo-1497486751825-1233686d5d80_800x600.jpg' }
+    ]
+  }
 ];
 ---
 
@@ -58,6 +93,31 @@ const labs = [
     display: flex;
     align-items: center;
   }
+
+  .program-section {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .program-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--rt-heading);
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  .program-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    height: 22px;
+    width: 4px;
+    background-color: var(--rt-primary);
+    border-radius: 2px;
+  }
 </style>
 
 <!doctype html>
@@ -92,34 +152,39 @@ const labs = [
           <div class="col-12">
 
             <div class="program-about">
-              <h4 class="title">Our Laboratories</h4>
-              <p>The Department of Computer Science &amp; Engineering operates twelve well-equipped laboratories, ICT-enabled smart classrooms, and dedicated E-classrooms that support our B.Tech, M.Tech, and research programs. Each lab is provisioned with current generation workstations, licensed industry-standard software, and high-speed internet — giving students hands-on exposure to programming, databases, networks, AI/ML, cloud, IoT, and cyber security from the very first semester.</p>
+              <h4 class="title">Our Laboratories & Facilities</h4>
+              <p>The Department of Computer Science &amp; Engineering operates well-equipped laboratories, specialized research zones, smart classrooms, and learning spaces supporting our B.Tech, M.Tech, and research programs. Each lab is provisioned with modern computing systems, high-speed networking, and essential software environments.</p>
             </div>
 
-            <div class="rts-section mb--40 mt--40">
+            <div class="rts-section mb--20 mt--40">
               <h3 class="rts-section-title">Laboratory Infrastructure</h3>
             </div>
 
-            <div class="row g-5">
-              {labs.map(lab => (
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-cat-item">
-                    <div class="cat-thumb">
-                      <img src={lab.img} alt={lab.name} />
-                      <a href="#" class="cat-link-btn">Laboratory</a>
-                    </div>
-                    <div class="cat-meta">
-                      <div class="cat-title">
-                        <a href="#">{lab.name}</a>
+            {programs.map(program => (
+              <div class="program-section">
+                <h4 class="program-title">{program.title}</h4>
+                <div class="row g-5">
+                  {program.labs.map(lab => (
+                    <div class="col-lg-4 col-md-6">
+                      <div class="single-cat-item">
+                        <div class="cat-thumb">
+                          <img src={lab.img} alt={lab.name} />
+                          <a href="#" class="cat-link-btn">{lab.room}</a>
+                        </div>
+                        <div class="cat-meta">
+                          <div class="cat-title">
+                            <a href="#">{lab.name}</a>
+                          </div>
+                          <div class="cat-link">
+                            <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                          </div>
+                        </div>
                       </div>
-                      <div class="cat-link">
-                        <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
 
           </div>
         </div>
