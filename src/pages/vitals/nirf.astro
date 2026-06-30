@@ -1,0 +1,199 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "NIRF Ranking & Submissions";
+const activePage = "NIRF";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const nirfYears = [
+  {
+    year: 2026,
+    links: [
+      {
+        label: "Overall Category Submission",
+        href: "/assets/documents/mandates/NIRF_2026_overall.pdf",
+      },
+      {
+        label: "Engineering Category Submission",
+        href: "/assets/documents/mandates/NIRF_2026_engineering.pdf",
+      },
+      {
+        label: "Innovation Category Submission",
+        href: "/assets/documents/mandates/NIRF_2026_innovation.pdf",
+      },
+    ],
+  },
+  {
+    year: 2025,
+    links: [
+      {
+        label: "Overall Category Submission",
+        href: "/assets/documents/mandates/NIRF_2025_overall.pdf",
+      },
+      {
+        label: "Engineering Category Submission",
+        href: "/assets/documents/mandates/NIRF_2025_engineering.pdf",
+      },
+      {
+        label: "Innovation Category Submission",
+        href: "/assets/documents/mandates/NIRF_2025_innovation.pdf",
+      },
+      {
+        label: "SDG Institution Submission",
+        href: "/assets/documents/mandates/NIRF_2025_sdg.pdf",
+      },
+    ],
+  },
+  {
+    year: 2024,
+    links: [
+      {
+        label: "Overall Category Submission",
+        href: "/assets/documents/mandates/NIRF_2024_overall.pdf",
+      },
+      {
+        label: "Engineering Category Submission",
+        href: "/assets/documents/mandates/NIRF_2024_engineering.pdf",
+      },
+      {
+        label: "Innovation Category Submission",
+        href: "/assets/documents/mandates/NIRF_2024_innovation.pdf",
+      },
+    ],
+  },
+  {
+    year: 2023,
+    links: [
+      {
+        label: "Overall Category Submission",
+        href: "/assets/documents/mandates/NIRF_2023_overall.pdf",
+      },
+      {
+        label: "Engineering Category Submission",
+        href: "/assets/documents/mandates/NIRF_2023_engineering.pdf",
+      },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="NIRF Rankings and annual data submissions for Sagi Rama Krishnam Raju Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">National Institutional Ranking Framework (NIRF)</h3>
+              <p>
+                Sagi Rama Krishnam Raju Engineering College actively participates in the National Institutional Ranking Framework (NIRF) initiated by the Ministry of Education, Government of India. The college consistently submits comprehensive reports covering teaching, learning & resources, research & professional practice, graduation outcomes, outreach & inclusivity, and perception.
+              </p>
+            </div>
+
+            <!-- NIRF Years Loop -->
+            {
+              nirfYears.map((ny) => (
+                <div class="card shadow-sm border-0 mb--30">
+                  <div class="card-body p-4">
+                    <h4 class="card-title mb-4"><i class="fa-solid fa-ranking-star me-2" style="color: var(--rt-primary);"></i> NIRF {ny.year} Submissions</h4>
+                    <div class="list-group list-group-flush">
+                      {
+                        ny.links.map((link) => (
+                          <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div>
+                              <h6 class="mb-0 text-dark">{link.label}</h6>
+                            </div>
+                            <a
+                              href={link.href}
+                              class="rts-theme-btn"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <i class="fa-light fa-download me-1"></i> Download PDF
+                            </a>
+                          </div>
+                        ))
+                      }
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

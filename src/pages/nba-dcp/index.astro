@@ -1,0 +1,122 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "NBA DCP Documents";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="National Board of Accreditation (NBA) Departmental Compliance Reports (DCP) for Civil, ECE, EEE, and Mechanical Engineering at SRKR."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="program-about mb--40 text-center">
+              <h3 class="title">Departmental Compliance Reports (DCP)</h3>
+              <p class="mx-auto" style="max-width: 700px;">
+                Access the departmental compliance report documents submitted to the National Board of Accreditation (NBA) for each of our primary engineering disciplines.
+              </p>
+            </div>
+
+            <!-- Documents Table -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th style="width: 80px;">S.No</th>
+                        <th>Department</th>
+                        <th>Document Name</th>
+                        <th style="width: 200px;" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><strong>Civil Engineering</strong></td>
+                        <td>NBA-Civil-DCP</td>
+                        <td class="text-end">
+                          <a href="/assets/documents/nba/e - NBA-Civil-DCP.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View / Download
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><strong>Electronics &amp; Communication Engineering (ECE)</strong></td>
+                        <td>NBA-ECE-DCP</td>
+                        <td class="text-end">
+                          <a href="/assets/documents/nba/e - NBA-ECE-DCP.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View / Download
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><strong>Electrical &amp; Electronics Engineering (EEE)</strong></td>
+                        <td>NBA-EEE-DCP</td>
+                        <td class="text-end">
+                          <a href="/assets/documents/nba/e - NBA-EEE-DCP.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View / Download
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><strong>Mechanical Engineering</strong></td>
+                        <td>NBA-Mech-DCP</td>
+                        <td class="text-end">
+                          <a href="/assets/documents/nba/e - NBA-Mech-DCP.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View / Download
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

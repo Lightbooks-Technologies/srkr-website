@@ -315,9 +315,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               </div>
               <div class="srkr-glance-label">Total Faculty</div>
               <div class="srkr-glance-value">
-                400<span class="plus">+</span>
+                415<span class="plus">+</span>
               </div>
-              <div class="srkr-glance-desc">150+ PhD's</div>
+              <div class="srkr-glance-desc">160+ PhD's</div>
             </div>
           </div>
           <!-- Card 5 -->
@@ -391,7 +391,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               </div>
               <div class="srkr-glance-label">Patents</div>
               <div class="srkr-glance-value">
-                180<span class="plus">+</span>
+                200<span class="plus">+</span>
               </div>
               <div class="srkr-glance-desc">Published/Granted</div>
             </div>
@@ -426,7 +426,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
     <!-- SRKREC at a Glance end -->
 
     <!-- ── NOTICE BOARD + EVENTS ──────────────────────────────── -->
-    <section class="rts-notice rts-section-padding-small ">
+    <section class="rts-notice rts-section-padding-small">
       <div class="container">
         <div class="row gy-5 gy-lg-0 justify-content-md-center">
           <!-- Events column -->
@@ -439,9 +439,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                     [...UPCOMING_EVENTS].map((event) => (
                       <li class="single-event">
                         <div class="single-event-content">
-                          <h5 class="event-title">
-                          {event.title}
-                          </h5>
+                          <h5 class="event-title">{event.title}</h5>
                           <div class="single-event-content-meta">
                             <div class="event-date">
                               <>
@@ -451,7 +449,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                                 <span>{event.date}</span>
                               </>
                             </div>
-                            
                           </div>
                           <div class="single-event-content-meta">
                             <div class="event-place">
@@ -459,7 +456,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                                 <span>
                                   <i class="fa-sharp fa-thin fa-location-dot" />
                                 </span>
-                                <span>{event.venue || 'SRKR Engineering College'}</span>
+                                <span>
+                                  {event.venue || "SRKR Engineering College"}
+                                </span>
                               </>
                             </div>
                           </div>
@@ -485,7 +484,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                       <li class="single-notice">
                         <div class="single-notice-item">
                           <div class="notice-date">
-                            {item.day}<span>{item.month}</span>
+                            {item.day}
+                            <span>{item.month}</span>
                           </div>
                           <div class="notice-content">
                             <p>
@@ -535,7 +535,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/cse/"
-                    >Computer Science &amp; Engineering</a>
+                    >Computer Science &amp; Engineering</a
+                  >
                 </div>
               </div>
             </div>
@@ -554,7 +555,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/cse/academic-programs/"
-                    >Artificial Intelligence &amp; ML</a>
+                    >Artificial Intelligence &amp; ML</a
+                  >
                 </div>
               </div>
             </div>
@@ -573,7 +575,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/it/academic-programs/"
-                    >AI &amp; Data Science</a>
+                    >AI &amp; Data Science</a
+                  >
                 </div>
               </div>
             </div>
@@ -591,8 +594,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/ece/"
-                    >Electronics &amp; Communication</a>
+                  <a href="/departments/ece/">Electronics &amp; Communication</a
+                  >
                 </div>
               </div>
             </div>
@@ -703,7 +706,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/cse/academic-programs/"
-                    >CSE (IoT &amp; Cyber Security)</a>
+                    >CSE (IoT &amp; Cyber Security)</a
+                  >
                 </div>
               </div>
             </div>
@@ -732,7 +736,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-thumb srkr-dept-thumb">
                 <img
                   src="/assets/images/programs/cs_bs.png"
-                  alt="CS & Business Systems"
+                  alt="CS & Business System System"
                   loading="lazy"
                   decoding="async"
                 />
@@ -740,7 +744,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/it/academic-programs/"
-                    >CS &amp; Business Systems</a>
+                    >CS &amp; Business System</a
+                  >
                 </div>
               </div>
             </div>
@@ -796,7 +801,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                   </div>
                   <div class="campus__life--single--button">
                     <a href="/college-profile/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                    >
                   </div>
                 </div>
               </div>
@@ -822,7 +828,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                   </div>
                   <div class="campus__life--single--button">
                     <a href="/activities/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                    >
                   </div>
                 </div>
               </div>
@@ -847,7 +854,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
                   </div>
                   <div class="campus__life--single--button">
                     <a href="/sports/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                    >
                   </div>
                 </div>
               </div>
@@ -1313,7 +1321,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
     <FooterScripts />
     <script is:inline>
       const initNoticeScroll = () => {
-        const box = document.querySelector('.notice-content-box');
+        const box = document.querySelector(".notice-content-box");
         if (!box) return;
 
         box.scrollTop = 0;
@@ -1327,7 +1335,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
           if (scrollInterval) clearInterval(scrollInterval);
           scrollInterval = setInterval(() => {
             if (isHovered) return;
-            
+
             if (box.scrollHeight > box.clientHeight) {
               box.scrollTop += scrollSpeed;
               if (box.scrollTop >= box.scrollHeight - box.clientHeight - 1) {
@@ -1337,18 +1345,18 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
           }, scrollDelay);
         };
 
-        box.addEventListener('mouseenter', () => {
+        box.addEventListener("mouseenter", () => {
           isHovered = true;
         });
 
-        box.addEventListener('mouseleave', () => {
+        box.addEventListener("mouseleave", () => {
           isHovered = false;
         });
 
         startScroll();
       };
 
-      window.addEventListener('DOMContentLoaded', initNoticeScroll);
+      window.addEventListener("DOMContentLoaded", initNoticeScroll);
     </script>
   </body>
 </html>

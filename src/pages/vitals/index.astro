@@ -110,48 +110,43 @@ const approvals = [
   {
     name: "UGC",
     desc: "Autonomous status since 2016",
-    href: "/accreditations/",
+    href: "/vitals/ugc/",
   },
   {
     name: "AICTE",
     desc: "All UG/PG programmes approved by AICTE",
-    href: "/accreditations/",
+    href: "/vitals/aicte/",
   },
   {
     name: "JNTUK",
     desc: "Affiliated to Jawaharlal Nehru Technological University, Kakinada",
-    href: "/accreditations/",
+    href: "/vitals/jntuk/",
   },
   {
     name: "NBA",
     desc: "Multiple programmes accredited by the National Board of Accreditation",
-    href: "/accreditations/",
+    href: "/vitals/nba/",
   },
   {
     name: "NAAC",
     desc: "A+ Grade with CGPA 3.42 (Cycle 2)",
-    href: "/accreditations/",
+    href: "/vitals/naac/",
+  },
+  {
+    name: "IQAC",
+    desc: "Internal Quality Assurance Cell",
+    href: "/vitals/iqac/",
   },
   {
     name: "SIRO",
     desc: "Recognised as Scientific & Industrial Research Organisation by DSIR",
-    href: "/accreditations/",
+    href: "/vitals/siro/",
   },
   {
     name: "NIRF",
     desc: "Participates in MoE NIRF rankings since 2023",
-    href: "/rank/",
+    href: "/vitals/nirf/",
   },
-  {
-    name: "ARIIA",
-    desc: "Atal Ranking of Institutions on Innovation Achievements",
-    href: "/rank/",
-  },
-];
-
-const codes = [
-  { code: "SRKR", desc: "EAPCET / ECET admission code" },
-  { code: "SRKR1", desc: "M.Tech admission code" },
 ];
 
 const facts = [
@@ -267,26 +262,6 @@ const facts = [
           }
         </div>
 
-        <!-- Admission codes -->
-        <div class="row mt--80">
-          <div class="rts-section rt-center mb--45">
-            <h3 class="rts-section-title">Admission Codes</h3>
-          </div>
-        </div>
-        <div class="row g-4">
-          {
-            codes.map((c) => (
-              <div class="col-lg-4 col-md-6">
-                <div class="card h-100 shadow-sm text-center">
-                  <div class="card-body">
-                    <h2 class="single-cta-item__title">{c.code}</h2>
-                    <p class="card-text">{c.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
 
         <!-- Approvals & accreditations grid -->
         <div class="row mt--80">
@@ -305,10 +280,8 @@ const facts = [
                     <a
                       class="rts-theme-btn"
                       href={a.href}
-                      target="_blank"
-                      rel="noopener"
                     >
-                      View Mandate
+                      View Details
                     </a>
                   </div>
                 </div>
@@ -317,177 +290,7 @@ const facts = [
           }
         </div>
 
-        <!-- NAAC table -->
-        <div class="row mt--80">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">NAAC Accreditation Cycles</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <tr
-                        ><td>Cycle</td><td>Grade</td><td>CGPA</td><td
-                          >Valid From</td
-                        ><td>Valid To</td><td>Certificate</td></tr
-                      >
-                    </thead>
-                    <tbody>
-                      {
-                        naacCycles.map((n) => (
-                          <tr>
-                            <td>{n.cycle}</td>
-                            <td>{n.grade}</td>
-                            <td>{n.cgpa}</td>
-                            <td>{n.from}</td>
-                            <td>{n.to}</td>
-                            <td>
-                              <a href={n.href} target="_blank" rel="noopener">
-                                PDF
-                              </a>
-                            </td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NBA per-programme table -->
-        <div class="row mt--40">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">
-                NBA Accreditation · UG Programmes
-              </h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <tr
-                        ><td>Department</td><td>Code</td><td>Established</td><td
-                          >NBA Status</td
-                        ></tr
-                      >
-                    </thead>
-                    <tbody>
-                      {
-                        departments.map((d) => (
-                          <tr>
-                            <td>
-                              <a href={`/departments/${d.slug}/`}>{d.name}</a>
-                            </td>
-                            <td>{d.code}</td>
-                            <td>{d.established}</td>
-                            <td>
-                              {d.nbaAccredited
-                                ? "Accredited"
-                                : ""}
-                            </td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NIRF accordion -->
-        <div class="row mt--40">
-          <div class="col-12">
-            <div class="program-credit-area faq rts-scholarship-description">
-              <div class="program-accordion">
-                <div class="accordion" id="nirf-accordion">
-                  {
-                    nirfYears.map((y, i) => (
-                      <div class="accordion-item">
-                        <button
-                          class={`accordion-button ${i === 0 ? "" : "collapsed"}`}
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target={`#nirf${y.year}`}
-                          aria-expanded={i === 0 ? "true" : "false"}
-                        >
-                          NIRF {y.year} Disclosures
-                        </button>
-                        <div
-                          id={`nirf${y.year}`}
-                          class={`accordion-collapse collapse ${i === 0 ? "show" : ""}`}
-                          data-bs-parent="#nirf-accordion"
-                        >
-                          <div class="accordion-body">
-                            <ul class="list-unstyled">
-                              {y.links.map((l) => (
-                                <li class="si__list--single">
-                                  <a
-                                    href={l.href}
-                                    target="_blank"
-                                    rel="noopener"
-                                  >
-                                    NIRF {y.year} — {l.label} Category (PDF)
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- AQAR / NAAC supporting documents -->
-        <div class="row mt--40">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">Quality Assurance Documents</h3>
-              <div class="application-deadline__content">
-                <ul class="list-unstyled mb--0">
-                  <li class="si__list--single">
-                    <a href="/naac-ssr/">NAAC SSR (Cycle 2)</a>
-                  </li>
-                  <li class="si__list--single">
-                    <a
-                      href="/iqac/"
-                      target="_blank"
-                      rel="noopener">IQAC AQAR Reports (2016-17 to 2023-24)</a>
-                  </li>
-                  <li class="si__list--single">
-                    <a
-                      href="/assets/documents/mandates/BEST_PRACTICES23.pdf"
-                      target="_blank"
-                      rel="noopener">Best Practices 2023-24 (PDF)</a>
-                  </li>
-                  <li class="si__list--single">
-                    <a
-                      href="/assets/documents/mandates/DISTINCTVENESS_WEBSITE_2023-24.pdf"
-                      target="_blank"
-                      rel="noopener"
-                      >Institutional Distinctiveness 2023-24 (PDF)</a>
-                  </li>
-                  <li class="si__list--single">
-                    <a
-                      href="/assets/documents/mandates/Student_Satisfaction_Survey_2023-24.pdf"
-                      target="_blank"
-                      rel="noopener"
-                      >Student Satisfaction Survey 2023-24 (PDF)</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </section>
 

@@ -1,0 +1,177 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "UGC Autonomous Status & Recognition";
+const activePage = "UGC";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const autonomousLetters = [
+  {
+    title: "Extension of Autonomous Status (2022-23 to 2031-32)",
+    desc: "Ten-year extension granted by UGC for continuous excellence",
+    href: "/assets/documents/mandates/ugc-extension-autonomous-status-2022-2032.pdf",
+  },
+  {
+    title: "UGC Fresh Autonomous Status (2016-17 to 2021-22)",
+    desc: "Original autonomous grant letter by the UGC",
+    href: "/assets/documents/mandates/ugc-2f-12b-autonomous-status-2016-2022.pdf",
+  },
+];
+
+const ugcRecognition = [
+  {
+    title: "UGC 2(f) & 12(B) Recognition Letter",
+    desc: "UGC certification for inclusion under Section 2(f) & 12(B)",
+    href: "/assets/documents/mandates/ugc-2f-12b-autonomous-status-2016-2022.pdf",
+  },
+  {
+    title: "UGC Undertaking / Compliance Mandate",
+    desc: "Undertaking submitted by the institution to UGC",
+    href: "/assets/documents/mandates/ugc-undertaking.pdf",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="UGC Autonomous Status, Section 2(f) & 12(B) recognition, and undertakings for Sagi Rama Krishnam Raju Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">University Grants Commission (UGC) Mandates</h3>
+              <p>
+                Sagi Rama Krishnam Raju Engineering College (SRKREC) is recognized under Section 2(f) and 12(B) of the UGC Act, 1956. This recognition makes the institution eligible for receiving central assistance and grants for academic developments, research activities, and infrastructure growth.
+              </p>
+            </div>
+
+            <!-- Documents Card List -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-graduation-cap me-2" style="color: var(--rt-primary);"></i> UGC Autonomous Status Letters</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    autonomousLetters.map((a) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{a.title}</h6>
+                          <p class="mb-0 text-muted small">{a.desc}</p>
+                        </div>
+                        <a
+                          href={a.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-file-contract me-2" style="color: var(--rt-primary);"></i> UGC 2(f) &amp; 12(B) Recognition &amp; Undertaking</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    ugcRecognition.map((a) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{a.title}</h6>
+                          <p class="mb-0 text-muted small">{a.desc}</p>
+                        </div>
+                        <a
+                          href={a.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

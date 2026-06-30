@@ -1,0 +1,239 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "AICTE Mandates & Disclosures";
+const activePage = "AICTE";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const mandatoryDisclosures = [
+  { year: "2025-26", href: "/assets/documents/mandates/Mandatory_Disclosure_2025-26.pdf" },
+  { year: "2024-25", href: "/assets/documents/mandates/AICTE_Mandatory_Disclosure_2024-25.pdf" },
+  { year: "2023-24", href: "/assets/documents/mandates/AICTE_Mandatory_Disclosure_2023-24.pdf" },
+  { year: "2022-23", href: "/assets/documents/mandates/aicte.pdf" },
+];
+
+const approvalLetters = [
+  { name: "AICTE EOA Report 2025-26", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2025-26.pdf" },
+  { name: "AICTE EOA Report 2024-25", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2024-25.pdf" },
+  { name: "AICTE EOA Report 2023-24", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2023-24.pdf" },
+  { name: "AICTE EOA Report 2022-23", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2022-23.pdf" },
+  { name: "AICTE EOA Report 2021-22", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2021-22.pdf" },
+  { name: "AICTE EOA Report 2020-21", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2020-21_2.pdf" },
+  { name: "AICTE EOA Report 2019-20", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2019-20.pdf" },
+  { name: "AICTE EOA Report 2018-19", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2018-19.pdf" },
+  { name: "AICTE EOA Report 2017-18", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2017-18.pdf" },
+  { name: "AICTE EOA Report 2016-17", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2016-17.pdf" },
+  { name: "AICTE EOA Report 2015-16", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2015-16.pdf" },
+  { name: "AICTE EOA Report 2014-15", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2014-15.pdf" },
+  { name: "AICTE EOA Report 2013-14", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2013-14.pdf" },
+  { name: "AICTE EOA Report 2012-13", href: "/assets/documents/mandates/approval_letters/AICTE_EOA_Report_2012-13.pdf" },
+  { name: "AICTE Approval Letter 2011", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2011.pdf" },
+  { name: "AICTE Approval Letter 2010", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2010.pdf" },
+  { name: "AICTE Approval Letter 2008-11 (1st Letter)", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2008-11_1st_Letter.pdf" },
+  { name: "AICTE Approval Letter 2008 (2nd Letter)", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2008_2nd_Letter.pdf" },
+  { name: "AICTE Approval Letter 2007", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2007.pdf" },
+  { name: "AICTE Approval Letter 2006", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2006.pdf" },
+  { name: "AICTE Approval Letter 2005", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2005.pdf" },
+  { name: "AICTE Approval Letter 2004", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2004.pdf" },
+  { name: "AICTE Approval Letter 2003", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2003.pdf" },
+  { name: "AICTE Approval Letter 2002", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2002.pdf" },
+  { name: "AICTE Approval Letter 2001", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_2001.pdf" },
+  { name: "AICTE Approval Letter 1999", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_1999.pdf" },
+  { name: "AICTE Approval Letter 1996-99", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_1996-99.pdf" },
+  { name: "AICTE Approval Letter 1994", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_1994.pdf" },
+  { name: "AICTE Approval Letter 1993-95", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_1993-95.pdf" },
+  { name: "AICTE Approval Letter 1992", href: "/assets/documents/mandates/approval_letters/AICTE_Approval_1992.pdf" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="AICTE Mandates, Mandatory Disclosures, and Extension of Approval (EOA) letters for SRKR Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">All India Council for Technical Education (AICTE)</h3>
+              <p>
+                All undergraduate (B.Tech) and postgraduate (M.Tech, MBA) programmes offered by SRKR Engineering College are approved by the All India Council for Technical Education, New Delhi. The college regularly submits and updates its mandatory disclosures and EOA reports in accordance with AICTE guidelines.
+              </p>
+            </div>
+
+            <!-- Accreditation Status -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-3"><i class="fa-solid fa-square-check me-2" style="color: var(--rt-primary);"></i> Accreditation Status</h4>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 py-2">
+                  <div>
+                    <h6 class="mb-1 text-dark">SRKREC Accreditation Status Summary</h6>
+                    <p class="mb-0 text-muted small">Status report of college accreditations</p>
+                  </div>
+                  <a
+                    href="/assets/documents/mandates/Accreditation_Status2023-2.pdf"
+                    class="rts-theme-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-light fa-download me-1"></i> Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mandatory Disclosures -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-file-invoice me-2" style="color: var(--rt-primary);"></i> Mandatory Disclosures</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    mandatoryDisclosures.map((d) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">AICTE Mandatory Disclosure {d.year}</h6>
+                        </div>
+                        <a
+                          href={d.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- EOA Letters -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-folder-open me-2" style="color: var(--rt-primary);"></i> AICTE Approval &amp; EOA Letters Accordion</h4>
+                <p class="mb-4">
+                  AICTE grants Extension of Approval (EOA) annually, certifying academic courses, intake capacity, and infrastructure. Below is the historical catalog of approval letters since inception:
+                </p>
+
+                <!-- Accordion -->
+                <div class="program-credit-area faq rts-scholarship-description">
+                  <div class="program-accordion">
+                    <div class="accordion" id="aicte-accordion">
+                      <div class="accordion-item border-0">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#eoaList"
+                          aria-expanded="false"
+                        >
+                          View All Approval &amp; EOA Letters ({approvalLetters.length})
+                        </button>
+                        <div
+                          id="eoaList"
+                          class="accordion-collapse collapse"
+                          data-bs-parent="#aicte-accordion"
+                        >
+                          <div class="accordion-body px-0 pt-3">
+                            <div class="list-group list-group-flush">
+                              {
+                                approvalLetters.map((l) => (
+                                  <div class="list-group-item px-0 py-2 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span class="text-dark small">{l.name}</span>
+                                    <a
+                                      href={l.href}
+                                      class="rts-theme-btn"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      Download
+                                    </a>
+                                  </div>
+                                ))
+                              }
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

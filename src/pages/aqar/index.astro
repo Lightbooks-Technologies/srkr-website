@@ -1,0 +1,211 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "NAAC AQAR Mandates";
+
+const feedbacks = [
+  { year: "2023-24", href: "/assets/documents/aqar/2023-24.pdf" },
+  { year: "2022-23", href: "/assets/documents/aqar/2022-23.pdf" },
+  { year: "2021-22", href: "/assets/documents/aqar/2021-22.pdf" },
+];
+
+const bestPractices = [
+  { year: "2023-24", href: "/assets/documents/mandates/BEST_PRACTICES23.pdf" },
+  { year: "2022-23", href: "/assets/documents/aqar/BEST_PRACTICES_2022-23.pdf" },
+  { year: "2021-22", href: "/assets/documents/aqar/BEST_PRACTICES.pdf" },
+];
+
+const distinctiveness = [
+  { year: "2023-24", href: "/assets/documents/mandates/DISTINCTVENESS_WEBSITE_2023-24.pdf" },
+  { year: "2022-23", href: "/assets/documents/mandates/DISTINCTVENESS_WEBSITE_2022-23.pdf" },
+  { year: "2021-22", href: "/assets/documents/aqar/DISTINCTVENESS_WEBSITE.pdf" },
+];
+
+const satisfactionSurveys = [
+  { year: "2023-24", href: "/assets/documents/mandates/Student_Satisfaction_Survey_2023-24.pdf" },
+  { year: "2022-23", href: "/assets/documents/aqar/Student_Satisfaction_Survey_2022-23.pdf" },
+  { year: "2021-22", href: "/assets/documents/aqar/Student_Satisfaction_Survey_2021-22.pdf" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="NAAC Annual Quality Assurance Report (AQAR) mandates, feedback, distinctiveness, course outcomes, and student satisfaction surveys."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <div class="col-lg-10">
+            <div class="program-about mb--45 text-center">
+              <h3 class="title">NAAC - Annual Quality Assurance Reports (AQAR)</h3>
+              <p class="mx-auto" style="max-width: 700px;">
+                Documentation submitted annually to the National Assessment and Accreditation Council detailing institutional quality metrics, feedbacks, and surveys.
+              </p>
+            </div>
+
+            <!-- Course Outcomes -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-graduation-cap me-2" style="color: var(--rt-primary);"></i> Course Outcomes</h4>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 py-2">
+                  <div>
+                    <h6 class="mb-0 text-dark">Course Outcomes — Academic Year 2021-2022</h6>
+                  </div>
+                  <a
+                    href="/assets/documents/aqar/Course_Outcomes_2021_22.pdf"
+                    class="rts-theme-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-light fa-download me-1"></i> Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feedbacks -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-comments me-2" style="color: var(--rt-primary);"></i> Stakeholders Feedback</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    feedbacks.map((f) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-0 text-dark">Stakeholders Feedback Report {f.year}</h6>
+                        </div>
+                        <a
+                          href={f.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-thumbs-up me-2" style="color: var(--rt-primary);"></i> Best Practices</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    bestPractices.map((bp) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-0 text-dark">Institutional Best Practices {bp.year}</h6>
+                        </div>
+                        <a
+                          href={bp.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Institutional Distinctiveness -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-star me-2" style="color: var(--rt-primary);"></i> Institutional Distinctiveness</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    distinctiveness.map((d) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-0 text-dark">Institutional Distinctiveness Report {d.year}</h6>
+                        </div>
+                        <a
+                          href={d.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Student Satisfaction Survey -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-square-poll-vertical me-2" style="color: var(--rt-primary);"></i> Student Satisfaction Survey</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    satisfactionSurveys.map((s) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-0 text-dark">Student Satisfaction Survey Results {s.year}</h6>
+                        </div>
+                        <a
+                          href={s.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

@@ -39,12 +39,14 @@ const pageTitle = "Centre for IT Infrastructure (CITI)";
         font-size: 20px;
         margin-top: 3px;
       }
-      .highlight-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .service-card {
+        transition: all 0.3s ease;
+        border-color: #e2e8f0 !important;
       }
-      .highlight-card:hover {
+      .service-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+        border-color: var(--rt-primary) !important;
       }
       @media (max-width: 768px) {
         .carousel-item img {
@@ -72,135 +74,184 @@ const pageTitle = "Centre for IT Infrastructure (CITI)";
       </div>
     </section>
 
-    <!-- MAIN CONTENT -->
-    <div class="rts-about-area pt--60 pb--60">
+    <!-- MAIN CONTENT (Library Page Layout Style) -->
+    <div class="rts-blog-details rts-section-padding">
       <div class="container">
-        <div class="row g-5">
+        <div class="row sticky-coloum-wrap justify-content-center g-5">
           <!-- Main Text Column -->
-          <div class="col-lg-8">
-            <div class="rts-section mb--40">
-              <span class="rts-section-subtitle" style="color: var(--rt-primary); font-weight: 600;">AMENITIES</span>
-              <h3 class="rts-section-title mt-2">Centre for IT Infrastructure (CITI)</h3>
-            </div>
+          <div class="col-lg-8 col-md-10">
+            <article class="blog-details">
+              <div class="rts-section mb--40">
+                <span class="rts-section-subtitle" style="color: var(--rt-primary); font-weight: 600;">AMENITIES</span>
+                <h3 class="rts-section-title mt-2">Centre for IT Infrastructure (CITI)</h3>
+              </div>
 
-            <!-- Carousel -->
-            <div id="citiCarousel" class="carousel slide citi-carousel mb--40" data-bs-ride="carousel" data-bs-interval="3000">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              <!-- Carousel (Bootstrap version) -->
+              <div id="citiCarousel" class="carousel slide citi-carousel mb--40" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#citiCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/assets/images/citi/citi9.jpg" class="d-block" alt="CITI Lab 1" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi1.jpg" class="d-block" alt="CITI Network Rack" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi2.jpg" class="d-block" alt="CITI Servers" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi3.jpg" class="d-block" alt="CITI Computer Center" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi4.jpg" class="d-block" alt="CITI Lab Workspace" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi7.jpg" class="d-block" alt="CITI Operations Room" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/images/citi/citi6.jpg" class="d-block" alt="CITI Server Management" />
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#citiCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#citiCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/assets/images/citi/citi9.jpg" class="d-block" alt="CITI Lab 1" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi1.jpg" class="d-block" alt="CITI Network Rack" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi2.jpg" class="d-block" alt="CITI Servers" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi3.jpg" class="d-block" alt="CITI Computer Center" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi4.jpg" class="d-block" alt="CITI Lab Workspace" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi7.jpg" class="d-block" alt="CITI Operations Room" />
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/citi/citi6.jpg" class="d-block" alt="CITI Server Management" />
+
+              <!-- Objectives Section -->
+              <h4 class="mb-4" style="font-weight: 700; color: var(--rt-heading);">Objectives</h4>
+              <ul class="list-unstyled objectives-list">
+                <li>
+                  <i class="fa-light fa-circle-check"></i>
+                  <p class="mb-0" style="text-align: justify; line-height: 1.7;">Improving the Educational Experience of the Students, Faculty, and the Staff by supporting their Research and Academic Activities.</p>
+                </li>
+                <li>
+                  <i class="fa-light fa-circle-check"></i>
+                  <p class="mb-0" style="text-align: justify; line-height: 1.7;">Providing Automation support to the college for day-to-day administration, Research Activities, as well as Courses and Assignments.</p>
+                </li>
+                <li>
+                  <i class="fa-light fa-circle-check"></i>
+                  <p class="mb-0" style="text-align: justify; line-height: 1.7;">Equipping the campus with State-of-the-Art computing facilities to complement classroom pedagogy. The centre houses 5 servers and 200 nodes connected by switches and Cat 5e cabling, with a comprehensive suite of system and application software.</p>
+                </li>
+                <li>
+                  <i class="fa-light fa-circle-check"></i>
+                  <p class="mb-0" style="text-align: justify; line-height: 1.7;">Managing the core SRKR network backbone. CITI supports a campus-wide 1000 Mbps (Gigabit) LAN that connects all academic departments, library, and central amenities. Internet access is provided 24x7 through a 1000 Mbps 1:1 leased line and a 40 Mbps bundled broadband connection with a 12-core OFC backbone.</p>
+                </li>
+                <li>
+                  <i class="fa-light fa-circle-check"></i>
+                  <p class="mb-0" style="text-align: justify; line-height: 1.7;">Managing the campus Wireless Local Area Network (WLAN) on 802.11b/g protocols to allow secure network and internet access for mobile on-campus users. The campus features 16 outdoor high-capacity access points strategically positioned for optimal coverage.</p>
+                </li>
+              </ul>
+
+              <!-- Digital Services & Platforms Section -->
+              <div class="mt-5 pt-5 border-top">
+                <h4 class="mb-4" style="font-weight: 700; color: var(--rt-heading);">Digital Services & Platforms</h4>
+                <div class="row g-4">
+                  <!-- Plagiarism Detection -->
+                  <div class="col-md-6">
+                    <div class="card h-100 p-4 border rounded shadow-sm bg-white service-card">
+                      <div class="icon mb-3" style="font-size: 28px; color: var(--rt-primary);">
+                        <i class="fa-light fa-shield-check"></i>
+                      </div>
+                      <h5 style="font-weight: 700; font-size: 18px; color: var(--rt-heading);" class="mb-2">Plagiarism Detection</h5>
+                      <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6; text-align: justify;">Industry-standard integrity software to ensure original research submissions and assignments.</p>
+                    </div>
+                  </div>
+                  <!-- Official G-Suite & Microsoft 365 -->
+                  <div class="col-md-6">
+                    <div class="card h-100 p-4 border rounded shadow-sm bg-white service-card">
+                      <div class="icon mb-3" style="font-size: 28px; color: var(--rt-primary);">
+                        <i class="fa-light fa-cloud-arrow-up"></i>
+                      </div>
+                      <h5 style="font-weight: 700; font-size: 18px; color: var(--rt-heading);" class="mb-2">Official G-Suite & Microsoft 365</h5>
+                      <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6; text-align: justify;">Official G-Suite and Microsoft 365 accounts for all students and faculty members facilitating secure institutional communications.</p>
+                    </div>
+                  </div>
+                  <!-- CITI Student Portal -->
+                  <div class="col-md-6">
+                    <div class="card h-100 p-4 border rounded shadow-sm bg-white service-card">
+                      <div class="icon mb-3" style="font-size: 28px; color: var(--rt-primary);">
+                        <i class="fa-light fa-user-graduate"></i>
+                      </div>
+                      <h5 style="font-weight: 700; font-size: 18px; color: var(--rt-heading);" class="mb-2">CITI Student Portal</h5>
+                      <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6; text-align: justify;">Centrally managed student registration, coursework submissions, and academic resource portal.</p>
+                    </div>
+                  </div>
+                  <!-- Knimbus Digital Library -->
+                  <div class="col-md-6">
+                    <div class="card h-100 p-4 border rounded shadow-sm bg-white service-card">
+                      <div class="icon mb-3" style="font-size: 28px; color: var(--rt-primary);">
+                        <i class="fa-light fa-book-open-reader"></i>
+                      </div>
+                      <h5 style="font-weight: 700; font-size: 18px; color: var(--rt-heading);" class="mb-2">Knimbus Digital Library</h5>
+                      <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6; text-align: justify;">Provides off-campus remote access to subscribed international journals, e-books, and digital research archives.</p>
+                    </div>
+                  </div>
+                  <!-- WhatsApp Governance -->
+                  <div class="col-12">
+                    <div class="card p-4 border rounded shadow-sm bg-white service-card">
+                      <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+                        <div class="icon" style="font-size: 32px; color: #25D366;">
+                          <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                          <h5 style="font-weight: 700; font-size: 18px; color: var(--rt-heading);" class="mb-1">WhatsApp Governance</h5>
+                          <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6; text-align: justify;">Centralized messaging platform to distribute official announcements and notices instantly.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#citiCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#citiCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <!-- Objectives Section -->
-            <h4 class="mb-4" style="font-weight: 700; color: var(--rt-heading);">Objectives</h4>
-            <ul class="list-unstyled objectives-list">
-              <li>
-                <i class="fa-light fa-circle-check"></i>
-                <p class="mb-0" style="text-align: justify; line-height: 1.7;">Improving the Educational Experience of the Students, Faculty, and the Staff by supporting their Research and Academic Activities.</p>
-              </li>
-              <li>
-                <i class="fa-light fa-circle-check"></i>
-                <p class="mb-0" style="text-align: justify; line-height: 1.7;">Providing Automation support to the college for day-to-day administration, Research Activities, as well as Courses and Assignments.</p>
-              </li>
-              <li>
-                <i class="fa-light fa-circle-check"></i>
-                <p class="mb-0" style="text-align: justify; line-height: 1.7;">Equipping the campus with State-of-the-Art computing facilities to complement classroom pedagogy. The centre houses 5 servers and 200 nodes connected by switches and Cat 5e cabling, with a comprehensive suite of system and application software.</p>
-              </li>
-              <li>
-                <i class="fa-light fa-circle-check"></i>
-                <p class="mb-0" style="text-align: justify; line-height: 1.7;">Managing the core SRKR network backbone. CITI supports a campus-wide 1000 Mbps (Gigabit) LAN that connects all academic departments, library, and central amenities. Internet access is provided 24x7 through a 1000 Mbps 1:1 leased line and a 40 Mbps bundled broadband connection with a 12-core OFC backbone.</p>
-              </li>
-              <li>
-                <i class="fa-light fa-circle-check"></i>
-                <p class="mb-0" style="text-align: justify; line-height: 1.7;">Managing the campus Wireless Local Area Network (WLAN) on 802.11b/g protocols to allow secure network and internet access for mobile on-campus users. The campus features 16 outdoor high-capacity access points strategically positioned for optimal coverage.</p>
-              </li>
-            </ul>
-            <div class="mt-5 pt-4 border-top">
-              <p style="font-size: 15px; font-weight: 500; color: var(--rt-heading);">
-                For more services, please visit <a href="https://www.srkramc.in" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary); font-weight: 600; text-decoration: underline;">www.srkramc.in</a>
-              </p>
-            </div>
+
+              <div class="mt-5 pt-4 border-top">
+                <p style="font-size: 15px; font-weight: 500; color: var(--rt-heading);">
+                  For more services, please visit <a href="https://www.srkramc.in" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary); font-weight: 600; text-decoration: underline;">www.srkramc.in</a>
+                </p>
+              </div>
+            </article>
           </div>
 
-          <!-- Sidebar Infrastructure Highlights -->
-          <div class="col-lg-4">
-            <div class="card p-4 border rounded shadow-sm bg-white mb-4 highlight-card" style="border-color: #e2e8f0 !important;">
-              <h5 style="color: var(--rt-primary); font-weight: 700; display: flex; align-items: center; gap: 10px;" class="mb-3">
-                <i class="fa-light fa-network-wired"></i> Infrastructure Highlights
-              </h5>
-              <ul class="list-unstyled d-flex flex-column gap-3" style="font-size: 14px; line-height: 1.6;">
-                <li class="border-bottom pb-2">
-                  <strong style="color: var(--rt-heading);">High-Speed LAN:</strong>
-                  <p class="mb-0 text-muted mt-1">Campus-wide 1 Gbps (1000 Mbps) LAN connecting all departments, laboratories, and library facilities using high-speed optical fiber links.</p>
-                </li>
-                <li>
-                  <strong style="color: var(--rt-heading);">24/7 Dedicated Internet:</strong>
-                  <p class="mb-0 text-muted mt-1">Robust 1000 Mbps (1:1) leased line connectivity. Dedicated secondary connections are managed for department-specific requirements.</p>
-                </li>
-              </ul>
-            </div>
+          <!-- Sidebar Infrastructure Highlights (Library Sidebar Style) -->
+          <div class="col-lg-4 col-md-10 sticky-coloum-item">
+            <div class="program-sidebar">
+              <!-- curriculum -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Infrastructure Highlights</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled d-flex flex-column gap-3" style="font-size: 14px; line-height: 1.6;">
+                    <li class="pb-2">
+                      <strong style="color: var(--rt-heading); display: block;">High-Speed LAN:</strong>
+                      <p class="mb-0 text-muted mt-1" style="font-size: 13px; line-height: 1.5;">Campus-wide 1 Gbps (1000 Mbps) LAN connecting all departments, laboratories, and library facilities using high-speed optical fiber links.</p>
+                    </li>
+                    <li class="border-top pt-2">
+                      <strong style="color: var(--rt-heading); display: block;">24/7 Dedicated Internet:</strong>
+                      <p class="mb-0 text-muted mt-1" style="font-size: 13px; line-height: 1.5;">Robust 1000 Mbps (1:1) leased line connectivity. Dedicated secondary connections are managed for department-specific requirements.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-            <div class="card p-4 border rounded shadow-sm bg-white highlight-card" style="border-color: #e2e8f0 !important;">
-              <h5 style="color: var(--rt-primary); font-weight: 700; display: flex; align-items: center; gap: 10px;" class="mb-3">
-                <i class="fa-light fa-laptop-code"></i> Digital Services & Platforms
-              </h5>
-              <ul class="list-unstyled d-flex flex-column gap-3" style="font-size: 14px; line-height: 1.6;">
-                <li class="border-bottom pb-2">
-                  <strong style="color: var(--rt-heading);">Plagiarism Detection:</strong>
-                  <p class="mb-0 text-muted mt-1">Industry-standard integrity software to ensure original research submissions and assignments.</p>
-                </li>
-                <li class="border-bottom pb-2">
-                  <strong style="color: var(--rt-heading);">Official G-Suite & Microsoft 365:</strong>
-                  <p class="mb-0 text-muted mt-1">Official G-Suite and Microsoft 365 accounts for all students and faculty members facilitating secure institutional communications.</p>
-                </li>
-                <li class="border-bottom pb-2">
-                  <strong style="color: var(--rt-heading);">CITI Student Portal:</strong>
-                  <p class="mb-0 text-muted mt-1">Centrally managed student registration, coursework submissions, and academic resource portal.</p>
-                </li>
-                <li class="border-bottom pb-2">
-                  <strong style="color: var(--rt-heading);">Knimbus Digital Library:</strong>
-                  <p class="mb-0 text-muted mt-1">Provides off-campus remote access to subscribed international journals, e-books, and digital research archives.</p>
-                </li>
-                <li>
-                  <strong style="color: var(--rt-heading);">WhatsApp Governance:</strong>
-                  <p class="mb-0 text-muted mt-1">Centralized messaging platform to distribute official announcements and notices instantly.</p>
-                </li>
-              </ul>
+              <!-- Image Card -->
+              <div class="mt-4 p-0 overflow-hidden" style="border-radius: 0px; border: 1px solid #e2e8f0; background: #fff;">
+                <img src="/assets/images/citi/citi7.jpg" alt="CITI Lab" style="border-radius: 0px; width: 100%; height: 200px; object-fit: cover; display: block;" />
+                <div class="p-4">
+                  <h5 style="font-weight: 700; font-size: 16px; color: var(--rt-heading);" class="mb-2">CITI Lab</h5>
+                  <p class="text-muted mb-0" style="font-size: 13px; line-height: 1.5; text-align: justify;">A state-of-the-art laboratory with a 150-computer capacity, central air conditioning, and high-speed 1 Gbps internet connectivity.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
