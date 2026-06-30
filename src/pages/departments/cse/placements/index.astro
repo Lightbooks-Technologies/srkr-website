@@ -7,6 +7,18 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
 const years = ['2025–26', '2024–25', '2023–24', '2022–23','2021–22'];
+
+const recruiters = [
+  { name: 'Tata Consultancy Services', img: '/assets/images/recruiters/cse/tcs.jpg' },
+  { name: 'Cognizant Technology Solutions', img: '/assets/images/recruiters/cse/cognizant.jpg' },
+  { name: 'Accenture', img: '/assets/images/recruiters/cse/Accenture.png' },
+  { name: 'Deloitte', img: '/assets/images/recruiters/cse/deloitte.png' },
+  { name: 'Rinex', img: '/assets/images/recruiters/cse/Rinex.png' },
+  { name: 'Vedya Labs', img: '/assets/images/recruiters/cse/vedya_labs_logo.jpg' },
+  { name: 'Digital Trust', img: '/assets/images/recruiters/cse/Digital trust.png' },
+  { name: 'Tachyon', img: '/assets/images/recruiters/cse/tachyon.png' },
+  { name: 'Brakes India', img: '/assets/images/recruiters/cse/Breaks India.png' }
+];
 ---
 
 <!doctype html>
@@ -108,51 +120,13 @@ const years = ['2025–26', '2024–25', '2023–24', '2022–23','2021–22'];
               <h4 class="row-title">Top Recruiters</h4>
               <p>Leading IT services and product engineering companies consistently recruit our graduates for their technical competence, coding ability, and problem-solving skills.</p>
               <div class="row g-4 mt-3">
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/tcs.png" alt="Tata Consultancy Services" / loading="lazy" decoding="async">
+                {recruiters.map(recruiter => (
+                  <div class="col-4">
+                    <div class="recruiter-logo-box">
+                      <img src={recruiter.img} alt={recruiter.name} loading="lazy" decoding="async" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/cts.png" alt="Cognizant Technology Solutions" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/infosys.png" alt="Infosys" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/wipro.png" alt="Wipro" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/hcl.png" alt="HCL Technologies" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/tm.png" alt="Tech Mahindra" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/ey.png" alt="Ernst & Young" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/ncc.png" alt="NCC Limited" / loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/recruiters/lt.png" alt="L&T" / loading="lazy" decoding="async">
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
