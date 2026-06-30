@@ -1,0 +1,143 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "JNTUK Affiliation Details";
+const activePage = "JNTUK";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const affiliations = [
+  {
+    title: "Renewal of Permanent Affiliation (2023-24 to 2025-26)",
+    desc: "Latest affiliation renewal from Jawaharlal Nehru Technological University Kakinada",
+    href: "/assets/documents/mandates/jntuk_2023_26.pdf",
+  },
+  {
+    title: "Renewal of Permanent Affiliation (2020-21 to 2022-23)",
+    desc: "Previous cycle renewal of permanent affiliation",
+    href: "/assets/documents/mandates/jntuk_2020_23.pdf",
+  },
+  {
+    title: "Permanent Affiliation (2017-18 to 2019-20)",
+    desc: "Permanent affiliation grant letter",
+    href: "/assets/documents/mandates/jntuk_2017_20.pdf",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="JNTUK Permanent Affiliations and affiliation renewals for Sagi Rama Krishnam Raju Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">Jawaharlal Nehru Technological University Kakinada (JNTUK) Affiliation</h3>
+              <p>
+                SRKR Engineering College is permanently affiliated with Jawaharlal Nehru Technological University Kakinada (JNTUK), Kakinada. The university grants permanent affiliation for cycles of three years after rigorous inspection and validation of the college's academic standards, faculty qualifications, and infrastructure.
+              </p>
+            </div>
+
+            <!-- Affiliation Letters List -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-award me-2" style="color: var(--rt-primary);"></i> JNTUK Affiliation Documents</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    affiliations.map((a) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{a.title}</h6>
+                          <p class="mb-0 text-muted small">{a.desc}</p>
+                        </div>
+                        <a
+                          href={a.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

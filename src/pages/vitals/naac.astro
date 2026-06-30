@@ -1,0 +1,204 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "NAAC Accreditation & SSR";
+const activePage = "NAAC";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const naacCycles = [
+  {
+    cycle: "Cycle 2 (Current)",
+    grade: "A+",
+    cgpa: "3.42",
+    period: "20.12.2022 to 19.12.2027",
+    href: "/assets/documents/mandates/nacc3.pdf",
+  },
+  {
+    cycle: "Cycle 1 (Extension)",
+    grade: "A",
+    cgpa: "3.60",
+    period: "19.02.2022 to 31.12.2022",
+    href: "/assets/documents/mandates/nacc2.pdf",
+  },
+  {
+    cycle: "Cycle 1",
+    grade: "A",
+    cgpa: "3.60",
+    period: "19.02.2016 to 18.02.2022",
+    href: "/assets/documents/mandates/nacc1.pdf",
+  },
+];
+
+const naacResources = [
+  {
+    title: "NAAC SSR Report 2022",
+    desc: "Self Study Report submitted for Cycle 2 accreditation",
+    href: "/assets/documents/naac/srkr_naac_ssr_report_2022.pdf",
+  },
+  {
+    title: "Student Satisfaction Survey (2023-24)",
+    desc: "Feedback and survey analysis report",
+    href: "/assets/documents/mandates/Student_Satisfaction_Survey_2023-24.pdf",
+  },
+  {
+    title: "Best Practices (2023-24)",
+    desc: "Institutional best practices document",
+    href: "/assets/documents/mandates/BEST_PRACTICES23.pdf",
+  },
+  {
+    title: "Institutional Distinctiveness (2023-24)",
+    desc: "Report on institutional focus and distinctiveness",
+    href: "/assets/documents/mandates/DISTINCTVENESS_WEBSITE_2023-24.pdf",
+  },
+  {
+    title: "Institutional Distinctiveness (2022-23)",
+    desc: "Report on institutional focus and distinctiveness for the previous academic year",
+    href: "/assets/documents/mandates/DISTINCTVENESS_WEBSITE_2022-23.pdf",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="National Assessment and Accreditation Council (NAAC) reports, grade sheets, SSR, and AQAR details for SRKR Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">National Assessment and Accreditation Council (NAAC)</h3>
+              <p>
+                SRKR Engineering College is accredited by the National Assessment and Accreditation Council (NAAC) with an 'A+' Grade and a CGPA of 3.42 out of 4.00 in its second cycle. This stands as a testament to the college's continuous dedication to academic excellence, student support services, high quality infrastructure, and outstanding research.
+              </p>
+            </div>
+
+            <!-- NAAC Cycles List -->
+            <div class="card shadow-sm border-0 mb--40">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-clock-rotate-left me-2" style="color: var(--rt-primary);"></i> NAAC Accreditation History</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    naacCycles.map((c) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{c.cycle} — Grade {c.grade} (CGPA {c.cgpa})</h6>
+                          <p class="mb-0 text-muted small">Validity Period: {c.period}</p>
+                        </div>
+                        <a
+                          href={c.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- NAAC Resources List -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-file-shield me-2" style="color: var(--rt-primary);"></i> SSR Reports &amp; Mandatory Mandates</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    naacResources.map((r) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{r.title}</h6>
+                          <p class="mb-0 text-muted small">{r.desc}</p>
+                        </div>
+                        <a
+                          href={r.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

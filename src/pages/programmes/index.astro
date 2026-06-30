@@ -1,651 +1,933 @@
---- 
-import BaseHead from '../../components/BaseHead.astro';
-import FooterScripts from '../../components/FooterScripts.astro';
-import OffCanvas from '../../components/OffCanvas.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import SrkrHeader from '../../components/SrkrHeader.astro';
-import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
     <!-- header area start -->
     <SrkrHeader />
-    
+
     <!-- header area end -->
-     <!-- BREADCRUMB AREA -->
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Academics</a></li>
-                        </ul>
-                        <h1 class="section-title">Academic Areas of Study</h1>
-                    </div>
-                </div>
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Academics</a></li>
+              </ul>
+              <h1 class="section-title">Academic Areas of Study</h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- BREADCRUMB AREA END -->
 
-
     <!-- content -->
     <div class="rts-academic-area rts-section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="rts-section">
-                    <h3 class="rts-section-title">Academic Areas of Study</h3>
-                </div>
-            </div>
-            <!-- academic top -->
-            <div class="search-filter mb--40">
-                <div class="row g-5">
-                    
-                    <div class="col-lg-5 col-md-6">
-                        <div class="category-filter">
-                            <h6>Program Type:</h6>
-                            <select onchange="location.href = this.value" name="cat-search" id="cat-filter">
-                                <option value="#all">All Programs</option>
-                                <option value="#undergraduate">Undergraduate Programs</option>
-                                <option value="#postgraduate">Post Graduate Programmes</option>
-                                <option value="#phd">PhD Programmes</option>
-                              </select>                              
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="all-program-category">
-                    <div id="undergraduate">
-                <div class="row g-5 mb--50" >
-
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/ai_ds.png" alt="course-thumbnail">
-                                <a href="/departments/it/academic-programs/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/it/academic-programs/">AI & Data Science</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/it/academic-programs/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/ai_ml.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/academic-programs/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/academic-programs/">AI & ML</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/academic-programs/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/civil.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/civil/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/civil/">Civil Engineering</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/civil/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/cs_bs.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/it/academic-programs/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/it/academic-programs/">CSE & Business Systems </a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/it/academic-programs/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/csd.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/csd/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/csd/">CSE & Design</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/csd/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/cse.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/">CSE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/ece.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ece/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ece/">ECE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ece/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/eee.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/eee/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/eee/">EEE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/eee/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/it.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/it/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/it/">IT</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/it/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/mech.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/mechanical/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/mechanical/">Mechanical</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/mechanical/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/cs_iot.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/academic-programs/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/academic-programs/">CSE (IoT, Cyber Security & Blockchain)</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/academic-programs/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/cs_it.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/csit/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/csit/">CS & IT</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/csit/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/bba.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/bba/" class="cat-link-btn">Undergraduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/bba/">B.B.A.</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/bba/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="postgraduate">
-                <div class="row g-5">
-
-                    <!-- Graduate single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/cad_cam.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/mechanical/" class="cat-link-btn">Graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/mechanical/">CAD/CAM</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/mechanical/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/structural_engineering.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/civil/" class="cat-link-btn">Graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/civil/">Structural Engg.</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/civil/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/communication_systems.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ece/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ece/">Communication Systems</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ece/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/csTechnology.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/">CS & Technology</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/pg_it.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/it/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/it/">IT</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/it/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/power_systems.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/eee/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/eee/">Power Systems & Automation</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/eee/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/ev.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/eee/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/eee/">Electric Vehicle Technology</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/eee/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/programs/ai.png" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/academic-programs/" class="cat-link-btn">graduate</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/academic-programs/">Artificial Intelligence</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/academic-programs/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-                </div>
-                <div id="phd" class="mt--50 mb--50">
-                <div class="row g-5">
-
-                    <!--PhD single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/15.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/civil/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/civil/">Civil Engg.</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/civil/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-             
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/16.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/cse/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/cse/">CSE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/cse/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/17.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ece/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ece/">ECE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ece/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/18.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/eee/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/eee/">EEE</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/eee/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/19.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/it/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/it/">IT</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/it/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/20.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/mechanical/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/mechanical/">Mechanical Engg.</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/mechanical/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/30.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ash/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ash/">Mathematics</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ash/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/40.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ash/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ash/">Chemistry</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ash/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/50.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ash/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ash/">Physics</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ash/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single item -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="/assets/images/course/60.jpg" alt="course-thumbnail" loading="lazy" decoding="async">
-                                <a href="/departments/ash/" class="cat-link-btn">PhD</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="/departments/ash/">English</a>
-                                </div>
-                                <div class="cat-link">
-                                    <a href="/departments/ash/" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <h3 class="rts-section-title">Academic Areas of Study</h3>
+          </div>
         </div>
+        <!-- academic top -->
+        <div class="search-filter mb--40">
+          <div class="row g-5">
+            <div class="col-lg-5 col-md-6">
+              <div class="category-filter">
+                <h6>Program Type:</h6>
+                <select
+                  onchange="location.href = this.value"
+                  name="cat-search"
+                  id="cat-filter"
+                >
+                  <option value="#all">All Programs</option>
+                  <option value="#undergraduate">Undergraduate Programs</option>
+                  <option value="#postgraduate">Post Graduate Programmes</option
+                  >
+                  <option value="#phd">PhD Programmes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="all-program-category">
+          <div id="undergraduate">
+            <div class="row g-5 mb--50">
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/ai_ds.png"
+                      alt="course-thumbnail"
+                    />
+                    <a
+                      href="/departments/it/academic-programs/"
+                      class="cat-link-btn">Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/it/academic-programs/"
+                        >AI & Data Science</a
+                      >
+                    </div>
+                    <div class="cat-link">
+                      <a
+                        href="/departments/it/academic-programs/"
+                        class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/ai_ml.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a
+                      href="/departments/cse/academic-programs/"
+                      class="cat-link-btn">Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/cse/academic-programs/">AI & ML</a>
+                    </div>
+                    <div class="cat-link">
+                      <a
+                        href="/departments/cse/academic-programs/"
+                        class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/civil.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/civil/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/civil/">Civil Engineering</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/civil/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/cs_bs.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a
+                      href="/departments/it/academic-programs/"
+                      class="cat-link-btn">Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/it/academic-programs/"
+                        >CS & Business System System
+                      </a>
+                    </div>
+                    <div class="cat-link">
+                      <a
+                        href="/departments/it/academic-programs/"
+                        class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/csd.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/csd/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/csd/">CS & Design</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/csd/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/cse.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/cse/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/cse/">CSE</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/cse/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/ece.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/ece/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/ece/">ECE</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/ece/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/eee.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/eee/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/eee/">EEE</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/eee/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/it.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/it/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/it/">IT</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/it/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/mech.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/mechanical/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/mechanical/">Mechanical</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/mechanical/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/cs_iot.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a
+                      href="/departments/cse/academic-programs/"
+                      class="cat-link-btn">Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/cse/academic-programs/">CIC</a>
+                    </div>
+                    <div class="cat-link">
+                      <a
+                        href="/departments/cse/academic-programs/"
+                        class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/cs_it.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/csit/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/csit/">CS & IT</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/csit/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- single item -->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb">
+                    <img
+                      src="/assets/images/programs/bba.png"
+                      alt="course-thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <a href="/departments/bba/" class="cat-link-btn"
+                      >Under Graduate</a
+                    >
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="/departments/bba/">B.B.A.</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="/departments/bba/" class="cat-link-arrow"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="postgraduate">
+              <div class="row g-5">
+                <!-- Graduate single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/cad_cam.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/mechanical/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/mechanical/">CAD/CAM</a>
+                      </div>
+                      <div class="cat-link">
+                        <a
+                          href="/departments/mechanical/"
+                          class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/structural_engineering.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/civil/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/civil/">Structural Engg.</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/civil/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/communication_systems.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ece/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ece/">Communication Systems</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ece/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/csTechnology.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/cse/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/cse/">CS & Technology</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/cse/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/pg_it.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/it/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/it/">IT</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/it/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/power_systems.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/eee/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/eee/"
+                          >Power Systems & Automation</a
+                        >
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/eee/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/ev.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/eee/" class="cat-link-btn"
+                        >Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/eee/"
+                          >Electric Vehicle Technology</a
+                        >
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/eee/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/programs/ai.png"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a
+                        href="/departments/cse/academic-programs/"
+                        class="cat-link-btn">Post Graduate</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/cse/academic-programs/"
+                          >Artificial Intelligence</a
+                        >
+                      </div>
+                      <div class="cat-link">
+                        <a
+                          href="/departments/cse/academic-programs/"
+                          class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="phd" class="mt--50 mb--50">
+              <div class="row g-5">
+                <!--PhD single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/15.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/civil/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/civil/">Civil Engg.</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/civil/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/16.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/cse/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/cse/">CSE</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/cse/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/17.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ece/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ece/">ECE</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ece/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/18.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/eee/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/eee/">EEE</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/eee/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/19.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/it/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/it/">IT</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/it/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/20.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/mechanical/" class="cat-link-btn"
+                        >PhD</a
+                      >
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/mechanical/">Mechanical Engg.</a>
+                      </div>
+                      <div class="cat-link">
+                        <a
+                          href="/departments/mechanical/"
+                          class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/30.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ash/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ash/">Mathematics</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ash/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/40.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ash/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ash/">Chemistry</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ash/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/50.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ash/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ash/">Physics</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ash/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img
+                        src="/assets/images/course/60.jpg"
+                        alt="course-thumbnail"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <a href="/departments/ash/" class="cat-link-btn">PhD</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="/departments/ash/">English</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="/departments/ash/" class="cat-link-arrow"
+                          ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <SrkrFooter />
+
+      <!-- footer copyright end -->
+
+      <OffCanvas />
+
+      <style>
+        .rts-academic-area .single-cat-item .cat-thumb {
+          height: 220px;
+          overflow: hidden;
+        }
+
+        .rts-academic-area .single-cat-item .cat-thumb img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        @media (max-width: 767px) {
+          .rts-academic-area .single-cat-item .cat-thumb {
+            height: 200px;
+          }
+        }
+      </style>
+
+      <!-- scripts -->
+      <FooterScripts />
     </div>
-<!-- footer -->
-<SrkrFooter/>
-
-    <!-- footer copyright end -->
-
-    <OffCanvas/>
-
-        <style>
-            .rts-academic-area .single-cat-item .cat-thumb {
-                height: 220px;
-                overflow: hidden;
-            }
-
-            .rts-academic-area .single-cat-item .cat-thumb img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-
-            @media (max-width: 767px) {
-                .rts-academic-area .single-cat-item .cat-thumb {
-                    height: 200px;
-                }
-            }
-        </style>
-
-
-    <!-- scripts -->
-    <FooterScripts />
-
-
-</body>
-
+  </body>
 </html>

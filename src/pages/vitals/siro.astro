@@ -1,0 +1,153 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "SIRO Recognition";
+const activePage = "SIRO";
+
+const menuItems = [
+  { name: "UGC", href: "/vitals/ugc/" },
+  { name: "AICTE", href: "/vitals/aicte/" },
+  { name: "JNTUK", href: "/vitals/jntuk/" },
+  { name: "NBA", href: "/vitals/nba/" },
+  { name: "NAAC", href: "/vitals/naac/" },
+  { name: "IQAC", href: "/vitals/iqac/" },
+  { name: "SIRO", href: "/vitals/siro/" },
+  { name: "NIRF", href: "/vitals/nirf/" },
+];
+
+const siroRecognitions = [
+  {
+    title: "DSIR SIRO Recognition (2025 to 2028)",
+    period: "01.04.2025 to 31.03.2028",
+    desc: "Latest recognition letter from Department of Scientific and Industrial Research (DSIR)",
+    href: "/assets/documents/mandates/siro4.pdf",
+  },
+  {
+    title: "DSIR SIRO Recognition (2022 to 2025)",
+    period: "21.04.2022 to 31.03.2025",
+    desc: "Previous recognition cycle by DSIR",
+    href: "/assets/documents/mandates/siro3.pdf",
+  },
+  {
+    title: "DSIR SIRO Recognition (2019 to 2022)",
+    period: "31.03.2019 to 31.03.2022",
+    desc: "Recognition letter for the 2019-22 cycle",
+    href: "/assets/documents/mandates/siro2.pdf",
+  },
+  {
+    title: "DSIR SIRO Recognition (2016 to 2019)",
+    period: "27.04.2016 to 31.03.2019",
+    desc: "Recognition letter for the 2016-19 cycle",
+    href: "/assets/documents/mandates/siro1.pdf",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="Scientific & Industrial Research Organisation (SIRO) recognition letters and DSIR approval documents for SRKR Engineering College."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Vitals</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center g-5">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="program-about mb--40">
+              <h3 class="title">Scientific &amp; Industrial Research Organisation (SIRO)</h3>
+              <p>
+                SRKR Engineering College is recognized as a Scientific and Industrial Research Organisation (SIRO) by the Department of Scientific and Industrial Research (DSIR), Ministry of Science and Technology, Government of India. This prestigious recognition underscores the college's focus on innovative scientific research, development of indigenous technologies, and active consultancy collaborations.
+              </p>
+            </div>
+
+            <!-- SIRO Letters List -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4"><i class="fa-solid fa-microscope me-2" style="color: var(--rt-primary);"></i> DSIR SIRO Recognition Letters</h4>
+                <div class="list-group list-group-flush">
+                  {
+                    siroRecognitions.map((s) => (
+                      <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                          <h6 class="mb-1 text-dark">{s.title}</h6>
+                          <p class="mb-1 text-muted small">Validity: {s.period}</p>
+                          <p class="mb-0 text-muted small">{s.desc}</p>
+                        </div>
+                        <a
+                          href={s.href}
+                          class="rts-theme-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-light fa-download me-1"></i> Download PDF
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="program-sidebar">
+              <div class="program-curriculum">
+                <h6 class="heading-title">Vitals Quick Links</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    {
+                      menuItems.map((item) => (
+                        <li class={item.name === activePage ? "active" : ""}>
+                          <a href={item.href}>
+                            <span><i class="fa-light fa-arrow-right"></i></span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
