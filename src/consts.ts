@@ -67,6 +67,14 @@ export const UPCOMING_EVENTS = [
 
 export const NEWS = [
   {
+    title:
+      'AICTE ATAL Faculty Development Program (2026–2027) has been sanctioned on the theme “Sustainable Energy Solutions: Emerging Technologies in Electric Vehicles and Hydrogen Energy Storage” coordinated by Dr. Mohammed Azaharahmed.',
+    day: '30',
+    month: 'Jun',
+    link: '#',
+  },
+
+  {
     title: 'Dr. T. Vamsi Nagaraju, Associate Professor of Civil, receives recognition for a Wiley Top Cited Article in Structural Concrete.',
     day: '24',
     month: 'Jun',
