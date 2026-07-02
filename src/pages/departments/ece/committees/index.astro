@@ -38,6 +38,18 @@ const paqicMembers = [
   { name: 'Dr. B. Sanjay', role: 'Member\nDepartment NBA Coordinator', link: '', image: '638' },
   { name: 'Dr. B.V.D.S Sekhar', role: 'Member\nOther Department Professor', link: '', image: '332' },
 ];
+
+const bosMeetings = [
+  { name: 'ECE BOS MEETINGS 2024-2025', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2024-2025.pdf' },
+  { name: 'ECE BOS MEETINGS 2023-2024', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2023-2024.pdf' },
+  { name: 'ECE BOS MEETINGS 2022-2023', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2022-2023.pdf' },
+  { name: 'ECE BOS MEETINGS 2021-2022', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2021-2022.pdf' },
+  { name: 'ECE BOS MEETINGS 2020-2021', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2020-2021.pdf' },
+  { name: 'ECE BOS MEETINGS 2019-2020', file: '/assets/documents/ece/bos/ECE_BOS_MEETINGS_2019-2020.pdf' },
+  { name: 'ECE BOS MEETINGS 2018-2019', file: '/assets/documents/ece/bos/ECE_BOS_MINTUES_2018_2019.pdf' },
+  { name: 'ECE BOS MEETINGS 2017-2018', file: '/assets/documents/ece/bos/ECE_BOS_MINTUES_2017_2018.pdf' },
+  { name: 'ECE BOS MEETINGS 2016-2017', file: '/assets/documents/ece/bos/ECE_BOS_MINTUES_2016_2017.pdf' }
+];
 ---
 
 <style>
@@ -204,6 +216,51 @@ const paqicMembers = [
               </div>
             </div>
           ))}
+        </div>
+
+        <!-- BoS Meetings Accordion Section -->
+        <div class="row justify-content-md-center mt--60">
+          <div class="col-lg-12 col-md-11 border-top pt-5">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Board of Studies (BoS) Meetings</h3>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="ece-bos-accordion">
+                  <div class="accordion-item">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#eceBosMeetings"
+                      aria-expanded="false"
+                    >
+                      BOS Meeting Minutes (2016-17 to 2024-25)
+                    </button>
+                    <div
+                      id="eceBosMeetings"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#ece-bos-accordion"
+                    >
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          {bosMeetings.map((meeting) => (
+                            <li class="si__list--single" style="margin-bottom: 0.75rem;">
+                              <a href={meeting.file} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary); font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-light fa-file-pdf" style="font-size: 1.4rem;"></i>
+                                {meeting.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
