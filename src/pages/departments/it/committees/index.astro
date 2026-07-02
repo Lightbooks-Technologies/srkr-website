@@ -35,6 +35,15 @@ const paqicMembers = [
   { name: 'Dr. S.Venkata Ramana', role: 'Member\nProfessor ', specialization: 'Machine Learning, Object Oriented Software Engineering, Cloud Computing', profile: 'https://srkrec.irins.org/profile/500053', image: '450' },
   { name: 'Dr. S.Rama Gopala Reddy', role: 'Member\nAssociate Professor', specialization: 'Data Mining, Machine Learning', profile: 'https://srkrec.irins.org/profile/579105', image: '301' },
 ];
+
+const bosMeetings = [
+  { name: 'IT BOS MEETINGS 2024-2025', file: '/assets/documents/it/bos/BOS_IT_Minutes_02-07-2025.pdf' },
+  { name: 'IT BOS MEETINGS 2023-2024', file: '/assets/documents/it/bos/BOS-2023-24.pdf' },
+  { name: 'IT BOS MEETINGS 2022-2023', file: '/assets/documents/it/bos/IT_BOS_MEETINGS_2022-2023.pdf' },
+  { name: 'IT BOS MEETINGS 2021-2022', file: '/assets/documents/it/bos/IT_AIDS_CSBS_BOS_MEETINGS_2021-2022.pdf' },
+  { name: 'IT BOS MEETINGS 2020-2021', file: '/assets/documents/it/bos/IT_BOS_MEETINGS_2020-2021.pdf' },
+  { name: 'IT BOS MEETINGS 2019-2020', file: '/assets/documents/it/bos/IT_BOS_MEETINGS_2019-2020.pdf' }
+];
 ---
 
 <style>
@@ -201,6 +210,51 @@ const paqicMembers = [
               </div>
             </div>
           ))}
+        </div>
+
+        <!-- BoS Meetings Accordion Section -->
+        <div class="row justify-content-md-center mt--60">
+          <div class="col-lg-12 col-md-11 border-top pt-5">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Board of Studies (BoS) Meetings</h3>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="it-bos-accordion">
+                  <div class="accordion-item">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#itBosMeetings"
+                      aria-expanded="false"
+                    >
+                      BOS Meeting Minutes (2019-20 to 2024-25)
+                    </button>
+                    <div
+                      id="itBosMeetings"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#it-bos-accordion"
+                    >
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          {bosMeetings.map((meeting) => (
+                            <li class="si__list--single" style="margin-bottom: 0.75rem;">
+                              <a href={meeting.file} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary); font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-light fa-file-pdf" style="font-size: 1.4rem;"></i>
+                                {meeting.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
