@@ -35,6 +35,23 @@ const paqicMembers = [
   { name: 'Dr. Bh. Rama Krishnam Raju',role: 'Member\nProfessor of CSE', link: '', image: '222' },
   { name: 'Dr. Ch. Rama Bhadri Raju',  role: 'Dept. PAQIC/ NBA Coordinator\nAssociate Professor', link: '', image: '561' },
 ];
+
+const bosMeetings = [
+  { name: 'BOS MEETINGS 1', file: '/assets/documents/mechanical/bos/bos1.pdf' },
+  { name: 'BOS MEETINGS 2', file: '/assets/documents/mechanical/bos/bos2.pdf' },
+  { name: 'BOS MEETINGS 3', file: '/assets/documents/mechanical/bos/bos3.pdf' },
+  { name: 'BOS MEETINGS 4', file: '/assets/documents/mechanical/bos/bos4.pdf' },
+  { name: 'BOS MEETINGS 5', file: '/assets/documents/mechanical/bos/bos5.pdf' },
+  { name: 'BOS MEETINGS 6', file: '/assets/documents/mechanical/bos/bos6.pdf' },
+  { name: 'BOS MEETINGS 7', file: '/assets/documents/mechanical/bos/bos7.pdf' },
+  { name: 'BOS MEETINGS 8', file: '/assets/documents/mechanical/bos/bos8.pdf' },
+  { name: 'BOS MEETINGS 9', file: '/assets/documents/mechanical/bos/bos9.pdf' },
+  { name: 'BOS MEETINGS 10', file: '/assets/documents/mechanical/bos/bos10.pdf' },
+  { name: 'BOS MEETINGS 11', file: '/assets/documents/mechanical/bos/bos11.pdf' },
+  { name: 'BOS MEETINGS 12', file: '/assets/documents/mechanical/bos/bos12.pdf' },
+  { name: 'BOS MEETINGS 13', file: '/assets/documents/mechanical/bos/bos13.pdf' },
+  { name: 'BOS MEETINGS 14', file: '/assets/documents/mechanical/bos/bos14.pdf' }
+];
 ---
 
 <style>
@@ -198,6 +215,51 @@ const paqicMembers = [
               </div>
             </div>
           ))}
+        </div>
+
+        <!-- BoS Meetings Accordion Section -->
+        <div class="row justify-content-md-center mt--60">
+          <div class="col-lg-12 col-md-11 border-top pt-5">
+            <div class="rts-section mb--30">
+              <h3 class="rts-section-title">Board of Studies (BoS) Meetings</h3>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="mechanical-bos-accordion">
+                  <div class="accordion-item">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mechanicalBosMeetings"
+                      aria-expanded="false"
+                    >
+                      BOS Meeting Minutes (1 to 14)
+                    </button>
+                    <div
+                      id="mechanicalBosMeetings"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#mechanical-bos-accordion"
+                    >
+                      <div class="accordion-body">
+                        <ul class="list-unstyled">
+                          {bosMeetings.map((meeting) => (
+                            <li class="si__list--single" style="margin-bottom: 0.75rem;">
+                              <a href={meeting.file} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary); font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-light fa-file-pdf" style="font-size: 1.4rem;"></i>
+                                {meeting.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
