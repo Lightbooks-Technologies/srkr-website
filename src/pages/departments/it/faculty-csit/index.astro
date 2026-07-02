@@ -1,0 +1,227 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const professors = [
+  {
+    name: 'DR NGK MURTHY',
+    designation: 'Professor',
+    specialization: '',
+    email: 'gopinukala@gmail.com',
+    profile: 'https://srkrec.irins.org/profile/320363',
+    imgsrc: '781.jpeg'
+  }
+];
+
+const assistantProfessors = [
+  {
+    name: 'N. NAVYA',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'navyanallaparaju@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/321252',
+    imgsrc: '1259.jpg'
+  },
+  {
+    name: 'NETI PRAVEEN',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'npraveen@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/547837',
+    imgsrc: '1348.jpg'
+  },
+  {
+    name: 'K V SUNIL VARMA',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'kvsunilvarma@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/547902',
+    imgsrc: '1372.jpg'
+  },
+  {
+    name: 'P MOUNA',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'mouna.p@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/715069',
+    imgsrc: '1398.jpeg'
+  },
+  {
+    name: 'P MANOJ',
+    designation: 'Assistant Professor',
+    specialization: 'Prompt Engineering',
+    email: 'manoj.p@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/715065',
+    imgsrc: '1399.jpeg'
+  },
+  {
+    name: 'ANUSURI KRISHNA VENI',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'akveni@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/376969',
+    imgsrc: '1478.jpg'
+  },
+  {
+    name: 'K V V Satya Trinadh Naidu',
+    designation: 'Assistant Professor',
+    specialization: 'Cyber Security, Java, Python',
+    email: 'kvvstnaidu@srkrec.ac.in',
+    profile: 'https://srkrec.irins.org/profile/294478',
+    imgsrc: '1480.jpg'
+  },
+  {
+    name: 'D Parvathi',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    email: 'parvathiram21@gmail.com',
+    profile: 'https://srkrec.irins.org/profile/715070',
+    imgsrc: '1503.jpeg'
+  }
+];
+
+const teachingAssistants = [
+  {
+    name: 'K Sri vigyna',
+    designation: 'Teaching Assistant',
+    specialization: 'Machine Learning',
+    email: 'vignyak@gmail.com',
+    profile: 'https://srkrec.irins.org/profile/715093',
+    imgsrc: '1509.jpeg'
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="CSIT Faculty | Information Technology | SRKR" description="Computer Science & Information Technology Faculty under Department of Information Technology at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/it/ithome.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/it/">Information Technology</a></li>
+              </ul>
+              <h1 class="section-title">CSIT Faculty</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="it" current="CSIT Faculty" />
+
+        <!-- Professors -->
+        {professors.length > 0 && (
+          <>
+            <div class="rts-section mb--40">
+              <h3 class="rts-section-title">Professors</h3>
+            </div>
+            <div class="row g-5 mb--50">
+              {professors.map((f) => (
+                <div class="col-lg-6 col-md-11">
+                  <div class="single-staff">
+                    <div class="single-staff__content">
+                      <div class="staf-image">
+                        <img src={`/assets/images/faculty/csit/${f.imgsrc}`} alt={f.name} loading="lazy" decoding="async" />
+                      </div>
+                      <div class="staf-info">
+                        <h5 class="name">{f.name}</h5>
+                        <span class="designation">{f.designation}</span>
+                        <div class="staf-info__speciality">
+                          {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
+                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
+                        </div>
+                        {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        <!-- Assistant Professors -->
+        {assistantProfessors.length > 0 && (
+          <>
+            <div class="rts-section mb--40">
+              <h3 class="rts-section-title">Assistant Professors</h3>
+            </div>
+            <div class="row g-5 mb--50">
+              {assistantProfessors.map((f) => (
+                <div class="col-lg-6 col-md-11">
+                  <div class="single-staff">
+                    <div class="single-staff__content">
+                      <div class="staf-image">
+                        <img src={`/assets/images/faculty/csit/${f.imgsrc}`} alt={f.name} loading="lazy" decoding="async" />
+                      </div>
+                      <div class="staf-info">
+                        <h5 class="name">{f.name}</h5>
+                        <span class="designation">{f.designation}</span>
+                        <div class="staf-info__speciality">
+                          {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
+                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
+                        </div>
+                        {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        <!-- Teaching Assistants -->
+        {teachingAssistants.length > 0 && (
+          <>
+            <div class="rts-section mb--40">
+              <h3 class="rts-section-title">Teaching Assistants</h3>
+            </div>
+            <div class="row g-5">
+              {teachingAssistants.map((f) => (
+                <div class="col-lg-6 col-md-11">
+                  <div class="single-staff">
+                    <div class="single-staff__content">
+                      <div class="staf-image">
+                        <img src={`/assets/images/faculty/csit/${f.imgsrc}`} alt={f.name} loading="lazy" decoding="async" />
+                      </div>
+                      <div class="staf-info">
+                        <h5 class="name">{f.name}</h5>
+                        <span class="designation">{f.designation}</span>
+                        <div class="staf-info__speciality">
+                          {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
+                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
+                        </div>
+                        {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
