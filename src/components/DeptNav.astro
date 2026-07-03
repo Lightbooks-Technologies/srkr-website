@@ -16,7 +16,7 @@ if (!d) {
 }
 
 const basePath = `/departments/${d.slug}/`;
-let navItems = [];
+let navItems: { label: string; href: string; }[] = [];
 if (dept === 'ash') {
   navItems = [
     { label: 'Home', href: `/departments/ash/` },
@@ -28,6 +28,34 @@ if (dept === 'ash') {
     { label: 'EFL Highlights', href: `/departments/ash/ielts-test-centre/` },
     { label: 'SRKR Overseas', href: `/departments/ash/overseas-education-languages/` },
     { label: 'Indian Knowledge Systems', href: `/departments/ash/indian-knowledge-traditions/` },
+  ];
+} else if (dept === 'cse') {
+  navItems = [
+    { label: 'Home', href: `/departments/cse/` },
+    { label: 'Academic Programs', href: `/departments/cse/academic-programs/` },
+    { label: 'CSE Allied Faculty', href: `/departments/cse/faculty/` },
+    { label: 'CSD Faculty', href: `/departments/cse/faculty-csd/` },
+    { label: 'Committees', href: `/departments/cse/committees/` },
+    { label: 'Facilities', href: `/departments/cse/facilities/` },
+    { label: 'Research/Consultancy', href: `/departments/cse/research-consultancy/` },
+    { label: 'Achievements', href: `/departments/cse/achievements/` },
+    { label: 'Placements', href: `/departments/cse/placements/` },
+    { label: 'Newsletter', href: `/departments/cse/newsletter/` },
+    { label: 'Brochure', href: `/departments/cse/brochure/` },
+  ];
+} else if (dept === 'it') {
+  navItems = [
+    { label: 'Home', href: `/departments/it/` },
+    { label: 'Academic Programs', href: `/departments/it/academic-programs/` },
+    { label: 'IT Allied Faculty', href: `/departments/it/faculty/` },
+    { label: 'CSIT Faculty', href: `/departments/it/faculty-csit/` },
+    { label: 'Committees', href: `/departments/it/committees/` },
+    { label: 'Facilities', href: `/departments/it/facilities/` },
+    { label: 'Research/Consultancy', href: `/departments/it/research-consultancy/` },
+    { label: 'Achievements', href: `/departments/it/achievements/` },
+    { label: 'Placements', href: `/departments/it/placements/` },
+    { label: 'Newsletter', href: `/departments/it/newsletter/` },
+    { label: 'Brochure', href: `/departments/it/brochure/` },
   ];
 } else {
   navItems = DEPT_NAV_ITEMS.map((item) => {
