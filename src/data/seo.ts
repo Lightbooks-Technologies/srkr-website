@@ -111,7 +111,7 @@ const institutePages: Record<string, PageSeo> = {
     breadcrumbs: [
       { name: 'About', url: '/college-profile/' },
       { name: 'Governance', url: '/college-profile/' },
-      { name: 'Central Committee', url: '/central-committee/' },
+      { name: 'Statutory Committees', url: '/central-committee/' },
     ],
   },
   '/financial-committee/': {

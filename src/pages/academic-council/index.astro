@@ -10,6 +10,8 @@ const pageTitle = "Academic Council";
 const chair = { name: "Dr. K.V. Murali Krishnam Raju", role: "Principal" };
 
 const hods = [
+
+
   { name: "Dr. G. Sri Bala", role: "Head, Dept. of Civil Engineering" },
   { name: "Dr. Bh.V.S.R.K. Raju", role: "Head, Dept. of CSE" },
   { name: "Dr. S.S. Mohan Reddy", role: "Head, Dept. of ECE" },
@@ -45,7 +47,7 @@ const seniorFaculty = [
 const externalExperts = [
   {
     name: "Prof. K. Ramji",
-    role: "VC, Krishna University · Professor of ME, AUCE, Visakhapatnam",
+    role: "Vice Chancellor, Krishna University",
   },
   {
     name: "Dr. S. Viswanadha Raju",
@@ -64,11 +66,11 @@ const externalExperts = [
 const jntukNominees = [
   {
     name: "Prof. M.H.M. Krishna Prasad",
-    role: "Professor of CSE &amp; Director-Academics, JNTUK, Kakinada",
+    role: "Professor of CSE  Director-Academics, JNTUK, Kakinada",
   },
   {
     name: "Prof. G. Padmaja Rani",
-    role: "Professor of Physics &amp; Director-Evaluations, JNTUK, Kakinada",
+    role: "Professor of Physics  Director-Evaluations, JNTUK, Kakinada",
   },
   {
     name: "Prof. K. Padma Raju",
@@ -203,7 +205,7 @@ const memberSecretary = {
                     </div>
                   </div>
 
-                  <div class="accordion-item">
+                  <!-- <div class="accordion-item">
                     <button
                       class="accordion-button collapsed"
                       type="button"
@@ -225,7 +227,7 @@ const memberSecretary = {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="accordion-item">
                     <button
@@ -233,7 +235,7 @@ const memberSecretary = {
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#acMeetings"
-                      aria-expanded="false">Meetings &amp; Cadence</button
+                      aria-expanded="false">Meetings of Minutes </button
                     >
                     <div
                       id="acMeetings"
@@ -242,18 +244,27 @@ const memberSecretary = {
                     >
                       <div class="accordion-body">
                         <ul class="list-unstyled">
+                    
+                    
                           <li class="si__list--single">
-                            Minimum two statutory meetings per academic year.
-                          </li>
-                          <li class="si__list--single">
-                            Special meetings convened on request of the
-                            Chairperson for time-bound academic matters.
-                          </li>
-                          <li class="si__list--single">
-                            {
-                              /* TODO: link meeting minutes when published */
-                            }Meeting minutes are archived by the Office of the
-                            Dean, Academics.
+                          
+                            <ul>
+                              <li>
+                                <a href="/assets/documents/ac/2023-24.pdf"
+                                  >2023-24 <i class="fa-light fa-download"></i></a
+                                >
+                              </li>
+                              <li>
+                                <a href="/assets/documents/ac/2024-25.pdf"
+                                  >2024-25 <i class="fa-light fa-download"></i></a
+                                >
+                              </li>
+                              <li>
+                                <a href="/assets/documents/ac/2025-26.pdf"
+                                  >2025-26 <i class="fa-light fa-download"></i></a
+                                >
+                              </li>
+                            </ul>
                           </li>
                         </ul>
                       </div>
@@ -283,7 +294,7 @@ const memberSecretary = {
                     <li>
                       <a href="/central-committee"
                         ><span><i class="fa-light fa-arrow-right"></i></span
-                        >Central Committee</a>
+                        >Statutory Committees</a>
                     </li>
                     <li>
                       <a href="/financial-committee"
@@ -307,25 +318,25 @@ const memberSecretary = {
         </div>
 
         <!-- Chair -->
-        <div class="row mt--40">
+         <div class="row mt--40">
           <div class="col-12">
             <div class="application-deadline">
-              <h3 class="rts-section-title">Chairperson</h3>
+              <h3 class="rts-section-title">Principal</h3>
               <div class="application-deadline__content">
                 <div class="application-deadline__content--table">
                   <table class="table">
                     <thead class="table-theme">
-                      <tr><td>Name</td><td>Role</td></tr>
+                      <!-- <tr><td>Name</td></tr> -->
                     </thead>
                     <tbody>
-                      <tr><td>{chair.name}</td><td>{chair.role}</td></tr>
+                      <tr><td>{chair.name}</td></td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> 
 
         <!-- Senior Faculty -->
         <div class="row mt--20">
@@ -336,7 +347,7 @@ const memberSecretary = {
                 <div class="application-deadline__content--table">
                   <table class="table">
                     <thead class="table-theme">
-                      <tr><td>Name</td><td>Role</td></tr>
+                      <!-- <tr><td>Name</td><td>Role</td></tr> -->
                     </thead>
                     <tbody>
                       {
@@ -366,7 +377,7 @@ const memberSecretary = {
                 <div class="application-deadline__content--table">
                   <table class="table">
                     <thead class="table-theme">
-                      <tr><td>Name</td><td>Role</td></tr>
+                      <!-- <tr><td>Name</td><td>Role</td></tr> -->
                     </thead>
                     <tbody>
                       {
@@ -374,6 +385,34 @@ const memberSecretary = {
                           <tr>
                             <td>{m.name}</td>
                             <td set:html={m.role} />
+                          </tr>
+                        ))
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- JNTUK Nominees -->
+        <div class="row mt--20">
+          <div class="col-12">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">JNTUK Nominees</h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <!-- <tr><td>Name</td><td>Designation</td></tr> -->
+                    </thead>
+                    <tbody>
+                      {
+                        jntukNominees.map((m) => (
+                          <tr>
+                            <td>{m.name}</td>
+                            <td>{m.role}</td>
                           </tr>
                         ))
                       }
@@ -394,7 +433,7 @@ const memberSecretary = {
                 <div class="application-deadline__content--table">
                   <table class="table">
                     <thead class="table-theme">
-                      <tr><td>Name</td><td>Affiliation</td></tr>
+                      <!-- <tr><td>Name</td><td>Designation</td></tr> -->
                     </thead>
                     <tbody>
                       {
@@ -413,33 +452,7 @@ const memberSecretary = {
           </div>
         </div>
 
-        <!-- JNTUK Nominees -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">JNTUK Nominees</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <tr><td>Name</td><td>Affiliation</td></tr>
-                    </thead>
-                    <tbody>
-                      {
-                        jntukNominees.map((m) => (
-                          <tr>
-                            <td>{m.name}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
 
