@@ -21,9 +21,18 @@ const corsOrigins = (process.env.CORS_ORIGINS || '')
   .filter(Boolean)
 
 // Database: Postgres (Neon) in production, local SQLite for zero-config dev.
-// Chosen automatically from the DATABASE_URI scheme. Trim + strip stray quotes
-// so a pasted env value with whitespace/quotes still resolves correctly.
-const rawDbURI = (process.env.DATABASE_URI || '').trim().replace(/^["']|["']$/g, '')
+// Accept any of the common connection-string env names — DATABASE_URI (manual),
+// or DATABASE_URL / POSTGRES_URL (what the Neon–Vercel integration injects).
+// Prefer the pooled variants. Trim + strip stray quotes from the pasted value.
+const rawDbURI = (
+  process.env.DATABASE_URI ||
+  process.env.DATABASE_URL ||
+  process.env.POSTGRES_URL ||
+  process.env.POSTGRES_PRISMA_URL ||
+  ''
+)
+  .trim()
+  .replace(/^["']|["']$/g, '')
 const databaseURI = rawDbURI || 'file:./cms.db'
 const usePostgres = /^postgres(ql)?:\/\//i.test(databaseURI)
 
@@ -31,8 +40,9 @@ const usePostgres = /^postgres(ql)?:\/\//i.test(databaseURI)
 // (Local dev is unaffected and keeps using SQLite.)
 if (process.env.VERCEL && !usePostgres) {
   throw new Error(
-    'DATABASE_URI is missing or not a Postgres URL on Vercel. ' +
-      'Set it to your Neon pooled connection string (starts with postgres://).',
+    'No Postgres connection string found on Vercel. Set DATABASE_URI (or ' +
+      'DATABASE_URL / POSTGRES_URL) to your Neon pooled connection string ' +
+      '(starts with postgres://), enabled for the Production environment.',
   )
 }
 const db = usePostgres
