@@ -1,0 +1,141 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+
+const pageTitle = 'News & Updates';
+const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
+
+const DEPT_LABELS: Record<string, string> = {
+  cse: 'CSE', ece: 'ECE', eee: 'EEE', mech: 'Mechanical', civil: 'Civil',
+  it: 'IT', aids: 'AI & DS', aiml: 'AI & ML', csbs: 'CSBS', institute: 'Institute-wide',
+};
+
+type MediaDoc = { url?: string; alt?: string };
+type NewsDoc = {
+  id: string | number;
+  title: string;
+  date?: string;
+  category?: 'district' | 'department';
+  department?: string;
+  links?: { label: string; url: string }[];
+  image?: MediaDoc | null;
+  attachment?: MediaDoc | null;
+};
+
+const absolute = (u?: string) => (!u ? '' : u.startsWith('http') ? u : `${CMS_URL}${u}`);
+const fmtDate = (iso?: string) => {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? iso : d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+};
+const catLabel = (n: NewsDoc) =>
+  n.category === 'district' ? 'District-level'
+  : n.department ? DEPT_LABELS[n.department] || 'Department'
+  : 'Department-level';
+
+let items: NewsDoc[] = [];
+let cmsReachable = true;
+try {
+  const res = await fetch(
+    `${CMS_URL}/api/news?where%5Bstatus%5D%5Bequals%5D=published&sort=-date&depth=1&limit=100`,
+    { headers: { Accept: 'application/json' } },
+  );
+  if (res.ok) items = (await res.json()).docs ?? [];
+  else cmsReachable = false;
+} catch { cmsReachable = false; }
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="Latest news, achievements, announcements and updates from SRKR Engineering College, Bhimavaram."
+    />
+  </head>
+  <style>
+    .news-list { display: flex; flex-direction: column; gap: 18px; }
+    .news-item { display: flex; gap: 18px; border: 1px solid #e5e5e5; border-radius: 10px; padding: 18px 20px; background:#fff; transition: box-shadow .2s; }
+    .news-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+    .news-date { flex: 0 0 64px; text-align:center; border-right: 1px solid #eee; padding-right: 16px; }
+    .news-date .d { font-size: 26px; font-weight: 700; color: var(--rt-primary,#0b5cab); line-height:1; }
+    .news-date .m { font-size: 13px; text-transform: uppercase; color:#888; }
+    .news-body { flex: 1; display:flex; flex-direction:column; gap: 8px; }
+    .news-badge { align-self:flex-start; font-size:12px; font-weight:600; padding:2px 10px; border-radius:999px; background:#eef4fb; color: var(--rt-primary,#0b5cab); }
+    .news-title { font-size:17px; line-height:1.4; margin:0; }
+    .news-links { display:flex; gap:14px; flex-wrap:wrap; margin-top:4px; }
+    .news-links a { font-size:14px; font-weight:600; color: var(--rt-primary,#0b5cab); text-decoration:none; }
+    .news-links a:hover { text-decoration:underline; }
+    .news-thumb { flex:0 0 96px; }
+    .news-thumb img { width:96px; height:72px; object-fit:cover; border-radius:6px; }
+    .news-empty { text-align:center; padding:60px 20px; color:#666; }
+  </style>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row"><div class="col-12">
+          <div class="breadcrumb-content">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item">{pageTitle}</li>
+            </ul>
+            <h1 class="section-title">{pageTitle}</h1>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="rts-campus-section pt--60 pb--60">
+      <div class="container">
+        <div class="row"><div class="rts-section rt-center mb--45">
+          <h3 class="rts-section-title">Latest at SRKR</h3>
+          <p class="rts-section-description">Achievements, announcements and updates — managed live from the SRKR admin panel.</p>
+        </div></div>
+
+        {items.length > 0 ? (
+          <div class="row"><div class="col-lg-10 offset-lg-1">
+            <div class="news-list">
+              {items.map((n) => (
+                <article class="news-item">
+                  <div class="news-date">
+                    <div class="d">{n.date ? new Date(n.date).getDate() : ''}</div>
+                    <div class="m">{n.date ? new Date(n.date).toLocaleDateString('en-IN', { month: 'short' }) : ''}</div>
+                  </div>
+                  {n.image?.url && (
+                    <div class="news-thumb"><img src={absolute(n.image.url)} alt={n.image.alt || n.title} loading="lazy" /></div>
+                  )}
+                  <div class="news-body">
+                    <span class="news-badge">{catLabel(n)}</span>
+                    <h4 class="news-title">{n.title}</h4>
+                    <div class="news-links">
+                      {(n.links || []).map((l) => (
+                        <a href={l.url} target="_blank" rel="noopener">{l.label} →</a>
+                      ))}
+                      {n.attachment?.url && (
+                        <a href={absolute(n.attachment.url)} target="_blank" rel="noopener">Attachment →</a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div></div>
+        ) : (
+          <div class="news-empty">
+            {cmsReachable ? <p>No news published right now. Please check back soon.</p>
+              : <p>News is being updated. Please check back shortly.</p>}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
