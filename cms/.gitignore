@@ -10,5 +10,6 @@ media
 .env
 next-env.d.ts
 
-# local one-off seed/migration script (contains prototype passwords)
+# local one-off seed/migration scripts (contain prototype passwords)
 seed.mjs
+scripts/seed-prod.ts
