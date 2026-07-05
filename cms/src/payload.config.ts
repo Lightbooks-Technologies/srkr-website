@@ -25,7 +25,12 @@ const corsOrigins = (process.env.CORS_ORIGINS || '')
 const databaseURI = process.env.DATABASE_URI || 'file:./cms.db'
 const usePostgres = /^postgres(ql)?:\/\//i.test(databaseURI)
 const db = usePostgres
-  ? postgresAdapter({ pool: { connectionString: databaseURI } })
+  ? postgresAdapter({
+      pool: { connectionString: databaseURI },
+      // Auto-create/sync tables on boot. Enable for the first prod deploy
+      // (Payload disables push in production by default) via PAYLOAD_DB_PUSH=true.
+      push: process.env.PAYLOAD_DB_PUSH === 'true',
+    })
   : sqliteAdapter({ client: { url: databaseURI } })
 
 // Storage: Vercel Blob in production (when a token is set), else local disk for dev.
