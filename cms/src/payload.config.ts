@@ -81,8 +81,17 @@ export default buildConfig({
     meta: {
       titleSuffix: '· SRKR Admin',
       title: 'SRKR Admin',
-      description: 'SRKR Engineering College — content administration',
+      description:
+        'Content administration portal for SRKR Engineering College, Bhimavaram — manage Upcoming Events and News & Updates for srkrec.ac.in.',
       icons: [{ rel: 'icon', type: 'image/png', url: '/srkr-logo.png' }],
+      // Override Payload's default Open Graph text (shown in tabs / link previews).
+      openGraph: {
+        title: 'SRKR Admin',
+        description:
+          'Content administration portal for SRKR Engineering College, Bhimavaram.',
+        siteName: 'SRKR Engineering College',
+        images: [{ url: '/srkr-logo.png' }],
+      },
     },
   },
   collections: [Users, Media, Events, News],
