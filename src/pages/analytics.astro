@@ -22,7 +22,9 @@ const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
       noindex={true}
     />
   </head>
-  <style>
+  <!-- is:global — most of this styles elements the script creates at runtime,
+       which never receive Astro's scoping attribute. All classes are an- prefixed. -->
+  <style is:global>
     .an-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
     .an-month { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #444; }
     .an-month select { padding: 8px 14px; border: 1px solid #d9d9d9; border-radius: 8px; font-size: 14px; background: #fff; cursor: pointer; }
@@ -33,7 +35,8 @@ const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
     .an-card__value { font-size: 30px; font-weight: 700; color: var(--rt-primary, #890C25); line-height: 1.15; }
     .an-card__label { font-size: 13px; color: #666; margin-top: 6px; }
     .an-panel { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 22px; margin-bottom: 24px; }
-    .an-panel h4 { font-size: 17px; margin: 0 0 16px; }
+    .an-panel h4 { font-size: 17px; margin: 0 0 16px; display: flex; justify-content: space-between; align-items: baseline; }
+    .an-panel__hint { font-size: 11.5px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: .5px; }
     .an-chart { display: flex; align-items: flex-end; gap: 3px; height: 180px; }
     .an-chart__bar { flex: 1; min-width: 4px; background: var(--rt-primary, #890C25); opacity: .85; border-radius: 3px 3px 0 0; transition: opacity .15s; }
     .an-chart__bar:hover { opacity: 1; }
@@ -106,9 +109,9 @@ const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
           </div>
 
           <div class="an-cols">
-            <div class="an-panel"><h4>Top Pages</h4><div id="anPages"></div></div>
-            <div class="an-panel"><h4>Top Countries</h4><div id="anCountries"></div></div>
-            <div class="an-panel"><h4>Top Referrers</h4><div id="anReferrers"></div></div>
+            <div class="an-panel"><h4>Top Pages <span class="an-panel__hint">Visitors</span></h4><div id="anPages"></div></div>
+            <div class="an-panel"><h4>Top Countries <span class="an-panel__hint">Visitors</span></h4><div id="anCountries"></div></div>
+            <div class="an-panel"><h4>Top Referrers <span class="an-panel__hint">Visitors</span></h4><div id="anReferrers"></div></div>
           </div>
 
           <p class="an-note">Statistics refresh roughly every 10 minutes. Data since analytics went live.</p>
