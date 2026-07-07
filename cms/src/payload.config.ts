@@ -55,16 +55,16 @@ const db = usePostgres
   : sqliteAdapter({ client: { url: databaseURI } })
 
 // Storage: Vercel Blob in production (when a token is set), else local disk for dev.
-const plugins = []
-if (process.env.BLOB_READ_WRITE_TOKEN) {
-  plugins.push(
-    vercelBlobStorage({
-      enabled: true,
-      collections: { media: true },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-    }),
-  )
-}
+// Always register the plugin (disabled without a token) so its client component
+// lands in the generated importMap — otherwise prod (token set) references
+// VercelBlobClientUploadHandler that a local `generate:importmap` never emitted.
+const plugins = [
+  vercelBlobStorage({
+    enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+    collections: { media: true },
+    token: process.env.BLOB_READ_WRITE_TOKEN || '',
+  }),
+]
 
 export default buildConfig({
   admin: {
