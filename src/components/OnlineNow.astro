@@ -69,6 +69,9 @@ const MIN_VISIBLE = Number(import.meta.env.PUBLIC_ONLINE_MIN_VISIBLE || 5);
 
 <script is:inline define:vars={{ CMS_URL, MIN_VISIBLE }}>
 	(function () {
+		// Not on the homepage — the pill overlaps the hero design there.
+		if (location.pathname === '/' || location.pathname === '/index.html') return;
+
 		var pill = document.getElementById('srkrOnlineNow');
 		var countEl = document.getElementById('srkrOnlineCount');
 		if (!pill || !countEl) return;
