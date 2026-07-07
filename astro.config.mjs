@@ -348,6 +348,7 @@ export default defineConfig({
       // but they won't be advertised to search engines.
       filter: (page) => {
         const blocked = [
+          '/analytics',
           '/index-bk',
           '/index-copy',
           '/index-two',

@@ -1,0 +1,241 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import FooterScripts from '../components/FooterScripts.astro';
+import SrkrHeader from '../components/SrkrHeader.astro';
+import SrkrFooter from '../components/SrkrFooter.astro';
+import OffCanvas from '../components/OffCanvas.astro';
+
+const pageTitle = 'Website Analytics';
+
+// Data comes from the SRKR CMS, which proxies the Umami Cloud API with the
+// key kept server-side. The page itself is static; the browser fetches the
+// monthly summary at view time so numbers are always current.
+const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="Monthly visitor statistics for srkrec.ac.in — visitors, page views, top pages and countries."
+      noindex={true}
+    />
+  </head>
+  <style>
+    .an-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+    .an-month { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #444; }
+    .an-month select { padding: 8px 14px; border: 1px solid #d9d9d9; border-radius: 8px; font-size: 14px; background: #fff; cursor: pointer; }
+    .an-live { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #333; background: #fff; border: 1px solid #e5e5e5; border-radius: 999px; padding: 7px 14px; }
+    .an-live__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rt-theme, #09A24F); }
+    .an-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-bottom: 34px; }
+    .an-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 20px; text-align: center; }
+    .an-card__value { font-size: 30px; font-weight: 700; color: var(--rt-primary, #890C25); line-height: 1.15; }
+    .an-card__label { font-size: 13px; color: #666; margin-top: 6px; }
+    .an-panel { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 22px; margin-bottom: 24px; }
+    .an-panel h4 { font-size: 17px; margin: 0 0 16px; }
+    .an-chart { display: flex; align-items: flex-end; gap: 3px; height: 180px; }
+    .an-chart__bar { flex: 1; min-width: 4px; background: var(--rt-primary, #890C25); opacity: .85; border-radius: 3px 3px 0 0; transition: opacity .15s; }
+    .an-chart__bar:hover { opacity: 1; }
+    .an-chart-x { display: flex; justify-content: space-between; font-size: 11px; color: #999; margin-top: 8px; }
+    .an-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .an-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 14px; border-bottom: 1px dashed #eee; }
+    .an-row:last-child { border-bottom: none; }
+    .an-row__label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #333; }
+    .an-row__bar { height: 6px; border-radius: 3px; background: var(--rt-theme, #09A24F); opacity: .35; flex-shrink: 0; }
+    .an-row__count { font-weight: 700; color: #222; min-width: 44px; text-align: right; }
+    .an-state { text-align: center; color: #666; padding: 70px 20px; }
+    .an-note { font-size: 12.5px; color: #888; text-align: center; margin-top: 8px; }
+    [hidden] { display: none !important; }
+  </style>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">{pageTitle}</li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-campus-section pt--60 pb--60">
+      <div class="container">
+        <div class="rts-section rt-center mb--45">
+          <h3 class="rts-section-title">srkrec.ac.in — Visitor Statistics</h3>
+          <p class="rts-section-description">Privacy-friendly analytics powered by Umami. No cookies, no personal data collected.</p>
+        </div>
+
+        <div class="an-toolbar">
+          <div class="an-month">
+            <label for="anMonth">Month</label>
+            <select id="anMonth"></select>
+          </div>
+          <span class="an-live" id="anLive" hidden>
+            <span class="an-live__dot"></span>
+            <span><strong id="anLiveCount">0</strong> online right now</span>
+          </span>
+        </div>
+
+        <div class="an-state" id="anLoading"><p>Loading analytics…</p></div>
+        <div class="an-state" id="anError" hidden>
+          <p>Analytics are being set up and will appear here soon.</p>
+        </div>
+
+        <div id="anContent" hidden>
+          <div class="an-cards">
+            <div class="an-card"><div class="an-card__value" id="stVisitors">–</div><div class="an-card__label">Unique Visitors</div></div>
+            <div class="an-card"><div class="an-card__value" id="stPageviews">–</div><div class="an-card__label">Page Views</div></div>
+            <div class="an-card"><div class="an-card__value" id="stVisits">–</div><div class="an-card__label">Visits</div></div>
+            <div class="an-card"><div class="an-card__value" id="stBounce">–</div><div class="an-card__label">Bounce Rate</div></div>
+            <div class="an-card"><div class="an-card__value" id="stTime">–</div><div class="an-card__label">Avg. Visit Time</div></div>
+          </div>
+
+          <div class="an-panel">
+            <h4>Daily Page Views</h4>
+            <div class="an-chart" id="anChart"></div>
+            <div class="an-chart-x"><span id="anChartStart"></span><span id="anChartEnd"></span></div>
+          </div>
+
+          <div class="an-cols">
+            <div class="an-panel"><h4>Top Pages</h4><div id="anPages"></div></div>
+            <div class="an-panel"><h4>Top Countries</h4><div id="anCountries"></div></div>
+            <div class="an-panel"><h4>Top Referrers</h4><div id="anReferrers"></div></div>
+          </div>
+
+          <p class="an-note">Statistics refresh roughly every 10 minutes. Data since analytics went live.</p>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+
+    <script is:inline define:vars={{ CMS_URL }}>
+      (function () {
+        var $ = function (id) { return document.getElementById(id); };
+        var fmt = function (n) { return Number(n || 0).toLocaleString('en-IN'); };
+
+        // Month dropdown: current month back 12 months (values YYYY-MM, IST).
+        var now = new Date();
+        var sel = $('anMonth');
+        for (var i = 0; i < 12; i++) {
+          var d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+          var val = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+          var opt = document.createElement('option');
+          opt.value = val;
+          opt.textContent = d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+          sel.appendChild(opt);
+        }
+
+        var countryName = function (code) {
+          if (!code) return 'Unknown';
+          try {
+            return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) || code;
+          } catch (e) { return code; }
+        };
+
+        function renderRows(el, rows, labelFn) {
+          el.innerHTML = '';
+          if (!rows || !rows.length) {
+            el.innerHTML = '<div class="an-row"><span class="an-row__label">No data yet</span></div>';
+            return;
+          }
+          var max = rows[0].y || 1;
+          rows.forEach(function (r) {
+            var row = document.createElement('div');
+            row.className = 'an-row';
+            var label = document.createElement('span');
+            label.className = 'an-row__label';
+            label.textContent = labelFn ? labelFn(r.x) : (r.x || 'Direct / none');
+            label.title = label.textContent;
+            var bar = document.createElement('span');
+            bar.className = 'an-row__bar';
+            bar.style.width = Math.max(6, Math.round((r.y / max) * 90)) + 'px';
+            var count = document.createElement('span');
+            count.className = 'an-row__count';
+            count.textContent = fmt(r.y);
+            row.append(label, bar, count);
+            el.appendChild(row);
+          });
+        }
+
+        function renderChart(daily) {
+          var chart = $('anChart');
+          chart.innerHTML = '';
+          var max = 1;
+          daily.forEach(function (d) { if (d.pageviews > max) max = d.pageviews; });
+          daily.forEach(function (d) {
+            var bar = document.createElement('div');
+            bar.className = 'an-chart__bar';
+            bar.style.height = Math.max(2, Math.round((d.pageviews / max) * 100)) + '%';
+            var day = new Date(d.date);
+            bar.title = day.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) +
+              ' — ' + fmt(d.pageviews) + ' views, ' + fmt(d.sessions) + ' sessions';
+            chart.appendChild(bar);
+          });
+          if (daily.length) {
+            $('anChartStart').textContent = new Date(daily[0].date)
+              .toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+            $('anChartEnd').textContent = new Date(daily[daily.length - 1].date)
+              .toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+          }
+        }
+
+        function load(month) {
+          $('anLoading').hidden = false;
+          $('anError').hidden = true;
+          $('anContent').hidden = true;
+          fetch(CMS_URL + '/api/analytics/summary?month=' + month, { headers: { Accept: 'application/json' } })
+            .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
+            .then(function (data) {
+              if (!data || !data.enabled) throw new Error('analytics disabled');
+              var s = data.stats;
+              $('stVisitors').textContent = fmt(s.visitors);
+              $('stPageviews').textContent = fmt(s.pageviews);
+              $('stVisits').textContent = fmt(s.visits);
+              $('stBounce').textContent = s.visits ? Math.round((s.bounces / s.visits) * 100) + '%' : '–';
+              var avg = s.visits ? Math.round(s.totaltime / s.visits) : 0;
+              $('stTime').textContent = avg ? Math.floor(avg / 60) + 'm ' + (avg % 60) + 's' : '–';
+              renderChart(data.daily || []);
+              renderRows($('anPages'), data.topPages);
+              renderRows($('anCountries'), data.topCountries, countryName);
+              renderRows($('anReferrers'), data.topReferrers);
+              $('anLoading').hidden = true;
+              $('anContent').hidden = false;
+            })
+            .catch(function () {
+              $('anLoading').hidden = true;
+              $('anError').hidden = false;
+            });
+        }
+
+        function loadLive() {
+          fetch(CMS_URL + '/api/analytics/online', { headers: { Accept: 'application/json' } })
+            .then(function (res) { return res.ok ? res.json() : null; })
+            .then(function (data) {
+              if (data && data.enabled) {
+                $('anLiveCount').textContent = fmt(data.online);
+                $('anLive').hidden = false;
+              }
+            })
+            .catch(function () {});
+        }
+
+        sel.addEventListener('change', function () { load(sel.value); });
+        load(sel.value);
+        loadLive();
+        setInterval(loadLive, 60000);
+      })();
+    </script>
+  </body>
+</html>

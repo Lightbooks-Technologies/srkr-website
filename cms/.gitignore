@@ -13,3 +13,7 @@ next-env.d.ts
 # local one-off seed/migration scripts (contain prototype passwords)
 seed.mjs
 scripts/seed-prod.ts
+.vercel
+.env
+.env.local
+*.tsbuildinfo

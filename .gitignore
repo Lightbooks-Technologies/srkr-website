@@ -25,3 +25,6 @@ pnpm-lock.yaml
 
 html/
 .claude/
+.vercel
+.env
+.env.local
