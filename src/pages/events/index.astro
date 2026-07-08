@@ -1,0 +1,160 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+
+const pageTitle = 'Upcoming Events';
+
+// CMS base URL — Payload admin/API. Overridden per-environment via PUBLIC_CMS_URL.
+const CMS_URL = import.meta.env.PUBLIC_CMS_URL || 'http://localhost:3001';
+
+const DEPT_LABELS: Record<string, string> = {
+  cse: 'CSE', ece: 'ECE', eee: 'EEE', mech: 'Mechanical', civil: 'Civil',
+  it: 'IT', aids: 'AI & DS', aiml: 'AI & ML', csbs: 'CSBS', institute: 'Institute-wide',
+};
+
+type MediaDoc = { url?: string; alt?: string; filename?: string };
+type EventDoc = {
+  id: string | number;
+  title: string;
+  department?: string;
+  date?: string;
+  dateText?: string;
+  venue?: string;
+  registrationLink?: string;
+  image?: MediaDoc | null;
+  attachment?: MediaDoc | null;
+};
+
+const absolute = (u?: string) =>
+  !u ? '' : u.startsWith('http') ? u : `${CMS_URL}${u}`;
+
+const fmtDate = (iso?: string) => {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+};
+
+// Fetch published events from Payload. Resilient: if the CMS is down the page
+// still renders (with an empty state) so the build never breaks.
+let events: EventDoc[] = [];
+let cmsReachable = true;
+try {
+  const res = await fetch(
+    `${CMS_URL}/api/events?where[status][equals]=published&sort=date&depth=1&limit=100`,
+    { headers: { Accept: 'application/json' } },
+  );
+  if (res.ok) {
+    const json = await res.json();
+    events = json.docs ?? [];
+  } else {
+    cmsReachable = false;
+  }
+} catch {
+  cmsReachable = false;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="Upcoming events, workshops, FDPs and conferences at SRKR Engineering College, Bhimavaram — department-wise, with registration links."
+    />
+  </head>
+  <style>
+    .evt-card { border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; background:#fff; }
+    .evt-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.10); transform: translateY(-3px); }
+    .evt-card__img { aspect-ratio: 16/9; object-fit: cover; width: 100%; background:#f3f3f3; }
+    .evt-card__body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .evt-badge { align-self: flex-start; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--rt-primary, #0b5cab); color: #fff; }
+    .evt-title { font-size: 18px; line-height: 1.35; margin: 0; }
+    .evt-meta { display: flex; align-items: center; gap: 8px; color: #555; font-size: 14px; }
+    .evt-meta i { color: var(--rt-secondary, #d38a00); width: 16px; text-align:center; }
+    .evt-actions { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; padding-top: 6px; }
+    .evt-btn { display: inline-flex; align-items:center; gap:6px; font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 6px; text-decoration: none; }
+    .evt-btn--primary { background: var(--rt-primary, #0b5cab); color:#fff; }
+    .evt-btn--ghost { border: 1px solid #ccc; color: #333; }
+    .evt-empty { text-align:center; padding: 60px 20px; color:#666; }
+  </style>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">{pageTitle}</li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-campus-section pt--60 pb--60">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section rt-center mb--45">
+            <h3 class="rts-section-title">What's Happening at SRKR</h3>
+            <p class="rts-section-description">Workshops, FDPs, conferences and department activities — managed live from the SRKR admin panel.</p>
+          </div>
+        </div>
+
+        {events.length > 0 ? (
+          <div class="row g-4">
+            {events.map((evt) => (
+              <div class="col-lg-4 col-md-6">
+                <div class="evt-card">
+                  {evt.image?.url && (
+                    <img class="evt-card__img" src={absolute(evt.image.url)} alt={evt.image.alt || evt.title} loading="lazy" />
+                  )}
+                  <div class="evt-card__body">
+                    {evt.department && <span class="evt-badge">{DEPT_LABELS[evt.department] || evt.department}</span>}
+                    <h4 class="evt-title">{evt.title}</h4>
+                    {(evt.dateText || evt.date) && (
+                      <div class="evt-meta"><i class="fal fa-calendar"></i><span>{evt.dateText || fmtDate(evt.date)}</span></div>
+                    )}
+                    {evt.venue && (
+                      <div class="evt-meta"><i class="fa-sharp fa-thin fa-location-dot"></i><span>{evt.venue}</span></div>
+                    )}
+                    <div class="evt-actions">
+                      {evt.registrationLink && (
+                        <a class="evt-btn evt-btn--primary" href={evt.registrationLink} target="_blank" rel="noopener">
+                          <i class="fa-regular fa-pen-to-square"></i> Register
+                        </a>
+                      )}
+                      {evt.attachment?.url && (
+                        <a class="evt-btn evt-btn--ghost" href={absolute(evt.attachment.url)} target="_blank" rel="noopener">
+                          <i class="fa-regular fa-file-pdf"></i> Brochure
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="evt-empty">
+            {cmsReachable
+              ? <p>No upcoming events published right now. Please check back soon.</p>
+              : <p>Events are being updated. Please check back shortly.</p>}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

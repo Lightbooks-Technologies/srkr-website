@@ -5,6 +5,62 @@ import SrkrFooter from "../components/SrkrFooter.astro";
 import FooterScripts from "../components/FooterScripts.astro";
 import OffCanvas from "../components/OffCanvas.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
+
+// Upcoming Events — loaded live from the SRKR CMS, with a safe fallback to the
+// static list in consts.ts if the CMS is unreachable (so the homepage never breaks).
+const CMS_URL = import.meta.env.PUBLIC_CMS_URL || "http://localhost:3001";
+const fmtEventDate = (iso) => {
+  const d = new Date(iso);
+  return isNaN(d.getTime())
+    ? iso
+    : d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+};
+let homeEvents = UPCOMING_EVENTS;
+try {
+  const res = await fetch(
+    `${CMS_URL}/api/events?where%5Bstatus%5D%5Bequals%5D=published&sort=date&depth=0&limit=6`,
+    { headers: { Accept: "application/json" } },
+  );
+  if (res.ok) {
+    const { docs = [] } = await res.json();
+    if (docs.length) {
+      homeEvents = docs.map((e) => ({
+        title: e.title,
+        date: e.dateText || fmtEventDate(e.date),
+        venue: e.venue || "SRKR Engineering College",
+        link: e.registrationLink || "/events",
+      }));
+    }
+  }
+} catch {
+  /* CMS down → keep static UPCOMING_EVENTS */
+}
+
+// News & Updates — loaded live from the CMS, fallback to static NEWS in consts.ts.
+let homeNews = NEWS;
+try {
+  const res = await fetch(
+    `${CMS_URL}/api/news?where%5Bstatus%5D%5Bequals%5D=published&sort=-date&depth=0&limit=6`,
+    { headers: { Accept: "application/json" } },
+  );
+  if (res.ok) {
+    const { docs = [] } = await res.json();
+    if (docs.length) {
+      homeNews = docs.map((n) => {
+        const d = new Date(n.date);
+        const valid = !isNaN(d.getTime());
+        return {
+          title: n.title,
+          day: valid ? String(d.getDate()).padStart(2, "0") : "",
+          month: valid ? d.toLocaleDateString("en-IN", { month: "short" }) : "",
+          link: n.links?.[0]?.url || "/news",
+        };
+      });
+    }
+  }
+} catch {
+  /* CMS down → keep static NEWS */
+}
 ---
 
 <!doctype html>
@@ -436,7 +492,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="rts-event-section-content">
                 <ul class="list-unstyled rts-counter">
                   {
-                    [...UPCOMING_EVENTS].map((event) => (
+                    [...homeEvents].map((event) => (
                       <li class="single-event">
                         <div class="single-event-content">
                           <h5 class="event-title">{event.title}</h5>
@@ -480,7 +536,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               <div class="rts-tab">
                 <ul class="list-unstyled notice-content-box">
                   {
-                    NEWS.map((item) => (
+                    homeNews.map((item) => (
                       <li class="single-notice">
                         <div class="single-notice-item">
                           <div class="notice-date">
@@ -687,7 +743,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/csd/">Computer Science &amp; Design</a>
+                  <a href="/departments/cse/academic-programs/">Computer Science &amp; Design</a>
                 </div>
               </div>
             </div>
@@ -725,7 +781,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/csit/">Computer Science &amp; IT</a>
+                  <a href="/departments/it/academic-programs/">Computer Science &amp; IT</a>
                 </div>
               </div>
             </div>

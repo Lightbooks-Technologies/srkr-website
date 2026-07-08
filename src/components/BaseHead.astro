@@ -14,6 +14,11 @@ import {
 import { getPageSeo, buildBreadcrumbs } from '../data/seo';
 import Analytics from '@vercel/analytics/astro';
 
+// Umami (privacy-friendly analytics) — only rendered when the website ID is
+// configured. data-domains keeps localhost / preview deploys out of the stats.
+const UMAMI_WEBSITE_ID = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const UMAMI_SCRIPT_URL = import.meta.env.PUBLIC_UMAMI_SCRIPT_URL || 'https://cloud.umami.is/script.js';
+
 interface BreadcrumbItem {
   name: string;
   url: string;
@@ -200,3 +205,12 @@ const extraBlocks = extraJsonLd
 <link rel="stylesheet" href="/assets/css/plugins/jquery-ui.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <Analytics />
+{UMAMI_WEBSITE_ID && (
+  <script
+    is:inline
+    defer
+    src={UMAMI_SCRIPT_URL}
+    data-website-id={UMAMI_WEBSITE_ID}
+    data-domains="srkrec.ac.in,www.srkrec.ac.in"
+  ></script>
+)}
