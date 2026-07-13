@@ -31,12 +31,22 @@ type EventDoc = {
 const absolute = (u?: string) =>
   !u ? '' : u.startsWith('http') ? u : `${CMS_URL}${u}`;
 
+// Always format in IST — the build runs on Vercel (UTC), so without an explicit
+// timeZone an event saved as "18 Jul, 12:00 AM" IST renders as 17 Jul.
+const IST = 'Asia/Kolkata';
 const fmtDate = (iso?: string) => {
   if (!iso) return '';
   const d = new Date(iso);
   if (isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: IST });
 };
+
+// Start of "today" in IST — events before this are over and no longer shown.
+const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+const nowIST = new Date(Date.now() + IST_OFFSET_MS);
+const todayStartIST = new Date(
+  Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) - IST_OFFSET_MS,
+);
 
 // Fetch published events from Payload. Resilient: if the CMS is down the page
 // still renders (with an empty state) so the build never breaks.
@@ -44,7 +54,7 @@ let events: EventDoc[] = [];
 let cmsReachable = true;
 try {
   const res = await fetch(
-    `${CMS_URL}/api/events?where[status][equals]=published&sort=date&depth=1&limit=100`,
+    `${CMS_URL}/api/events?where[status][equals]=published&where[date][greater_than_equal]=${encodeURIComponent(todayStartIST.toISOString())}&sort=date&depth=1&limit=100`,
     { headers: { Accept: 'application/json' } },
   );
   if (res.ok) {
