@@ -20,6 +20,21 @@ const associatedDeptPrograms: Record<string, string> = {
 };
 
 const getDeptLink = (slug: string) => {
+  if (slug === 'aiml') {
+    return `/departments/cse/academic-programs/#aiml`;
+  }
+  if (slug === 'csd') {
+    return `/departments/cse/academic-programs/#csd`;
+  }
+  if (slug === 'cic') {
+    return `/departments/cse/academic-programs/#cic`;
+  }
+  if (slug === 'csit') {
+    return `/departments/it/academic-programs/#csit`;
+  }
+  if (slug === 'csbs') {
+    return `/departments/it/academic-programs/#csbs`;
+  }
   if (programSlugs.has(slug)) {
     return associatedDeptPrograms[slug] || `/departments/${slug}/academic-programs/`;
   }
