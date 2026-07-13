@@ -18,3 +18,14 @@
 .accordion-button:not(.collapsed)::after {
   filter: invert(1) grayscale(1) brightness(2) !important;
 }
+
+/* Justify prose content in department pages */
+.program-about p,
+.accordion-body p,
+.rts-multi-row-content p,
+.rts__section--description,
+.campus__life--single--description,
+.faculty-content-text p {
+  text-align: justify;
+}
+
