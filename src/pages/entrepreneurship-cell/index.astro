@@ -29,11 +29,13 @@ const reunionGallery = [
 
 const startups = [
   { name: 'Sri Maharshi Consultancy Pvt. Ltd.', year: '2016', founder: 'M. Srinivasa Varma (Alumni, 1990-96)', cin: 'U93000AP2016PTC103338' },
-  { name: 'Affine Labs IT Solutions Pvt. Ltd.', year: '2017', founder: 'BabuRamanjaneya Raju Pinnamraju', cin: 'U72900AP2017PTC105960' },
   { name: 'MSR Techlabz', year: '2017', founder: 'M. Raja Sekhar (Alumni, 2012-16)', cin: 'U01409TG2016PTC109177' },
   { name: 'MCR Web Solutions', year: '2017', founder: 'M. Suresh Babu (Faculty)', cin: 'Not yet registered' },
   { name: 'SD Motor Speeds', year: '2017', founder: 'Saladi Sai Deepu (Alumni, 2013-17)', cin: 'Not yet registered' },
   { name: 'Elon Motors Engineering', year: '2017', founder: 'Ch. Raghu Veer (Alumni, 2013-17)', cin: 'U34300AP2018PTC108766' },
+  { name : 'Bhimavaram Digitals', year :'2024', founder : 'Mudunuri Prudhvi Varma (Alumni, 2021-2025)', cin : 'UDYAM-AP-030094538'},
+  { name : 'BO Smart wash', year :'2025', founder : 'Ch. Ravi kumar (Alumni, 2021-2025)', cin : 'UDYAM-AP-12-0086922'},
+  { name : 'Nutri Delight', year: '2025', founder : 'Rohit Kumar (Alumni, 2022-2026)', cin : 'Not yet registered'}
 ];
 ---
 
@@ -303,6 +305,26 @@ const startups = [
               </div>
             </div>
 
+            <!-- Images Block -->
+            <div class="application-deadline mt--40">
+              <h4 class="title">Gallery &amp; Activities</h4>
+              <div class="edc-gallery-grid">
+                {reunionGallery.map((item) => (
+                  <div class="edc-gallery-item">
+                    <a href={item.full} target="_blank" rel="noopener noreferrer" class="edc-gallery-link">
+                      <img src={item.thumb} alt={item.alt} loading="lazy" decoding="async" class="edc-gallery-img" />
+                      <div class="edc-gallery-overlay">
+                        <span class="edc-gallery-caption">{item.alt}</span>
+                        <div class="edc-gallery-icon">
+                          <i class="fa-light fa-expand"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
 
           <!-- Right sidebar -->
@@ -370,5 +392,82 @@ const startups = [
     <SrkrFooter />
     <OffCanvas />
     <FooterScripts />
+    <style>
+      .edc-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .edc-gallery-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .edc-gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      }
+      .edc-gallery-link {
+        display: block;
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+      .edc-gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .edc-gallery-item:hover .edc-gallery-img {
+        transform: scale(1.08);
+      }
+      .edc-gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .edc-gallery-item:hover .edc-gallery-overlay {
+        opacity: 1;
+      }
+      .edc-gallery-caption {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        transform: translateY(10px);
+        transition: transform 0.3s ease;
+      }
+      .edc-gallery-item:hover .edc-gallery-caption {
+        transform: translateY(0);
+      }
+      .edc-gallery-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+      }
+    </style>
   </body>
 </html>
