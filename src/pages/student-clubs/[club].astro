@@ -1,0 +1,351 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { allClubs } from '../../data/clubs';
+import type { Club } from '../../data/clubs';
+
+export interface Props {
+  club: Club;
+}
+
+export async function getStaticPaths() {
+  return allClubs.map((club) => ({
+    params: { club: club.slug },
+    props: { club },
+  }));
+}
+
+const club = Astro.props.club as Club;
+const pageTitle = club.name;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`${club.name} | Student Clubs | SRKR Engineering College`} 
+      description={club.mission} 
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Life @ SRKR</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Student Clubs</a></li>
+              </ul>
+              <h1 class="section-title">{club.name}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB END -->
+
+    <!-- MAIN CONTENT -->
+    <div class="rts-history py-5">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Main Content Column -->
+          <div class="col-lg-8">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">About {club.fullName}</h3>
+              <p style="text-align: justify; font-size: 16px; line-height: 1.8;" class="mb-5">
+                {club.mission}
+              </p>
+
+              {club.vision && (
+                <div class="row g-4 mb-5">
+                  <div class="col-md-6">
+                    <div class="p-4 h-100" style="background-color: #f8fafc; border-left: 4px solid var(--rt-primary); border-radius: 4px;">
+                      <h5 style="color: var(--rt-primary); font-weight: 700; margin-bottom: 10px;">VISION</h5>
+                      <p style="font-size: 14.5px; line-height: 1.6; margin-bottom: 0;">{club.vision}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-4 h-100" style="background-color: #f8fafc; border-left: 4px solid var(--rt-primary); border-radius: 4px;">
+                      <h5 style="color: var(--rt-primary); font-weight: 700; margin-bottom: 10px;">MISSION</h5>
+                      <p style="font-size: 14.5px; line-height: 1.6; margin-bottom: 0;">{club.mission}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div class="border-top my-4"></div>
+
+              <!-- Objectives Section -->
+              <div class="rts-scholarship-description mb-5">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-bullseye-arrow me-2" style="color: var(--rt-primary);"></i> Key Objectives</h4>
+                <ul class="list-unstyled one-column-list">
+                  {club.objectives.map((obj) => (
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="fa-solid fa-circle-check me-3 mt-1" style="color: var(--rt-primary); font-size: 14px;"></i>
+                      <span style="font-size: 15px; line-height: 1.6;">{obj}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Detailed Activities (if present) -->
+              {club.detailedActivities && (
+                <div class="rts-scholarship-description mb-5">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-calendar-star me-2" style="color: var(--rt-primary);"></i> Activities &amp; Events</h4>
+                  <ol class="list-unstyled">
+                    {club.detailedActivities.map((act, index) => (
+                      <li class="mb-4">
+                        <h5 class="h6 mb-2" style="color: var(--rt-primary); font-weight: 700;">{index + 1}. {act.title}</h5>
+                        <p style="font-size: 15px; line-height: 1.6; text-align: justify; margin-bottom: 0;">{act.description}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+
+              <!-- Fallback General Activities -->
+              {!club.detailedActivities && club.activities.length > 0 && (
+                <div class="rts-scholarship-description mb-5">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-calendar-star me-2" style="color: var(--rt-primary);"></i> Regular Activities &amp; Initiatives</h4>
+                  <ul class="list-unstyled one-column-list">
+                    {club.activities.map((act) => (
+                      <li class="mb-3 d-flex align-items-start">
+                        <i class="fa-solid fa-square-play me-3 mt-1" style="color: var(--rt-primary); font-size: 14px;"></i>
+                        <span style="font-size: 15px; line-height: 1.6;">{act}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <!-- Industry Connect Section -->
+              {club.industryConnect && (
+                <div class="rts-scholarship-description mb-5">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-handshake me-2" style="color: var(--rt-primary);"></i> Industry Connect</h4>
+                  <ul class="list-unstyled">
+                    {club.industryConnect.map((ind) => (
+                      <li class="mb-4">
+                        <h5 class="h6 mb-2" style="color: var(--rt-primary); font-weight: 700;">{ind.title}</h5>
+                        <p style="font-size: 15px; line-height: 1.6; text-align: justify; margin-bottom: 0;">{ind.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <!-- Club Leadership Table -->
+              {club.leaders && (
+                <div class="rts-scholarship-description mb-5">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-users-gear me-2" style="color: var(--rt-primary);"></i> Club Leadership &amp; Working Committee</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle" style="font-size: 14.5px;">
+                      <thead>
+                        <tr style="background-color: var(--rt-primary); color: #fff;">
+                          <th style="padding: 12px; font-weight: 600;">Role</th>
+                          <th style="padding: 12px; font-weight: 600;">Name</th>
+                          <th style="padding: 12px; font-weight: 600;">Details / Contact</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {club.leaders.map((leader) => (
+                          <tr>
+                            <td style="padding: 12px; font-weight: 600; color: var(--rt-primary);">{leader.role}</td>
+                            <td style="padding: 12px; font-weight: 500;">{leader.name}</td>
+                            <td style="padding: 12px; color: #64748b;">{leader.details || '-'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              <!-- Newsletters & Publications -->
+              {club.newsletters && (
+                <div class="rts-scholarship-description mb-5">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-file-pdf me-2" style="color: var(--rt-primary);"></i> Documents &amp; Newsletters</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle" style="font-size: 14.5px;">
+                      <tbody>
+                        {club.newsletters.map((nl) => (
+                          <tr>
+                            <td style="padding: 12px; font-weight: 500;">{nl.title}</td>
+                            <td style="padding: 12px; text-align: right;">
+                              <a href={nl.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn btn-sm text-white" style="background-color: var(--rt-primary); padding: 6px 16px;">
+                                <i class="fa-regular fa-download me-2"></i> View Document
+                              </a>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {club.upcomingEvents.length > 0 && (
+                <!-- Upcoming Events / Flagships -->
+                <div class="rts-scholarship-description mb-4">
+                  <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Upcoming &amp; Flagship Events</h4>
+                  <div class="program-credit-area faq rts-scholarship-description">
+                    <div class="program-accordion">
+                      <div class="accordion" id={`club-events-${club.slug}`}>
+                        {club.upcomingEvents.map((evt, idx) => (
+                          <div class="accordion-item">
+                            <button 
+                              class={`accordion-button ${idx > 0 ? 'collapsed' : ''}`} 
+                              type="button" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target={`#evt-collapse-${idx}`} 
+                              aria-expanded={idx === 0 ? 'true' : 'false'}
+                            >
+                              {evt}
+                            </button>
+                            <div 
+                              id={`evt-collapse-${idx}`} 
+                              class={`accordion-collapse collapse ${idx === 0 ? 'show' : ''}`} 
+                              data-bs-parent={`#club-events-${club.slug}`}
+                            >
+                              <div class="accordion-body">
+                                <p style="text-align: justify;" class="mb-0">
+                                  This is a flagship initiative organized by {club.fullName} featuring student participation, expert mentoring, and skill development activities. Stay tuned for dates and registration links.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Sidebar Column -->
+          <div class="col-lg-4">
+            <div class="card shadow-sm p-4 border-0" style="background-color: #f8fafc; border-radius: 12px; position: sticky; top: 100px;">
+              <!-- Club Thumbnail -->
+              <div class="cat-thumb mb-4 overflow-hidden" style="border-radius: 0; background: #fff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1;">
+                <img 
+                  src={club.img} 
+                  alt={club.name} 
+                  class="img-fluid" 
+                  style="object-fit: contain; max-height: 100%; max-width: 100%;" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+
+              <h4 class="h5 mb-4 border-bottom pb-2" style="color: var(--rt-primary);">Club Details</h4>
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3 d-flex justify-content-between">
+                  <strong class="text-muted">Category:</strong>
+                  <span class="text-capitalize badge text-white py-2 px-3" style="background-color: var(--rt-primary);">{club.category}</span>
+                </li>
+                <li class="mb-3 d-flex justify-content-between align-items-center">
+                  <strong class="text-muted">Scope/Dept:</strong>
+                  <span class="fw-semibold">{club.dept}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">Faculty Advisor:</strong>
+                  <span class="fw-semibold text-dark"><i class="fa-regular fa-user-tie me-2" style="color: var(--rt-primary);"></i> {club.advisor}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">How to Join:</strong>
+                  <span style="font-size: 14px; line-height: 1.5;" class="text-secondary d-block">{club.joinInfo}</span>
+                </li>
+              </ul>
+
+              <!-- Social Links -->
+              <div class="mt-4 border-top pt-3 mb-4">
+                <strong class="text-muted d-block mb-2">Connect with Us:</strong>
+                <div class="d-flex gap-3" style="font-size: 20px;">
+                  {club.socials?.website ? (
+                    <a href={club.socials.website} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Official Website">
+                      <i class="fa-regular fa-globe"></i>
+                    </a>
+                  ) : (
+                    <a href="https://www.srkrec.ac.in" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="College Website">
+                      <i class="fa-regular fa-globe"></i>
+                    </a>
+                  )}
+                  {club.socials?.instagram ? (
+                    <a href={club.socials.instagram} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                  ) : (
+                    <a href="https://www.instagram.com/srkr_engineering_college" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                  )}
+                  {club.socials?.linkedin ? (
+                    <a href={club.socials.linkedin} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                  ) : (
+                    <a href="https://www.linkedin.com/school/srkr-engineering-college/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                  )}
+                  {club.socials?.youtube ? (
+                    <a href={club.socials.youtube} target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="YouTube">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                  ) : (
+                    <a href="https://www.youtube.com/@srkreclive8303" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="YouTube">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="rts-funfact py-5">
+      <div class="container">
+        <div class="row justify-content-center mx-0">
+          <div class="col-lg-12 px-0">
+            <div class="rts-funfact-wrapper">
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-calendar-star"></i></h2>
+                <p><a href="/activities">Student Activities</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-volleyball"></i></h2>
+                <p><a href="/sports">Sports Facilities</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-heart-pulse"></i></h2>
+                <p><a href="/well-being">Well-Being</a></p>
+              </div>
+              <div class="single-cta-item">
+                <h2 class="single-cta-item__title"><i class="fa-light fa-house"></i></h2>
+                <p><a href="/hostels">Hostels</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
