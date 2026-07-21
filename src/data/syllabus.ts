@@ -127,6 +127,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23 I_Year_ AIDS_ Syllabus_ FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23 II_Year_ AIDS_ Syllabus_ FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_AIDS_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_AIDS.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech _R23 _I_ Year_ AIDS_ MQP _FINAL.pdf' },
@@ -141,6 +142,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I _Year_ AIML _Syllabus _FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II _Year_ AIML _Syllabus _FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_AIML_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_AIML.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech _R23 _I_ Year_ AIML_ MQP_FINAL.pdf' },
@@ -155,6 +157,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I _Year_ CSIT_ Syllabus_ FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II _Year_ CSIT_ Syllabus_ FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CSIT_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CSIT.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CSIT_ MQP_FINAL.pdf' },
@@ -169,6 +172,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23 _I _Year_ CIVIL_ Syllabus _FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23 _II _Year_ CIVIL_ Syllabus _FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CIVIL_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CIVIL.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_ R23_ I _Year _CIVIL_ MQP_FINAL.pdf' },
@@ -183,6 +187,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_ I_Year_CSBS_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_ II_Year_CSBS_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CSBS_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CSBS.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_ Year_ CSBS_MQP_FINAL.pdf' },
@@ -197,6 +202,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CSG_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_CSG_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CSD_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CSD.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CSG_MQP_FINAL.pdf' },
@@ -211,6 +217,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CSE_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_CSE_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CSE_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CSE.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CSE_MQP_FINAL.pdf' },
@@ -225,6 +232,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CIC_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_CIC_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_CIC_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_CIC.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_CIC_MQP_FINAL.pdf' },
@@ -239,6 +247,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_ECE_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_ECE_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_ECE_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_ECE.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_ECE_MQP_FINAL.pdf' },
@@ -253,6 +262,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_EEE_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_EEE_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_EEE_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_EEE.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_EEE_MQP_FINAL.pdf' },
@@ -267,6 +277,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_IT_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_IT_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_IT_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_IT.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_IT_MQP_FINAL.pdf' },
@@ -281,6 +292,7 @@ const r23: SyllabusRegulation = {
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_MECH_Syllabus_FINAL.pdf' },
         { year: 'II',  url: '/files/SYLLABUS/R23/B.Tech_R23_II_Year_MECH_Syllabus_FINAL.pdf' },
         { year: 'III', url: '/files/SYLLABUS/R23/R23_3rd_YEAR_MECH_SYLLABUS.pdf' },
+        { year: 'IV',  url: '/files/SYLLABUS/R23/B.Tech _R23 _IV_ Year_MECH.pdf' },
       ],
       modelPapers: [
         { year: 'I',   url: '/files/SYLLABUS/R23/B.Tech_R23_I_Year_ME_MQP_FINAL.pdf' },
