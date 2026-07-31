@@ -140,14 +140,18 @@ const headerDepartments = departments.filter((department) =>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
-                        <a href="/departments" class="navigation__menu--item__link">Departments</a>
+                        <a href="javascript:void(0);" class="navigation__menu--item__link">Academics</a>
                         <ul class="submenu sub__style">
-                          {headerDepartments.map((d) => (
-                            <li>
-                              <a href={`/departments/${d.slug}/`}>{d.name}</a>
-                            </li>
-                          ))}
-                          <li><a href="/departments/ash/">Applied Sciences &amp; Humanities</a></li>
+                          <li><a href="/programmes/">Programs</a></li>
+                          <li class="has-child has-arrow">
+                            <a href="javascript:void(0);">Regulations &amp; Curriculum</a>
+                            <ul class="sub__style">
+                              <li><a class="mobile-menu-link" href="/regulations/">Regulations</a></li>
+                              <li><a class="mobile-menu-link" href="/calender/">Academic Calendar</a></li>
+                              <li><a class="mobile-menu-link" href="/syllabus/">Syllabus</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="https://www.srkrexams.in/Login.aspx">Examinations</a></li>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
@@ -161,29 +165,14 @@ const headerDepartments = departments.filter((department) =>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
-                        <a href="javascript:void(0);" class="navigation__menu--item__link">Academics</a>
+                        <a href="/departments" class="navigation__menu--item__link">Departments</a>
                         <ul class="submenu sub__style">
-                          <li class="has-child has-arrow">
-                            <a href="/departments">Departments</a>
-                            <ul class="sub__style">
-                              {headerDepartments.map((d) => (
-                                <li>
-                                  <a class="mobile-menu-link" href={`/departments/${d.slug}/`}>{d.name}</a>
-                                </li>
-                              ))}
-                              <li><a class="mobile-menu-link" href="/departments/ash/">Applied Sciences &amp; Humanities</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="/programmes/">Programs</a></li>
-                          <li class="has-child has-arrow">
-                            <a href="javascript:void(0);">Regulations &amp; Curriculum</a>
-                            <ul class="sub__style">
-                              <li><a class="mobile-menu-link" href="/regulations/">Regulations</a></li>
-                              <li><a class="mobile-menu-link" href="/calender/">Academic Calendar</a></li>
-                              <li><a class="mobile-menu-link" href="/syllabus/">Syllabus</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="https://www.srkrexams.in/Login.aspx">Examinations</a></li>
+                          {headerDepartments.map((d) => (
+                            <li>
+                              <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                            </li>
+                          ))}
+                          <li><a href="/departments/ash/">Applied Sciences &amp; Humanities</a></li>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
@@ -201,6 +190,7 @@ const headerDepartments = departments.filter((department) =>
                           <li><a href="/research-publications/">Publications</a></li>
                           <li><a href="/patents/">Patents</a></li>
                           <li><a href="/mous/">MoUs</a></li>
+                          <li><a href="https://sites.google.com/view/studentplugpolicy">Plagiarism Check Tool</a></li>
                         </ul>
                       </li>
                       <li class="navigation__menu--item has-child has-arrow">
