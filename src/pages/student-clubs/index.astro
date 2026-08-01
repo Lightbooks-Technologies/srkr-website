@@ -4,43 +4,12 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
+import { techClubs, culturalClubs, serviceClubs, sportsClubs } from '../../data/clubs';
 
 const pageTitle = "Student Clubs";
 
-const techClubs = [
-  { "name": "ACE - Association of Computer Engineers", "fullName": "Association of Computer Engineers", "dept": "CSE", "advisor": "Faculty Coordinator, CSE", "mission": "Coding contests, local hackathons, and core computer science technical workshops.", "img": "/assets/images/clubs/ace.jpg" },
-  { "name": "CSI - Computer Society of India", "fullName": "Computer Society of India", "dept": "CSE / IT", "advisor": "CSI Faculty Advisor", "mission": "National-level IT workshops, student certifications, and institutional tech fests.", "img": "/assets/images/clubs/csi.jpg" },
-  { "name": "IETE - The Institution of Electronics and Telecommunication Engineers", "fullName": "The Institution of Electronics and Telecommunication Engineers", "dept": "ECE", "advisor": "IETE Faculty Advisor", "mission": "Electronics design, telecom workshops, and emerging communication technology seminars.", "img": "/assets/images/clubs/iete.jpg" },
-  { "name": "AEE - Association of Electrical Engineers", "fullName": "Association of Electrical Engineers", "dept": "EEE", "advisor": "Faculty Coordinator, EEE", "mission": "Power systems, electrical design workshops, and renewable energy seminars.", "img": "/assets/images/clubs/aee.jpg" },
-  { "name": "AME - Association of Mechanical Engineering", "fullName": "Association of Mechanical Engineering", "dept": "Mechanical", "advisor": "Faculty Coordinator, Mechanical", "mission": "Departmental design challenges, manufacturing workshops, and guest lectures.", "img": "/assets/images/clubs/ame.jpg" },
-  { "name": "IIPE - Indian Institution of Production Engineers", "fullName": "Indian Institution of Production Engineers", "dept": "Mechanical", "advisor": "IIPE Faculty Advisor", "mission": "Industrial engineering, production planning, and manufacturing technology conclaves.", "img": "/assets/images/clubs/iipe.jpg" },
-  { "name": "IEI - Institution of Engineers (India)", "fullName": "Institution of Engineers (India)", "dept": "Civil / Multi-disciplinary", "advisor": "IEI Faculty Chapter Advisor", "mission": "Multi-disciplinary engineering seminars, standard codes, and sustainable infrastructure forums.", "img": "/assets/images/clubs/iei.jpg" },
-  { "name": "ISTE - Indian Society for Technical Education", "fullName": "Indian Society for Technical Education", "dept": "College-wide", "advisor": "ISTE Faculty Advisor", "mission": "Overall technical education promotion, faculty development support, and student soft skills training.", "img": "/assets/images/clubs/iste.jpg" },
-
-  ];
-
-const culturalClubs = [
-  { name: 'Cine Club', mission: 'Film screenings, short film making, movie discussions, script writing, and creative cinematography activities that nurture storytelling and visual creativity among students.', img: '/assets/images/clubs/cini-club.jpg' },
-  { name: 'Music Club', mission: 'Vocal & instrumental ensembles, jam sessions, college band.', img: '/assets/images/clubs/music-club.jpg' },
-  { name: 'Language Nest (Literary Club)', mission: 'Debates, elocution, SRKR Toastmasters & creative writing.', img: '/assets/images/clubs/language-nest.jpg' },
-
-];
-
-const serviceClubs = [
-  { name: 'NSS — National Service Scheme', mission: 'Village outreach, blood donation drives, plantation & health camps.', img: '/assets/images/clubs/nss.jpg' },
-  { name: 'Sustainability Club', mission: 'Plantation drives, plastic-free campus & sustainability projects.', img: '/assets/images/clubs/eco-club.jpg' },
-  { name: 'Blood Donors Forum', mission: 'Voluntary blood-donation registry & emergency donor mobilisation.', img: '/assets/images/clubs/blood-donors-forum.jpg' },
-];
-
-const sportsClubs = [
-  { name: 'Cricket Club', mission: 'Regular cricket matches, coaching clinics, and intercollegiate cricket tournaments.', img: '/assets/images/clubs/cricket-club.jpg' },
-  { name: 'Volleyball Club', mission: 'Inter-departmental volleyball competitions, team practice sessions, and skill-building camps.', img: '/assets/images/clubs/volleyball-club.jpg' },
-  { name: 'Kabaddi Club', mission: 'Traditional kabaddi training, intramural tournaments, and participation in intercollegiate events.', img: '/assets/images/clubs/kabaddi-club.jpg' },
-  { name: 'Basketball Club', mission: 'Court practice sessions, college leagues, and participation in district-level basketball tournaments.', img: '/assets/images/clubs/basketball-club.jpg' },
-  { name: 'Badminton Club', mission: 'Singles and doubles practice, racket skill workshops, and campus badminton championships.', img: '/assets/images/clubs/badminton-club.jpg' },
-  { name: 'Football Club', mission: 'Inter-departmental football tournaments, coaching sessions, and annual JAITRA sports carnival.', img: '/assets/images/clubs/football-club.jpg' },
-];
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -91,16 +60,17 @@ const sportsClubs = [
           {techClubs.map((c) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm single-cat-item">
-                {/* TODO: replace placeholder logo */}
                 <div class="cat-thumb">
                   <img src={c.img} alt={c.name} loading="lazy" decoding="async" />
                   <span class="cat-link-btn">{c.dept}</span>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title mb-2">{c.name}</h5>
-                  <p class="mb-2"><strong>Faculty Advisor:</strong> {c.advisor}</p>
-                  <p class="mb-3 small text-muted">{c.mission}</p>
-                  <a href="/activities" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Activities</a>
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 class="card-title mb-2">{c.name}</h5>
+                    <p class="mb-2"><strong>Faculty Advisor:</strong> {c.advisor}</p>
+                    <p class="mb-3 small text-muted">{c.mission}</p>
+                  </div>
+                  <a href={`/student-clubs/${c.slug}/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Learn More</a>
                 </div>
               </div>
             </div>
@@ -119,14 +89,16 @@ const sportsClubs = [
           {sportsClubs.map((c) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm single-cat-item">
-                {/* TODO: replace placeholder logo */}
                 <div class="cat-thumb">
                   <img src={c.img} alt={c.name} loading="lazy" decoding="async" />
                   <span class="cat-link-btn">Sports</span>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title mb-2">{c.name}</h5>
-                  <p class="mb-0 small text-muted">{c.mission}</p>
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 class="card-title mb-2">{c.name}</h5>
+                    <p class="mb-3 small text-muted">{c.mission}</p>
+                  </div>
+                  <a href={`/student-clubs/${c.slug}/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Learn More</a>
                 </div>
               </div>
             </div>
@@ -146,14 +118,16 @@ const sportsClubs = [
           {culturalClubs.map((c) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm single-cat-item">
-                {/* TODO: replace placeholder logo */}
                 <div class="cat-thumb">
                   <img src={c.img} alt={c.name} loading="lazy" decoding="async" />
                   <span class="cat-link-btn">Cultural</span>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title mb-2">{c.name}</h5>
-                  <p class="mb-0 small text-muted">{c.mission}</p>
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 class="card-title mb-2">{c.name}</h5>
+                    <p class="mb-3 small text-muted">{c.mission}</p>
+                  </div>
+                  <a href={`/student-clubs/${c.slug}/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Learn More</a>
                 </div>
               </div>
             </div>
@@ -172,14 +146,16 @@ const sportsClubs = [
           {serviceClubs.map((c) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm single-cat-item">
-                {/* TODO: replace placeholder logo */}
                 <div class="cat-thumb">
                   <img src={c.img} alt={c.name} loading="lazy" decoding="async" />
                   <span class="cat-link-btn">Service</span>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title mb-2">{c.name}</h5>
-                  <p class="mb-0 small text-muted">{c.mission}</p>
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 class="card-title mb-2">{c.name}</h5>
+                    <p class="mb-3 small text-muted">{c.mission}</p>
+                  </div>
+                  <a href={`/student-clubs/${c.slug}/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Learn More</a>
                 </div>
               </div>
             </div>

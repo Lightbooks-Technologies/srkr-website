@@ -11,7 +11,6 @@ const professors = [
     name: 'DR NGK MURTHY',
     designation: 'Professor',
     specialization: '',
-    email: 'gopinukala@gmail.com',
     profile: 'https://srkrec.irins.org/profile/320363',
     imgsrc: '781.jpeg'
   }
@@ -22,7 +21,6 @@ const assistantProfessors = [
     name: 'N. NAVYA',
     designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'navyanallaparaju@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/321252',
     imgsrc: '1259.jpg'
   },
@@ -30,7 +28,6 @@ const assistantProfessors = [
     name: 'NETI PRAVEEN',
     designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'npraveen@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/547837',
     imgsrc: '1348.jpg'
   },
@@ -38,7 +35,6 @@ const assistantProfessors = [
     name: 'K V SUNIL VARMA',
     designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'kvsunilvarma@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/547902',
     imgsrc: '1372.jpg'
   },
@@ -46,7 +42,6 @@ const assistantProfessors = [
     name: 'P MOUNA',
     designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'mouna.p@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/715069',
     imgsrc: '1398.jpeg'
   },
@@ -54,46 +49,68 @@ const assistantProfessors = [
     name: 'P MANOJ',
     designation: 'Assistant Professor',
     specialization: 'Prompt Engineering',
-    email: 'manoj.p@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/715065',
     imgsrc: '1399.jpeg'
   },
   {
     name: 'ANUSURI KRISHNA VENI',
     designation: 'Assistant Professor',
-    specialization: 'Machine Learning',
-    email: 'akveni@srkrec.ac.in',
+    specialization: 'QUANTUM COMPUTING',
     profile: 'https://srkrec.irins.org/profile/376969',
     imgsrc: '1478.jpg'
   },
   {
     name: 'K V V Satya Trinadh Naidu',
     designation: 'Assistant Professor',
-    specialization: 'Cyber Security, Java, Python',
-    email: 'kvvstnaidu@srkrec.ac.in',
+    specialization: 'Cyber Security, Machine Learning, Java, Python',
     profile: 'https://srkrec.irins.org/profile/294478',
     imgsrc: '1480.jpg'
+  },
+  {
+    name: 'JALADI MOHAN SURENDRA',
+    designation: 'Assistant Professor',
+    specialization: 'Image processing, Machine Learning',
+    profile: 'https://srkrec.irins.org/profile/724367',
+    imgsrc: '1505.jpg'
+  },
+  {
+    name: 'GODI SUDHAKAR',
+    designation: 'Assistant Professor',
+    specialization: 'Cloud Computing',
+    profile: 'https://srkrec.irins.org/profile/715917',
+    imgsrc: '1507.jpg'
+  },
+  {
+    name: 'K Sri vigyna',
+    designation: 'Assistant Professor',
+    specialization: 'Machine Learning',
+    profile: 'https://srkrec.irins.org/profile/715093',
+    imgsrc: '1509.jpeg'
+  },
+  {
+    name: 'Dr. Koppisetti Giridhar',
+    designation: 'Assistant Professor',
+    specialization: 'Wireless Sensor Networks',
+    profile: 'https://srkrec.irins.org/profile/460684',
+    imgsrc: '1517.jpg'
+  },
+  {
+    name: 'SRINU MANNE',
+    designation: 'Assistant Professor',
+    specialization: 'Machine learning',
+    profile: 'https://srkrec.irins.org/profile/715127',
+    imgsrc: '1520.jpg'
   },
   {
     name: 'D Parvathi',
     designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'parvathiram21@gmail.com',
     profile: 'https://srkrec.irins.org/profile/715070',
     imgsrc: '1503.jpeg'
   }
 ];
 
-const teachingAssistants = [
-  {
-    name: 'K Sri vigyna',
-    designation: 'Teaching Assistant',
-    specialization: 'Machine Learning',
-    email: 'vignyak@gmail.com',
-    profile: 'https://srkrec.irins.org/profile/715093',
-    imgsrc: '1509.jpeg'
-  }
-];
+const teachingAssistants: any[] = [];
 ---
 
 <!doctype html>
@@ -144,7 +161,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>
@@ -175,7 +191,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>
@@ -206,7 +221,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>

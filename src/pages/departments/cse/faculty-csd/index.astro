@@ -11,7 +11,6 @@ const professors = [
     name: 'Dr. Suresh Babu Mudunuri',
     designation: 'Professor',
     specialization: '',
-    email: 'suresh.mudunuri@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/579091',
     imgsrc: '780.jpeg'
   }
@@ -22,7 +21,6 @@ const assistantProfessors = [
     name: 'A. Aswini Priyanka',
     designation: 'Assistant Professor',
     specialization: 'Cloud Computing',
-    email: 'aapriyanka@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/547845',
     imgsrc: '1339.jpg'
   },
@@ -30,62 +28,54 @@ const assistantProfessors = [
     name: 'S. Mohan Krishna',
     designation: 'Assistant Professor',
     specialization: 'AI & ML',
-    email: 'mohanakrishna.seerla@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/585808',
     imgsrc: '1376.jpeg'
   },
   {
-    name: 'P S V SURYA KUMAR',
+    name: 'P S V Surya Kumar',
     designation: 'Assistant Professor',
     specialization: 'IOT',
-    email: 'psvsuryakumar@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/585825',
     imgsrc: '1382.jpg'
   },
   {
-    name: 'ANGARA SATYAM',
+    name: 'Angara Satyam',
     designation: 'Assistant Professor',
     specialization: 'Artificial Intelligence',
-    email: 'asatyam@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/408219',
     imgsrc: '1472.jpg'
   },
   {
     name: 'Dr. K. Srinivasa Rao',
     designation: 'Assistant Professor',
-    specialization: '',
-    email: 'ksrinivasarao@srkrec.ac.in',
-    profile: '',
+    specialization: 'Machine Learning, Deep Learning',
+    profile: 'https://srkrec.irins.org/profile/403639',
     imgsrc: '1474.jpg'
   },
   {
     name: 'K. Bhanu Rajesh Naidu',
     designation: 'Assistant Professor',
     specialization: 'Cloud Computing',
-    email: 'kbrnaidu@srkrec.ac.in',
     profile: 'https://srkrec.irins.org/profile/295810',
     imgsrc: '1479.jpg'
   },
   {
-    name: 'N. Aneela',
+    name: 'Nadimpilli.Aneela',
     designation: 'Assistant Professor',
-    specialization: 'Machine Learning',
-    email: 'aneela@srkrec.ac.in',
+    specialization: 'Deep Learning',
     profile: 'https://srkrec.irins.org/profile/715083',
     imgsrc: '1483.jpg'
-  }
-];
-
-const teachingAssistants = [
+  },
   {
     name: 'M Sai Madhuri',
-    designation: 'Teaching Assistant',
+    designation: 'Assistant Professor',
     specialization: 'Machine Learning',
-    email: 'madhuryamudundi@gmail.com',
     profile: 'https://srkrec.irins.org/profile/715072',
     imgsrc: '1504.jpeg'
   }
 ];
+
+const teachingAssistants: any[] = [];
 ---
 
 <!doctype html>
@@ -136,7 +126,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>
@@ -167,7 +156,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>
@@ -198,7 +186,6 @@ const teachingAssistants = [
                         <span class="designation">{f.designation}</span>
                         <div class="staf-info__speciality">
                           {f.specialization && <p><strong>Area:</strong> {f.specialization}</p>}
-                          {f.email && <p><strong>Email:</strong> <a href={`mailto:${f.email}`}>{f.email}</a></p>}
                         </div>
                         {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                       </div>
