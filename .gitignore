@@ -19,6 +19,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# python bytecode cache
+__pycache__/
+*.pyc
+
 pnpm-lock.yaml
 
 .astro
