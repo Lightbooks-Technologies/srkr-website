@@ -57,6 +57,12 @@ if (dept === 'ash') {
     { label: 'Newsletter', href: `/departments/it/newsletter/` },
     { label: 'Brochure', href: `/departments/it/brochure/` },
   ];
+} else if (dept === 'ms') {
+  navItems = [
+    { label: 'Home', href: `/departments/ms/` },
+    { label: 'Academic Programs', href: `/departments/ms/academic-programs/` },
+    { label: 'Faculty', href: `/departments/ms/faculty/` },
+  ];
 } else {
   navItems = DEPT_NAV_ITEMS.map((item) => {
     let href = `${basePath}${item.path}`;

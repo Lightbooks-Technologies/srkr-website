@@ -1,0 +1,199 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Academic Programs | Department of Management Studies | SRKR" description="Bachelor of Business Administration (BBA) offered by the Department of Management Studies at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/ms/">Management Studies</a></li>
+              </ul>
+              <h1 class="section-title">Academic Programs</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="ms" current="Academic Programs" />
+        <div class="row sticky-coloum-wrap">
+          <div class="col-lg-8 col-md-12">
+
+            <!-- Intro -->
+            <div class="program-about mb-5">
+              <h4 class="title">Programs Offered</h4>
+              <p>The Department of Management Studies offers a JNTUK-affiliated 3-Year Bachelor of Business Administration (BBA) program. The BBA program is designed to provide a strong foundation in business management principles, marketing, finance, human resource management, and organizational behavior, preparing graduates for successful corporate careers or entrepreneurial ventures.</p>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Our Programs</h3>
+            </div>
+            <div class="row g-4 mb--40">
+              <div class="col-lg-6 col-md-6">
+                <div class="single-cat-item">
+                  <div class="cat-thumb" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f8f9fa;">
+                    <img src="/assets/images/programs/bba.png" alt="BBA Program" style="max-height: 100%; object-fit: contain; padding: 15px;">
+                    <a href="#bba-details" class="cat-link-btn">Undergraduate</a>
+                  </div>
+                  <div class="cat-meta">
+                    <div class="cat-title">
+                      <a href="#bba-details">Bachelor of Business Administration (BBA)</a>
+                    </div>
+                    <div class="cat-link">
+                      <a href="#bba-details" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion: BBA Details -->
+            <div id="bba-details" class="program-credit-area faq mt--50 rts-scholarship-description">
+              <div class="rts-section mb--30">
+                <h3 class="rts-section-title">Program Details</h3>
+              </div>
+              <div class="program-accordion">
+                <div class="accordion" id="bba-accordion">
+
+                  <!-- Overview -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bba-overview" aria-expanded="true">
+                      Program Overview
+                    </button>
+                    <div id="bba-overview" class="accordion-collapse collapse show" data-bs-parent="#bba-accordion">
+                      <div class="accordion-body">
+                        <p>The Bachelor of Business Administration (BBA) is a three-year undergraduate program designed to nurture future business professionals, executives, and entrepreneurs. The course aims to develop critical thinking, communication, decision-making, and leadership capabilities among students through a combination of theoretical learning and practical experiences.</p>
+                        <table class="table table-bordered mt-3">
+                          <tbody>
+                            <tr>
+                              <th>Affiliation</th>
+                              <td>JNTU Kakinada (JNTUK)</td>
+                            </tr>
+                            <tr>
+                              <th>Duration</th>
+                              <td>3 Years</td>
+                            </tr>
+                            <tr>
+                              <th>Honours / Minors</th>
+                              <td>Additional 1 Year Honours and Minors Program</td>
+                            </tr>
+                            <tr>
+                              <th>Sanctioned Intake</th>
+                              <td>60 Students</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PEOs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bba-peo" aria-expanded="false">
+                      Program Educational Objectives (PEOs)
+                    </button>
+                    <div id="bba-peo" class="accordion-collapse collapse" data-bs-parent="#bba-accordion">
+                      <div class="accordion-body">
+                        <ul class="si__list">
+                          <li class="si__list--single"><strong>PEO 1:</strong> To prepare graduates with a strong foundation in management theories, concepts, and techniques to solve real-world business challenges.</li>
+                          <li class="si__list--single"><strong>PEO 2:</strong> To develop effective communication, team management, and leadership skills required to work in diverse business environments.</li>
+                          <li class="si__list--single"><strong>PEO 3:</strong> To foster an entrepreneurial mindset and commitment to ethical principles, social responsibility, and continuous learning.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- POs -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bba-po" aria-expanded="false">
+                      Program Outcomes (POs)
+                    </button>
+                    <div id="bba-po" class="accordion-collapse collapse" data-bs-parent="#bba-accordion">
+                      <div class="accordion-body">
+                        <ul class="si__list">
+                          <li class="si__list--single"><strong>PO 1 (Management Knowledge):</strong> Apply knowledge of management theories and practices to solve business problems.</li>
+                          <li class="si__list--single"><strong>PO 2 (Problem Analysis):</strong> Identify, formulate, and analyze business problems using modern analytical tools.</li>
+                          <li class="si__list--single"><strong>PO 3 (Design/Development of Solutions):</strong> Design solutions for business issues that meet specified needs with appropriate consideration for society.</li>
+                          <li class="si__list--single"><strong>PO 4 (Conduct Investigations):</strong> Use research-based knowledge and methods to provide valid conclusions.</li>
+                          <li class="si__list--single"><strong>PO 5 (Modern Tool Usage):</strong> Apply appropriate techniques, resources, and IT tools to complex business activities.</li>
+                          <li class="si__list--single"><strong>PO 6 (The Manager and Society):</strong> Assess societal, health, safety, legal, and cultural issues relevant to management practice.</li>
+                          <li class="si__list--single"><strong>PO 7 (Environment and Sustainability):</strong> Understand the impact of management decisions in societal and environmental contexts.</li>
+                          <li class="si__list--single"><strong>PO 8 (Ethics):</strong> Apply ethical principles and commit to professional ethics and responsibilities.</li>
+                          <li class="si__list--single"><strong>PO 9 (Individual & Team Work):</strong> Function effectively as an individual and as a member or leader in diverse teams.</li>
+                          <li class="si__list--single"><strong>PO 10 (Communication):</strong> Communicate effectively on business activities with the community and society.</li>
+                          <li class="si__list--single"><strong>PO 11 (Project Management & Finance):</strong> Demonstrate knowledge of management and financial principles to manage projects.</li>
+                          <li class="si__list--single"><strong>PO 12 (Life-long Learning):</strong> Recognize the need for and have the preparation to engage in independent and life-long learning.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Syllabus & Regulations Links -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bba-curriculum" aria-expanded="false">
+                      Curriculum, Syllabus &amp; Regulations
+                    </button>
+                    <div id="bba-curriculum" class="accordion-collapse collapse" data-bs-parent="#bba-accordion">
+                      <div class="accordion-body">
+                        <p>Access academic regulations, syllabus, and model question papers for the BBA course:</p>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                          <a href="/regulations/" class="rts-theme-btn">Regulations</a>
+                          <a href="/syllabus/" class="rts-theme-btn border-btn">Syllabus &amp; Model Papers</a>
+                          <a href="/calender/" class="rts-theme-btn border-btn">Academic Calendar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="theiaStickySidebar">
+              <div class="program-sidebar">
+                <div class="program-curriculum">
+                  <h6 class="heading-title">MS Programs</h6>
+                  <div class="program-menu">
+                    <ul class="list-unstyled">
+                      <li><a href="/departments/ms/"><span><i class="fa-light fa-arrow-right"></i></span>Department Home</a></li>
+                      <li><a href="/departments/ms/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Members</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

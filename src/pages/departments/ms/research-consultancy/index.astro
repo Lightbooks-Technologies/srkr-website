@@ -1,0 +1,265 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Research & Consultancy | Mechanical Engineering | SRKR" description="Research areas, funded projects, publications, and consultancy services of the Mechanical Engineering department at SRKR." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/mechanical/mechhome.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+              </ul>
+              <h1 class="section-title">Research &amp; Consultancy</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Research/Consultancy" />
+
+        <!-- Two Column Layout -->
+        <div class="row sticky-coloum-wrap justify-content-md-center justify-content-start">
+
+          <!-- Left: Overview + Accordion -->
+          <div class="col-lg-8 col-md-11">
+
+            <!-- Intro -->
+            <div class="program-about mb--40">
+              <h4 class="title">Research &amp; Consultancy Overview</h4>
+              <p>{/* TODO: confirm figures with department records */}The Department of Mechanical Engineering pursues active research across thermal systems, computational fluid dynamics, advanced manufacturing, materials, design optimisation, electric mobility, and Industry 4.0. As a recognised research centre of Andhra University and JNTUK, our faculty have produced over 450+ publications in reputed International and National journals and conferences, supervise Ph.D. scholars, and engage industry through consultancy and MoUs with leading automotive, manufacturing, and PSU partners.</p>
+            </div>
+
+            <div class="program-credit-area faq rts-scholarship-description">
+              <div class="program-accordion">
+                <div class="accordion" id="me-rts-accordion">
+
+                  <!-- Research Areas -->
+                  <div class="accordion-item">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#me-collapseOne" aria-expanded="true">
+                      Research Areas
+                    </button>
+                    <div id="me-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#me-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Thermal Engineering, Heat &amp; Mass Transfer, IC Engines</li>
+                              <li class="si__list--single">Advanced Manufacturing, CNC &amp; Additive Manufacturing</li>
+                              <li class="si__list--single">Composite &amp; Smart Materials, Metallurgy &amp; Tribology</li>
+                              <li class="si__list--single">Machine Design, Vibration &amp; Finite Element Analysis</li>
+                              <li class="si__list--single">Refrigeration, Air Conditioning &amp; HVAC Systems</li>
+                              <li class="si__list--single">Electric Vehicle Thermal Management &amp; Sustainable Energy</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Focus Groups -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-collapseTwo" aria-expanded="false">
+                      Research Focus Groups
+                    </button>
+                    <div id="me-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#me-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Renewable Energy group</li>
+                              <li class="si__list--single">Bio-fuels group</li>
+                              <li class="si__list--single">Advanced Manufacturing group</li>
+                              <li class="si__list--single">Design optimization &amp; FEA group</li>
+                              <li class="si__list--single">Automotive &amp; Electric mobility group</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Funded Projects -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-collapseThree" aria-expanded="false">
+                      Funded Projects
+                    </button>
+                    <div id="me-collapseThree" class="accordion-collapse collapse" data-bs-parent="#me-rts-accordion">
+                      <div class="accordion-body">
+                        {/* TODO: replace with current funded project records */}
+                        <div class="si">
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">SRKREC Seed Grant Scheme - Funded research on Design and Fabrication of Single Stage HDH Integrated with VCR System</li>
+                              <li class="si__list--single">MSME-funded research on Underwater drone for Welding.</li>
+                              <li class="si__list--single">DST-Funded research on Science Technology and Innovation Driven Inland Aquaculture Hub for Bhimavaram Suburbs</li>
+                              <li class="si__list--single">AICTE-funded research on Development of Computer interfaced I.C. Engine Laboratory.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Publications -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-collapseFour" aria-expanded="false">
+                      Publications
+                    </button>
+                    <div id="me-collapseFour" class="accordion-collapse collapse" data-bs-parent="#me-rts-accordion">
+                      <div class="accordion-body">
+                        <p class="mb--20">Year-wise publication output of the Department of Mechanical Engineering across key indexing databases:</p>
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Academic Year</th>
+                                <th>Total Scopus</th>
+                                <th>Peer Review (Conf / Book Chap)</th>
+                                <th>WOS (SCI / SCIE / ESCI)</th>
+                                <th>Total Publications</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>2025–26</td>
+                                <td>22</td>
+                                <td>11</td>
+                                <td>46</td>
+                                <td><strong>79</strong></td>
+                              </tr>
+                              <tr>
+                                <td>2024–25</td>
+                                <td>8</td>
+                                <td>1</td>
+                                <td>16</td>
+                                <td><strong>25</strong></td>
+                              </tr>
+                              <tr>
+                                <td>2023–24</td>
+                                <td>11</td>
+                                <td>1</td>
+                                <td>24</td>
+                                <td><strong>36</strong></td>
+                              </tr>
+                              <tr>
+                                <td>2022–23</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td><strong>12</strong></td>
+                              </tr>
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <td><strong>Grand Total</strong></td>
+                                <td><strong>42</strong></td>
+                                <td><strong>18</strong></td>
+                                <td><strong>92</strong></td>
+                                <td><strong>152</strong></td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Consultancy -->
+                  <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#me-collapseFive" aria-expanded="false">
+                      Consultancy Services
+                    </button>
+                    <div id="me-collapseFive" class="accordion-collapse collapse" data-bs-parent="#me-rts-accordion">
+                      <div class="accordion-body">
+                        <div class="si">
+                          <h4 class="title">Domains</h4>
+                          <div class="si__list">
+                            <ul class="list-unstyled">
+                              <li class="si__list--single">Performance &amp; Emission evaluation of Bio-diesels.</li>
+                              <li class="si__list--single">CAD/CAM design support.</li>
+                              <li class="si__list--single">Material testing &amp; metallurgical analysis.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="mt--20">The department is open to serve local MSMEs, automotive, manufacturing, and government agencies across Andhra Pradesh, leveraging its workshop, simulation tools, and laboratory capabilities.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sidebar -->
+          <div class="col-lg-4 col-md-11 sticky-coloum-item">
+            <div class="program-sidebar">
+
+              <!-- Quick Links -->
+              <div class="program-curriculum">
+                <h6 class="heading-title">Research Resources</h6>
+                <div class="program-menu">
+                  <ul class="list-unstyled">
+                    <li><a href="/departments/mechanical/faculty/"><span><i class="fa-light fa-arrow-right"></i></span>Faculty Profiles</a></li>
+                    <li><a href="/departments/mechanical/facilities/"><span><i class="fa-light fa-arrow-right"></i></span>Research Facilities</a></li>
+                    <li><a href="/departments/mechanical/academic-programs/"><span><i class="fa-light fa-arrow-right"></i></span>M.Tech Programs</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Ongoing Projects</a></li>
+                    <li><a href="#"><span><i class="fa-light fa-arrow-right"></i></span>Publications List</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="program-info">
+                <h5>Department Contact</h5>
+                <p>Mechanical Engineering Department<br>SRKR Engineering College</p>
+                <div class="contact-info mt--10 mb--10">
+                  <h5>Email:</h5>
+                  <a href="mailto:mech@srkrec.ac.in">mech@srkrec.ac.in</a>
+                </div>
+                <div class="contact-info mt--20 mb--20">
+                  <h5>Phone:</h5>
+                  <a href="tel:08816223332">08816-223332</a>
+                </div>
+                <div class="social-info mt--20">
+                  <h5>Connect With Us:</h5>
+                  <div class="social-info-link">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

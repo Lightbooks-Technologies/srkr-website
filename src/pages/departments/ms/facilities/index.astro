@@ -1,0 +1,132 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const labs = [
+  { name: 'Engineering Workshop',                          img: '/assets/images/placeholder/photo-1581092580497-e0d23cbdf1dc_800x600.jpg' },
+  { name: 'Thermal Engineering Lab',                            img: '/assets/images/placeholder/photo-1565793298595-6a879b1d9492_800x600.jpg' },
+  { name: 'Fluid Mechanics & Hydraulics Lab',              img: '/assets/images/placeholder/photo-1473968512647-3e447244af8f_800x600.jpg' },
+  { name: 'Strength of Materials Lab',                     img: '/assets/images/placeholder/photo-1581094271901-8022df4466f9_800x600.jpg' },
+  { name: 'Manufacturing Processes Lab',                  img: '/assets/images/placeholder/photo-1565043666747-69f6646db940_800x600.jpg' },
+  { name: 'Metallurgy & Material Science Lab',             img: '/assets/images/placeholder/photo-1581092162384-8987c1d64718_800x600.jpg' },
+  { name: 'Heat Transfer Lab',                             img: '/assets/images/placeholder/photo-1607004468138-e7e23ea26947_800x600.jpg' },
+  { name: 'Industrial Engineering Lab',                                img: '/assets/images/placeholder/photo-1486325212027-8081e485255e_800x600.jpg' },
+  { name: 'CAD/CAM Lab',                                   img: '/assets/images/placeholder/photo-1517077304055-6e89abbf09b0_800x600.jpg' },
+  { name: 'Engineering Mechanics Lab',                            img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
+  { name: 'Theory of Machines Lab',                         img: '/assets/images/placeholder/photo-1581094794329-c8112a89af12_800x600.jpg' },
+];
+---
+
+<style>
+  .single-cat-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cat-thumb {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cat-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cat-meta {
+    padding: 1.5rem 1rem;
+  }
+
+  .cat-title a {
+    font-size: 1.5rem;;
+  }
+
+  .cat-link {
+    display: none;
+  }
+
+  .cat-title {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Facilities | Mechanical Engineering | SRKR" description="Laboratories and research facilities of the Mechanical Engineering department at SRKR Engineering College." />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/mechanical/mechhome.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+              </ul>
+              <h1 class="section-title">Facilities</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40 pb--60">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Facilities" />
+        <div class="row">
+          <div class="col-12">
+
+            <div class="program-about">
+              <h4 class="title">Our Laboratories</h4>
+              <p>The department maintains twelve well-equipped laboratories supporting B.Tech and M.Tech courses, project work, and research. Facilities range from a fully-fledged Engineering Workshop and foundational thermodynamics, fluids, and materials benches to modern setups for IC engines, refrigeration, CAD/CAM & CNC machining. With more than 144 computing systems loaded with AutoCAD, SolidWorks, ABAQUS the labs also support consultancy services to local and national industry.</p>
+            </div>
+
+            <div class="rts-section mb--40 mt--40">
+              <h3 class="rts-section-title">Laboratory Infrastructure</h3>
+            </div>
+
+            <div class="row g-5">
+              {labs.map(lab => (
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-cat-item">
+                    <div class="cat-thumb">
+                      <img src={lab.img} alt={lab.name} />
+                      <a href="#" class="cat-link-btn">Laboratory</a>
+                    </div>
+                    <div class="cat-meta">
+                      <div class="cat-title">
+                        <a href="#">{lab.name}</a>
+                      </div>
+                      <div class="cat-link">
+                        <a href="#" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

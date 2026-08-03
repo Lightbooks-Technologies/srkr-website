@@ -1,0 +1,218 @@
+---
+import BaseHead from '../../../../components/BaseHead.astro';
+import FooterScripts from '../../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../../components/OffCanvas.astro';
+import DeptNav from '../../../../components/DeptNav.astro';
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Placements | Mechanical Engineering | SRKR" description="Placement records of the Mechanical Engineering department at SRKR Engineering College." />
+    <style>
+      .recruiter-logo-box {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        transition: all 0.3s ease;
+      }
+      .recruiter-logo-box:hover {
+        border-color: #1a3c6b;
+        box-shadow: 0 4px 12px rgba(26, 60, 107, 0.1);
+        transform: translateY(-2px);
+      }
+      .recruiter-logo-box img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+        /* filter: grayscale(100%); */
+        transition: filter 0.3s ease;
+      }
+      .recruiter-logo-box:hover img {
+        /* filter: grayscale(0%); */
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/faculty/mechanical/mechhome.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments">Departments</a></li>
+                <li class="breadcrumb-item"><a href="/departments/mechanical/">Mechanical Engineering</a></li>
+              </ul>
+              <h1 class="section-title">Placements</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-scholarship pt--40">
+      <div class="container">
+        <DeptNav dept="mechanical" current="Placements" />
+      </div>
+    </section>
+
+    <!-- About Placements -->
+    <section class="rts-about-university pb--80">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">Placements</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                The Department of Mechanical Engineering at SRKR has built a strong four-decade placement legacy, partnering with automotive OEMs, core engineering and manufacturing companies, EPC giants, and leading IT services firms. Students are prepared through technical training, internships, value-added courses on CAD/CAM/CAE tools, and intensive interview readiness programmes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="academic-picture">
+              <img src="/assets/images/placeholder/photo-1517245386807-bb43f82c33c4_1200x400.jpg" alt="placements" style="max-height: 400px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi Row Sections -->
+    <div class="rts-multi-row-section pb--80">
+      <div class="container">
+        <!-- Top Recruiters -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="/assets/images/placeholder/photo-1486406146926-c627a92ad1ab_800x600.jpg" alt="top recruiters"  style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Top Recruiters</h4>
+              <p>Automotive OEMs, core manufacturers, EPC firms, PSUs, and global IT services companies consistently recruit our ME graduates for their technical depth, design-and-build skills, and work-readiness.</p>
+              <div class="row g-4 mt-3">
+              
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/ril.png" alt="Reliance" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/skyroot.jpeg" alt="Skyroot Aerospace" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/jsw.jpeg" alt="JSW" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tvs-breaks-india.jpeg" alt="TVS Brakes India" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/epiroc.jpeg" alt="Epiroc" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/thermal-systems.jpeg" alt="Thermal Systems" loading="lazy" decoding="async">
+                  </div>
+                </div>
+               
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    {/* TODO: replace with real recruiter logo (Ashok Leyland) */}
+                    <img src="/assets/images/recruiters/cts.png" alt="Ashok Leyland" / loading="lazy" decoding="async">
+                  </div>
+                </div>
+             
+             
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/tcs.png" alt="Tata Consultancy Services" / loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/recruiters/infosys.png" alt="Infosys" / loading="lazy" decoding="async">
+                  </div>
+                </div>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placement Training -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content left-side">
+              <h4 class="row-title">Placement Training</h4>
+              <p>Our Training &amp; Placement Cell, supported by the department, runs structured programmes to prepare students for technical interviews, aptitude tests, and core mechanical roles spanning design, manufacturing, and thermal domains.</p>
+              <div class="program-list">
+                <a href="#" class="program-item"><span>Technical Interview Skills <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Aptitude &amp; Reasoning Training <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Communication &amp; Soft Skills <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Resume Building &amp; Mock Interviews <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>CAD/CAM &amp; CAE Tool Certifications <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg" alt="placement training" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <!-- Year-wise Records -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="/assets/images/placeholder/photo-1460925895917-afdab827c52f_800x600.jpg" alt="placement records" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Year-wise Placement Records</h4>
+              <p>Download detailed placement reports with company names, packages offered, and student achievements for each academic year.</p>
+              <div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/mech/placements/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                    <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Multi Row Sections End -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
