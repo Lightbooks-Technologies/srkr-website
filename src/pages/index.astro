@@ -117,33 +117,37 @@ try {
               class="rts-slider-height rts-slider-overlay rt-relative"
               style="position:relative;overflow:hidden;"
             >
+              <!-- Single element: the correct source is chosen at runtime so
+                   only one video is ever downloaded (see script below). -->
               <video
-                class="hero-video hero-video--desktop"
+                id="heroVideo"
+                class="hero-video"
                 autoplay
                 muted
                 loop
                 playsinline
-                poster="/assets/video/home.png"
+                preload="none"
+                poster="/assets/video/hero-poster.jpg"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"
               >
-                <source src="/assets/video/srkr-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <video
-                class="hero-video hero-video--mobile"
-                autoplay
-                muted
-                loop
-                playsinline
-                poster="/assets/video/srkr-video-mobile.png"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"
-              >
-                <source
-                  src="/assets/video/srkr-video-mobile.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+              <script is:inline>
+                (function () {
+                  var v = document.getElementById('heroVideo');
+                  if (!v) return;
+                  var mobile = window.matchMedia('(max-width: 768px)').matches;
+                  v.poster = mobile
+                    ? '/assets/video/hero-poster-mobile.jpg'
+                    : '/assets/video/hero-poster.jpg';
+                  v.src = mobile
+                    ? '/assets/video/srkr-video-mobile.mp4'
+                    : '/assets/video/srkr-video.mp4';
+                  v.load();
+                  var p = v.play();
+                  if (p && p.catch) p.catch(function () {});
+                })();
+              </script>
               <!-- Fullscreen dark overlay -->
               <div
                 style="position:absolute;top:0;left:0;width:100%;height:100%;background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%);z-index:2;"
@@ -185,8 +189,8 @@ try {
             <div class="rts-slider-height rts-slider-overlay rt-relative">
               <div
                 class="rts-slider-bg"
-                data-background="assets/images/programs/ai_ml.png"
-                style="background-image: url(assets/images/programs/ai_ml.png);"
+                data-background="assets/images/programs/ai_ml.jpg"
+                style="background-image: url(assets/images/programs/ai_ml.jpg);"
               >
               </div>
               <div class="container">
@@ -602,7 +606,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/cse.png"
+                  src="/assets/images/programs/cse.jpg"
                   alt="Computer Science & Engineering"
                   loading="lazy"
                   decoding="async"
@@ -622,7 +626,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/ai_ml.png"
+                  src="/assets/images/programs/ai_ml.jpg"
                   alt="Artificial Intelligence & ML"
                   loading="lazy"
                   decoding="async"
@@ -662,7 +666,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/ece.png"
+                  src="/assets/images/programs/ece.jpg"
                   alt="Electronics & Communication"
                   loading="lazy"
                   decoding="async"
@@ -682,7 +686,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/eee.png"
+                  src="/assets/images/programs/eee.jpg"
                   alt="Electrical & Electronics"
                   loading="lazy"
                   decoding="async"
@@ -755,7 +759,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/csd.png"
+                  src="/assets/images/programs/csd.jpg"
                   alt="Computer Science & Design"
                   loading="lazy"
                   decoding="async"
@@ -811,7 +815,7 @@ try {
             <div class="single-cat-item srkr-dept-card">
               <div class="cat-thumb srkr-dept-thumb">
                 <img
-                  src="/assets/images/programs/cs_bs.png"
+                  src="/assets/images/programs/cs_bs.jpg"
                   alt="CS & Business System System"
                   loading="lazy"
                   decoding="async"
@@ -1454,19 +1458,10 @@ try {
     object-fit: cover;
     display: block;
   }
-  .hero-video--mobile {
-    display: none;
-  }
   @media (max-width: 768px) {
     .video-section {
       height: 50vh;
       min-height: 300px;
-    }
-    .hero-video--desktop {
-      display: none;
-    }
-    .hero-video--mobile {
-      display: block;
     }
   }
 
