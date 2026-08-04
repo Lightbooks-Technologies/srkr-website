@@ -206,7 +206,7 @@ const coreDepartments: Department[] = [
     established: 2024,
     intake: 60,
     hod: 'Dr. M. Siva Krishnam Raju',
-    hodDesignation: 'Controller of Examinations & Head of Department',
+    hodDesignation: 'Head of the Department & Associate Professor',
     hodEmail: 'hod.bba@srkrec.ac.in',
     email: 'hod.bba@srkrec.ac.in',
     phone: '+91 08816 223332',
