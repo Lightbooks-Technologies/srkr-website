@@ -15529,11 +15529,11 @@ xclip
 }
 .rts-hero-slider.v_2 .rts-slider-height {
   /* height: 980px; */
-  height: 700px;
+  height: 100vh;
 }
 @media screen and (max-width: 992px) {
   .rts-hero-slider.v_2 .rts-slider-height {
-    height: 650px;
+    height: 100vh;
   }
 }
 .rts-hero-slider.v_2 .rts-slider-overlay {
