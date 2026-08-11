@@ -139,9 +139,12 @@ try {
   loop
   playsinline
   preload="auto"
-  poster="/assets/video/hero-poster.jpg"
+      poster="/assets/video/tcs-desktop.jpg"
+
   data-desktop="/assets/video/desktop-video.mp4"
   data-mobile="/assets/video/mobile-video.mp4"
+  data-poster-desktop="/assets/video/tcs-desktop.jpg"
+  data-poster-mobile="/assets/video/tcs-mobile.jpg"
   style="
     position:absolute;
     top:0;
@@ -202,6 +205,8 @@ try {
   poster="/assets/video/hero-poster.jpg"
   data-desktop="/assets/video/srkr-video.mp4"
   data-mobile="/assets/video/srkr-video-mobile.mp4"
+  data-poster-desktop="/assets/video/hero-poster.jpg"
+  data-poster-mobile="/assets/video/hero-poster-mobile.jpg"
   style="
     position:absolute;
     top:0;
@@ -364,12 +369,7 @@ try {
       if (!source) return;
 
 
-      const poster = isMobile
-        ? "/assets/video/hero-poster-mobile.jpg"
-        : "/assets/video/hero-poster.jpg";
-
-
-      video.poster = poster;
+      syncVideoPoster(video, isMobile);
 
 
       /*
@@ -386,6 +386,35 @@ try {
       video.dataset.loaded = source;
 
       video.load();
+
+    }
+
+
+    function syncVideoPoster(video, isMobile) {
+
+      if (!video) return;
+
+      const poster = isMobile
+        ? (video.dataset.posterMobile || video.dataset.posterDesktop)
+        : (video.dataset.posterDesktop || video.dataset.posterMobile);
+
+      if (!poster) return;
+
+      video.poster = poster;
+      video.setAttribute("poster", poster);
+
+    }
+
+
+    function syncAllVideoPosters(isMobile) {
+
+      document
+        .querySelectorAll(".hero-video")
+        .forEach((video) => {
+
+          syncVideoPoster(video, isMobile);
+
+        });
 
     }
 
@@ -467,6 +496,10 @@ try {
       typeof swiperElement.swiper.on === "function"
     ) {
 
+      syncAllVideoPosters(
+        window.matchMedia("(max-width: 768px)").matches
+      );
+
       const swiper =
         swiperElement.swiper;
 
@@ -533,6 +566,10 @@ try {
 
             clearInterval(findSwiper);
 
+            syncAllVideoPosters(
+              window.matchMedia("(max-width: 768px)").matches
+            );
+
 
             /*
              * Initial video
@@ -595,6 +632,8 @@ try {
         "(max-width: 768px)"
       ).matches;
 
+    syncAllVideoPosters(wasMobile);
+
 
     window.addEventListener(
       "resize",
@@ -614,6 +653,8 @@ try {
         if (isMobile !== wasMobile) {
 
           wasMobile = isMobile;
+
+          syncAllVideoPosters(isMobile);
 
 
           document
