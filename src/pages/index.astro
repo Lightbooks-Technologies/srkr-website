@@ -24,6 +24,15 @@ const nowIST = new Date(Date.now() + IST_OFFSET_MS);
 const todayStartIST = new Date(
   Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) - IST_OFFSET_MS,
 );
+const now = new Date();
+const baseYear = 2026;
+const baseCount = 46;
+const anniversaryMonth = 5;
+
+const yearsOfExcellence =
+  baseCount +
+  (now.getFullYear() - baseYear) -
+  (now.getMonth() < anniversaryMonth ? 1 : 0);
 let homeEvents = UPCOMING_EVENTS;
 try {
   const res = await fetch(
@@ -84,7 +93,7 @@ try {
       body.page .single-feature p,
       body.page .program-about p,
       body.page .blog__single--item p {
-        text-align: justify;
+        text-align: left;
       }
     </style>
   </head>
@@ -110,133 +119,534 @@ try {
                 }
     }'
       >
-        <div class="swiper-wrapper">
-          <!-- Slide 1: Video Slide -->
-          <div class="swiper-slide" data-swiper-autoplay="20000">
-            <div
-              class="rts-slider-height rts-slider-overlay rt-relative"
-              style="position:relative;overflow:hidden;"
-            >
-              <!-- Single element: the correct source is chosen at runtime so
-                   only one video is ever downloaded (see script below). -->
-              <video
-                id="heroVideo"
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                poster="/assets/video/hero-poster.jpg"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"
-              >
-                Your browser does not support the video tag.
-              </video>
-              <script is:inline>
-                (function () {
-                  var v = document.getElementById('heroVideo');
-                  if (!v) return;
-                  var mobile = window.matchMedia('(max-width: 768px)').matches;
-                  v.poster = mobile
-                    ? '/assets/video/hero-poster-mobile.jpg'
-                    : '/assets/video/hero-poster.jpg';
-                  v.src = mobile
-                    ? '/assets/video/srkr-video-mobile.mp4'
-                    : '/assets/video/srkr-video.mp4';
-                  v.load();
-                  var p = v.play();
-                  if (p && p.catch) p.catch(function () {});
-                })();
-              </script>
-              <!-- Fullscreen dark overlay -->
+<div class="swiper-wrapper">
+
+  <!-- ==========================================
+       SLIDE 1
+  =========================================== -->
+  <div class="swiper-slide" data-swiper-autoplay="13000">
+
+    <div
+      class="rts-slider-height rts-slider-overlay rt-relative"
+      style="position:relative;overflow:hidden;"
+    >
+
+      <!-- Background Video -->
+       <video
+  class="hero-video"
+  muted
+  autoplay
+  loop
+  playsinline
+  preload="auto"
+  poster="/assets/video/hero-poster.jpg"
+  data-desktop="/assets/video/desktop-video.mp4"
+  data-mobile="/assets/video/mobile-video.mp4"
+  style="
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+  "
+></video>
+
+
+      <!-- Dark Overlay -->
+      <!-- <div
+        style="
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          background:linear-gradient(
+            180deg,
+            rgba(0,0,0,0.72) 0%,
+            rgba(0,0,0,0.45) 60%,
+            rgba(0,0,0,0.65) 100%
+          );
+          z-index:2;
+        "
+      ></div> -->
+
+
+     
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==========================================
+       SLIDE 2
+  =========================================== -->
+  <div class="swiper-slide" data-swiper-autoplay="20000">
+
+    <div
+      class="rts-slider-height rts-slider-overlay rt-relative"
+      style="position:relative;overflow:hidden;"
+    >
+
+      <!-- Background Video -->
+      <video
+  class="hero-video"
+  muted
+  autoplay
+  loop
+  playsinline
+  preload="auto"
+  poster="/assets/video/hero-poster.jpg"
+  data-desktop="/assets/video/srkr-video.mp4"
+  data-mobile="/assets/video/srkr-video-mobile.mp4"
+  style="
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+  "
+></video>
+
+
+      <!-- Dark Overlay -->
+      <div
+        style="
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          background:linear-gradient(
+            180deg,
+            rgba(0,0,0,0.72) 0%,
+            rgba(0,0,0,0.45) 60%,
+            rgba(0,0,0,0.65) 100%
+          );
+          z-index:2;
+        "
+      ></div>
+
+
+      <!-- Content -->
+      <div
+        class="container"
+        style="position:relative;z-index:3;"
+      >
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
+
+            <div class="rts-slider">
+
               <div
-                style="position:absolute;top:0;left:0;width:100%;height:100%;background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%);z-index:2;"
+                class="rts-slider-content"
+                style="
+                  text-align:center;
+                  padding:2rem 1rem;
+                  border-radius:16px;
+                  display:inline-block;
+                  margin-top:3vw;
+                "
               >
-              </div>
-              <div class="container" style="position:relative;z-index:3;">
-                <div class="row justify-content-center">
-                  <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
-                    <div class="rts-slider">
-                      <div
-                        class="rts-slider-content"
-                        style="text-align:center;padding:2rem 1rem;border-radius:16px;display:inline-block;margin-top:3vw;"
-                      >
-                        <h1 class="rts-slider-title mt-4" style="color:#fff;">
-                          Welcome to <br /> SRKR Engineering College (A)
-                        </h1>
-                        <p class="rts-slider-desc" style="color:#fff;">
-                          Discover SRKR Engineering College—our vibrant campus,
-                          advanced labs, and inspiring student life.
-                        </p>
-                        <div class="rts-slider-btn">
-                          <a
-                            href="/college-profile/"
-                            class="rts-theme-btn btn-arrow"
-                            >Explore College <span
-                              ><i class="fa-thin fa-arrow-right"></i></span
-                            ></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+                <h1
+                  class="rts-slider-title mt-4"
+                  style="color:#fff;"
+                >
+                  Welcome to <br />
+                  SRKR Engineering College (A)
+                </h1>
+
+                <p
+                  class="rts-slider-desc"
+                  style="color:#fff;"
+                >
+                  Discover SRKR Engineering College—our vibrant campus,
+                  advanced labs, and inspiring student life.
+                </p>
+
+                <div class="rts-slider-btn">
+
+                  <a
+                    href="/college-profile/"
+                    class="rts-theme-btn btn-arrow"
+                  >
+                    Explore College
+                    <span>
+                      <i class="fa-thin fa-arrow-right"></i>
+                    </span>
+                  </a>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
-          <!-- single slider -->
-          <!-- <div class="swiper-slide">
-            <div class="rts-slider-height rts-slider-overlay rt-relative">
-              <div
-                class="rts-slider-bg"
-                data-background="assets/images/programs/ai_ml.jpg"
-                style="background-image: url(assets/images/programs/ai_ml.jpg);"
-              >
-              </div>
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-lg-6 col-xl-6 col-md-8 col-sm-9">
-                    <div class="rts-slider">
-                      <div class="rts-slider-content">
-                        <h6 class="rts-subtitle">
-                          <img
-                            src="assets/images/icon/e-cap.svg"
-                            alt="education hat"
-                          /> knowledge meets innovation
-                        </h6>
-                        <h1 class="rts-slider-title">
-                          Inspiring Minds Shaping Futures
-                        </h1>
-                        <p class="rts-slider-desc">
-                          Join a journey where education, innovation, and
-                          artificial intelligence come together to shape
-                          tomorrow.
-                        </p>
-                        <div class="rts-slider-btn">
-                          <a href="/programmes/" class="rts-theme-btn btn-arrow"
-                            >View Our Program <span
-                              ><i class="fa-thin fa-arrow-right"></i></span
-                            ></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- slider arrow -->
-        <div class="rts-slider-arrow">
-          <div class="rt-slider-btn rt-next">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     SLIDER ARROWS
+=========================================== -->
+
+<div class="rts-slider-arrow">
+
+  
+
+  <!-- Next -->
+  <div class="rt-slider-btn rt-next">
             <i class="fa-regular fa-arrow-left"></i>
           </div>
           <div class="rt-slider-btn rt-prev">
             <i class="fa-regular fa-arrow-right"></i>
           </div>
-        </div>
-      </div>
+</div>
+
+
+
+<!-- ==========================================
+     ASTRO / SWIPER VIDEO SCRIPT
+=========================================== -->
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    /*
+     * Find the existing Swiper instance/container.
+     *
+     * We don't create another .swiper element because
+     * this code is already inside your existing Swiper.
+     */
+
+    const swiperElement =
+      document.querySelector(".swiper");
+
+    if (!swiperElement) {
+      console.warn("Swiper container not found.");
+      return;
+    }
+
+
+    /*
+     * Load the correct video for the device.
+     */
+
+    function loadVideo(video) {
+
+      if (!video) return;
+
+      const isMobile =
+        window.matchMedia("(max-width: 768px)").matches;
+
+      const source = isMobile
+        ? video.dataset.mobile
+        : video.dataset.desktop;
+
+      if (!source) return;
+
+
+      const poster = isMobile
+        ? "/assets/video/hero-poster-mobile.jpg"
+        : "/assets/video/hero-poster.jpg";
+
+
+      video.poster = poster;
+
+
+      /*
+       * Don't download the same video again.
+       */
+
+      if (video.dataset.loaded === source) {
+        return;
+      }
+
+
+      video.src = source;
+
+      video.dataset.loaded = source;
+
+      video.load();
+
+    }
+
+
+    /*
+     * Stop every video.
+     */
+
+    function stopAllVideos() {
+
+      document
+        .querySelectorAll(".hero-video")
+        .forEach((video) => {
+
+          video.pause();
+
+          video.currentTime = 0;
+
+        });
+
+    }
+
+
+    /*
+     * Play the video belonging to
+     * the currently active slide.
+     */
+
+    function playActiveVideo(swiper) {
+
+      if (!swiper) return;
+
+
+      const activeSlide =
+        swiper.slides[swiper.activeIndex];
+
+      if (!activeSlide) return;
+
+
+      const video =
+        activeSlide.querySelector(".hero-video");
+
+      if (!video) return;
+
+
+      loadVideo(video);
+
+
+      const playPromise = video.play();
+
+
+      if (playPromise !== undefined) {
+
+        playPromise.catch(() => {
+          /*
+           * Browser blocked autoplay.
+           * Video is muted, so normally this
+           * should not happen.
+           */
+        });
+
+      }
+
+    }
+
+
+    /*
+     * IMPORTANT:
+     *
+     * If your project already creates the Swiper
+     * somewhere else, DO NOT create another Swiper.
+     *
+     * This code checks whether Swiper has already
+     * been initialized.
+     */
+
+    if (
+      swiperElement.swiper &&
+      typeof swiperElement.swiper.on === "function"
+    ) {
+
+      const swiper =
+        swiperElement.swiper;
+
+
+      /*
+       * Play initial video.
+       */
+
+      playActiveVideo(swiper);
+
+
+      /*
+       * Stop video when changing slides.
+       */
+
+      swiper.on(
+        "slideChangeTransitionStart",
+        () => {
+
+          stopAllVideos();
+
+        }
+      );
+
+
+      /*
+       * Play new active video after transition.
+       */
+
+      swiper.on(
+        "slideChangeTransitionEnd",
+        () => {
+
+          playActiveVideo(swiper);
+
+        }
+      );
+
+    }
+
+
+    /*
+     * If Swiper is initialized after this Astro
+     * script runs, wait briefly and find it.
+     */
+
+    else {
+
+      let attempts = 0;
+
+      const findSwiper =
+        setInterval(() => {
+
+          attempts++;
+
+          const swiper =
+            swiperElement.swiper;
+
+
+          if (
+            swiper &&
+            typeof swiper.on === "function"
+          ) {
+
+            clearInterval(findSwiper);
+
+
+            /*
+             * Initial video
+             */
+
+            playActiveVideo(swiper);
+
+
+            /*
+             * Slide changing
+             */
+
+            swiper.on(
+              "slideChangeTransitionStart",
+              () => {
+
+                stopAllVideos();
+
+              }
+            );
+
+
+            swiper.on(
+              "slideChangeTransitionEnd",
+              () => {
+
+                playActiveVideo(swiper);
+
+              }
+            );
+
+          }
+
+
+          /*
+           * Stop looking after 5 seconds.
+           */
+
+          if (attempts >= 50) {
+
+            clearInterval(findSwiper);
+
+            console.warn(
+              "Swiper instance could not be found."
+            );
+
+          }
+
+        }, 100);
+
+    }
+
+
+    /*
+     * Handle desktop/mobile change.
+     */
+
+    let wasMobile =
+      window.matchMedia(
+        "(max-width: 768px)"
+      ).matches;
+
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        const isMobile =
+          window.matchMedia(
+            "(max-width: 768px)"
+          ).matches;
+
+
+        /*
+         * Only reload when switching
+         * between mobile and desktop.
+         */
+
+        if (isMobile !== wasMobile) {
+
+          wasMobile = isMobile;
+
+
+          document
+            .querySelectorAll(".hero-video")
+            .forEach((video) => {
+
+              video.pause();
+
+              video.removeAttribute("src");
+
+              delete video.dataset.loaded;
+
+            });
+
+
+          const swiper =
+            swiperElement.swiper;
+
+
+          if (swiper) {
+
+            playActiveVideo(swiper);
+
+          }
+
+        }
+
+      }
+    );
+
+  });
+</script>
+
     </div>
     <!-- hero slider  end -->
 
@@ -332,7 +742,7 @@ try {
     <section class="srkr-glance rts-section-padding-small">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center mb--40">
+          <div class="col-12 text-center mb--30">
             <h4 class="rts-section-title">SRKREC at a Glance</h4>
           </div>
         </div>
@@ -346,8 +756,8 @@ try {
               <div class="srkr-glance-label">Established In</div>
               <div class="srkr-glance-value">1980</div>
               <div class="srkr-glance-desc">
-                45 Years of Academic Excellence
-              </div>
+  {yearsOfExcellence} Years of Academic Excellence
+</div>
             </div>
           </div>
           <!-- Card 2 -->
@@ -410,7 +820,7 @@ try {
               </div>
               <div class="srkr-glance-label">Placement Meter</div>
               <div class="srkr-glance-value">
-                2080<span class="plus">+</span>
+                2344<span class="plus">+</span>
               </div>
               <div class="srkr-glance-desc">
                 Offers So far for 2025-26 Batch
@@ -424,7 +834,7 @@ try {
                 <i class="fa-light fa-book"></i>
               </div>
               <div class="srkr-glance-label">Publications</div>
-              <div class="srkr-glance-value">2600</div>
+              <div class="srkr-glance-value">2700<span class="plus">+</span></div>
               <div class="srkr-glance-desc">Scopus Indexed</div>
             </div>
           </div>
@@ -553,7 +963,7 @@ try {
 
           <!-- Notice board column -->
           <div class="col-md-11 col-lg-6">
-            <div class="rts-notice-section ps-5">
+            <div class="rts-notice-section">
               <div class="rts-section rt-between">
                 <h4 class="rts-section-title">News and Updates</h4>
               </div>
@@ -564,7 +974,7 @@ try {
                       <li class="single-notice">
                         <div class="single-notice-item">
                           <div class="notice-date">
-                            {item.day}
+                            <span class="d-flex justify-content-center">  {item.day}</span>
                             <span>{item.month}</span>
                           </div>
                           <div class="notice-content">
@@ -615,7 +1025,7 @@ try {
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/cse/"
-                    >Computer Science &amp; Engineering</a
+                    >CSE</a
                   >
                 </div>
               </div>
@@ -635,7 +1045,7 @@ try {
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/cse/academic-programs/"
-                    >Artificial Intelligence &amp; ML</a
+                    >AI and ML</a
                   >
                 </div>
               </div>
@@ -655,7 +1065,7 @@ try {
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/it/academic-programs/"
-                    >AI &amp; Data Science</a
+                    >AI and DS</a
                   >
                 </div>
               </div>
@@ -674,7 +1084,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/ece/">Electronics &amp; Communication</a
+                  <a href="/departments/ece/">ECE</a
                   >
                 </div>
               </div>
@@ -694,7 +1104,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/eee/">Electrical &amp; Electronics</a>
+                  <a href="/departments/eee/">EEE</a>
                 </div>
               </div>
             </div>
@@ -712,7 +1122,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/mechanical/">Mechanical Engineering</a>
+                  <a href="/departments/mechanical/">ME</a>
                 </div>
               </div>
             </div>
@@ -730,7 +1140,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/civil/">Civil Engineering</a>
+                  <a href="/departments/civil/">Civil</a>
                 </div>
               </div>
             </div>
@@ -748,7 +1158,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/it/">Information Technology</a>
+                  <a href="/departments/it/">IT</a>
                 </div>
               </div>
             </div>
@@ -767,7 +1177,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/cse/academic-programs/">Computer Science &amp; Design</a>
+                  <a href="/departments/cse/academic-programs/">CSD</a>
                 </div>
               </div>
             </div>
@@ -805,7 +1215,7 @@ try {
               </div>
               <div class="cat-meta">
                 <div class="cat-title">
-                  <a href="/departments/it/academic-programs/">Computer Science &amp; IT</a>
+                  <a href="/departments/it/academic-programs/">CS and IT</a>
                 </div>
               </div>
             </div>
@@ -824,7 +1234,7 @@ try {
               <div class="cat-meta">
                 <div class="cat-title">
                   <a href="/departments/it/academic-programs/"
-                    >CS &amp; Business System</a
+                    >CS and BS</a
                   >
                 </div>
               </div>
@@ -925,7 +1335,7 @@ try {
                 <div class="campus__life--single--flex">
                   <div class="campus__life--single--content">
                     <h4 class="campus__life--single--title">
-                      <a href="/sports/">Athletics</a>
+                      <a href="/sports/">Sports and Games</a>
                     </h4>
                     <p class="campus__life--single--description">
                       State-level facilities and competitions make SRKR a
@@ -947,7 +1357,7 @@ try {
     <!-- ── CAMPUS LIFE END ─────────────────────────────────────── -->
 
     <!-- scholarship appication -->
-    <section class="rts-scholarship rts-scholarship-bg rts-section-height">
+    <!-- <section class="rts-scholarship rts-scholarship-bg rts-section-height">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -968,7 +1378,7 @@ try {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- scholarship appication end -->
 
     <!-- Quick Links -->
@@ -1111,7 +1521,7 @@ try {
     <!-- Quick Links end -->
 
     <!-- research area -->
-    <section class="rts-research rt-relative research-bg rts-section-height">
+    <!-- <section class="rts-research rt-relative research-bg rts-section-height">
       <div class="container">
         <div class="section-bg rt-relative">
           <div class="row justify-content-md-center">
@@ -1212,13 +1622,13 @@ try {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- research area end -->
 
     <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
-    <div class="rts-brand v_1 rts-section-padding-small">
+    <div class="rts-brand v_1 py-1">
       <div class="container">
-        <div class="row justify-content-md-center mb--20">
+        <div class="row justify-content-md-center mb--10">
           <div class="col-lg-12 text-left">
             <h2 class="rts-section-title mt-0">Placement Partners</h2>
           </div>
@@ -1233,10 +1643,10 @@ try {
                     "spaceBetween": 30,
                     "autoplay": { "delay": "3000" },
                     "breakpoints": {
-                        "320": { "slidesPerView": 1, "spaceBetween": 20 },
+                        "320": { "slidesPerView": 2, "spaceBetween": 20 },
                         "576": { "slidesPerView": 2, "spaceBetween": 20 },
                         "768": { "slidesPerView": 3, "spaceBetween": 25 },
-                        "992": { "slidesPerView": 4, "spaceBetween": 30 }
+                        "992": { "slidesPerView": 6, "spaceBetween": 30 }
                     }
                     }'
             >
@@ -1438,8 +1848,25 @@ try {
 
       window.addEventListener("DOMContentLoaded", initNoticeScroll);
     </script>
+<script>
+  const slides = document.querySelectorAll('.swiper-slide');
+
+  const setAutoplayDuration = () => {
+    const duration = window.innerWidth <= 767 ? '17000' : '13000';
+
+    slides.forEach((slide) => {
+      slide.setAttribute('data-swiper-autoplay', duration);
+    });
+  };
+
+  setAutoplayDuration();
+  window.addEventListener('resize', setAutoplayDuration);
+</script>
+
   </body>
 </html>
+
+
 
 <style>
   /* ── HERO VIDEO SECTION ── */
@@ -1587,7 +2014,7 @@ try {
     background: #fff;
     border-radius: 10px;
     transition: all 0.3s ease;
-    min-height: 260px;
+    min-height: 150px;
   }
   .rts-brand .single-brand-logo:hover {
     transform: translateY(-3px);
@@ -1596,7 +2023,7 @@ try {
     max-height: 70px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
   }
   .rts-brand .single-brand-logo h6 {
     font-size: 1.5rem;
@@ -1740,7 +2167,7 @@ try {
     color: var(--rt-primary-2);
   }
   .srkr-glance-label {
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 600;
     color: #2d3748;
     margin-bottom: 0.75rem;
@@ -1764,7 +2191,7 @@ try {
     font-weight: 600;
   }
   .srkr-glance-desc {
-    font-size: 0.95rem;
+    font-size: 11px;
     color: #718096;
     line-height: 1.4;
   }
