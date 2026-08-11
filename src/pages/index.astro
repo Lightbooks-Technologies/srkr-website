@@ -333,6 +333,39 @@ try {
 =========================================== -->
 
 <script is:inline>
+  (function primeMobileHeroPoster() {
+
+    const isMobile =
+      window.matchMedia("(max-width: 768px)").matches;
+
+    if (!isMobile) return;
+
+    const videos =
+      document.querySelectorAll(".rts-hero-slider-active .hero-video");
+
+    videos.forEach((video, index) => {
+
+      if (index === 0) {
+
+        const poster =
+          video.dataset.posterMobile || video.dataset.posterDesktop;
+
+        if (poster) {
+          video.poster = poster;
+          video.setAttribute("poster", poster);
+        }
+
+        return;
+
+      }
+
+      video.poster = "";
+      video.removeAttribute("poster");
+
+    });
+
+  })();
+
   document.addEventListener("DOMContentLoaded", () => {
 
     /*
@@ -406,13 +439,31 @@ try {
     }
 
 
-    function syncAllVideoPosters(isMobile) {
+    function syncActiveVideoPoster(swiper, isMobile) {
+
+      if (!swiper) return;
+
+      const activeSlide =
+        swiper.slides[swiper.activeIndex];
+
+      if (!activeSlide) return;
 
       document
         .querySelectorAll(".hero-video")
         .forEach((video) => {
 
-          syncVideoPoster(video, isMobile);
+          const isActiveVideo =
+            activeSlide.contains(video);
+
+          if (isActiveVideo) {
+
+            syncVideoPoster(video, isMobile);
+            return;
+
+          }
+
+          video.poster = "";
+          video.removeAttribute("poster");
 
         });
 
@@ -432,6 +483,10 @@ try {
           video.pause();
 
           video.currentTime = 0;
+
+          video.removeAttribute("src");
+
+          delete video.dataset.loaded;
 
         });
 
@@ -496,12 +551,22 @@ try {
       typeof swiperElement.swiper.on === "function"
     ) {
 
-      syncAllVideoPosters(
-        window.matchMedia("(max-width: 768px)").matches
-      );
-
       const swiper =
         swiperElement.swiper;
+
+      if (
+        window.matchMedia("(max-width: 768px)").matches &&
+        typeof swiper.slideToLoop === "function"
+      ) {
+
+        swiper.slideToLoop(0, 0, false);
+
+      }
+
+      syncActiveVideoPoster(
+        swiper,
+        window.matchMedia("(max-width: 768px)").matches
+      );
 
 
       /*
@@ -520,6 +585,11 @@ try {
         () => {
 
           stopAllVideos();
+
+          syncActiveVideoPoster(
+            swiper,
+            window.matchMedia("(max-width: 768px)").matches
+          );
 
         }
       );
@@ -566,7 +636,17 @@ try {
 
             clearInterval(findSwiper);
 
-            syncAllVideoPosters(
+            if (
+              window.matchMedia("(max-width: 768px)").matches &&
+              typeof swiper.slideToLoop === "function"
+            ) {
+
+              swiper.slideToLoop(0, 0, false);
+
+            }
+
+            syncActiveVideoPoster(
+              swiper,
               window.matchMedia("(max-width: 768px)").matches
             );
 
@@ -587,6 +667,11 @@ try {
               () => {
 
                 stopAllVideos();
+
+                syncActiveVideoPoster(
+                  swiper,
+                  window.matchMedia("(max-width: 768px)").matches
+                );
 
               }
             );
@@ -632,9 +717,6 @@ try {
         "(max-width: 768px)"
       ).matches;
 
-    syncAllVideoPosters(wasMobile);
-
-
     window.addEventListener(
       "resize",
       () => {
@@ -654,7 +736,10 @@ try {
 
           wasMobile = isMobile;
 
-          syncAllVideoPosters(isMobile);
+          syncActiveVideoPoster(
+            swiperElement.swiper,
+            isMobile
+          );
 
 
           document
