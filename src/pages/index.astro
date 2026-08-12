@@ -16,13 +16,19 @@ const fmtEventDate = (iso) => {
   const d = new Date(iso);
   return isNaN(d.getTime())
     ? iso
-    : d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: IST });
+    : d.toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        timeZone: IST,
+      });
 };
 // Start of "today" in IST — used to hide events that have already passed.
 const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
 const nowIST = new Date(Date.now() + IST_OFFSET_MS);
 const todayStartIST = new Date(
-  Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) - IST_OFFSET_MS,
+  Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) -
+    IST_OFFSET_MS,
 );
 const now = new Date();
 const baseYear = 2026;
@@ -69,8 +75,12 @@ try {
         const valid = !isNaN(d.getTime());
         return {
           title: n.title,
-          day: valid ? d.toLocaleDateString("en-IN", { day: "2-digit", timeZone: IST }) : "",
-          month: valid ? d.toLocaleDateString("en-IN", { month: "short", timeZone: IST }) : "",
+          day: valid
+            ? d.toLocaleDateString("en-IN", { day: "2-digit", timeZone: IST })
+            : "",
+          month: valid
+            ? d.toLocaleDateString("en-IN", { month: "short", timeZone: IST })
+            : "",
           link: n.links?.[0]?.url || "/news",
         };
       });
@@ -119,95 +129,55 @@ try {
                 }
     }'
       >
-<div class="swiper-wrapper">
-
-  <!-- ==========================================
+        <div class="swiper-wrapper">
+          <!-- ==========================================
        SLIDE 1
   =========================================== -->
-  <div class="swiper-slide" data-swiper-autoplay="13000">
+          <div class="swiper-slide" data-swiper-autoplay="13000">
+            <div
+              class="rts-slider-height rts-slider-overlay rt-relative hero-slide-bg"
+              style="position:relative;overflow:hidden;background-size:cover;background-position:center;background-image:url('/assets/video/tcs-desktop.jpg');"
+            >
+              <!-- Background Video -->
+              <video
+                class="hero-video"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="auto"
+                poster="/assets/video/tcs-desktop.jpg"
+                data-desktop="/assets/video/desktop-video.mp4"
+                data-mobile="/assets/video/mobile-video.mp4"
+                data-poster-desktop="/assets/video/tcs-desktop.jpg"
+                data-poster-mobile="/assets/video/tcs-mobile.jpg"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;"
+              ></video>
+            </div>
+          </div>
 
-    <div
-      class="rts-slider-height rts-slider-overlay rt-relative"
-      style="position:relative;overflow:hidden;"
-    >
-
-      <!-- Background Video -->
-       <video
-  class="hero-video"
-  muted
-  autoplay
-  loop
-  playsinline
-  preload="auto"
-      poster="/assets/video/tcs-desktop.jpg"
-
-  data-desktop="/assets/video/desktop-video.mp4"
-  data-mobile="/assets/video/mobile-video.mp4"
-  data-poster-desktop="/assets/video/tcs-desktop.jpg"
-  data-poster-mobile="/assets/video/tcs-mobile.jpg"
-  style="
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:1;
-  "
-></video>
-
-
-      <!-- Dark Overlay -->
-      <!-- <div
-        style="
-          position:absolute;
-          top:0;
-          left:0;
-          width:100%;
-          height:100%;
-          background:linear-gradient(
-            180deg,
-            rgba(0,0,0,0.72) 0%,
-            rgba(0,0,0,0.45) 60%,
-            rgba(0,0,0,0.65) 100%
-          );
-          z-index:2;
-        "
-      ></div> -->
-
-
-     
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================================
+          <!-- ==========================================
        SLIDE 2
   =========================================== -->
-  <div class="swiper-slide" data-swiper-autoplay="20000">
-
-    <div
-      class="rts-slider-height rts-slider-overlay rt-relative"
-      style="position:relative;overflow:hidden;"
-    >
-
-      <!-- Background Video -->
-      <video
-  class="hero-video"
-  muted
-  autoplay
-  loop
-  playsinline
-  preload="auto"
-  poster="/assets/video/hero-poster.jpg"
-  data-desktop="/assets/video/srkr-video.mp4"
-  data-mobile="/assets/video/srkr-video-mobile.mp4"
-  data-poster-desktop="/assets/video/hero-poster.jpg"
-  data-poster-mobile="/assets/video/hero-poster-mobile.jpg"
-  style="
+          <div class="swiper-slide" data-swiper-autoplay="20000">
+            <div
+              class="rts-slider-height rts-slider-overlay rt-relative hero-slide-bg"
+              style="position:relative;overflow:hidden;background-size:cover;background-position:center;background-image:url('/assets/video/hero-poster.jpg');"
+            >
+              <!-- Background Video -->
+              <video
+                class="hero-video"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="auto"
+                poster="/assets/video/hero-poster.jpg"
+                data-desktop="/assets/video/srkr-video.mp4"
+                data-mobile="/assets/video/srkr-video-mobile.mp4"
+                data-poster-desktop="/assets/video/hero-poster.jpg"
+                data-poster-mobile="/assets/video/hero-poster-mobile.jpg"
+                style="
     position:absolute;
     top:0;
     left:0;
@@ -216,568 +186,343 @@ try {
     object-fit:cover;
     z-index:1;
   "
-></video>
+              ></video>
 
-
-      <!-- Dark Overlay -->
-      <div
-        style="
-          position:absolute;
-          top:0;
-          left:0;
-          width:100%;
-          height:100%;
-          background:linear-gradient(
-            180deg,
-            rgba(0,0,0,0.72) 0%,
-            rgba(0,0,0,0.45) 60%,
-            rgba(0,0,0,0.65) 100%
-          );
-          z-index:2;
-        "
-      ></div>
-
-
-      <!-- Content -->
-      <div
-        class="container"
-        style="position:relative;z-index:3;"
-      >
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
-
-            <div class="rts-slider">
-
+              <!-- Dark Overlay (very light) -->
               <div
-                class="rts-slider-content"
                 style="
+                  position:absolute;
+                  top:0;
+                  left:0;
+                  width:100%;
+                  height:100%;
+                  background:linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0.35) 0%,
+                    rgba(0,0,0,0.20) 60%,
+                    rgba(0,0,0,0.30) 100%
+                  );
+                  z-index:2;
+                  pointer-events:none;
+                "
+              ></div>
+
+              <!-- Content -->
+              <div class="container" style="position:relative;z-index:3;">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 col-xl-8 col-md-10 col-sm-11">
+                    <div class="rts-slider">
+                      <div
+                        class="rts-slider-content"
+                        style="
                   text-align:center;
                   padding:2rem 1rem;
                   border-radius:16px;
                   display:inline-block;
                   margin-top:3vw;
                 "
-              >
+                      >
+                        <h1 class="rts-slider-title mt-4" style="color:#fff;">
+                          Welcome to <br />
+                          SRKR Engineering College (A)
+                        </h1>
 
-                <h1
-                  class="rts-slider-title mt-4"
-                  style="color:#fff;"
-                >
-                  Welcome to <br />
-                  SRKR Engineering College (A)
-                </h1>
+                        <p class="rts-slider-desc" style="color:#fff;">
+                          Discover SRKR Engineering College—our vibrant campus,
+                          advanced labs, and inspiring student life.
+                        </p>
 
-                <p
-                  class="rts-slider-desc"
-                  style="color:#fff;"
-                >
-                  Discover SRKR Engineering College—our vibrant campus,
-                  advanced labs, and inspiring student life.
-                </p>
-
-                <div class="rts-slider-btn">
-
-                  <a
-                    href="/college-profile/"
-                    class="rts-theme-btn btn-arrow"
-                  >
-                    Explore College
-                    <span>
-                      <i class="fa-thin fa-arrow-right"></i>
-                    </span>
-                  </a>
-
+                        <div class="rts-slider-btn">
+                          <a
+                            href="/college-profile/"
+                            class="rts-theme-btn btn-arrow"
+                          >
+                            Explore College
+                            <span>
+                              <i class="fa-thin fa-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<!-- ==========================================
+        <!-- ==========================================
      SLIDER ARROWS
 =========================================== -->
 
-<div class="rts-slider-arrow">
-
-  
-
-  <!-- Next -->
-  <div class="rt-slider-btn rt-next">
+        <div class="rts-slider-arrow">
+          <!-- Next -->
+          <div class="rt-slider-btn rt-next">
             <i class="fa-regular fa-arrow-left"></i>
           </div>
           <div class="rt-slider-btn rt-prev">
             <i class="fa-regular fa-arrow-right"></i>
           </div>
-</div>
+        </div>
 
-
-
-<!-- ==========================================
+        <!-- ==========================================
      ASTRO / SWIPER VIDEO SCRIPT
 =========================================== -->
 
-<script is:inline>
-  (function primeMobileHeroPoster() {
-
-    const isMobile =
-      window.matchMedia("(max-width: 768px)").matches;
-
-    if (!isMobile) return;
-
-    const videos =
-      document.querySelectorAll(".rts-hero-slider-active .hero-video");
-
-    videos.forEach((video, index) => {
-
-      if (index === 0) {
-
-        const poster =
-          video.dataset.posterMobile || video.dataset.posterDesktop;
-
-        if (poster) {
-          video.poster = poster;
-          video.setAttribute("poster", poster);
-        }
-
-        return;
-
-      }
-
-      video.poster = "";
-      video.removeAttribute("poster");
-
-    });
-
-  })();
-
-  document.addEventListener("DOMContentLoaded", () => {
-
-    /*
-     * Find the existing Swiper instance/container.
-     *
-     * We don't create another .swiper element because
-     * this code is already inside your existing Swiper.
-     */
-
-    const swiperElement =
-      document.querySelector(".swiper");
-
-    if (!swiperElement) {
-      console.warn("Swiper container not found.");
-      return;
-    }
-
-
-    /*
-     * Load the correct video for the device.
-     */
-
-    function loadVideo(video) {
-
-      if (!video) return;
-
-      const isMobile =
-        window.matchMedia("(max-width: 768px)").matches;
-
-      const source = isMobile
-        ? video.dataset.mobile
-        : video.dataset.desktop;
-
-      if (!source) return;
-
-
-      syncVideoPoster(video, isMobile);
-
-
-      /*
-       * Don't download the same video again.
-       */
-
-      if (video.dataset.loaded === source) {
-        return;
-      }
-
-
-      video.src = source;
-
-      video.dataset.loaded = source;
-
-      video.load();
-
-    }
-
-
-    function syncVideoPoster(video, isMobile) {
-
-      if (!video) return;
-
-      const poster = isMobile
-        ? (video.dataset.posterMobile || video.dataset.posterDesktop)
-        : (video.dataset.posterDesktop || video.dataset.posterMobile);
-
-      if (!poster) return;
-
-      video.poster = poster;
-      video.setAttribute("poster", poster);
-
-    }
-
-
-    function syncActiveVideoPoster(swiper, isMobile) {
-
-      if (!swiper) return;
-
-      const activeSlide =
-        swiper.slides[swiper.activeIndex];
-
-      if (!activeSlide) return;
-
-      document
-        .querySelectorAll(".hero-video")
-        .forEach((video) => {
-
-          const isActiveVideo =
-            activeSlide.contains(video);
-
-          if (isActiveVideo) {
-
-            syncVideoPoster(video, isMobile);
-            return;
-
-          }
-
-          video.poster = "";
-          video.removeAttribute("poster");
-
-        });
-
-    }
-
-
-    /*
-     * Stop every video.
-     */
-
-    function stopAllVideos() {
-
-      document
-        .querySelectorAll(".hero-video")
-        .forEach((video) => {
-
-          video.pause();
-
-          video.currentTime = 0;
-
-          video.removeAttribute("src");
-
-          delete video.dataset.loaded;
-
-        });
-
-    }
-
-
-    /*
-     * Play the video belonging to
-     * the currently active slide.
-     */
-
-    function playActiveVideo(swiper) {
-
-      if (!swiper) return;
-
-
-      const activeSlide =
-        swiper.slides[swiper.activeIndex];
-
-      if (!activeSlide) return;
-
-
-      const video =
-        activeSlide.querySelector(".hero-video");
-
-      if (!video) return;
-
-
-      loadVideo(video);
-
-
-      const playPromise = video.play();
-
-
-      if (playPromise !== undefined) {
-
-        playPromise.catch(() => {
-          /*
-           * Browser blocked autoplay.
-           * Video is muted, so normally this
-           * should not happen.
-           */
-        });
-
-      }
-
-    }
-
-
-    /*
-     * IMPORTANT:
-     *
-     * If your project already creates the Swiper
-     * somewhere else, DO NOT create another Swiper.
-     *
-     * This code checks whether Swiper has already
-     * been initialized.
-     */
-
-    if (
-      swiperElement.swiper &&
-      typeof swiperElement.swiper.on === "function"
-    ) {
-
-      const swiper =
-        swiperElement.swiper;
-
-      if (
-        window.matchMedia("(max-width: 768px)").matches &&
-        typeof swiper.slideToLoop === "function"
-      ) {
-
-        swiper.slideToLoop(0, 0, false);
-
-      }
-
-      syncActiveVideoPoster(
-        swiper,
-        window.matchMedia("(max-width: 768px)").matches
-      );
-
-
-      /*
-       * Play initial video.
-       */
-
-      playActiveVideo(swiper);
-
-
-      /*
-       * Stop video when changing slides.
-       */
-
-      swiper.on(
-        "slideChangeTransitionStart",
-        () => {
-
-          stopAllVideos();
-
-          syncActiveVideoPoster(
-            swiper,
-            window.matchMedia("(max-width: 768px)").matches
-          );
-
-        }
-      );
-
-
-      /*
-       * Play new active video after transition.
-       */
-
-      swiper.on(
-        "slideChangeTransitionEnd",
-        () => {
-
-          playActiveVideo(swiper);
-
-        }
-      );
-
-    }
-
-
-    /*
-     * If Swiper is initialized after this Astro
-     * script runs, wait briefly and find it.
-     */
-
-    else {
-
-      let attempts = 0;
-
-      const findSwiper =
-        setInterval(() => {
-
-          attempts++;
-
-          const swiper =
-            swiperElement.swiper;
-
-
-          if (
-            swiper &&
-            typeof swiper.on === "function"
-          ) {
-
-            clearInterval(findSwiper);
-
-            if (
-              window.matchMedia("(max-width: 768px)").matches &&
-              typeof swiper.slideToLoop === "function"
-            ) {
-
-              swiper.slideToLoop(0, 0, false);
-
+        <script is:inline>
+          (function primeMobileHeroPoster() {
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+            if (!isMobile) return;
+
+            const videos = document.querySelectorAll(
+              ".rts-hero-slider-active .hero-video",
+            );
+
+            videos.forEach((video, index) => {
+              if (index === 0) {
+                const poster =
+                  video.dataset.posterMobile || video.dataset.posterDesktop;
+
+                if (poster) {
+                  video.poster = poster;
+                  video.setAttribute("poster", poster);
+                }
+
+                return;
+              }
+
+              video.poster = "";
+              video.removeAttribute("poster");
+            });
+          })();
+
+          document.addEventListener("DOMContentLoaded", () => {
+            /*
+             * Find the existing Swiper instance/container.
+             *
+             * We don't create another .swiper element because
+             * this code is already inside your existing Swiper.
+             */
+
+            const swiperElement = document.querySelector(".swiper");
+
+            if (!swiperElement) {
+              console.warn("Swiper container not found.");
+              return;
             }
 
-            syncActiveVideoPoster(
-              swiper,
-              window.matchMedia("(max-width: 768px)").matches
-            );
-
-
             /*
-             * Initial video
+             * Load the correct video for the device.
              */
 
-            playActiveVideo(swiper);
-
-
             /*
-             * Slide changing
+             * Load and prepare video playback.
+             * Only after video starts playing / is ready, start a timer to move to the next slide.
              */
+            let slideTimer = null;
 
-            swiper.on(
-              "slideChangeTransitionStart",
-              () => {
+            function clearSlideTimer() {
+              if (slideTimer) {
+                clearTimeout(slideTimer);
+                slideTimer = null;
+              }
+            }
 
+            function loadVideo(video) {
+              if (!video) return;
+
+              const isMobile = window.matchMedia("(max-width: 768px)").matches;
+              const source = isMobile
+                ? video.dataset.mobile
+                : video.dataset.desktop;
+
+              if (!source) return;
+
+              syncVideoPoster(video, isMobile);
+
+              if (video.dataset.loaded === source) {
+                return;
+              }
+
+              video.src = source;
+              video.dataset.loaded = source;
+              video.load();
+            }
+
+            function syncVideoPoster(video, isMobile) {
+              if (!video) return;
+
+              const poster = isMobile
+                ? video.dataset.posterMobile || video.dataset.posterDesktop
+                : video.dataset.posterDesktop || video.dataset.posterMobile;
+
+              if (!poster) return;
+
+              video.poster = poster;
+              video.setAttribute("poster", poster);
+
+              const slideBg = video.closest(".hero-slide-bg");
+              if (slideBg) {
+                slideBg.style.backgroundImage = `url('${poster}')`;
+              }
+            }
+
+            function syncActiveVideoPoster(swiper, isMobile) {
+              if (!swiper) return;
+
+              const activeSlide = swiper.slides[swiper.activeIndex];
+              if (!activeSlide) return;
+
+              document.querySelectorAll(".hero-video").forEach((video) => {
+                const isActiveVideo = activeSlide.contains(video);
+
+                if (isActiveVideo) {
+                  syncVideoPoster(video, isMobile);
+                }
+              });
+            }
+
+            function stopAllVideos() {
+              clearSlideTimer();
+              document.querySelectorAll(".hero-video").forEach((video) => {
+                video.pause();
+                try { video.currentTime = 0; } catch(e) {}
+              });
+            }
+
+            function playActiveVideo(swiper) {
+              if (!swiper) return;
+              clearSlideTimer();
+
+              // Pause Swiper's default autoplay timer while waiting/playing
+              if (swiper.autoplay && swiper.autoplay.running) {
+                swiper.autoplay.stop();
+              }
+
+              const activeSlide = swiper.slides[swiper.activeIndex];
+              if (!activeSlide) return;
+
+              const video = activeSlide.querySelector(".hero-video");
+              if (!video) return;
+
+              // Ensure poster is set while video is downloading/loading
+              const isMobile = window.matchMedia("(max-width: 768px)").matches;
+              syncVideoPoster(video, isMobile);
+
+              loadVideo(video);
+
+              const slideDuration = parseInt(activeSlide.getAttribute("data-swiper-autoplay") || "10000", 10);
+
+              const startSlideTimer = () => {
+                clearSlideTimer();
+                slideTimer = setTimeout(() => {
+                  if (swiper && typeof swiper.slideNext === "function") {
+                    swiper.slideNext();
+                  }
+                }, slideDuration);
+              };
+
+              video.addEventListener("playing", () => {
+                startSlideTimer();
+              }, { once: true });
+
+              // Check if video is already ready to play
+              if (video.readyState >= 3) {
+                video.play().catch(() => {});
+                startSlideTimer();
+              } else {
+                const onCanPlay = () => {
+                  video.removeEventListener("canplaythrough", onCanPlay);
+                  video.play().catch(() => {});
+                };
+                video.addEventListener("canplaythrough", onCanPlay, { once: true });
+
+                video.play().catch(() => {});
+              }
+            }
+
+            function handleSwiperSetup(swiper) {
+              if (
+                window.matchMedia("(max-width: 768px)").matches &&
+                typeof swiper.slideToLoop === "function"
+              ) {
+                swiper.slideToLoop(0, 0, false);
+              }
+
+              syncActiveVideoPoster(
+                swiper,
+                window.matchMedia("(max-width: 768px)").matches,
+              );
+
+              /* Play initial video */
+              playActiveVideo(swiper);
+
+              /* Stop video when changing slides */
+              swiper.on("slideChangeTransitionStart", () => {
                 stopAllVideos();
-
                 syncActiveVideoPoster(
                   swiper,
-                  window.matchMedia("(max-width: 768px)").matches
+                  window.matchMedia("(max-width: 768px)").matches,
                 );
+              });
 
-              }
-            );
-
-
-            swiper.on(
-              "slideChangeTransitionEnd",
-              () => {
-
+              /* Play new active video after transition */
+              swiper.on("slideChangeTransitionEnd", () => {
                 playActiveVideo(swiper);
+              });
+            }
 
+            if (
+              swiperElement.swiper &&
+              typeof swiperElement.swiper.on === "function"
+            ) {
+              handleSwiperSetup(swiperElement.swiper);
+            } else {
+              let attempts = 0;
+              const findSwiper = setInterval(() => {
+                attempts++;
+                const swiper = swiperElement.swiper;
+
+                if (swiper && typeof swiper.on === "function") {
+                  clearInterval(findSwiper);
+                  handleSwiperSetup(swiper);
+                }
+
+                if (attempts >= 50) {
+                  clearInterval(findSwiper);
+                  console.warn("Swiper instance could not be found.");
+                }
+              }, 100);
+            }
+
+            /*
+             * Handle desktop/mobile change.
+             */
+            let wasMobile = window.matchMedia("(max-width: 768px)").matches;
+
+            window.addEventListener("resize", () => {
+              const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+              if (isMobile !== wasMobile) {
+                wasMobile = isMobile;
+                stopAllVideos();
+                syncActiveVideoPoster(swiperElement.swiper, isMobile);
+
+                const swiper = swiperElement.swiper;
+                if (swiper) {
+                  playActiveVideo(swiper);
+                }
               }
-            );
-
-          }
-
-
-          /*
-           * Stop looking after 5 seconds.
-           */
-
-          if (attempts >= 50) {
-
-            clearInterval(findSwiper);
-
-            console.warn(
-              "Swiper instance could not be found."
-            );
-
-          }
-
-        }, 100);
-
-    }
-
-
-    /*
-     * Handle desktop/mobile change.
-     */
-
-    let wasMobile =
-      window.matchMedia(
-        "(max-width: 768px)"
-      ).matches;
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        const isMobile =
-          window.matchMedia(
-            "(max-width: 768px)"
-          ).matches;
-
-
-        /*
-         * Only reload when switching
-         * between mobile and desktop.
-         */
-
-        if (isMobile !== wasMobile) {
-
-          wasMobile = isMobile;
-
-          syncActiveVideoPoster(
-            swiperElement.swiper,
-            isMobile
-          );
-
-
-          document
-            .querySelectorAll(".hero-video")
-            .forEach((video) => {
-
-              video.pause();
-
-              video.removeAttribute("src");
-
-              delete video.dataset.loaded;
-
             });
+          });
+        </script>
+      </div>
+      <!-- hero slider  end -->
 
-
-          const swiper =
-            swiperElement.swiper;
-
-
-          if (swiper) {
-
-            playActiveVideo(swiper);
-
-          }
-
-        }
-
-      }
-    );
-
-  });
-</script>
-
-    </div>
-    <!-- hero slider  end -->
-
-    <!-- header banner -->
-    <!-- <div class="banner v__2">
+      <!-- header banner -->
+      <!-- <div class="banner v__2">
             <div class="banner__wrapper">
                 <div class="swiper  swiper-data" data-swiper='{
                             "slidesPerView":1,
@@ -862,628 +607,630 @@ try {
                 </div>
             </div>
         </div> -->
-    <!-- header banner end -->
+      <!-- header banner end -->
 
-    <!-- SRKREC at a Glance -->
-    <section class="srkr-glance rts-section-padding-small">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb--30">
-            <h4 class="rts-section-title">SRKREC at a Glance</h4>
+      <!-- SRKREC at a Glance -->
+      <section class="srkr-glance rts-section-padding-small">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb--30">
+              <h4 class="rts-section-title">SRKREC at a Glance</h4>
+            </div>
+          </div>
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-building-columns"></i>
+                </div>
+                <div class="srkr-glance-label">Established In</div>
+                <div class="srkr-glance-value">1980</div>
+                <div class="srkr-glance-desc">
+                  {yearsOfExcellence} Years of Academic Excellence
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-award"></i>
+                </div>
+                <div class="srkr-glance-label">NAAC 'A+' Grade</div>
+                <div class="srkr-glance-value">
+                  3.42<span class="small-text">/4</span>
+                </div>
+                <div class="srkr-glance-desc">NAAC Cycle - II</div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-certificate"></i>
+                </div>
+                <div class="srkr-glance-label">N B A</div>
+                <div class="srkr-glance-value">6</div>
+                <div class="srkr-glance-desc">
+                  Programs CSE, IT, ECE, EEE, CE, ME
+                </div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-chalkboard-user"></i>
+                </div>
+                <div class="srkr-glance-label">Total Faculty</div>
+                <div class="srkr-glance-value">
+                  415<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">160+ PhD's</div>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-user-graduate"></i>
+                </div>
+                <div class="srkr-glance-label">Graduates</div>
+                <div class="srkr-glance-value">
+                  30000<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">Produced</div>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-briefcase"></i>
+                </div>
+                <div class="srkr-glance-label">Placement Meter</div>
+                <div class="srkr-glance-value">
+                  2344<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">
+                  Offers So far for 2025-26 Batch
+                </div>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-book"></i>
+                </div>
+                <div class="srkr-glance-label">Publications</div>
+                <div class="srkr-glance-value">
+                  2700<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">Scopus Indexed</div>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-handshake"></i>
+                </div>
+                <div class="srkr-glance-label">Citations</div>
+                <div class="srkr-glance-value">12440</div>
+                <div class="srkr-glance-desc">Scopus</div>
+              </div>
+            </div>
+            <!-- Card 9 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-flask"></i>
+                </div>
+                <div class="srkr-glance-label">Funded Projects</div>
+                <div class="srkr-glance-value">
+                  12.5<span class="small-text">Cr</span>
+                </div>
+                <div class="srkr-glance-desc">by DST, DBT, MSME & Others</div>
+              </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-lightbulb"></i>
+                </div>
+                <div class="srkr-glance-label">Patents</div>
+                <div class="srkr-glance-value">
+                  200<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">Published/Granted</div>
+              </div>
+            </div>
+            <!-- Card 11 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-handshake-angle"></i>
+                </div>
+                <div class="srkr-glance-label">Collaborations</div>
+                <div class="srkr-glance-value">
+                  65<span class="plus">+</span>
+                </div>
+                <div class="srkr-glance-desc">MOUs</div>
+              </div>
+            </div>
+            <!-- Card 12 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="srkr-glance-card">
+                <div class="srkr-glance-icon">
+                  <i class="fa-light fa-rocket"></i>
+                </div>
+                <div class="srkr-glance-label">Supporting</div>
+                <div class="srkr-glance-value">16</div>
+                <div class="srkr-glance-desc">
+                  Start-ups by SRKREC Students & Faculty
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-building-columns"></i>
-              </div>
-              <div class="srkr-glance-label">Established In</div>
-              <div class="srkr-glance-value">1980</div>
-              <div class="srkr-glance-desc">
-  {yearsOfExcellence} Years of Academic Excellence
-</div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-award"></i>
-              </div>
-              <div class="srkr-glance-label">NAAC 'A+' Grade</div>
-              <div class="srkr-glance-value">
-                3.42<span class="small-text">/4</span>
-              </div>
-              <div class="srkr-glance-desc">NAAC Cycle - II</div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-certificate"></i>
-              </div>
-              <div class="srkr-glance-label">N B A</div>
-              <div class="srkr-glance-value">6</div>
-              <div class="srkr-glance-desc">
-                Programs CSE, IT, ECE, EEE, CE, ME
-              </div>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-chalkboard-user"></i>
-              </div>
-              <div class="srkr-glance-label">Total Faculty</div>
-              <div class="srkr-glance-value">
-                415<span class="plus">+</span>
-              </div>
-              <div class="srkr-glance-desc">160+ PhD's</div>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-user-graduate"></i>
-              </div>
-              <div class="srkr-glance-label">Graduates</div>
-              <div class="srkr-glance-value">
-                30000<span class="plus">+</span>
-              </div>
-              <div class="srkr-glance-desc">Produced</div>
-            </div>
-          </div>
-          <!-- Card 6 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-briefcase"></i>
-              </div>
-              <div class="srkr-glance-label">Placement Meter</div>
-              <div class="srkr-glance-value">
-                2344<span class="plus">+</span>
-              </div>
-              <div class="srkr-glance-desc">
-                Offers So far for 2025-26 Batch
-              </div>
-            </div>
-          </div>
-          <!-- Card 7 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-book"></i>
-              </div>
-              <div class="srkr-glance-label">Publications</div>
-              <div class="srkr-glance-value">2700<span class="plus">+</span></div>
-              <div class="srkr-glance-desc">Scopus Indexed</div>
-            </div>
-          </div>
-          <!-- Card 8 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-handshake"></i>
-              </div>
-              <div class="srkr-glance-label">Citations</div>
-              <div class="srkr-glance-value">12440</div>
-              <div class="srkr-glance-desc">Scopus</div>
-            </div>
-          </div>
-          <!-- Card 9 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-flask"></i>
-              </div>
-              <div class="srkr-glance-label">Funded Projects</div>
-              <div class="srkr-glance-value">
-                12.5<span class="small-text">Cr</span>
-              </div>
-              <div class="srkr-glance-desc">by DST, DBT, MSME & Others</div>
-            </div>
-          </div>
-          <!-- Card 10 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-lightbulb"></i>
-              </div>
-              <div class="srkr-glance-label">Patents</div>
-              <div class="srkr-glance-value">
-                200<span class="plus">+</span>
-              </div>
-              <div class="srkr-glance-desc">Published/Granted</div>
-            </div>
-          </div>
-          <!-- Card 11 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-handshake-angle"></i>
-              </div>
-              <div class="srkr-glance-label">Collaborations</div>
-              <div class="srkr-glance-value">65<span class="plus">+</span></div>
-              <div class="srkr-glance-desc">MOUs</div>
-            </div>
-          </div>
-          <!-- Card 12 -->
-          <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-            <div class="srkr-glance-card">
-              <div class="srkr-glance-icon">
-                <i class="fa-light fa-rocket"></i>
-              </div>
-              <div class="srkr-glance-label">Supporting</div>
-              <div class="srkr-glance-value">16</div>
-              <div class="srkr-glance-desc">
-                Start-ups by SRKREC Students & Faculty
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- SRKREC at a Glance end -->
+      </section>
+      <!-- SRKREC at a Glance end -->
 
-    <!-- ── NOTICE BOARD + EVENTS ──────────────────────────────── -->
-    <section class="rts-notice rts-section-padding-small">
-      <div class="container">
-        <div class="row gy-5 gy-lg-0 justify-content-md-center">
-          <!-- Events column -->
-          <div class="col-md-11 col-lg-6">
-            <div class="rts-event-section">
-              <h4 class="rts-section-title mb--25">Upcoming Events</h4>
-              <div class="rts-event-section-content">
-                <ul class="list-unstyled rts-counter">
-                  {
-                    [...homeEvents].map((event) => {
-                      const link = event.link && event.link !== "#" ? event.link : "/events";
-                      const external = /^https?:\/\//.test(link);
-                      return (
-                      <li class="single-event">
-                        <a
-                          class="single-event-link"
-                          href={link}
-                          target={external ? "_blank" : undefined}
-                          rel={external ? "noopener" : undefined}
-                        >
-                        <div class="single-event-content">
-                          <h5 class="event-title">{event.title}</h5>
-                          <div class="single-event-content-meta">
-                            <div class="event-date">
-                              <>
-                                <span>
-                                  <i class="fal fa-calendar" />
-                                </span>
-                                <span>{event.date}</span>
-                              </>
+      <!-- ── NOTICE BOARD + EVENTS ──────────────────────────────── -->
+      <section class="rts-notice rts-section-padding-small">
+        <div class="container">
+          <div class="row gy-5 gy-lg-0 justify-content-md-center">
+            <!-- Events column -->
+            <div class="col-md-11 col-lg-6">
+              <div class="rts-event-section">
+                <h4 class="rts-section-title mb--25">Upcoming Events</h4>
+                <div class="rts-event-section-content">
+                  <ul class="list-unstyled rts-counter">
+                    {
+                      [...homeEvents].map((event) => {
+                        const link =
+                          event.link && event.link !== "#"
+                            ? event.link
+                            : "/events";
+                        const external = /^https?:\/\//.test(link);
+                        return (
+                          <li class="single-event">
+                            <a
+                              class="single-event-link"
+                              href={link}
+                              target={external ? "_blank" : undefined}
+                              rel={external ? "noopener" : undefined}
+                            >
+                              <div class="single-event-content">
+                                <h5 class="event-title">{event.title}</h5>
+                                <div class="single-event-content-meta">
+                                  <div class="event-date">
+                                    <>
+                                      <span>
+                                        <i class="fal fa-calendar" />
+                                      </span>
+                                      <span>{event.date}</span>
+                                    </>
+                                  </div>
+                                </div>
+                                <div class="single-event-content-meta">
+                                  <div class="event-place">
+                                    <>
+                                      <span>
+                                        <i class="fa-sharp fa-thin fa-location-dot" />
+                                      </span>
+                                      <span>
+                                        {event.venue ||
+                                          "SRKR Engineering College"}
+                                      </span>
+                                    </>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notice board column -->
+            <div class="col-md-11 col-lg-6">
+              <div class="rts-notice-section">
+                <div class="rts-section rt-between">
+                  <h4 class="rts-section-title">News and Updates</h4>
+                </div>
+                <div class="rts-tab">
+                  <ul class="list-unstyled notice-content-box">
+                    {
+                      homeNews.map((item) => (
+                        <li class="single-notice">
+                          <div class="single-notice-item">
+                            <div class="notice-date">
+                              <span class="d-flex justify-content-center">
+                                {" "}
+                                {item.day}
+                              </span>
+                              <span>{item.month}</span>
+                            </div>
+                            <div class="notice-content">
+                              <p>
+                                <a href={item.link}>{item.title}</a>
+                              </p>
                             </div>
                           </div>
-                          <div class="single-event-content-meta">
-                            <div class="event-place">
-                              <>
-                                <span>
-                                  <i class="fa-sharp fa-thin fa-location-dot" />
-                                </span>
-                                <span>
-                                  {event.venue || "SRKR Engineering College"}
-                                </span>
-                              </>
-                            </div>
-                          </div>
-                        </div>
-                        </a>
-                      </li>
-                      );
-                    })
-                  }
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Notice board column -->
-          <div class="col-md-11 col-lg-6">
-            <div class="rts-notice-section">
-              <div class="rts-section rt-between">
-                <h4 class="rts-section-title">News and Updates</h4>
-              </div>
-              <div class="rts-tab">
-                <ul class="list-unstyled notice-content-box">
-                  {
-                    homeNews.map((item) => (
-                      <li class="single-notice">
-                        <div class="single-notice-item">
-                          <div class="notice-date">
-                            <span class="d-flex justify-content-center">  {item.day}</span>
-                            <span>{item.month}</span>
-                          </div>
-                          <div class="notice-content">
-                            <p>
-                              <a href={item.link}>{item.title}</a>
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ── NOTICE BOARD END ────────────────────────────────────── -->
-
-    <!-- ── UG PROGRAMS (department grid) ──────────────────────── -->
-    <section class="rts__section rts__light rts-section-padding-small">
-      <div class="container">
-        <div class="row">
-          <div class="rts__section--wrapper">
-            <h4 class="rts__section--title">SRKREC Programs</h4>
-            <div class="rts__section--link">
-              <a href="/programmes/" class="rts-nbg-btn btn-arrow"
-                >View All Programs<span
-                  ><i class="fa-sharp fa-regular fa-arrow-right"></i></span
-                ></a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="row g-4">
-          <!-- Row 1 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/cse.jpg"
-                  alt="Computer Science & Engineering"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/cse/"
-                    >CSE</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/ai_ml.jpg"
-                  alt="Artificial Intelligence & ML"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/cse/academic-programs/"
-                    >AI and ML</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/ai_ds.png"
-                  alt="AI & Data Science"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/it/academic-programs/"
-                    >AI and DS</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/ece.jpg"
-                  alt="Electronics & Communication"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/ece/">ECE</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/eee.jpg"
-                  alt="Electrical & Electronics"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/eee/">EEE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/mech.png"
-                  alt="Mechanical Engineering"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/mechanical/">ME</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/civil.png"
-                  alt="Civil Engineering"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/civil/">Civil</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/it.png"
-                  alt="Information Technology"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/it/">IT</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/csd.jpg"
-                  alt="Computer Science & Design"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/cse/academic-programs/">CSD</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/cs_iot.png"
-                  alt="CSE IoT & Cyber Security"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/cse/academic-programs/"
-                    >CSE (IoT &amp; Cyber Security)</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/cs_it.png"
-                  alt="Computer Science & IT"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/it/academic-programs/">CS and IT</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="single-cat-item srkr-dept-card">
-              <div class="cat-thumb srkr-dept-thumb">
-                <img
-                  src="/assets/images/programs/cs_bs.jpg"
-                  alt="CS & Business System System"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="cat-meta">
-                <div class="cat-title">
-                  <a href="/departments/it/academic-programs/"
-                    >CS and BS</a
-                  >
+                        </li>
+                      ))
+                    }
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ── UG PROGRAMS END ─────────────────────────────────────── -->
+      </section>
+      <!-- ── NOTICE BOARD END ────────────────────────────────────── -->
 
-    <!-- ── CAMPUS LIFE ─────────────────────────────────────────── -->
-    <section class="rts__section rts-section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6">
-            <div class="rts__section--wrapper v__2">
-              <h2 class="rts__section--title">Campus Life</h2>
-              <p class="rts__section--description">
-                SRKR's campus blends rigorous academics with a vibrant student
-                culture — world-class infrastructure, digital classrooms,
-                thriving clubs, and community initiatives that foster holistic
-                development and lifelong connections.
-              </p>
-              <div class="campus__vector">
-                <img
-                  src="/assets/images/campus/campus__vector.svg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
+      <!-- ── UG PROGRAMS (department grid) ──────────────────────── -->
+      <section class="rts__section rts__light rts-section-padding-small">
+        <div class="container">
+          <div class="row">
+            <div class="rts__section--wrapper">
+              <h4 class="rts__section--title">SRKREC Programs</h4>
+              <div class="rts__section--link">
+                <a href="/programmes/" class="rts-nbg-btn btn-arrow"
+                  >View All Programs<span
+                    ><i class="fa-sharp fa-regular fa-arrow-right"></i></span
+                  ></a
+                >
               </div>
             </div>
           </div>
-          <div class="col-lg-7 col-md-6">
-            <div class="campus__life">
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg">
+          <div class="row g-4">
+            <!-- Row 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
                   <img
-                    src="/assets/images/campus/college-life.png"
-                    alt=""
+                    src="/assets/images/programs/cse.jpg"
+                    alt="Computer Science & Engineering"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title">
-                      <a href="/college-profile/">Student Life</a>
-                    </h4>
-                    <p class="campus__life--single--description">
-                      Technical clubs to cultural fests — SRKR fosters personal
-                      growth and vibrant peer connections.
-                    </p>
-                  </div>
-                  <div class="campus__life--single--button">
-                    <a href="/college-profile/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
-                    >
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/cse/">CSE</a>
                   </div>
                 </div>
               </div>
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg">
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
                   <img
-                    src="/assets/images/campus/campus__life__bg__2.jpg"
-                    alt=""
+                    src="/assets/images/programs/ai_ml.jpg"
+                    alt="Artificial Intelligence & ML"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title">
-                      <a href="/activities/">Vibrant Campus Culture</a>
-                    </h4>
-                    <p class="campus__life--single--description">
-                      Annual techno-cultural and sports events like SAMAGRA and
-                      JAITRA celebrate innovation, talent, and student
-                      creativity.
-                    </p>
-                  </div>
-                  <div class="campus__life--single--button">
-                    <a href="/activities/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
-                    >
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/cse/academic-programs/">AI and ML</a>
                   </div>
                 </div>
               </div>
-              <div class="campus__life--single">
-                <div class="campus__life--single--bg">
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
                   <img
-                    src="/assets/images/campus/campus__life__bg__3.jpg"
-                    alt=""
+                    src="/assets/images/programs/ai_ds.png"
+                    alt="AI & Data Science"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div class="campus__life--single--flex">
-                  <div class="campus__life--single--content">
-                    <h4 class="campus__life--single--title">
-                      <a href="/sports/">Sports and Games</a>
-                    </h4>
-                    <p class="campus__life--single--description">
-                      State-level facilities and competitions make SRKR a
-                      sporting hub in coastal Andhra Pradesh.
-                    </p>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/it/academic-programs/">AI and DS</a>
                   </div>
-                  <div class="campus__life--single--button">
-                    <a href="/sports/"
-                      ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/ece.jpg"
+                    alt="Electronics & Communication"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/ece/">ECE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/eee.jpg"
+                    alt="Electrical & Electronics"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/eee/">EEE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/mech.png"
+                    alt="Mechanical Engineering"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/mechanical/">ME</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/civil.png"
+                    alt="Civil Engineering"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/civil/">Civil</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/it.png"
+                    alt="Information Technology"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/it/">IT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/csd.jpg"
+                    alt="Computer Science & Design"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/cse/academic-programs/">CSD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/cs_iot.png"
+                    alt="CSE IoT & Cyber Security"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/cse/academic-programs/"
+                      >CSE (IoT &amp; Cyber Security)</a
                     >
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/cs_it.png"
+                    alt="Computer Science & IT"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/it/academic-programs/">CS and IT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item srkr-dept-card">
+                <div class="cat-thumb srkr-dept-thumb">
+                  <img
+                    src="/assets/images/programs/cs_bs.jpg"
+                    alt="CS & Business System System"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    <a href="/departments/it/academic-programs/">CS and BS</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ── CAMPUS LIFE END ─────────────────────────────────────── -->
+      </section>
+      <!-- ── UG PROGRAMS END ─────────────────────────────────────── -->
 
-    <!-- scholarship appication -->
-    <!-- <section class="rts-scholarship rts-scholarship-bg rts-section-height">
+      <!-- ── CAMPUS LIFE ─────────────────────────────────────────── -->
+      <section class="rts__section rts-section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+              <div class="rts__section--wrapper v__2">
+                <h2 class="rts__section--title">Campus Life</h2>
+                <p class="rts__section--description">
+                  SRKR's campus blends rigorous academics with a vibrant student
+                  culture — world-class infrastructure, digital classrooms,
+                  thriving clubs, and community initiatives that foster holistic
+                  development and lifelong connections.
+                </p>
+                <div class="campus__vector">
+                  <img
+                    src="/assets/images/campus/campus__vector.svg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <div class="campus__life">
+                <div class="campus__life--single">
+                  <div class="campus__life--single--bg">
+                    <img
+                      src="/assets/images/campus/college-life.png"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                      <h4 class="campus__life--single--title">
+                        <a href="/college-profile/">Student Life</a>
+                      </h4>
+                      <p class="campus__life--single--description">
+                        Technical clubs to cultural fests — SRKR fosters
+                        personal growth and vibrant peer connections.
+                      </p>
+                    </div>
+                    <div class="campus__life--single--button">
+                      <a href="/college-profile/"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="campus__life--single">
+                  <div class="campus__life--single--bg">
+                    <img
+                      src="/assets/images/campus/campus__life__bg__2.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                      <h4 class="campus__life--single--title">
+                        <a href="/activities/">Vibrant Campus Culture</a>
+                      </h4>
+                      <p class="campus__life--single--description">
+                        Annual techno-cultural and sports events like SAMAGRA
+                        and JAITRA celebrate innovation, talent, and student
+                        creativity.
+                      </p>
+                    </div>
+                    <div class="campus__life--single--button">
+                      <a href="/activities/"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="campus__life--single">
+                  <div class="campus__life--single--bg">
+                    <img
+                      src="/assets/images/campus/campus__life__bg__3.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="campus__life--single--flex">
+                    <div class="campus__life--single--content">
+                      <h4 class="campus__life--single--title">
+                        <a href="/sports/">Sports and Games</a>
+                      </h4>
+                      <p class="campus__life--single--description">
+                        State-level facilities and competitions make SRKR a
+                        sporting hub in coastal Andhra Pradesh.
+                      </p>
+                    </div>
+                    <div class="campus__life--single--button">
+                      <a href="/sports/"
+                        ><i class="fa-sharp fa-regular fa-arrow-right"></i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ── CAMPUS LIFE END ─────────────────────────────────────── -->
+
+      <!-- scholarship appication -->
+      <!-- <section class="rts-scholarship rts-scholarship-bg rts-section-height">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -1505,10 +1252,10 @@ try {
         </div>
       </div>
     </section> -->
-    <!-- scholarship appication end -->
+      <!-- scholarship appication end -->
 
-    <!-- Quick Links -->
-    <!-- <section class="program rts-section-padding">
+      <!-- Quick Links -->
+      <!-- <section class="program rts-section-padding">
             <div class="container">
                 <div class="row rt-center">
                     <div class="col-sm-12">
@@ -1644,10 +1391,10 @@ try {
                 </div>
             </div>
         </section> -->
-    <!-- Quick Links end -->
+      <!-- Quick Links end -->
 
-    <!-- research area -->
-    <!-- <section class="rts-research rt-relative research-bg rts-section-height">
+      <!-- research area -->
+      <!-- <section class="rts-research rt-relative research-bg rts-section-height">
       <div class="container">
         <div class="section-bg rt-relative">
           <div class="row justify-content-md-center">
@@ -1749,21 +1496,21 @@ try {
         </div>
       </div>
     </section> -->
-    <!-- research area end -->
+      <!-- research area end -->
 
-    <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
-    <div class="rts-brand v_1 py-1">
-      <div class="container">
-        <div class="row justify-content-md-center mb--10">
-          <div class="col-lg-12 text-left">
-            <h2 class="rts-section-title mt-0">Placement Partners</h2>
+      <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
+      <div class="rts-brand v_1 py-1">
+        <div class="container">
+          <div class="row justify-content-md-center mb--10">
+            <div class="col-lg-12 text-left">
+              <h2 class="rts-section-title mt-0">Placement Partners</h2>
+            </div>
           </div>
-        </div>
-        <div class="row justify-content-md-center">
-          <div class="col-lg-12 col-md-11">
-            <div
-              class="rts-brand-slider swiper swiper-data"
-              data-swiper='{
+          <div class="row justify-content-md-center">
+            <div class="col-lg-12 col-md-11">
+              <div
+                class="rts-brand-slider swiper swiper-data"
+                data-swiper='{
                     "slidesPerView": 4,
                     "loop": true,
                     "spaceBetween": 30,
@@ -1775,115 +1522,116 @@ try {
                         "992": { "slidesPerView": 6, "spaceBetween": 30 }
                     }
                     }'
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/tcs.png"
-                      alt="TCS"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">392+ Offers</p>
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/tcs.png"
+                        alt="TCS"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">392+ Offers</p>
                             <p class="text-muted mb-0">3.5 to 9 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/infosys.png"
-                      alt="Infosys"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">270+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/infosys.png"
+                        alt="Infosys"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">270+ Offers</p>
                             <p class="text-muted mb-0">3.5 to 9.5 LPA</p> -->
+                    </div>
                   </div>
-                </div>
 
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/wipro.png"
-                      alt="Wipro"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">185+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/wipro.png"
+                        alt="Wipro"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">185+ Offers</p>
                             <p class="text-muted mb-0">3.5 to 8 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/hcl.png"
-                      alt="HCL"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">145+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/hcl.png"
+                        alt="HCL"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">145+ Offers</p>
                             <p class="text-muted mb-0">3.5 to 7 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/cts.png"
-                      alt="Cognizant"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">210+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/cts.png"
+                        alt="Cognizant"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">210+ Offers</p>
                             <p class="text-muted mb-0">4 to 9 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/tm.png"
-                      alt="Tech Mahindra"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">123+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/tm.png"
+                        alt="Tech Mahindra"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">123+ Offers</p>
                             <p class="text-muted mb-0">3.5 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/lt.png"
-                      alt="L&T"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">95+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/lt.png"
+                        alt="L&T"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">95+ Offers</p>
                             <p class="text-muted mb-0">4 to 10 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/ey.png"
-                      alt="EY"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">42+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/ey.png"
+                        alt="EY"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">42+ Offers</p>
                             <p class="text-muted mb-0">5 to 12 LPA</p> -->
+                    </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-brand-logo">
-                    <img
-                      src="/assets/images/recruiters/ncc.png"
-                      alt="NCC"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <!-- <p class="text-primary fw-bold mb-1">35+ Offers</p>
+                  <div class="swiper-slide">
+                    <div class="single-brand-logo">
+                      <img
+                        src="/assets/images/recruiters/ncc.png"
+                        alt="NCC"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <!-- <p class="text-primary fw-bold mb-1">35+ Offers</p>
                             <p class="text-muted mb-0">3.5 to 6 LPA</p> -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1891,110 +1639,105 @@ try {
           </div>
         </div>
       </div>
-    </div>
-    <!-- ── PLACEMENT PARTNERS END ──────────────────────────────── -->
+      <!-- ── PLACEMENT PARTNERS END ──────────────────────────────── -->
 
-    <!-- newsletter -->
-    <div class="rts-newsletter v_1 rts-cta-background rts__white">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div
-              class="rts-newsletter-box"
-              style="background-image: url(/assets/images/newsletter/bg-1.jpg);"
-            >
-              <div class="rts-newsletter-box-content">
-                <h4 class="newsletter-title">
-                  Don’t Miss Awesome Story From Our Alumni
-                </h4>
-                <div class="newsletter-form w-530">
-                  <form action="#">
-                    <input
-                      type="email"
-                      name="subscription"
-                      id="subscription"
-                      placeholder="Enter Your mail"
-                      required=""
-                    />
-                    <button type="submit" class="rts-nbg-btn btn-arrow"
-                      >Subscribe <span
-                        ><i class="fa-sharp fa-regular fa-arrow-right"
-                        ></i></span
-                      ></button
-                    >
-                  </form>
+      <!-- newsletter -->
+      <div class="rts-newsletter v_1 rts-cta-background rts__white">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="rts-newsletter-box"
+                style="background-image: url(/assets/images/newsletter/bg-1.jpg);"
+              >
+                <div class="rts-newsletter-box-content">
+                  <h4 class="newsletter-title">
+                    Don’t Miss Awesome Story From Our Alumni
+                  </h4>
+                  <div class="newsletter-form w-530">
+                    <form action="#">
+                      <input
+                        type="email"
+                        name="subscription"
+                        id="subscription"
+                        placeholder="Enter Your mail"
+                        required=""
+                      />
+                      <button type="submit" class="rts-nbg-btn btn-arrow"
+                        >Subscribe <span
+                          ><i class="fa-sharp fa-regular fa-arrow-right"
+                          ></i></span
+                        ></button
+                      >
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- newsletter end -->
+      <!-- newsletter end -->
 
-    <SrkrFooter />
-    <OffCanvas />
-    <FooterScripts />
-    <script is:inline>
-      const initNoticeScroll = () => {
-        const box = document.querySelector(".notice-content-box");
-        if (!box) return;
+      <SrkrFooter />
+      <OffCanvas />
+      <FooterScripts />
+      <script is:inline>
+        const initNoticeScroll = () => {
+          const box = document.querySelector(".notice-content-box");
+          if (!box) return;
 
-        box.scrollTop = 0;
+          box.scrollTop = 0;
 
-        let scrollSpeed = 0.5;
-        let scrollDelay = 25;
-        let scrollInterval = null;
-        let isHovered = false;
+          let scrollSpeed = 0.5;
+          let scrollDelay = 25;
+          let scrollInterval = null;
+          let isHovered = false;
 
-        const startScroll = () => {
-          if (scrollInterval) clearInterval(scrollInterval);
-          scrollInterval = setInterval(() => {
-            if (isHovered) return;
+          const startScroll = () => {
+            if (scrollInterval) clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+              if (isHovered) return;
 
-            if (box.scrollHeight > box.clientHeight) {
-              box.scrollTop += scrollSpeed;
-              if (box.scrollTop >= box.scrollHeight - box.clientHeight - 1) {
-                box.scrollTop = 0;
+              if (box.scrollHeight > box.clientHeight) {
+                box.scrollTop += scrollSpeed;
+                if (box.scrollTop >= box.scrollHeight - box.clientHeight - 1) {
+                  box.scrollTop = 0;
+                }
               }
-            }
-          }, scrollDelay);
+            }, scrollDelay);
+          };
+
+          box.addEventListener("mouseenter", () => {
+            isHovered = true;
+          });
+
+          box.addEventListener("mouseleave", () => {
+            isHovered = false;
+          });
+
+          startScroll();
         };
 
-        box.addEventListener("mouseenter", () => {
-          isHovered = true;
-        });
+        window.addEventListener("DOMContentLoaded", initNoticeScroll);
+      </script>
+      <script>
+        const slides = document.querySelectorAll(".swiper-slide");
 
-        box.addEventListener("mouseleave", () => {
-          isHovered = false;
-        });
+        const setAutoplayDuration = () => {
+          const duration = window.innerWidth <= 767 ? "17000" : "13000";
 
-        startScroll();
-      };
+          slides.forEach((slide) => {
+            slide.setAttribute("data-swiper-autoplay", duration);
+          });
+        };
 
-      window.addEventListener("DOMContentLoaded", initNoticeScroll);
-    </script>
-<script>
-  const slides = document.querySelectorAll('.swiper-slide');
-
-  const setAutoplayDuration = () => {
-    const duration = window.innerWidth <= 767 ? '17000' : '13000';
-
-    slides.forEach((slide) => {
-      slide.setAttribute('data-swiper-autoplay', duration);
-    });
-  };
-
-  setAutoplayDuration();
-  window.addEventListener('resize', setAutoplayDuration);
-</script>
-
-
-
+        setAutoplayDuration();
+        window.addEventListener("resize", setAutoplayDuration);
+      </script>
+    </div>
   </body>
 </html>
-
-
 
 <style>
   /* ── HERO VIDEO SECTION ── */
