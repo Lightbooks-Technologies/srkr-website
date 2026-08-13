@@ -19491,7 +19491,7 @@ xclip
   transition: var(--transition);
   color: var(--rt-secondary);
   position: relative;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .all-program-category .single-cat-item .cat-meta .cat-title a::after {
   position: absolute;
@@ -19585,7 +19585,7 @@ xclip
   transition: var(--transition);
   color: var(--rt-secondary);
   position: relative;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .single-cat-item .cat-meta .cat-title a::after {
   position: absolute;
