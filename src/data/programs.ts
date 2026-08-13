@@ -96,7 +96,7 @@ export const programs: Programs[] = [
     hodEmail: 'hod.csbs@srkrec.ac.in',
     email: 'hod.csbs@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2021 · B.Tech CS & Business System System · TCS Curriculum',
+    tagline: 'Established 2021 · B.Tech CS & Business System · TCS Curriculum',
     legacyCode: 'csbs',
   },
   {
