@@ -300,12 +300,12 @@ const academicPages: Record<string, PageSeo> = {
     ],
   },
   '/departments/ash/': {
-    title: `Applied Sciences & Humanities | Faculty | ${BRAND}`,
+    title: `Applied Sciences | Faculty | ${BRAND}`,
     description:
-      'Department of Applied Sciences & Humanities at SRKR Engineering College — Mathematics, Physics, Chemistry, English and Management courses with 50+ accomplished faculty.',
+      'Department of Applied Sciences at SRKR Engineering College — Mathematics, Physics, Chemistry, English and Management courses with 50+ accomplished faculty.',
     breadcrumbs: [
       { name: 'Departments', url: '/departments/' },
-      { name: 'Applied Sciences & Humanities', url: '/departments/ash/' },
+      { name: 'Applied Sciences', url: '/departments/ash/' },
     ],
   },
   '/departments/': {
