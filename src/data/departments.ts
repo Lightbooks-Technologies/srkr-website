@@ -24,7 +24,7 @@ export interface Department {
   established: number;
   /** Current sanctioned intake (UG main program) */
   intake: number;
-  /** Name of Head of Department */
+  /** Name of Head of the Department */
   hod: string;
   /** HoD designation */
   hodDesignation: string;
@@ -75,7 +75,7 @@ const coreDepartments: Department[] = [
     established: 1980,
     intake: 120,
     hod: 'Dr. G. Sri Bala',
-    hodDesignation: 'Associate Professor & Head of Department',
+    hodDesignation: 'Associate Professor & Head of the Department',
     hodEmail: 'hod.civil@srkrec.ac.in',
     tpCoordinator: 'K Jagadeep',
     tpCoordinatorEmail: 'jagadeep.kankatala@gmail.com',
@@ -94,7 +94,7 @@ const coreDepartments: Department[] = [
     established: 1991,
     intake: 300,
     hod: 'Dr. Bh. V. S. Rama Krishnam Raju',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'cse@srkrec.ac.in',
     tpCoordinator: 'T Srinivasa Rao',
     tpCoordinatorEmail: 'srinu.tottempudi@gmail.com',
@@ -113,7 +113,7 @@ const coreDepartments: Department[] = [
     established: 1980,
     intake: 240,
     hod: 'Dr. S. S. Mohan Reddy',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'ece@srkrec.ac.in',
     tpCoordinator: 'K V N Suresh Varma',
     tpCoordinatorEmail: 'varma.yuvaraj@gmail.com',
@@ -132,7 +132,7 @@ const coreDepartments: Department[] = [
     established: 1994,
     intake: 120,
     hod: 'Dr. B. Ravi Kumar Varma',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'eee@srkrec.ac.in',
     tpCoordinator: 'Dr. G Veeranna',
     tpCoordinatorEmail: 'veerueee@gmail.com',
@@ -152,7 +152,7 @@ const coreDepartments: Department[] = [
     established: 1980,
     intake: 120,
     hod: 'Dr. K. Sita Rama Raju',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'mech@srkrec.ac.in',
     tpCoordinator: 'S V Manikanth',
     tpCoordinatorEmail: 'manikanth.srkrec@gmail.com',
@@ -171,7 +171,7 @@ const coreDepartments: Department[] = [
     established: 2001,
     intake: 180,
     hod: 'Dr. P. Ravi Kiran Varma',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'hod.it@srkrec.ac.in',
     tpCoordinator: 'Dr. S Ramagopala Reddy',
     tpCoordinatorEmail: 'sramagopalareddy@gmail.com',
@@ -222,7 +222,7 @@ const coreDepartments: Department[] = [
     established: 2001,
     intake: 180,
     hod: 'Dr. G. N. V. Kishore',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'maths@srkrec.ac.in',
     email: 'maths@srkrec.ac.in',
     phone: '+91 08816 223332',
@@ -239,7 +239,7 @@ const coreDepartments: Department[] = [
     established: 2001,
     intake: 180,
     hod: 'Dr. P Bhavani',
-    hodDesignation: 'Professor & Head of Department',
+    hodDesignation: 'Professor & Head of the Department',
     hodEmail: 'chemistry@srkrec.ac.in',
     email: 'chemistry@srkrec.ac.in',
     phone: '+91 08816 223332',
@@ -256,7 +256,7 @@ const coreDepartments: Department[] = [
     established: 2001,
     intake: 180,
     hod: 'Dr. M. V. Someswara Rao',
-    hodDesignation: 'Associate Professor & Head of Department',
+    hodDesignation: 'Associate Professor & Head of the Department',
     hodEmail: 'physics@srkrec.ac.in',
     email: 'physics@srkrec.ac.in',
     phone: '+91 08816 223332',
@@ -273,7 +273,7 @@ const coreDepartments: Department[] = [
     established: 2001,
     intake: 180,
     hod: 'Dr. Satish Kumar Nadimpalli',
-    hodDesignation: 'Associate Professor & Head of Department',
+    hodDesignation: 'Associate Professor & Head of the Department',
     hodEmail: 'english@srkrec.ac.in',
     email: 'english@srkrec.ac.in',
     phone: '+91 08816 223332',

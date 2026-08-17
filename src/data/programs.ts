@@ -13,7 +13,7 @@ export interface Programs {
   established: number;
   /** Current sanctioned intake (UG main program) */
   intake: number;
-  /** Name of Head of Department */
+  /** Name of Head of the Department */
   hod: string;
   /** HoD designation */
   hodDesignation: string;
@@ -131,22 +131,22 @@ export const programs: Programs[] = [
     tagline: 'Established 2021 · B.Tech CS & Design · Creative Tech Programs',
     legacyCode: 'csd',
   },
-  {
-    slug: 'bba',
-    code: 'BBA',
-    name: 'BBA',
-    fullName: 'Department of Bachelor of Business Administration',
-    icon: 'fa-light fa-building-columns',
-    established: 2024,
-    intake: 60,
-    hod: 'Dr. M. Siva Krishnam Raju',
-    hodDesignation: 'Controller of Examinations & Program Coordinator',
-    hodEmail: 'hod.bba@srkrec.ac.in',
-    email: 'hod.bba@srkrec.ac.in',
-    phone: '+91 08816 223332',
-    tagline: 'Established 2024 · BBA · Industry Aligned Curriculum',
-    legacyCode: 'bba',
-  }
+  // {
+  //   slug: 'bba',
+  //   code: 'BBA',
+  //   name: 'BBA',
+  //   fullName: 'Department of Bachelor of Business Administration',
+  //   icon: 'fa-light fa-building-columns',
+  //   established: 2024,
+  //   intake: 60,
+  //   hod: 'Dr. M. Siva Krishnam Raju',
+  //   hodDesignation: 'Controller of Examinations & Program Coordinator',
+  //   hodEmail: 'hod.bba@srkrec.ac.in',
+  //   email: 'hod.bba@srkrec.ac.in',
+  //   phone: '+91 08816 223332',
+  //   tagline: 'Established 2024 · BBA · Industry Aligned Curriculum',
+  //   legacyCode: 'bba',
+  // }
 ];
 export function getProgram(slug: string): Programs | undefined {
   return programs.find((p) => p.slug === slug);
