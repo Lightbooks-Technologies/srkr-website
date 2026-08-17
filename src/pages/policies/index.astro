@@ -1,0 +1,150 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+
+const pageTitle = "Policies";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${pageTitle} | SRKR Engineering College`}
+      description="National Board of Accreditation (NBA) Departmental Compliance Reports (DCP) for Civil, ECE, EEE, and Mechanical Engineering at SRKR."
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- Breadcrumb -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/vitals/">Governance</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="rts-scholarship pt--60 pb--60">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            
+
+            <!-- Documents Table -->
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <tbody>
+                      <tr>
+                        <td><strong>PAQIC Guidelines</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/paqic-guidelines.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Promotion Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/promotion-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Research Promotion Policy 2026</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/research-promotion-policy-2026.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Research Promotion Policy 2024</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/research-promotion-policy-2024.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Academic Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/academic-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>E-Cell Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/e-cell-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>e-learning NPTEL Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/e-learning-nptel-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Environmental Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/environmental-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>IPR Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/ipr-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>IQAC Policy</strong></td>
+                        <td class="text-end">
+                          <a href="/assets/documents/policies/iqac-policy.pdf" target="_blank" rel="noopener noreferrer" class="rts-theme-btn">
+                            <i class="fa-light fa-download me-1"></i> View 
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
