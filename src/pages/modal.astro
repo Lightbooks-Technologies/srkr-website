@@ -1,0 +1,114 @@
+---
+---
+
+<!-- Popup Modal Component -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-content">
+    <!-- Close Button -->
+    <button id="closePopupBtn" class="popup-close-btn" aria-label="Close Popup">&times;</button>
+    
+    <!-- Modal Content -->
+    <div class="popup-body">
+        <img src="assets/images/modal/249-tcs.png" alt="Admissions 2026–27" />
+      <!-- <h2>Admissions 2026–27</h2>
+      <p>Applications are invited for Category "B" seats – Course.</p>
+      <ul style="text-align: left; margin-left: 10px;">
+        <li>Apply online via our website portal.</li>
+        <li>Registration Fee: Rs. 1000/-</li>
+      </ul>
+      <p><strong>Last date to apply: 24-08-2026</strong></p> -->
+    </div>
+  </div>
+</div>
+
+<!-- Client-Side Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popupOverlay");
+    const closeBtn = document.getElementById("closePopupBtn");
+
+    if (!popup || !closeBtn) return;
+
+    // Check if user has already seen the popup during this session
+    const popupSeen = sessionStorage.getItem("hasSeenPopup");
+
+    if (!popupSeen) {
+      popup.style.display = "flex";
+      sessionStorage.setItem("hasSeenPopup", "true");
+    }
+
+    const closePopup = () => {
+      popup.style.display = "none";
+    };
+
+    closeBtn.addEventListener("click", closePopup);
+
+    // Close when clicking outside the box
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        closePopup();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Darkened Background Overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Modal Container */
+  .popup-content {
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px 25px 25px 25px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  /* Content Formatting */
+  .popup-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  /* Circular Floating 'X' Close Button */
+  .popup-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .popup-close-btn:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+  }
+</style>

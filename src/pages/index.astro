@@ -5,7 +5,7 @@ import SrkrFooter from "../components/SrkrFooter.astro";
 import FooterScripts from "../components/FooterScripts.astro";
 import OffCanvas from "../components/OffCanvas.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, UPCOMING_EVENTS, NEWS } from "../consts";
-
+import Modal from "./modal.astro";
 // Upcoming Events — loaded live from the SRKR CMS, with a safe fallback to the
 // static list in consts.ts if the CMS is unreachable (so the homepage never breaks).
 const CMS_URL = import.meta.env.PUBLIC_CMS_URL || "http://localhost:3001";
@@ -109,7 +109,8 @@ try {
   </head>
   <body class="page">
     <SrkrHeader />
-
+<!-- Calling the Popup Modal -->
+    <Modal />
     <!-- hero slider start -->
     <div class="rts-hero-slider rt-relative v_2">
       <div
