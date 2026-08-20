@@ -1,81 +1,746 @@
---- 
+---
 import BaseHead from '../../components/BaseHead.astro';
 import FooterScripts from '../../components/FooterScripts.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
+
+const alumniAbroad = [
+  {
+    name: "Neeraja Lingam",
+    designation: "CEO",
+    company: "IndraSoft Inc",
+    image: "/assets/images/alumni/nri/neeraja-lingam.png"
+  },
+  {
+    name: "Sri Satish Ambati",
+    designation: "Founder & CEO",
+    company: "H2O.ai",
+    image: "/assets/images/alumni/nri/sri-satish-ambati.png"
+  },
+  {
+    name: "Puli Sekhar",
+    designation: "Founder & CEO Rean Cloud, President & CEO LifeVoxel.AI",
+    company: "Rean Cloud / LifeVoxel.AI",
+    image: "assets/images/alumni/nri/puli-sekhar.png"
+  },
+  {
+    name: "Ravi Varre",
+    designation: "CEO",
+    company: "Camelot Integrated Solutions",
+    image: "assets/images/alumni/nri/ravi-varre.png"
+  },
+  {
+    name: "Venkat Avasarala",
+    designation: "Founder",
+    company: "Stryker Properties Texas",
+    image: "assets/images/alumni/nri/venkat-avasarala.png"
+  },
+  {
+    name: "Varma Kunaparaju",
+    designation: "Co-Founder & CEO",
+    company: "OpsRamp Inc",
+    image: "assets/images/alumni/nri/varma-kunaparaju.png"
+  },
+  {
+    name: "Raja Koduri",
+    designation: "Senior Vice President",
+    company: "Intel",
+    image: "assets/images/alumni/nri/raja-koduri.png"
+  },
+  {
+    name: "Sanjay Raghavaraju",
+    designation: "Founder & President",
+    company: "33 holdings",
+    image: "assets/images/alumni/nri/sanjay-raghavaraju.png"
+  },
+  {
+    name: "Oruganti Shiva Bharath",
+    designation: "Senior VP",
+    company: "Q2 lending",
+    image: "assets/images/alumni/nri/oruganti-shiva-bharath.png"
+  },
+  {
+    name: "Madhu Maredu",
+    designation: "President CEO",
+    company: "Conch Technologies",
+    image: "assets/images/alumni/nri/madhu-maredu.png"
+  },
+  {
+    name: "Srini Beereddy",
+    designation: "Founder & CTO",
+    company: "Anuta Networks",
+    image: "assets/images/alumni/nri/srini-beereddy.png"
+  },
+  {
+    name: "Sri Chaganty",
+    designation: "Founder and COO & CTO",
+    company: "AppEnsure Inc",
+    image: "assets/images/alumni/nri/sri-chaganty.png"
+  },
+  {
+    name: "Sunil Chiluvuri",
+    designation: "Founder",
+    company: "Contndr Inc",
+    image: "assets/images/alumni/nri/sunil-chiluvuri.png"
+  },
+  {
+    name: "Neeraja Vemulapalli",
+    designation: "VP",
+    company: "Lynx Software Technologies",
+    image: "assets/images/alumni/nri/neeraja-vemulapalli.png"
+  },
+  {
+    name: "Eswar Eluri",
+    designation: "Founder and Principal Consultant",
+    company: "Reva Solutions",
+    image: "assets/images/alumni/nri/eswar-eluri.png"
+  },
+  {
+    name: "Sreeharsha Upadhyayula",
+    designation: "CEO",
+    company: "Allivet",
+    image: "assets/images/alumni/nri/sreeharsha-upadhyayula.png"
+  },
+  {
+    name: "Renu Kasula",
+    designation: "Co-Founder & CEO",
+    company: "ReLi Med Solutions",
+    image: "assets/images/alumni/nri/renu-kasula.png"
+  },
+  {
+    name: "Prabhakar Reddy",
+    designation: "Investor, Founding Partner",
+    company: "Stride Growth Partners",
+    image: "assets/images/alumni/nri/prabhakar-reddy.png"
+  },
+  {
+    name: "Ramana Bhandaru",
+    designation: "Executive Vice president",
+    company: "Capgemini",
+    image: "assets/images/alumni/nri/ramana-bhandaru.png"
+  },
+  {
+    name: "Ram Indukuri",
+    designation: "President",
+    company: "Knoldus Inc",
+    image: "assets/images/alumni/nri/ram-indukuri.png"
+  },
+  {
+    name: "Venu Myneni",
+    designation: "Co-Founder, CEO and President",
+    company: "Radiant Systems Inc",
+    image: "assets/images/alumni/nri/venu-myneni.png"
+  },
+  {
+    name: "Madhu Reddiboina",
+    designation: "President and CEO",
+    company: "RediMinds Inc",
+    image: "assets/images/alumni/nri/madhu-reddiboina.png"
+  },
+  {
+    name: "Srikiran Patibandla",
+    designation: "CEO",
+    company: "Techdemocracy, USA",
+    image: "assets/images/alumni/nri/srikiran-patibandla.png"
+  },
+  {
+    name: "ShivKumar Seerapu",
+    designation: "CEO Asia Pacific",
+    company: "Lloyds Banking, Singapore",
+    image: "assets/images/alumni/nri/shivkumar-seerapu.png"
+  },
+  {
+    name: "Suman Chepuri",
+    designation: "GP",
+    company: "Lakeside Capitol",
+    image: "assets/images/alumni/nri/suman-chepuri.png"
+  },
+  {
+    name: "Satish Mandalika",
+    designation: "Founder and CEO",
+    company: "Drishyam.AI",
+    image: "assets/images/alumni/nri/satish-mandalika.png"
+  },
+  {
+    name: "Sunil Gottumukkala",
+    designation: "Sr Vice President",
+    company: "Salesforce, USA",
+    image: "assets/images/alumni/nri/sunil-gottumukkala.png"
+  },
+  {
+    name: "Chalana Bezawada",
+    designation: "Engineering Manager",
+    company: "Intel",
+    image: "assets/images/alumni/nri/chalana-bezawada.png"
+  },
+  {
+    name: "Himanshu Shah",
+    designation: "Vice President",
+    company: "Citi, Singapore",
+    image: "assets/images/alumni/nri/himanshu-shah.png"
+  },
+  {
+    name: "Sirisha Tata",
+    designation: "Vice President",
+    company: "iptiQ",
+    image: "assets/images/alumni/nri/sirisha-tata.png"
+  },
+  {
+    name: "Sirisha Kunduri",
+    designation: "Vice President",
+    company: "Choice Hotels International",
+    image: "assets/images/alumni/nri/sirisha-kunduri.png"
+  },
+  {
+    name: "Dr Satish Penmetsa",
+    designation: "Assoc Professor",
+    company: "Framingham University",
+    image: "assets/images/alumni/nri/dr-satish-penmetsa.png"
+  },
+  {
+    name: "Rajul Patkar",
+    designation: "Founder, Chief Executive Officer",
+    company: "ProXimal Soilsens Technologies Pvt. Ltd",
+    image: "assets/images/alumni/nri/rajul-patkar.png"
+  }
+];
+const alumniIndia = [
+  {
+    name: "Sridhar Narra",
+    designation: "CEO",
+    company: "Kireeti Soft Technologies Ltd",
+    image: "assets/images/alumni/india/sridhar-narra.png"
+  },
+  {
+    name: "Dr. G.K. Viswanadh Raju",
+    designation: "Lead Specialist",
+    company: "Vestas Technology",
+    image: "assets/images/alumni/india/dr-g-k-viswanadh-raju.png"
+  },
+  {
+    name: "Chiranjeevi Phanindra",
+    designation: "Scientist",
+    company: "ISRO",
+    image: "assets/images/alumni/india/chiranjeevi-phanindra.png"
+  },
+  {
+    name: "D C S Varma",
+    designation: "Director of Factories",
+    company: "Government of A.P",
+    image: "assets/images/alumni/india/d-c-s-varma.png"
+  },
+  {
+    name: "N V Rama Raju",
+    designation: "Founder and CEO",
+    company: "Envision Enterprise Solutions",
+    image: "assets/images/alumni/india/n-v-rama-raju.png"
+  },
+  {
+    name: "Aditya Toleti",
+    designation: "Assoc. Vice President",
+    company: "JP Morgan Chase",
+    image: "assets/images/alumni/india/aditya-toleti.png"
+  },
+  {
+    name: "T Bangar Raju",
+    designation: "Professor",
+    company: "UPES",
+    image: "assets/images/alumni/india/t-bangar-raju.png"
+  },
+  {
+    name: "Y Rajasekhar",
+    designation: "CEO",
+    company: "People Combine",
+    image: "assets/images/alumni/india/y-rajasekhar.png"
+  },
+  {
+    name: "Srinivas Satti",
+    designation: "Founder & Managing Director",
+    company: "Finvista Advisors Pvt Ltd.",
+    image: "assets/images/alumni/india/srinivas-satti.png"
+  },
+  {
+    name: "Akkineni Sarada",
+    designation: "Ex Intelli group, Co Founder and CEO",
+    company: "Caterpillar Wings Pvt Ltd",
+    image: "assets/images/alumni/india/akkineni-sarada.png"
+  },
+  {
+    name: "Siri Kothe",
+    designation: "Co-founder, CDO",
+    company: "Nuviso Networks",
+    image: "assets/images/alumni/india/siri-kothe.png"
+  },
+  {
+    name: "MNR Gupta",
+    designation: "Global CEO",
+    company: "RITZY group",
+    image: "assets/images/alumni/india/mnr-gupta.png"
+  },
+  {
+    name: "Viswanadha Raju D",
+    designation: "",
+    company: "Vector Institute",
+    image: "assets/images/alumni/india/viswanadha-raju-d.png"
+  },
+  {
+    name: "G Krupakar Reddy",
+    designation: "Engineering-in-Chief",
+    company: "Govt. of Telangana.",
+    image: "assets/images/alumni/india/g-krupakar-reddy.png"
+  },
+  {
+    name: "ML Srini",
+    designation: "CEO",
+    company: "FinBro Technologies",
+    image: "assets/images/alumni/india/ml-srini.png"
+  },
+  {
+    name: "Upendra Rao Kollu",
+    designation: "Managing Director",
+    company: "Voyants Solutions",
+    image: "assets/images/alumni/india/upendra-rao-kollu.png"
+  },
+  {
+    name: "Mohana Vamsi Indukuri",
+    designation: "Founder & CEO",
+    company: "Renee.ai",
+    image: "assets/images/alumni/india/mohana-vamsi-indukuri.png"
+  },
+  {
+    name: "PHD Rama Krishna",
+    designation: "Inspector General of Police Intelligence",
+    company: "Andhra Pradesh",
+    image: "assets/images/alumni/india/phd-rama-krishna.png"
+  },
+  {
+    name: "N RAMAKRISHNA REDDY",
+    designation: "MLA",
+    company: "Anaparthy, A.P.",
+    image: "assets/images/alumni/india/n-ramakrishna-reddy.png"
+  },
+  {
+    name: "Sridhar Gudiseva",
+    designation: "CoFounder and CEO",
+    company: "Bizbee",
+    image: "assets/images/alumni/india/sridhar-gudiseva.png"
+  },
+  {
+    name: "GVR Prasad Raju",
+    designation: "Former Vice Chancellor",
+    company: "JNTUK",
+    image: "assets/images/alumni/india/gvr-prasad-raju.png"
+  },
+  {
+    name: "Lakshmi Gadiraju",
+    designation: "CEO",
+    company: "BOB eProcure Solutions Pvt. Ltd.",
+    image: "assets/images/alumni/india/lakshmi-gadiraju.png"
+  },
+  {
+    name: "Dr G. Venkata Ratnam",
+    designation: "Professor, Mechanical Engineering",
+    company: "IITM",
+    image: "assets/images/alumni/india/dr-g-venkata-ratnam.png"
+  },
+  {
+    name: "Dr B.S.V. Prasad Patnaik",
+    designation: "Professor, Applied Mechanics",
+    company: "IITM",
+    image: "assets/images/alumni/india/dr-b-s-v-prasad-patnaik.png"
+  },
+  {
+    name: "Dr B V Ramana Reddy",
+    designation: "Director",
+    company: "NIT Kurukshetra",
+    image: "assets/images/alumni/india/dr-b-v-ramana-reddy.png"
+  },
+  {
+    name: "Ganges Reddy",
+    designation: "Co-founder, CEO",
+    company: "BlueDrop Enviro Pvt Ltd",
+    image: "assets/images/alumni/india/ganges-reddy.png"
+  },
+  {
+    name: "Dr V Valli Kumari",
+    designation: "Ex Vice Chairperson",
+    company: "APSCHE",
+    image: "assets/images/alumni/india/dr-v-valli-kumari.png"
+  },
+  {
+    name: "G Bangar Raju",
+    designation: "Founder",
+    company: "Easyway Tech.",
+    image: "assets/images/alumni/india/g-bangar-raju.png"
+  },
+  {
+    name: "B.V. Naidu",
+    designation: "Founder and Managing Partner",
+    company: "StartupXseed Ventures LLP",
+    image: "assets/images/alumni/india/b-v-naidu.png"
+  },
+  {
+    name: "D. Ravi Varma",
+    designation: "",
+    company: "Pennant Technologies Pvt Ltd",
+    image: "assets/images/alumni/india/d-ravi-varma.png"
+  },
+  {
+    name: "M.Srinivasa Varma",
+    designation: "CTO",
+    company: "Sri Maharshi Consultancy",
+    image: "assets/images/alumni/india/m.srinivasa-varma.png"
+  },
+  {
+    name: "Sunil Sayyaparaju",
+    designation: "Vice President -Engg.",
+    company: "Aerospike",
+    image: "assets/images/alumni/india/sunil-sayyaparaju.png"
+  },
+  {
+    name: "Venkata Appala Naidu",
+    designation: "SP - Intelligence",
+    company: "Govt. of Andhra Pradesh",
+    image: "assets/images/alumni/india/venkata-appala-naidu.png"
+  }
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .program-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          background-color 0.2s,
+          box-shadow 0.2s;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .program-item:hover {
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .program-item span {
+        display: flex;
+        margin-right: 8px;
+        align-items: center;
+        color: var(--rt-primary);
+      }
+      .program-item i {
+        margin-left: 8px;
+        transition: transform 0.2s;
+        padding: 8px;
+        color: var(--rt-secondary);
+      }
+
+      .placement-wall {
+        background: #f8f9fc;
+        overflow: hidden;
+        position: relative;
+      }
+      .placement-wall::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 2px 2px, #d8deee 1.1px, transparent 1.1px);
+        background-size: 26px 26px;
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .placement-wall .container {
+        position: relative;
+        z-index: 1;
+      }
+      .placement-wall__eyebrow {
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        font-weight: 700;
+        color: #5e71b3;
+      }
+      .placement-wall__title {
+        text-align: center;
+        margin: 8px 0 26px;
+        color: #203a86;
+        font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      }
+      .placement-wall__ticker {
+        overflow: hidden;
+        mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+      }
+      .placement-wall__ticker.limited {
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+      .placement-wall__track {
+        display: flex;
+        width: max-content;
+        gap: 18px;
+        animation: placementTicker 80s linear infinite;
+        will-change: transform;
+      }
+      .placement-wall__track.limited {
+        animation: none;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .placement-wall__ticker:hover .placement-wall__track {
+        animation-play-state: paused;
+      }
+      .placement-wall-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 16px;
+        min-width: min(92vw, 360px);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.08);
+      }
+
+      /* Ticker Avatar Box */
+      .placement-wall-card__avatar {
+        width: 96px;
+        height: 96px;
+        min-width: 72px;
+        border-radius: 50%;
+        background: #eef2ff;
+        color: #203a86;
+        border: 3px solid #dce4ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+      .placement-wall-card__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .placement-wall-card__meta {
+        min-width: 0;
+        flex: 1;
+      }
+      .placement-wall-card__designation {
+        margin: 0 0 2px 0;
+        color: #88211A;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .placement-wall-card__name {
+        margin: 0 0 2px 0;
+        color: #1f2a44;
+        font-weight: 800;
+        font-size: 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .placement-wall-card__company {
+        margin: 0;
+        color: #6c757d;
+        font-size: 1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @keyframes placementTicker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(-50% - 9px));
+        }
+      }
+
+      @media (max-width: 767px) {
+        .placement-wall-card {
+          min-width: min(96vw, 320px);
+          padding: 12px 14px;
+        }
+        .placement-wall-card__avatar {
+          width: 60px;
+          height: 60px;
+          min-width: 60px;
+          font-size: 1rem;
+        }
+        .placement-wall-card__name {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- header area start -->
     <SrkrHeader />
-    
     <!-- header area end -->
-     <!-- BREADCRUMB AREA -->
+
+    <!-- BREADCRUMB AREA -->
     <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        </ul>
-                        <h1 class="section-title">Prominent Alumni</h1>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Prominent Alumni</h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- BREADCRUMB AREA END -->
 
-
-    <!-- alumni banner -->
+    <!-- ALUMNI BANNER -->
     <div class="alumni-banner pt--30 pb--10">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="rts__section--wrapper v__9">
-                        <h2 class="rts__section--title">Prominent Alumni</h2>
-                        <p class="text-center text-muted">
-                            Our alumni in India are leaders in various sectors, making invaluable contributions to the fields of engineering, technology, business, and more. Their achievements stand as a testament to the quality education and strong foundation provided by SRKR Engineering College.
-                        </p>
-                        
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="rts__section--wrapper v__9 mb-5">
+              <h2 class="rts__section--title">Prominent Alumni - Abroad</h2>
+              <p class="text-center text-muted">
+                Our alumni in India and abroad are leaders in various sectors, making invaluable contributions to the fields of engineering, technology, business, and more. Their achievements stand as a testament to the quality education and strong foundation provided by SRKR Engineering College.
+              </p>
             </div>
-            <!-- banner image -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="alumni__banner__image">
-                        <img src="/assets/images/banner/alumni__banner__1.jpg" alt="">
-                        <img src="/assets/images/banner/alumni__banner__2.jpg" alt="" loading="lazy" decoding="async">
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Alumni Grid Mapping -->
+        <section class="placement-wall pb--20 mb--10" aria-label="Prominent Alumni Abroad">
+          <div class="container">
+            <div class="row g-4 pt--30">
+              {alumniAbroad.map((alumnus) => {
+                const initials = alumnus.name
+                  ? alumnus.name.split(" ").map((n) => n[0]).slice(0, 2).join("")
+                  : "A";
+
+                return (
+                  <div class="col-lg-4 col-md-4 col-sm-6 d-flex">
+                    <article class="placement-wall-card w-100">
+                      <div class="placement-wall-card__avatar">
+                        {alumnus.image ? (
+                          <img
+                            class="placement-wall-card__photo"
+                            src={alumnus.image.startsWith('/') ? alumnus.image : `/${alumnus.image}`}
+                            alt={alumnus.name}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <span>{initials}</span>
+                        )}
+                      </div>
+                      <div class="placement-wall-card__meta">
+                        <p class="placement-wall-card__designation" title={alumnus.designation}>
+                          {alumnus.designation}
+                        </p>
+                        <p class="placement-wall-card__name" title={alumnus.name}>
+                          {alumnus.name}
+                        </p>
+                        <p class="placement-wall-card__company" title={alumnus.company}>
+                          {alumnus.company}
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+      </div>
     </div>
-    <!-- alumni banner end -->
-   
+     <div class="alumni-banner pt--30 pb--10">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="rts__section--wrapper v__9 mb-0">
+              <h2 class="rts__section--title">Prominent Alumni - India</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alumni Grid Mapping -->
+        <section class="placement-wall pb--50 mb--50" aria-label="Prominent Alumni in India">
+          <div class="container">
+            <div class="row g-4 pt--30">
+              {alumniIndia.map((alumnus) => {
+                const initials = alumnus.name
+                  ? alumnus.name.split(" ").map((n) => n[0]).slice(0, 2).join("")
+                  : "A";
+
+                return (
+                  <div class="col-lg-4 col-md-4 col-sm-6 d-flex">
+                    <article class="placement-wall-card w-100">
+                      <div class="placement-wall-card__avatar">
+                        {alumnus.image ? (
+                          <img
+                            class="placement-wall-card__photo"
+                            src={alumnus.image.startsWith('/') ? alumnus.image : `/${alumnus.image}`}
+                            alt={alumnus.name}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <span>{initials}</span>
+                        )}
+                      </div>
+                      <div class="placement-wall-card__meta">
+                        <p class="placement-wall-card__designation" title={alumnus.designation}>
+                          {alumnus.designation}
+                        </p>
+                        <p class="placement-wall-card__name" title={alumnus.name}>
+                          {alumnus.name}
+                        </p>
+                        <p class="placement-wall-card__company" title={alumnus.company}>
+                          {alumnus.company}
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    <!-- ALUMNI BANNER END -->
 
     <!-- footer -->
     <SrkrFooter/>
 
-    <!-- footer copyright end -->
-
     <OffCanvas/>
-
 
     <!-- scripts -->
     <FooterScripts />
-
-
-</body>
-
+  </body>
 </html>
