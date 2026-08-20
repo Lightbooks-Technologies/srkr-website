@@ -9,15 +9,23 @@
     
     <!-- Modal Content -->
     <div class="popup-body">
-        <img src="assets/images/modal/249-tcs.png" alt="Admissions 2026–27" />
-      <!-- <h2>Admissions 2026–27</h2>
-      <p>Applications are invited for Category "B" seats – Course.</p>
-      <ul style="text-align: left; margin-left: 10px;">
-        <li>Apply online via our website portal.</li>
-        <li>Registration Fee: Rs. 1000/-</li>
-      </ul>
-      <p><strong>Last date to apply: 24-08-2026</strong></p> -->
-    </div>
+  <!-- OPTION 1: Video -->
+  <video src="assets/modal/video1.mp4" autoplay muted loop playsinline></video>
+
+  <!-- OPTION 2: Image -->
+  <!-- <img src="assets/modal/249-tcs.png" alt="Admissions 2026–27" /> -->
+
+  <!-- OPTION 3: Text Content -->
+  <!-- 
+  <h2>Admissions 2026–27</h2>
+  <p>Applications are invited for Category "B" seats – Course.</p>
+  <ul style="text-align: left; margin-left: 10px;">
+    <li>Apply online via our website portal.</li>
+    <li>Registration Fee: Rs. 1000/-</li>
+  </ul>
+  <p><strong>Last date to apply: 24-08-2026</strong></p> 
+  -->
+</div>
   </div>
 </div>
 
@@ -80,11 +88,31 @@
   }
 
   /* Content Formatting */
-  .popup-body img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
+  /* Content Container */
+.popup-body {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Image Element */
+.popup-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* Video Element */
+.popup-body video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* Prevents video from growing offscreen on mobile */
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
 
   /* Circular Floating 'X' Close Button */
   .popup-close-btn {
