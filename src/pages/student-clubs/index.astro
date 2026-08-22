@@ -87,18 +87,12 @@ const pageTitle = "Student Clubs";
               id="student-clubs-technical"
               class="accordion-collapse collapse"
             >
-              <div class="accordion-body">
+              <div class="accordion-body ">
 
                 <div class="row g-4">
 
                   {[
-                    {
-                      name: "Automotive Club",
-                      focus: "Automotive engineering, vehicle design, fabrication, EV and hybrid vehicle technologies.",
-                      activity: "Vehicle design and fabrication, CAD modelling, vehicle testing, EV projects, SAE competitions, technical workshops/seminars, and industry visits.",
-                      sdg: "SDG 7, SDG 9, SDG 11",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
+                    
                     {
                       name: "E-Mobility Club",
                       focus: "Electric vehicles, battery technologies, BMS, charging systems, power electronics, energy storage and smart mobility.",
@@ -184,6 +178,13 @@ const pageTitle = "Student Clubs";
                       image: "/assets/images/clubs/tech-default.png"
                     },
                     {
+                      name: "Automotive Club",
+                      focus: "Automotive engineering, vehicle design, fabrication, EV and hybrid vehicle technologies.",
+                      activity: "Vehicle design and fabrication, CAD modelling, vehicle testing, EV projects, SAE competitions, technical workshops/seminars, and industry visits.",
+                      sdg: "SDG 7, SDG 9, SDG 11",
+                      image: "/assets/images/clubs/automotive.jpeg"
+                    },
+                    {
                     name: "S.R.K.R. Coding Club",
                     focus: "Programming, logical reasoning, problem-solving, application and software development, data structures and algorithms (DSA), web development, app development, artificial intelligence, and competitive programming.",
                     activity: "HackOverflow (National-Level Hackathon), Code Quest (Problem of the Day initiative), Edgecase (biweekly online coding contests), Workshops on emerging technologies, and Iconcoderz (intra-college DSA coding competition).",
@@ -192,17 +193,17 @@ const pageTitle = "Student Clubs";
                     }
                   ].map((c) => (
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-
+{/* {c.image !== "/assets/images/clubs/tech-default.png" &&
                           <img
-                            src={c.image}
+                            src={c.image === "/assets/images/clubs/tech-default.png" ? "" : c.image}
                             alt={c.name}
                             loading="lazy"
                             decoding="async"
-                          />
+                          />} */}
 
                           {/* <span class="cat-link-btn">
                             Technical
@@ -218,17 +219,17 @@ const pageTitle = "Student Clubs";
                               {c.name}
                             </h5>
 
-                            <p class="mb-2">
+                            <p class="mb-2" style="text-align: left;">
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            <p class="mb-2 small">
+                            {/* <p class="mb-2 small">
                               <strong>Activities:</strong> {c.activity}
                             </p>
 
                             <p class="mb-3 small text-muted">
                               <strong>SDGs:</strong> {c.sdg}
-                            </p>
+                            </p> */}
 
                           </div>
 
@@ -285,14 +286,14 @@ const pageTitle = "Student Clubs";
                       focus: "Electrical, electronics, computing, communication",
                       activity: "Talks, workshops, paper presentations, hackathons, projects and conferences.",
                       sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/pro-default.png"
+                      image: "/assets/images/clubs/ieee.webp"
                     },
                     {
                       name: "IEI",
                       focus: "Multidisciplinary engineering profession",
                       activity: "Seminars, guest lectures and technical paper contests.",
                       sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/iei.jpg"
+                      image: "/assets/images/clubs/iei.jpeg"
                     },
                     {
                       name: "ISTE",
@@ -313,7 +314,7 @@ const pageTitle = "Student Clubs";
                       focus: "Green building, sustainability, energy efficiency",
                       activity: "Awareness drives, workshops and campus greening.",
                       sdg: "SDG 7, SDG 11, SDG 13",
-                      image: "/assets/images/clubs/pro-default.png"
+                      image: "/assets/images/clubs/igbc.jpg"
                     },
                     {
                       name: "IIPE",
@@ -334,21 +335,21 @@ const pageTitle = "Student Clubs";
                       focus: "Public speaking, communication, leadership",
                       activity: "Speech sessions, table topics and evaluations.",
                       sdg: "SDG 4, SDG 17",
-                      image: "/assets/images/clubs/pro-default.png"
+                      image: "/assets/images/clubs/toast-master.jpg"
                     }
                   ].map((c) => (
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-
+{/* 
                           <img
                             src={c.image}
                             alt={c.name}
                             loading="lazy"
                             decoding="async"
-                          />
+                          /> */}
 
                           {/* <span class="cat-link-btn">
                             Professional
@@ -368,9 +369,9 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            <p class="mb-2 small">
+                            {/* <p class="mb-2 small">
                               <strong>Activities:</strong> {c.activity}
-                            </p>
+                            </p> */}
 
                             <p class="mb-3 small text-muted">
                               <strong>SDGs:</strong> {c.sdg}
@@ -470,17 +471,17 @@ const pageTitle = "Student Clubs";
                     }
                   ].map((c) => (
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
 
-                          <img
+                          {/* <img
                             src={c.image}
                             alt={c.name}
                             loading="lazy"
                             decoding="async"
-                          />
+                          /> */}
 
                           {/* <span class="cat-link-btn">
                             Arts &amp; Culture
@@ -500,9 +501,9 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            <p class="mb-3 small text-muted">
+                            {/* <p class="mb-3 small text-muted">
                               <strong>Activities:</strong> {c.activity}
-                            </p>
+                            </p> */}
 
                           </div>
 
@@ -575,17 +576,17 @@ const pageTitle = "Student Clubs";
                     }
                   ].map((c) => (
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
 
-                          <img
+                          {/* <img
                             src={c.image}
                             alt={c.name}
                             loading="lazy"
                             decoding="async"
-                          />
+                          /> */}
 
                           {/* <span class="cat-link-btn">
                             Outreach
@@ -605,9 +606,9 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            <p class="mb-3 small text-muted">
+                            {/* <p class="mb-3 small text-muted">
                               <strong>Activities:</strong> {c.activity}
-                            </p>
+                            </p> */}
 
                           </div>
 
@@ -697,17 +698,17 @@ const pageTitle = "Student Clubs";
                     }
                   ].map((c) => (
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
 
-                          <img
+                          {/* <img
                             src={c.image}
                             alt={c.name}
                             loading="lazy"
                             decoding="async"
-                          />
+                          /> */}
 
                           {/* <span class="cat-link-btn">
                             Sports
