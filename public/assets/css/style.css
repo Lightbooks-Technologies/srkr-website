@@ -14862,7 +14862,7 @@ xclip
   display: block;
   margin-top: 30px;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 1199px) {
   #side-bar .inner-main-wrapper-desk {
     display: none;
   }
@@ -14875,7 +14875,7 @@ xclip
 #side-bar .mobile-menu-main {
   display: none;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 1199px) {
   #side-bar .mobile-menu-main {
     display: block;
   }
