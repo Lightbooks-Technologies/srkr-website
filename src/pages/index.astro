@@ -39,6 +39,9 @@ const yearsOfExcellence =
   baseCount +
   (now.getFullYear() - baseYear) -
   (now.getMonth() < anniversaryMonth ? 1 : 0);
+// The static UPCOMING_EVENTS list is a fallback for when the CMS is UNREACHABLE
+// only. When the CMS answers, its result is authoritative even when empty —
+// otherwise unpublishing the last event resurrects the stale hardcoded list.
 let homeEvents = UPCOMING_EVENTS;
 try {
   const res = await fetch(
@@ -47,14 +50,12 @@ try {
   );
   if (res.ok) {
     const { docs = [] } = await res.json();
-    if (docs.length) {
-      homeEvents = docs.map((e) => ({
-        title: e.title,
-        date: e.dateText || fmtEventDate(e.date),
-        venue: e.venue || "SRKR Engineering College",
-        link: e.registrationLink || "/events",
-      }));
-    }
+    homeEvents = docs.map((e) => ({
+      title: e.title,
+      date: e.dateText || fmtEventDate(e.date),
+      venue: e.venue || "SRKR Engineering College",
+      link: e.registrationLink || "/events",
+    }));
   }
 } catch {
   /* CMS down → keep static UPCOMING_EVENTS */
@@ -788,7 +789,22 @@ try {
               <div class="rts-event-section">
                 <h4 class="rts-section-title mb--25">Upcoming Events</h4>
                 <div class="rts-event-section-content">
-                  <ul class="list-unstyled rts-counter">
+                  <!-- Prebuilt from the CMS; refreshed client-side (script below)
+                       so admin publish/unpublish shows without a site rebuild. -->
+                  <ul class="list-unstyled rts-counter" id="homeEventsList">
+                    {
+                      homeEvents.length === 0 && (
+                        <li class="single-event">
+                          <a class="single-event-link" href="/events">
+                            <div class="single-event-content">
+                              <p style="margin:0;color:#666;">
+                                No upcoming events right now — check back soon.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      )
+                    }
                     {
                       [...homeEvents].map((event) => {
                         const link =
@@ -1682,6 +1698,100 @@ try {
       <SrkrFooter />
       <OffCanvas />
       <FooterScripts />
+      <script define:vars={{ CMS_URL }}>
+        // Live refresh of the Upcoming Events widget: the homepage is statically
+        // prebuilt, so without this an admin publish/unpublish only appears
+        // after a full site rebuild (~2 min). Feed is CDN-cached 60s,
+        // published-only. On any failure the build-time list stays as-is.
+        (function () {
+          var IST = "Asia/Kolkata";
+          var IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+          var nowIST = new Date(Date.now() + IST_OFFSET_MS);
+          var todayStartIST = new Date(
+            Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) - IST_OFFSET_MS,
+          );
+          var fmtDate = function (iso) {
+            var d = new Date(iso);
+            if (isNaN(d.getTime())) return iso || "";
+            return d.toLocaleDateString("en-IN", {
+              day: "2-digit", month: "short", year: "numeric", timeZone: IST,
+            });
+          };
+          var li = function (evt) {
+            var link = evt.registrationLink || "/events";
+            var external = /^https?:\/\//.test(link);
+            var item = document.createElement("li");
+            item.className = "single-event";
+            var a = document.createElement("a");
+            a.className = "single-event-link";
+            a.href = link;
+            if (external) { a.target = "_blank"; a.rel = "noopener"; }
+            var content = document.createElement("div");
+            content.className = "single-event-content";
+            var h5 = document.createElement("h5");
+            h5.className = "event-title";
+            h5.textContent = evt.title;
+            content.appendChild(h5);
+            var metaRow = function (cls, iconCls, text) {
+              var wrap = document.createElement("div");
+              wrap.className = "single-event-content-meta";
+              var inner = document.createElement("div");
+              inner.className = cls;
+              var iconSpan = document.createElement("span");
+              var i = document.createElement("i");
+              i.className = iconCls;
+              iconSpan.appendChild(i);
+              inner.appendChild(iconSpan);
+              var textSpan = document.createElement("span");
+              textSpan.textContent = text;
+              inner.appendChild(textSpan);
+              wrap.appendChild(inner);
+              return wrap;
+            };
+            content.appendChild(metaRow("event-date", "fal fa-calendar", evt.dateText || fmtDate(evt.date)));
+            content.appendChild(metaRow("event-place", "fa-sharp fa-thin fa-location-dot", evt.venue || "SRKR Engineering College"));
+            a.appendChild(content);
+            item.appendChild(a);
+            return item;
+          };
+          fetch(CMS_URL + "/api/public/events", { headers: { Accept: "application/json" } })
+            .then(function (res) { return res.ok ? res.json() : null; })
+            .then(function (json) {
+              if (!json || !Array.isArray(json.docs)) return;
+              var list = document.getElementById("homeEventsList");
+              if (!list) return;
+              var upcoming = json.docs
+                .filter(function (e) {
+                  var d = new Date(e.date);
+                  return !isNaN(d.getTime()) && d >= todayStartIST;
+                })
+                .slice(0, 6);
+              list.textContent = "";
+              if (upcoming.length === 0) {
+                // CMS answered with no upcoming events — say so rather than
+                // resurrecting the build-time (possibly stale) list.
+                var none = document.createElement("li");
+                none.className = "single-event";
+                var noneLink = document.createElement("a");
+                noneLink.className = "single-event-link";
+                noneLink.href = "/events";
+                var noneContent = document.createElement("div");
+                noneContent.className = "single-event-content";
+                var p = document.createElement("p");
+                p.style.margin = "0";
+                p.style.color = "#666";
+                p.textContent = "No upcoming events right now — check back soon.";
+                noneContent.appendChild(p);
+                noneLink.appendChild(noneContent);
+                none.appendChild(noneLink);
+                list.appendChild(none);
+                return;
+              }
+              upcoming.forEach(function (e) { list.appendChild(li(e)); });
+            })
+            .catch(function () { /* keep build-time list */ });
+        })();
+      </script>
       <script is:inline>
         const initNoticeScroll = () => {
           const box = document.querySelector(".notice-content-box");
