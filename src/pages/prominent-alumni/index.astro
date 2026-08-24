@@ -556,7 +556,7 @@ const alumniIndia = [
         color: #1f2a44;
         font-weight: 800;
         font-size: 1.25rem;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -657,11 +657,12 @@ const alumniIndia = [
                         )}
                       </div>
                       <div class="placement-wall-card__meta">
-                        <p class="placement-wall-card__designation" title={alumnus.designation}>
-                          {alumnus.designation}
-                        </p>
-                        <p class="placement-wall-card__name" title={alumnus.name}>
+                        
+                        <p class="placement-wall-card__designation " title={alumnus.name}>
                           {alumnus.name}
+                        </p>
+                        <p class="placement-wall-card__name" title={alumnus.designation}>
+                          {alumnus.designation}
                         </p>
                         <p class="placement-wall-card__company" title={alumnus.company}>
                           {alumnus.company}

@@ -245,7 +245,44 @@ export const techClubs: Club[] = [
       linkedin: 'https://www.linkedin.com/company/iste-srkr',
       youtube: 'https://www.youtube.com/@iste_srkr'
     }
+  },
+  {
+  slug: 'coding-club',
+  name: 'Coding Club',
+  fullName: ' Coding Club',
+  dept: 'Student Clubs',
+  category: 'technical',
+  advisor: 'Haritha Priya . Dandu',
+  mission: 'Our mission is to empower students to learn and apply technology, organize projects and events that enhance skills and creativity, and build a supportive community for growth and positive impact.',
+  img: '/assets/images/clubs/srkr_coding_club.jpg',
+  objectives: [
+    'To improve student\'s programming, logical reasoning and problem-solving skills through practical exercises and challenging coding problems.',
+    'To improve students\' application and software development skills through hands-on project based learning.',
+    'To create a community of students with diverse technical skills who collaborate, learn from each other, share knowledge, and support continuous growth.',
+    'To provide a platform for students to learn and showcase their coding skills by participating in coding competitions, hackathons, technical events.',
+    'To make students industry-ready by guiding them in building professional portfolios, enhancing soft skills, and preparing them for technical interviews through regular coding practice, mentorship, and career-oriented training programs.'
+  ],
+  activities: [
+    'HackOverflow',
+    'Code Quest',
+    'Edgecase',
+    'Workshops',
+    'Iconcoderz'
+  ],
+  upcomingEvents: [
+    'DSA Training commences on 29 th July',
+    'Self-driven activity workshop on Aug 3rd',
+    'HackOverflow 2k26 – national level hackathon in Sep last week or oct 1 st week',
+    'Coding Club Induction in Sep (after arrival of 1 st years)'
+  ],
+  joinInfo: 'Eligibility: Any SRKR student from any year and any branch is eligible to join the club. Registration Process: Fill out the club registration form, pay the registration fee ₹350, and complete the verification process to become an official club member.',
+  socials: {
+    website: 'https://srkrcodingclub.in',
+    instagram: 'https://www.instagram.com/srkr_coding_club',
+    linkedin: 'https://www.linkedin.com/in/srkr-coding-club-549799293/',
+    youtube: 'https://www.youtube.com/@SRKRCODINGCLUB'
   }
+}
 ];
 
 export const culturalClubs: Club[] = [
