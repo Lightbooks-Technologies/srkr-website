@@ -247,9 +247,9 @@ export const techClubs: Club[] = [
     }
   },
   {
-  slug: 's-r-k-r-coding-club',
-  name: 'S.R.K.R. Coding Club',
-  fullName: 'SRKR Coding Club',
+  slug: 'coding-club',
+  name: 'Coding Club',
+  fullName: ' Coding Club',
   dept: 'Student Clubs',
   category: 'technical',
   advisor: 'Haritha Priya . Dandu',
