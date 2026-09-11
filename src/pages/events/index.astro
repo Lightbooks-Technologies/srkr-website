@@ -119,6 +119,9 @@ try {
           </div>
         </div>
 
+        {/* Server-rendered from the CMS at build time; refreshed client-side below
+            so admin status changes appear without waiting for a site rebuild. */}
+        <div id="evtLive">
         {events.length > 0 ? (
           <div class="row g-4">
             {events.map((evt) => (
@@ -160,8 +163,113 @@ try {
               : <p>Events are being updated. Please check back shortly.</p>}
           </div>
         )}
+        </div>
       </div>
     </section>
+
+    <script define:vars={{ CMS_URL, DEPT_LABELS }}>
+      // Live refresh: the page is statically prebuilt, so without this a status
+      // change in the admin panel only appears after a full rebuild (~2 min).
+      // The /api/public/events feed is CDN-cached 60s and returns published only.
+      (function () {
+        var IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+        var nowIST = new Date(Date.now() + IST_OFFSET_MS);
+        var todayStartIST = new Date(
+          Date.UTC(nowIST.getUTCFullYear(), nowIST.getUTCMonth(), nowIST.getUTCDate()) - IST_OFFSET_MS,
+        );
+        var absolute = function (u) {
+          return !u ? '' : u.indexOf('http') === 0 ? u : CMS_URL + u;
+        };
+        var fmtDate = function (iso) {
+          var d = new Date(iso);
+          if (isNaN(d.getTime())) return iso || '';
+          return d.toLocaleDateString('en-IN', {
+            day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata',
+          });
+        };
+        var el = function (tag, className, text) {
+          var n = document.createElement(tag);
+          if (className) n.className = className;
+          if (text) n.textContent = text;
+          return n;
+        };
+        var meta = function (iconClass, text) {
+          var m = el('div', 'evt-meta');
+          var i = document.createElement('i');
+          i.className = iconClass;
+          m.appendChild(i);
+          m.appendChild(el('span', '', text));
+          return m;
+        };
+        var card = function (evt) {
+          var col = el('div', 'col-lg-4 col-md-6');
+          var c = el('div', 'evt-card');
+          if (evt.image && evt.image.url) {
+            var img = document.createElement('img');
+            img.className = 'evt-card__img';
+            img.src = absolute(evt.image.url);
+            img.alt = evt.image.alt || evt.title;
+            img.loading = 'lazy';
+            c.appendChild(img);
+          }
+          var body = el('div', 'evt-card__body');
+          if (evt.department) {
+            body.appendChild(el('span', 'evt-badge', DEPT_LABELS[evt.department] || evt.department));
+          }
+          body.appendChild(el('h4', 'evt-title', evt.title));
+          if (evt.dateText || evt.date) {
+            body.appendChild(meta('fal fa-calendar', evt.dateText || fmtDate(evt.date)));
+          }
+          if (evt.venue) {
+            body.appendChild(meta('fa-sharp fa-thin fa-location-dot', evt.venue));
+          }
+          var actions = el('div', 'evt-actions');
+          var btn = function (href, cls, iconClass, label) {
+            var a = el('a', 'evt-btn ' + cls);
+            a.href = href;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            var i = document.createElement('i');
+            i.className = iconClass;
+            a.appendChild(i);
+            a.appendChild(document.createTextNode(' ' + label));
+            return a;
+          };
+          if (evt.registrationLink) {
+            actions.appendChild(btn(evt.registrationLink, 'evt-btn--primary', 'fa-regular fa-pen-to-square', 'Register'));
+          }
+          if (evt.attachment && evt.attachment.url) {
+            actions.appendChild(btn(absolute(evt.attachment.url), 'evt-btn--ghost', 'fa-regular fa-file-pdf', 'Brochure'));
+          }
+          body.appendChild(actions);
+          c.appendChild(body);
+          col.appendChild(c);
+          return col;
+        };
+        fetch(CMS_URL + '/api/public/events', { headers: { Accept: 'application/json' } })
+          .then(function (res) { return res.ok ? res.json() : null; })
+          .then(function (json) {
+            if (!json || !Array.isArray(json.docs)) return; // CMS down → keep build-time HTML
+            var upcoming = json.docs.filter(function (e) {
+              var d = new Date(e.date);
+              return !isNaN(d.getTime()) && d >= todayStartIST;
+            });
+            var root = document.getElementById('evtLive');
+            if (!root) return;
+            root.textContent = '';
+            if (upcoming.length === 0) {
+              var empty = el('div', 'evt-empty');
+              empty.appendChild(el('p', '', 'No upcoming events published right now. Please check back soon.'));
+              root.appendChild(empty);
+              return;
+            }
+            var row = el('div', 'row g-4');
+            upcoming.forEach(function (e) { row.appendChild(card(e)); });
+            root.appendChild(row);
+          })
+          .catch(function () { /* keep build-time HTML */ });
+      })();
+    </script>
 
     <SrkrFooter />
     <OffCanvas />

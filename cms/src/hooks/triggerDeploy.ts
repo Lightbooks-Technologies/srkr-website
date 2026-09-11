@@ -2,11 +2,20 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'paylo
 
 // Ping the site's Vercel Deploy Hook so the static site rebuilds and picks up
 // the change. No-op if SITE_DEPLOY_HOOK_URL isn't configured (e.g. local dev).
-const rebuild = async (req: { payload: { logger: { error: (m: string) => void } } }) => {
+const rebuild = async (req: {
+  payload: { logger: { info: (m: string) => void; error: (m: string) => void } }
+}) => {
   const url = process.env.SITE_DEPLOY_HOOK_URL
   if (!url) return
   try {
-    await fetch(url, { method: 'POST' })
+    const res = await fetch(url, { method: 'POST' })
+    if (!res.ok) {
+      // A revoked/regenerated hook URL answers with an error status, not a
+      // network failure — without this check the site silently stops syncing.
+      req.payload.logger.error(`Deploy hook responded ${res.status}: ${await res.text()}`)
+    } else {
+      req.payload.logger.info('Deploy hook triggered — site rebuilding (~2 min)')
+    }
   } catch (err) {
     req.payload.logger.error(`Deploy hook failed: ${String(err)}`)
   }
