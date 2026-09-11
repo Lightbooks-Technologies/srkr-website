@@ -16371,6 +16371,12 @@ xclip
 .rts-brand.v_1 .swiper {
   text-align: center;
 }
+.rts-brand.v_1 img{
+   max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
 
 .single-brand-logo a img {
   filter: saturate(0.5) contrast(0.1);
@@ -16392,6 +16398,9 @@ xclip
   .rts-about .rt-shape {
     display: none;
   }
+  .rts-brand.v_1 img{
+   max-height: 60px;
+}
 }
 .rts-about .rt-shape__1 {
   position: absolute;
@@ -17093,6 +17102,7 @@ xclip
   }
 }
 .program__single--item {
+  height: 100%;
   position: relative;
   z-index: 1;
 }
@@ -18270,6 +18280,7 @@ xclip
   text-align: center;
 }
 .campus-life__content .rts-section-title {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .campus-life__content .description {
@@ -20064,7 +20075,7 @@ xclip
 @media screen and (max-width: 992px) {
   .program-sidebar {
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 .program-sidebar .program-curriculum h6 {
