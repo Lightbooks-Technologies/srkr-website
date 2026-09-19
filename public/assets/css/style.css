@@ -8055,7 +8055,7 @@ a:focus,
 a:active {
   text-decoration: none;
   outline: none;
-  color: var(--rt-primary);
+  color: var(--rt-body);
   transition: all 0.3s ease;
 }
 
@@ -13211,7 +13211,7 @@ xclip
 }
 
 .rts-section-padding {
-  padding-top: 120px 0 120px;
+  padding-top: 120px 0;
 }
 
 .section__with__heading {
@@ -13226,7 +13226,7 @@ xclip
   font-weight: 400;
   margin-bottom: 0;
   line-height: 1.2;
-  margin-top: -15px;
+  /* margin-top: -15px; */
 }
 
 .rts-border-bottom-2 {
@@ -13339,7 +13339,7 @@ xclip
 }
 
 .rts-section-padding {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 @media screen and (max-width: 992px) {
   .rts-section-padding {
@@ -13772,7 +13772,7 @@ xclip
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 0;
-  margin-top: -15px;
+  /* margin-top: -15px; */
 }
 @media screen and (max-width: 768px) {
   .rts__section--title {
@@ -17992,7 +17992,7 @@ xclip
 }
 
 .rts-multi-row-section .row:not(:last-child) {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .rts-multi-row-section .rts-multi-row-image img {
   width: 100%;
@@ -18347,7 +18347,12 @@ xclip
 .rts-campus-section.v_3 .single-item__content {
   border: none;
 }
-
+.single-item{
+    height: 100%;
+    .single-item__content{
+        height: 100%
+    }
+}
 .single-item__meta {
   padding-left: 30px;
   padding-right: 30px;
@@ -18467,6 +18472,7 @@ xclip
 }
 .rts-research-section .research__items .research-procedure {
   padding: 40px 30px 40px 40px;
+  height: 100%;
   position: relative;
   background: var(--light-white);
   transition: var(--transition);
@@ -20484,7 +20490,7 @@ xclip
   color: var(--rt-white);
 }
 .semister-fee .rts-fee-chart__tab .nav-tabs .nav-link:focus {
-  border-color: var(--rt-theme) !important;
+  border-color: var(--rt-primary) !important;
 }
 .semister-fee .rts-fee-chart__content .table {
   overflow-y: scroll;
@@ -20561,6 +20567,13 @@ xclip
 .breadcrumb-height-full {
   height: 800px !important;
 }
+
+.recruiter-logo-box{
+  img {
+  max-height: 70px;
+}
+}
+
 @media screen and (max-width: 992px) {
   .breadcrumb-height-full {
     height: 500px !important;
