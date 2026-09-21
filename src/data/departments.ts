@@ -265,7 +265,7 @@ const coreDepartments: Department[] = [
     legacyCode: 'physics',
   },
    {
-    slug: 'English and Foreign Languages',
+    slug: 'ash/english-and-foreign-languages/',
     code: 'English and Foreign Languages',
     name: 'English and Foreign Languages',
     fullName: 'Department of English and Foreign Languages',
