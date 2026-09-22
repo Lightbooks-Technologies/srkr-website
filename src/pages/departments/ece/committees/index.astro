@@ -17,7 +17,7 @@ const dacMembers = [
   { name: 'Dr.G.Naga Raju', role: 'Member\nAlumini', link: '', image: '367' },
   { name: 'Dr.B.V.S.S.N. Raju', role: 'Member\nParent',designation: 'Professor', specialization: 'Communications & Signal Processing', profile: 'https://srkrec.irins.org/profile/320452', image: '214' },
 
-  { name: 'Sri.B.Srinivasa Rao, Scientist-F , RCI , DRDO , HYD', role: 'Member\nIndustry person', link: '', image: '5' },
+  { name: 'Sri.B.Srinivasa Rao, Scientist-F , RCI , DRDO , HYD', role: 'Member\nIndustry person', link: '', image: 'null' },
 ];
 
 // BoS Committee Members
@@ -124,9 +124,14 @@ const bosMeetings = [
           {dacMembers.map((member) => (
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="single-cat-item">
-                <div class="cat-thumb" style="height: 250px;">
+                <div class="cat-thumb d-flex align-items-center justify-content-center" style="height: 250px;">
                   {/* TODO: replace with real committee member photo */}
-                  <img src={`/assets/images/faculty/ece/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;">
+                  {/* <img src={`/assets/images/faculty/ece/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;"> */}
+                {member.image !== 'null' ? (
+                    <img src={`/assets/images/faculty/ece/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;">
+                  ) : (
+                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
+                  )}
                 </div>
                 <div class="cat-meta">
                   <div class="cat-title">
