@@ -8055,7 +8055,7 @@ a:focus,
 a:active {
   text-decoration: none;
   outline: none;
-  color: var(--rt-primary);
+  color: var(--rt-body);
   transition: all 0.3s ease;
 }
 
