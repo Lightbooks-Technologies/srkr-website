@@ -7,16 +7,25 @@ import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
 const labs = [
-  { name: 'Electrical Circuits Lab',                        img: '/assets/images/placeholder/photo-1581094794329-c8112a89af12_800x600.jpg' },
-  { name: 'Electrical Machines Lab',                        img: '/assets/images/placeholder/photo-1473341304170-971dccb5ac1e_800x600.jpg' },
-  { name: 'Power Electronics Lab',                          img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
-  { name: 'Control Systems Lab',                            img: '/assets/images/placeholder/photo-1565043666747-69f6646db940_800x600.jpg' },
-  { name: 'Simulation Lab',                          img: '/assets/images/placeholder/photo-1517694712202-14dd9538aa97_800x600.jpg' },
-  { name: 'Solar Energy Systems Lab',                           img: '/assets/images/placeholder/photo-1466611653911-95081537e5b7_800x600.jpg' },
-  // { name: 'High Voltage Engineering Lab',                   img: '/assets/images/placeholder/photo-1473341304170-971dccb5ac1e_800x600.jpg' },
-  { name: 'Microprocessors & Microcontrollers Lab',         img: '/assets/images/placeholder/photo-1518770660439-4636190af475_800x600.jpg' },
-  { name: 'PSCAD / Power System Simulation Lab',            img: '/assets/images/placeholder/photo-1581094794329-c8112a89af12_800x600.jpg' },
-  { name: 'Project & Innovation Lab',                       img: '/assets/images/placeholder/photo-1581092162384-8987c1d64718_800x600.jpg' },
+  // UG Labs
+  { name: 'Electrical Machines Laboratory', type: 'UG Lab', img: '/assets/images/eee/electrical-machines-lab.jpg' },
+  { name: 'Basic Electrical System Laboratory', type: 'UG Lab', img: '/assets/images/eee/basic-electric-systems-lab.jpg' },
+  { name: 'Networks Laboratory', type: 'UG Lab', img: '/assets/images/eee/networks-lab.jpg' },
+  { name: 'Digital Design Laboratory', type: 'UG Lab', img: '/assets/images/eee/digital-design-lab.jpg' },
+  { name: 'Electrical Systems Simulation Laboratory', type: 'UG Lab', img: '/assets/images/eee/simulation-lab.jpg' },
+  { name: 'Smart System Laboratory', type: 'UG Lab', img: '/assets/images/eee/smart-system.jpg' },
+  { name: 'Power Electronics Laboratory', type: 'UG Lab', img: '/assets/images/eee/power-electronics-lab.jpg' },
+  { name: 'Microprocessor and Microcontroller Laboratory', type: 'UG Lab', img: '/assets/images/eee/microprocessors-lab.jpg' },
+  { name: 'Electronics Engineering Workshop', type: 'UG Lab', img: '/assets/images/eee/electronics-workshop.jpg' },
+  { name: 'Solar Energy Systems Laboratory', type: 'UG Lab', img: '/assets/images/eee/solar-energy-systems-lab.jpg' },
+  { name: 'Robotics & Control System Laboratory', type: 'UG Lab', img: '/assets/images/eee/robotics-lab.jpg' },
+  { name: 'Electric Vehicles Laboratory', type: 'UG Lab', img: '/assets/images/eee/electric-vehicles-lab.jpg' },
+  { name: 'Tinkering Laboratory', type: 'UG Lab', img: '/assets/images/eee/tinkering-lab.jpg' },
+  { name: 'Design Thinking Laboratory', type: 'UG Lab', img: '/assets/images/eee/sadhana-projects-lab.jpg' },
+  
+  // PG Labs
+  { name: 'Power System Laboratory', type: 'PG Lab', img: '/assets/images/eee/pg-simulation-lab.jpg' },
+  { name: 'Power Electronics for Renewable Integration Lab', type: 'PG Lab', img: '/assets/images/eee/ses-lab.jpg' },
 ];
 ---
 
@@ -44,7 +53,7 @@ const labs = [
   }
 
   .cat-title a {
-    font-size: 1.5rem;;
+    font-size: 1.5rem;
   }
 
   .cat-link {
@@ -52,9 +61,14 @@ const labs = [
   }
 
   .cat-title {
-    min-height: 3rem;
+    min-height: 3.5rem;
     display: flex;
     align-items: center;
+  }
+
+  /* Optional styling tweak for the thumb badge based on type */
+  .cat-link-btn.pg-badge {
+    background-color: var(--rts-primary, #880e4f) !important;
   }
 </style>
 
@@ -91,7 +105,7 @@ const labs = [
 
             <div class="program-about">
               <h4 class="title">Our Laboratories</h4>
-              <p>The department maintains twelve well-equipped laboratories supporting B.Tech and M.Tech courses, project work, and research. Facilities range from foundational electrical circuits and machines benches to modern setups for power electronics, control systems, renewable energy, high voltage testing, and large-scale power system simulation using MATLAB/Simulink and PSCAD. These labs also support consultancy services to industry and utilities.</p>
+              <p>The department maintains well-equipped UG and PG laboratories supporting B.Tech and M.Tech courses, project work, and advanced research. Facilities range from foundational electrical systems, networks, and machines benches to modern setups for power electronics, renewable integration, robotics, electric vehicles, and power system simulation using state-of-the-art tools. These labs also support specialized innovation, design thinking, and consultancy services to industry and utilities.</p>
             </div>
 
             <div class="rts-section mb--40 mt--40">
@@ -104,7 +118,9 @@ const labs = [
                   <div class="single-cat-item">
                     <div class="cat-thumb">
                       <img src={lab.img} alt={lab.name} />
-                      <a href="#" class="cat-link-btn">Laboratory</a>
+                      <a href="#" class={`cat-link-btn ${lab.type === 'PG Lab' ? 'pg-badge' : ''}`}>
+                        {lab.type}
+                      </a>
                     </div>
                     <div class="cat-meta">
                       <div class="cat-title">
