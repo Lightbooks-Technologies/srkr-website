@@ -97,7 +97,7 @@ const institutePages: Record<string, PageSeo> = {
   '/board-of-studies/': {
     title: `Board of Studies (BoS) | Department-wise Composition | ${BRAND}`,
     description:
-      'Board of Studies at SRKR Engineering College — department-wise composition, members, and curriculum-design responsibilities for B.Tech, M.Tech, MBA and MCA programs.',
+      'Board of Studies at SRKR Engineering College — department-wise composition, members, and curriculum-design responsibilities for B.Tech, M.Tech programs.',
     breadcrumbs: [
       { name: 'About', url: '/college-profile/' },
       { name: 'Governance', url: '/college-profile/' },
@@ -216,9 +216,9 @@ const institutePages: Record<string, PageSeo> = {
 
 const admissionPages: Record<string, PageSeo> = {
   '/programmes/': {
-    title: `Programs Offered | B.Tech, M.Tech, MBA, MCA | ${BRAND}`,
+    title: `Programs Offered | B.Tech, M.Tech | ${BRAND}`,
     description:
-      'Academic programs at SRKR — 12 B.Tech specializations (CSE, ECE, EEE, Civil, Mech, IT, AI/ML, AI/DS, CSIT, CSBS, CIC, CSD), M.Tech, MBA and MCA. Total UG intake 1,860+ seats.',
+      'Academic programs at SRKR — 12 B.Tech specializations (CSE, ECE, EEE, Civil, Mech, IT, AI/ML, AI/DS, CSIT, CSBS, CIC, CSD), M.Tech. Total UG intake 1,860+ seats.',
     breadcrumbs: [
       { name: 'Admissions', url: '/programmes/' },
       { name: 'Programs', url: '/programmes/' },
@@ -227,7 +227,7 @@ const admissionPages: Record<string, PageSeo> = {
   '/procedure/': {
     title: `Admission Procedure & Eligibility 2025–26 | ${BRAND}`,
     description:
-      'B.Tech, M.Tech, MBA and MCA admission procedure at SRKR Engineering College — eligibility, AP EAPCET/ECET/PGCET/ICET counselling, management quota, documents required.',
+      'B.Tech, M.Tech admission procedure at SRKR Engineering College — eligibility, AP EAPCET/ECET/PGCET/ICET counselling, management quota, documents required.',
     breadcrumbs: [
       { name: 'Admissions', url: '/programmes/' },
       { name: 'Procedure', url: '/procedure/' },
@@ -236,7 +236,7 @@ const admissionPages: Record<string, PageSeo> = {
   '/regulations/': {
     title: `Academic Regulations | R20, R23 | ${BRAND}`,
     description:
-      'Academic regulations governing B.Tech, M.Tech, MBA and MCA programs at SRKR Engineering College — autonomous-institution regulations, credit system and grading guidelines.',
+      'Academic regulations governing B.Tech, M.Tech programs at SRKR Engineering College — autonomous-institution regulations, credit system and grading guidelines.',
     breadcrumbs: [
       { name: 'Admissions', url: '/programmes/' },
       { name: 'Academic Regulations', url: '/regulations/' },
@@ -275,7 +275,7 @@ const academicPages: Record<string, PageSeo> = {
   '/syllabus/': {
     title: `Syllabus | B.Tech, M.Tech & MBA Curriculum | ${BRAND}`,
     description:
-      'Syllabus and curriculum documents for all B.Tech, M.Tech, MBA and MCA programs at SRKR Engineering College — regulation-wise and department-wise downloads.',
+      'Syllabus and curriculum documents for all B.Tech, M.Tech programs at SRKR Engineering College — regulation-wise and department-wise downloads.',
     breadcrumbs: [
       { name: 'Academics', url: '/departments/' },
       { name: 'Syllabus', url: '/syllabus/' },
