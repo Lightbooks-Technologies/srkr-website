@@ -1,0 +1,210 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+import DeptNav from '../../../components/DeptNav.astro';
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="National Service Scheme (NSS) | SRKR Engineering College" description="National Service Scheme (NSS) unit activities, community service programs, and reports at SRKR Engineering College." />
+    <style>
+      .recruiter-logo-box {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        transition: all 0.3s ease;
+      }
+      .recruiter-logo-box:hover {
+        border-color: #1a3c6b;
+        box-shadow: 0 4px 12px rgba(26, 60, 107, 0.1);
+        transform: translateY(-2px);
+      }
+      .recruiter-logo-box img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+        /* filter: grayscale(100%); */
+        transition: filter 0.3s ease;
+      }
+      .recruiter-logo-box:hover img {
+        /* filter: grayscale(0%); */
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/nss/nss-home.jpeg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/campus-life">Campus Life</a></li>
+                <li class="breadcrumb-item"><a href="/campus-life/nss/">National Service Scheme</a></li>
+              </ul>
+              <h1 class="section-title">National Service Scheme (NSS)</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About NSS -->
+    <section class="rts-about-university pb--80 pt--20">
+      <div class="container">
+        <div class="row">
+          <div class="rts-section">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+              <h3 class="rts-section-title">About NSS</h3>
+            </div>
+            <div class="col-lg-8 col-md-9 col-sm-12">
+              <p class="rts-section-description">
+                The National Service Scheme (NSS) unit at SRKR Engineering College fosters a deep sense of social responsibility, civic consciousness, and community engagement among students. Guided by the motto "Not Me, But You," our volunteers actively participate in rural development, blood donation camps, environmental sustainability initiatives, health literacy drives, and educational outreach programs.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="academic-picture">
+              <img src="https://media.licdn.com/dms/image/v2/D4D22AQHeZWAGnRqxAw/feedshare-image-high-res/B4DaAGEyJCJgAU-/0/1786808312621?e=1791417600&v=beta&t=0b-wg0Xilz3nq3VQvJZlfXmmgoHQ-b6B5ENVZlb3q1k" alt="NSS Activities" style="max-height: 400px; object-fit: cover; width: 100%; border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi Row Sections -->
+    <div class="rts-multi-row-section pb--80">
+      <div class="container">
+        <!-- Partner Organizations & Outreach -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://media.licdn.com/dms/image/v2/D5622AQFubhM6wJlbIQ/feedshare-shrink_800/B56aC6paKWJwAc-/0/1789837813096?e=1791417600&v=beta&t=kcXkhMKomCC4V59cRjxd8o1xszYTExsoI049fBhnrNY" alt="community outreach" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Partner Organizations & Outreach</h4>
+              <p>We collaborate with government bodies, healthcare institutions, local panchayats, and non-profit organizations to maximize community impact and ensure sustained rural upliftment.</p>
+              <div class="row g-4 mt-3">
+              
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/gov.png" alt="Government Body" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/youth-affairs.png" alt="Ministry of Youth Affairs" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/red-cross.png" alt="Indian Red Cross Society" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/swachh-bharat.png" alt="Swachh Bharat Mission" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/lions-club.png" alt="Lions Club" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/rotary.png" alt="Rotary International" loading="lazy" decoding="async">
+                  </div>
+                </div>
+               
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/district-medical.png" alt="District Medical Board" loading="lazy" decoding="async">
+                  </div>
+                </div>
+             
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/forest-dept.png" alt="Forest Department" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="recruiter-logo-box">
+                    <img src="/assets/images/nss/partners/blood-bank.png" alt="Local Blood Bank" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NSS Activities & Training -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content left-side">
+              <h4 class="row-title">Core Activities & Programs</h4>
+              <p>Our NSS unit organizes regular and special camps focusing on leadership training, personality development, environmental conservation, and social welfare.</p>
+              <div class="program-list">
+                <a href="#" class="program-item"><span>Mega Blood Donation Camps <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Tree Plantation & Green Drives <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Swachh Bharat & Village Cleaning <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Health & Medical Checkup Camps <i class="fa-regular fa-chevron-right"></i></span></a>
+                <a href="#" class="program-item"><span>Special 7-Day Rural Residential Camps <i class="fa-regular fa-chevron-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://media.licdn.com/dms/image/v2/D5622AQFuyMPE3mRPyA/feedshare-shrink_800/B56aAOb70YK4Ac-/0/1786948599380?e=1791417600&v=beta&t=gUxii_5dKJicLmM307DM1Ut_H43cTp55f8Gat1VkD5Y" alt="nss activities" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <!-- Year-wise Records -->
+        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="https://media.licdn.com/dms/image/v2/D5622AQELoLjkbubTPQ/feedshare-shrink_1280/B56Z_k8THzK8AQ-/0/1786252440313?e=1791417600&v=beta&t=Sdz12yfypHGCn_pAKTRM6MaV9l3wqvAIOwhNiVQDf-c" alt="nss reports" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Year-wise Activity Reports</h4>
+              <p>Download detailed annual activity reports, camp event summaries, and volunteer service statistics for each academic year.</p>
+              <div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/nss/reports/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                    <span>{year} NSS Annual Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Multi Row Sections End -->
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
