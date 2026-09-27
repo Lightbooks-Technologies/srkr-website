@@ -4,197 +4,283 @@ import FooterScripts from '../../../components/FooterScripts.astro';
 import SrkrHeader from '../../../components/SrkrHeader.astro';
 import SrkrFooter from '../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../components/OffCanvas.astro';
-import DeptNav from '../../../components/DeptNav.astro';
 
-const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+const pageTitle = "National Service Scheme (NSS)";
+const clubFullName = "National Service Scheme Unit - SRKR";
+const category = "service";
+const dept = "Institution-wide / Student Affairs";
+const mission = "The National Service Scheme (NSS) at SRKR Engineering College aims to instill the urge for social service in young students and develop their personality through community service. It bridges the gap between the campus and society by engaging students in various social welfare activities, rural development programs, blood donation camps, and environmental awareness drives.";
+const vision = "To foster national consciousness, social responsibility, and selfless service among student communities, empowering them to become compassionate leaders of tomorrow.";
+const advisor = "Dr. K. V. Sarma (Program Officer)";
+const joinInfo = "Enrollment opens at the start of the academic year for first and second-year students. Watch out for annual recruitment notifications.";
+const clubImg = "/assets/images/clubs/nss-plant.jpg";
+
+const objectives = [
+  "Understand the community in which they work and relate themselves to their community.",
+  "Identify the needs and problems of the community and involve themselves in problem-solving processes.",
+  "Develop among themselves a sense of social and civic responsibility.",
+  "Gain leadership qualities and democratic attitude for cooperative living.",
+  "Develop competence required for group-living and sharing of responsibilities."
+];
+
+const leaders = [
+  { role: "Program Officer", name: "Dr. K. V. Sarma", details: "Dept. of Civil Engineering" },
+  { role: "Student President", name: "G. V. S. Rahul", details: "IV/IV B.Tech" },
+  { role: "Secretary", name: "P. Sneha", details: "III/IV B.Tech" }
+];
+
+const recentEvents = [
+  {
+    title: "Viksit Bharat Young Leaders Dialogue 2027 – Mass Quiz",
+    description: "SRKR NSS Unit conducted the Viksit Bharat Young Leaders Dialogue 2027 Mass Quiz to engage students and young volunteers in learning about India’s development, national priorities, leadership, and the role of youth in building a developed India.",
+    image: "/assets/images/clubs/nss-1.png"
+  },
+  {
+    title: "Eco-Friendly Ganesh Idol Distribution – 2200+ Idols",
+    description: "As part of the Ganesh Chaturthi celebrations, SRKR NSS Unit organized an Eco-Friendly Ganesh Idol Distribution Programme, distributing 2200+ clay idols to promote environmental responsibility.",
+    image: "/assets/images/events/ganesh-idols.jpg"
+  },
+  {
+    title: "Digital Awareness Program – Day 3",
+    description: "Conducted a Digital Awareness Program at ZP High School, Kopalli, educating students on cyber crimes, online scams, safe digital practices, and OTP safety.",
+    image: "/assets/images/events/digital-awareness.jpg"
+  },
+  {
+    title: "Literacy Awareness Program – Day 2",
+    description: "Conducted an interactive session at ZP High School, Chinamiram, highlighting the importance of education, literacy, regular learning, and habit building.",
+    image: "/assets/images/events/literacy-day2.jpg"
+  },
+  {
+    title: "Literacy Awareness Rally – Day 1",
+    description: "NSS volunteers actively participated in a Literacy Awareness Rally with placards and slogans advocating for equal learning opportunities and education for all children.",
+    image: "/assets/images/events/literacy-rally.jpg"
+  },
+  {
+    title: "TB Awareness Program – Early Detection and Prevention",
+    description: "Conducted a health awareness session at the T&P Seminar Hall with expert medical practitioners focusing on Tuberculosis prevention and early detection.",
+    image: "/assets/images/events/tb-awareness.jpg"
+  },
+  {
+    title: "Prize Distribution Ceremony for School Children at ZP High School, Chinnamiram",
+    description: "Recognized and awarded prizes to school children who actively participated in various Independence Day competitions organized by the NSS unit.",
+    image: "/assets/images/events/prize-distribution.jpg"
+  },
+  {
+    title: "Participation in Independence Day Celebrations at JNTU, Kakinada",
+    description: "NSS volunteers represented the college at JNTU Kakinada for Independence Day celebrations, demonstrating national commitment and civic responsibility.",
+    image: "/assets/images/events/jntu-independence.jpg"
+  },
+  {
+    title: "Swachh Bharat Cleanliness Drive at Public Park",
+    description: "Cleaned and restored a neglected public park to make it safe, clean, and usable for the community through collective volunteer effort.",
+    image: "/assets/images/events/swachh-park.jpg"
+  },
+  {
+    title: "Plastic Collection Drive at ZP High School, Chinnamiram",
+    description: "Created awareness on plastic waste hazards, collecting and segregating plastic waste from school premises for recycling.",
+    image: "/assets/images/events/plastic-collection.jpg"
+  },
+  {
+    title: "Independence Day Competitions at ZP High School, Chinnamiram",
+    description: "Organized lemon & spoon races, quizzes, elocution, and singing competitions to foster a patriotic spirit and teamwork among students.",
+    image: "/assets/images/events/independence-comps.jpg"
+  },
+  {
+    title: "Celebration of 150 Years of Vande Mataram",
+    description: "Associated with ABVP to commemorate 150 years of Vande Mataram with over 3,000 students taking the Nasha Mukt Bharat pledge.",
+    image: "/assets/images/events/vande-mataram.jpg"
+  },
+  {
+    title: "Ride for a Drug-Free India!",
+    description: "Unites volunteers through a high-energy cycle rally promoting Nasha Mukt Bharat and encouraging healthy lifestyle choices.",
+    image: "/assets/images/events/drug-free-rally.jpg"
+  },
+  {
+    title: "NSS Orientation & Interaction Session",
+    description: "An inspiring session led by the Regional Director of NSS, focusing on volunteer roles, MY Bharat portal registrations, and leadership development.",
+    image: "/assets/images/events/nss-orientation.jpg"
+  },
+  {
+    title: "Campaign Against Nuclear Weapons.",
+    description: "An advocacy campaign inspiring students and community members to support peace, diplomacy, and a nuclear-free global future.",
+    image: "/assets/images/events/nuclear-awareness.jpg"
+  },
+  {
+    title: "NSS Pre-Camp Survey",
+    description: "Door-to-door community survey conducted in Chinnamiram village by volunteers to identify local needs for upcoming special camps.",
+    image: "/assets/images/events/pre-camp-survey.jpg"
+  }
+];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="National Service Scheme (NSS) | SRKR Engineering College" description="National Service Scheme (NSS) unit activities, community service programs, and reports at SRKR Engineering College." />
-    <style>
-      .recruiter-logo-box {
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-radius: 8px;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        transition: all 0.3s ease;
-      }
-      .recruiter-logo-box:hover {
-        border-color: #1a3c6b;
-        box-shadow: 0 4px 12px rgba(26, 60, 107, 0.1);
-        transform: translateY(-2px);
-      }
-      .recruiter-logo-box img {
-        max-width: 100%;
-        max-height: 60px;
-        object-fit: contain;
-        /* filter: grayscale(100%); */
-        transition: filter 0.3s ease;
-      }
-      .recruiter-logo-box:hover img {
-        /* filter: grayscale(0%); */
-      }
-    </style>
+    <BaseHead 
+      title={`${pageTitle} | Student Clubs | SRKR Engineering College`} 
+      description={mission} 
+    />
   </head>
   <body>
     <SrkrHeader />
 
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(https://media.licdn.com/dms/image/v2/D4D22AQHeZWAGnRqxAw/feedshare-image-high-res/B4DaAGEyJCJgAU-/0/1786808312621?e=1791417600&v=beta&t=0b-wg0Xilz3nq3VQvJZlfXmmgoHQ-b6B5ENVZlb3q1k);">
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/clubs/nss-breadcrumb.png);">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/campus-life">Campus Life</a></li>
-                <li class="breadcrumb-item"><a href="/campus-life/nss/">National Service Scheme</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Life @ SRKR</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Student Clubs</a></li>
               </ul>
-              <h1 class="section-title">National Service Scheme (NSS)</h1>
+              <h1 class="section-title">{pageTitle}</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- BREADCRUMB END -->
 
-    <!-- About NSS -->
-    <section class="rts-about-university pb--80 pt--40">
+    <!-- MAIN CONTENT -->
+    <div class="rts-history py-5">
       <div class="container">
-        <div class="row">
-          <div class="rts-section">
-            <div class="col-lg-4 col-md-3 col-sm-12">
-              <h3 class="rts-section-title">About NSS</h3>
-            </div>
-            <div class="col-lg-8 col-md-9 col-sm-12">
-              <p class="rts-section-description">
-                The SRKR Engineering College NSS unit operates under the motto "Not Me, But You" to foster civic responsibility through rural development, blood donation, environmental drives, and educational outreach.</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
+        <div class="row g-5">
+          <!-- Main Content Column -->
+          <div class="col-lg-8">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">About {clubFullName}</h3>
+              <p style="text-align: justify; font-size: 16px; line-height: 1.8;" class="mb-5">
+                {mission}
+              </p>
 
-    <!-- Multi Row Sections -->
-    <div class="rts-multi-row-section pb--80">
-      <div class="container">
-        <!-- Partner Organizations & Outreach -->
-        <div class="row g-5 justify-content-center justify-content-start align-items-center">
-          <div class="col-lg-7 col-md-11">
-            <div class="rts-multi-row-image">
-              <img src="https://media.licdn.com/dms/image/v2/D5622AQFubhM6wJlbIQ/feedshare-shrink_800/B56aC6paKWJwAc-/0/1789837813096?e=1791417600&v=beta&t=kcXkhMKomCC4V59cRjxd8o1xszYTExsoI049fBhnrNY" alt="community outreach" style="border-radius: 10px;" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-11">
-            <div class="rts-multi-row-content">
-              <h4 class="row-title">Partner Organizations & Outreach</h4>
-              <p>We collaborate with government bodies, healthcare institutions, local panchayats, and non-profit organizations to maximize community impact and ensure sustained rural upliftment.</p>
-              <div class="row g-4 mt-3">
-              
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/gov.png" alt="Government Body" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/youth-affairs.png" alt="Ministry of Youth Affairs" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/red-cross.png" alt="Indian Red Cross Society" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/swachh-bharat.png" alt="Swachh Bharat Mission" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/lions-club.png" alt="Lions Club" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/rotary.png" alt="Rotary International" loading="lazy" decoding="async">
-                  </div>
-                </div>
-               
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/district-medical.png" alt="District Medical Board" loading="lazy" decoding="async">
-                  </div>
-                </div>
-             
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/forest-dept.png" alt="Forest Department" loading="lazy" decoding="async">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="recruiter-logo-box">
-                    <img src="/assets/images/nss/partners/blood-bank.png" alt="Local Blood Bank" loading="lazy" decoding="async">
-                  </div>
-                </div>
-              
+              <div class="border-top my-4"></div>
+
+              <!-- Objectives Section -->
+              <div class="rts-scholarship-description mb-5">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-bullseye-arrow me-2" style="color: var(--rt-primary);"></i> Key Objectives</h4>
+                <ul class="list-unstyled one-column-list">
+                  {objectives.map((obj) => (
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="fa-solid fa-circle-check me-3 mt-1" style="color: var(--rt-primary); font-size: 14px;"></i>
+                      <span style="font-size: 15px; line-height: 1.6;">{obj}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- NSS Activities & Training -->
-        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
-          <div class="col-lg-5 col-md-11">
-            <div class="rts-multi-row-content left-side">
-              <h4 class="row-title">Core Activities & Programs</h4>
-              <p>Our NSS unit organizes regular and special camps focusing on leadership training, personality development, environmental conservation, and social welfare.</p>
-              <div class="program-list">
-                <a href="#" class="program-item"><span>Mega Blood Donation Camps <i class="fa-regular fa-chevron-right"></i></span></a>
-                <a href="#" class="program-item"><span>Tree Plantation & Green Drives <i class="fa-regular fa-chevron-right"></i></span></a>
-                <a href="#" class="program-item"><span>Swachh Bharat & Village Cleaning <i class="fa-regular fa-chevron-right"></i></span></a>
-                <a href="#" class="program-item"><span>Health & Medical Checkup Camps <i class="fa-regular fa-chevron-right"></i></span></a>
-                <a href="#" class="program-item"><span>Special 7-Day Rural Residential Camps <i class="fa-regular fa-chevron-right"></i></span></a>
+              <!-- Recent Events / Accordion -->
+              <div class="rts-scholarship-description mb-4">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Events</h4>
+                <div class="program-credit-area faq rts-scholarship-description">
+                  <div class="program-accordion">
+                    <div class="accordion" id="club-events-nss">
+                      {recentEvents.map((evt, idx) => (
+                        <div class="accordion-item">
+                          <button 
+                            class={`accordion-button ${idx > 0 ? 'collapsed' : ''}`} 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target={`#evt-collapse-${idx}`} 
+                            aria-expanded={idx === 0 ? 'true' : 'false'}
+                          >
+                            {evt.title}
+                          </button>
+                          <div 
+                            id={`evt-collapse-${idx}`} 
+                            class={`accordion-collapse collapse ${idx === 0 ? 'show' : ''}`} 
+                            data-bs-parent="#club-events-nss"
+                          >
+                            <div class="accordion-body">
+                              <div class="row g-4 align-items-center">
+                                <div class="col-lg-7 rts-scholarship-description">
+                                  <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
+                                    {evt.description}
+                                  </p>
+                                </div>
+                                <div class="col-lg-5">
+                                  <img 
+                                    src={evt.image} 
+                                    alt={evt.title} 
+                                    style="height: 100%; min-height: 220px; object-fit: cover; width: 100%; border-radius: 8px;" 
+                                    loading="lazy" 
+                                    decoding="async" 
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-7 col-md-11">
-            <div class="rts-multi-row-image">
-              <img src="https://media.licdn.com/dms/image/v2/D5622AQFuyMPE3mRPyA/feedshare-shrink_800/B56aAOb70YK4Ac-/0/1786948599380?e=1791417600&v=beta&t=gUxii_5dKJicLmM307DM1Ut_H43cTp55f8Gat1VkD5Y" alt="nss activities" style="border-radius: 10px;" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
 
-        <!-- Year-wise Records -->
-        <div class="row g-5 justify-content-center justify-content-start align-items-center mt--80">
-          <div class="col-lg-7 col-md-11">
-            <div class="rts-multi-row-image">
-              <img src="https://media.licdn.com/dms/image/v2/D5622AQELoLjkbubTPQ/feedshare-shrink_1280/B56Z_k8THzK8AQ-/0/1786252440313?e=1791417600&v=beta&t=Sdz12yfypHGCn_pAKTRM6MaV9l3wqvAIOwhNiVQDf-c" alt="nss reports" style="border-radius: 10px;" loading="lazy" decoding="async">
             </div>
           </div>
-          <div class="col-lg-5 col-md-11">
-            <div class="rts-multi-row-content">
-              <h4 class="row-title">Year-wise Activity Reports</h4>
-              <p>Download detailed annual activity reports, camp event summaries, and volunteer service statistics for each academic year.</p>
-              <div class="program-list">
-                {years.map(year => (
-                  <a href={`/assets/documents/nss/reports/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
-                    <span>{year} NSS Annual Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+
+          <!-- Sidebar Column -->
+          <div class="col-lg-4">
+            <div class="card shadow-sm p-4 border-0" style="background-color: #f8fafc; border-radius: 12px; position: sticky; top: 100px;">
+              <!-- Club Thumbnail -->
+              <div class="cat-thumb mb-4 overflow-hidden" style="border-radius: 0; background: #fff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1;">
+                <img 
+                  src={clubImg} 
+                  alt={pageTitle} 
+                  class="img-fluid" 
+                  style="object-fit: contain; max-height: 100%; max-width: 100%;" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+
+              <h4 class="h5 mb-4 border-bottom pb-2" style="color: var(--rt-primary);">Club Details</h4>
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3 d-flex justify-content-between">
+                  <strong class="text-muted">Category:</strong>
+                  <span class="text-capitalize badge text-white py-2 px-3" style="background-color: var(--rt-primary);">{category}</span>
+                </li>
+                <li class="mb-3 d-flex justify-content-between align-items-center">
+                  <strong class="text-muted">Scope/Dept:</strong>
+                  <span class="fw-semibold">{dept}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">Faculty Advisor:</strong>
+                  <span class="fw-semibold text-dark"><i class="fa-regular fa-user-tie me-2" style="color: var(--rt-primary);"></i> {advisor}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">How to Join:</strong>
+                  <span style="font-size: 14px; line-height: 1.5;" class="text-secondary d-block">{joinInfo}</span>
+                </li>
+              </ul>
+
+              <!-- Social Links -->
+              <div class="mt-4 border-top pt-3 mb-4">
+                <strong class="text-muted d-block mb-2">Connect with Us:</strong>
+                <div class="d-flex gap-3" style="font-size: 20px;">
+                  <a href="https://www.srkrec.ac.in" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="College Website">
+                    <i class="fa-regular fa-globe"></i>
                   </a>
-                ))}
+                  <a href="https://www.instagram.com/srkr_engineering_college" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/school/srkr-engineering-college/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a href="https://www.youtube.com/@srkreclive8303" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Multi Row Sections End -->
 
     <SrkrFooter />
     <OffCanvas />
