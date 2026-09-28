@@ -90,6 +90,51 @@ try {
 } catch {
   /* CMS down → keep static NEWS */
 }
+const volumes = [
+  {
+    title: "Volume 1",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle1.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle2.pdf" },
+      { name: "Issue 3", pdfUrl: "/assets/documents/chronicles/chronicle3.pdf" }
+    ]
+  },
+  {
+    title: "Volume 2",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle4.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle5.pdf" },
+      { name: "Issue 3", pdfUrl: "/assets/documents/chronicles/chronicle6.pdf" }
+    ]
+  },{
+    title: "Volume 3",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle7.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle8.pdf" },
+      { name: "Issue 3", pdfUrl: "/assets/documents/chronicles/chronicle9.pdf" }
+    ]
+  },{
+    title: "Volume 4",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle10.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle11.pdf" },
+      { name: "Issue 3", pdfUrl: "/assets/documents/chronicles/chronicle12.pdf" }
+    ]
+  },{
+    title: "Volume 5",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle13.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle14.pdf" },
+      { name: "Issue 3", pdfUrl: "/assets/documents/chronicles/chronicle15.pdf" }
+    ]
+  },{
+    title: "Volume 6",
+    issues: [
+      { name: "Issue 1", pdfUrl: "/assets/documents/chronicles/chronicle16.pdf" },
+      { name: "Issue 2", pdfUrl: "/assets/documents/chronicles/chronicle17.pdf" },
+    ]
+  },
+];
 ---
 
 <!doctype html>
@@ -1136,7 +1181,7 @@ try {
       <!-- ── UG PROGRAMS END ─────────────────────────────────────── -->
 
       <!-- ── CAMPUS LIFE ─────────────────────────────────────────── -->
-      <section class="rts__section rts-section-padding">
+      <section class="rts__section rts-section-padding pb--20">
         <div class="container">
           <div class="row">
             <div class="col-lg-5 col-md-6">
@@ -1514,7 +1559,81 @@ try {
       </div>
     </section> -->
       <!-- research area end -->
+<!-- ── SRKR CAMPUS CHRONICLE SECTION ────────────────────── -->
+    <section class="rts-chronicle rts-section-padding-small">
+      <div class="container">
+        <!-- Main Row Container -->
+        <div class="row g-5 justify-content-center justify-content-lg-start align-items-center">
+          
+          <!-- Left Column: Single Clickable Magazine Preview -->
+          <div class="col-lg-6 col-md-11">
+            <a href="/assets/documents/chronicles/chronicle17.pdf" target="_blank" rel="noopener noreferrer" class="rts-history-image d-block text-decoration-none">
+              <img 
+                src="/assets/documents/chronicles/chronicle17.png" 
+                alt="SRKR Campus Chronicle Volume 6 Issue 2 Cover" 
+                class="img-fluid rounded shadow-sm border"
+                loading="lazy" 
+                decoding="async"
+              />
+            </a>
+          </div>
 
+          <!-- Right Column: Volumes and Issues List -->
+          <div class="col-lg-6 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">SRKR Campus Chronicle</h4>
+              <p>Explore the latest editions of SRKR Campus Chronicle featuring campus achievements, placements, innovations, student activities, research highlights and institutional events.</p>
+              
+              <div class="program-list d-flex flex-column gap-3">
+                {volumes.map(vol => (
+                  <div class="program-item d-flex align-items-center justify-content-between p-3 bg-white rounded shadow-sm border">
+                    <span class="fw-bold" style="color: #c0392b;">{vol.title}:</span>
+                    <div class="d-flex align-items-center gap-2">
+                      {vol.issues.map((issue, idx) => (
+                        <>
+                          <a href={issue.pdfUrl} target="_blank" rel="noopener noreferrer" class="text-dark text-decoration-none px-2 py-1 hover-link">
+                            {issue.name}
+                          </a>
+                          {idx < vol.issues.length - 1 && <span class="text-muted">|</span>}
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .rts-history-image {
+        overflow: hidden;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .rts-history-image img {
+        transition: transform 0.3s ease;
+      }
+      .rts-history-image:hover img {
+        transform: scale(1.02);
+      }
+      .program-item {
+        border-color: #eaeaea !important;
+        transition: all 0.2s ease;
+      }
+      .program-item:hover {
+        border-color: #b0c4de !important;
+        box-shadow: 0 .25rem .5rem rgba(0,0,0,.05) !important;
+      }
+      .hover-link:hover {
+        color: #0b2265 !important;
+        text-decoration: underline !important;
+      }
+    </style>
+    <!-- ── SRKR CAMPUS CHRONICLE SECTION END ────────────────── -->
       <!-- ── PLACEMENT PARTNERS ──────────────────────────────────── -->
       <div class="rts-brand v_1 py-1">
         <div class="container">
