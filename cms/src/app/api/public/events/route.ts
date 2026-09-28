@@ -6,9 +6,10 @@
  * for a full rebuild (~2 min). The events page re-fetches this endpoint in the
  * browser, so Publish/Draft changes reflect within the CDN window below.
  *
- * CDN-cached for 60s — no matter how many visitors hit the site, Payload runs
- * at most ~1 query per minute. Past-event filtering happens client-side so the
- * cached response is date-independent.
+ * CDN-cached for 30 min — no matter how many visitors hit the site, Payload runs
+ * at most ~1 query per 30 minutes, which lets the Neon compute scale to zero
+ * (it suspends after 5 idle minutes) instead of staying awake 24/7. Past-event
+ * filtering happens client-side so the cached response is date-independent.
  */
 import { NextResponse } from 'next/server'
 import { getPayload } from 'payload'
@@ -60,7 +61,7 @@ export async function GET() {
       {
         headers: {
           ...CORS_HEADERS,
-          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+          'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=3600',
         },
       },
     )
