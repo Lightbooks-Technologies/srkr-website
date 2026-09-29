@@ -11,7 +11,7 @@ const dept = "Institution-wide / Student Affairs";
 const mission = "The National Service Scheme (NSS) at SRKR Engineering College aims to instill the urge for social service in young students and develop their personality through community service. It bridges the gap between the campus and society by engaging students in various social welfare activities, rural development programs, blood donation camps, and environmental awareness drives.";
 const advisor = "Dr. K. V. Sarma (Program Officer)";
 const joinInfo = "Enrollment opens at the start of the academic year for first and second-year students. Watch out for annual recruitment notifications.";
-const clubImg = "/assets/images/clubs/nss-plant.jpg";
+const clubImg = "/assets/images/clubs/nss_logo.png";
 
 const objectives = [
   "Understand the community in which they work and relate themselves to their community.",
@@ -40,32 +40,32 @@ const recentEvents = [
     description: "SRKR NSS Unit conducted the Viksit Bharat Young Leaders Dialogue 2027 Mass Quiz to engage students and young volunteers in learning about India’s development goals.",
     items: [
       {
-        description: "SRKR NSS Unit conducted the Viksit Bharat Young Leaders Dialogue 2027 Mass Quiz to engage students and young volunteers in learning about India’s development, national priorities, leadership, and the role of youth in building a developed India.",
-        image: "/assets/images/clubs/nss-1.png"
+        description: "Increased awareness about Viksit Bharat 2047 and India’s development journey.",
+        image: "/assets/images/clubs/nss-event-1.jpg"
       },
       {
-        description: "Students participated enthusiastically in large numbers, demonstrating deep awareness of national policies, digital transformation, and grassroots innovation.",
-        image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80"
+        description: "Encouraged youth participation in national development initiatives.",
+        image: "/assets/images/clubs/nss-event-2.jpg"
       },
       {
-        description: "Top scorers and active student leaders were recognized and awarded certificates during the special felicitation ceremony held at the main auditorium.",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80"
+        description: "Improved students’ general awareness and knowledge through the quiz.",
+        image: "/assets/images/clubs/nss-event-3.jpg"
       },
       {
-        description: "Faculty coordinators praised the vibrant participation, noting how initiatives like these inspire young minds to take charge of the nation's future roadmap.",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+        description: "Promoted leadership, critical thinking, and active citizenship.",
+        image: "/assets/images/clubs/nss-event-4.jpg"
       }
     ]
   },
   {
     title: "Eco-Friendly Ganesh Idol Distribution – 2200+ Idols",
-    description: "As part of the Ganesh Chaturthi celebrations, SRKR NSS Unit organized an Eco-Friendly Ganesh Idol Distribution Programme, distributing 2200+ clay idols to promote environmental responsibility.",
-    image: "/assets/images/events/ganesh-idols.jpg"
+    description: "As part of the Ganesh Chaturthi celebrations, SRKR NSS Unit organized an Eco-Friendly Ganesh Idol Distribution Programme and distributed 2200+ clay Ganesh idols to students and members of the local community. The initiative aimed to encourage the use of eco-friendly idols and promote environmental responsibility during the festival.",
+    image: "/assets/images/clubs/nss-event-5.jpg"
   },
   {
     title: "Digital Awareness Program – Day 3",
-    description: "Conducted a Digital Awareness Program at ZP High School, Kopalli, educating students on cyber crimes, online scams, safe digital practices, and OTP safety.",
-    image: "/assets/images/events/digital-awareness.jpg"
+    description: "As part of Literacy Awareness Week, the SRKR NSS Unit conducted a Digital Awareness Program at ZP High School, Kopalli. The session focused on educating students about the safe and responsible use of digital technology. Awareness was created on cyber crimes, fraud calls, OTP safety, online scams, suspicious loan apps, betting apps, and other digital risks. NSS volunteers interacted with the students and explained the importance of staying alert and responsible while using digital platforms.",
+    image: "/assets/images/clubs/nss-event-6.jpg"
   }
 ];
 ---
@@ -131,13 +131,13 @@ const recentEvents = [
       }
       .event-wall-card__photo {
         width: 100%;
-        height: 200px;
+        height: 230px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 14px;
       }
       .event-wall-card__text {
-        text-align: justify;
+        text-align: left;
         font-size: 14.5px;
         line-height: 1.6;
         color: #334155;
@@ -169,7 +169,7 @@ const recentEvents = [
     <SrkrHeader />
 
     <!-- BREADCRUMB -->
-    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/clubs/nss-breadcrumb.png);">
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -286,7 +286,33 @@ const recentEvents = [
                   </div>
                 </div>
               </div>
-
+ <!-- Full Width Moments & Highlights Section (Placed Below Recent Highlights spanning entire container width) -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="rts-scholarship-description">
+              <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-images me-2" style="color: var(--rt-primary);"></i> Moments & Highlights</h4>
+              <div class="event-wall">
+                <div class="container-fluid px-0">
+                  <div class="event-wall__ticker" data-ticker>
+                    <div class="event-wall__track">
+                      {momentsImages.map((imgSrc, idx) => (
+                        <div class="moment-card">
+                          <img 
+                            class="moment-card__photo"
+                            src={imgSrc} 
+                            alt={`Moment ${idx + 1}`} 
+                            loading="lazy" 
+                            decoding="async" 
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
             </div>
           </div>
 
@@ -346,40 +372,10 @@ const recentEvents = [
               </div>
 
             </div>
-          </div>
-        </div>
-
-        <!-- Full Width Moments & Highlights Section (Placed Below Recent Highlights spanning entire container width) -->
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="rts-scholarship-description">
-              <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-images me-2" style="color: var(--rt-primary);"></i> Moments & Highlights</h4>
-              <div class="event-wall">
-                <div class="container-fluid px-0">
-                  <div class="event-wall__ticker" data-ticker>
-                    <div class="event-wall__track">
-                      {momentsImages.map((imgSrc, idx) => (
-                        <div class="moment-card">
-                          <img 
-                            class="moment-card__photo"
-                            src={imgSrc} 
-                            alt={`Moment ${idx + 1}`} 
-                            loading="lazy" 
-                            decoding="async" 
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-<div class="row g-5 justify-content-center justify-content-start align-items-center mt--80 rts-multi-row-section">
+            <div class="row g-5 justify-content-center justify-content-start align-items-center mt--10 rts-multi-row-section">
           
-          <div class="col-lg-5 col-md-11">
-            <div class="rts-multi-row-content">
+          <div class="col-12">
+            <div class="rts-multi-row-content pl--10">
               <h4 class="row-title">Archives</h4>
               <div class="program-list">
                 {years.map(year => (
@@ -391,6 +387,12 @@ const recentEvents = [
             </div>
           </div>
         </div>
+          </div>
+          
+        </div>
+
+       
+
       </div>
     </div>
 
