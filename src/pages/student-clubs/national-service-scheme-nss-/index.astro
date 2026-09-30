@@ -23,14 +23,15 @@ const objectives = [
 const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
 
 const momentsImages = [
-  "/assets/images/clubs/nss-1.jpg",
-  "/assets/images/clubs/nss-2.jpg",
-  "/assets/images/clubs/nss-3.jpg",
-  "/assets/images/clubs/nss-4.jpg",
-  "/assets/images/clubs/nss-5.jpg",
-  "/assets/images/clubs/nss-6.jpg",
-  "/assets/images/clubs/nss-7.jpg",
-  "/assets/images/clubs/nss-8.png"
+  { src: "/assets/images/clubs/nss-highlight-7.jpg", caption: "Selected in pre rdc camp" },
+  { src: "/assets/images/clubs/nss-highlight-8.jpg", caption: "Selected in pre rdc camp" },
+  { src: "/assets/images/clubs/nss-highlight-1.jpg", caption: "District-Level Youth Development Programme – 2026" },
+  { src: "/assets/images/clubs/nss-highlight-2.jpg", caption: "Literacy Awareness Program" },
+  { src: "/assets/images/clubs/nss-highlight-3.jpg", caption: "TB Awareness Program – Early Detection and Prevention" },
+  { src: "/assets/images/clubs/nss-highlight-4.jpg", caption: "Plastic Collection Drive at ZP High School, Chinnamiram" },
+  { src: "/assets/images/clubs/nss-highlight-5.jpg", caption: "Swachh Bharat Cleanliness Drive at Public Park" },
+  { src: "/assets/images/clubs/nss-highlight-6.png", caption: "Campaign Against Nuclear Weapons." },
+  
 ];
 
 const recentEvents = [
@@ -58,9 +59,9 @@ const recentEvents = [
     ]
   },
   {
-    title: "Eco-Friendly Ganesh Idol Distribution – 2200+ Idols",
-    description: "As part of the Ganesh Chaturthi celebrations, SRKR NSS Unit organized an Eco-Friendly Ganesh Idol Distribution Programme and distributed 2200+ clay Ganesh idols to students and members of the local community. The initiative aimed to encourage the use of eco-friendly idols and promote environmental responsibility during the festival.",
-    image: "/assets/images/clubs/nss-event-5.jpg"
+    title: "Celebration of 150 Years of Vande Mataram",
+    description: "SRKR NSS Unit, in association with ABVP, organized a grand celebration commemorating 150 years of Vande Mataram on 11 August 2026. The programme witnessed the enthusiastic participation of more than 3,000 school students.",
+    image: "/assets/images/clubs/nss-9.jpg"
   },
   {
     title: "Digital Awareness Program – Day 3",
@@ -287,32 +288,41 @@ const recentEvents = [
                 </div>
               </div>
  <!-- Full Width Moments & Highlights Section (Placed Below Recent Highlights spanning entire container width) -->
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="rts-scholarship-description">
-              <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-images me-2" style="color: var(--rt-primary);"></i> Moments & Highlights</h4>
-              <div class="event-wall">
-                <div class="container-fluid px-0">
-                  <div class="event-wall__ticker" data-ticker>
-                    <div class="event-wall__track">
-                      {momentsImages.map((imgSrc, idx) => (
-                        <div class="moment-card">
-                          <img 
-                            class="moment-card__photo"
-                            src={imgSrc} 
-                            alt={`Moment ${idx + 1}`} 
-                            loading="lazy" 
-                            decoding="async" 
-                          />
+        <!-- Moments & Highlights Ticker Section -->
+              <div class="row mt-5">
+                <div class="col-12">
+                  <div class="rts-scholarship-description">
+                    <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-images me-2" style="color: var(--rt-primary);"></i> Moments & Highlights</h4>
+                    <div class="event-wall">
+                      <div class="container-fluid px-0">
+                        <div class="event-wall__ticker" data-ticker>
+                          <div class="event-wall__track">
+                            {momentsImages.map((item, idx) => (
+                              <div class="moment-card">
+                                <div class="moment-card__wrapper" style="overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                                  <img 
+                                    class="moment-card__photo"
+                                    src={item.src} 
+                                    alt={item.caption || `Moment ${idx + 1}`} 
+                                    loading="lazy" 
+                                    decoding="async" 
+                                    style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover;"
+                                  />
+                                  <div class="px-3 py-2 text-center">
+                                    <span class="moment-card__title text-secondary fw-medium" style="font-size: 13px; display: block;">
+                                      {item.caption}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
             </div>
           </div>
 
