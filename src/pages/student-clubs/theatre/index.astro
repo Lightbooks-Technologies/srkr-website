@@ -1,0 +1,139 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+
+const pageTitle = "Theatre Club";
+const category = "cultural";
+const dept = "Student Affairs / Cultural Committee";
+const mission = "The Theatre Club provides a creative platform for students to explore acting, drama, and stage performance. It aims to enhance students' creativity, communication skills, confidence, and teamwork through theatrical activities.";
+const advisor = "Dr. D. Chandra Sekhar";
+const advisorEmail = "chandu1884@srkrec.ac.in";
+const joinInfo = "Enrollment opens at the start of the academic year. Watch out for annual club recruitment notifications.";
+const clubImg = "";
+
+const objectives = [
+  "To develop acting skills, creativity, and stage confidence among students.",
+  "To improve communication, expression, teamwork, and leadership skills.",
+  "To promote cultural awareness and social values through theatre.",
+  "To encourage student participation in dramatic and literary activities."
+];
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`${pageTitle} | Student Clubs | SRKR Engineering College`} 
+      description={mission} 
+    />
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Life @ SRKR</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Student Clubs</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB END -->
+
+    <!-- MAIN CONTENT -->
+    <div class="rts-history py-5">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Main Content Column -->
+          <div class="col-lg-8">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">About Club</h3>
+              <p style="text-align: justify; font-size: 16px; line-height: 1.8;" class="mb-5">
+                {mission}
+              </p>
+
+              <div class="border-top my-4"></div>
+
+              <!-- Objectives Section -->
+              <div class="rts-scholarship-description mb-5">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-bullseye-arrow me-2" style="color: var(--rt-primary);"></i> Objectives</h4>
+                <ul class="list-unstyled one-column-list">
+                  {objectives.map((obj) => (
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="fa-solid fa-circle-check me-3 mt-1" style="color: var(--rt-primary); font-size: 14px;"></i>
+                      <span style="font-size: 15px; line-height: 1.6;">{obj}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Column -->
+          <div class="col-lg-4">
+            <div class="card shadow-sm p-4 border-0" style="background-color: #f8fafc; border-radius: 12px; position: sticky; top: 100px;">
+              <!-- Club Thumbnail -->
+              <div class="cat-thumb mb-4 overflow-hidden" style="border-radius: 0; background: #fff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1;">
+                <img 
+                  src={clubImg} 
+                  alt={pageTitle} 
+                  class="img-fluid" 
+                  style="object-fit: cover; max-height: 100%; max-width: 100%; height: 100%;" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+
+              <h4 class="h5 mb-4 border-bottom pb-2" style="color: var(--rt-primary);">Club Details</h4>
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3 d-flex justify-content-between">
+                  <strong class="text-muted">Category:</strong>
+                  <span class="text-capitalize badge text-white py-2 px-3" style="background-color: var(--rt-primary);">{category}</span>
+                </li>
+                <li class="mb-3 d-flex justify-content-between align-items-center">
+                  <strong class="text-muted">Scope/Dept:</strong>
+                  <span class="fw-semibold">{dept}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">Faculty Advisor:</strong>
+                  <span class="fw-semibold text-dark d-block"><i class="fa-regular fa-user-tie me-2" style="color: var(--rt-primary);"></i> {advisor}</span>
+                  <a href={`mailto:${advisorEmail}`} class="text-decoration-none small text-muted d-block mt-1">
+                    <i class="fa-regular fa-envelope me-1"></i> {advisorEmail}
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">How to Join:</strong>
+                  <span style="font-size: 14px; line-height: 1.5;" class="text-secondary d-block">{joinInfo}</span>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
