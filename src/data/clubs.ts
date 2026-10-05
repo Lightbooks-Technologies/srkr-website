@@ -370,8 +370,8 @@ export const culturalClubs: Club[] = [
 
 export const serviceClubs: Club[] = [
   {
-    slug: 'nss',
-    name: 'NSS — National Service Scheme',
+    slug: 'national-service-scheme-nss-',
+    name: 'National Service Scheme (NSS)',
     fullName: 'National Service Scheme SRKR Unit',
     dept: 'College-wide',
     category: 'service',

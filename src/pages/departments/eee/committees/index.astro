@@ -117,7 +117,46 @@ const bosMeetings = [
     <section class="rts-scholarship pt--40 pb--60">
       <div class="container">
         <DeptNav dept="eee" current="Committees" />
+<!-- BoS Section -->
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
+            <div class="rts-section">
+              <h3 class="rts-section-title">Board of Studies (BoS)</h3>
+            </div>
+            <p style="text-align: right; margin: 0px">All Faculty members of each specialization of the department</p>
 
+          </div>
+        </div>
+
+        <div class="row g-5 mb--80">
+          {bosMembers.map((member) => (
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-cat-item">
+                <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                  {member.image && validImages.includes(member.image) ? (
+                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;" loading="lazy" decoding="async">
+                  ) : (
+                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
+                  )}
+                </div>
+                <div class="cat-meta">
+                  <div class="cat-title">
+                    {member.link ? (
+                      <a href={member.link}>{member.name}</a>
+                    ) : (
+                      <span>{member.name}</span>
+                    )}
+                  </div>
+                  <div class="cat-role">
+                    <span class="cat-role-text" style={member.role === 'Chairman' || member.role === 'Coordinator' ? 'color: var(--rt-primary); font-weight: 600;' : 'color: var(--rt-body);'}>
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
         <!-- DAC Section -->
         <div class="row justify-content-md-center">
           <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
@@ -157,44 +196,7 @@ const bosMeetings = [
           ))}
         </div>
 
-        <!-- BoS Section -->
-        <div class="row justify-content-md-center">
-          <div class="col-lg-12 col-md-11 d-flex flex-wrap gap-5 justify-content-between align-items-start mb--60 border-bottom pb-5">
-            <div class="rts-section">
-              <h3 class="rts-section-title">Board of Studies (BoS)</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-5 mb--80">
-          {bosMembers.map((member) => (
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="single-cat-item">
-                <div class="cat-thumb" style="height: 250px; background-color: var(--rt-bg-shade); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                  {member.image && validImages.includes(member.image) ? (
-                    <img src={`/assets/images/faculty/eee/${member.image}.jpg`} alt={member.name} style="height: 100%; object-fit: contain;" loading="lazy" decoding="async">
-                  ) : (
-                    <i class="fa-light fa-user-tie" style="font-size: 5rem; color: var(--rt-primary);"></i>
-                  )}
-                </div>
-                <div class="cat-meta">
-                  <div class="cat-title">
-                    {member.link ? (
-                      <a href={member.link}>{member.name}</a>
-                    ) : (
-                      <span>{member.name}</span>
-                    )}
-                  </div>
-                  <div class="cat-role">
-                    <span class="cat-role-text" style={member.role === 'Chairman' || member.role === 'Coordinator' ? 'color: var(--rt-primary); font-weight: 600;' : 'color: var(--rt-body);'}>
-                      {member.role}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        
 
         <!-- PAQIC Section -->
         <div class="row justify-content-md-center">

@@ -170,7 +170,7 @@ try {
     <script define:vars={{ CMS_URL, DEPT_LABELS }}>
       // Live refresh: the page is statically prebuilt, so without this a status
       // change in the admin panel only appears after a full rebuild (~2 min).
-      // The /api/public/events feed is CDN-cached 60s and returns published only.
+      // The /api/public/events feed is CDN-cached 30 min and returns published only.
       (function () {
         var IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
         var nowIST = new Date(Date.now() + IST_OFFSET_MS);

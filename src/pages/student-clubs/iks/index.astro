@@ -1,0 +1,382 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import FooterScripts from '../../../components/FooterScripts.astro';
+import SrkrHeader from '../../../components/SrkrHeader.astro';
+import SrkrFooter from '../../../components/SrkrFooter.astro';
+import OffCanvas from '../../../components/OffCanvas.astro';
+
+const pageTitle = "Indian Knowledge Systems (IKS) Club";
+const category = "Culture & Heritage";
+const dept = "Department of English and Foreign Languages / Student Affairs";
+const mission = "The Indian Knowledge Systems (IKS) Club aims to explore, promote, and celebrate India’s rich intellectual, cultural, scientific, and traditional knowledge heritage. The club provides a platform for students to learn about and engage with India’s diverse knowledge traditions through meaningful activities, discussions, and experiential learning.";
+const advisor = "Satish Kumar Nadimpalli (Associate Professor, Head, Dept. of English and Foreign Languages)";
+const joinInfo = "Enrollment opens at the start of the academic year. Watch out for club recruitment notifications and announcements.";
+const clubImg = "/assets/images/clubs/iks-logo.jpg";
+
+const objectives = [
+  "To create awareness about India’s rich and diverse knowledge traditions.",
+  "To encourage students to explore traditional Indian knowledge and its contemporary relevance.",
+  "To promote appreciation of Indian culture, literature, arts, science, philosophy, and heritage.",
+  "To encourage interdisciplinary learning and critical thinking through IKS.",
+  "To provide opportunities for students to engage with India’s cultural and intellectual heritage."
+];
+
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+
+const momentsImages = [
+  { src: "/assets/images/clubs/iks-highlight-1.jpg", caption: "Workshop on Traditional Nutritional Powders" },
+  { src: "/assets/images/clubs/iks-highlight-2.jpg", caption: "Distribution of Eco-friendly Clay Ganesha Idols" },
+  { src: "/assets/images/clubs/iks-highlight-3.jpg", caption: "Exhibition on Indian Knowledge Traditions" },
+  { src: "/assets/images/clubs/iks-highlight-4.jpg", caption: "Student Presentations & Discussions" }
+];
+
+const recentEvents: Array<{
+  title: string;
+  description?: string;
+  image?: string;
+  items?: Array<{ description: string; image?: string }>;
+}> = [
+  {
+    title: "Workshop on Traditional Nutritional Powders",
+    // image: "/assets/images/clubs/iks-event-1.jpg",
+    description: "The IKS Club conducted an insightful workshop highlighting traditional Indian food practices, their profound nutritional significance, and time-tested methods of preparation.",
+  },
+  {
+    title: "Distribution of Eco-Friendly Clay Ganesha Idols",
+    description: "Organized an initiative for the distribution of eco-friendly clay Ganesha idols, actively promoting traditional sustainable practices, environmental awareness, and a deep appreciation of India’s cultural heritage among students.",
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`${pageTitle} | Student Clubs | SRKR Engineering College`} 
+      description={mission} 
+    />
+    <style>
+      .event-wall {
+        background: #f8f9fc;
+        overflow: hidden;
+        position: relative;
+        border-radius: 16px;
+        border: 1px solid #e3e7f3;
+        padding: 16px 0;
+        margin-top: 15px;
+      }
+      .event-wall::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 2px 2px, #d8deee 1.1px, transparent 1.1px);
+        background-size: 26px 26px;
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .event-wall .container-fluid {
+        position: relative;
+        z-index: 1;
+      }
+      .event-wall__ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+      }
+      .event-wall__ticker::-webkit-scrollbar {
+        display: none;
+      }
+      .event-wall__track {
+        display: flex;
+        width: max-content;
+        gap: 20px;
+        padding: 6px 12px;
+      }
+      .event-wall-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 14px;
+        width: min(85vw, 420px);
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.06);
+      }
+      .event-wall-card__photo {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 14px;
+      }
+      .event-wall-card__text {
+        text-align: left;
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #334155;
+        margin: 0;
+      }
+      .moment-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 14px;
+        width: min(75vw, 280px);
+        flex: 0 0 auto;
+        padding: 10px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .moment-card__photo {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <SrkrHeader />
+
+    <!-- BREADCRUMB -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Life @ SRKR</a></li>
+                <li class="breadcrumb-item"><a href="/student-clubs">Student Clubs</a></li>
+              </ul>
+              <h1 class="section-title">{pageTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB END -->
+
+    <!-- MAIN CONTENT -->
+    <div class="rts-history py-5">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Main Content Column -->
+          <div class="col-lg-8">
+            <div class="faculty-content-text">
+              <h3 class="rts-section-title mb-4">About Club</h3>
+              <p style="text-align: justify; font-size: 16px; line-height: 1.8;" class="mb-5">
+                {mission}
+              </p>
+
+              <div class="border-top my-4"></div>
+
+              <!-- Objectives Section -->
+              <div class="rts-scholarship-description mb-5">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-bullseye-arrow me-2" style="color: var(--rt-primary);"></i> Objectives</h4>
+                <ul class="list-unstyled one-column-list">
+                  {objectives.map((obj) => (
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="fa-solid fa-circle-check me-3 mt-1" style="color: var(--rt-primary); font-size: 14px;"></i>
+                      <span style="font-size: 15px; line-height: 1.6;">{obj}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Recent Activities & Achievements -->
+              <div class="rts-scholarship-description mb-4">
+                <h4 class="font-32 mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Highlights</h4>
+                <div class="program-credit-area faq rts-scholarship-description">
+                  <div class="program-accordion">
+                    <div class="accordion" id="club-events-iks">
+                      {recentEvents.map((evt, idx) => (
+                        <div class="accordion-item">
+                          <button 
+                            class={`accordion-button ${idx > 0 ? '' : ''}`} 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target={`#evt-collapse-${idx}`} 
+                            aria-expanded={idx === 0 ? 'false' : 'false'}
+                          >
+                            {evt.title}
+                          </button>
+                          <div 
+                            id={`evt-collapse-${idx}`} 
+                            class={`accordion-collapse collapse ${idx === 0 ? '' : ''}`} 
+                            data-bs-parent="#club-events-iks"
+                          >
+                            <div class="accordion-body">
+                              {evt.items ? (
+                                <div class="event-wall">
+                                  <div class="container-fluid px-0">
+                                    <div class="event-wall__ticker" data-ticker>
+                                      <div class="event-wall__track">
+                                        {evt.items.map((subItem) => (
+                                          <article class="event-wall-card">
+                                            {subItem.image && (
+                                              <img 
+                                                class="event-wall-card__photo"
+                                                src={subItem.image} 
+                                                alt={evt.title} 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                              />
+                                            )}
+                                            <p class="event-wall-card__text">
+                                              {subItem.description}
+                                            </p>
+                                          </article>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ) : (
+                                <div class="row g-4 align-items-center">
+                                  <div class={evt.image ? "col-lg-7 rts-scholarship-description" : "col-12 rts-scholarship-description"}>
+                                    <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
+                                      {evt.description}
+                                    </p>
+                                  </div>
+                                  {evt.image && (
+                                    <div class="col-lg-5">
+                                      <img 
+                                        src={evt.image} 
+                                        alt={evt.title} 
+                                        style="height: 100%; min-height: 220px; object-fit: cover; width: 100%; border-radius: 8px;" 
+                                        loading="lazy" 
+                                        decoding="async" 
+                                      />
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sidebar Column -->
+          <div class="col-lg-4">
+            <div class="card shadow-sm p-4 border-0" style="background-color: #f8fafc; border-radius: 12px; position: sticky; top: 100px;">
+              <!-- Club Thumbnail -->
+              <div class="cat-thumb mb-4 overflow-hidden" style="border-radius: 0; background: #fff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1;">
+                <img 
+                  src={clubImg} 
+                  alt={pageTitle} 
+                  class="img-fluid" 
+                  style="object-fit: contain; max-height: 100%; max-width: 100%;" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+
+              <h4 class="h5 mb-4 border-bottom pb-2" style="color: var(--rt-primary);">Club Details</h4>
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3 d-flex justify-content-between">
+                  <strong class="text-muted">Category:</strong>
+                  <span class="text-capitalize badge text-white py-2 px-3" style="background-color: var(--rt-primary);">{category}</span>
+                </li>
+                <li class="mb-3 d-flex justify-content-between align-items-center">
+                  <strong class="text-muted">Scope/Dept:</strong>
+                  <span class="fw-semibold">{dept}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">Faculty Advisor:</strong>
+                  <span class="fw-semibold text-dark"><i class="fa-regular fa-user-tie me-2" style="color: var(--rt-primary);"></i> {advisor}</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="text-muted d-block mb-1">How to Join:</strong>
+                  <span style="font-size: 14px; line-height: 1.5;" class="text-secondary d-block">{joinInfo}</span>
+                </li>
+              </ul>
+
+              <!-- Social Links / Email -->
+              <div class="mt-4 border-top pt-3 mb-4">
+                <strong class="text-muted d-block mb-2">Connect with Us:</strong>
+                <div class="d-flex gap-3 align-items-center" style="font-size: 18px;">
+                  <a href="mailto:srkriksclub@gmail.com" style="color: var(--rt-primary);" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                  <span style="font-size: 14px;" class="text-secondary">srkriksclub@gmail.com</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const tickers = document.querySelectorAll('[data-ticker]');
+        tickers.forEach((ticker) => {
+          const track = ticker.querySelector('.event-wall__track');
+          if (!track) return;
+
+          let paused = false;
+          let lastTime = 0;
+
+          const getMaxScroll = () => Math.max(0, track.scrollWidth - ticker.clientWidth);
+
+          const step = (time) => {
+            if (!lastTime) lastTime = time;
+            const delta = time - lastTime;
+            lastTime = time;
+
+            if (!paused && ticker.clientWidth > 0) {
+              ticker.scrollLeft += delta * 0.05;
+              const maxScroll = getMaxScroll();
+              if (maxScroll > 0 && ticker.scrollLeft >= maxScroll) {
+                ticker.scrollLeft = 0;
+              }
+            }
+
+            window.requestAnimationFrame(step);
+          };
+
+          ticker.addEventListener('mouseenter', () => {
+            paused = true;
+          });
+
+          ticker.addEventListener('mouseleave', () => {
+            paused = false;
+            lastTime = 0;
+          });
+
+          const observer = new ResizeObserver(() => {
+            lastTime = 0;
+          });
+          observer.observe(ticker);
+
+          window.requestAnimationFrame(step);
+        });
+      })();
+    </script>
+
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>
