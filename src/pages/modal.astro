@@ -1,6 +1,3 @@
----
----
-
 <!-- Popup Modal Component -->
 <div id="popupOverlay" class="popup-overlay">
   <div class="popup-content">
@@ -9,23 +6,62 @@
     
     <!-- Modal Content -->
     <div class="popup-body">
-  <!-- OPTION 1: Video -->
-  <!-- <video src="assets/modal/video1.mp4" autoplay muted loop playsinline></video> -->
+      <!-- OPTION 1: Video -->
+      <!-- <video src="assets/modal/video1.mp4" autoplay muted loop playsinline></video> -->
 
-  <!-- OPTION 2: Image -->
-  <img src="assets/modal/hiring.jpeg" alt="Admissions 2026–27" />
 
-  <!-- OPTION 3: Text Content -->
-  <!-- 
-  <h2>Admissions 2026–27</h2>
-  <p>Applications are invited for Category "B" seats – Course.</p>
-  <ul style="text-align: left; margin-left: 10px;">
-    <li>Apply online via our website portal.</li>
-    <li>Registration Fee: Rs. 1000/-</li>
-  </ul>
-  <p><strong>Last date to apply: 24-08-2026</strong></p> 
-  -->
-</div>
+
+      <!-- OPTION 2: Image -->
+      <!-- <img src="/assets/modal/markandeya.jpg" alt="markandeya" />
+      <p class="d-flex justify-content-center mt-1">Team MARKANDEYA from SRKREC</p> -->
+
+
+
+      <!-- OPTION new: Image & Caption scrolling -->
+      <!-- <div class="event-wall">
+        <div class="container-fluid px-0">
+          <div class="event-wall__ticker" data-ticker>
+            <div class="event-wall__track">
+              <article class="event-wall-card">
+                <img class="event-wall-card__photo" src="/assets/modal/markandeya.jpg" alt="Team Markandeya" loading="eager" decoding="async" />
+                <p class="event-wall-card__text">Team MARKANDEYA from SRKREC</p>
+              </article>
+              <article class="event-wall-card">
+                <img class="event-wall-card__photo" src="/assets/modal/markandeya1.jpg" alt="Event Moment 2" loading="lazy" decoding="async" />
+                <p class="event-wall-card__text">Students active participation in heritage presentation session.</p>
+              </article>
+              <article class="event-wall-card">
+                <img class="event-wall-card__photo" src="/assets/modal/markandeya2.jpg" alt="Event Moment 3" loading="lazy" decoding="async" />
+                <p class="event-wall-card__text">Exhibition on traditional sustainable practices and artifacts.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div> -->
+ 
+ 
+ 
+      <!-- OPTION 4: Image and Text -->
+  <div class="popup-media-wrapper">
+        <img src="/assets/modal/markandeya.jpg" alt="Team Markandeya SRKREC" loading="eager" decoding="async" />
+        <div class="popup-caption-box">
+          <p class="popup-caption-text">Team MARKANDEYA from SRKREC</p>
+        </div>
+      </div>
+
+
+      
+      <!-- OPTION 3: Text Content -->
+      <!-- 
+      <h2>Admissions 2026–27</h2>
+      <p>Applications are invited for Category "B" seats – Course.</p>
+      <ul style="text-align: left; margin-left: 10px;">
+        <li>Apply online via our website portal.</li>
+        <li>Registration Fee: Rs. 1000/-</li>
+      </ul>
+      <p><strong>Last date to apply: 24-08-2026</strong></p> 
+      -->
+    </div>
   </div>
 </div>
 
@@ -57,6 +93,59 @@
         closePopup();
       }
     });
+
+    // Close on pressing the ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popup.style.display === "flex") {
+        closePopup();
+      }
+    });
+
+    // Ticker Smooth Scrolling Animation Script
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const tickers = popup.querySelectorAll('[data-ticker]');
+      tickers.forEach((ticker) => {
+        const track = ticker.querySelector('.event-wall__track');
+        if (!track) return;
+
+        let paused = false;
+        let lastTime = 0;
+
+        const getMaxScroll = () => Math.max(0, track.scrollWidth - ticker.clientWidth);
+
+        const step = (time: number) => {
+          if (!lastTime) lastTime = time;
+          const delta = time - lastTime;
+          lastTime = time;
+
+          if (!paused && ticker.clientWidth > 0) {
+            ticker.scrollLeft += delta * 0.04;
+            const maxScroll = getMaxScroll();
+            if (maxScroll > 0 && ticker.scrollLeft >= maxScroll) {
+              ticker.scrollLeft = 0;
+            }
+          }
+
+          window.requestAnimationFrame(step);
+        };
+
+        ticker.addEventListener('mouseenter', () => {
+          paused = true;
+        });
+
+        ticker.addEventListener('mouseleave', () => {
+          paused = false;
+          lastTime = 0;
+        });
+
+        const observer = new ResizeObserver(() => {
+          lastTime = 0;
+        });
+        observer.observe(ticker);
+
+        window.requestAnimationFrame(step);
+      });
+    }
   });
 </script>
 
@@ -73,15 +162,16 @@
     z-index: 9999;
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
 
   /* Modal Container */
   .popup-content {
     position: relative;
     background-color: #ffffff;
-    padding: 30px 25px 25px 25px;
+    padding: 15px;
     border-radius: 12px;
-    max-width: 500px;
+    max-width: 480px;
     width: 90%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -89,31 +179,133 @@
 
   /* Content Formatting */
   /* Content Container */
-.popup-body {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
+  .popup-body {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+.popup-media-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* Image Element */
-.popup-body img {
-  max-height: 450px;
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: contain;
-}
+  /* Image Element */
+  .popup-body img {
+    max-height: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 
-/* Video Element */
-.popup-body video {
-  width: 100%;
-  height: auto;
-  max-height: 70vh; /* Prevents video from growing offscreen on mobile */
-  display: block;
-  border-radius: 6px;
-  object-fit: contain;
-}
+  /* Caption Box Styling */
+  .popup-caption-box {
+    margin-top: 14px;
+    padding: 4px 0;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+    width: 100%;
+  }
+
+  .popup-caption-text {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* --- Exact IKS Event Wall Styles --- */
+  .event-wall {
+    background: #f8f9fc;
+    overflow: hidden;
+    position: relative;
+    border-radius: 14px;
+    border: 1px solid #e3e7f3;
+    padding: 12px 0;
+    width: 100%;
+  }
+  .event-wall::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 2px 2px, #d8deee 1.1px, transparent 1.1px);
+    background-size: 26px 26px;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .event-wall .container-fluid {
+    position: relative;
+    z-index: 1;
+  }
+  .event-wall__ticker {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  }
+  .event-wall__ticker::-webkit-scrollbar {
+    display: none;
+  }
+  .event-wall__track {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+    padding: 4px 8px;
+  }
+  .event-wall-card {
+    background: #ffffff;
+    border: 1px solid #e3e7f3;
+    border-radius: 12px;
+    width: 280px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(20, 44, 112, 0.05);
+  }
+  .event-wall-card__photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .event-wall-card__text {
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #334155;
+    margin: 0;
+  }
+
+  /* Image Element */
+  .popup-body img {
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  /* Video Element */
+  .popup-body video {
+    width: 100%;
+    height: auto;
+    max-height: 70vh; /* Prevents video from growing offscreen on mobile */
+    display: block;
+    border-radius: 6px;
+    object-fit: contain;
+  }
 
   /* Circular Floating 'X' Close Button */
   .popup-close-btn {
@@ -134,6 +326,7 @@
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
+    z-index: 10;
   }
 
   .popup-close-btn:hover {

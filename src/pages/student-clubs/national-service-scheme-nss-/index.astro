@@ -20,7 +20,7 @@ const objectives = [
   "Gain leadership qualities and democratic attitude for cooperative living.",
   "Develop competence required for group-living and sharing of responsibilities."
 ];
-const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+const years = ['2025–26', '2024–25', '2023–24'];
 
 const momentsImages = [
   { src: "/assets/images/clubs/nss-highlight-7.jpg", caption: "Selected in pre rdc camp" },
@@ -385,7 +385,7 @@ const recentEvents = [
               <h4 class="row-title">Archives</h4>
               <div class="program-list">
                 {years.map(year => (
-                  <a href={`/assets/documents/civil-placements-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                  <a href={`/assets/documents/nss/nss${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
                     <span>{year} <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                   </a>
                 ))}
