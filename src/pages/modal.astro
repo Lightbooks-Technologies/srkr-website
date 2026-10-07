@@ -18,7 +18,7 @@
 
 
       <!-- OPTION new: Image & Caption scrolling -->
-      <!-- <div class="event-wall">
+      <div class="event-wall">
         <div class="container-fluid px-0">
           <div class="event-wall__ticker" data-ticker>
             <div class="event-wall__track">
@@ -28,26 +28,24 @@
               </article>
               <article class="event-wall-card">
                 <img class="event-wall-card__photo" src="/assets/modal/markandeya1.jpg" alt="Event Moment 2" loading="lazy" decoding="async" />
-                <p class="event-wall-card__text">Students active participation in heritage presentation session.</p>
+                <p class="event-wall-card__text">Heartiest congratulations to our Civil Engineering team.</p>
               </article>
-              <article class="event-wall-card">
+              <!-- <article class="event-wall-card">
                 <img class="event-wall-card__photo" src="/assets/modal/markandeya2.jpg" alt="Event Moment 3" loading="lazy" decoding="async" />
                 <p class="event-wall-card__text">Exhibition on traditional sustainable practices and artifacts.</p>
-              </article>
+              </article> -->
             </div>
           </div>
         </div>
-      </div> -->
- 
- 
- 
+      </div>
+      
       <!-- OPTION 4: Image and Text -->
-  <div class="popup-media-wrapper">
+  <!-- <div class="popup-media-wrapper">
         <img src="/assets/modal/markandeya.jpg" alt="Team Markandeya SRKREC" loading="eager" decoding="async" />
         <div class="popup-caption-box">
           <p class="popup-caption-text">Team MARKANDEYA from SRKREC</p>
         </div>
-      </div>
+      </div> -->
 
 
       
@@ -101,17 +99,18 @@
       }
     });
 
-    // Ticker Smooth Scrolling Animation Script
+    // Ticker Smooth Infinite Scrolling Animation Script
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const tickers = popup.querySelectorAll('[data-ticker]');
       tickers.forEach((ticker) => {
         const track = ticker.querySelector('.event-wall__track');
         if (!track) return;
 
+        // Clone items to create a seamless infinite loop
+        track.innerHTML += track.innerHTML;
+
         let paused = false;
         let lastTime = 0;
-
-        const getMaxScroll = () => Math.max(0, track.scrollWidth - ticker.clientWidth);
 
         const step = (time: number) => {
           if (!lastTime) lastTime = time;
@@ -119,10 +118,12 @@
           lastTime = time;
 
           if (!paused && ticker.clientWidth > 0) {
-            ticker.scrollLeft += delta * 0.04;
-            const maxScroll = getMaxScroll();
-            if (maxScroll > 0 && ticker.scrollLeft >= maxScroll) {
-              ticker.scrollLeft = 0;
+            ticker.scrollLeft += delta * 0.03;
+            
+            // When we've scrolled past the first full set of items, snap back instantly to 0
+            const singleSetWidth = track.scrollWidth / 2;
+            if (ticker.scrollLeft >= singleSetWidth) {
+              ticker.scrollLeft -= singleSetWidth;
             }
           }
 
@@ -169,7 +170,7 @@
   .popup-content {
     position: relative;
     background-color: #ffffff;
-    padding: 15px;
+    padding: 5px;
     border-radius: 12px;
     max-width: 480px;
     width: 90%;
@@ -177,8 +178,6 @@
     text-align: center;
   }
 
-  /* Content Formatting */
-  /* Content Container */
   .popup-body {
     width: 100%;
     max-width: 100%;
