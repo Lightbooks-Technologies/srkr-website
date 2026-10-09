@@ -1,0 +1,225 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import FooterScripts from '../../components/FooterScripts.astro';
+import OffCanvas from '../../components/OffCanvas.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import SrkrHeader from '../../components/SrkrHeader.astro';
+import SrkrFooter from '../../components/SrkrFooter.astro';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+
+    <!-- BREADCRUMB AREA -->
+    <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        </ul>
+                        <h1 class="section-title">Privacy Policy</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- campus life / privacy policy content -->
+    <div class="rts-campus-life rts-section-padding pb--40 pt--20">
+        <div class="container col-11">
+            <div class="row">
+                <div class="campus-life">
+                    <div class="campus-life__content">
+                        
+                        <!-- Full Width Intro Paragraphs -->
+                        <p style="text-align: justify; margin-bottom: 20px;">
+                            SRKR Engineering College (A) ("SRKREC", "we", "us", or "our") respects the privacy of visitors to our website and is committed to protecting the personal information shared with us through our website and associated online services.
+                        </p>
+                        <p style="text-align: justify; margin-bottom: 30px;">
+                            This Privacy Policy explains how SRKR Engineering College collects, uses, stores, protects, and discloses information when you visit or use srkrec.ac.in and related online services operated or linked by the College.
+                        </p>
+
+                        <!-- Masonry Column Layout to Remove Gaps -->
+                        <div class="privacy-grid">
+                            
+                            <!-- Section 1 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Information We Collect</h5>
+                                <p style="text-align: justify; margin-bottom: 15px;">
+                                    We may collect information that you voluntarily provide while using our website or online services. Depending on the service, this may include:
+                                </p>
+                                <div class="si" style="margin-bottom: 20px;">
+                                    <div class="si__list">
+                                        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; text-align: justify;">
+                                            <li class="si__list--single">Name</li>
+                                            <li class="si__list--single">Email address</li>
+                                            <li class="si__list--single">Mobile/telephone number</li>
+                                            <li class="si__list--single">Address and location information</li>
+                                            <li class="si__list--single">Academic and educational information</li>
+                                            <li class="si__list--single">Admission and application-related information</li>
+                                            <li class="si__list--single">Information submitted through enquiry, feedback, grievance, registration, or other forms</li>
+                                            <li class="si__list--single">Information provided for events, activities, alumni services, or institutional communication</li>
+                                            <li class="si__list--single">Documents or other information submitted through applicable online services</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    We may also automatically collect certain technical information when you visit our website, such as your IP address, browser type, device information, operating system, pages visited, access time, referring website, and other standard website usage information.
+                                </p>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">How We Use Information</h5>
+                                <p style="text-align: justify; margin-bottom: 15px;">
+                                    The information collected may be used for purposes including:
+                                </p>
+                                <div class="si" style="margin-bottom: 0;">
+                                    <div class="si__list">
+                                        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; text-align: justify;">
+                                            <li class="si__list--single">Responding to enquiries and requests</li>
+                                            <li class="si__list--single">Processing admissions and applications</li>
+                                            <li class="si__list--single">Providing academic and institutional services</li>
+                                            <li class="si__list--single">Communicating important college-related information</li>
+                                            <li class="si__list--single">Managing events, activities, clubs, alumni and other institutional programs</li>
+                                            <li class="si__list--single">Processing feedback and grievances</li>
+                                            <li class="si__list--single">Providing education or credential verification services</li>
+                                            <li class="si__list--single">Improving our website, online services and user experience</li>
+                                            <li class="si__list--single">Maintaining website security and preventing misuse</li>
+                                            <li class="si__list--single">Meeting applicable legal, regulatory, accreditation and institutional requirements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Cookies and Similar Technologies</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    Our website may use cookies or similar technologies to provide essential website functionality, maintain sessions, improve performance, understand website usage, and enhance the user experience. Cookies may be placed by SRKREC or by third-party services used by particular pages or services. You may configure your browser to refuse or delete cookies. However, disabling certain cookies may affect the functionality of some website features.
+                                </p>
+                            </div>
+
+                            <!-- Section 4 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Information Sharing and Disclosure</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKR Engineering College does not sell or rent personal information collected through its website. Information may be shared with authorised persons, departments, service providers, institutions, examination bodies, government authorities, regulatory bodies, accreditation agencies, or other organisations where reasonably necessary for providing services, fulfilling institutional responsibilities, complying with applicable law, or protecting the rights, security, and interests of the College and its users. Where third-party services are used, those services may process information in accordance with their own privacy policies and applicable terms.
+                                </p>
+                            </div>
+
+                            <!-- Section 5 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">External Links</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    The SRKREC website may contain links to external websites, portals, applications, social-media platforms, examination services, government websites, educational resources, and other third-party services. SRKR Engineering College is not responsible for the privacy practices, security, content, or policies of external websites. Users are advised to review the privacy policies of such websites before providing personal information.
+                                </p>
+                            </div>
+
+                            <!-- Section 6 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Academic and Institutional Information</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKREC operates various digital and online services relating to admissions, academics, examinations, education verification, grievances, alumni activities, research, placements and other institutional functions. Information submitted through these services may be processed by the respective College department or authorised service provider for the purpose for which it was submitted.
+                                </p>
+                            </div>
+
+                            <!-- Section 7 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Photographs, Videos and Events</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKR Engineering College may photograph, record, or otherwise document academic activities, events, competitions, seminars, workshops, celebrations, achievements, campus activities and other institutional programs. Such photographs, videos and related information may be used for legitimate institutional purposes, including College websites, publications, newsletters, social-media channels, reports, promotional materials and institutional communications. Where appropriate, the College may take reasonable steps to address privacy-related concerns regarding identifiable individuals appearing in such material.
+                                </p>
+                            </div>
+
+                            <!-- Section 8 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Data Security</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKR Engineering College takes reasonable administrative, technical and organisational measures to protect information against unauthorised access, alteration, disclosure, loss, misuse, or destruction. However, no method of transmission over the Internet or electronic storage system can be guaranteed to be completely secure. Users are responsible for maintaining the confidentiality of credentials used to access password-protected College services and should immediately report suspected unauthorised access or security incidents.
+                                </p>
+                            </div>
+
+                            <!-- Section 9 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Data Retention</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    Personal information may be retained for as long as reasonably necessary to fulfil the purpose for which it was collected, provide institutional services, maintain academic or administrative records, comply with legal and regulatory obligations, resolve disputes, and enforce applicable policies. Retention periods may vary depending on the nature of the information and the service involved.
+                                </p>
+                            </div>
+
+                            <!-- Section 10 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Privacy of Students and Minors</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKR Engineering College recognises the importance of protecting information relating to students, including students who may be minors. Where information relating to minors is collected through College services, it will be processed for legitimate educational, administrative, safety, statutory, or institutional purposes and in accordance with applicable law and institutional requirements.
+                                </p>
+                            </div>
+
+                            <!-- Section 11 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Your Choices and Rights</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    Depending on the nature of the information and applicable law, individuals may request information regarding the personal data held about them and may request correction of inaccurate information. Requests relating to personal information may be subject to verification and applicable legal, institutional, academic, examination, or record-retention requirements. You may also choose not to provide information requested through optional website forms. However, certain information may be necessary to provide particular services or process a request.
+                                </p>
+                            </div>
+
+                            <!-- Section 12 -->
+                            <div class="privacy-card">
+                                <h5 class="mb--20" style="color: #1f2937; font-weight: 600; text-align: left;">Changes to This Privacy Policy</h5>
+                                <p style="text-align: justify; margin-bottom: 0;">
+                                    SRKR Engineering College may update this Privacy Policy from time to time to reflect changes in its services, technology, institutional practices, or applicable legal and regulatory requirements. Any updated version will be published on this page with the revised Last Updated date.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- campus life end -->
+
+    <!-- footer -->
+    <SrkrFooter />
+
+    <OffCanvas />
+
+    <!-- scripts -->
+    <FooterScripts />
+
+    <style>
+        /* Masonry-style Multi-column Layout to pack cards tightly without empty vertical gaps */
+        .privacy-grid {
+            column-count: 2;
+            column-gap: 24px;
+        }
+        .privacy-card {
+            break-inside: avoid; /* Prevents cards from splitting awkwardly across columns */
+            margin-bottom: 24px;
+            box-sizing: border-box;
+            background: #ffffff;
+            border: 1px solid #e3e7f3;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(20, 44, 112, 0.03);
+        }
+        @media (max-width: 768px) {
+            .privacy-grid {
+                column-count: 1;
+            }
+        }
+    </style>
+</body>
+</html>
