@@ -166,7 +166,7 @@
     padding: 20px;
   }
 
-  /* Modal Container */
+  /* Modal Container - Fixed Safari flex calculation bug */
   .popup-content {
     position: relative;
     background-color: #ffffff;
@@ -174,20 +174,23 @@
     border-radius: 12px;
     max-width: 480px;
     width: 90%;
-    max-height: 90vh; /* Prevents modal from overflowing the screen vertically */
+    max-height: 90vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
 
+  /* Modal Body - Added Safari flex-shrink and explicit height limits */
   .popup-body {
     width: 100%;
     max-width: 100%;
-    overflow-y: auto; /* Enables vertical scrolling inside the modal body if content is too tall */
+    flex: 1 1 auto;
+    overflow-y: auto;
     overflow-x: hidden;
-    max-height: calc(90vh - 20px); /* Keeps it contained within the modal and fixed syntax error */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS Safari */
+    max-height: calc(90vh - 20px);
+    -webkit-overflow-scrolling: touch; /* Essential for smooth iOS Safari scrolling */
   }
 
   .popup-media-wrapper {
@@ -253,10 +256,10 @@
   .event-wall__ticker {
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; /* Fixes touch scrolling stuck issues on mobile browsers */
+    -webkit-overflow-scrolling: touch; /* Fixes momentum scrolling in Safari */
     scrollbar-width: none;
     -ms-overflow-style: none;
-    touch-action: pan-x; /* Fixes touch tracking behavior */
+    touch-action: pan-x; /* Unlocks horizontal touch pan blocking on Safari/iOS */
     mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
   }
