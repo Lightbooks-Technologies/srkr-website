@@ -99,7 +99,7 @@
       }
     });
 
-    // Ticker Smooth Infinite Scrolling Animation Script
+    // Ticker Smooth Infinite Scrolling Animation Script optimized for Safari
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const tickers = popup.querySelectorAll('[data-ticker]');
       tickers.forEach((ticker) => {
@@ -117,12 +117,14 @@
           const delta = time - lastTime;
           lastTime = time;
 
+          // Safari-safe frame delta cap to prevent jumps/freezes
+          const safeDelta = Math.min(delta, 50);
+
           if (!paused && ticker.clientWidth > 0) {
-            ticker.scrollLeft += delta * 0.04;
+            ticker.scrollLeft += safeDelta * 0.04;
             
-            // When we've scrolled past the first full set of items, snap back instantly to 0
             const singleSetWidth = track.scrollWidth / 2;
-            if (ticker.scrollLeft >= singleSetWidth) {
+            if (singleSetWidth > 0 && ticker.scrollLeft >= singleSetWidth) {
               ticker.scrollLeft -= singleSetWidth;
             }
           }
@@ -138,11 +140,6 @@
           paused = false;
           lastTime = 0;
         });
-
-        const observer = new ResizeObserver(() => {
-          lastTime = 0;
-        });
-        observer.observe(ticker);
 
         window.requestAnimationFrame(step);
       });
@@ -166,7 +163,7 @@
     padding: 20px;
   }
 
-  /* Modal Container - Fixed Safari flex calculation bug */
+  /* Modal Container - Safari Safe Flex Constraints */
   .popup-content {
     position: relative;
     background-color: #ffffff;
@@ -175,14 +172,12 @@
     max-width: 480px;
     width: 90%;
     max-height: 90vh;
-    height: auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
 
-  /* Modal Body - Added Safari flex-shrink and explicit height limits */
   .popup-body {
     width: 100%;
     max-width: 100%;
@@ -190,7 +185,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(90vh - 20px);
-    -webkit-overflow-scrolling: touch; /* Essential for smooth iOS Safari scrolling */
+    -webkit-overflow-scrolling: touch; /* Safari Momentum Scrolling */
   }
 
   .popup-media-wrapper {
@@ -256,10 +251,10 @@
   .event-wall__ticker {
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; /* Fixes momentum scrolling in Safari */
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    touch-action: pan-x; /* Unlocks horizontal touch pan blocking on Safari/iOS */
+    touch-action: pan-x;
     mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
   }
