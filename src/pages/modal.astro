@@ -17,11 +17,32 @@
 
 
 
-      <!-- OPTION new: Image & Caption scrolling -->
+      <!-- OPTION new: Image & Caption scrolling (CSS-Powered Infinite Loop for iOS Safari) -->
       <div class="event-wall">
         <div class="container-fluid px-0">
-          <div class="event-wall__ticker" data-ticker>
+          <div class="event-wall__ticker">
             <div class="event-wall__track">
+              <!-- Original Set -->
+              <article class="event-wall-card">
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya.jpg" alt="Team Markandeya" loading="eager" decoding="async" />
+                </div>
+                <p class="event-wall-card__text">Team MARKANDEYA from SRKREC</p>
+              </article>
+              <article class="event-wall-card">
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya1.jpg" alt="Event Moment 2" loading="lazy" decoding="async" />
+                </div>
+                <p class="event-wall-card__text">Heartiest congratulations to our Civil Engineering team.</p>
+              </article>
+              <!-- <article class="event-wall-card">
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya2.jpg" alt="Event Moment 3" loading="lazy" decoding="async" />
+                </div>
+                <p class="event-wall-card__text">Exhibition on traditional sustainable practices and artifacts.</p>
+              </article> -->
+
+              <!-- Duplicated Set for Seamless Infinite Loop -->
               <article class="event-wall-card">
                 <div class="event-wall-card__img-wrapper">
                   <img class="event-wall-card__photo" src="/assets/modal/markandeya.jpg" alt="Team Markandeya" loading="eager" decoding="async" />
@@ -104,51 +125,6 @@
         closePopup();
       }
     });
-
-    // iOS Safari Compatible Ticker Smooth Infinite Scrolling Animation Script
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const tickers = popup.querySelectorAll('[data-ticker]');
-      tickers.forEach((ticker) => {
-        const track = ticker.querySelector('.event-wall__track');
-        if (!track) return;
-
-        // Clone items to create a seamless infinite loop
-        track.innerHTML += track.innerHTML;
-
-        let paused = false;
-        let lastTime = 0;
-
-        const step = (time: number) => {
-          if (!lastTime) lastTime = time;
-          const delta = time - lastTime;
-          lastTime = time;
-
-          const safeDelta = Math.min(delta, 50);
-
-          if (!paused && ticker.clientWidth > 0) {
-            ticker.scrollLeft += safeDelta * 0.05;
-            
-            const singleSetWidth = track.scrollWidth / 2;
-            if (singleSetWidth > 0 && ticker.scrollLeft >= singleSetWidth) {
-              ticker.scrollLeft -= singleSetWidth;
-            }
-          }
-
-          window.requestAnimationFrame(step);
-        };
-
-        // Touch handlers for iOS mobile interaction to pause/resume cleanly
-        ticker.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-        ticker.addEventListener('touchend', () => { 
-          setTimeout(() => { paused = false; lastTime = 0; }, 1500); 
-        }, { passive: true });
-
-        ticker.addEventListener('mouseenter', () => { paused = true; });
-        ticker.addEventListener('mouseleave', () => { paused = false; lastTime = 0; });
-
-        window.requestAnimationFrame(step);
-      });
-    }
   });
 </script>
 
@@ -230,7 +206,7 @@
     justify-content: center;
   }
 
-  /* --- Exact IKS Event Wall Styles --- */
+  /* --- Pure CSS Infinite Scroll Styles (iOS Safari Friendly) --- */
   .event-wall {
     background: #f8f9fc;
     overflow: hidden;
@@ -254,24 +230,36 @@
     z-index: 1;
   }
   .event-wall__ticker {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    touch-action: pan-x;
+    overflow: hidden; /* Prevents manual scroll conflict on iOS */
+    width: 100%;
     mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
-  }
-  .event-wall__ticker::-webkit-scrollbar {
-    display: none;
   }
   .event-wall__track {
     display: flex;
     width: max-content;
     gap: 16px;
     padding: 4px 8px;
+    /* CSS Animation running on GPU compositor thread - completely smooth on iOS Safari */
+    animation: scrollTicker 15s linear infinite;
   }
+  
+  /* Pause animation when user hovers or touches */
+  .event-wall__ticker:hover .event-wall__track,
+  .event-wall__ticker:active .event-wall__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scrollTicker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Moves exactly half way since items are duplicated */
+      transform: translateX(-50%);
+    }
+  }
+
   .event-wall-card {
     background: #ffffff;
     border: 1px solid #e3e7f3;
@@ -284,10 +272,10 @@
     padding: 12px;
     box-shadow: 0 4px 12px rgba(20, 44, 112, 0.05);
   }
-  /* Enforces 100% height container for card photos */
+  
   .event-wall-card__img-wrapper {
     width: 100%;
-    height: 180px;
+    height: 260px; /* Full expanded height */
     position: relative;
     margin-bottom: 10px;
   }
