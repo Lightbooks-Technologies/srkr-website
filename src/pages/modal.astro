@@ -23,15 +23,21 @@
           <div class="event-wall__ticker" data-ticker>
             <div class="event-wall__track">
               <article class="event-wall-card">
-                <img class="event-wall-card__photo" src="/assets/modal/markandeya.jpg" alt="Team Markandeya" loading="eager" decoding="async" />
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya.jpg" alt="Team Markandeya" loading="eager" decoding="async" />
+                </div>
                 <p class="event-wall-card__text">Team MARKANDEYA from SRKREC</p>
               </article>
               <article class="event-wall-card">
-                <img class="event-wall-card__photo" src="/assets/modal/markandeya1.jpg" alt="Event Moment 2" loading="lazy" decoding="async" />
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya1.jpg" alt="Event Moment 2" loading="lazy" decoding="async" />
+                </div>
                 <p class="event-wall-card__text">Heartiest congratulations to our Civil Engineering team.</p>
               </article>
               <!-- <article class="event-wall-card">
-                <img class="event-wall-card__photo" src="/assets/modal/markandeya2.jpg" alt="Event Moment 3" loading="lazy" decoding="async" />
+                <div class="event-wall-card__img-wrapper">
+                  <img class="event-wall-card__photo" src="/assets/modal/markandeya2.jpg" alt="Event Moment 3" loading="lazy" decoding="async" />
+                </div>
                 <p class="event-wall-card__text">Exhibition on traditional sustainable practices and artifacts.</p>
               </article> -->
             </div>
@@ -99,7 +105,7 @@
       }
     });
 
-    // Ticker Smooth Infinite Scrolling Animation Script optimized for Safari
+    // iOS Safari Compatible Ticker Smooth Infinite Scrolling Animation Script
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const tickers = popup.querySelectorAll('[data-ticker]');
       tickers.forEach((ticker) => {
@@ -117,11 +123,10 @@
           const delta = time - lastTime;
           lastTime = time;
 
-          // Safari-safe frame delta cap to prevent jumps/freezes
           const safeDelta = Math.min(delta, 50);
 
           if (!paused && ticker.clientWidth > 0) {
-            ticker.scrollLeft += safeDelta * 0.04;
+            ticker.scrollLeft += safeDelta * 0.05;
             
             const singleSetWidth = track.scrollWidth / 2;
             if (singleSetWidth > 0 && ticker.scrollLeft >= singleSetWidth) {
@@ -132,14 +137,14 @@
           window.requestAnimationFrame(step);
         };
 
-        ticker.addEventListener('mouseenter', () => {
-          paused = true;
-        });
+        // Touch handlers for iOS mobile interaction to pause/resume cleanly
+        ticker.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+        ticker.addEventListener('touchend', () => { 
+          setTimeout(() => { paused = false; lastTime = 0; }, 1500); 
+        }, { passive: true });
 
-        ticker.addEventListener('mouseleave', () => {
-          paused = false;
-          lastTime = 0;
-        });
+        ticker.addEventListener('mouseenter', () => { paused = true; });
+        ticker.addEventListener('mouseleave', () => { paused = false; lastTime = 0; });
 
         window.requestAnimationFrame(step);
       });
@@ -163,7 +168,7 @@
     padding: 20px;
   }
 
-  /* Modal Container - Safari Safe Flex Constraints */
+  /* Modal Container */
   .popup-content {
     position: relative;
     background-color: #ffffff;
@@ -185,7 +190,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(90vh - 20px);
-    -webkit-overflow-scrolling: touch; /* Safari Momentum Scrolling */
+    -webkit-overflow-scrolling: touch;
   }
 
   .popup-media-wrapper {
@@ -279,12 +284,19 @@
     padding: 12px;
     box-shadow: 0 4px 12px rgba(20, 44, 112, 0.05);
   }
-  .event-wall-card__photo {
+  /* Enforces 100% height container for card photos */
+  .event-wall-card__img-wrapper {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
+    position: relative;
     margin-bottom: 10px;
+  }
+  .event-wall-card__photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
   }
   .event-wall-card__text {
     text-align: center;
