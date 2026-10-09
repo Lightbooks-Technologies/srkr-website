@@ -40,7 +40,7 @@
       </div>
       
       <!-- OPTION 4: Image and Text -->
-  <!-- <div class="popup-media-wrapper">
+      <!-- <div class="popup-media-wrapper">
         <img src="/assets/modal/markandeya.jpg" alt="Team Markandeya SRKREC" loading="eager" decoding="async" />
         <div class="popup-caption-box">
           <p class="popup-caption-text">Team MARKANDEYA from SRKREC</p>
@@ -167,33 +167,30 @@
   }
 
   /* Modal Container */
-  /* Modal Container */
-.popup-content {
-  position: relative;
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 12px;
-  max-width: 480px;
-  width: 90%;
-  max-height: 90vh; /* Prevents modal from overflowing the screen vertically */
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
+  .popup-content {
+    position: relative;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    max-height: 90vh; /* Prevents modal from overflowing the screen vertically */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
 
-.popup-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-y: auto; /* Enables vertical scrolling inside the modal body if content is too tall */
-  overflow-x: hidden;
-  max-height: calc(90vh - 20px); /* Keeps it contained within the modal */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS Safari */
-}
+  .popup-body {
+    width: 100%;
+    max-width: 100%;
+    overflow-y: auto; /* Enables vertical scrolling inside the modal body if content is too tall */
+    overflow-x: hidden;
+    max-height: calc(90vh - 20px); /* Keeps it contained within the modal and fixed syntax error */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS Safari */
+  }
 
-/* Fix for the ticker container scrolling on mobile and browsers */
-
-.popup-media-wrapper {
+  .popup-media-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -203,7 +200,7 @@
   .popup-body img {
     max-height: 420px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     border-radius: 10px;
     object-fit: cover;
@@ -229,6 +226,7 @@
     align-items: center;
     justify-content: center;
   }
+
   /* --- Exact IKS Event Wall Styles --- */
   .event-wall {
     background: #f8f9fc;
@@ -253,14 +251,15 @@
     z-index: 1;
   }
   .event-wall__ticker {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; /* Fixes touch scrolling stuck issues on mobile browsers */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
-}
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Fixes touch scrolling stuck issues on mobile browsers */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x; /* Fixes touch tracking behavior */
+    mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  }
   .event-wall__ticker::-webkit-scrollbar {
     display: none;
   }
@@ -297,21 +296,11 @@
     margin: 0;
   }
 
-  /* Image Element */
-  .popup-body img {
-    max-height: 400px;
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 6px;
-    object-fit: cover;
-  }
-
   /* Video Element */
   .popup-body video {
     width: 100%;
     height: auto;
-    max-height: 70vh; /* Prevents video from growing offscreen on mobile */
+    max-height: 70vh;
     display: block;
     border-radius: 6px;
     object-fit: contain;
