@@ -293,7 +293,7 @@ export const culturalClubs: Club[] = [
     dept: 'College-wide',
     category: 'cultural',
     advisor: 'Cine Club Coordinator',
-    mission: 'Film screenings, short film making, movie discussions, script writing, and creative cinematography activities.',
+    mission: `The SRKR Cine Club is the official creative and filmmaking wing of Sagi Rama Krishnam Raju Engineering College, Bhimavaram. Functioning under the college's cultural umbrella, the club brings together passionate storytellers, directors, cinematographers, editors, and actors from across all engineering disciplines. It serves as an active creative platform where students transform raw concepts into compelling visual narratives, producing short films, documentaries, promotional content, and campus event media.`,
     img: '/assets/images/clubs/cini-club.jpg',
     objectives: [
       'Encourage visual storytelling, scriptwriting, and creative direction.',
