@@ -108,7 +108,7 @@ export const programs: Programs[] = [
     established: 2022,
     intake: 60,
     hod: 'Dr. K. Aruna Kumari',
-    hodDesignation: 'Associate Professor',
+    hodDesignation: 'Associate Professor & Program Coordinator',
     hodEmail: 'hod.cic@srkrec.ac.in',
     email: 'hod.cic@srkrec.ac.in',
     phone: '+91 08816 223332',
