@@ -4,11 +4,459 @@ import FooterScripts from '../../components/FooterScripts.astro';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
-import { departments } from '../../data/departments';
+// import { departments } from '../../data/departments';
 
 const pageTitle = "Admission Brochure";
 
-const totalIntake = departments.reduce((sum, d) => sum + d.intake, 0);
+// const totalIntake = departments.reduce((sum, d) => sum + d.intake, 0);
+const departments = {
+  undergraduate: [
+    {
+      slug: 'civil',
+      code: 'CIVIL',
+      name: 'Civil Engineering',
+      fullName: 'Department of Civil Engineering',
+      icon: 'fa-light fa-building-columns',
+      established: 1980,
+      intake: 120,
+      degree: 'B.Tech',
+      hod: 'Dr. G. Sri Bala',
+      hodDesignation: 'Associate Professor & Head of the Department',
+      hodEmail: 'hod.civil@srkrec.ac.in',
+      tpCoordinator: 'K Jagadeep',
+      tpCoordinatorEmail: 'jagadeep.kankatala@gmail.com',
+      email: 'hod.civil@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 1980 · NBA Accredited (4x) · B.Tech & M.Tech Programs',
+      nbaAccredited: true,
+      legacyCode: 'civil',
+    },
+    {
+      slug: 'cse',
+      code: 'CSE',
+      name: 'Computer Science & Engineering',
+      fullName: 'Department of Computer Science & Engineering',
+      icon: 'fa-light fa-laptop-code',
+      established: 1991,
+      intake: 300,
+      degree: 'B.Tech',
+      hod: 'Dr. Bh. V. S. Rama Krishnam Raju',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'cse@srkrec.ac.in',
+      tpCoordinator: 'T Srinivasa Rao',
+      tpCoordinatorEmail: 'srinu.tottempudi@gmail.com',
+      email: 'cse@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 1991 · NBA Accredited · Research Centre (JNTUK)',
+      nbaAccredited: true,
+      legacyCode: 'cse',
+    },
+    {
+      slug: 'ece',
+      code: 'ECE',
+      name: 'Electronics & Communication Engineering',
+      fullName: 'Department of Electronics & Communication Engineering',
+      icon: 'fa-light fa-microchip',
+      established: 1980,
+      intake: 240,
+      degree: 'B.Tech',
+      hod: 'Dr. S. S. Mohan Reddy',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'ece@srkrec.ac.in',
+      tpCoordinator: 'K V N Suresh Varma',
+      tpCoordinatorEmail: 'varma.yuvaraj@gmail.com',
+      email: 'ece@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 1980 · NBA Accredited · B.Tech, M.Tech & Ph.D Programs',
+      nbaAccredited: true,
+      legacyCode: 'ece',
+    },
+    {
+      slug: 'eee',
+      code: 'EEE',
+      name: 'Electrical & Electronics Engineering',
+      fullName: 'Department of Electrical & Electronics Engineering',
+      icon: 'fa-light fa-bolt',
+      established: 1994,
+      intake: 120,
+      degree: 'B.Tech',
+      hod: 'Dr. B. Ravi Kumar Varma',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'eee@srkrec.ac.in',
+      tpCoordinator: 'Dr. G Veeranna',
+      tpCoordinatorEmail: 'veerueee@gmail.com',
+      email: 'eee@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 1994 · NBA Accredited · B.Tech & M.Tech Power Systems',
+      nbaAccredited: true,
+      legacyCode: 'eee',
+    },
+    {
+      slug: 'mechanical',
+      code: 'ME',
+      name: 'Mechanical Engineering',
+      fullName: 'Department of Mechanical Engineering',
+      icon: 'fa-light fa-gears',
+      established: 1980,
+      intake: 120,
+      degree: 'B.Tech',
+      hod: 'Dr. K. Sita Rama Raju',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'mech@srkrec.ac.in',
+      tpCoordinator: 'S V Manikanth',
+      tpCoordinatorEmail: 'manikanth.srkrec@gmail.com',
+      email: 'mech@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 1980 · NBA Accredited · B.Tech & M.Tech Programs',
+      nbaAccredited: true,
+      legacyCode: 'mech',
+    },
+    {
+      slug: 'it',
+      code: 'IT',
+      name: 'Information Technology',
+      fullName: 'Department of Information Technology',
+      icon: 'fa-light fa-network-wired',
+      established: 2001,
+      intake: 180,
+      degree: 'B.Tech',
+      hod: 'Dr. P. Ravi Kiran Varma',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'hod.it@srkrec.ac.in',
+      tpCoordinator: 'Dr. S Ramagopala Reddy',
+      tpCoordinatorEmail: 'sramagopalareddy@gmail.com',
+      email: 'hod.it@srkrec.ac.in',
+      phone: '+91 884 222 6666',
+      tagline: 'Established 2001 · NBA Accredited · B.Tech Information Technology',
+      nbaAccredited: true,
+      legacyCode: 'it',
+    },
+    {
+      slug: 'aids',
+      code: 'AI&DS',
+      name: 'AI & Data Science',
+      fullName: 'Artificial Intelligence & Data Science',
+      icon: 'fa-light fa-brain-circuit',
+      intake: 240,
+      degree: 'B.Tech',
+      legacyCode: 'aids',
+    },
+    {
+      slug: 'aiml',
+      code: 'AI&ML',
+      name: 'Artificial Intelligence & Machine Learning',
+      fullName: 'Artificial Intelligence & Machine Learning',
+      icon: 'fa-light fa-robot',
+      intake: 240,
+      degree: 'B.Tech',
+      legacyCode: 'aiml',
+    },
+    {
+      slug: 'csbs',
+      code: 'CSBS',
+      name: 'Computer Science & Business System',
+      fullName: 'Computer Science & Business System',
+      icon: 'fa-light fa-chart-network',
+      intake: 60,
+      degree: 'B.Tech',
+      legacyCode: 'csbs',
+    },
+    {
+      slug: 'csd',
+      code: 'CSD',
+      name: 'Computer Science & Design',
+      fullName: 'Computer Science & Design',
+      icon: 'fa-light fa-palette',
+      intake: 60,
+      degree: 'B.Tech',
+      legacyCode: 'csd',
+    },
+    {
+      slug: 'cic',
+      code: 'CIC',
+      name: 'IoT & Cybersecurity',
+      fullName: 'Computer Science & Engineering (IoT & Cybersecurity)',
+      icon: 'fa-light fa-shield-check',
+      intake: 60,
+      degree: 'B.Tech',
+      legacyCode: 'cic',
+    },
+    {
+      slug: 'csit',
+      code: 'CSIT',
+      name: 'Computer Science & Information Technology',
+      fullName: 'Computer Science & Information Technology',
+      icon: 'fa-light fa-brackets-curly',
+      intake: 120,
+      degree: 'B.Tech',
+      legacyCode: 'csit',
+    },
+    {
+      slug: 'ms',
+      code: 'MS',
+      name: 'Management Studies',
+      fullName: 'Department of Management Studies',
+      icon: 'fa-light fa-briefcase',
+      established: 2024,
+      intake: 60,
+      degree: 'B.B.A.',
+      hod: 'Dr. M. Siva Krishnam Raju',
+      hodDesignation: 'Associate Professor & Head of the Department',
+      hodEmail: 'hod.bba@srkrec.ac.in',
+      email: 'hod.bba@srkrec.ac.in',
+      phone: '+91 08816 223332',
+      tagline: 'Established 2024 · BBA · Industry Aligned Read More',
+      legacyCode: 'ms',
+    },
+  ],
+
+  minorDegrees: [
+    {
+      slug: 'minor-ai-ml',
+      code: 'AIML',
+      name: 'Artificial Intelligence & Machine Learning',
+      fullName: 'Minor Degree in Artificial Intelligence & Machine Learning',
+      icon: 'fa-light fa-microchip-ai',
+      intake: "",
+      degree: 'Minor',
+    },
+    {
+      slug: 'minor-data-science',
+      code: 'DS',
+      name: 'Data Science',
+      fullName: 'Minor Degree in Data Science',
+      icon: 'fa-light fa-database',
+      intake: "",
+      degree: 'Minor',
+    },
+    {
+      slug: 'minor-cyber-security',
+      code: 'CS',
+      name: 'Cyber Security',
+      fullName: 'Minor Degree in Cyber Security',
+      icon: 'fa-light fa-user-shield',
+      intake: "",
+      degree: 'Minor',
+    },
+    {
+      slug: 'minor-electric-vehicles',
+      code: 'EV',
+      name: 'Electric Vehicle Technology',
+      fullName: 'Minor Degree in Electric Vehicle Technology',
+      icon: 'fa-light fa-car-battery',
+      intake: "",
+      degree: 'Minor',
+    },
+  ],
+
+  postgraduate: [
+    {
+      slug: 'mtech-cad-cam',
+      code: 'CAD/CAM',
+      name: 'CAD / CAM',
+      fullName: 'M.Tech in CAD / CAM',
+      icon: 'fa-light fa-compass-drafting',
+      intake: 6,
+      degree: 'M.Tech',
+      department: 'Mechanical Engineering',
+    },
+    {
+      slug: 'mtech-structural-engg',
+      code: 'SE',
+      name: 'Structural Engineering',
+      fullName: 'M.Tech in Structural Engineering',
+      icon: 'fa-light fa-bridge-suspension',
+      intake: 12,
+      degree: 'M.Tech',
+      department: 'Civil Engineering',
+    },
+    {
+      slug: 'mtech-comm-systems',
+      code: 'CS',
+      name: 'Communication Systems',
+      fullName: 'M.Tech in Communication Systems',
+      icon: 'fa-light fa-signal-stream',
+      intake: 6,
+      degree: 'M.Tech',
+      department: 'ECE',
+    },
+    {
+      slug: 'mtech-cs-tech',
+      code: 'CST',
+      name: 'Computer Science & Technology',
+      fullName: 'M.Tech in Computer Science & Technology',
+      icon: 'fa-light fa-server',
+      intake: 24,
+      degree: 'M.Tech',
+      department: 'CSE',
+    },
+    {
+      slug: 'mtech-it',
+      code: 'IT',
+      name: 'Information Technology',
+      fullName: 'M.Tech in Information Technology',
+      icon: 'fa-light fa-network-wired',
+      intake: 6,
+      degree: 'M.Tech',
+      department: 'Information Technology',
+    },
+    {
+      slug: 'mtech-power-systems',
+      code: 'PSA',
+      name: 'Power Systems & Automation',
+      fullName: 'M.Tech in Power Systems & Automation',
+      icon: 'fa-light fa-plug-circle-bolt',
+      intake: 6,
+      degree: 'M.Tech',
+      department: 'EEE',
+    },
+    {
+      slug: 'mtech-ev-tech',
+      code: 'EVT',
+      name: 'Electric Vehicle Technology',
+      fullName: 'M.Tech in Electric Vehicle Technology',
+      icon: 'fa-light fa-charging-station',
+      intake: 6,
+      degree: 'M.Tech',
+    },
+    {
+      slug: 'mtech-ai',
+      code: 'AI',
+      name: 'Artificial Intelligence',
+      fullName: 'M.Tech in Artificial Intelligence',
+      icon: 'fa-light fa-brain',
+      intake: 12,
+      degree: 'M.Tech',
+    },
+  ],
+
+  doctoral: [
+    {
+      slug: 'phd-civil',
+      code: 'CIVIL',
+      name: 'Civil Engineering',
+      fullName: 'Ph.D in Civil Engineering',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'Civil Engineering',
+    },
+    {
+      slug: 'phd-cse',
+      code: 'CSE',
+      name: 'Computer Science & Engineering',
+      fullName: 'Ph.D in Computer Science & Engineering',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'CSE',
+    },
+    {
+      slug: 'phd-ece',
+      code: 'ECE',
+      name: 'Electronics & Communication Engineering',
+      fullName: 'Ph.D in Electronics & Communication Engineering',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'ECE',
+    },
+    {
+      slug: 'phd-eee',
+      code: 'EEE',
+      name: 'Electrical & Electronics Engineering',
+      fullName: 'Ph.D in Electrical & Electronics Engineering',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'EEE',
+    },
+    {
+      slug: 'phd-it',
+      code: 'IT',
+      name: 'Information Technology',
+      fullName: 'Ph.D in Information Technology',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'Information Technology',
+    },
+    {
+      slug: 'phd-mechanical',
+      code: 'MECH',
+      name: 'Mechanical Engineering',
+      fullName: 'Ph.D in Mechanical Engineering',
+      icon: 'fa-light fa-graduation-cap',
+      intake: "",
+      degree: 'Ph.D',
+      department: 'Mechanical Engineering',
+    },
+    {
+      slug: 'phd-maths',
+      code: 'MATHS',
+      name: 'Mathematics',
+      fullName: 'Department of Engineering Mathematics (Ph.D Program)',
+      icon: 'fa-light fa-subscript',
+      established: 2001,
+      intake: "",
+      degree: 'Ph.D',
+      hod: 'Dr. G. N. V. Kishore',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'maths@srkrec.ac.in',
+      email: 'maths@srkrec.ac.in',
+      phone: '+91 08816 223332',
+      legacyCode: 'maths',
+    },
+    {
+      slug: 'phd-chemistry',
+      code: 'CHEM',
+      name: 'Chemistry',
+      fullName: 'Department of Engineering Chemistry (Ph.D Program)',
+      icon: 'fa-light fa-flask',
+      established: 2001,
+      intake: "",
+      degree: 'Ph.D',
+      hod: 'Dr. P Bhavani',
+      hodDesignation: 'Professor & Head of the Department',
+      hodEmail: 'chemistry@srkrec.ac.in',
+      email: 'chemistry@srkrec.ac.in',
+      phone: '+91 08816 223332',
+      legacyCode: 'chemistry',
+    },
+    {
+      slug: 'phd-physics',
+      code: 'PHYSICS',
+      name: 'Physics',
+      fullName: 'Department of Engineering Physics (Ph.D Program)',
+      icon: 'fa-light fa-atom',
+      established: 2001,
+      intake: "",
+      degree: 'Ph.D',
+      hod: 'Dr. M. V. Someswara Rao',
+      hodDesignation: 'Associate Professor & Head of the Department',
+      hodEmail: 'physics@srkrec.ac.in',
+      email: 'physics@srkrec.ac.in',
+      phone: '+91 08816 223332',
+      legacyCode: 'physics',
+    },
+    {
+      slug: 'phd-english',
+      code: 'ENGLISH',
+      name: 'English & Foreign Languages',
+      fullName: 'Department of English and Foreign Languages (Ph.D Program)',
+      icon: 'fa-light fa-language',
+      established: 2001,
+      intake: "",
+      degree: 'Ph.D',
+      hod: 'Dr. Satish Kumar Nadimpalli',
+      hodDesignation: 'Associate Professor & Head of the Department',
+      hodEmail: 'english@srkrec.ac.in',
+      email: 'english@srkrec.ac.in',
+      phone: '+91 08816 223332',
+      legacyCode: 'english',
+    },
+  ],
+};
 
 const importantDates = [
   { label: 'AP EAPCET — Notification', date: 'Feb (annual)' },
@@ -89,33 +537,119 @@ const importantDates = [
       </div>
     </div>
 
-    <!-- PROGRAMS OFFERED -->
+    <!-- PROGRAMS OFFERED B.Tech. -->
     <div class="rts-multi-row-section pb-5">
       <div class="container">
-        <div class="rts-section mb--30">
-          <h3 class="rts-section-title">Programs Offered (B.Tech)</h3>
-        </div>
-        <div class="row g-4">
-          {departments.map((d) => (
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="card h-100 shadow-sm single-cat-item">
-                <div class="card-body">
-                  <div class="mb-2">
-                    <span class="badge" style="background-color: var(--rt-primary); color: white; padding: 6px 12px; font-size: 0.8rem; font-weight: 600;">{d.code}</span>
-                  </div>
-                  <h6 class="card-title mb-2 mt-2">
+    <!-- 1. Undergraduate Programs -->
+    <div class="mb-5">
+      <h3 class="mb-4" style="text-align: center;">Undergraduate Programs (B.Tech / BBA)</h3>
+      <div class="row g-4">
+        {departments.undergraduate.map((d) => (
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm single-cat-item" style="border-radius: 16px;">
+              <div class="card-body d-flex">
+                <div class="me-3">
+                  <span class="badge mb-2 me-2" style="background-color: var(--rt-primary); color: white; padding: 7px; font-size: 1rem; font-weight: 600; border-radius: 0.5rem;">{d.code}</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <h6 class="card-title mb-1 mt-2">
                     <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                    {d.intake && <p class="m-0 small"><strong>Intake:</strong> {d.intake}</p>}
                   </h6>
-                  <p class="mb-1 small"><strong>Intake:</strong> {d.intake} {d.nbaAccredited && (<span class="text-success">· NBA</span>)}</p>
-                  <p class="mb-2 small text-muted">{d.tagline}</p>
-                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i> Curriculum</a>
+                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow">
+                    <i class="fa-sharp fa-regular fa-arrow-right"></i> Read More
+                  </a>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        <p class="small text-muted mt-3 mb-0">Also see: <a href="/departments/ash/">Applied Sciences &amp; Humanities</a> · <a href="/programmes">All Programs</a> · <a href="/procedure">Admission Procedure</a></p>
+          </div>
+        ))}
       </div>
+    </div>
+
+    <!-- 2. Minor Degrees -->
+    <div class="mb-5">
+      <h3 class="mb-4" style="text-align: center;">Minor Degrees</h3>
+      <div class="row g-4">
+        {departments.minorDegrees.map((d) => (
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm single-cat-item" style="border-radius: 16px;">
+              <div class="card-body d-flex">
+                <div class="me-3">
+                  <span class="badge mb-2 me-2" style="background-color: var(--rt-primary); color: white; padding: 7px; font-size: 1rem; font-weight: 600; border-radius: 0.5rem;">{d.code}</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <h6 class="card-title mb-1 mt-2">
+                    <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                    {d.intake && <p class="m-0 small"><strong>Intake:</strong> {d.intake}</p>}
+                  </h6>
+                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow">
+                    <i class="fa-sharp fa-regular fa-arrow-right"></i> Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 3. Postgraduate Programs -->
+    <div class="mb-5">
+      <h3 class="mb-4" style="text-align: center;">Postgraduate Programs (M.Tech)</h3>
+      <div class="row g-4">
+        {departments.postgraduate.map((d) => (
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm single-cat-item" style="border-radius: 16px;">
+              <div class="card-body d-flex">
+                <div class="me-3">
+                  <span class="badge mb-2 me-2" style="background-color: var(--rt-primary); color: white; padding: 7px; font-size: 1rem; font-weight: 600; border-radius: 0.5rem;">{d.code}</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <h6 class="card-title mb-1 mt-2">
+                    <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                    {d.intake && <p class="m-0 small"><strong>Intake:</strong> {d.intake}</p>}
+                  </h6>
+                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow">
+                    <i class="fa-sharp fa-regular fa-arrow-right"></i> Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 4. Doctoral Programs -->
+    <div class="mb-5">
+      <h3 class="mb-4" style="text-align: center;">Doctoral Programs (Ph.D)</h3>
+      <div class="row g-4">
+        {departments.doctoral.map((d) => (
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm single-cat-item" style="border-radius: 16px;">
+              <div class="card-body d-flex">
+                <div class="me-3">
+                  <span class="badge mb-2 me-2" style="background-color: var(--rt-primary); color: white; padding: 7px; font-size: 1rem; font-weight: 600; border-radius: 0.5rem;">{d.code}</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <h6 class="card-title mb-1 mt-2">
+                    <a href={`/departments/${d.slug}/`}>{d.name}</a>
+                    {d.intake && <p class="m-0 small"><strong>Intake:</strong> {d.intake}</p>}
+                  </h6>
+                  <a href={`/departments/${d.slug}/academic-programs/`} class="cat-link-arrow">
+                    <i class="fa-sharp fa-regular fa-arrow-right"></i> Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <p class="small text-muted mt-3 mb-0">Also see: <a href="/departments/ash/">Applied Sciences &amp; Humanities</a> · <a href="/programmes">All Programs</a> · <a href="/procedure">Admission Procedure</a></p>
+</div>
     </div>
 
     <!-- IMPORTANT DATES -->

@@ -14,24 +14,24 @@
 /* Default  */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 :root {
-  --rt-theme: #09A24F;
-  --rt-primary: #890C25;
-  --rt-primary-1: #B71A34;
-  --rt-primary-2: #890C25;
-  --rt-secondary: #110C2D;
-  --rt-footer: #181818;
-  --rt-body: #5e6e7d;
-  --rt-heading: #2b3d4f;
-  --rt-white:#fff;
+  --rt-theme: #F39C6B;
+  --rt-primary: #C44536;
+  --rt-primary-1: #D95E4F;
+  --rt-primary-2: #A7372B;
+  --rt-secondary: #2F3542;
+  --rt-footer: #1F2430;
+  --rt-body: #646B78;
+  --rt-heading: #2C3140;
+  --rt-white: #FFFFFF;
   --rt-rating: var(--rt-primary);
-  --rt-border: #D9D9D9;
-  --rt-line: #eee;
-  --rt-hover: #AF0E2E;
+  --rt-border: #E5D5CF;
+  --rt-line: #F5ECE9;
+  --rt-hover: #D95E4F;
   --copyright-border: #242424;
-  --rt-radius:3px;
+  --rt-radius: 3px;
   --rt-radius-none: none;
   --rt-none: none;
-  --footer-bg: #181818;
+  --footer-bg: #1F2430;
   --light-white: #f6f6f6;
   --color-success: #3EB75E;
   --color-danger: #FF0003;
@@ -19557,7 +19557,18 @@ xclip
   display: inline-block;
   padding: 10px 0;
 }
+/* Hide the curriculum link by default inside the card */
+.single-cat-item .cat-link-arrow {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
 
+/* Reveal the link when hovering over the card */
+.single-cat-item:hover .cat-link-arrow {
+    opacity: 1;
+    visibility: visible;
+}
 .single-cat-item .cat-thumb {
   position: relative;
   overflow: hidden;
