@@ -88,7 +88,7 @@ const coreDepartments: Department[] = [
   {
     slug: 'cse',
     code: 'CSE',
-    name: 'Computer Science & Engineering',
+    name: 'CSE',
     fullName: 'Department of Computer Science & Engineering',
     icon: 'fa-light fa-laptop-code',
     established: 1991,
@@ -107,7 +107,7 @@ const coreDepartments: Department[] = [
   {
     slug: 'ece',
     code: 'ECE',
-    name: 'Electronics & Communication Engineering',
+    name: 'ECE',
     fullName: 'Department of Electronics & Communication Engineering',
     icon: 'fa-light fa-microchip',
     established: 1980,
@@ -126,7 +126,7 @@ const coreDepartments: Department[] = [
   {
     slug: 'eee',
     code: 'EEE',
-    name: 'Electrical & Electronics Engineering',
+    name: 'EEE',
     fullName: 'Department of Electrical & Electronics Engineering',
     icon: 'fa-light fa-bolt',
     established: 1994,
@@ -146,7 +146,7 @@ const coreDepartments: Department[] = [
   {
     slug: 'mechanical',
     code: 'ME',
-    name: 'Mechanical Engineering',
+    name: 'Mechanical',
     fullName: 'Department of Mechanical Engineering',
     icon: 'fa-light fa-gears',
     established: 1980,
@@ -165,7 +165,7 @@ const coreDepartments: Department[] = [
   {
     slug: 'it',
     code: 'IT',
-    name: 'Information Technology',
+    name: 'IT',
     fullName: 'Department of Information Technology',
     icon: 'fa-light fa-network-wired',
     established: 2001,
