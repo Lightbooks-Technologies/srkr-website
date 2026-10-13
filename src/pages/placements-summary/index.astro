@@ -16,6 +16,7 @@ const yearStats = [
     topLPA: "19.00",
     avgLPA: "3.5",
     recruiters: "75+",
+    pdfUrl: "/departments/civil/placements"
   },
   {
     year: "2024-25",
@@ -23,6 +24,7 @@ const yearStats = [
     topLPA: "17.16",
     avgLPA: "3.8",
     recruiters: "95+",
+    pdfUrl: "/departments/civil/placements"
   },
   {
     year: "2023-24",
@@ -30,6 +32,7 @@ const yearStats = [
     topLPA: "25.00",
     avgLPA: "4.2",
     recruiters: "130+",
+    pdfUrl: "/departments/civil/placements"
   },
   {
     year: "2022-23",
@@ -37,6 +40,7 @@ const yearStats = [
     topLPA: "53.00",
     avgLPA: "4.3",
     recruiters: "106+",
+    pdfUrl: "/departments/civil/placements"
   },
   {
     year: "2021-22",
@@ -44,6 +48,7 @@ const yearStats = [
     topLPA: "47.2",
     avgLPA: "5.0",
     recruiters: "122+",
+    pdfUrl: "/departments/civil/placements"
   },
 ];
 
@@ -72,7 +77,7 @@ const topOffers = [
 
   { company: "TCS Prime", lpa: "9.00 LPA", offers: "5 Offers" },
   { company: "JobAlchemy", lpa: "9.00 LPA", offers: "1 Offer" },
-  { company: "BOSON", lpa: "8.00 LPA", offers: "8 Offers" },
+  // { company: "BOSON", lpa: "8.00 LPA", offers: "8 Offers" },
   { company: "Bluconnect AI", lpa: "7.80 LPA", offers: "8 Offers" },
   { company: "TCS Digital", lpa: "7.00 LPA", offers: "64 Offers" },
   { company: "Infosys DSE", lpa: "7.00 LPA", offers: "42 Offers" },
@@ -83,7 +88,7 @@ const topOffers = [
 
 // Volume recruiters
 const volumeRecruiters = [
-  { company: "Infosys", offers: "134", lpa: "3.60 - 16.00 LPA" },
+  { company: "Infosys", offers: "133", lpa: "3.60 - 16.00 LPA" },
   { company: "TCS", offers: "302", lpa: "3.42 - 9.09 LPA" },
   { company: "Cognizant", offers: "333", lpa: "4.00 - 6.75 LPA" },
 
@@ -433,7 +438,7 @@ const recentPlacements = [
                 class="single-item__meta"
                 style="text-align:center; padding:24px;"
               >
-                <h2 style="color: var(--rt-primary); margin: 0;">1339+</h2>
+                <h2 style="color: var(--rt-primary); margin: 0;">2349</h2>
                 <p class="item-description">Total Offers (2025-26)</p>
               </div>
             </div>
@@ -455,7 +460,7 @@ const recentPlacements = [
                 class="single-item__meta"
                 style="text-align:center; padding:24px;"
               >
-                <h2 style="color: var(--rt-primary); margin: 0;">4.5 LPA</h2>
+                <h2 style="color: var(--rt-primary); margin: 0;">3.9 LPA</h2>
                 <p class="item-description">Average Package</p>
               </div>
             </div>
@@ -466,7 +471,7 @@ const recentPlacements = [
                 class="single-item__meta"
                 style="text-align:center; padding:24px;"
               >
-                <h2 style="color: var(--rt-primary); margin: 0;">250+</h2>
+                <h2 style="color: var(--rt-primary); margin: 0;">79</h2>
                 <p class="item-description">Recruiters</p>
               </div>
             </div>
@@ -568,6 +573,7 @@ const recentPlacements = [
                   <th>Highest LPA</th>
                   <th>Average LPA</th>
                   <th>Recruiters</th>
+                  <th>Reports</th>
                 </tr>
               </thead>
               <tbody>
@@ -581,6 +587,17 @@ const recentPlacements = [
                       <td>{y.topLPA} LPA</td>
                       <td>{y.avgLPA} LPA</td>
                       <td>{y.recruiters}</td>
+                      <td>
+                        <a
+                          href={y.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style="text-decoration: none; color: var(--rt-primary); font-weight: 600;"
+                        >
+                          <i class="fa-regular fa-download me-3"></i>
+                          Download
+                        </a>
+                        </td>
                     </tr>
                   ))
                 }
@@ -636,7 +653,9 @@ const recentPlacements = [
         <div class="row g-4">
           <div class="col-lg-2 col-md-3 col-4">
             <div class="recruiter-logo-box">
-              <img src="/assets/images/recruiters/tcs.png" alt="TCS" />
+              <img src="/assets/images/recruiters/tcs.png"  alt="TCS" 
+                style="max-height: 70px;"
+               />
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-4">
@@ -646,6 +665,7 @@ const recentPlacements = [
                 alt="Cognizant"
                 loading="lazy"
                 decoding="async"
+                style="max-height: 70px;"
               />
             </div>
           </div>
@@ -655,7 +675,9 @@ const recentPlacements = [
                 src="/assets/images/recruiters/infosys.png"
                 alt="Infosys"
                 loading="lazy"
-                decoding="async"
+                decoding="async" 
+                style="max-height: 70px;"
+
               />
             </div>
           </div>
@@ -666,6 +688,8 @@ const recentPlacements = [
                 alt="Ultratech"
                 loading="lazy"
                 decoding="async"
+                style="max-height: 70px;"
+
               />
             </div>
           </div>
@@ -676,6 +700,8 @@ const recentPlacements = [
                 alt="AT&T"
                 loading="lazy"
                 decoding="async"
+                style="max-height: 70px;"
+
               />
             </div>
           </div>
@@ -686,6 +712,8 @@ const recentPlacements = [
                 alt="RIL"
                 loading="lazy"
                 decoding="async"
+                style="max-height: 70px;"
+
               />
             </div>
           </div>
