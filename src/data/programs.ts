@@ -48,7 +48,7 @@ export const programs: Programs[] = [
     hodEmail: 'csit@srkrec.ac.in',
     email: 'csit@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2020 · B.Tech CS & Information Technology',
+    tagline: 'Established 2020 · B.Tech. CS & Information Technology',
     legacyCode: 'csit',
   },
   {
@@ -64,7 +64,7 @@ export const programs: Programs[] = [
     hodEmail: 'pc.aiml@srkrec.ac.in',
     email: 'pc.aiml@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2021 · B.Tech AI & ML · Industry Aligned Curriculum',
+    tagline: 'Established 2021 · B.Tech. AI & ML · Industry Aligned Curriculum',
     legacyCode: 'aiml',
   },
   {
@@ -80,7 +80,7 @@ export const programs: Programs[] = [
     hodEmail: 'hod.aids@srkrec.ac.in',
     email: 'hod.aids@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2021 · B.Tech AI & Data Science',
+    tagline: 'Established 2021 · B.Tech. AI & Data Science',
     legacyCode: 'aids',
   },
   {
@@ -96,7 +96,7 @@ export const programs: Programs[] = [
     hodEmail: 'hod.csbs@srkrec.ac.in',
     email: 'hod.csbs@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2021 · B.Tech CS & Business System · TCS Curriculum',
+    tagline: 'Established 2021 · B.Tech. CS & Business System · TCS Curriculum',
     legacyCode: 'csbs',
   },
   {
@@ -112,7 +112,7 @@ export const programs: Programs[] = [
     hodEmail: 'hod.cic@srkrec.ac.in',
     email: 'hod.cic@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2022 · B.Tech CSE — IoT, Cyber Security & Blockchain',
+    tagline: 'Established 2022 · B.Tech. CSE — IoT, Cyber Security & Blockchain',
     legacyCode: 'cic',
   },
   {
@@ -128,7 +128,7 @@ export const programs: Programs[] = [
     hodEmail: 'hod.csd@srkrec.ac.in',
     email: 'hod.csd@srkrec.ac.in',
     phone: '+91 08816 223332',
-    tagline: 'Established 2021 · B.Tech CS & Design · Creative Tech Programs',
+    tagline: 'Established 2021 · B.Tech. CS & Design · Creative Tech Programs',
     legacyCode: 'csd',
   },
   // {
