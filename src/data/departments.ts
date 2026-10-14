@@ -214,7 +214,7 @@ const coreDepartments: Department[] = [
     legacyCode: 'ms',
   },
   {
-    slug: 'Mathematics',
+    slug: 'mathematics',
     code: 'Mathematics',
     name: 'Mathematics',
     fullName: 'Department of Engineering Mathematics',
@@ -231,7 +231,7 @@ const coreDepartments: Department[] = [
     legacyCode: 'maths',
   },
   {
-    slug: 'Chemistry',
+    slug: 'chemistry',
     code: 'Chemistry',
     name: 'Chemistry',
     fullName: 'Department of Engineering Chemistry',
@@ -248,7 +248,7 @@ const coreDepartments: Department[] = [
     legacyCode: 'chemistry',
   },
   {
-    slug: 'Physics',
+    slug: 'physics',
     code: 'Physics',
     name: 'Physics',
     fullName: 'Department of Engineering Physics',
@@ -265,7 +265,7 @@ const coreDepartments: Department[] = [
     legacyCode: 'physics',
   },
    {
-    slug: 'ash/english-and-foreign-languages/',
+    slug: 'ash/english-and-foreign-languages',
     code: 'English and Foreign Languages',
     name: 'English and Foreign Languages',
     fullName: 'Department of English and Foreign Languages',

@@ -36,7 +36,7 @@ export interface Programs {
 
 export const programs: Programs[] = [
   {
-    slug: 'csit',
+    slug: 'it',
     code: 'CSIT',
     name: 'CS & IT',
     fullName: 'Department of Computer Science & Information Technology',
@@ -52,7 +52,7 @@ export const programs: Programs[] = [
     legacyCode: 'csit',
   },
   {
-    slug: 'aiml',
+    slug: 'cse',
     code: 'AIML',
     name: 'AI & ML',
     fullName: 'Department of Artificial Intelligence & Machine Learning',
@@ -68,7 +68,7 @@ export const programs: Programs[] = [
     legacyCode: 'aiml',
   },
   {
-    slug: 'aids',
+    slug: 'it',
     code: 'AIDS',
     name: 'AI & Data Science',
     fullName: 'Department of Artificial Intelligence & Data Science',
@@ -84,7 +84,7 @@ export const programs: Programs[] = [
     legacyCode: 'aids',
   },
   {
-    slug: 'csbs',
+    slug: 'it',
     code: 'CSBS',
     name: 'CS & Business System',
     fullName: 'Department of Computer Science & Business Systems',
@@ -100,7 +100,7 @@ export const programs: Programs[] = [
     legacyCode: 'csbs',
   },
   {
-    slug: 'cic',
+    slug: 'cse',
     code: 'CIC',
     name: 'CSE - IoT & Cyber',
     fullName: 'Department of CSE (IoT, Cyber Security & Blockchain Technology)',
@@ -116,7 +116,7 @@ export const programs: Programs[] = [
     legacyCode: 'cic',
   },
   {
-    slug: 'csd',
+    slug: 'cse',
     code: 'CSD',
     name: 'CS & Design',
     fullName: 'Department of Computer Science & Design',
