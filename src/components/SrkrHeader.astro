@@ -1,9 +1,16 @@
 ---
 import { departments, DEPT_NAV_ITEMS } from '../data/departments';
+import type { Programs } from '../data/programs';
 
-const headerDepartments = departments.filter((department) =>
-  ['civil', 'cse', 'ece', 'eee', 'mechanical', 'it', 'ms'].includes(department.slug),
-);
+const hiddenProgramCodes = ['CSIT', 'AIML', 'AIDS', 'CSBS', 'CSD', 'CIC', ];
+
+const headerDepartments = departments.filter((department) => {
+  if (hiddenProgramCodes.includes((department as Programs).code)) {
+    return false;
+  }
+
+  return ['civil', 'cse', 'ece', 'eee', 'mechanical', 'it', 'ms'].includes(department.slug);
+});
 ---
 
 <style>
