@@ -191,16 +191,16 @@ const internshipCompanies = [
     <!-- Past Internship Companies -->
     <div class="rts-multi-row-section pb--60">
       <div class="container">
-        <div class="row">
+        <div class="row mb-0">
           <div class="rts-section rt-center mb--45">
             <h3 class="rts-section-title">Past Internship Companies</h3>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 d-flex justify-content-center align-items-center">
           {internshipCompanies.map((c) => (
             <div class="col-lg-2 col-md-3 col-4">
-              <div class="recruiter-logo-box">
-                <img src={c.logo} alt={c.name} />
+              <div class="recruiter-logo-box d-flex justify-content-center align-items-center">
+                <img style="max-height: 80px; max-width: 100px;" src={c.logo} alt={c.name} />
               </div>
             </div>
           ))}
