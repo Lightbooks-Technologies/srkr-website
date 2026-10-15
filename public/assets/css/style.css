@@ -62,13 +62,13 @@
   --line-height-b1: 26px;
   --line-height-b2: 26px;
   --line-height-b3: 1.7;
-  --h1: 48px;
-  --h2: 40px;
-  --h3: 36px;
-  --h4: 24px;
-  --h5: 20px;
+  --h1: 30px;
+  --h2: 26px;
+  --h3: 24px;
+  --h4: 22px;
+  --h5: 18px;
   --h6: 16px;
-  --p-l: 24px;
+  --p-l: 22px;
   --p-m: 20px;
   --p-s: 16px;
   --p-xs: 14px;
@@ -18365,8 +18365,10 @@ xclip
   }
 }
 .single-item__content {
+  height: 100%;
   border: 1px solid #eee;
   transition: var(--transition);
+  border-radius: 10px;
 }
 .single-item__content:hover {
   border-color: var(--rt-primary-2);
