@@ -1,0 +1,284 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import FooterScripts from "../../components/FooterScripts.astro";
+import OffCanvas from "../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import SrkrHeader from "../../components/SrkrHeader.astro";
+import SrkrFooter from "../../components/SrkrFooter.astro";
+import DeptNav from "~/components/DeptNav.astro";
+
+const momentsImages = [
+  "/assets/images/sports/badminton.jpg",
+  "/assets/images/sports/basketball.jpg",
+  "/assets/images/sports/boys-gym.jpg",
+  "/assets/images/sports/carroms.jpg",
+  "/assets/images/sports/chess.jpg",
+  "/assets/images/sports/cricket-court.jpg",
+  "/assets/images/sports/football.jpg",
+  "/assets/images/sports/gym-facilities-for-girls.jpg",
+  "/assets/images/sports/Kabaddi.jpg",
+  "/assets/images/sports/kho-kho.jpg",
+  "/assets/images/sports/long-jump.jpg",
+  "/assets/images/sports/net-ball.jpg",
+  "/assets/images/sports/pickel-ball.jpg",
+  "/assets/images/sports/table-tennis.jpg",
+  "/assets/images/sports/tennis-court.jpg",
+  "/assets/images/sports/throwball.jpg",
+  "/assets/images/sports/volleyball.jpg"
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .event-wall {
+        background: #f8f9fc;
+        overflow: hidden;
+        position: relative;
+        border-radius: 16px;
+        border: 1px solid #e3e7f3;
+        padding: 16px 0;
+        margin-top: 15px;
+      }
+      .event-wall::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 2px 2px, #d8deee 1.1px, transparent 1.1px);
+        background-size: 26px 26px;
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .event-wall .container-fluid {
+        position: relative;
+        z-index: 1;
+      }
+      .event-wall__ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+      }
+      .event-wall__ticker::-webkit-scrollbar {
+        display: none;
+      }
+      .event-wall__track {
+        display: flex;
+        width: max-content;
+        gap: 20px;
+        padding: 6px 12px;
+      }
+      .moment-card {
+        background: #ffffff;
+        border: 1px solid #e3e7f3;
+        border-radius: 14px;
+        width: min(75vw, 280px);
+        flex: 0 0 auto;
+        padding: 10px;
+        box-shadow: 0 8px 20px rgba(20, 44, 112, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .moment-card__photo {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Sports and Games</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <div class="container">
+      <div class="row mt--30">
+        <DeptNav dept="pet" current="Home" />
+
+        <div class="col-12">
+          <div class="admission-content-top">
+             
+  <!-- OUTDOOR SPORTS FACILITIES -->
+<div class="program-accordion mb-5">
+  <div class="accordion" id="pet-facilities-accordion">
+
+    <!-- Outdoor Sports Facilities -->
+    <div class="accordion-item rts-scholarship-description">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#pet-outdoor-facilities" aria-expanded="false">
+        Outdoor Sports Facilities
+      </button>
+      <div id="pet-outdoor-facilities" class="accordion-collapse collapse" data-bs-parent="#pet-facilities-accordion">
+        <div class="accordion-body">
+          <div class="si">
+            <div class="si__list">
+              <ul class="list-unstyled" style="column-count: 2; column-gap: 40px;">
+                <li class="si__list--single mb-2">Tennikoit Courts</li>
+                <li class="si__list--single mb-2">Throw Ball Court</li>
+                <li class="si__list--single mb-2">Basketball Court</li>
+                <li class="si__list--single mb-2">Volleyball Courts</li>
+                <li class="si__list--single mb-2">Badminton Outdoor Courts</li>
+                <li class="si__list--single mb-2">Kabaddi Court</li>
+                <li class="si__list--single mb-2">Kho-Kho Court</li>
+                <li class="si__list--single mb-2">Tennis Court</li>
+                <li class="si__list--single mb-2">Cricket Ground including Running Track</li>
+                <li class="si__list--single mb-2">Football Field</li>
+                <li class="si__list--single mb-2">Hand Ball Court</li>
+                <li class="si__list--single mb-2">Hockey Field</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indoor Sports Facilities -->
+    <div class="accordion-item rts-scholarship-description">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#pet-indoor-facilities" aria-expanded="false">
+        Indoor Sports Facilities
+      </button>
+      <div id="pet-indoor-facilities" class="accordion-collapse collapse" data-bs-parent="#pet-facilities-accordion">
+        <div class="accordion-body">
+          <div class="si">
+            <div class="si__list">
+              <ul class="list-unstyled">
+                <li class="si__list--single">Table Tennis</li>
+                <li class="si__list--single">Carroms</li>
+                <li class="si__list--single">Chess</li>
+                <li class="si__list--single">Gym (Sandpit)</li>
+                <li class="si__list--single">Indoor Badminton Synthetic Courts</li>
+                <li class="si__list--single">Multi Station Gym (Boys)</li>
+                <li class="si__list--single">Gym (Girls)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+           <!-- MOMENTS & HIGHLIGHTS SECTION -->
+            <div class="row mt-5 mb-5">
+              <div class="col-12">
+                <div class="rts-scholarship-description">
+                  <h3 class="mb-4">
+                  </h3>
+                  <div class="event-wall">
+                    <div class="container-fluid px-0">
+                      <div class="event-wall__ticker" data-ticker>
+                        <div class="event-wall__track">
+                          {momentsImages.map((imgSrc, idx) => (
+                            <div class="moment-card">
+                              <img 
+                                class="moment-card__photo"
+                                src={imgSrc} 
+                                alt={`Moment ${idx + 1}`} 
+                                loading="lazy" 
+                                decoding="async" 
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker Autoscroll Script -->
+    <script is:inline>
+      (() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const tickers = document.querySelectorAll('[data-ticker]');
+        tickers.forEach((ticker) => {
+          const track = ticker.querySelector('.event-wall__track');
+          if (!track) return;
+
+          let paused = false;
+          let lastTime = 0;
+
+          const getMaxScroll = () => Math.max(0, track.scrollWidth - ticker.clientWidth);
+
+          const step = (time) => {
+            if (!lastTime) lastTime = time;
+            const delta = time - lastTime;
+            lastTime = time;
+
+            if (!paused && ticker.clientWidth > 0) {
+              ticker.scrollLeft += delta * 0.05;
+              const maxScroll = getMaxScroll();
+              if (maxScroll > 0 && ticker.scrollLeft >= maxScroll) {
+                ticker.scrollLeft = 0;
+              }
+            }
+
+            window.requestAnimationFrame(step);
+          };
+
+          ticker.addEventListener('mouseenter', () => {
+            paused = true;
+          });
+
+          ticker.addEventListener('mouseleave', () => {
+            paused = false;
+            lastTime = 0;
+          });
+
+          const observer = new ResizeObserver(() => {
+            lastTime = 0;
+          });
+          observer.observe(ticker);
+
+          window.requestAnimationFrame(step);
+        });
+      })();
+    </script>
+
+    <!-- footer -->
+    <SrkrFooter />
+
+    <!-- footer copyright end -->
+
+    <OffCanvas />
+
+    <!-- scripts -->
+    <FooterScripts />
+  </body>
+</html>

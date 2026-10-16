@@ -1,0 +1,170 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import FooterScripts from "../../../components/FooterScripts.astro";
+import OffCanvas from "../../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import SrkrHeader from "../../../components/SrkrHeader.astro";
+import SrkrFooter from "../../../components/SrkrFooter.astro";
+import DeptNav from "~/components/DeptNav.astro";
+
+const hod = [
+    {
+    name: 'Dr. Ch. Hari Mohan',
+    designation: 'Associate Professor',
+    email: 'harimohan.ch@srkrec.ac.in',
+    mobile: '9949111178',
+    image: 'hari-sports.jpeg'
+  },
+  
+];
+
+const faculty = [
+  {
+    name: 'Dr. P. Satyanarayana Raju',
+    designation: 'Associate Professor & Head of the Department',
+    email: 'snraju@srkrec.ac.in',
+    mobile: '9441814118',
+    image: 'satyanarayana-sports.jpeg'
+  },
+  {
+    name: 'Mrs. G. Sarika',
+    designation: 'Assistant Professor',
+    email: 'sarika.g@srkrec.ac.in',
+    mobile: '9398385034',
+    image: 'sarika-sports.jpeg'
+  },
+  {
+    name: 'Mr. V. Avinash',
+    designation: 'Assistant Professor',
+    email: 'avinash.v@srkrec.ac.in',
+    mobile: '9866474674',
+    image: 'avinash-sports.jpeg'
+  },
+  {
+    name: 'Mrs. G. Lohitha',
+    designation: 'Assistant Professor',
+    email: 'lohitha.g@srkr.ac.in',
+    mobile: '9490343229',
+    image: 'lohitha-sports.jpeg'
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Faculty | Physical Education | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments/pet">Physical Education</a></li>
+              </ul>
+              <h1 class="section-title">Faculty</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <section class="rts-faculty py-5">
+      <div class="container">
+        <DeptNav dept="pet" current="Faculty" />
+
+        <!-- HoD Section -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Department Head</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img 
+                      src={`/assets/images/faculty/sports/${f.image}`} 
+                      alt={f.name} 
+                      loading="lazy" 
+                      decoding="async" 
+                    />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p class="mb-1">
+                        <i class="fa-regular fa-envelope me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`mailto:${f.email}`}>{f.email}</a>
+                      </p>
+                      <p class="mb-0">
+                        <i class="fa-regular fa-phone me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`tel:${f.mobile}`}>{f.mobile}</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Faculty Section -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Department Faculty Members</h3>
+        </div>
+        <div class="row g-5">
+          {faculty.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img 
+                      src={`/assets/images/faculty/sports/${f.image}`} 
+                      alt={f.name} 
+                      loading="lazy" 
+                      decoding="async" 
+                    />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p class="mb-1">
+                        <i class="fa-regular fa-envelope me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`mailto:${f.email}`}>{f.email}</a>
+                      </p>
+                      <p class="mb-0">
+                        <i class="fa-regular fa-phone me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`tel:${f.mobile}`}>{f.mobile}</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- footer -->
+    <SrkrFooter />
+    <OffCanvas />
+    <FooterScripts />
+  </body>
+</html>

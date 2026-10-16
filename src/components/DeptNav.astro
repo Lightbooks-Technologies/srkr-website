@@ -9,10 +9,30 @@ interface Props {
 }
 
 const { dept, current } = Astro.props as Props;
-const d = getDepartment(dept);
+
+// Fallback metadata for custom slugs not present in departments.ts
+const customDepts: Record<string, { name: string; icon: string; slug: string }> = {
+  pet: {
+    name: 'Physical Education & Sports',
+    icon: 'fa-light fa-person-running',
+    slug: 'sports',
+  },
+  'physical-education': {
+    name: 'Physical Education & Sports',
+    icon: 'fa-light fa-person-running',
+    slug: 'sports',
+  },
+};
+
+let d = getDepartment(dept);
+
+// If not found in departments.ts, check custom fallbacks
+if (!d && customDepts[dept]) {
+  d = customDepts[dept] as any;
+}
 
 if (!d) {
-  throw new Error(`DeptNav: unknown department slug "${dept}". Add it to src/data/departments.ts.`);
+  throw new Error(`DeptNav: unknown department slug "${dept}". Add it to src/data/departments.ts or customDepts.`);
 }
 
 const basePath = `/departments/${d.slug}/`;
@@ -56,6 +76,13 @@ if (dept === 'ash') {
     { label: 'Placements', href: `/departments/it/placements/` },
     { label: 'Newsletter', href: `/departments/it/newsletter/` },
     { label: 'Brochure', href: `/departments/it/brochure/` },
+  ];
+} else if (dept === 'pet' || dept === 'physical-education') {
+  navItems = [
+    { label: 'Home', href: `/sports/` },
+    { label: 'Faculty', href: `/sports/faculty/` },
+    { label: 'Facilities', href: `/sports-facilities/` },
+    { label: 'Achievements', href: `/assets/documents/sports/Students_Sports_Achievments_List_2025-2026-new.pdf` },
   ];
 } else if (dept === 'ms') {
   navItems = [
