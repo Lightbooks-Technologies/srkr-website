@@ -102,7 +102,7 @@ export const programs: Programs[] = [
   {
     slug: 'cse',
     code: 'CIC',
-    name: 'CSE - IoT & Cyber',
+    name: 'CSE - IoT & Cyber Security',
     fullName: 'Department of CSE (IoT, Cyber Security & Blockchain Technology)',
     icon: 'fa-light fa-shield-keyhole',
     established: 2022,
