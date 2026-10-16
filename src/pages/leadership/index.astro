@@ -184,7 +184,19 @@ const administration = [
           </div>
         </div>
           <div class="row g-4">
-          {departments.filter((d) => d.slug !== 'ash' && !programs.some((p) => p.slug === d.slug)).map((d) => (
+          {departments.filter((d) => [
+  'CIVIL', 
+  'CSE', 
+  'ECE', 
+  'EEE', 
+  'ME', 
+  'IT', 
+  'MS', 
+  'Mathematics', 
+  'Chemistry', 
+  'Physics', 
+  'English and Foreign Languages'
+].includes(d.code)).map((d) => (
             <div class="col-lg-4 col-md-6">
               <div class="card h-100 shadow-sm">
                 <div class="card-body">
