@@ -1,0 +1,117 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import FooterScripts from "../../../components/FooterScripts.astro";
+import OffCanvas from "../../../components/OffCanvas.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import SrkrHeader from "../../../components/SrkrHeader.astro";
+import SrkrFooter from "../../../components/SrkrFooter.astro";
+import DeptNav from "~/components/DeptNav.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <!-- header area start -->
+    <SrkrHeader />
+    <!-- header area end -->
+
+    <!-- BREADCRUMB AREA -->
+    <section
+      class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+      style="background-image: url(/assets/images/banner/breadcrumb.jpg);"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Sports and Games</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BREADCRUMB AREA END -->
+
+    <div class="container">
+      <div class="row mt--30">
+        <DeptNav dept="pet" current="Faculty" />
+
+        <div class="col-12">
+          <div class="admission-content-top">
+            <div class="application-deadline">
+              <h3 class="rts-section-title">
+                Department Faculty Members
+              </h3>
+              <div class="application-deadline__content">
+                <div class="application-deadline__content--table">
+                  <table class="table">
+                    <thead class="table-theme">
+                      <tr>
+                        <td>S.NO</td>
+                        <td>Faculty</td>
+                        <td>Designation</td>
+                        <td>Email</td>
+                        <td>Mobile</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Dr. P Satyanarayana Raju</td>
+                        <td>Associate Professor</td>
+                        <td><a href="mailto:Psnraju@srkrec.ac.in">snraju@srkrec.ac.in</a></td>
+                        <td><a href="tel:9441814118">9441814118</a></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Dr. Ch Hari Mohan</td>
+                        <td>Associate Professor</td>
+                        <td><a href="mailto:Harimohan.ch@srkrec.ac.in">harimohan.ch@srkrec.ac.in</a></td>
+                        <td><a href="tel:9949111178">9949111178</a></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Mrs. G Sarika</td>
+                        <td>Assistant Professor</td>
+                        <td><a href="mailto:Sarika.g@srkrec.ac.in">sarika.g@srkrec.ac.in</a></td>
+                        <td><a href="tel:9398385034">9398385034</a></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Mr. V Avinash</td>
+                        <td>Assistant Professor</td>
+                        <td><a href="mailto:Avinash.v@srkrec.ac.in">avinash.v@srkrec.ac.in</a></td>
+                        <td><a href="tel:9866474674">9866474674</a></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Mrs. G Lohitha</td>
+                        <td>Assistant Professor</td>
+                        <td><a href="mailto:lohitha.g@srkr.ac.in">lohitha.g@srkr.ac.in</a></td>
+                        <td><a href="tel:9490343229">9490343229</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <SrkrFooter />
+
+    <OffCanvas />
+
+    <!-- scripts -->
+    <FooterScripts />
+  </body>
+</html>
