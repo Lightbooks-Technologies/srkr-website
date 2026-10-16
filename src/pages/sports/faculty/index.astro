@@ -6,12 +6,54 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import SrkrHeader from "../../../components/SrkrHeader.astro";
 import SrkrFooter from "../../../components/SrkrFooter.astro";
 import DeptNav from "~/components/DeptNav.astro";
+
+const hod = [
+    {
+    name: 'Dr. Ch. Hari Mohan',
+    designation: 'Associate Professor',
+    email: 'harimohan.ch@srkrec.ac.in',
+    mobile: '9949111178',
+    image: 'hari-sports.jpeg'
+  },
+  
+];
+
+const faculty = [
+  {
+    name: 'Dr. P. Satyanarayana Raju',
+    designation: 'Associate Professor & Head of the Department',
+    email: 'snraju@srkrec.ac.in',
+    mobile: '9441814118',
+    image: 'satyanarayana-sports.jpeg'
+  },
+  {
+    name: 'Mrs. G. Sarika',
+    designation: 'Assistant Professor',
+    email: 'sarika.g@srkrec.ac.in',
+    mobile: '9398385034',
+    image: 'sarika-sports.jpeg'
+  },
+  {
+    name: 'Mr. V. Avinash',
+    designation: 'Assistant Professor',
+    email: 'avinash.v@srkrec.ac.in',
+    mobile: '9866474674',
+    image: 'avinash-sports.jpeg'
+  },
+  {
+    name: 'Mrs. G. Lohitha',
+    designation: 'Assistant Professor',
+    email: 'lohitha.g@srkr.ac.in',
+    mobile: '9490343229',
+    image: 'lohitha-sports.jpeg'
+  }
+];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`Faculty | Physical Education | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <!-- header area start -->
@@ -29,8 +71,9 @@ import DeptNav from "~/components/DeptNav.astro";
             <div class="breadcrumb-content">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/departments/pet">Physical Education</a></li>
               </ul>
-              <h1 class="section-title">Sports and Games</h1>
+              <h1 class="section-title">Faculty</h1>
             </div>
           </div>
         </div>
@@ -38,80 +81,90 @@ import DeptNav from "~/components/DeptNav.astro";
     </section>
     <!-- BREADCRUMB AREA END -->
 
-    <div class="container">
-      <div class="row mt--30">
+    <section class="rts-faculty py-5">
+      <div class="container">
         <DeptNav dept="pet" current="Faculty" />
 
-        <div class="col-12">
-          <div class="admission-content-top">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">
-                Department Faculty Members
-              </h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <tr>
-                        <td>S.NO</td>
-                        <td>Faculty</td>
-                        <td>Designation</td>
-                        <td>Email</td>
-                        <td>Mobile</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dr. P Satyanarayana Raju</td>
-                        <td>Associate Professor</td>
-                        <td><a href="mailto:Psnraju@srkrec.ac.in">snraju@srkrec.ac.in</a></td>
-                        <td><a href="tel:9441814118">9441814118</a></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Dr. Ch Hari Mohan</td>
-                        <td>Associate Professor</td>
-                        <td><a href="mailto:Harimohan.ch@srkrec.ac.in">harimohan.ch@srkrec.ac.in</a></td>
-                        <td><a href="tel:9949111178">9949111178</a></td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Mrs. G Sarika</td>
-                        <td>Assistant Professor</td>
-                        <td><a href="mailto:Sarika.g@srkrec.ac.in">sarika.g@srkrec.ac.in</a></td>
-                        <td><a href="tel:9398385034">9398385034</a></td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Mr. V Avinash</td>
-                        <td>Assistant Professor</td>
-                        <td><a href="mailto:Avinash.v@srkrec.ac.in">avinash.v@srkrec.ac.in</a></td>
-                        <td><a href="tel:9866474674">9866474674</a></td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>Mrs. G Lohitha</td>
-                        <td>Assistant Professor</td>
-                        <td><a href="mailto:lohitha.g@srkr.ac.in">lohitha.g@srkr.ac.in</a></td>
-                        <td><a href="tel:9490343229">9490343229</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
+        <!-- HoD Section -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Department Head</h3>
+        </div>
+        <div class="row g-5 mb--50">
+          {hod.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img 
+                      src={`/assets/images/faculty/sports/${f.image}`} 
+                      alt={f.name} 
+                      loading="lazy" 
+                      decoding="async" 
+                    />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p class="mb-1">
+                        <i class="fa-regular fa-envelope me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`mailto:${f.email}`}>{f.email}</a>
+                      </p>
+                      <p class="mb-0">
+                        <i class="fa-regular fa-phone me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`tel:${f.mobile}`}>{f.mobile}</a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
+
+        <!-- Faculty Section -->
+        <div class="rts-section mb--40">
+          <h3 class="rts-section-title">Department Faculty Members</h3>
+        </div>
+        <div class="row g-5">
+          {faculty.map((f) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img 
+                      src={`/assets/images/faculty/sports/${f.image}`} 
+                      alt={f.name} 
+                      loading="lazy" 
+                      decoding="async" 
+                    />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{f.name}</h5>
+                    <span class="designation">{f.designation}</span>
+                    <div class="staf-info__speciality">
+                      <p class="mb-1">
+                        <i class="fa-regular fa-envelope me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`mailto:${f.email}`}>{f.email}</a>
+                      </p>
+                      <p class="mb-0">
+                        <i class="fa-regular fa-phone me-2" style="color: var(--rt-primary);"></i>
+                        <a href={`tel:${f.mobile}`}>{f.mobile}</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
-    </div>
+    </section>
 
     <!-- footer -->
     <SrkrFooter />
-
     <OffCanvas />
-
-    <!-- scripts -->
     <FooterScripts />
   </body>
 </html>
