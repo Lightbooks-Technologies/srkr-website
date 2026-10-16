@@ -22660,7 +22660,7 @@ xclip
   margin: 0;
 }
 .footer__widget--menu ul li:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .footer__widget--menu ul li {
   margin-top: 0;
