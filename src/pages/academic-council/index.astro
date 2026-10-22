@@ -70,6 +70,48 @@ const memberSecretary = {
   name: "Dr. V. Chandra Sekhar",
   role: "Professor of CSE & Dean, Academics · Member Secretary",
 };
+
+const racMembers = [
+  { isHeader: true, title: "Chairman" },
+  { sno: 1, name: "Dr. K.V. Murali Krishnam Raju", designation: "Principal", role: "Chairperson", photo: "" },
+
+  { isHeader: true, title: "Heads of Departments" },
+  { sno: 2, name: "Dr. G. Sri Bala", designation: "Head, Dept. of Civil Engineering", role: "Member", photo: "" },
+  { sno: 3, name: "Dr. Bh.V.S.R.K. Raju", designation: "Head, Dept. of CSE", role: "Member", photo: "" },
+  { sno: 4, name: "Dr. S.S. Mohan Reddy", designation: "Head, Dept. of ECE", role: "Member", photo: "" },
+  { sno: 5, name: "Dr. Bh. Ravi Kumar Varma", designation: "Head, Dept. of EEE", role: "Member", photo: "" },
+  { sno: 6, name: "Dr. P. Ravi Kiran Varma", designation: "Head, Dept. of IT", role: "Member", photo: "" },
+  { sno: 7, name: "Dr. K. Sitarama Raju", designation: "Head, Dept. of ME", role: "Member", photo: "" },
+  { sno: 8, name: "Dr. G.N.V. Kishore", designation: "Head, Dept. of Mathematics", role: "Member", photo: "" },
+  { sno: 9, name: "Dr. D. Chandra Sekhar", designation: "Associate Professor, Dept. of Chemistry", role: "Member", photo: "" },
+  { sno: 10, name: "Dr. B.V.D.S. Sekhar", designation: "Programme Coordinator, CSBS", role: "Member", photo: "" },
+  { sno: 11, name: "Dr. G.N.V.G. Sirisha", designation: "Programme Coordinator, AIML", role: "Member", photo: "" },
+  { sno: 12, name: "Dr. M. Suresh Babu", designation: "Programme Coordinator, CSG", role: "Member", photo: "" },
+  { sno: 13, name: "Dr. K. Aruna Kumari", designation: "Programme Coordinator, CIC", role: "Member", photo: "" },
+  { sno: 14, name: "Dr. N. Gopala Krishna Murthy", designation: "Programme Coordinator, CSIT", role: "Member", photo: "" },
+  { sno: 15, name: "Sri N. Siva Kishan", designation: "Head, Foundation Year", role: "Member", photo: "" },
+
+  { isHeader: true, title: "Senior Faculty" },
+  { sno: 16, name: "Dr. Bh.V.N. Lakshmi", designation: "Professor, Dept. of E&FL", role: "Member", photo: "" },
+  { sno: 17, name: "Dr. S. Rajesh", designation: "Dean, IQAC", role: "Member", photo: "" },
+  { sno: 18, name: "Dr. T. Vamsi Naga Raju", designation: "Dean, R&D", role: "Member", photo: "" },
+  { sno: 19, name: "Dr. M. Siva Krishnam Raju", designation: "Controller of Examinations", role: "Member", photo: "" },
+  { sno: 20, name: "Dr. K.R. Satyanarayana", designation: "Dean, P&IR", role: "Member", photo: "" },
+
+  { isHeader: true, title: "External Experts" },
+  { sno: 21, name: "Prof. K. Ramji", designation: "Hon’ble VC, Krishna University Machilipatnam", role: "Member", photo: "" },
+  { sno: 22, name: "Dr. S. Viswanadha Raju", designation: "Senior Professor of CSE & Principal, UCES, JNTUH", role: "Member", photo: "" },
+  { sno: 23, name: "Dr. G. Bharat", designation: "Principal Scientist, Flexible Pavement Division, CSIR-Central Road Research Institute, New Delhi", role: "Member", photo: "" },
+  { sno: 24, name: "Sri D. Viswanatha Raju", designation: "Chairman, Winfo Solutions, Hyderabad", role: "Member", photo: "" },
+
+  { isHeader: true, title: "JNTUK Nominees" },
+  { sno: 25, name: "Prof. M.H.M. Krishna Prasad", designation: "Professor of CSE and Director-Academics JNTUK, Kakinada.", role: "Member", photo: "" },
+  { sno: 26, name: "Prof. G. Padmaja Rani", designation: "Professor of Physics Department and Director-Evaluations JNTUK, Kakinada", role: "Member", photo: "" },
+  { sno: 27, name: "Prof. K. Padma Raju", designation: "Principal, University College of Engineering (UCEK) JNTUK, Kakinada", role: "Member", photo: "" },
+
+  { isHeader: true, title: "Member Secretary" },
+  { sno: 28, name: "Dr. V. Chandra Sekhar", designation: "Professor of CSE and Dean, Academics", role: "Member Secretary", photo: "" }
+];
 ---
 
 <!doctype html>
@@ -305,141 +347,59 @@ const memberSecretary = {
             </div>
           </div>
         </div>
+<section class="rts-scholarship pt--40 pb--60" id="rac">
+  <div class="container">
+    
 
-        <!-- Chair -->
-         <div class="row mt--40">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">Principal</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <!-- <tr><td>Name</td></tr> -->
-                    </thead>
-                    <tbody>
-                      <tr><td>{chair.name}</td></td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-
-        <!-- Senior Faculty -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">Deans</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <!-- <tr><td>Name</td><td>Role</td></tr> -->
-                    </thead>
-                    <tbody>
-                      {
-                        seniorFaculty.map((m) => (
-                          <tr>
-                            <td>{m.name}</td>
-                            <td set:html={m.role} />
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="application-deadline">
+      <div class="application-deadline__content">
+        <div class="application-deadline__content--table">
+          <table class="table align-middle">
+            <thead class="table-theme">
+              <tr>
+                <th scope="col" style="width: 8%;">S.No</th>
+                <th scope="col" style="width: 25%;">Name</th>
+                <th scope="col" style="width: 32%;">Designation</th>
+                <th scope="col" style="width: 23%;">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {racMembers.map((m, i) => (
+                <>
+                  {/* Category Header Row */}
+                  {m.isHeader ? (
+                    <tr class="category-header-row">
+                      <td colspan="5" class="fw-bold pt-3 pb-2" style="color: var(--rt-primary, #0b4a72); background-color: #f8f9fa;">
+                        {m.title}
+                      </td>
+                    </tr>
+                  ) : (
+                    /* Member Data Row */
+                    <tr>
+                      <td>{m.sno}</td>
+                      <td set:html={m.name}></td>
+                      <td>{m.designation}</td>
+                      <td>{m.role}</td>
+                      {/* <td class="text-center align-middle">
+                        <img 
+                          src={m.photo || '/assets/images/default-avatar.png'} 
+                          alt={m.name} 
+                          class="img-fluid rounded"
+                          style="width: 65px; height: 80px; object-fit: cover;"
+                        />
+                      </td> */}
+                    </tr>
+                  )}
+                </>
+              ))}
+            </tbody>
+          </table>
         </div>
-
-        <!-- HoDs -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">
-                Heads of Departments &amp; Program Coordinators
-              </h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <!-- <tr><td>Name</td><td>Role</td></tr> -->
-                    </thead>
-                    <tbody>
-                      {
-                        hods.map((m) => (
-                          <tr>
-                            <td>{m.name}</td>
-                            <td set:html={m.role} />
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <!-- JNTUK Nominees -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">JNTUK Nominees</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <!-- <tr><td>Name</td><td>Designation</td></tr> -->
-                    </thead>
-                    <tbody>
-                      {
-                        jntukNominees.map((m) => (
-                          <tr>
-                            <td>{m.name}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- External Experts -->
-        <div class="row mt--20">
-          <div class="col-12">
-            <div class="application-deadline">
-              <h3 class="rts-section-title">External Experts</h3>
-              <div class="application-deadline__content">
-                <div class="application-deadline__content--table">
-                  <table class="table">
-                    <thead class="table-theme">
-                      <!-- <tr><td>Name</td><td>Designation</td></tr> -->
-                    </thead>
-                    <tbody>
-                      {
-                        externalExperts.map((m) => (
-                          <tr>
-                            <td>{m.name}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        
 
        
       </div>

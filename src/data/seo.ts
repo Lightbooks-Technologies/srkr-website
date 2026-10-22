@@ -497,15 +497,6 @@ const placementPages: Record<string, PageSeo> = {
       { name: 'Internships', url: '/internships/' },
     ],
   },
-  '/career-guidance/': {
-    title: `Career Guidance | Counselling & Mentoring | ${BRAND}`,
-    description:
-      'Career guidance and counselling at SRKR Engineering College — one-on-one mentoring, career-path workshops, higher-studies counselling (GATE/GRE/CAT) and entrepreneurship guidance.',
-    breadcrumbs: [
-      { name: 'Placements', url: '/placements/' },
-      { name: 'Career Guidance', url: '/career-guidance/' },
-    ],
-  },
 };
 
 const lifePages: Record<string, PageSeo> = {

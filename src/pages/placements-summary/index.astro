@@ -5,6 +5,7 @@ import SrkrHeader from "../../components/SrkrHeader.astro";
 import SrkrFooter from "../../components/SrkrFooter.astro";
 import OffCanvas from "../../components/OffCanvas.astro";
 import { departments } from "../../data/departments";
+import type { Programs } from '../../data/programs';
 
 const pageTitle = "Placements Summary";
 
@@ -212,6 +213,14 @@ const recentPlacements = [
 
 
 ];
+const hiddenProgramCodes = ['CSIT', 'AIML', 'AIDS', 'CSBS', 'CSD', 'CIC', 'MS' ];
+
+const headerDepartments = departments.filter((department) => {
+  if (hiddenProgramCodes.includes((department as Programs).code)) {
+    return false;
+  }
+  return ['civil', 'cse', 'ece', 'eee', 'mechanical', 'it', 'ms'].includes(department.slug);
+});
 ---
 
 <!doctype html>
@@ -774,13 +783,13 @@ const recentPlacements = [
         </div>
         <div class="row g-4">
           {
-            departments
+            headerDepartments
               .filter(
                 (d) =>
                   ![
                     "ash",
                     "Engineering Mathematics & Humanities",
-                    "Engineering Chemistry",
+                    "Chemistry",
                     "Engineering Physics",
                   ].includes(d.slug)
               )
@@ -848,7 +857,7 @@ const recentPlacements = [
               </div>
             </div>
           </div>
-          <div class="research__text mt-2">
+          <!-- <div class="research__text mt-2">
             <div class="research__text--single">
               <h3 class="rts-section-title mt-2">Quick Links</h3>
               <div class="program-list">
@@ -888,7 +897,7 @@ const recentPlacements = [
                 >
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
