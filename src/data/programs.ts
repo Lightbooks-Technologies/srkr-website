@@ -87,7 +87,7 @@ export const programs: Programs[] = [
     slug: 'it',
     code: 'CSBS',
     name: 'CS & Business System',
-    fullName: 'Department of Computer Science & Business Systems',
+    fullName: 'Department of Computer Science & Business System',
     icon: 'fa-light fa-chart-line',
     established: 2021,
     intake: 60,
