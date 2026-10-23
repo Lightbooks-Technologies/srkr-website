@@ -11,7 +11,7 @@ const types = [
   { icon: 'fa-light fa-sun',         title: 'Summer Internships',         desc: '6–8 week vacation internships with industry, research labs and partner firms.' },
   { icon: 'fa-light fa-book-open',   title: 'Semester Internships',       desc: 'Final-year semester-long, credit-linked internships with sponsored projects.' },
   { icon: 'fa-light fa-flask',       title: 'Research Internships',       desc: 'IIT/NIT/IIIT and IISc research internships under faculty mentorship.' },
-  { icon: 'fa-light fa-industry',    title: 'Industry-Embedded',          desc: 'Year-long industry-embedded programs through TCS, Cognizant and partner MoUs.' },
+  { icon: 'fa-light fa-industry',    title: 'Virtual and Remote Internships',          desc: 'Students develop technical, communication skills & teamwork abilities.' },
 ];
 
 // Companies that have hosted SRKR interns — reuse the recruiter logo paths
@@ -119,12 +119,12 @@ const internshipCompanies = [
             <p class="item-description">Partner Companies</p>
           </div></div></div>
           <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-            <h2 style="color: var(--rt-primary); margin: 0;">30+</h2>
-            <p class="item-description">Pre-Placement Offers</p>
+            <h2 style="color: var(--rt-primary); margin: 0;">300+</h2>
+            <p class="item-description">Post Internship Placement Offers</p>
           </div></div></div>
           <div class="col-lg-3 col-md-6 col-sm-6"><div class="single-item"><div class="single-item__meta" style="text-align:center; padding:24px;">
-            <h2 style="color: var(--rt-primary); margin: 0;">12</h2>
-            <p class="item-description">Departments</p>
+            <h2 style="color: var(--rt-primary); margin: 0;">16</h2>
+            <p class="item-description">No. of Internships with more than 50k Stipend</p>
           </div></div></div>
         </div>
       </div>
@@ -203,25 +203,50 @@ const internshipCompanies = [
     </section> -->
 
     <!-- Past Internship Companies -->
-    <div class="rts-multi-row-section pb--60">
-      <div class="container">
-        <div class="row mb-0">
-          <div class="rts-section rt-center mb--45">
-            <h3 class="rts-section-title">Past Internship Companies</h3>
-          </div>
-        </div>
-        <div class="row g-4 d-flex justify-content-center align-items-center">
-          {internshipCompanies.map((c) => (
-            <div class="col-lg-2 col-md-3 col-4">
-              <div class="recruiter-logo-box d-flex justify-content-center align-items-center">
-                <img style="max-height: 80px; max-width: 100px;" src={c.logo} alt={c.name} />
+   <div class="rts-multi-row-section pb--60">
+  <div class="container">
+    <div class="row justify-content-md-center mb--10">
+      <div class="col-lg-12 text-center">
+        <h3 class="rts-section-title mb-5">Internship Companies</h3>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-12 col-md-11">
+        <div
+          class="rts-brand-slider swiper swiper-data"
+          data-swiper='{
+              "slidesPerView": 4,
+              "loop": true,
+              "spaceBetween": 30,
+              "autoplay": { "delay": "3000" },
+              "breakpoints": {
+                  "320": { "slidesPerView": 2, "spaceBetween": 20 },
+                  "576": { "slidesPerView": 2, "spaceBetween": 20 },
+                  "768": { "slidesPerView": 3, "spaceBetween": 25 },
+                  "992": { "slidesPerView": 6, "spaceBetween": 30 }
+              }
+          }'
+        >
+          <div class="swiper-wrapper">
+            {internshipCompanies.map((c) => (
+              <div class="swiper-slide">
+                <div class="single-brand-logo d-flex justify-content-center align-items-center">
+                  <img
+                    style="max-height: 80px; max-width: 100px;"
+                    src={c.logo}
+                    alt={c.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-          {/* TODO: add more recruiter logos */}
+            ))}
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- Reports/Forms downloads + Quick Links -->
     <section class="rts-research-section pb--80">
@@ -229,7 +254,7 @@ const internshipCompanies = [
         <div class="row">
           <div class="rts-research-section__content">
             <div class="rts-section">
-              <h3 class="rts-section-title">Forms &amp; Reports</h3>
+              <h3 class="rts-section-title">Forms</h3>
               <div class="program-list">
                 <a href="/assets/documents/internship-registration-form.pdf" class="program-item" target="_blank" rel="noopener"><span>Internship Registration Form <i class="fa-regular fa-chevron-right"></i></span><span>PDF</span></a>
               </div>
