@@ -12,36 +12,36 @@ const pageTitle = "Placements Summary";
 // Year-wise consolidated stats (drawn from public T&P updates)
 const yearStats = [
   {
-    year: "2025-26",
+    year: "2026",
     offers: "2348",
     topLPA: "19.00",
     avgLPA: "3.9",
     recruiters: "79",
-    pdfUrl: "/departments/civil/placements"
+    pdfUrl: "/assets/documents/placements-summary/statistics/2026.pdf"
   },
   {
-    year: "2024-25",
+    year: "2025",
     offers: "1604",
     topLPA: "17.1",
     avgLPA: "3.9",
     recruiters: "95",
-    pdfUrl: "/departments/civil/placements"
+    pdfUrl: "/assets/documents/placements-summary/statistics/2025.pdf"
   },
   {
-    year: "2023-24",
+    year: "2024",
     offers: "1333",
     topLPA: "25.00",
     avgLPA: "4.4",
     recruiters: "132",
-    pdfUrl: "/departments/civil/placements"
+    pdfUrl: "/assets/documents/placements-summary/statistics/2024.pdf"
   },
   {
-    year: "2022-23",
+    year: "2023",
     offers: "1401+",
     topLPA: "53.00",
     avgLPA: "4.3",
     recruiters: "106+",
-    pdfUrl: "/departments/civil/placements"
+    pdfUrl: "/assets/documents/placements-summary/statistics/2023.pdf"
   },
   // {
   //   year: "2021-22",
@@ -841,7 +841,7 @@ const headerDepartments = departments.filter((department) => {
                   {
                     years.map((year) => (
                       <a
-                        href={`/assets/documents/placements/${year.replace("-", "-")}.pdf`}
+                        href={`/assets/documents/placements-summary/reports/${year.replace("-", "-")}.pdf`}
                         class="program-item"
                         target="_blank"
                       >

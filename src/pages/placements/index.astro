@@ -5,6 +5,37 @@ import OffCanvas from '../../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
+const heroSlides = [
+  {
+    id: 1,
+    image: "/assets/images/placements/placements_2024.png",
+   
+  },
+  {
+    id: 2,
+    image: "/assets/images/placements/placements_2024_1.png",
+   
+  },
+  {
+    id: 3,
+    image: "/assets/images/placements/placements_2025.png",
+   
+  },
+  {
+    id: 4,
+    image: "/assets/images/placements/placements_2025_1.png",
+    
+  },
+  {
+    id: 5,
+    image: "/assets/images/placements/placements_2026.jpeg",
+    
+  },
+  {
+    id: 6,
+    image: "/assets/images/placements/placements_2026_1.jpeg",
+  }
+];
 ---
 
 <!doctype html>
@@ -172,7 +203,7 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
     <!-- research enterprise end -->
 
     <!-- reasearch area -->
-    <section class="rts-research-section rts-section-padding">
+    <section class="rts-research-section rts-section-padding pb--0">
         <div class="container">
             <div class="row">
                 <div class="rts-research-section__content">
@@ -197,6 +228,67 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
             </div>
         </div>
     </section>
+
+    <div
+  class="rts-hero-slider-active swiper swiper-data pb--50"
+  data-swiper='{
+      "slidesPerView": 1,
+      "effect": "fade",
+      "loop": true,
+      "speed": 1000,
+      "navigation": {
+          "nextEl": ".rt-next",
+          "prevEl": ".rt-prev"
+      },
+      "autoplay": {
+          "delay": 7000,
+          "disableOnInteraction": false
+      }
+  }'
+>
+  <div
+  class="rts-hero-slider-active swiper swiper-data"
+  data-swiper='{
+      "slidesPerView": 1,
+      "effect": "fade",
+      "loop": true,
+      "speed": 1000,
+      "navigation": {
+          "nextEl": ".rt-next",
+          "prevEl": ".rt-prev"
+      },
+      "autoplay": {
+          "delay": 7000,
+          "disableOnInteraction": false
+      }
+  }'
+>
+  <div class="swiper-wrapper">
+    {heroSlides.map((slide) => (
+      <div class="swiper-slide" data-swiper-autoplay="7000">
+        <div
+          class="rts-slider-height rts-slider-overlay rt-relative hero-slide-bg"
+          style={`height: 500px; position: relative; overflow: hidden; background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #ffffff; background-image: url('${slide.image}');`}
+        >
+          <!-- Dark Overlay (Removed/Minimised so it doesn't darken the empty space) -->
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- ==========================================
+       SLIDER ARROWS (Uncomment if needed)
+  =========================================== -->
+  <div class="rts-slider-arrow">
+    <div class="rt-slider-btn rt-next">
+      <i class="fa-regular fa-arrow-left"></i>
+    </div>
+    <div class="rt-slider-btn rt-prev">
+      <i class="fa-regular fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+</div>
     <!-- reasearch area end-->
 <!-- footer -->
 <SrkrFooter/>

@@ -34,6 +34,8 @@ const topOffers = [
   { company: "Aunix", lpa: "12.00 LPA" },
   { company: "Infosys SP", lpa: "11.00 LPA" }
 ];
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
+
 ---
 
 <!doctype html>
@@ -199,7 +201,25 @@ const topOffers = [
         </div>
       </div>
     </section>
-
+<div class="row g-5 justify-content-center justify-content-start align-items-center mt--0 mb--50">
+          <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="/assets/images/placeholder/photo-1460925895917-afdab827c52f_800x600.jpg" alt="placement records" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-11">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Training &amp; Placement Activities Reports</h4>
+<p>Access comprehensive reports on training sessions, placement drives, skill development programs, and student recruitment outcomes across academic years.</p><div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/training/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                    <span>{year} Placement Report <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
     <!-- Year-wise schedule accordion -->
     <!-- <section class="rts-scholarship pb--60">
       <div class="container">
