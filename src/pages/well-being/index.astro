@@ -12,7 +12,7 @@ const pillars = [
   { icon: 'fa-heart-pulse', name: 'Physical Health', desc: 'On-campus medical room, tie-ups with hospitals &amp; routine health camps.' },
   { icon: 'fa-graduation-cap', name: 'Academic Counselling', desc: 'Faculty mentors, study skills sessions &amp; one-on-one academic advising.' },
   { icon: 'fa-hand-holding-dollar', name: 'Financial Aid & Scholarships', desc: 'AP/Govt scholarships, merit awards &amp; emergency financial assistance.' },
-  { icon: 'fa-badge-sheriff', name: 'Anti-Ragging & Anti-Drug Cell', desc: 'Zero-tolerance policy, UGC-compliant committee &amp; 24x7 reporting channel.' },
+  { icon: 'fa-badge-sheriff', name: 'Anti-Ragging committee & EAGLE Club', desc: 'Zero-tolerance policy &amp; 24x7 reporting channel.' },
   { icon: 'fa-comments', name: 'Grievance Redressal', desc: 'Confidential grievance &amp; women-cell complaint handling with timelines.' },
 ];
 
@@ -162,139 +162,13 @@ const externalLinks = [
         </div>
         <div class="program-credit-area faq rts-scholarship-description">
           <div class="program-accordion">
-            <div class="accordion" id="wb-accordion">
-              <div class="accordion-item">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#wb1" aria-expanded="true">
-                  Confidential 1-on-1 Counselling
-                </button>
-                <div id="wb1" class="accordion-collapse collapse show" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>Drop-in or scheduled sessions with our counsellors. All conversations are strictly confidential. Walk-ins welcome at the Student Welfare Office.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb2" aria-expanded="false">
-                  Faculty Mentorship Program
-                </button>
-                <div id="wb2" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>Every student is assigned a faculty mentor who monitors academic progress and provides personal guidance throughout the semester.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb3" aria-expanded="false">
-                  Peer Support Network
-                </button>
-                <div id="wb3" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>Senior-junior buddy system &amp; trained peer-listener volunteers across hostels and day-scholar wings.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb4" aria-expanded="false">
-                  Workshops &amp; Sensitisation Sessions
-                </button>
-                <div id="wb4" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>Periodic workshops on stress management, exam anxiety, mindfulness, gender sensitisation and digital wellness.</p>
-                  </div>
-                </div>
-              </div>
-
-             
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb5" aria-expanded="false">
-                  Anti-Ragging &amp; Anti-Drug Cell
-                </button>
-                <div id="wb5" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>UGC-mandated anti-ragging committee with a 24x7 hotline. Women's Cell handles all sexual-harassment complaints confidentially. See <a href="/code-of-conduct">Code of Conduct</a> for procedures.</p>
-                    {
-                      antiRaggingCommittee.length > 0 && (
-                        <>
-                          <h6 class="mt-3">Anti-Ragging Committee Members:</h6>
-                          <table class="table table-sm table-striped">
-                            <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Designation</th>
-                                <th>Role</th>
-                                <th>Contact</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {antiRaggingCommittee.map((m) => (
-                                <tr>
-                                  <td><strong>{m.name}</strong></td>
-                                  <td>{m.designation}</td>
-                                  <td>{m.role}</td>
-                                  <td>{m.contact ? <a href={`tel:${m.contact}`}>{m.contact}</a> : 'Contact not available'}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </>
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb6" aria-expanded="false">
-                   Internal Complaints Committee
-                </button>
-                <div id="wb6" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>The Internal Complaints Committee (ICC) of SRKREC is constituted under the provisions of the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (PoSH Act).
-The Committee is responsible for ensuring a safe, secure, and respectful environment for all stakeholders of the Institute, including students, faculty, and staff.
-Staff and students may approach the ICC, Student Counsellor, or alternatively bring concerns to the Principal, HoD, any Faculty member, or respective Mentor — all in complete confidence.</p>
-                  </div>
-                </div>
-              </div>
-
-               <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wb7" aria-expanded="false">
-                  Minority Cell
-                </button>
-                <div id="wb7" class="accordion-collapse collapse" data-bs-parent="#wb-accordion">
-                  <div class="accordion-body">
-                    <p>The Minority Cell of SRKREC has been constituted with the purpose of empowering the minority communities in the institute. The cell is committed to providing an environment that ensures equal opportunities and respect for all sections of minorities, and to ensuring protection to everyone as per the provisions of the Constitution of India in such matters.</p>
-                      {
-                        minorityCell.length > 0 && (
-                          <>
-                            <h6 class="mt-3">Minority Cell Members:</h6>
-                            <table class="table table-sm table-striped">
-                              <thead>
-                                <tr>
-                                  <th>Name</th>
-                                  <th>Designation</th>
-                                  <th>Role</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {minorityCell.map((m) => (
-                                  <tr>
-                                    <td><strong>{m.name}</strong></td>
-                                    <td>{m.designation}</td>
-                                    <td>{m.role}</td>
-                                    <td>{m.contact ? <a href={`tel:${m.contact}`}>{m.contact}</a> : 'Contact not available'}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </>
-                        )
-                      }
-                  </div>
-                </div>
-              </div>
-
-
-
-             </div>
+            <ul class="wb-list">
+  <li>Confidential 1-on-1 Counselling</li>
+  <li>Faculty Mentorship</li>
+  <li>Peer Support Network</li>
+  <li>Workshops &amp; Sensitisation Sessions</li>
+  
+</ul>
           </div>
         </div>
       </div>
@@ -329,7 +203,8 @@ Staff and students may approach the ICC, Student Counsellor, or alternatively br
             <div class="card shadow-sm border-danger">
               <div class="card-body text-center">
                 <h4 class="mb-3 text-danger"><i class="fa-light fa-triangle-exclamation"></i> Contacts</h4>
-                <p class="mb-2"><strong>Anti-Ragging Helpline:</strong> <a href="tel:1800-180-5522">9490501171</a> · <a href="https://antiragging.in" target="_blank" rel="noopener">antiragging.in</a></p>
+                <p class="mb-2"><strong>Anti-Ragging Helpline:</strong> <a href="tel:9490501171">9490501171</a> </p>
+                <p class="mb-2"><strong>Women helpline:</strong> <a href="tel:7207578052">7207578052</a></p>
                 <p class="mb-2"><strong>Your voice matters. Every grievance is heard.</strong><br><a href="mailto:grievanceredressal@srkrec.ac.in">grievanceredressal@srkrec.ac.in</a></p>
               </div>
             </div>
