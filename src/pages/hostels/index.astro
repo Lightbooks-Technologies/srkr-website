@@ -5,6 +5,8 @@ import OffCanvas from '../../components/OffCanvas.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import SrkrHeader from '../../components/SrkrHeader.astro';
 import SrkrFooter from '../../components/SrkrFooter.astro';
+const years = ['2024–25', '2025–26', '2026–27'];
+
 ---
 
 <!doctype html>
@@ -56,17 +58,31 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
 <!-- BREADCRUMB AREA END -->
     <!-- Organogram -->
     <!-- Testimonial Start -->
-    <div class="rts-testimonial v_2 rt-relative pt--20 pb--120">
+    <div class="rts-testimonial v_2 rt-relative pt--20">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-10">
+                <div class="col-lg-6 col-md-6">
                     <div class="rts-section text-center mb--45">
                         
-                        <p style="text-align: justify;">Hostel facilities on campus for students are well-designed to provide a comfortable living experience. Necessary facilities for learning and recreation are provided in the hostel blocks. All measures are taken to ensure that the campus is a safe and secure place for students to stay. Wardens ensure that the students are attended to. They regularly provide students with medical and other essential support. Strict compliance is adhered to ensure that the campus follows the “No Ragging” ethos.</p>
+                        <p style="text-align: justify;"> <a target="_blank" href="assets/documents/hostels/hostel-facilities.pdf" style="text-decoration: underline; color: var(--rt-primary);">Hostel facilities</a> 
+                            on campus for students are well-designed to provide a comfortable living experience. Necessary facilities for learning and recreation are provided in the hostel blocks. All measures are taken to ensure that the campus is a safe and secure place for students to stay. Wardens ensure that the students are attended to. They regularly provide students with medical and other essential support. Strict compliance is adhered to ensure that the campus follows the “No Ragging” ethos.</p>
                         <p style="text-align: justify;">Life on campus helps students not only study but also socialize with their peers. Friendships formed on the campus last a lifetime. Students living on campus are encouraged to use the gymnasium, playground, and all indoor gaming facilities.</p>
 
                     </div>
+                    
                 </div>
+                <div class="col-lg-6 col-md-11">
+            <div class="ratio ratio-16x9 mt-5 mt-lg-0">
+              <iframe
+                src="https://www.youtube.com/embed/rMYWk1n0K9M"
+                title="SRKR Department Video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
             </div>
 
             <!-- Hostel Administration -->
@@ -125,45 +141,76 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
                     <h3 class="rts-section-title mb--25" style="font-size: 1.6rem;">Hostel Office</h3>
                     <div class="row g-3">
                         <div class="col-md-3 col-sm-6">
-                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="background:#fff3f5; border-color:#f5c2cb !important;">
-                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:#890C25;"></i>
+                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="border-color:var(--rt-primary) !important;">
+                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:var(--rt-primary);"></i>
                                 <div>
                                     <div style="font-size:0.78rem; color:#888; text-transform:uppercase; letter-spacing:0.5px;">Chief Warden</div>
-                                    <div style="font-weight:600; color:#2b3d4f;">8074874235</div>
+                                    <div style="font-weight:600; color:var(--rt-primary);">8074874235</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="background:#fff3f5; border-color:#f5c2cb !important;">
-                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:#890C25;"></i>
+                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="border-color:var(--rt-primary) !important;">
+                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:var(--rt-primary);"></i>
                                 <div>
                                     <div style="font-size:0.78rem; color:#888; text-transform:uppercase; letter-spacing:0.5px;">Boys Hostel</div>
-                                    <div style="font-weight:600; color:#2b3d4f;">9492123311</div>
+                                    <div style="font-weight:600; color:var(--rt-primary);">9492123311</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="background:#fff3f5; border-color:#f5c2cb !important;">
-                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:#890C25;"></i>
+                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="border-color:var(--rt-primary) !important;">
+                                <i class="fa-light fa-phone" style="font-size:1.4rem; color:var(--rt-primary);"></i>
                                 <div>
                                     <div style="font-size:0.78rem; color:#888; text-transform:uppercase; letter-spacing:0.5px;">Girls Hostel</div>
-                                    <div style="font-weight:600; color:#2b3d4f;">7995383711</div>
+                                    <div style="font-weight:600; color:var(--rt-primary);">7995383711</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="background:#fff3f5; border-color:#f5c2cb !important;">
-                                <i class="fa-light fa-envelope" style="font-size:1.4rem; color:#890C25;"></i>
+                            <div class="p-3 border rounded d-flex align-items-center gap-3" style="border-color:var(--rt-primary) !important;">
+                                <i class="fa-light fa-envelope" style="font-size:1.4rem; color:var(--rt-primary);"></i>
                                 <div>
                                     <div style="font-size:0.78rem; color:#888; text-transform:uppercase; letter-spacing:0.5px;">Email</div>
-                                    <a href="mailto:hostels@srkrec.ac.in" style="font-weight:600; color:#890C25; text-decoration:none;">hostels@srkrec.ac.in</a>
+                                    <a href="mailto:hostels@srkrec.ac.in" style="font-weight:600; color:var(--rt-primary); text-decoration:none;">hostels@srkrec.ac.in</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+ <div class="rts-research-section row g-5 justify-content-center justify-content-start align-items-center mt--10 mb--50 p-5">
 
+     <div class="col-lg-7 col-md-11">
+            <div class="rts-multi-row-image">
+              <img src="/assets/images/hostels/girls.jpg" alt="placement records" style="border-radius: 10px;" loading="lazy" decoding="async">
+            </div>
+          </div>
+    <div class="col-lg-5 col-md-11 program-list p-4">
+            <div class="rts-multi-row-content">
+              <h4 class="row-title">Hostel Events</h4>
+              <div class="program-list">
+                {years.map(year => (
+                  <a href={`/assets/documents/hostels/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank" style="display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    gap: 8px;
+    margin-bottom: 12px;">
+                    <span style="display: flex;
+    margin-right: 8px;
+    align-items: center;
+    color: var(--rt-primary);">{year} Events <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
             <!-- testimonial content -->
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-10">
@@ -207,11 +254,13 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
     <!-- Testimonial end -->
-    
+       
+
 
 
 
