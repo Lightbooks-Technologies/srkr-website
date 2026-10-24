@@ -6,24 +6,20 @@ import SrkrFooter from '../../../../components/SrkrFooter.astro';
 import OffCanvas from '../../../../components/OffCanvas.astro';
 import DeptNav from '../../../../components/DeptNav.astro';
 
-// TODO: replace with real CSE faculty roster from srkrec.ac.in
 const hod = [
-  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/450555', imgsrc: '222' },
+  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/450555', image: '222' },
 ];
 
-// TODO: replace with real CSE faculty roster from srkrec.ac.in
 const professors = [
-  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/450555', imgsrc: '222' },
-  { name: 'Dr. K.RamPrasad Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/705039', imgsrc: '159' },
-  { name: 'Dr. M.S.V.S.B.Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/705041', imgsrc: '504' },
-  { name: 'Dr. K.V.Krishnam Raju', designation: 'Professor', specialization: 'Security in Data Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/407012', imgsrc: '354' },
-  { name: 'Dr. G.Mahesh', designation: 'Professor', specialization: 'Data science, Content Delivery Networks', profile: 'https://vidwan.inflibnet.ac.in/profile/406269', imgsrc: '376' },
-  { name: 'Dr. V.Chandra Sekhar', designation: 'Professor', specialization: 'Data Science, Machine Learning, Bigdata analytics', profile: 'https://vidwan.inflibnet.ac.in/profile/176536', imgsrc: '484' },
-{ name: 'Dr. V. S. Naresh', designation: 'Professor', specialization: 'Data Science, Machine Learning, Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/174991', imgsrc: '1512' }
- 
+  { name: 'Dr. BH.V.R.K.Raju', designation: 'Professor and Head', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/450555', image: '222' },
+  { name: 'Dr. K.RamPrasad Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/705039', image: '159' },
+  { name: 'Dr. M.S.V.S.B.Raju', designation: 'Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/705041', image: '504' },
+  { name: 'Dr. K.V.Krishnam Raju', designation: 'Professor', specialization: 'Security in Data Engineering', profile: 'https://vidwan.inflibnet.ac.in/profile/407012', image: '354' },
+  { name: 'Dr. G.Mahesh', designation: 'Professor', specialization: 'Data science, Content Delivery Networks', profile: 'https://vidwan.inflibnet.ac.in/profile/406269', image: '376' },
+  { name: 'Dr. V.Chandra Sekhar', designation: 'Professor', specialization: 'Data Science, Machine Learning, Bigdata analytics', profile: 'https://vidwan.inflibnet.ac.in/profile/176536', image: '484' },
+  { name: 'Dr. V. S. Naresh', designation: 'Professor', specialization: 'Data Science, Machine Learning, Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/174991', image: '1512' }
 ];
 
-// TODO: replace with real CSE faculty roster from srkrec.ac.in
 const associateProfessors = [
   { name: 'Dr. R N V Jagan Mohan', designation: 'Associate Professor', specialization: 'Image Processing, Machine Learning, Digital Twin', profile: 'https://vidwan.inflibnet.ac.in/profile/180096', image: '1072' },
   { name: 'Dr. G N V G Sirisha', designation: 'Associate Professor', specialization: 'Data Science, Machine Learning, Deep Learning, Information Retrieval, Data Mining', profile: 'https://vidwan.inflibnet.ac.in/profile/410127', image: '375' },
@@ -38,7 +34,6 @@ const associateProfessors = [
   { name: 'Dr. Ch Ravi Swaroop', designation: 'Associate Professor', specialization: 'Data Mining & Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/406091', image: '1138' },
 ];
 
-// TODO: replace with real CSE faculty roster from srkrec.ac.in
 const assistantProfessors = [
   { name: 'Smt. V.Priya Darshini', designation: 'Assistant Professor', specialization: 'EDGE COMPUTING, MACHINE LEARNING', profile: 'https://vidwan.inflibnet.ac.in/profile/406531', image: '437' },
   { name: 'Smt. P.Neelima', designation: 'Assistant Professor', specialization: 'cloud, edge computing', profile: 'https://vidwan.inflibnet.ac.in/profile/406532', image: '482' },
@@ -46,7 +41,7 @@ const assistantProfessors = [
   { name: 'Sri T.V.K.P.Prasad', designation: 'Assistant Professor', specialization: 'Artificial intelligence', profile: 'https://vidwan.inflibnet.ac.in/profile/411522', image: '320' },
   { name: 'Smt. D.Hema Latha', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/407870', image: '587' },
   { name: 'Sri. BNV Narasimha Raju', designation: 'Assistant Professor', specialization: 'Information Retrieval', profile: 'https://vidwan.inflibnet.ac.in/profile/406519', image: '590' },
-  { name: 'Smt. K Sravani', designation: 'Assistant Professor', specialization: 'Data Mining MachineA Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/406535', image: '605' },
+  { name: 'Smt. K Sravani', designation: 'Assistant Professor', specialization: 'Data Mining Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/406535', image: '605' },
   { name: 'Sri. V.Dilip Kumar', designation: 'Assistant Professor', specialization: 'Deep Learning Cryptography and Network Security', profile: 'https://vidwan.inflibnet.ac.in/profile/542295', image: '606' },
   { name: 'Smt. M.Jeevana Sujitha', designation: 'Assistant Professor', specialization: 'Software Engineering and machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/410689', image: '607' },
   { name: 'Smt A.L.Lavanya', designation: 'Assistant Professor', specialization: 'Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/407571', image: '609' },
@@ -83,12 +78,10 @@ const assistantProfessors = [
   { name: 'Sri. D Srikar', designation: 'Assistant Professor', specialization: 'Cloud Computing ,Computer Networks', profile: 'https://vidwan.inflibnet.ac.in/profile/406528', image: '1361' },
   { name: 'Sri. G Padma Rao', designation: 'Assistant Professor', specialization: 'Cloud Computing', profile: 'https://vidwan.inflibnet.ac.in/profile/406537', image: '1363' },
   { name: 'Smt. T Rama Tulasi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/579070', image: '1368' },
-
   { name: 'Smt. P Deepthi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/579031', image: '1370' },
-
   { name: 'Smt. K Raja Rajeswari', designation: 'Assistant Professor', specialization: 'cloud computing', profile: 'https://vidwan.inflibnet.ac.in/profile/579068', image: '1384' },
   { name: 'Smt. P Sandhya', designation: 'Assistant Professor', specialization: 'Machine Learning, Cyber Security', profile: 'https://vidwan.inflibnet.ac.in/profile/541971', image: '1380' },
-  { name: 'Smt. B Rekha Madhavi', designation: 'Assistant Professor', specialization: 'Data Mining and MachineA Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/581598', image: '1378' },
+  { name: 'Smt. B Rekha Madhavi', designation: 'Assistant Professor', specialization: 'Data Mining and Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/581598', image: '1378' },
   { name: 'Smt. D Vasavi', designation: 'Assistant Professor', specialization: 'Machine learning', profile: 'https://vidwan.inflibnet.ac.in/profile/541967', image: '1385' },
   { name: 'Sri. B. Radha Krishna', designation: 'Assistant Professor', specialization: 'Machine Learning & Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/581537', image: '1381' },
   { name: 'Smt. K. Amrutha', designation: 'Assistant Professor', specialization: 'Machine learning,Data Mining,Deep learning', profile: 'https://vidwan.inflibnet.ac.in/profile/579022', image: '1393' },
@@ -103,10 +96,7 @@ const assistantProfessors = [
   { name: 'Smt. G. Anusha', designation: 'Assistant Professor', specialization: 'Bigdata Analytics and Machine Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/656378', image: '1482' },
   { name: 'Smt. D. Sravani', designation: 'Assistant Professor', specialization: 'Computer Science & Technology', profile: 'https://vidwan.inflibnet.ac.in/profile/656376', image: '1400' },
   { name: 'Smt. P. Lavanya', designation: 'Assistant Professor', specialization: 'Network Programming, Internet of things', profile: 'https://vidwan.inflibnet.ac.in/profile/656626', image: '1104' },
-
-  { name: 'A.N.V.S.D.Sri Veena', designation: 'Assistant Professor', specialization: 'Machine learning ', profile: '#', image: '1387' },
-
-
+  { name: 'A.N.V.S.D.Sri Veena', designation: 'Assistant Professor', specialization: 'Machine learning', profile: '#', image: '1387' },
   { name: 'Smt. N. Naga Soudhamani', designation: 'Assistant Professor', specialization: 'Machine Learning and Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/656397', image: '1485' },
   { name: 'Miss. Bh. Nandita Lakshmi', designation: 'Assistant Professor', specialization: 'Cloud Computing, Machine Learning and Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/656433', image: '1484' },
   { name: 'Smt. A. Hima Bala Padmini', designation: 'Assistant Professor', specialization: 'Machine Learning and Deep Learning, AI, GenAI, Cloud Computing, IoT', profile: '', image: '1486' },
@@ -121,9 +111,7 @@ const assistantProfessors = [
   { name: 'V. Srilakshmi', designation: 'Assistant Professor', specialization: 'Data Science, Machine Learning, Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/715509', image: '1506' },
   { name: 'D. Suseela', designation: 'Assistant Professor', specialization: 'Data Science, Machine Learning, Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/715358', image: '1518' },
   { name: 'L. Bujjibabu', designation: 'Assistant Professor', specialization: 'Data Science, Machine Learning, Deep Learning', profile: 'https://vidwan.inflibnet.ac.in/profile/715293', image: '1519' }
-  
 ];
-
 ---
 
 <!doctype html>
@@ -160,13 +148,12 @@ const assistantProfessors = [
           <h3 class="rts-section-title">Professor &amp; Head of the Department</h3>
         </div>
         <div class="row g-5 mb--50">
-          {hod.map((f, i) => (
+          {hod.map((f) => (
             <div class="col-lg-6 col-md-11">
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} />
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -187,13 +174,12 @@ const assistantProfessors = [
           <h3 class="rts-section-title">Professors</h3>
         </div>
         <div class="row g-5 mb--50">
-          {professors.map((f, i) => (
+          {professors.map((f) => (
             <div class="col-lg-6 col-md-11">
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.imgsrc}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -214,13 +200,12 @@ const assistantProfessors = [
           <h3 class="rts-section-title">Associate Professors</h3>
         </div>
         <div class="row g-5 mb--50">
-          {associateProfessors.map((f, i) => (
+          {associateProfessors.map((f) => (
             <div class="col-lg-6 col-md-11">
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
@@ -241,13 +226,12 @@ const assistantProfessors = [
           <h3 class="rts-section-title">Assistant Professors</h3>
         </div>
         <div class="row g-5">
-          {assistantProfessors.map((f, i) => (
+          {assistantProfessors.map((f) => (
             <div class="col-lg-6 col-md-11">
               <div class="single-staff">
                 <div class="single-staff__content">
                   <div class="staf-image">
-                    {/* TODO: replace with real faculty photo */}
-                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} / loading="lazy" decoding="async">
+                    <img src={`/assets/images/faculty/cse/${f.image}.jpg`} alt={f.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="staf-info">
                     <h5 class="name">{f.name}</h5>
