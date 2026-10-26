@@ -41,27 +41,27 @@ const recentEvents: Array<{
   {
     title: "SRKR UAV Grand Prix & Aeromodelling Exhibition 2026",
     description: "Showcasing custom-built fixed-wing and multirotor UAVs designed entirely by student teams, featuring live autonomous waypoint navigation demonstrations and aerial videography showcases.",
-    image: "/assets/images/clubs/drone1.jpg"
+    image: ""
   },
   {
     title: "Flight Dynamics & PID Tuning Workshop",
     description: "An intensive technical workshop focusing on multirotor stabilization, flight controller firmware configuration (Betaflight/ArduPilot), and PID tuning mechanics.",
-    image: "/assets/images/clubs/drone2.jpg"
+    image: ""
   },
   {
     title: "Autonomous Navigation & Computer Vision BootCamp",
     description: "Hands-on training sessions covering obstacle avoidance, GPS waypoint mapping, and onboard companion computer integration using Raspberry Pi and OpenCV.",
-    image: "/assets/images/clubs/drone3.jpg"
+    image: ""
   },
   {
     title: "National Drone Tech Symposium",
     description: "Competitive exhibition bringing together aeromodelling enthusiasts across technical institutions to present innovative utility drones for agriculture and disaster management.",
-    image: "/assets/images/clubs/drone4.jpg"
+    image: ""
   },
   {
     title: "Hands-on Assembly & Soldering Sessions",
     description: "Regular practical mentorship labs where members learn electronic speed controller (ESC) calibration, brushless motor mounting, and PDB wiring.",
-    image: "/assets/images/clubs/drone5.jpg"
+    image: ""
   }
 ];
 ---
@@ -211,11 +211,11 @@ const recentEvents: Array<{
               </div>
 
               <!-- Recent Events / Accordion Details -->
-              <div class="rts-scholarship-description mb-4">
+             <div class="rts-scholarship-description mb-4">
                 <h3 class="mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Highlights</h3>
                 <div class="program-credit-area faq rts-scholarship-description">
                   <div class="program-accordion">
-                    <div class="accordion" id="club-events-drone">
+                    <div class="accordion" id="club-events-lolo">
                       {recentEvents.map((evt, idx) => (
                         <div class="accordion-item">
                           <button 
@@ -230,7 +230,7 @@ const recentEvents: Array<{
                           <div 
                             id={`evt-collapse-${idx}`} 
                             class={`accordion-collapse collapse ${idx === 0 ? '' : ''}`} 
-                            data-bs-parent="#club-events-drone"
+                            data-bs-parent="#club-events-lolo"
                           >
                             <div class="accordion-body">
                               {evt.items ? (
@@ -238,15 +238,17 @@ const recentEvents: Array<{
                                   <div class="container-fluid px-0">
                                     <div class="event-wall__ticker" data-ticker>
                                       <div class="event-wall__track">
-                                        {evt.items.map((subItem) => (
+                                        {[...evt.items, ...evt.items, ...evt.items, ...evt.items].map((subItem) => (
                                           <article class="event-wall-card">
-                                            <img 
-                                              class="event-wall-card__photo"
-                                              src={subItem.image} 
-                                              alt={evt.title} 
-                                              loading="lazy" 
-                                              decoding="async" 
-                                            />
+                                            {subItem.image && (
+                                              <img 
+                                                class="event-wall-card__photo"
+                                                src={subItem.image} 
+                                                alt={evt.title} 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                              />
+                                            )}
                                             <p class="event-wall-card__text">
                                               {subItem.description}
                                             </p>
@@ -258,20 +260,22 @@ const recentEvents: Array<{
                                 </div>
                               ) : (
                                 <div class="row g-4 align-items-center">
-                                  <div class="col-lg-7 rts-scholarship-description">
+                                  <div class={evt.image ? "col-lg-7 rts-scholarship-description" : "col-lg-12 rts-scholarship-description"}>
                                     <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
                                       {evt.description}
                                     </p>
                                   </div>
-                                  <div class="col-lg-5">
-                                    <img 
-                                      src={evt.image} 
-                                      alt={evt.title} 
-                                      style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
-                                      loading="lazy" 
-                                      decoding="async" 
-                                    />
-                                  </div>
+                                  {evt.image && (
+                                    <div class="col-lg-5">
+                                      <img 
+                                        src={evt.image} 
+                                        alt={evt.title} 
+                                        style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
+                                        loading="lazy" 
+                                        decoding="async" 
+                                      />
+                                    </div>
+                                  )}
                                 </div>
                               )}
                             </div>
@@ -282,6 +286,7 @@ const recentEvents: Array<{
                   </div>
                 </div>
               </div>
+
 
               <!-- Full Width Moments & Highlights Section -->
               <div class="row mt-5">

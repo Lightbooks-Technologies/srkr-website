@@ -229,76 +229,80 @@ const recentEvents = [
 
               <!-- Recent Events / Accordion Details -->
               <div class="rts-scholarship-description mb-4">
-                <h3 class="mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Highlights</h4>
-                <div class="program-credit-area faq rts-scholarship-description">
-                  <div class="program-accordion">
-                    <div class="accordion" id="club-events-lolo">
-                      {recentEvents.map((evt, idx) => (
-                        <div class="accordion-item">
-                          <button 
-                            class={`accordion-button ${idx > 0 ? '' : ''}`} 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target={`#evt-collapse-${idx}`} 
-                            aria-expanded={idx === 0 ? 'false' : 'false'}
-                          >
-                            {evt.title}
-                          </button>
-                          <div 
-                            id={`evt-collapse-${idx}`} 
-                            class={`accordion-collapse collapse ${idx === 0 ? '' : ''}`} 
-                            data-bs-parent="#club-events-lolo"
-                          >
-                            <div class="accordion-body">
-                              {evt.items ? (
-                                <div class="event-wall">
-                                  <div class="container-fluid px-0">
-                                    <div class="event-wall__ticker" data-ticker>
-                                      <div class="event-wall__track">
-                                        {evt.items.map((subItem) => (
-                                          <article class="event-wall-card">
-                                            <img 
-                                              class="event-wall-card__photo"
-                                              src={subItem.image} 
-                                              alt={evt.title} 
-                                              loading="lazy" 
-                                              decoding="async" 
-                                            />
-                                            <p class="event-wall-card__text">
-                                              {subItem.description}
-                                            </p>
-                                          </article>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              ) : (
-                                <div class="row g-4 align-items-center">
-                                  <div class="col-lg-7 rts-scholarship-description">
-                                    <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
-                                      {evt.description}
-                                    </p>
-                                  </div>
-                                  <div class="col-lg-5">
-                                    <img 
-                                      src={evt.image} 
-                                      alt={evt.title} 
-                                      style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
-                                      loading="lazy" 
-                                      decoding="async" 
-                                    />
-                                  </div>
-                                </div>
+  <h3 class="mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Highlights</h3>
+  <div class="program-credit-area faq rts-scholarship-description">
+    <div class="program-accordion">
+      <div class="accordion" id="club-events-lolo">
+        {recentEvents.map((evt, idx) => (
+          <div class="accordion-item">
+            <button 
+              class={`accordion-button ${idx > 0 ? '' : ''}`} 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target={`#evt-collapse-${idx}`} 
+              aria-expanded={idx === 0 ? 'false' : 'false'}
+            >
+              {evt.title}
+            </button>
+            <div 
+              id={`evt-collapse-${idx}`} 
+              class={`accordion-collapse collapse ${idx === 0 ? '' : ''}`} 
+              data-bs-parent="#club-events-lolo"
+            >
+              <div class="accordion-body">
+                {evt.items ? (
+                  <div class="event-wall">
+                    <div class="container-fluid px-0">
+                      <div class="event-wall__ticker" data-ticker>
+                        <div class="event-wall__track">
+                          {[...evt.items, ...evt.items, ...evt.items, ...evt.items].map((subItem) => (
+                            <article class="event-wall-card">
+                              {subItem.image && (
+                                <img 
+                                  class="event-wall-card__photo"
+                                  src={subItem.image} 
+                                  alt={evt.title} 
+                                  loading="lazy" 
+                                  decoding="async" 
+                                />
                               )}
-                            </div>
-                          </div>
+                              <p class="event-wall-card__text">
+                                {subItem.description}
+                              </p>
+                            </article>
+                          ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div class="row g-4 align-items-center">
+                    <div class={evt.image ? "col-lg-7 rts-scholarship-description" : "col-lg-12 rts-scholarship-description"}>
+                      <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
+                        {evt.description}
+                      </p>
+                    </div>
+                    {evt.image && (
+                      <div class="col-lg-5">
+                        <img 
+                          src={evt.image} 
+                          alt={evt.title} 
+                          style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
+                          loading="lazy" 
+                          decoding="async" 
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
 
               <!-- Full Width Moments & Highlights Section -->
               <div class="row mt-5">
