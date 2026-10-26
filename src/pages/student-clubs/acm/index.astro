@@ -9,9 +9,9 @@ const pageTitle = "ACM";
 const category = "Technical";
 const dept = "Department of CSE";
 const mission = "To create a vibrant community where students are inspired to learn, innovate, and grow together. We strive to help every student build strong technical skills, develop leadership qualities, and gain the confidence to make a positive impact in the world of technology.";
-const advisor = "Smt. D.Hema Latha / Smt.P.Saroja / Sri. K Hari Krishna (Asst Prof of Dept of Computer Science & Engineering)";
+const advisor = "Sri. K Hari Krishna / Smt. D.Hema Latha / Smt.P.Saroja  (Asst Prof of Dept of Computer Science & Engineering)";
 const joinInfo = "First-year regular students and second-year lateral entry students can register on Freshers' Day or at the event registration table when available. Contact: Anusha U (9000711153) / Abhiram P (9347609828).";
-const clubImg = "/assets/images/clubs/ace.jpg";
+const clubImg = "/assets/images/clubs/ACM.png";
 
 const objectives = [
   "To promote technical excellence among students through workshops, seminars, hackathons, and technical events.",
@@ -29,8 +29,6 @@ const momentsImages = [
   "/assets/images/clubs/acm-highlight4.jpg",
   "/assets/images/clubs/acm-highlight5.jpg",
   "/assets/images/clubs/acm-highlight6.jpg",
-  "/assets/images/clubs/acm-highlight7.jpg",
-  "/assets/images/clubs/acm-highlight8.jpg"
 ];
 
 const recentEvents: Array<{
@@ -41,28 +39,42 @@ const recentEvents: Array<{
 }> = [
   {
     title: "Prajwalan 2K26 – National Level 24-Hour Hackathon",
-    description: "Prajwalan 2K26 brought together aspiring innovators from various colleges to collaborate, learn, and develop practical solutions to real-world challenges. Through multiple rounds of evaluation, a 24-hour coding challenge, expert mentoring, and project presentations, participants enhanced their technical, problem-solving, and teamwork skills. The event concluded with the recognition of outstanding projects and celebrated innovation and creativity.",
-    image: "/assets/images/clubs/acm1.jpg"
-  },
-  {
-    title: "Xcelerate",
-    description: "A comprehensive career guidance workshop designed to help students navigate industry expectations, skill development, and professional planning.",
-    image: "/assets/images/clubs/acm2.jpg"
-  },
-  {
-    title: "Let’s automate with N8N",
-    description: "A specialized automation tool workshop focusing on modern workflow automation and efficiency optimization techniques.",
-    image: "/assets/images/clubs/acm3.jpg"
+    description: "Paatashaala Edition 1 witnessed an overwhelming response with 150+ students participating in a 90-minute acoustic sing-along, establishing it as SRKR's first-of-its-kind \"Musical Sanctuary\" for stress relief and community bonding.",
+    image: "/assets/images/clubs/Prajwalan1.png",
+    items: [
+      {
+        description: "Prajwalan 2K26 brought together aspiring innovators from various colleges to collaborate, learn, and develop practical solutions to real-world challenges through a dynamic platform of competitive programming and mentoring.",
+        image: "/assets/images/clubs/Prajwalan1.png"
+      },
+      {
+        description: "Through multiple rounds of evaluation, a intense 24-hour coding challenge, and project presentations, participants enhanced their technical, problem-solving, and teamwork skills, culminating in the celebration and recognition of outstanding innovative projects.",
+        image: "/assets/images/clubs/Prajwalan2.jpg"
+      }
+    ]
   },
   {
     title: "ML Xplore",
-    description: "An intensive workshop dedicated to exploring Machine Learning technology, core algorithms, and real-world application building.",
-    image: "/assets/images/clubs/acm4.jpg"
+    description: "ML XPLORE was a two-day hands-on workshop designed to introduce second-year students to the fundamentals of Machine Learning. The workshop combined conceptual learning with practical implementation, enabling participants to explore real-world ML applications, work with datasets, and build a strong foundation in AI-driven technologies",
+    image: "/assets/images/clubs/MlXplore1.jpg"
   },
   {
-    title: "Technical Workshops & Coding Sessions",
-    description: "Regular hands-on coding sessions and technical workshops covering emerging technologies to foster continuous learning and problem-solving skills.",
-    image: "/assets/images/clubs/acm5.jpg"
+    title: "Let’s automate with N8N",
+    description: "The n8n Automation Workshop was a two-day hands-on program that introduced students to low-code automation and AI-powered workflows. Participants learned to build automation solutions using n8n, integrated services such as LinkedIn and Gmail, and gained practical experience in workflow automation through interactive theory and hands-on sessions.",
+    image: "/assets/images/clubs/n8n1.jpg"
+  },
+  {
+    title: "Vision & Vibes 2.0 – Freshers Interaction Session",
+    description: " Vision & Vibes 2.0 was organized to welcome and guide first-year students through an engaging blend of learning and entertainment. The event featured informative sessions on academics, programming fundamentals, and LinkedIn profile building, followed by cultural performances and interactive activities that encouraged networking, confidence, and a sense of belonging within the ACE community.",
+    image: "/assets/images/clubs/VV1.jpg"
+  },
+  {
+    title: "Xcelerate",
+    description: "Xcelerate was organized to enhance the technical knowledge and career readiness of second-year students through sessions on emerging technologies. The event covered domains such as Full Stack Development, Machine Learning, Cloud Computing, Cyber Security, IoT, Android Development, DSA, Resume Building, Hackathons, and LinkedIn networking, along with interactive activities that encouraged student engagement and professional growth. ",
+    image: "/assets/images/clubs/Xcelerate1.jpg"
+  },
+  {
+    title: "Awareness Program on Human Values in the Digital World",
+    description: "This outreach program was conducted to create awareness about digital ethics, responsible online behavior, and the importance of human values in the digital age. Through interactive sessions, participants learned about digital citizenship, online safety, empathy, integrity, and ethical decision-making, encouraging them to use technology responsibly and contribute to the community.",
   }
 ];
 ---
@@ -212,11 +224,11 @@ const recentEvents: Array<{
               </div>
 
               <!-- Recent Events / Accordion Details -->
-              <div class="rts-scholarship-description mb-4">
+             <div class="rts-scholarship-description mb-4">
                 <h3 class="mb-4"><i class="fa-sharp fa-light fa-sparkles me-2" style="color: var(--rt-primary);"></i> Recent Highlights</h3>
                 <div class="program-credit-area faq rts-scholarship-description">
                   <div class="program-accordion">
-                    <div class="accordion" id="club-events-acm">
+                    <div class="accordion" id="club-events-lolo">
                       {recentEvents.map((evt, idx) => (
                         <div class="accordion-item">
                           <button 
@@ -231,7 +243,7 @@ const recentEvents: Array<{
                           <div 
                             id={`evt-collapse-${idx}`} 
                             class={`accordion-collapse collapse ${idx === 0 ? '' : ''}`} 
-                            data-bs-parent="#club-events-acm"
+                            data-bs-parent="#club-events-lolo"
                           >
                             <div class="accordion-body">
                               {evt.items ? (
@@ -239,15 +251,17 @@ const recentEvents: Array<{
                                   <div class="container-fluid px-0">
                                     <div class="event-wall__ticker" data-ticker>
                                       <div class="event-wall__track">
-                                        {evt.items.map((subItem) => (
+                                        {[...evt.items, ...evt.items, ...evt.items, ...evt.items].map((subItem) => (
                                           <article class="event-wall-card">
-                                            <img 
-                                              class="event-wall-card__photo"
-                                              src={subItem.image} 
-                                              alt={evt.title} 
-                                              loading="lazy" 
-                                              decoding="async" 
-                                            />
+                                            {subItem.image && (
+                                              <img 
+                                                class="event-wall-card__photo"
+                                                src={subItem.image} 
+                                                alt={evt.title} 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                              />
+                                            )}
                                             <p class="event-wall-card__text">
                                               {subItem.description}
                                             </p>
@@ -259,20 +273,22 @@ const recentEvents: Array<{
                                 </div>
                               ) : (
                                 <div class="row g-4 align-items-center">
-                                  <div class="col-lg-7 rts-scholarship-description">
+                                  <div class={evt.image ? "col-lg-7 rts-scholarship-description" : "col-lg-12 rts-scholarship-description"}>
                                     <p style="text-align: justify; font-size: 15px; line-height: 1.7;" class="mb-0">
                                       {evt.description}
                                     </p>
                                   </div>
-                                  <div class="col-lg-5">
-                                    <img 
-                                      src={evt.image} 
-                                      alt={evt.title} 
-                                      style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
-                                      loading="lazy" 
-                                      decoding="async" 
-                                    />
-                                  </div>
+                                  {evt.image && (
+                                    <div class="col-lg-5">
+                                      <img 
+                                        src={evt.image} 
+                                        alt={evt.title} 
+                                        style="height: 100%; max-height: 220px; min-height: 200px; object-fit: cover; width: 100%; border-radius: 8px;" 
+                                        loading="lazy" 
+                                        decoding="async" 
+                                      />
+                                    </div>
+                                  )}
                                 </div>
                               )}
                             </div>
@@ -353,23 +369,23 @@ const recentEvents: Array<{
 
               <!-- Social Links -->
               <div class="mt-4 border-top pt-3 mb-4">
-                <strong class="text-muted d-block mb-2">Connect with Us:</strong>
-                <div class="d-flex gap-3" style="font-size: 20px;">
-                  <a href="https://www.instagram.com/srkr_ace/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/company/association-of-computer-engineers-ace/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                  <a href="https://www.youtube.com/@srkrcse212" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                  </a>
-                </div>
-              </div>
+    <strong class="text-muted d-block mb-2">Connect with Us:</strong>
+    <div class="d-flex gap-3" style="font-size: 20px;">
+        <a href="https://www.instagram.com/srkr_ace/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/association-of-computer-engineers-ace/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/@srkrcse212" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>
+</div>
 
             </div>
 
-            <div class="row g-5 justify-content-center justify-content-start align-items-center mt--10 rts-multi-row-section">
+            <!-- <div class="row g-5 justify-content-center justify-content-start align-items-center mt--10 rts-multi-row-section">
               <div class="col-12">
                 <div class="rts-multi-row-content pl--10">
                   <h3 class="row-title">Archives</h3>
@@ -382,7 +398,7 @@ const recentEvents: Array<{
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
         </div>
