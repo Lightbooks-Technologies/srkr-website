@@ -3235,8 +3235,61 @@ const equalOpportunityCommittee = [
           </div>
         </div>
       </div>
-<!-- Item: Planning and Evaluation Committee -->
+      <!-- Item: Anti-Narcotics Club / EAGLE Club -->
       <div class="accordion-item">
+        <h2 class="accordion-header" id="headingAntiNarcotics">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ccAntiNarcotics"
+            aria-expanded="false"
+            aria-controls="ccAntiNarcotics"
+          >
+            Anti-Narcotics Club / EAGLE Club
+          </button>
+        </h2>
+        <div
+          id="ccAntiNarcotics"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingAntiNarcotics"
+          data-bs-parent="#cc-accordion"
+        >
+          <div class="accordion-body">
+            <div class="application-deadline__content">
+              {
+                antiNarcoticsCommittee.length > 0 && (
+                  <>
+                    {/* <h6 class="mt-3">Anti-Narcotics Club / EAGLE Club Members:</h6> */}
+                    <table class="table table-sm table-striped">
+                      <thead>
+                        <tr>
+                          <th><strong>S.No</strong></th>
+                          <th><strong>Name</strong></th>
+                          <th><strong>Designation</strong></th>
+                          <th><strong>Role</strong></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {antiNarcoticsCommittee.map((m) => (
+                          <tr>
+                            <td>{m.sno}</td>
+                            <td>{m.name}</td>
+                            <td>{m.designation}</td>
+                            <td>{m.role}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Item: Planning and Evaluation Committee -->
+      <!-- <div class="accordion-item">
         <h2 class="accordion-header" id="headingPlanning">
           <button
             class="accordion-button collapsed"
@@ -3297,7 +3350,7 @@ const equalOpportunityCommittee = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Item: Academic Audit Committee -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingAcademicAudit">
@@ -3478,6 +3531,59 @@ const equalOpportunityCommittee = [
                                 )}
                               </td>
                             )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Item: Code of Conduct Monitoring Committee -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingCodeOfConduct">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ccCodeOfConduct"
+            aria-expanded="false"
+            aria-controls="ccCodeOfConduct"
+          >
+            Code of Conduct Monitoring Committee
+          </button>
+        </h2>
+        <div
+          id="ccCodeOfConduct"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingCodeOfConduct"
+          data-bs-parent="#cc-accordion"
+        >
+          <div class="accordion-body">
+            <div class="application-deadline__content">
+              {
+                codeOfConductCommittee.length > 0 && (
+                  <>
+                    {/* <h6 class="mt-3">Code of Conduct Monitoring Committee Members:</h6> */}
+                    <table class="table table-sm table-striped">
+                      <thead>
+                        <tr>
+                          <th><strong>S.No</strong></th>
+                          <th><strong>Name</strong></th>
+                          <th><strong>Designation</strong></th>
+                          <th><strong>Role</strong></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {codeOfConductCommittee.map((m) => (
+                          <tr>
+                            <td>{m.sno}</td>
+                            <td>{m.name}</td>
+                            <td>{m.designation}</td>
+                            <td>{m.role}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -4281,7 +4387,7 @@ const equalOpportunityCommittee = [
         </div>
       </div>
 <!-- Item: Swatch Action Plan Committee -->
-      <div class="accordion-item">
+      <!-- <div class="accordion-item">
         <h2 class="accordion-header" id="headingSwatch">
           <button
             class="accordion-button collapsed"
@@ -4332,7 +4438,7 @@ const equalOpportunityCommittee = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 <!-- Item: Unnat Bharat Abhiyan (UBA) Committee -->
       <div class="accordion-item">
@@ -4653,7 +4759,59 @@ const equalOpportunityCommittee = [
           </div>
         </div>
       </div>
-
+<!-- Item: Equal Opportunity Cell -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEqualOpportunity">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ccEqualOpportunity"
+            aria-expanded="false"
+            aria-controls="ccEqualOpportunity"
+          >
+            Equal Opportunity Cell
+          </button>
+        </h2>
+        <div
+          id="ccEqualOpportunity"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEqualOpportunity"
+          data-bs-parent="#cc-accordion"
+        >
+          <div class="accordion-body">
+            <div class="application-deadline__content">
+              {
+                equalOpportunityCommittee.length > 0 && (
+                  <>
+                    {/* <h6 class="mt-3">Equal Opportunity Cell Members:</h6> */}
+                    <table class="table table-sm table-striped">
+                      <thead>
+                        <tr>
+                          <th><strong>S.No</strong></th>
+                          <th><strong>Name</strong></th>
+                          <th><strong>Designation</strong></th>
+                          <th><strong>Role</strong></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {equalOpportunityCommittee.map((m) => (
+                          <tr>
+                            <td>{m.sno}</td>
+                            <td>{m.name}</td>
+                            <td>{m.designation}</td>
+                            <td>{m.role}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
 <!-- Item: Minority Committee -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingMinority">
@@ -4866,165 +5024,9 @@ const equalOpportunityCommittee = [
           </div>
         </div>
       </div> -->
-<!-- Item: Code of Conduct Monitoring Committee -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingCodeOfConduct">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#ccCodeOfConduct"
-            aria-expanded="false"
-            aria-controls="ccCodeOfConduct"
-          >
-            Code of Conduct Monitoring Committee
-          </button>
-        </h2>
-        <div
-          id="ccCodeOfConduct"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingCodeOfConduct"
-          data-bs-parent="#cc-accordion"
-        >
-          <div class="accordion-body">
-            <div class="application-deadline__content">
-              {
-                codeOfConductCommittee.length > 0 && (
-                  <>
-                    {/* <h6 class="mt-3">Code of Conduct Monitoring Committee Members:</h6> */}
-                    <table class="table table-sm table-striped">
-                      <thead>
-                        <tr>
-                          <th><strong>S.No</strong></th>
-                          <th><strong>Name</strong></th>
-                          <th><strong>Designation</strong></th>
-                          <th><strong>Role</strong></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {codeOfConductCommittee.map((m) => (
-                          <tr>
-                            <td>{m.sno}</td>
-                            <td>{m.name}</td>
-                            <td>{m.designation}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </>
-                )
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- Item: Anti-Narcotics Club / EAGLE Club -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingAntiNarcotics">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#ccAntiNarcotics"
-            aria-expanded="false"
-            aria-controls="ccAntiNarcotics"
-          >
-            Anti-Narcotics Club / EAGLE Club
-          </button>
-        </h2>
-        <div
-          id="ccAntiNarcotics"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingAntiNarcotics"
-          data-bs-parent="#cc-accordion"
-        >
-          <div class="accordion-body">
-            <div class="application-deadline__content">
-              {
-                antiNarcoticsCommittee.length > 0 && (
-                  <>
-                    {/* <h6 class="mt-3">Anti-Narcotics Club / EAGLE Club Members:</h6> */}
-                    <table class="table table-sm table-striped">
-                      <thead>
-                        <tr>
-                          <th><strong>S.No</strong></th>
-                          <th><strong>Name</strong></th>
-                          <th><strong>Designation</strong></th>
-                          <th><strong>Role</strong></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {antiNarcoticsCommittee.map((m) => (
-                          <tr>
-                            <td>{m.sno}</td>
-                            <td>{m.name}</td>
-                            <td>{m.designation}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </>
-                )
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- Item: Equal Opportunity Cell -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingEqualOpportunity">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#ccEqualOpportunity"
-            aria-expanded="false"
-            aria-controls="ccEqualOpportunity"
-          >
-            Equal Opportunity Cell
-          </button>
-        </h2>
-        <div
-          id="ccEqualOpportunity"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingEqualOpportunity"
-          data-bs-parent="#cc-accordion"
-        >
-          <div class="accordion-body">
-            <div class="application-deadline__content">
-              {
-                equalOpportunityCommittee.length > 0 && (
-                  <>
-                    {/* <h6 class="mt-3">Equal Opportunity Cell Members:</h6> */}
-                    <table class="table table-sm table-striped">
-                      <thead>
-                        <tr>
-                          <th><strong>S.No</strong></th>
-                          <th><strong>Name</strong></th>
-                          <th><strong>Designation</strong></th>
-                          <th><strong>Role</strong></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {equalOpportunityCommittee.map((m) => (
-                          <tr>
-                            <td>{m.sno}</td>
-                            <td>{m.name}</td>
-                            <td>{m.designation}</td>
-                            <td>{m.role}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </>
-                )
-              }
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
 
     </div>
   </div>
@@ -5092,7 +5094,7 @@ const equalOpportunityCommittee = [
         <div class="row mt--60 program-accordion">
           <div  class="accordion col-12" id="cc-accordion">
             <!-- Item: All College Committees · Coordinators Index -->
-      <div class="accordion-item">
+      <!-- <div class="accordion-item">
         <h2 class="accordion-header" id="headingCommitteeIndex">
           <button
             class="accordion-button collapsed"
@@ -5138,7 +5140,7 @@ const equalOpportunityCommittee = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       </div>
     </div>
   </div>
