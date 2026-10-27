@@ -1378,7 +1378,34 @@ import SrkrFooter from "../../components/SrkrFooter.astro";
       </div>
     </div>
     <!-- program content end -->
+<script>
+  function openAccordionFromHash() {
+    const hash = window.location.hash;
+    if (!hash) return;
 
+    const target = document.querySelector<HTMLElement>(hash);
+    if (!target) return;
+
+    target.classList.add("show");
+
+    const button = document.querySelector<HTMLElement>(
+      `[data-bs-target="${hash}"]`
+    );
+
+    if (button) {
+      button.classList.remove("collapsed");
+      button.setAttribute("aria-expanded", "true");
+    }
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", openAccordionFromHash);
+  window.addEventListener("load", openAccordionFromHash);
+</script>
     <!-- footer -->
     <SrkrFooter />
 
