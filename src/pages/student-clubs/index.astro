@@ -7,7 +7,22 @@ import OffCanvas from '../../components/OffCanvas.astro';
 import { techClubs, culturalClubs, serviceClubs, sportsClubs } from '../../data/clubs';
 
 const pageTitle = "Student Clubs";
+// Import all Astro files in the student-clubs directory dynamically at build time
+const clubPages = import.meta.glob('/src/pages/student-clubs/**/*.{astro,md,mdx}');
 
+// Helper function to format club name into URL slug
+const getSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+// Helper function to check if a detail route exists for a given slug
+const hasDetailPage = (slug: string) => {
+  return Object.keys(clubPages).some((path) => {
+    const normalizedPath = path.toLowerCase();
+    return (
+      normalizedPath.includes(`/${slug}.astro`) ||
+      normalizedPath.includes(`/${slug}/index.astro`)
+    );
+  });
+};
 ---
 
 <!doctype html>
@@ -67,148 +82,139 @@ const pageTitle = "Student Clubs";
         <div class="accordion" id="student-clubs-accordion">
 
 
-          <!-- ==================================================
-               TECHNICAL CLUBS
-          =================================================== -->
-          <div class="accordion-item">
+        <!-- ==================================================
+             TECHNICAL CLUBS
+        =================================================== -->
+        <div class="accordion-item">
 
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#student-clubs-technical"
-              aria-expanded="false"
-              aria-controls="student-clubs-technical"
-            >
-              Technical Clubs
-            </button>
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#student-clubs-technical"
+            aria-expanded="false"
+            aria-controls="student-clubs-technical"
+          >
+            Technical Clubs
+          </button>
 
-            <div
-              id="student-clubs-technical"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body ">
+          <div
+            id="student-clubs-technical"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body ">
 
-                <div class="row g-4">
+              <div class="row g-4">
 
-                  {[
-                    
-                    {
-                      name: "E-Mobility Club",
-                      focus: "Electric vehicles, battery technologies, BMS, charging systems, power electronics, energy storage and smart mobility.",
-                      activity: "Seminars/workshops, EV design and prototyping, battery-pack and BMS projects, charging-system development, EV diagnostics, competitions and industry interaction.",
-                      sdg: "SDG 7, SDG 9, SDG 11, SDG 13",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Drone Club",
-                      focus: "UAV technology, drone design, aerial mapping, surveying, agriculture, disaster management and environmental monitoring.",
-                      activity: "Seminars/workshops, drone design and assembly, UAV programming, aerial surveys, GIS mapping, precision agriculture projects, environmental monitoring and drone competitions.",
-                      sdg: "SDG 2, SDG 9, SDG 11, SDG 13, SDG 15",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Embedded and IoT Club",
-                      focus: "Embedded systems, sensors, IoT, automation, robotics, Industry 4.0 and smart infrastructure.",
-                      activity: "Seminars/workshops, IoT prototype development, sensor-based projects, embedded programming, automation, robotics projects, smart-campus solutions and hackathons.",
-                      sdg: "SDG 4, SDG 9, SDG 11",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Sustainability Club",
-                      focus: "Climate action, renewable energy, waste management, water conservation, circular economy and sustainable development.",
-                      activity: "Seminars/workshops, green-campus initiatives, waste audits, water conservation campaigns, renewable-energy projects, recycling and upcycling, SDG awareness programmes and community projects.",
-                      sdg: "SDG 6, SDG 7, SDG 11, SDG 12, SDG 13, SDG 15, SDG 17",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "VLSI Club",
-                      focus: "VLSI design, semiconductor technology, FPGA, digital systems, chip design and EDA tools.",
-                      activity: "Seminars/workshops, FPGA projects, HDL programming, IC design, EDA tool training, hardware prototyping and chip-design competitions.",
-                      sdg: "SDG 4, SDG 8, SDG 9",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "AI Club",
-                      focus: "Artificial Intelligence, Machine Learning, Data Analytics, Computer Vision, NLP and Generative AI.",
-                      activity: "Seminars/workshops, AI/ML projects, data analytics competitions, computer vision and NLP applications, GenAI workshops, AI hackathons and research projects.",
-                      sdg: "SDG 4, SDG 8, SDG 9",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Networking and Cybersecurity Club",
-                      focus: "Computer networks, cloud computing, cybersecurity, ethical hacking, digital forensics and secure computing.",
-                      activity: "Seminars/workshops, networking labs, cybersecurity workshops, ethical-hacking exercises, penetration-testing simulations, CTF competitions, digital-forensics activities and cyber-awareness programmes.",
-                      sdg: "SDG 4, SDG 8, SDG 9, SDG 16",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Quantum Technologies Club",
-                      focus: "Quantum computing, quantum communication, quantum cryptography, quantum algorithms and emerging quantum hardware.",
-                      activity: "Seminars/workshops, quantum programming, algorithm development, simulations, quantum cryptography demonstrations, research projects and academic/industry interactions.",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Prompt Engineering Club",
-                      focus: "Prompt engineering, LLMs, AI agents, Generative AI, workflow automation and AI-assisted research.",
-                      activity: "Seminars/workshops, prompt-design challenges, LLM applications, AI-agent development, workflow automation, AI-assisted research projects, GenAI workshops and responsible-AI activities.",
-                      sdg: "SDG 4, SDG 8, SDG 9",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Deep Technology Club",
-                      focus: "AI, Robotics, IoT, Digital Twins, AR/VR, Blockchain, Quantum Technologies, Edge Computing, Digital Manufacturing and Autonomous Systems.",
-                      activity: "Seminars/workshops, interdisciplinary deep-tech projects, advanced prototyping, robotics, autonomous systems, hackathons, startup projects and industry collaborations.",
-                      sdg: "SDG 4, SDG 8, SDG 9, SDG 11, SDG 17",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Web Development Club",
-                      focus: "Web technologies, UI/UX design, full-stack development, CMS platforms and digital applications.",
-                      activity: "Seminars/workshops, website and web-application development, UI/UX projects, frontend/backend development, CMS projects, coding challenges, hackathons and portfolio development.",
-                      sdg: "SDG 4, SDG 8, SDG 9, SDG 17",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Content and Media Club",
-                      focus: "Content creation, photography, videography, graphic design, digital marketing, social media, podcasting, branding and multimedia.",
-                      activity: "Seminars/workshops, photography and video production, graphic design, social-media campaigns, podcasting, live streaming, event documentation, website content development, digital marketing and branding activities.",
-                      sdg: "SDG 4, SDG 8, SDG 9, SDG 17",
-                      image: "/assets/images/clubs/tech-default.png"
-                    },
-                    {
-                      name: "Automotive Club",
-                      focus: "Automotive engineering, vehicle design, fabrication, EV and hybrid vehicle technologies.",
-                      activity: "Vehicle design and fabrication, CAD modelling, vehicle testing, EV projects, SAE competitions, technical workshops/seminars, and industry visits.",
-                      sdg: "SDG 7, SDG 9, SDG 11",
-                      image: "/assets/images/clubs/automotive.jpeg"
-                    },
-                    {
+                {[
+                  
+                  {
+                    name: "E-Mobility Club",
+                    focus: "Electric vehicles, battery technologies, BMS, charging systems, power electronics, energy storage and smart mobility.",
+                    activity: "Seminars/workshops, EV design and prototyping, battery-pack and BMS projects, charging-system development, EV diagnostics, competitions and industry interaction.",
+                    sdg: "SDG 7, SDG 9, SDG 11, SDG 13",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Drone Club",
+                    focus: "UAV technology, drone design, aerial mapping, surveying, agriculture, disaster management and environmental monitoring.",
+                    activity: "Seminars/workshops, drone design and assembly, UAV programming, aerial surveys, GIS mapping, precision agriculture projects, environmental monitoring and drone competitions.",
+                    sdg: "SDG 2, SDG 9, SDG 11, SDG 13, SDG 15",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Embedded and IoT Club",
+                    focus: "Embedded systems, sensors, IoT, automation, robotics, Industry 4.0 and smart infrastructure.",
+                    activity: "Seminars/workshops, IoT prototype development, sensor-based projects, embedded programming, automation, robotics projects, smart-campus solutions and hackathons.",
+                    sdg: "SDG 4, SDG 9, SDG 11",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Sustainability Club",
+                    focus: "Climate action, renewable energy, waste management, water conservation, circular economy and sustainable development.",
+                    activity: "Seminars/workshops, green-campus initiatives, waste audits, water conservation campaigns, renewable-energy projects, recycling and upcycling, SDG awareness programmes and community projects.",
+                    sdg: "SDG 6, SDG 7, SDG 11, SDG 12, SDG 13, SDG 15, SDG 17",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "VLSI Club",
+                    focus: "VLSI design, semiconductor technology, FPGA, digital systems, chip design and EDA tools.",
+                    activity: "Seminars/workshops, FPGA projects, HDL programming, IC design, EDA tool training, hardware prototyping and chip-design competitions.",
+                    sdg: "SDG 4, SDG 8, SDG 9",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "AI Club",
+                    focus: "Artificial Intelligence, Machine Learning, Data Analytics, Computer Vision, NLP and Generative AI.",
+                    activity: "Seminars/workshops, AI/ML projects, data analytics competitions, computer vision and NLP applications, GenAI workshops, AI hackathons and research projects.",
+                    sdg: "SDG 4, SDG 8, SDG 9",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Networking and Cybersecurity Club",
+                    focus: "Computer networks, cloud computing, cybersecurity, ethical hacking, digital forensics and secure computing.",
+                    activity: "Seminars/workshops, networking labs, cybersecurity workshops, ethical-hacking exercises, penetration-testing simulations, CTF competitions, digital-forensics activities and cyber-awareness programmes.",
+                    sdg: "SDG 4, SDG 8, SDG 9, SDG 16",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Quantum Technologies Club",
+                    focus: "Quantum computing, quantum communication, quantum cryptography, quantum algorithms and emerging quantum hardware.",
+                    activity: "Seminars/workshops, quantum programming, algorithm development, simulations, quantum cryptography demonstrations, research projects and academic/industry interactions.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Prompt Engineering Club",
+                    focus: "Prompt engineering, LLMs, AI agents, Generative AI, workflow automation and AI-assisted research.",
+                    activity: "Seminars/workshops, prompt-design challenges, LLM applications, AI-agent development, workflow automation, AI-assisted research projects, GenAI workshops and responsible-AI activities.",
+                    sdg: "SDG 4, SDG 8, SDG 9",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Deep Technology Club",
+                    focus: "AI, Robotics, IoT, Digital Twins, AR/VR, Blockchain, Quantum Technologies, Edge Computing, Digital Manufacturing and Autonomous Systems.",
+                    activity: "Seminars/workshops, interdisciplinary deep-tech projects, advanced prototyping, robotics, autonomous systems, hackathons, startup projects and industry collaborations.",
+                    sdg: "SDG 4, SDG 8, SDG 9, SDG 11, SDG 17",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Web Development Club",
+                    focus: "Web technologies, UI/UX design, full-stack development, CMS platforms and digital applications.",
+                    activity: "Seminars/workshops, website and web-application development, UI/UX projects, frontend/backend development, CMS projects, coding challenges, hackathons and portfolio development.",
+                    sdg: "SDG 4, SDG 8, SDG 9, SDG 17",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Content and Media Club",
+                    focus: "Content creation, photography, videography, graphic design, digital marketing, social media, podcasting, branding and multimedia.",
+                    activity: "Seminars/workshops, photography and video production, graphic design, social-media campaigns, podcasting, live streaming, event documentation, website content development, digital marketing and branding activities.",
+                    sdg: "SDG 4, SDG 8, SDG 9, SDG 17",
+                    image: "/assets/images/clubs/tech-default.png"
+                  },
+                  {
+                    name: "Automotive Club",
+                    focus: "Automotive engineering, vehicle design, fabrication, EV and hybrid vehicle technologies.",
+                    activity: "Vehicle design and fabrication, CAD modelling, vehicle testing, EV projects, SAE competitions, technical workshops/seminars, and industry visits.",
+                    sdg: "SDG 7, SDG 9, SDG 11",
+                    image: "/assets/images/clubs/automotive.jpeg"
+                  },
+                  {
                     name: "Coding Club",
                     focus: "Programming, logical reasoning, problem-solving, application and software development, data structures and algorithms (DSA), web development, app development, artificial intelligence, and competitive programming.",
                     activity: "HackOverflow (National-Level Hackathon), Code Quest (Problem of the Day initiative), Edgecase (biweekly online coding contests), Workshops on emerging technologies, and Iconcoderz (intra-college DSA coding competition).",
                     sdg: "SDG 4, SDG 8, SDG 9, SDG 17",
                     image: '/assets/images/clubs/srkr_coding_club.jpg'
-                    }
-                  ].map((c) => (
+                  }
+                ].map((c) => {
+                  const slug = getSlug(c.name);
+                  const exists = hasDetailPage(slug);
 
+                  return (
                     <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-{/* {c.image !== "/assets/images/clubs/tech-default.png" &&
-                          <img
-                            src={c.image === "/assets/images/clubs/tech-default.png" ? "" : c.image}
-                            alt={c.name}
-                            loading="lazy"
-                            decoding="async"
-                          />} */}
-
-                          {/* <span class="cat-link-btn">
-                            Technical
-                          </span> */}
-
                         </div>
 
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -223,145 +229,130 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            {/* <p class="mb-2 small">
-                              <strong>Activities:</strong> {c.activity}
-                            </p>
-
-                            <p class="mb-3 small text-muted">
-                              <strong>SDGs:</strong> {c.sdg}
-                            </p> */}
-
                           </div>
 
-                          <a
-                            href={`/student-clubs/${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/`}
-                            class="cat-link-arrow"
-                          >
-                            <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                            Learn More
-                          </a>
+                          {exists && (
+                            <a
+                              href={`/student-clubs/${slug}/`}
+                              class="cat-link-arrow"
+                            >
+                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                              Learn More
+                            </a>
+                          )}
 
                         </div>
 
                       </div>
                     </div>
-
-                  ))}
-
-                </div>
+                  );
+                })}
 
               </div>
-            </div>
 
+            </div>
           </div>
 
+        </div>
 
-          <!-- ==================================================
-               PROFESSIONAL CLUBS
-          =================================================== -->
-          <div class="accordion-item">
 
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#student-clubs-professional"
-              aria-expanded="false"
-              aria-controls="student-clubs-professional"
-            >
-              Professional Clubs
-            </button>
+        <!-- ==================================================
+             PROFESSIONAL CLUBS
+        =================================================== -->
+        <div class="accordion-item">
 
-            <div
-              id="student-clubs-professional"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#student-clubs-professional"
+            aria-expanded="false"
+            aria-controls="student-clubs-professional"
+          >
+            Professional Clubs
+          </button>
 
-                <div class="row g-4">
+          <div
+            id="student-clubs-professional"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
 
-                  {[
-                    {
-                      name: "ACM",
-                      focus: "Technical skills, develop leadership qualities",
-                      activity: "Organize engaging workshops, coding sessions, and technical events that help students learn beyond the classroom. ",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/ieee.webp"
-                    },
-                    {
-                      name: "IEEE",
-                      focus: "Electrical, electronics, computing, communication",
-                      activity: "Talks, workshops, paper presentations, hackathons, projects and conferences.",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/ieee.webp"
-                    },
-                    {
-                      name: "IEI",
-                      focus: "Multidisciplinary engineering profession",
-                      activity: "Seminars, guest lectures and technical paper contests.",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/iei.jpeg"
-                    },
-                    {
-                      name: "ISTE",
-                      focus: "Technical education quality, faculty/student growth",
-                      activity: "Workshops, FDPs, quizzes, project expos, student events and competitions.",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/iste.jpg"
-                    },
-                    {
-                      name: "CSI",
-                      focus: "Computer science and IT profession",
-                      activity: "Coding contests, tech talks, chapter meetings and hackathons.",
-                      sdg: "SDG 4, SDG 9",
-                      image: "/assets/images/clubs/csi.jpg"
-                    },
-                    {
-                      name: "IGBC",
-                      focus: "Green building, sustainability, energy efficiency",
-                      activity: "Awareness drives, workshops and campus greening.",
-                      sdg: "SDG 7, SDG 11, SDG 13",
-                      image: "/assets/images/clubs/igbc.jpg"
-                    },
-                    {
-                      name: "IIPE",
-                      focus: "Production and industrial engineering, Mechanical engineering",
-                      activity: "Seminars, industry visits and skill workshops.",
-                      sdg: "SDG 9, SDG 12",
-                      image: techClubs[5]?.img || techClubs[0]?.img
-                    },
-                    {
-                      name: "IETE",
-                      focus: "Electronics, telecommunication, IT",
-                      activity: "Symposiums, webinars, paper presentations and project expos.",
-                      sdg: "SDG 4, SDG 9",
-                      image: techClubs[2]?.img || techClubs[0]?.img
-                    },
-                    {
-                      name: "Toast Masters",
-                      focus: "Public speaking, communication, leadership",
-                      activity: "Speech sessions, table topics and evaluations.",
-                      sdg: "SDG 4, SDG 17",
-                      image: "/assets/images/clubs/toast-master.jpg"
-                    }
-                  ].map((c) => (
+              <div class="row g-4">
 
+                {[
+                  {
+                    name: "ACM",
+                    focus: "Technical skills, develop leadership qualities",
+                    activity: "Organize engaging workshops, coding sessions, and technical events that help students learn beyond the classroom. ",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/ieee.webp"
+                  },
+                  {
+                    name: "IEEE",
+                    focus: "Electrical, electronics, computing, communication",
+                    activity: "Talks, workshops, paper presentations, hackathons, projects and conferences.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/ieee.webp"
+                  },
+                  {
+                    name: "IEI",
+                    focus: "Multidisciplinary engineering profession",
+                    activity: "Seminars, guest lectures and technical paper contests.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/iei.jpeg"
+                  },
+                  {
+                    name: "ISTE",
+                    focus: "Technical education quality, faculty/student growth",
+                    activity: "Workshops, FDPs, quizzes, project expos, student events and competitions.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/iste.jpg"
+                  },
+                  {
+                    name: "CSI",
+                    focus: "Computer science and IT profession",
+                    activity: "Coding contests, tech talks, chapter meetings and hackathons.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/csi.jpg"
+                  },
+                  {
+                    name: "IGBC",
+                    focus: "Green building, sustainability, energy efficiency",
+                    activity: "Awareness drives, workshops and campus greening.",
+                    sdg: "SDG 7, SDG 11, SDG 13",
+                    image: "/assets/images/clubs/igbc.jpg"
+                  },
+                  {
+                    name: "IIPE",
+                    focus: "Production and industrial engineering, Mechanical engineering",
+                    activity: "Seminars, industry visits and skill workshops.",
+                    sdg: "SDG 9, SDG 12",
+                    image: "/assets/images/clubs/ieee.webp"
+                  },
+                  {
+                    name: "IETE",
+                    focus: "Electronics, telecommunication, IT",
+                    activity: "Symposiums, webinars, paper presentations and project expos.",
+                    sdg: "SDG 4, SDG 9",
+                    image: "/assets/images/clubs/ieee.webp"
+                  },
+                  {
+                    name: "Toast Masters",
+                    focus: "Public speaking, communication, leadership",
+                    activity: "Speech sessions, table topics and evaluations.",
+                    sdg: "SDG 4, SDG 17",
+                    image: "/assets/images/clubs/toast-master.jpg"
+                  }
+                ].map((c) => {
+                  const slug = getSlug(c.name);
+                  const exists = hasDetailPage(slug);
+
+                  return (
                     <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-{/* 
-                          <img
-                            src={c.image}
-                            alt={c.name}
-                            loading="lazy"
-                            decoding="async"
-                          /> */}
-
-                          {/* <span class="cat-link-btn">
-                            Professional
-                          </span> */}
-
                         </div>
 
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -375,10 +366,6 @@ const pageTitle = "Student Clubs";
                             <p class="mb-2">
                               <strong>Focus:</strong> {c.focus}
                             </p>
-
-                            {/* <p class="mb-2 small">
-                              <strong>Activities:</strong> {c.activity}
-                            </p> */}
 
                             <p class="mb-3 small text-muted">
                               <strong>SDGs:</strong> {c.sdg}
@@ -386,114 +373,107 @@ const pageTitle = "Student Clubs";
 
                           </div>
 
-                          <a
-                            href={`/student-clubs/${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/`}
-                            class="cat-link-arrow"
-                          >
-                            <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                            Learn More
-                          </a>
+                          {exists && (
+                            <a
+                              href={`/student-clubs/${slug}/`}
+                              class="cat-link-arrow"
+                            >
+                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                              Learn More
+                            </a>
+                          )}
 
                         </div>
 
                       </div>
                     </div>
-
-                  ))}
-
-                </div>
+                  );
+                })}
 
               </div>
-            </div>
 
+            </div>
           </div>
 
+        </div>
 
-          <!-- ==================================================
-               ARTS & CULTURE CLUBS
-          =================================================== -->
-          <div class="accordion-item">
 
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#student-clubs-cultural"
-              aria-expanded="false"
-              aria-controls="student-clubs-cultural"
-            >
-              Arts &amp; Culture Clubs
-            </button>
+        <!-- ==================================================
+             ARTS & CULTURE CLUBS
+        =================================================== -->
+        <div class="accordion-item">
 
-            <div
-              id="student-clubs-cultural"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#student-clubs-cultural"
+            aria-expanded="false"
+            aria-controls="student-clubs-cultural"
+          >
+            Arts &amp; Culture Clubs
+          </button>
 
-                <div class="row g-4">
+          <div
+            id="student-clubs-cultural"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
 
-                  {[
-                    {
-                      name: "Fine Arts",
-                      focus: "Drawing, painting, sketching, handicrafts, digital art, eco-art, and creative design.",
-                      activity: "Training, exhibitions, competitions (local and national), workshops, etc.",
-                      image: culturalClubs[0]?.img
-                    },
-                    {
-                      name: "Dance",
-                      focus: "Classical, folk, western, contemporary, and fusion dance.",
-                      activity: "Training, cultural events, competitions (local and national), workshops, etc.",
-                      image: culturalClubs[1]?.img || culturalClubs[0]?.img
-                    },
-                    {
-                      name: "LOLO",
-                      focus: "Vocal and instrumental music, devotional and cultural music, music composition.",
-                      activity: "Training, cultural events, competitions (local and national), workshops, etc.",
-                      image: culturalClubs[2]?.img || culturalClubs[0]?.img
-                    },
-                    {
-                      name: "Theatre",
-                      focus: "Acting, script writing, mime, street plays, skits.",
-                      activity: "Training, cultural events, competitions (local and national), workshops, etc.",
-                      image: culturalClubs[3]?.img || culturalClubs[0]?.img
-                    },
-                    {
-                      name: "Cine Club",
-                      focus: "Photography, cinematography, video editing, documentary making, animation, and short film production.",
-                      activity: "Training, cultural events, competitions (local and national), workshops, etc.",
-                      image: culturalClubs[4]?.img || culturalClubs[0]?.img
-                    },
-                    {
-                      name: "Language Nest",
-                      focus: "Personality development, interview skills, communication, leadership, interpersonal skills, critical thinking, and professional confidence for academic and career success.",
-                      activity: "Debate/JAM, workshops, creative writing, poetry recitation, story narration, reviewing novels, dramas and poems, one-act plays, competitions (local and national), etc.",
-                      image: culturalClubs[5]?.img || culturalClubs[0]?.img
-                    },
-                    {
-                      name: "IKS",
-                      focus: "Indian philosophy, traditional sciences, cultural heritage, sustainable living, indigenous innovations, and community outreach promoting ethical values.",
-                      activity: "Workshops, field trips, exhibitions, artwork, traditional food, etc.",
-                      image: culturalClubs[6]?.img || culturalClubs[0]?.img
-                    }
-                  ].map((c) => (
+              <div class="row g-4">
 
+                {[
+                  {
+                    name: "Fine Arts",
+                    focus: "Drawing, painting, sketching, handicrafts, digital art, eco-art, and creative design.",
+                    activity: "Training, exhibitions, competitions (local and national), workshops, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "Dance",
+                    focus: "Classical, folk, western, contemporary, and fusion dance.",
+                    activity: "Training, cultural events, competitions (local and national), workshops, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "LOLO",
+                    focus: "Vocal and instrumental music, devotional and cultural music, music composition.",
+                    activity: "Training, cultural events, competitions (local and national), workshops, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "Theatre",
+                    focus: "Acting, script writing, mime, street plays, skits.",
+                    activity: "Training, cultural events, competitions (local and national), workshops, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "Cine Club",
+                    focus: "Photography, cinematography, video editing, documentary making, animation, and short film production.",
+                    activity: "Training, cultural events, competitions (local and national), workshops, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "Language Nest",
+                    focus: "Personality development, interview skills, communication, leadership, interpersonal skills, critical thinking, and professional confidence for academic and career success.",
+                    activity: "Debate/JAM, workshops, creative writing, poetry recitation, story narration, reviewing novels, dramas and poems, one-act plays, competitions (local and national), etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  },
+                  {
+                    name: "IKS",
+                    focus: "Indian philosophy, traditional sciences, cultural heritage, sustainable living, indigenous innovations, and community outreach promoting ethical values.",
+                    activity: "Workshops, field trips, exhibitions, artwork, traditional food, etc.",
+                    image: "/assets/images/clubs/culture-default.png"
+                  }
+                ].map((c) => {
+                  const slug = getSlug(c.name);
+                  const exists = hasDetailPage(slug);
+
+                  return (
                     <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-
-                          {/* <img
-                            src={c.image}
-                            alt={c.name}
-                            loading="lazy"
-                            decoding="async"
-                          /> */}
-
-                          {/* <span class="cat-link-btn">
-                            Arts &amp; Culture
-                          </span> */}
-
                         </div>
 
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -508,97 +488,85 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            {/* <p class="mb-3 small text-muted">
-                              <strong>Activities:</strong> {c.activity}
-                            </p> */}
-
                           </div>
 
-                          <a
-                            href={`/student-clubs/${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/`}
-                            class="cat-link-arrow"
-                          >
-                            <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                            Learn More
-                          </a>
+                          {exists && (
+                            <a
+                              href={`/student-clubs/${slug}/`}
+                              class="cat-link-arrow"
+                            >
+                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                              Learn More
+                            </a>
+                          )}
 
                         </div>
 
                       </div>
                     </div>
-
-                  ))}
-
-                </div>
+                  );
+                })}
 
               </div>
-            </div>
 
+            </div>
           </div>
 
+        </div>
 
-          <!-- ==================================================
-               OUTREACH CLUBS
-          =================================================== -->
-          <div class="accordion-item">
 
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#student-clubs-outreach"
-              aria-expanded="false"
-              aria-controls="student-clubs-outreach"
-            >
-              Outreach Clubs
-            </button>
+        <!-- ==================================================
+             OUTREACH CLUBS
+        =================================================== -->
+        <div class="accordion-item">
 
-            <div
-              id="student-clubs-outreach"
-              class="accordion-collapse collapse"
-              
-            >
-              <div class="accordion-body">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#student-clubs-outreach"
+            aria-expanded="false"
+            aria-controls="student-clubs-outreach"
+          >
+            Outreach Clubs
+          </button>
 
-                <div class="row g-4">
+          <div
+            id="student-clubs-outreach"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
 
-                  {[
-                    {
-                      name: "National Service Scheme (NSS)",
-                      focus: "Community service, social awareness, health & hygiene, environmental conservation, blood donation, disaster management, literacy, and rural development.",
-                      activity: "Awareness campaigns, health camps, plantation drives, cleanliness drives, blood donation camps, village adoption programmes, special camps, and outreach activities.",
-                      image: serviceClubs[0]?.img
-                    },
-                    {
-                      name: "Women Empowerment Cell",
-                      focus: "Women empowerment, gender equality, leadership development, entrepreneurship, health and well-being, legal awareness, self-defence, financial literacy, and career guidance.",
-                      activity: "Expert talks, workshops, awareness campaigns, self-defence training, health camps, mentoring sessions, entrepreneurship programmes, competitions, and outreach initiatives.",
-                      image: serviceClubs[1]?.img || serviceClubs[0]?.img
-                    },
-                    {
-                      name: "Unnat Bharat Abhiyan (UBA)",
-                      focus: "Rural development, sustainable technologies, village adoption, livelihood enhancement, education, sanitation, digital literacy, renewable energy, and community-driven innovation.",
-                      activity: "Village surveys, technology interventions, awareness programmes, skill development, rural innovation projects, field visits, and community engagement activities.",
-                      image: serviceClubs[2]?.img || serviceClubs[0]?.img
-                    }
-                  ].map((c) => (
+              <div class="row g-4">
 
+                {[
+                  {
+                    name: "National Service Scheme (NSS)",
+                    focus: "Community service, social awareness, health & hygiene, environmental conservation, blood donation, disaster management, literacy, and rural development.",
+                    activity: "Awareness campaigns, health camps, plantation drives, cleanliness drives, blood donation camps, village adoption programmes, special camps, and outreach activities.",
+                    image: "/assets/images/clubs/outreach-default.png"
+                  },
+                  {
+                    name: "Women Empowerment Cell",
+                    focus: "Women empowerment, gender equality, leadership development, entrepreneurship, health and well-being, legal awareness, self-defence, financial literacy, and career guidance.",
+                    activity: "Expert talks, workshops, awareness campaigns, self-defence training, health camps, mentoring sessions, entrepreneurship programmes, competitions, and outreach initiatives.",
+                    image: "/assets/images/clubs/outreach-default.png"
+                  },
+                  {
+                    name: "Unnat Bharat Abhiyan (UBA)",
+                    focus: "Rural development, sustainable technologies, village adoption, livelihood enhancement, education, sanitation, digital literacy, renewable energy, and community-driven innovation.",
+                    activity: "Village surveys, technology interventions, awareness programmes, skill development, rural innovation projects, field visits, and community engagement activities.",
+                    image: "/assets/images/clubs/outreach-default.png"
+                  }
+                ].map((c) => {
+                  const slug = getSlug(c.name);
+                  const exists = hasDetailPage(slug);
+
+                  return (
                     <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-
-                          {/* <img
-                            src={c.image}
-                            alt={c.name}
-                            loading="lazy"
-                            decoding="async"
-                          /> */}
-
-                          {/* <span class="cat-link-btn">
-                            Outreach
-                          </span> */}
-
                         </div>
 
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -613,120 +581,107 @@ const pageTitle = "Student Clubs";
                               <strong>Focus:</strong> {c.focus}
                             </p>
 
-                            {/* <p class="mb-3 small text-muted">
-                              <strong>Activities:</strong> {c.activity}
-                            </p> */}
-
                           </div>
 
-                          <a
-                            href={`/student-clubs/${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/`}
-                            class="cat-link-arrow"
-                          >
-                            <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                            Learn More
-                          </a>
+                          {exists && (
+                            <a
+                              href={`/student-clubs/${slug}/`}
+                              class="cat-link-arrow"
+                            >
+                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                              Learn More
+                            </a>
+                          )}
 
                         </div>
 
                       </div>
                     </div>
-
-                  ))}
-
-                </div>
+                  );
+                })}
 
               </div>
-            </div>
 
+            </div>
           </div>
 
+        </div>
 
-          <!-- ==================================================
-               SPORTS CLUBS
-          =================================================== -->
-          <div class="accordion-item">
 
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#student-clubs-sports"
-              aria-expanded="false"
-              aria-controls="student-clubs-sports"
-            >
-              Sports Clubs
-            </button>
+        <!-- ==================================================
+             SPORTS CLUBS
+        =================================================== -->
+        <div class="accordion-item">
 
-            <div
-              id="student-clubs-sports"
-              class="accordion-collapse collapse"
-              
-            >
-              <div class="accordion-body">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#student-clubs-sports"
+            aria-expanded="false"
+            aria-controls="student-clubs-sports"
+          >
+            Sports Clubs
+          </button>
 
-                <div class="row g-4">
+          <div
+            id="student-clubs-sports"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
 
-                  {[
-                    {
-                      name: "Badminton",
-                      focus: "Develops physical fitness, agility, coordination, discipline, and sportsmanship through badminton training, practice sessions, and tournaments.",
-                      image: sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Cricket",
-                      focus: "Promotes teamwork, leadership, concentration, physical fitness, and strategic thinking through cricket coaching, regular practice, and competitions.",
-                      image: sportsClubs[1]?.img || sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Football",
-                      focus: "Encourages teamwork, endurance, coordination, discipline, and leadership through football training, matches, and inter-college tournaments.",
-                      image: sportsClubs[2]?.img || sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Volleyball",
-                      focus: "Develops physical strength, coordination, communication, teamwork, and sportsmanship through volleyball practice sessions and competitions.",
-                      image: sportsClubs[3]?.img || sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Basketball",
-                      focus: "Promotes fitness, agility, teamwork, leadership, strategic thinking, and active participation through basketball training and tournaments.",
-                      image: sportsClubs[4]?.img || sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Kabaddi",
-                      focus: "Develops physical strength, agility, speed, coordination, strategic thinking, teamwork, communication, discipline, and sportsmanship through regular Kabaddi training sessions, practice matches, and competitions.",
-                      image: sportsClubs[5]?.img || sportsClubs[0]?.img
-                    },
-                    {
-                      name: "Athletics",
-                      focus: "Encourages physical fitness, endurance, speed, strength, discipline, and individual excellence through track-and-field events, training, and competitions.",
-                      image: sportsClubs[6]?.img || sportsClubs[0]?.img
-                    }
-                  ].map((c) => (
+              <div class="row g-4">
 
+                {[
+                  {
+                    name: "Badminton",
+                    focus: "Develops physical fitness, agility, coordination, discipline, and sportsmanship through badminton training, practice sessions, and tournaments.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Cricket",
+                    focus: "Promotes teamwork, leadership, concentration, physical fitness, and strategic thinking through cricket coaching, regular practice, and competitions.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Football",
+                    focus: "Encourages teamwork, endurance, coordination, discipline, and leadership through football training, matches, and inter-college tournaments.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Volleyball",
+                    focus: "Develops physical strength, coordination, communication, teamwork, and sportsmanship through volleyball practice sessions and competitions.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Basketball",
+                    focus: "Promotes fitness, agility, teamwork, leadership, strategic thinking, and active participation through basketball training and tournaments.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Kabaddi",
+                    focus: "Develops physical strength, agility, speed, coordination, strategic thinking, teamwork, communication, discipline, and sportsmanship through regular Kabaddi training sessions, practice matches, and competitions.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  },
+                  {
+                    name: "Athletics",
+                    focus: "Encourages physical fitness, endurance, speed, strength, discipline, and individual excellence through track-and-field events, training, and competitions.",
+                    image: "/assets/images/clubs/sports-default.png"
+                  }
+                ].map((c) => {
+                  const slug = getSlug(c.name);
+                  const exists = hasDetailPage(slug);
+
+                  return (
                     <div class="col-lg-4 col-md-6">
                       <div class="card h-100 shadow-sm single-cat-item">
 
                         <div class="cat-thumb">
-
-                          {/* <img
-                            src={c.image}
-                            alt={c.name}
-                            loading="lazy"
-                            decoding="async"
-                          /> */}
-
-                          {/* <span class="cat-link-btn">
-                            Sports
-                          </span> */}
-
                         </div>
 
                         <div class="card-body d-flex flex-column justify-content-between">
 
                           <div>
-
                             <h5 class="card-title mb-2">
                               {c.name}
                             </h5>
@@ -734,33 +689,33 @@ const pageTitle = "Student Clubs";
                             <p class="mb-3 small text-muted">
                               {c.focus}
                             </p>
-
                           </div>
 
-                          <a
-                            href={`/student-clubs/${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/`}
-                            class="cat-link-arrow"
-                          >
-                            <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                            Learn More
-                          </a>
+                          {exists && (
+                            <a
+                              href={`/student-clubs/${slug}/`}
+                              class="cat-link-arrow"
+                            >
+                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                              Learn More
+                            </a>
+                          )}
 
                         </div>
 
                       </div>
                     </div>
-
-                  ))}
-
-                </div>
+                  );
+                })}
 
               </div>
-            </div>
 
+            </div>
           </div>
 
-
         </div>
+
+</div>
 
       </div>
     </div>

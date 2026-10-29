@@ -36,6 +36,8 @@ const faculty = [
   { "name": "Dr. N. Udaya Bhaskara Varma", "profile": "https://vidwan.inflibnet.ac.in/profile/554243", "email": "varma9866157035@gmail.com", "specialization": "Fluid Dynamics", "designation": "Assistant Professor", "image": "1335.jpg" },
   { "name": "G. R. Mallika", "profile": "https://vidwan.inflibnet.ac.in/profile/590399", "email": "grmallika@srkrec.ac.in", "specialization": "Pure Mathematics", "designation": "Assistant Professor", "image": "1373.jpg" },
   // { "name": "V. P.N.V Kumari", "profile": "", "email": "veduruperthipriyanka23@gmail.com", "specialization": "Operation Research", "designation": "Assistant Professor", "image": "1374.jpg" },
+  { "name": "K.V.N.Sailaja", "profile": "", "email": "vnagasailaja@gmail.com", "specialization": "Pure Mathematics", "designation": "Assistant Professor", "image": "1401.jpg" },
+
 ];
 ---
 
@@ -112,7 +114,7 @@ const faculty = [
                     <div class="staf-info__speciality">
                       <p>{f.specialization}</p>
                     </div>
-                    <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>
+                    {f.profile && <a href={f.profile} class="rts-theme-btn border-btn" target="_blank" rel="noopener">VIDWAN Profile</a>}
                   </div>
                 </div>
               </div>

@@ -20,15 +20,16 @@ const objectives = [
   "Promote Literacy Skills: Encourage students to enhance their literature skills.",
   "Promote Artistic Skills: Encourage students to enhance their artistic skills."
 ];
-const years = ['2025–26', '2024–25'];
+const years = ['2025–26', '2024–25', '2023–24', '2022–23'];
 
 const momentsImages = [
-  "/assets/images/clubs/isteevent1.jpg",
-  "/assets/images/clubs/isteevent2.jpg",
-  "/assets/images/clubs/isteevnt3.jpg",
-  "/assets/images/clubs/isteevnt4.jpg",
-  "/assets/images/clubs/isteevent5.jpg",
-  "/assets/images/clubs/isteevent6.jpg",
+  "/assets/images/clubs/iste-high1.jpg",
+  "/assets/images/clubs/iste-high2.jpg",
+  "/assets/images/clubs/iste-high3.jpg",
+  "/assets/images/clubs/iste-high4.jpg",
+  "/assets/images/clubs/iste-high5.jpg",
+  "/assets/images/clubs/iste-high6.jpg",
+  "/assets/images/clubs/iste-high7.jpg",
 ];
 
 const recentEvents: {
@@ -361,23 +362,7 @@ const recentEvents: {
                 </li>
               </ul>
 
-              <!-- Social Links -->
-              <div class="mt-4 border-top pt-3 mb-4">
-                <strong class="text-muted d-block mb-2">Connect with Us:</strong>
-                <div class="d-flex gap-3" style="font-size: 20px;">
-                  <a href="https://www.srkriste.in/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Chapter Website">
-                    <i class="fa-regular fa-globe"></i>
-                  </a>
-                  <a href="https://www.instagram.com/srkr_iste/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/school/srkr-engineering-college/" target="_blank" rel="noopener noreferrer" style="color: var(--rt-primary);" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-
-            </div>
+              
 
             <div class="row g-5 justify-content-center justify-content-start align-items-center mt--10 rts-multi-row-section">
               <div class="col-12">
@@ -385,7 +370,7 @@ const recentEvents: {
                   <h3 class="row-title">Archives</h3>
                   <div class="program-list">
                     {years.map(year => (
-                      <a href={`/assets/documents/iste-archives-${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
+                      <a href={`/assets/documents/iste/${year.replace('–', '-')}.pdf`} class="program-item" target="_blank">
                         <span>{year} <i class="fa-regular fa-chevron-right"></i></span> <span>PDF</span>
                       </a>
                     ))}
