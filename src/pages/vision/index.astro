@@ -1,4 +1,4 @@
---- 
+---
 import BaseHead from '../../components/BaseHead.astro';
 import FooterScripts from '../../components/FooterScripts.astro';
 import OffCanvas from '../../components/OffCanvas.astro';
@@ -9,104 +9,188 @@ import SrkrFooter from '../../components/SrkrFooter.astro';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			p, .si__list--single {
-				text-align: justify !important;
-			}
-		</style>
-	</head>
-    <body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      p, .si__list--single {
+        text-align: justify !important;
+      }
+
+      /* Vision, Mission & Quality Policy Cards UI */
+      .vm-card {
+        border-radius: 16px;
+        padding: 40px 36px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .vm-card-vision {
+        background-color: var(--rt-primary);
+        color: #ffffff;
+      }
+
+      .vm-card-vision .vm-title {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .vm-card-vision p {
+        color: #e8edf8;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 0;
+        text-align: left !important;
+      }
+
+      .vm-card-mission,
+      .vm-card-policy {
+        background-color: #ffffff;
+        border: 1px solid #d8d5e5;
+        color: #1f2937;
+      }
+
+      .vm-card-mission .vm-title,
+      .vm-card-policy .vm-title {
+        color: #16213e;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .vm-card-policy p {
+        color: #4b5563;
+        font-size: 15.5px;
+        line-height: 1.65;
+        margin-bottom: 20px;
+        text-align: left !important;
+      }
+
+      .vm-mission-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .vm-mission-list li {
+        position: relative !important;
+        padding-left: 20px !important;
+        margin-bottom: 18px !important;
+        color: #4b5563 !important;
+        font-size: 15.5px !important;
+        line-height: 1.65 !important;
+        text-align: left !important;
+        list-style-type: none !important;
+      }
+
+      .vm-mission-list li:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      .vm-mission-list li::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 10px !important;
+        width: 5px !important;
+        height: 5px !important;
+        border-radius: 50% !important;
+        background-color: var(--rt-primary) !important;
+      }
+
+      @media (max-width: 767px) {
+        .vm-card {
+          padding: 28px 24px;
+        }
+        .vm-card-vision .vm-title,
+        .vm-card-mission .vm-title,
+        .vm-card-policy .vm-title {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- header area start -->
     <SrkrHeader />
     <!-- header area end -->
 
     <!-- BREADCRUMB AREA -->
     <section class="rts-breadcrumb breadcrumb-height breadcumb-bg" style="background-image: url(/assets/images/banner/breadcrumb.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        </ul>
-                        <h1 class="section-title">Vision & Mission</h1>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumb-content">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+              </ul>
+              <h1 class="section-title">Vision & Mission</h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- BREADCRUMB AREA END -->
 
-
     <!-- mission -->
-    <section class="rts-mission pt--30 pb--30">
-        <div class="container">
-            
-            <!-- mission -->
-            <div class="row justify-content-center">
-                <div class="col-lg-10 d-flex flex-column justify-content-center">
-                    <section class="mb--40">
-                        <div class="row g-4 align-items-start justify-content-center">
-                            <div class="rts-scholarship-description">
-                                <h3 class="timeline-title mb--15">Vision</h3>
-                                <p>
-                                    To emerge as a world-class technical institute that strives for the socio-ecological well-being of the society.
-                                </p>
-
-                                <h3 class="timeline-title mt--30 mb--15">Mission</h3>
-                                <div class="si__list">
-                                    <ul class="list-unstyled one-column-list">
-                                    <li class="si__list--single">To upgrade teaching-learning environment with state-of-the-art infrastructure to accelerate employability and entrepreneurship.</li>
-                                    <li class="si__list--single">To promote inter-disciplinary research and innovation through institute-industry partnership.</li>
-                                    <li class="si__list--single">To nurture ethical and ecological consciousness to sustain the holistic social well-being.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- <div class="col-lg-5">
-                                <img src="/assets/images/about/mission-1.jpg" alt="Vision" style="height: 100%; min-height: 300px; object-fit: cover; width: 100%;" loading="lazy" decoding="async">
-                            </div> -->
-                        </div>
-                    </section>
-
-                    <section class="mb--40 rts-scholarship-description">
-                        <h5 class="timeline-title mb--15">Quality Policy</h5>
-                        <p>The college is committed to achieving excellence in Teaching, Research and Consultancy:</p>
-                        <div class="si__list mb--30">
-                            <ul class="list-unstyled one-column-list">
-                                <li class="si__list--single">By deploying global best practices in education to create world-class professionals</li>
-                                <li class="si__list--single">By establishing harmonious relationships with industry and society</li>
-                                <li class="si__list--single">By developing state-of-the-art infrastructure and sustaining the quality of education through well-endowed faculty</li>
-                                <li class="si__list--single">By imparting knowledge through advanced learning and teaching methods</li>
-                            </ul>
-                        </div>
-                        <!-- <img src="/assets/images/about/mission-3.jpg" alt="Quality Policy" loading="lazy" decoding="async" style="height: 300px; object-fit: cover; width: 100%;"> -->
-                    </section>
-
-                    <!-- <section class="mb--40 rts-scholarship-description">
-                        <h5 class="timeline-title mb--15">Key Pillars</h5>
-                        <div class="si__list">
-                            <ul class="list-unstyled one-column-list">
-                                <li class="si__list--single">Regional Ecosystem</li>
-                                <li class="si__list--single">Academic Excellence</li>
-                                <li class="si__list--single">Research Excellence</li>
-                                <li class="si__list--single">Industry Relevance</li>
-                                <li class="si__list--single">Social Responsibility</li>
-                            </ul>
-                        </div>
-                    </section> -->
+    <section class="rts-mission pt--50 pb--50" style="background-color: #F8F9FA;">
+      <div class="container" >
+        <!-- Vision & Mission Cards -->
+        <div class="row justify-content-center mb--40">
+          <div class="col-lg-11">
+            <div class="row g-4 align-items-stretch">
+              <!-- Our Vision Card -->
+              <div class="col-lg-6">
+                <div class="vm-card vm-card-vision">
+                  <h3 class="vm-title">Our Vision</h3>
+                  <p>
+                    To emerge as a world-class technical institute that strives for the socio-ecological well-being of the society.
+                  </p>
                 </div>
-            </div>
-        </div>
-    </section>
-<!-- footer -->
-<SrkrFooter/>
+              </div>
 
+              <!-- Our Mission Card -->
+              <div class="col-lg-6">
+                <div class="vm-card vm-card-mission">
+                  <h3 class="vm-title">Our Mission</h3>
+                  <ul class="vm-mission-list">
+                    <li>To upgrade teaching-learning environment with state-of-the-art infrastructure to accelerate employability and entrepreneurship.</li>
+                    <li>To promote inter-disciplinary research and innovation through institute-industry partnership.</li>
+                    <li>To nurture ethical and ecological consciousness to sustain the holistic social well-being.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quality Policy Card (Outlined Style matching Mission) -->
+        <div class="row justify-content-center">
+          <div class="col-lg-11">
+            <div class="vm-card vm-card-policy">
+              <h3 class="vm-title">Quality Policy</h3>
+              <p class="text-start m-0 mb-2">The college is committed to achieving excellence in Teaching, Research and Consultancy:</p>
+              <ul class="vm-mission-list">
+                <li>By deploying global best practices in education to create world-class professionals</li>
+                <li>By establishing harmonious relationships with industry and society</li>
+                <li>By developing state-of-the-art infrastructure and sustaining the quality of education through well-endowed faculty</li>
+                <li>By imparting knowledge through advanced learning and teaching methods</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <SrkrFooter />
     <!-- footer copyright end -->
 
-    <OffCanvas/>
-
-<FooterScripts />
-</body>
+    <OffCanvas />
+    <FooterScripts />
+  </body>
 </html>
